@@ -185,7 +185,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
     ('index',
-     'annotation-tool.tex',
+     'annotation_tool.tex',
      u'annotation_tool Documentation',
      u"Manu Phatak", 'manual'),
 ]
@@ -216,7 +216,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'annotation-tool', u'annotation_tool Documentation',
+    ('index', 'annotation_tool', u'annotation_tool Documentation',
      [u"Manu Phatak"], 1)
 ]
 
@@ -230,7 +230,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'annotation-tool', u'annotation_tool Documentation',
+    ('index', 'annotation_tool', u'annotation_tool Documentation',
      u"Manu Phatak", 'annotation_tool',
      'A short description of the project.', 'Miscellaneous'),
 ]

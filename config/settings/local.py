@@ -8,6 +8,9 @@ Local settings
 - Add django-extensions as app
 '''
 
+import environ
+
+environ.Env().read_env('.env')
 
 from .common import *  # noqa
 

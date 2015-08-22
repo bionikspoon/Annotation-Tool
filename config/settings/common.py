@@ -16,12 +16,12 @@ ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
 APPS_DIR = ROOT_DIR.path('annotation-tool')
 
 env = environ.Env()
-
 env.read_env('.env')
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
 DJANGO_APPS = (
+
     # Default Django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -35,18 +35,24 @@ DJANGO_APPS = (
 
     # Admin
     'django.contrib.admin',
+
 )
 THIRD_PARTY_APPS = (
+
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'annotation-tool.users',  # custom users app
+
+    'annotation_tool.users',  # custom users app
     # Your stuff: custom apps go here
+    'pubmed'
+
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -55,6 +61,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
 MIDDLEWARE_CLASSES = (
+
     # Make sure djangosecure.middleware.SecurityMiddleware is listed first
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,12 +69,15 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 )
 
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'annotation-tool.contrib.sites.migrations'
+
+    'sites': 'annotation_tool.contrib.sites.migrations'
+
 }
 
 # DEBUG
@@ -79,7 +89,9 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
 FIXTURE_DIRS = (
+
     str(APPS_DIR.path('fixtures')),
+
 )
 
 # EMAIL CONFIGURATION
@@ -90,7 +102,9 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.s
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
+
     ("""Manu Phatak""", 'bionikspoon@gmail.com'),
+
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -100,8 +114,11 @@ MANAGERS = ADMINS
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
+
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres:///annotation-tool"),
+    'default': env.db("DATABASE_URL"),
+    # 'default': env.db("DATABASE_URL", default="postgres:///annotation_tool"),
+
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -178,13 +195,17 @@ STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
+
     str(APPS_DIR.path('static')),
+
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
+
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+
 )
 
 # MEDIA CONFIGURATION
@@ -205,8 +226,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = (
+
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+
 )
 
 # Some really nice defaults
