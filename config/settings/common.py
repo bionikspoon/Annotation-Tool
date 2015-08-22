@@ -17,6 +17,8 @@ APPS_DIR = ROOT_DIR.path('annotation-tool')
 
 env = environ.Env()
 
+env.read_env('.env')
+
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
 DJANGO_APPS = (
