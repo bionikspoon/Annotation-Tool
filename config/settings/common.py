@@ -32,7 +32,7 @@ DJANGO_APPS = (
     'django.contrib.postgres',
 
     # Useful template tags:
-    # 'django.contrib.humanize',
+    'django.contrib.humanize',
 
     # Admin
     'django.contrib.admin',

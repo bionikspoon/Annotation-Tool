@@ -68,3 +68,19 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 # Your local stuff: Below this line define 3rd party library settings
 
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
+LOGGING['handlers']['file'] = {
+
+    'level': 'DEBUG',
+    'class': 'logging.FileHandler',
+    'filename': str(ROOT_DIR.path('logs', 'debug.log')),
+
+}
+LOGGING['loggers']['django.request']['handlers'].append('file')
+
+LOGGING['handlers']['console'] = {
+
+    'level': 'DEBUG',
+    'class': 'logging.StreamHandler',
+
+}
+# LOGGING['loggers']['django.request']['handlers'].append('console')

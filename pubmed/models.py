@@ -1,10 +1,13 @@
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 from model_utils import FieldTracker
 from model_utils.models import TimeStampedModel
+from annotation_tool.users.models import User
 
 
 class Entry(TimeStampedModel):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False, related_name='pubmed_entries', on_delete=models.PROTECT)
     pubmed_id = models.IntegerField()
     gene = models.CharField(max_length=100, blank=True)
     # structure = models.ForeignKey(StructureLookup)
@@ -50,4 +53,5 @@ class Entry(TimeStampedModel):
 
     def get_absolute_url(self):
         return reverse('pubmed:detail', kwargs={'pk': self.id} )
+
 

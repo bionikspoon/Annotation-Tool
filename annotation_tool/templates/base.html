@@ -1,5 +1,5 @@
 {% load staticfiles i18n %}<!DOCTYPE html>{#<html lang="en" ng-app>#}
-<html lang="en">
+<html {% block html_attrs %}lang="en"{% endblock %}>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -29,7 +29,6 @@
   {% endblock %}
 
   {% block angular %}
-{#    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>#}
   {% endblock %}
 
 </head>
@@ -86,7 +85,6 @@
   {% endif %}
 
   {% block content %}
-    <p>Use this document as a way to quick start any new project.</p>
   {% endblock content %}
 
 </div>
