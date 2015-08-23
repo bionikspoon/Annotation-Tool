@@ -1,0 +1,77 @@
+{% load i18n annotation_tool_tags %}<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+  <section class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <article class="navbar-header">
+      <button type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#navbar"
+              aria-expanded="false"
+              aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'home' %}">
+        {% block branding %}Annotation Tool{% endblock %}</a>
+    </article>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <article id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        {% active_url 'Home' 'home' %}
+        {% active_url 'Pubmed' 'pubmed:list' %}
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        {% if request.user.is_authenticated %}
+          <li class="dropdown">
+            <a href="#"
+               class="dropdown-toggle"
+               data-toggle="dropdown"
+               role="button"
+               aria-haspopup="true"
+               aria-expanded="false">
+              {% block welcome-msg %}
+                {% trans 'Hello' %},
+                <strong>{% firstof request.user.get_short_name request.user.get_username %}</strong>!
+                <span class="caret"></span>
+              {% endblock %}
+            </a>
+            <ul class="dropdown-menu">
+              {% block userlinks %}
+
+                {% active_url 'My Profile' 'users:detail' request.user.username %}
+                {% active_url 'Admin' 'admin:index' %}
+
+                {% if request.user.is_active and request.user.is_staff %}
+                  {% url 'django-admindocs-docroot' as docsroot %}
+                  {% if docsroot %}
+                    {% active_url 'Documentation' docsroot %}
+                  {% endif %}
+                {% endif %}
+
+                {% if request.user.has_usable_password %}
+                  {% active_url 'Change password' 'admin:password_change' %}
+                {% endif %}
+
+                {% active_url 'Logout' 'account_logout' %}
+
+              {% endblock %}
+            </ul>
+
+            {% block nav-global %}{% endblock %}
+          </li>
+        {% else %}
+
+          {% active_url 'Sign Up' 'account_signup' %}
+          {% active_url 'Login' 'account_login' %}
+
+        {% endif %}
+      </ul>
+    </article>
+    <!--/.nav-collapse -->
+  </section>
+</nav>
