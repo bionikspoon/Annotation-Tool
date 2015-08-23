@@ -13,7 +13,7 @@ from __future__ import absolute_import, unicode_literals
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
-APPS_DIR = ROOT_DIR.path('annotation-tool')
+APPS_DIR = ROOT_DIR.path('annotation_tool')
 
 env = environ.Env()
 env.read_env('.env')
@@ -29,6 +29,7 @@ DJANGO_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
 
     # Useful template tags:
     # 'django.contrib.humanize',
@@ -117,7 +118,6 @@ DATABASES = {
 
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
     'default': env.db("DATABASE_URL"),
-    # 'default': env.db("DATABASE_URL", default="postgres:///annotation_tool"),
 
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Pubmed Entries</h2>
+
+  <ul>
+    {% for entry in entry_list %}
+      <li>
+        {{ entry.pubmed_id }} |
+        <a href="{% url 'pubmed:update' entry.id %}">Edit</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'pubmed:create' %}"
+     class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New Entry</a>
+{% endblock %}
