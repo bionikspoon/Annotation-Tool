@@ -2,6 +2,8 @@
 # coding=utf-8
 
 from django.forms import ModelForm
+
+# noinspection PyPackageRequirements
 from braces.forms import UserKwargModelFormMixin
 
 from .models import Entry
