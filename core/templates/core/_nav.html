@@ -43,7 +43,7 @@
             <ul class="dropdown-menu">
               {% block userlinks %}
 
-                {% active_url 'My Profile' 'users:detail' request.user.username %}
+                {#{% active_url 'My Profile' 'users:detail' request.user.username %}#}
                 {% active_url 'Admin' 'admin:index' %}
 
                 {% if request.user.is_active and request.user.is_staff %}
