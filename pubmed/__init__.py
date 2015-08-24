@@ -1,4 +1,4 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-from . import db
+from . import (db, management, migrations, templatetags, tests)
