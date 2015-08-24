@@ -62,6 +62,10 @@ class SexLookup(LookupTable):
     pass
 
 
+class DiseaseLookup(LookupTable):
+    pass
+
+
 class AssessedPatientOutcomeLookup(LookupTable):
     pass
 
@@ -72,7 +76,7 @@ class SignificantPatientOutcomeLookup(LookupTable):
 
 class DEFAULTS(object):
     CharField = dict(max_length=100, blank=True)
-    ForeignKey = dict(blank=True, null=True, on_delete=models.PROTECT)
+    ForeignKey = dict(blank=True, null=True, on_delete=models.SET_NULL)
     IntegerField = dict(null=True, blank=True)
     TextField = dict(blank=True)
     ManyToManyField = dict(blank=True)
@@ -110,7 +114,7 @@ class Entry(TimeStampedModel):
     variant_consequence = models.ForeignKey(VariantConsequenceLookup,
                                             **DEFAULTS.ForeignKey)
     variant_clinical_grade = models.IntegerField(**DEFAULTS.IntegerField)
-    disease = models.CharField(**DEFAULTS.CharField)
+    disease = models.ManyToManyField(DiseaseLookup, **DEFAULTS.ManyToManyField)
     treatment_1 = models.CharField(**DEFAULTS.CharField)
     treatment_2 = models.CharField(**DEFAULTS.CharField)
     treatment_3 = models.CharField(**DEFAULTS.CharField)

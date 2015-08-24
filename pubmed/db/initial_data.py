@@ -26,5 +26,12 @@ def populate_lookup_tables(apps, schema_editor):
         Model.objects.create(pk=entry.pk, choice=entry.choice)
 
 
+def unpopulate_lookup_tables(apps, schema_editor):
+    for sublcass in InitialData.__subclasses__():
+        Model = apps.get_model('pubmed', sublcass.__name__)
+        Model.objects.all().delete()
+
+
+
 if __name__ == '__main__':
     pprint(list(InitialData.export()))
