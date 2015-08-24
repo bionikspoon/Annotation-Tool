@@ -334,6 +334,6 @@ class Migration(migrations.Migration):
         ),
 
         migrations.RunPython(
-            code=pubmed.db.initial_data.populate_lookup_tables, ),
+            code=pubmed.db.populate_lookup_tables, ),
 
     ]

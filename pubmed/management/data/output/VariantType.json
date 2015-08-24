@@ -1,0 +1,37 @@
+[
+    {
+        "fields": {
+            "choice": "Deletion"
+        },
+        "model": "pubmed.VariantTypeLookup",
+        "pk": 0
+    },
+    {
+        "fields": {
+            "choice": "Duplication"
+        },
+        "model": "pubmed.VariantTypeLookup",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "choice": "Indel"
+        },
+        "model": "pubmed.VariantTypeLookup",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "choice": "Insertion"
+        },
+        "model": "pubmed.VariantTypeLookup",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "choice": "Substitution"
+        },
+        "model": "pubmed.VariantTypeLookup",
+        "pk": 4
+    }
+]
