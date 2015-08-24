@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib import messages
 
@@ -15,6 +16,7 @@ class EntryMixin(object):
 class EntryFormMixin(LoginRequiredMixin, UserFormKwargsMixin, EntryMixin):
     form_class = EntryModelForm
     template_name = 'pubmed/entry_form.html'
+    success_url = reverse_lazy('pubmed:list')
 
     @property
     def success_msg(self):
@@ -45,7 +47,6 @@ class EntryDetailView(EntryMixin, DetailView):
 class EntryCreateView(EntryFormMixin, CreateView):
     success_msg = 'Entry Created'
     action_text = 'Create'
-
 
 
 class EntryUpdateView(EntryFormMixin, UpdateView):
