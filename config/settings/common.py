@@ -51,13 +51,13 @@ THIRD_PARTY_APPS = (  # :off
 )  # :on
 
 # Apps specific for this project go here.
-LOCAL_APPS = (  # :off
+LOCAL_APPS = (
 
     'annotation_tool.users',  # custom users app
     # Your stuff: custom apps go here
     'pubmed'
 
-)  # :on
+)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -174,8 +174,10 @@ TEMPLATES = [
             # #template-loaders
             # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
             'loaders': [
+
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
+
             ],
             # See: https://docs.djangoproject.com/en/dev/ref/settings/
             # #template-context-processors
@@ -292,11 +294,11 @@ LOGGING = {
     },
 
     'loggers': {
-        'django.request': {
+        'django.request': {  # :off
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
-        },  # :off
+        },
     }
 }  # :on
 
