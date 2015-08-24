@@ -20,7 +20,7 @@ env.read_env('.env')
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
-DJANGO_APPS = (
+DJANGO_APPS = (  # :off
 
     # Default Django apps:
     'django.contrib.auth',
@@ -37,24 +37,27 @@ DJANGO_APPS = (
     # Admin
     'django.contrib.admin',
 
-)
-THIRD_PARTY_APPS = (
+)  # :on
 
+
+THIRD_PARTY_APPS = (  # :off
+
+    'floppyforms',
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
 
-)
+)  # :on
 
 # Apps specific for this project go here.
-LOCAL_APPS = (
+LOCAL_APPS = (  # :off
 
     'annotation_tool.users',  # custom users app
     # Your stuff: custom apps go here
     'pubmed'
 
-)
+)  # :on
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -88,7 +91,8 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 
 # FIXTURE CONFIGURATION
 # ------------------------------------------------------------------------------
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
+# See: https://docs.djangoproject.com/en/dev/ref/settings/
+# #std:setting-FIXTURE_DIRS
 FIXTURE_DIRS = (
 
     str(APPS_DIR.path('fixtures')),
@@ -97,7 +101,8 @@ FIXTURE_DIRS = (
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
+                    default='django.core.mail.backends.smtp.EmailBackend')
 
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -151,23 +156,31 @@ USE_TZ = True
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#templates
 TEMPLATES = [
     {
-        # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/
+        # #std:setting-TEMPLATES-BACKEND
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         'DIRS': [
+
             str(APPS_DIR.path('templates')),
+
         ],
+
         'OPTIONS': {
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
+            # See: https://docs.djangoproject.com/en/dev/ref/settings/
+            # #template-debug
             'debug': DEBUG,
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
+            # See: https://docs.djangoproject.com/en/dev/ref/settings/
+            # #template-loaders
             # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
             ],
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+            # See: https://docs.djangoproject.com/en/dev/ref/settings/
+            # #template-context-processors
             'context_processors': [
+
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -177,12 +190,14 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 # Your stuff: custom template context processors go here
-            ],
+
+            ],  # :off
         },
     },
-]
+]  # :on
 
-# See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
+# See: http://django-crispy-forms.readthedocs.org/en/latest/install.html
+# #template-packs
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # STATIC FILE CONFIGURATION
@@ -193,14 +208,16 @@ STATIC_ROOT = str(ROOT_DIR('staticfiles'))
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 
-# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/
+# #std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
 
     str(APPS_DIR.path('static')),
 
 )
 
-# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/
+# #staticfiles-finders
 STATICFILES_FINDERS = (
 
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -257,12 +274,15 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 # more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
+
     'disable_existing_loggers': False,
+
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
         }
     },
+
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
@@ -270,13 +290,15 @@ LOGGING = {
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
+
     'loggers': {
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
-        },
+        },  # :off
     }
-}
+}  # :on
 
-# Your common stuff: Below this line define 3rd party library settings
+# Your common stuff:
+# Below this line define 3rd party library settings
