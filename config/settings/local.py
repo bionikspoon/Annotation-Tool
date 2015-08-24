@@ -84,3 +84,5 @@ LOGGING['handlers']['console'] = {  # :off
 
 }  # :on
 # LOGGING['loggers']['django.request']['handlers'].append('console')
+
+CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)

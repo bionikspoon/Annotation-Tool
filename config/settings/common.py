@@ -42,7 +42,6 @@ DJANGO_APPS = (  # :off
 
 THIRD_PARTY_APPS = (  # :off
 
-    'floppyforms',
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
@@ -55,7 +54,8 @@ LOCAL_APPS = (
 
     'annotation_tool.users',  # custom users app
     # Your stuff: custom apps go here
-    'pubmed'
+    'core',
+    'pubmed',
 
 )
 

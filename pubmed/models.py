@@ -6,6 +6,68 @@ from model_utils.models import TimeStampedModel
 from annotation_tool.users.models import User
 
 
+class LookupTable(TimeStampedModel):
+    choice = models.CharField(max_length=100, unique=True)
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.choice
+
+
+class StructureLookup(LookupTable):
+    pass
+
+
+class MutationTypeLookup(LookupTable):
+    pass
+
+
+class SyntaxLookup(LookupTable):
+    pass
+
+
+class OperatorLookup(LookupTable):
+    pass
+
+
+class RuleLevelLookup(LookupTable):
+    pass
+
+
+class BreakendStrandLookup(LookupTable):
+    pass
+
+
+class BreakendDirectionLookup(LookupTable):
+    pass
+
+
+class MateBreakendStrandLookup(LookupTable):
+    pass
+
+
+class VariantTypeLookup(LookupTable):
+    pass
+
+
+class VariantConsequenceLookup(LookupTable):
+    pass
+
+
+class SexLookup(LookupTable):
+    pass
+
+
+class AssessedPatientOutcomeLookup(LookupTable):
+    pass
+
+
+class SignificantPatientOutcomeLookup(LookupTable):
+    pass
+
+
 class Entry(TimeStampedModel):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False,
                              related_name='pubmed_entries',
@@ -55,3 +117,6 @@ class Entry(TimeStampedModel):
 
     def get_absolute_url(self):
         return reverse('pubmed:detail', kwargs={'pk': self.id})
+
+    def __str__(self):
+        return self.pubmed_id
