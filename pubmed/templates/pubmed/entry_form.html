@@ -13,6 +13,10 @@
   <script src="{% static 'pubmed/js/main.js' %}"></script>
 {% endblock javascript %}
 
+{% block page_header_h1 %}
+{{ action_text }} Entry
+{% endblock %}
+
 {% block content %}
   {% crispy form %}
 {% endblock %}

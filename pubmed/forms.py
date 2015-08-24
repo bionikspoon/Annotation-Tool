@@ -12,6 +12,12 @@ from braces.forms import UserKwargModelFormMixin
 from .models import Entry
 
 
+class SubmitContext(Submit):
+    def render(self, form, form_style, context, **kwargs):
+        self.value = context.get('action_text') or self.value
+        return super().render(form, form_style, context, **kwargs)
+
+
 class ModelChoiceField(forms.ModelChoiceField):
     widget = forms.RadioSelect
     empty_label = 'Null'
@@ -35,7 +41,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(SubmitContext('submit', 'Submit'))
         self.helper.form_class = 'form-horizontal'
         self.helper.label_class = 'col-xs-4 col-md-3 col-lg-2'
         self.helper.field_class = 'col-xs-8 col-md-9 col-lg-10'

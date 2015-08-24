@@ -1,14 +1,17 @@
 {% extends 'core/base.html' %}
 
+{% block page_header_h1 %}
+  Pubmed Entries
+{% endblock page_header_h1 %}
+
 {% block content %}
-  <h2>Pubmed Entries</h2>
 
   <table class="table">
     <thead>
     <tr>
 
       <td>Pubmed Id</td>
-      <td>&nbsp;</td>
+      {#<td>&nbsp;</td>#}
       <td>&nbsp;</td>
       <td>Created</td>
       <td>Updated</td>
@@ -21,11 +24,11 @@
     {% for entry in entry_list %}
       <tr>
         <th scope="row">{{ entry.pubmed_id }}</th>
-        <td>
-          <a href="{% url 'pubmed:detail' entry.id %}">
-            <span class="glyphicon glyphicon-eye-open"></span>
-          </a>
-        </td>
+        {#<td>#}
+        {#  <a href="{% url 'pubmed:detail' entry.id %}">#}
+        {#    <span class="glyphicon glyphicon-eye-open"></span>#}
+        {#  </a>#}
+        {#</td>#}
         <td>
           <a href="{% url 'pubmed:update' entry.id %}">
             <span class="glyphicon glyphicon-edit"></span>

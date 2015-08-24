@@ -20,9 +20,18 @@ class EntryFormMixin(LoginRequiredMixin, UserFormKwargsMixin, EntryMixin):
     def success_msg(self):
         return NotImplemented
 
+    @property
+    def action_text(self):
+        return NotImplemented
+
     def form_valid(self, form):
         messages.info(self.request, self.success_msg)
         return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['action_text'] = self.action_text
+        return context
 
 
 class EntryListView(EntryMixin, ListView):
@@ -35,7 +44,10 @@ class EntryDetailView(EntryMixin, DetailView):
 
 class EntryCreateView(EntryFormMixin, CreateView):
     success_msg = 'Entry Created'
+    action_text = 'Create'
+
 
 
 class EntryUpdateView(EntryFormMixin, UpdateView):
     success_msg = 'Entry Updated'
+    action_text = 'Update'
