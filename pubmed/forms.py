@@ -2,18 +2,37 @@
 # coding=utf-8
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from django import forms
 
 from django.forms import ModelForm
+from django.db import models
 
-# noinspection PyPackageRequirements
 from braces.forms import UserKwargModelFormMixin
 
 from .models import Entry
 
 
-class EntryModelForm(UserKwargModelFormMixin, ModelForm):
+class ModelChoiceField(forms.ModelChoiceField):
+    widget = forms.RadioSelect
+    empty_label = 'Null'
 
-    def __init__(self,*args, **kwargs):
+    def __init__(self, empty_label='Null', widget=forms.RadioSelect, *args,
+                 **kwargs):
+        super().__init__(empty_label=empty_label, widget=widget, *args,
+                         **kwargs)
+
+
+def formfield_callback(field, **kwargs):
+    if isinstance(field, models.ForeignKey):
+        return field.formfield(form_class=ModelChoiceField, **kwargs)
+    else:
+        return field.formfield(**kwargs)
+
+
+class EntryModelForm(UserKwargModelFormMixin, ModelForm):
+    formfield_callback = formfield_callback
+
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.add_input(Submit('submit', 'Submit'))
@@ -28,4 +47,3 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     class Meta:
         model = Entry
         fields = '__all__'
-
