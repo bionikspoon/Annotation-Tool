@@ -2,12 +2,16 @@
 <html
   {% block html_attrs %}
     lang="en"
-  {% endblock %}
+  {% endblock html_attrs %}
   >
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>{% block title %}Annotation Tool{% endblock title %}</title>
+  <title>
+    {% block title %}
+      Annotation Tool
+    {% endblock title %}
+  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -30,16 +34,16 @@
 
   <!-- This file store project specific CSS -->
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
-  {% endblock %}
+  {% endblock css %}
 
   {% block angular %}
-  {% endblock %}
+  {% endblock angular %}
 
 </head>
 
 <body>
 
-{% include 'partials/nav.html' %}
+{% include 'partials/_nav.html' %}
 
 <div class="container">
 
