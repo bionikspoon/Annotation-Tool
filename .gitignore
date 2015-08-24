@@ -54,4 +54,5 @@ node_modules/
 
 # virtual environments
 !.env.sample
-.env*
+.env
+.env.production
