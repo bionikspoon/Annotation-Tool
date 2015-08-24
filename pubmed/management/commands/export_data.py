@@ -21,12 +21,13 @@ buffer = io.StringIO()
 
 
 class Command(BaseCommand):
-    help = "My shiny new management command."
+    help = "Generate initial data used to populate lookup tables."
 
     def handle(self, *args, **options):
         prepare_summary()
 
         process_input('AssessedPatientOutcome')
+        process_input('Disease')
 
         process_input('SignificantPatientOutcome')
         # process('Treatment')
@@ -94,10 +95,4 @@ def process_input(file_name):
 
 
 if __name__ == '__main__':
-    process_input('AssessedPatientOutcome')
-    process_input('SignificantPatientOutcome')
-    # process('Treatment')
-    process_input('VariantConsequence')
-    process_input('VariantType')
-
-    print_summary()
+    Command().handle()
