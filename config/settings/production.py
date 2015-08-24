@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Production Configurations
 
 - Use djangosecure
@@ -7,7 +7,7 @@ Production Configurations
 - Use mailgun to send emails
 - Use Redis on Heroku
 
-'''
+"""
 from __future__ import absolute_import, unicode_literals
 
 from boto.s3.connection import OrdinaryCallingFormat
@@ -31,7 +31,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 INSTALLED_APPS += ("djangosecure", )
 
 SECURITY_MIDDLEWARE = (
+
     'djangosecure.middleware.SecurityMiddleware',
+
 )
 
 
@@ -110,9 +112,13 @@ SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 # ------------------------------------------------------------------------------
 # See:
 # https://docs.djangoproject.com/en/dev/ref/templates/api/#django.template.loaders.cached.Loader
-TEMPLATES[0]['OPTIONS']['loaders'] = [
-    ('django.template.loaders.cached.Loader', [
-        'django.template.loaders.filesystem.Loader', 'django.template.loaders.app_directories.Loader', ]),
+TEMPLATES[0]['OPTIONS']['loaders'] = [(
+        'django.template.loaders.cached.Loader',
+        [
+
+        'django.template.loaders.filesystem.Loader', 'django.template.loaders.app_directories.Loader',
+
+        ]),
 ]
 
 # DATABASE CONFIGURATION

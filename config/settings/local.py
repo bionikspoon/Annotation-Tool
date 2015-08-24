@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Local settings
 
 - Run in Debug mode
 - Use console backend for emails
 - Add Django Debug Toolbar
 - Add django-extensions as app
-'''
+"""
 
+# noinspection PyPackageRequirements
 import environ
 
 environ.Env().read_env('.env')
 
 from .common import *  # noqa
-
 
 
 # DEBUG
@@ -52,7 +52,9 @@ INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
+
         'debug_toolbar.panels.redirects.RedirectsPanel',
+
     ],
     'SHOW_TEMPLATE_CONTEXT': True,
 }
@@ -69,7 +71,6 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 LOGGING['handlers']['file'] = {
-
     'level': 'DEBUG',
     'class': 'logging.FileHandler',
     'filename': str(ROOT_DIR.path('logs', 'debug.log')),
@@ -77,10 +78,9 @@ LOGGING['handlers']['file'] = {
 }
 LOGGING['loggers']['django.request']['handlers'].append('file')
 
-LOGGING['handlers']['console'] = {
-
+LOGGING['handlers']['console'] = {  # :off
     'level': 'DEBUG',
     'class': 'logging.StreamHandler',
 
-}
+}  # :on
 # LOGGING['loggers']['django.request']['handlers'].append('console')
