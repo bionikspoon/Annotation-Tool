@@ -27,7 +27,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # django-secure
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += ("djangosecure",)
+INSTALLED_APPS += (
+    "djangosecure",
+)
 
 SECURITY_MIDDLEWARE = (
 
