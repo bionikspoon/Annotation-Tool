@@ -1,3 +1,6 @@
+var path = require('path');
+
+
 module.exports = function (grunt) {
 
   var appConfig = grunt.file.readJSON('package.json');
@@ -11,43 +14,46 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   var pathsConfig = function (appName) {
+    var DIR = path.resolve('.');
     this.app = appName || appConfig.name;
 
+    console.log(this.app);
+
     return {
-      app: this.app,
-      templates: this.app + '/templates',
-      css: this.app + '/static/css',
-      sass: this.app + '/static/sass',
-      fonts: this.app + '/static/fonts',
-      images: this.app + '/static/images',
-      js: this.app + '/static/js',
+      app:          this.app,
+      templates:    path.join(DIR, this.app, 'templates'),
+      css:          path.join(DIR, 'core','static','core','css'),
+      sass:         path.join(DIR, 'core','static','core','sass'),
+      fonts:        path.join(DIR, 'core','static','core','fonts'),
+      images:       path.join(DIR, 'core','static','core','images'),
+      js:           path.join(DIR, 'core','static','core','js'),
       manageScript: 'manage.py',
-      
+
     }
   };
 
   grunt.initConfig({
 
     paths: pathsConfig(),
-    pkg: appConfig,
+    pkg:   appConfig,
 
     // see: https://github.com/gruntjs/grunt-contrib-watch
     watch: {
-      gruntfile: {
+      gruntfile:  {
         files: ['Gruntfile.js']
       },
-      compass: {
+      compass:    {
         files: ['<%= paths.sass %>/**/*.{scss,sass}'],
         tasks: ['compass:server']
       },
       livereload: {
-        files: [
+        files:   [
           '<%= paths.js %>/**/*.js',
           '<%= paths.sass %>/**/*.{scss,sass}',
           '<%= paths.app %>/**/*.html'
-          ],
+        ],
         options: {
-          spawn: false,
+          spawn:      false,
           livereload: true,
         },
       },
@@ -56,20 +62,20 @@ module.exports = function (grunt) {
     // see: https://github.com/gruntjs/grunt-contrib-compass
     compass: {
       options: {
-          sassDir: '<%= paths.sass %>',
-          cssDir: '<%= paths.css %>',
-          fontsDir: '<%= paths.fonts %>',
-          imagesDir: '<%= paths.images %>',
-          relativeAssets: false,
-          assetCacheBuster: false,
-          raw: 'Sass::Script::Number.precision = 10\n'
+        sassDir:          '<%= paths.sass %>',
+        cssDir:           '<%= paths.css %>',
+        fontsDir:         '<%= paths.fonts %>',
+        imagesDir:        '<%= paths.images %>',
+        relativeAssets:   false,
+        assetCacheBuster: false,
+        raw:              'Sass::Script::Number.precision = 10\n'
       },
-      dist: {
+      dist:    {
         options: {
           environment: 'production'
         }
       },
-      server: {
+      server:  {
         options: {
           // debugInfo: true
         }
@@ -84,13 +90,12 @@ module.exports = function (grunt) {
       runDjango: {
         cmd: 'python <%= paths.manageScript %> runserver_plus'
       },
-      
+
     }
   });
 
   grunt.registerTask('serve', [
-    'bgShell:runDjango',
-    'watch'
+    'bgShell:runDjango', 'watch'
   ]);
 
   grunt.registerTask('build', [
@@ -100,5 +105,5 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'build'
   ]);
-  
+
 };
