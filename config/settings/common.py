@@ -213,7 +213,7 @@ STATIC_URL = '/static/'
 # #std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
 
-    str(APPS_DIR.path('static')),
+    # str(APPS_DIR.path('static')),
 
 )
 

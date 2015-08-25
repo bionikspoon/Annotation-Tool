@@ -1,4 +1,6 @@
-{% load staticfiles i18n %}<!DOCTYPE html>
+{% load static i18n %}
+
+<!DOCTYPE html>
 <html
   {% block html_attrs %}
     lang="en"
@@ -33,7 +35,7 @@
   <!-- Your stuff: Third-party css libraries go here -->
 
   <!-- This file store project specific CSS -->
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/project.css' %}" rel="stylesheet">
   {% endblock css %}
 
   {% block angular %}
@@ -84,7 +86,7 @@
 <!-- Your stuff: Third-party javascript libraries go here -->
 
 <!-- place project specific Javascript in this file -->
-  <script src="{% static 'js/project.js' %}"></script>
+  <script src="{% static 'core/js/project.js' %}"></script>
 {% endblock javascript %}
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
