@@ -35,6 +35,7 @@ DJANGO_APPS = (  # :off
     'django.contrib.humanize',
 
     # Admin
+    'grappelli',
     'django.contrib.admin',
 
 )  # :on
@@ -304,3 +305,5 @@ LOGGING = {
 
 # Your common stuff:
 # Below this line define 3rd party library settings
+
+CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)

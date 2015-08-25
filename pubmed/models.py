@@ -137,7 +137,8 @@ class Entry(TimeStampedModel):
         return reverse('pubmed:detail', kwargs={'pk': self.id})
 
     def __str__(self):
-        return self.pubmed_id
+        gene = ':%s' % self.gene if self.gene else ''
+        return '%s:%s%s' % (self.id, self.pubmed_id, gene)
 
     class Meta:
         verbose_name_plural = 'Entries'

@@ -4,6 +4,8 @@ import re
 
 from django import template
 from django.core.urlresolvers import reverse, NoReverseMatch
+from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
 
 register = template.Library()
@@ -20,4 +22,5 @@ def active_url(context, label, url, *args, **kwargs):
 
     path = context['request'].path
     li_attrs = ' class="active"' if re.search(pattern, path) else ''
-    return template_string.format(li_attrs=li_attrs, url=url, label=_(label))
+    return format_html(template_string, li_attrs=mark_safe(li_attrs), url=url,
+                       label=_(label))
