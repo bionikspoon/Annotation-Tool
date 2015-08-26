@@ -5,7 +5,7 @@ from django.test import override_settings, SimpleTestCase
 
 from ..migrations.initial_data.build import generate_data
 from ..migrations.initial_data import (populate_lookup_tables,
-                                       unpopulate_lookup_tables)
+                                       clean_lookup_tables)
 
 
 @override_settings(DATABASES={'default': {}})

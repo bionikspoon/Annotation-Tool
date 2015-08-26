@@ -12,17 +12,16 @@ LookupModelGroup = namedtuple('LookupModelGroup', ('cls', 'objects'))
 
 class InitialData(object):
     """
-    Empty Base Class.  Collect choices from all subl classes.
+    Empty Base Class.  Collect choices from all sub classes.
     """
     choices = NotImplemented
 
     @classmethod
     def export_flat(cls):
         """
-        Format collected data.
+        Format collected data into flat list of objects.
 
         :return: Flat list of entries.
-        :rtype: list
         """
         return (
 
@@ -36,7 +35,19 @@ class InitialData(object):
 
     @classmethod
     def export_groups(cls):
+        """
+        Format collected data into grouped list of objects.
+
+        :return:
+        """
+
         def choices(subclass):
+            """
+            Format choices for model group.
+
+            :param subclass:
+            :return:
+            """
             return (
 
                 {'pk': pk, 'choice': choice}
@@ -54,6 +65,7 @@ class InitialData(object):
         )
 
 
+# noinspection PyUnusedLocal
 def populate_lookup_tables(apps, schema_editor):
     """
     Create each lookup table entries.
@@ -64,6 +76,7 @@ def populate_lookup_tables(apps, schema_editor):
     """
     for entries in InitialData.export_groups():
         try:
+            # noinspection PyPep8Naming
             Model = apps.get_model('pubmed', entries.cls)
         except LookupError:
             continue
@@ -75,7 +88,8 @@ def populate_lookup_tables(apps, schema_editor):
         )
 
 
-def unpopulate_lookup_tables(apps, schema_editor):
+# noinspection PyUnusedLocal
+def clean_lookup_tables(apps, schema_editor):
     """
     Remove all lookup table entries.
 
@@ -83,9 +97,10 @@ def unpopulate_lookup_tables(apps, schema_editor):
     :param schema_editor:
     :return:
     """
-    for sublcass in InitialData.__subclasses__():
+    for subclass in InitialData.__subclasses__():
         try:
-            Model = apps.get_model('pubmed', sublcass.__name__)
+            # noinspection PyPep8Naming
+            Model = apps.get_model('pubmed', subclass.__name__)
             Model.objects.all().delete()
         except LookupError:
             pass
