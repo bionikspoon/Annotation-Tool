@@ -45,6 +45,13 @@ EMAIL_PORT = 1025
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
                     default='django.core.mail.backends.console.EmailBackend')
 
+
+# DATABASE CONFIGURATION
+# ------------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
+DATABASES['default']['ATOMIC_REQUESTS'] = True
+
 # CACHING
 # ------------------------------------------------------------------------------
 CACHES = {
