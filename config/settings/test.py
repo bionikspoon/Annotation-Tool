@@ -50,7 +50,16 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
-DATABASES['default']['ATOMIC_REQUESTS'] = True
+# DATABASES['default']['ATOMIC_REQUESTS'] = True
+# DATABASES['pg'] = DATABASES['default']
+# DATABASES['pg']['TEST_DEPENDENCIES'] = []
+# DATABASES['default'] = {
+#
+#     'ENGINE': 'django.db.backends.sqlite3',
+#     'ATOMIC_REQUESTS': True,
+#     'TEST_DEPENDENCIES': []
+#
+# }
 
 # CACHING
 # ------------------------------------------------------------------------------

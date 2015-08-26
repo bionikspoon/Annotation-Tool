@@ -1,36 +1,26 @@
 [
     {
-        "fields": {
-            "choice": "Deletion"
-        },
+        "fields": "Deletion",
         "model": "pubmed.VariantTypeLookup",
         "pk": 0
     },
     {
-        "fields": {
-            "choice": "Duplication"
-        },
+        "fields": "Duplication",
         "model": "pubmed.VariantTypeLookup",
         "pk": 1
     },
     {
-        "fields": {
-            "choice": "Indel"
-        },
+        "fields": "Indel",
         "model": "pubmed.VariantTypeLookup",
         "pk": 2
     },
     {
-        "fields": {
-            "choice": "Insertion"
-        },
+        "fields": "Insertion",
         "model": "pubmed.VariantTypeLookup",
         "pk": 3
     },
     {
-        "fields": {
-            "choice": "Substitution"
-        },
+        "fields": "Substitution",
         "model": "pubmed.VariantTypeLookup",
         "pk": 4
     }

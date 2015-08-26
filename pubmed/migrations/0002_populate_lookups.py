@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
         migrations.RunPython(
 
-            code=pubmed.db.populate_lookup_tables,
-            reverse_code=pubmed.db.unpopulate_lookup_tables,
+            code=pubmed.migrations.initial_data.populate_lookup_tables,
+            reverse_code=pubmed.migrations.initial_data.unpopulate_lookup_tables,
 
         ), ]

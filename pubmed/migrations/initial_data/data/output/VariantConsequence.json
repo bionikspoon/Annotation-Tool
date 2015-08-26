@@ -1,15 +1,11 @@
 [
     {
-        "fields": {
-            "choice": "Non Synonymous Missense"
-        },
+        "fields": "Non Synonymous Missense",
         "model": "pubmed.VariantConsequenceLookup",
         "pk": 0
     },
     {
-        "fields": {
-            "choice": "Non Synonymous Nonsense"
-        },
+        "fields": "Non Synonymous Nonsense",
         "model": "pubmed.VariantConsequenceLookup",
         "pk": 1
     }

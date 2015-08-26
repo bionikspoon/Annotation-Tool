@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
-from pubmed.db import InitialData
+from . import InitialData
 
 
 class StructureLookup(InitialData):

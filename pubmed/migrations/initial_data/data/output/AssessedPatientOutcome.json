@@ -1,120 +1,86 @@
 [
     {
-        "fields": {
-            "choice": "Disease Progression"
-        },
+        "fields": "Disease Progression",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 0
     },
     {
-        "fields": {
-            "choice": "Disease-Control Rate"
-        },
+        "fields": "Disease-Control Rate",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 1
     },
     {
-        "fields": {
-            "choice": "Disease-Free Survival"
-        },
+        "fields": "Disease-Free Survival",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 2
     },
     {
-        "fields": {
-            "choice": "Event-Free Survival"
-        },
+        "fields": "Event-Free Survival",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 3
     },
     {
-        "fields": {
-            "choice": "Median Survival"
-        },
+        "fields": "Median Survival",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 4
     },
     {
-        "fields": {
-            "choice": "Objective Response"
-        },
+        "fields": "Objective Response",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 5
     },
     {
-        "fields": {
-            "choice": "Overall Response Rate"
-        },
+        "fields": "Overall Response Rate",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 6
     },
     {
-        "fields": {
-            "choice": "Overall Survival"
-        },
+        "fields": "Overall Survival",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 7
     },
     {
-        "fields": {
-            "choice": "Post-Recurrence Survival"
-        },
+        "fields": "Post-Recurrence Survival",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 8
     },
     {
-        "fields": {
-            "choice": "Prognosis"
-        },
+        "fields": "Prognosis",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 9
     },
     {
-        "fields": {
-            "choice": "Progression-Free Survival"
-        },
+        "fields": "Progression-Free Survival",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 10
     },
     {
-        "fields": {
-            "choice": "Remission"
-        },
+        "fields": "Remission",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 11
     },
     {
-        "fields": {
-            "choice": "Response Rate"
-        },
+        "fields": "Response Rate",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 12
     },
     {
-        "fields": {
-            "choice": "Time To Progression"
-        },
+        "fields": "Time To Progression",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 13
     },
     {
-        "fields": {
-            "choice": "Time To Relapse"
-        },
+        "fields": "Time To Relapse",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 14
     },
     {
-        "fields": {
-            "choice": "Toxicity"
-        },
+        "fields": "Toxicity",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 15
     },
     {
-        "fields": {
-            "choice": "Treatment-Related Mortality"
-        },
+        "fields": "Treatment-Related Mortality",
         "model": "pubmed.AssessedPatientOutcomeLookup",
         "pk": 16
     }
