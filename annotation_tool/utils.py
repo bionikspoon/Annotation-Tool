@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
-from test_plus.test import TestCase, CBVTestCase
+import test_plus.test
 from annotation_tool.users.factories import UserFactory
 
 
@@ -9,9 +9,9 @@ class BaseTestMixin(object):
     user_factory = UserFactory
 
 
-class BaseTestCase(BaseTestMixin, TestCase):
+class BaseTestCase(BaseTestMixin, test_plus.test.TestCase):
     pass
 
 
-class BaseCBVTestCase(BaseTestMixin, CBVTestCase):
+class BaseCBVTestCase(BaseTestMixin, test_plus.test.CBVTestCase):
     pass
