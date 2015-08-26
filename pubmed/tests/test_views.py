@@ -4,12 +4,10 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 
-from .. import views
+from .. import views, factories
 from annotation_tool.utils import BaseTestCase, BaseCBVTestCase
-from pubmed.factories import EntryFactory
 
 
-# noinspection PyUnresolvedReferences
 class EntryListViewTest(BaseCBVTestCase):
     view = views.EntryListView
 
@@ -21,18 +19,17 @@ class EntryListViewTest(BaseCBVTestCase):
         self.assertFalse(self.get_context('entry_list'))
 
     def test_normal_response_with_populated_list(self):
-        entry = EntryFactory()
+        entry = factories.EntryFactory()
 
         self.assertGoodView(self.view)
         self.assertIn(entry, self.get_context('entry_list'))
 
 
-# noinspection PyUnresolvedReferences
 class EntryDetailViewTest(BaseCBVTestCase):
     view = views.EntryDetailView
 
     def test_normal_response(self):
-        entry = EntryFactory()
+        entry = factories.EntryFactory()
 
         response = self.assertGoodView(self.view, pk=entry.pk)
         self.assertContains(response, 'Pubmed Entry')
@@ -47,35 +44,64 @@ class EntryDetailViewTest(BaseCBVTestCase):
 
 
 # noinspection PyUnresolvedReferences
-class EntryCreateViewTest(BaseTestCase):
-    url = 'pubmed:create'
+class EntryFormMixin(object):
+    url = NotImplemented
+    action = NotImplemented
+    entry = NotImplemented
+    user = NotImplemented
+    data_url = NotImplemented
+    template = 'pubmed/entry_form.html'
+    data = {'data': {'pubmed_id': 1}}
 
-    def test_with_logged_in_user(self):
-        user = self.make_user()
-
-        with self.login(user):
-            response = self.assertGoodView(self.url)
-        self.assertContains(response, 'Create Entry')
-        self.assertTemplateUsed(response, 'pubmed/entry_form.html')
+    def setUp(self):
+        self.user = self.make_user()
+        self.data_url = dict(self.url, **self.data)
 
     def test_auth_required(self):
-        self.assertLoginRequired(self.url)
+        """Test login required."""
+        self.assertLoginRequired(**self.url)
 
-    def test_with_anonymous_user(self):
-        response = self.get(self.url)
-        redirect_url = "%s?next=%s" % (
-            self.reverse('account_login'), self.reverse(self.url))
+    def test_without_logged_in_user(self):
+        """Test template is not even accessed for anonymous users"""
+        response = self.get(**self.url)
 
-        self.assertRedirects(response, redirect_url)
+        self.response_302()
+        self.assertTemplateNotUsed(response, self.template)
+
+    def test_with_logged_in_user(self):
+        """Test view works with auth user."""
+
+        with self.login(self.user):
+            response = self.assertGoodView(**self.url)
+        self.assertContains(response, '%s Entry' % self.action)
+        self.assertTemplateUsed(response, self.template)
+        self.assertContext('action_text', self.action)
+
+    def test_without_logged_in_user__post_with_data(self):
+        self.post(**self.data_url)
+        self.response_403()
+
+    def test_with_logged_in_user__post_with_data(self):
+        with self.login(self.user):
+            self.post(**self.data_url)
+        self.response_201()
+
+    def test_with_logged_in_user__post_without_data(self):
+        with self.login(self.user):
+            self.post(**self.url)
+        self.response_302()
 
 
-# noinspection PyUnresolvedReferences
-class EntryUpdateViewTest(BaseTestCase):
-    url = 'pubmed:update'
+class EntryCreateViewTest(EntryFormMixin, BaseTestCase):
+    url = {'url_name': 'pubmed:create'}
+    action = 'Create'
 
-    def test_normal_response(self):
-        entry = EntryFactory()
 
-        response = self.assertGoodView(self.url, pk=entry.pk)
-        self.assertContains(response, 'Pubmed Entry')
-        self.assertTemplateUsed(response, 'pubmed/entry_form.html')
+class EntryUpdateViewTest(EntryFormMixin, BaseTestCase):
+    entry = factories.EntryFactory()
+    url = {'url_name': 'pubmed:update', 'pk': entry.pk}
+    action = 'Update'
+
+    def setUp(self):
+        self.entry.save()
+        super().setUp()

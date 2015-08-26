@@ -29,12 +29,12 @@ TEMPLATES[0]['OPTIONS']['context_processors'] = [
 
     # 'django.template.context_processors.debug',
     'django.template.context_processors.request',
-    # 'django.contrib.auth.context_processors.auth',
+    'django.contrib.auth.context_processors.auth',
     # 'django.template.context_processors.i18n',
     # 'django.template.context_processors.media',
     # 'django.template.context_processors.static',
     # 'django.template.context_processors.tz',
-    # 'django.contrib.messages.context_processors.messages',
+    'django.contrib.messages.context_processors.messages',
 
 ]
 
@@ -90,9 +90,9 @@ CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
 MIDDLEWARE_CLASSES = (
 
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    # 'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 
 )
 
@@ -101,7 +101,7 @@ MIDDLEWARE_CLASSES = (
 AUTHENTICATION_BACKENDS = (
 
     'django.contrib.auth.backends.ModelBackend',
-    # 'allauth.account.auth_backends.AuthenticationBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 
 )
 
