@@ -16,11 +16,11 @@ class CONFIG(object):
     data = settings.ROOT_DIR.path('pubmed', 'migrations', 'initial_data',
                                   'data')
     module = 'pubmed'
-    input = data.path('input')
-    output = data.path('output')
+    data_input = data.path('input')
+    data_output = data.path('output')
 
-    summary_fp = data - 1
-    summary = 'generated_data.py'
+    summary_dir = data - 1
+    summary_file = 'generated_data.py'
 
 
 # noinspection PyUnresolvedReferences
@@ -28,18 +28,31 @@ class SummaryManager(object):
     """Generated Data."""
 
     IMPORT_LINE = "from . import InitialData"
-    OUT_FILE = lambda *args: CONFIG.summary_fp.file(CONFIG.summary, 'w')
+    # fp = lambda *args: CONFIG.summary_dir.file(CONFIG.summary_file, 'w')
+    fp = CONFIG.summary_dir.file(CONFIG.summary_file, 'w')
 
     def __init__(self):
         self.buffer = StringIO()
         self.build_header()
 
     def write(self, line='', indent=0):
-        TAB = '    '
-        line = '%s%s' % (TAB * indent, line)
+        """
+        Write line to buffer.
+
+        :type line: str
+        :type indent: int
+        :return:
+        """
+        _tab = '    '
+        line = '%s%s' % (_tab * indent, line)
         self.buffer.write('%s\n' % line)
 
     def build_header(self):
+        """
+        Write file header.
+
+        :return:
+        """
         self.write('#!/usr/bin/env python')
         self.write('# coding=utf-8')
         self.write('"""\n%s\n"""\n' % self.__doc__)
@@ -47,6 +60,13 @@ class SummaryManager(object):
         self.write()
 
     def add_model(self, model, choices):
+        """
+        Write model definition.
+
+        :type model: str
+        :type choices: set
+        :return:
+        """
         if not choices:
             return
 
@@ -59,7 +79,12 @@ class SummaryManager(object):
         self.write('\n')
 
     def save(self):
-        with self.OUT_FILE() as f:
+        """
+        Write buffer to file.
+
+        :return:
+        """
+        with self.fp() as f:
             print(self)
             f.write(str(self))
 
@@ -69,15 +94,27 @@ class SummaryManager(object):
     def __enter__(self):
         return self
 
+    # noinspection PyUnusedLocal
     def __exit__(self, exc_type, exc_val, exc_tb):
+        """
+        Save file. Close buffer.
+
+        :type exc_type: builtins.NoneType
+        :type exc_val: builtins.NoneType
+        :type exc_tb: builtins.NoneType
+        :return:
+        """
         if not exc_type:
             self.save()
         self.buffer.close()
 
 
 class ModelFactory(object):
-    data_in = CONFIG.input
-    data_out = CONFIG.output
+    """
+    Parse raw data.
+    """
+    data_in = CONFIG.data_input
+    data_out = CONFIG.data_output
     fixture_prefix = CONFIG.module
     model_name = NotImplemented
     file_name = NotImplemented
@@ -98,14 +135,27 @@ class ModelFactory(object):
             self.manager.add_model(self.model_name, self.model_choices)
 
         fixture = self.prepare_fixture()
-        dump_pretty_json(fixture, self.json_file_name)
+        pprint_json(fixture, self.json_file_name)
 
     @classmethod
     def with_manager(cls, manager):
+        """
+        Set manager instance.
+
+        :param manager:
+        :return:
+        """
         cls.manager = manager
         return cls
 
-    def get_choices(self, data):
+    @staticmethod
+    def get_choices(data):
+        """
+        Parse raw data into a unique set of choices.
+
+        :type data: list
+        :return:
+        """
         # split by newline and ";",  filter empty, flatten
         data = set(chain(*[re.split(r'; ?', line) for line in data if line]))
 
@@ -121,17 +171,34 @@ class ModelFactory(object):
         return set(data)
 
     def prepare_fixture(self):
+        """
+        Convert model into a JSON friendly list.
+
+        :return:
+        """
         fixture_name = '%s.%s' % (self.fixture_prefix, self.model_name)
         return [{'model': fixture_name, 'pk': pk, 'fields': data} for pk, data
                 in enumerate(sorted(self.model_choices))]
 
 
-def dump_pretty_json(data, fp):
-    with CONFIG.output.file(fp, 'w') as f:
+def pprint_json(data, fp):
+    """
+    Pretty print JSON.
+
+    :type data: list
+    :type fp: str
+    :return:
+    """
+    with CONFIG.data_output.file(fp, 'w') as f:
         json.dump(data, f, sort_keys=True, indent=4, separators=(',', ': '))
 
 
 def generate_data():
+    """
+    Generate data from input directory.
+
+    :return:
+    """
     with SummaryManager() as summary:
         process = ModelFactory.with_manager(summary)
         process('AssessedPatientOutcome')
