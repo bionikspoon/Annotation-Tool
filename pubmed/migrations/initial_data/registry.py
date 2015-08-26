@@ -7,6 +7,7 @@ from collections import namedtuple
 from pprint import pprint
 
 LookupChoice = namedtuple('LookupChoice', ('cls', 'pk', 'choice'))
+LookupModelGroup = namedtuple('LookupModelGroup', ('cls', 'objects'))
 
 
 class InitialData(object):
@@ -33,21 +34,45 @@ class InitialData(object):
 
         )
 
+    @classmethod
+    def export_groups(cls):
+        def choices(subclass):
+            return (
+
+                {'pk': pk, 'choice': choice}
+
+                for pk, choice in enumerate(subclass.choices)
+
+            )
+
+        return (
+
+            LookupModelGroup(subclass.__name__, choices(subclass))
+
+            for subclass in cls.__subclasses__()
+
+        )
+
 
 def populate_lookup_tables(apps, schema_editor):
     """
-    Create each lookup table entry.
+    Create each lookup table entries.
 
     :param apps:
     :param schema_editor:
     :return:
     """
-    for entry in InitialData.export_flat():
+    for entries in InitialData.export_groups():
         try:
-            Model = apps.get_model('pubmed', entry.cls)
-            Model.objects.create(pk=entry.pk, choice=entry.choice)
+            Model = apps.get_model('pubmed', entries.cls)
         except LookupError:
-            pass
+            continue
+
+        Model.objects.bulk_create(
+
+            Model(**entry) for entry in entries.objects
+
+        )
 
 
 def unpopulate_lookup_tables(apps, schema_editor):

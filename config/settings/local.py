@@ -7,10 +7,8 @@ Local settings
 - Add Django Debug Toolbar
 - Add django-extensions as app
 """
-
-# noinspection PyPackageRequirements
-
-
+from environ import Env
+Env().read_env('.env')
 from .common import *  # noqa
 
 

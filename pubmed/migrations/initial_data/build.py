@@ -66,7 +66,12 @@ class SummaryManager(object):
     def __str__(self):
         return self.buffer.getvalue()
 
+    def __enter__(self):
+        return self
+
     def __exit__(self, exc_type, exc_val, exc_tb):
+        if not exc_type:
+            self.save()
         self.buffer.close()
 
 
@@ -127,14 +132,12 @@ def dump_pretty_json(data, fp):
 
 
 def generate_data():
-    summary = SummaryManager()
-    process = ModelFactory.with_manager(summary)
-    process('AssessedPatientOutcome')
-    process('Disease')
+    with SummaryManager() as summary:
+        process = ModelFactory.with_manager(summary)
+        process('AssessedPatientOutcome')
+        process('Disease')
 
-    process('SignificantPatientOutcome')
-    # process('Treatment')
-    process('VariantConsequence')
-    process('VariantType')
-
-    summary.save()
+        process('SignificantPatientOutcome')
+        process('Treatment')
+        process('VariantConsequence')
+        process('VariantType')

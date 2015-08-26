@@ -81,6 +81,68 @@ class SignificantPatientOutcomeLookup(InitialData):
     ]
 
 
+class TreatmentLookup(InitialData):
+    choices = [
+
+        '5-Fluorouracil'
+        '5-FuLv'
+        'And Irinotecan'
+        'And Mitomycin'
+        'Bevacizumab'
+        'Calgb 89803'
+        'Capecitabine'
+        'Capecitabine Irinotecan Or Oxaliplatin Plus Cetuximab'
+        'Capecitabine Or 5-Fluorouracil (5- Fu) Oxaliplatin'
+        'Carboplatin'
+        'Cetuximab'
+        'Cetuximab Plus Chemotherapy'
+        'Cetuximab With Irinotecan And'
+        'Cyclophosphamide'
+        'Dabrafenib'
+        'Dabrafenib Or Dacarbazine'
+        'Dacarbazine'
+        'Dacarbazine Cisplatin Vinblastine And Tamoxifen'
+        'Docetaxel Erlotinib Or Temsirolimus'
+        'Fluoropirimidins'
+        'Fluorouracil'
+        'Folfiri'
+        'Folfox'
+        'Folinic Acid'
+        'Fu And Lv (Ifl)'
+        'FuIrinotecan'
+        'FuOxaliplatin'
+        'Imatinib'
+        'Ipilimumab'
+        'Irinotecan'
+        'Irinotecan (Cpt11)'
+        'Irinotecan With Fluorouracil (Fu)Leucovorin'
+        'Leucovorin'
+        'Leucovorin (FuLv)'
+        'Or Cetuximab'
+        'Or Irinotecan And Bevacizumab'
+        'Oxaliplatin'
+        'Paclitaxel'
+        'Panitumumab'
+        'Panitumumab And Cetuximab'
+        'Plx4032'
+        'Radioactive Iodine Therapy'
+        'Radioiodine'
+        'Radiotherapy'
+        'Selumetinib'
+        'Selumetinib In Combination With Dacarbazine'
+        'Standard Chemotherapy'
+        'Standard First Line Chemo Therapy'
+        'Surgical And Chemotherapy'
+        'Systemic Chemotherapy'
+        'Temozolomide'
+        'Thyroidectomy'
+        'Trametinib'
+        'Vemurafenib'
+        'With Interleukin 2 And Ifnα-2B'
+
+    ]
+
+
 class VariantConsequenceLookup(InitialData):
     choices = [
 
