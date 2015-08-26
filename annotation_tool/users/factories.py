@@ -2,9 +2,10 @@
 # coding=utf-8
 
 from factory.django import DjangoModelFactory
-import factory.faker
+from faker import Faker
 from . import models
 
+faker = Faker()
 
 class UserFactory(DjangoModelFactory):
     class Meta:
@@ -15,7 +16,9 @@ class UserFactory(DjangoModelFactory):
         manager = cls._get_manager(model_class)
         return manager.create_user(*args, **kwargs)
 
-    username = Faker('user_name')
+    username = faker.user_name()
+    email = faker.email()
+    name = faker.name()
 
 
 class SuperUserFactory(UserFactory):
