@@ -49,7 +49,7 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
+# DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
 # DATABASES['default']['ATOMIC_REQUESTS'] = True
 # DATABASES['pg'] = DATABASES['default']
 # DATABASES['pg']['TEST_DEPENDENCIES'] = []

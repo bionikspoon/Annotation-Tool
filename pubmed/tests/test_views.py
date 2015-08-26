@@ -1,41 +1,46 @@
 #!/usr/bin/env python
 # coding=utf-8
-from django.core.urlresolvers import reverse
-from django.test import TestCase, SimpleTestCase
 
-from .. import models
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import Http404
+
+from .. import views
+from annotation_tool.utils import BaseTestCase, BaseCBVTestCase
 from pubmed.factories import EntryFactory
 
 
-class EntryListViewTest(SimpleTestCase):
-    url = reverse('pubmed:list')
+# noinspection PyUnresolvedReferences
+class EntryListViewTest(BaseCBVTestCase):
+    view = views.EntryListView
 
     def test_normal_response_with_empty_list(self):
-        response = self.client.get(self.url)
-        entry_list = response.context_data['entry_list']
+        response = self.assertGoodView(self.view)
 
         self.assertContains(response, 'Pubmed Entries')
         self.assertTemplateUsed(response, 'pubmed/entry_list.html')
-        self.assertFalse(entry_list)
-        self.assertIs(type(entry_list.model), type(models.Entry))
+        self.assertFalse(self.get_context('entry_list'))
 
     def test_normal_response_with_populated_list(self):
         entry = EntryFactory()
 
-        response = self.client.get(self.url)
-        entry_list = response.context_data['entry_list']
-
-        self.assertIn(entry, entry_list)
+        self.assertGoodView(self.view)
+        self.assertIn(entry, self.get_context('entry_list'))
 
 
-class EntryDetailViewTest(TestCase):
+# noinspection PyUnresolvedReferences
+class EntryDetailViewTest(BaseCBVTestCase):
+    view = views.EntryDetailView
+
     def test_normal_response(self):
         entry = EntryFactory()
 
-        url = reverse('pubmed:detail', kwargs={'pk': entry.pk})
-
-        response = self.client.get(url)
+        response = self.assertGoodView(self.view, pk=entry.pk)
         self.assertContains(response, 'Pubmed Entry')
         self.assertTemplateUsed(response, 'pubmed/entry_detail.html')
 
         self.assertEqual(entry, response.context_data['entry'])
+
+    def test_not_found_response(self):
+        with self.assertRaises(Http404), self.assertRaises(ObjectDoesNotExist):
+            self.get(self.view, pk=1)
+            self.response_404()
