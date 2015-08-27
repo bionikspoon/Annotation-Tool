@@ -3,7 +3,7 @@
 from crispy_forms.bootstrap import InlineField, InlineRadios, FormActions
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import (Submit, Field, Layout, Fieldset, Button,
-                                 MultiField, Div)
+    MultiField, Div, Row, Column, HTML)
 from django import forms
 from django.db.models import BLANK_CHOICE_DASH
 
@@ -15,6 +15,7 @@ from braces.forms import UserKwargModelFormMixin
 from .models import Entry
 
 BLANK_CHOICE_DASH[0] = ("", "Null")
+
 
 class SubmitContext(Submit):
     def render(self, form, form_style, context, **kwargs):
@@ -66,21 +67,29 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
                 'Gene Description', 'gene', 'structure', 'mutation_type',
                 'syntax', 'syntax_text', 'operator', 'rule_level',
 
-                Div(
+                Row(
 
-                    'chromosome', 'start', 'stop', 'breakend_strand',
-                    'breakend_direction',
+                    Column(
 
-                    css_class='well well-sm'
+                        'chromosome', 'start', 'stop', 'breakend_strand',
+                        'breakend_direction',
 
-                ),
+                        css_class='col-lg-6'
 
-                Div(
+                    ),
 
-                    'mate_chromosome', 'mate_start', 'mate_end',
-                    'mate_breakend_strand',
+                    HTML('<hr class="hidden-lg">'),
 
-                    css_class='well well-sm'
+                    Column(
+
+                        'mate_chromosome', 'mate_start', 'mate_end',
+                        'mate_breakend_strand',
+
+                        css_class='col-lg-6'
+
+                    ),
+
+                    css_class='well',
 
                 ),
 

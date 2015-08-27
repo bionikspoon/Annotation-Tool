@@ -26,12 +26,12 @@ DJANGO_APPS = (  # :off
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
     # Useful template tags:
-    'django.contrib.humanize',
+    # 'django.contrib.humanize',
 
 )  # :on
 
@@ -47,7 +47,7 @@ THIRD_PARTY_APPS = (  # :off
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
-    # 'allauth.socialaccount',  # registration
+    'allauth.socialaccount',  # registration
 
 )  # :on
 
