@@ -63,3 +63,4 @@ staticfiles/
 
 .venv
 wheelhouse/
+logs/

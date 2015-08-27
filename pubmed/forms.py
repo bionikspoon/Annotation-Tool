@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
+from crispy_forms.layout import Submit, Field, Layout
 from django import forms
 
 from django.forms import ModelForm
@@ -45,6 +45,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
         self.helper.form_class = 'form-horizontal'
         self.helper.label_class = 'col-xs-4 col-md-3 col-lg-2'
         self.helper.field_class = 'col-xs-8 col-md-9 col-lg-10'
+        self.helper.html5_required = True
 
     def save(self, commit=True):
         self.instance.user = self.user
