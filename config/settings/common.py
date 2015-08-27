@@ -13,7 +13,7 @@ from __future__ import absolute_import, unicode_literals
 # noinspection PyPackageRequirements
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
+ROOT_DIR = environ.Path(__file__) - 3  # /annotation-tool/
 APPS_DIR = ROOT_DIR.path('annotation_tool')
 
 env = environ.Env()
@@ -30,7 +30,6 @@ DJANGO_APPS = (  # :off
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
-
     # Useful template tags:
     'django.contrib.humanize',
 
@@ -63,8 +62,6 @@ LOCAL_APPS = (
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + THIRD_PARTY_APPS + LOCAL_APPS
-
-
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -163,12 +160,7 @@ TEMPLATES = [{
     # #std:setting-TEMPLATES-BACKEND
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-    'DIRS': [
-
-        str(APPS_DIR.path('templates')),
-
-    ],
-
+    'DIRS': [str(APPS_DIR.path('templates'))],
     'OPTIONS': {
         # See: https://docs.djangoproject.com/en/dev/ref/settings/
         # #template-debug
@@ -179,7 +171,7 @@ TEMPLATES = [{
         'loaders': [
 
             'django.template.loaders.filesystem.Loader',
-            'django.template.loaders.app_directories.Loader',
+            'django.template.loaders.app_directories.Loader'
 
         ],
 
@@ -197,10 +189,9 @@ TEMPLATES = [{
             'django.contrib.messages.context_processors.messages',
             # Your stuff: custom template context processors go here
 
-        ],  # :off
-        },
-    },
-]  # :on
+        ]
+    }
+}]
 
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html
 # #template-packs
@@ -282,27 +273,21 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 
 LOGGING = {
     'version': 1,
-
     'disable_existing_loggers': False,
-
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
         },
-
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue'
         }
-
     },
-
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
-
         'file': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
@@ -311,14 +296,16 @@ LOGGING = {
             'backupCount': 10
         }
     },
-
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'], 'level': 'ERROR', 'propagate': True
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True
         },
-
         'django': {
-            'handlers': ['file'], 'level': 'DEBUG', 'propagate': True
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True
         }
     }
 }

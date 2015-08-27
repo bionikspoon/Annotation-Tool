@@ -27,9 +27,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # django-secure
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += (
-    "djangosecure",
-)
+INSTALLED_APPS += ("djangosecure",)
 
 SECURITY_MIDDLEWARE = (
 
@@ -137,7 +135,8 @@ CACHES = {
             env.cache_url('REDIS_URL', default="redis://127.0.0.1:6379"), 0),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "IGNORE_EXCEPTIONS": True,  # mimics memcache behavior.
+            "IGNORE_EXCEPTIONS": True
+            # mimics memcache behavior.
             # http://niwinz.github.io/django-redis/latest/
             # #_memcached_exceptions_behavior
         }

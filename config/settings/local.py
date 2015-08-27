@@ -51,11 +51,11 @@ INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
 
-        'debug_toolbar.panels.redirects.RedirectsPanel',
+        'debug_toolbar.panels.redirects.RedirectsPanel'
 
     ],
-
-    'SHOW_TEMPLATE_CONTEXT': True, }
+    'SHOW_TEMPLATE_CONTEXT': True
+}
 
 # django-extensions
 # ------------------------------------------------------------------------------
@@ -68,6 +68,5 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 # Your local stuff: Below this line define 3rd party library settings
 
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
-
 
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)
