@@ -9,22 +9,30 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
 
-    url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
-    url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
+    url(r'^$', TemplateView.as_view(template_name='pages/home.html'),
+        name="home"),
+
+    url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'),
+        name="about"),
 
     # Django Admin
-
     url(r'^admin-ui/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
     # User management
-    url(r'^users/', include("annotation_tool.users.urls", namespace="users")),
+    url(r'^users/', include("annotation_tool.users.urls", namespace="users")
+
+        ),
+
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
     url(r'^pubmed/', include('pubmed.urls', namespace='pubmed'))
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
