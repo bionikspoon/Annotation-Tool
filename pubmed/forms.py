@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
+from crispy_forms.bootstrap import InlineField, InlineRadios
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Field, Layout
 from django import forms
@@ -38,14 +39,16 @@ def formfield_callback(field, **kwargs):
 class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     formfield_callback = formfield_callback
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.add_input(SubmitContext('submit', 'Submit'))
-        self.helper.form_class = 'form-horizontal'
-        self.helper.label_class = 'col-xs-4 col-md-3 col-lg-2'
-        self.helper.field_class = 'col-xs-8 col-md-9 col-lg-10'
-        self.helper.html5_required = True
+    @property
+    def helper(self):
+        helper = FormHelper(self)
+        helper.add_input(SubmitContext('submit', 'Submit'))
+        helper.form_class = 'form-horizontal'
+        helper.label_class = 'col-xs-4 col-md-3 col-lg-2'
+        helper.field_class = 'col-xs-8 col-md-9 col-lg-10'
+        helper.html5_required = True
+        helper.filter_by_widget(forms.RadioSelect).wrap(InlineRadios)
+        return helper
 
     def save(self, commit=True):
         self.instance.user = self.user

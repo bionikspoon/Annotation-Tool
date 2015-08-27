@@ -34,7 +34,10 @@ DJANGO_APPS = (  # :off
     # Useful template tags:
     'django.contrib.humanize',
 
-    # Admin
+)  # :on
+
+ADMIN_APPS = (  # :off
+
     'grappelli',
     'django.contrib.admin',
 
@@ -59,7 +62,8 @@ LOCAL_APPS = (
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
