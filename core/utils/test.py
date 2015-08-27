@@ -2,8 +2,8 @@
 # coding=utf-8
 from django.conf import settings
 from django.core.urlresolvers import reverse, NoReverseMatch
-
 from test_plus.test import CBVTestCase, TestCase
+
 from annotation_tool.users.factories import UserFactory
 
 

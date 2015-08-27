@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 
 from .. import views, factories
-from annotation_tool.utils import BaseTestCase, BaseCBVTestCase
+from core.utils.test import BaseTestCase, BaseCBVTestCase
 
 
 class EntryListViewTest(BaseCBVTestCase):

@@ -53,8 +53,7 @@ THIRD_PARTY_APPS = (  # :off
 LOCAL_APPS = (
 
     'annotation_tool.users',  # custom users app
-    # Your stuff: custom apps go here
-    'core',
+    'core',  # templates and static
     'pubmed',
 
 )
@@ -275,34 +274,113 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
+
+
 LOGGING = {
     'version': 1,
 
     'disable_existing_loggers': False,
 
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %('
+                      'thread)d %(message)s'
+        },
+
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+
+    },
+
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
+        },
+
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue'
         }
+
     },
 
     'handlers': {
+        'null': {
+            'level': 'DEBUG', 'class': 'logging.NullHandler', },
+
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+            'stream': 'ext://sys.stdout'
+
+        },
+
+        'django_handler': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR.path('logs', 'django.log')),
+            'when': 'MIDNIGHT',
+            'formatter': 'verbose',
+            'backupCount': 10,
+
+        },
+
+        'pubmed_handler': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR.path('logs', 'pubmed.log')),
+            'formatter': 'verbose',
+            'backupCount': 10,
+
+        },
+
+        'debug_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR.path('logs', 'debug.log')),
+            'filters': ['require_debug_true'],
+            'formatter': 'verbose',
+            'backupCount': 10,
+
         }
+
     },
 
     'loggers': {
-        'django.request': {  # :off
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
-}  # :on
+        'django': {
+            'handlers': ['null', 'django_handler'],
+            'level': env.str('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': True
 
+        },
+
+        'django.request': {
+            'handlers': ['null', 'mail_admins'],
+            'level': env.str('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': True
+
+        },
+
+        'pubmed': {
+            'handlers': ['null',  'pubmed_handler'],
+            'level': env.str('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': True
+
+        }
+    },
+
+    'root': {
+        'handlers': ['null',  'debug_handler'],
+        'level': env.str('DJANGO_LOG_LEVEL', 'INFO'),
+        'propagate': True,
+
+    }
+
+}
 # Your common stuff:
 # Below this line define 3rd party library settings
 

@@ -8,7 +8,9 @@ Local settings
 - Add django-extensions as app
 """
 from environ import Env
+
 Env().read_env('.env')
+
 from .common import *  # noqa
 
 
@@ -21,7 +23,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default='secret')
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # Mail settings
 # ------------------------------------------------------------------------------
@@ -66,19 +68,6 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 # Your local stuff: Below this line define 3rd party library settings
 
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
-LOGGING['handlers']['file'] = {
-    'level': 'DEBUG',
-    'class': 'logging.FileHandler',
-    'filename': str(ROOT_DIR.path('logs', 'debug.log')),
 
-}
-LOGGING['loggers']['django.request']['handlers'].append('file')
-
-LOGGING['handlers']['console'] = {  # :off
-    'level': 'DEBUG',
-    'class': 'logging.StreamHandler',
-
-}  # :on
-# LOGGING['loggers']['django.request']['handlers'].append('console')
 
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)
