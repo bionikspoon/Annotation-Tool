@@ -70,3 +70,8 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+if not DEBUG:
+    STATIC_URL = '/staticfiles/'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

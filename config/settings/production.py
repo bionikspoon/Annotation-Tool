@@ -55,7 +55,7 @@ SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
 # ------------------------------------------------------------------------------
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['annotation-tool.herokuapp.com']
 # END SITE CONFIGURATION
 
 INSTALLED_APPS += ("gunicorn",)
@@ -78,7 +78,7 @@ AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
 # AWS cache settings, don't change unless you know what you're doing:
 AWS_EXPIRY = 60 * 60 * 24 * 7
 
-# TODO See: https://github.com/jschneier/django-storages/issues/47
+# See: https://github.com/jschneier/django-storages/issues/47
 # Revert the following and use str after the above-mentioned bug is fixed in
 # either django-storage-redux or boto
 AWS_HEADERS = {
