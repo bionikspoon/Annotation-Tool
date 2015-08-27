@@ -2,7 +2,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.contrib.postgres.fields import ArrayField, IntegerRangeField
-from model_utils import FieldTracker
+from model_utils import FieldTracker, Choices
 from model_utils.models import TimeStampedModel
 
 from annotation_tool.users.models import User
@@ -10,6 +10,8 @@ from annotation_tool.users.models import User
 
 class LookupTable(TimeStampedModel):
     choice = models.CharField(max_length=100, unique=True)
+
+    tracker = FieldTracker()
 
     class Meta:
         abstract = True
@@ -83,10 +85,12 @@ class DEFAULTS(object):
 
 
 class Entry(TimeStampedModel):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False,
-                             related_name='pubmed_entries',
-                             on_delete=models.PROTECT)
-    pubmed_id = models.IntegerField()
+    user = models.ForeignKey(
+
+        settings.AUTH_USER_MODEL, editable=False, related_name='pubmed_entries',
+        on_delete=models.PROTECT)
+
+    pubmed_id = models.PositiveIntegerField()
     gene = models.CharField(**DEFAULTS.CharField)
     structure = models.ForeignKey(StructureLookup, **DEFAULTS.ForeignKey)
     mutation_type = models.ForeignKey(MutationTypeLookup, **DEFAULTS.ForeignKey)
@@ -95,38 +99,54 @@ class Entry(TimeStampedModel):
     operator = models.ForeignKey(OperatorLookup, **DEFAULTS.ForeignKey)
     rule_level = models.ForeignKey(RuleLevelLookup, **DEFAULTS.ForeignKey)
     chromosome = models.CharField(**DEFAULTS.CharField)
-    start = models.IntegerField(**DEFAULTS.IntegerField)
-    stop = models.IntegerField(**DEFAULTS.IntegerField)
-    breakend_strand = models.ForeignKey(BreakendStrandLookup,
-                                        **DEFAULTS.ForeignKey)
-    breakend_direction = models.ForeignKey(BreakendDirectionLookup,
-                                           **DEFAULTS.ForeignKey)
+    start = models.PositiveIntegerField(**DEFAULTS.IntegerField)
+    stop = models.PositiveIntegerField(**DEFAULTS.IntegerField)
+    breakend_strand = models.ForeignKey(
+
+        BreakendStrandLookup, **DEFAULTS.ForeignKey)
+
+    breakend_direction = models.ForeignKey(
+
+        BreakendDirectionLookup, **DEFAULTS.ForeignKey)
+
     mate_chromosome = models.CharField(**DEFAULTS.CharField)
-    mate_start = models.IntegerField(**DEFAULTS.IntegerField)
-    mate_end = models.IntegerField(**DEFAULTS.IntegerField)
-    mate_breakend_strand = models.ForeignKey(MateBreakendStrandLookup,
-                                             **DEFAULTS.ForeignKey)
-    minimum_number_of_copies = models.IntegerField(**DEFAULTS.IntegerField)
-    maximum_number_of_copies = models.IntegerField(**DEFAULTS.IntegerField)
+    mate_start = models.PositiveIntegerField(**DEFAULTS.IntegerField)
+    mate_end = models.PositiveIntegerField(**DEFAULTS.IntegerField)
+    mate_breakend_strand = models.ForeignKey(
+
+        MateBreakendStrandLookup, **DEFAULTS.ForeignKey)
+
+    minimum_number_of_copies = models.PositiveIntegerField(
+        **DEFAULTS.IntegerField)
+
+    maximum_number_of_copies = models.PositiveIntegerField(
+        **DEFAULTS.IntegerField)
+
     coordinate_predicate = models.CharField(**DEFAULTS.CharField)
     partner_coordinate_predicate = models.CharField(**DEFAULTS.CharField)
     variant_type = models.ForeignKey(VariantTypeLookup, **DEFAULTS.ForeignKey)
-    variant_consequence = models.ForeignKey(VariantConsequenceLookup,
-                                            **DEFAULTS.ForeignKey)
-    variant_clinical_grade = models.IntegerField(**DEFAULTS.IntegerField)
+    variant_consequence = models.ForeignKey(
+
+        VariantConsequenceLookup, **DEFAULTS.ForeignKey)
+
+    variant_clinical_grade = models.PositiveIntegerField(
+        choices=Choices(*range(1, 6)), **DEFAULTS.IntegerField)
+
     disease = models.ManyToManyField(DiseaseLookup, **DEFAULTS.ManyToManyField)
     treatment_1 = models.CharField(**DEFAULTS.CharField)
     treatment_2 = models.CharField(**DEFAULTS.CharField)
     treatment_3 = models.CharField(**DEFAULTS.CharField)
     treatment_4 = models.CharField(**DEFAULTS.CharField)
     treatment_5 = models.CharField(**DEFAULTS.CharField)
-    population_size = models.IntegerField(**DEFAULTS.IntegerField)
+    population_size = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     sex = models.ForeignKey(SexLookup, **DEFAULTS.ForeignKey)
     ethnicity = models.CharField(**DEFAULTS.CharField)
     assessed_patient_outcomes = models.ManyToManyField(
         AssessedPatientOutcomeLookup, **DEFAULTS.ManyToManyField)
+
     significant_patient_outcomes = models.ManyToManyField(
         SignificantPatientOutcomeLookup, **DEFAULTS.ManyToManyField)
+
     design = models.TextField(**DEFAULTS.TextField)
     reference_claims = models.TextField(**DEFAULTS.TextField)
     comments = models.TextField(**DEFAULTS.TextField)
@@ -134,7 +154,9 @@ class Entry(TimeStampedModel):
     tracker = FieldTracker()
 
     def get_absolute_url(self):
-        return reverse('pubmed:detail', kwargs={'pk': self.id})
+        return reverse('pubmed:detail', kwargs={
+            'pk': self.id
+        })
 
     def __str__(self):
         gene = ':%s' % self.gene if self.gene else ''

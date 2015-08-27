@@ -5,6 +5,7 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import (Submit, Field, Layout, Fieldset, Button,
                                  MultiField, Div)
 from django import forms
+from django.db.models import BLANK_CHOICE_DASH
 
 from django.forms import ModelForm
 from django.db import models
@@ -13,6 +14,7 @@ from braces.forms import UserKwargModelFormMixin
 
 from .models import Entry
 
+BLANK_CHOICE_DASH[0] = ("", "Null")
 
 class SubmitContext(Submit):
     def render(self, form, form_style, context, **kwargs):
@@ -30,9 +32,15 @@ class ModelChoiceField(forms.ModelChoiceField):
                          **kwargs)
 
 
+class TypedChoiceField(forms.TypedChoiceField):
+    widget = forms.RadioSelect
+
+
 def formfield_callback(field, **kwargs):
     if isinstance(field, models.ForeignKey):
         return field.formfield(form_class=ModelChoiceField, **kwargs)
+    if isinstance(field, models.IntegerField):
+        return field.formfield(choices_form_class=TypedChoiceField, **kwargs)
     else:
         return field.formfield(**kwargs)
 
