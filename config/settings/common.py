@@ -275,23 +275,10 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
 
-
 LOGGING = {
     'version': 1,
 
     'disable_existing_loggers': False,
-
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %('
-                      'thread)d %(message)s'
-        },
-
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-
-    },
 
     'filters': {
         'require_debug_false': {
@@ -305,81 +292,30 @@ LOGGING = {
     },
 
     'handlers': {
-        'null': {
-            'level': 'DEBUG', 'class': 'logging.NullHandler', },
-
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
 
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple',
-            'stream': 'ext://sys.stdout'
-
-        },
-
-        'django_handler': {
-            'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': str(ROOT_DIR.path('logs', 'django.log')),
-            'when': 'MIDNIGHT',
-            'formatter': 'verbose',
-            'backupCount': 10,
-
-        },
-
-        'pubmed_handler': {
-            'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': str(ROOT_DIR.path('logs', 'pubmed.log')),
-            'formatter': 'verbose',
-            'backupCount': 10,
-
-        },
-
-        'debug_handler': {
+        'file': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': str(ROOT_DIR.path('logs', 'debug.log')),
             'filters': ['require_debug_true'],
-            'formatter': 'verbose',
-            'backupCount': 10,
-
+            'backupCount': 10
         }
-
     },
 
     'loggers': {
-        'django': {
-            'handlers': ['null', 'django_handler'],
-            'level': env.str('DJANGO_LOG_LEVEL', 'INFO'),
-            'propagate': True
-
-        },
-
         'django.request': {
-            'handlers': ['null', 'mail_admins'],
-            'level': env.str('DJANGO_LOG_LEVEL', 'INFO'),
-            'propagate': True
-
+            'handlers': ['mail_admins'], 'level': 'ERROR', 'propagate': True
         },
 
-        'pubmed': {
-            'handlers': ['null',  'pubmed_handler'],
-            'level': env.str('DJANGO_LOG_LEVEL', 'INFO'),
-            'propagate': True
-
+        'django': {
+            'handlers': ['file'], 'propagate': True
         }
-    },
-
-    'root': {
-        'handlers': ['null',  'debug_handler'],
-        'level': env.str('DJANGO_LOG_LEVEL', 'INFO'),
-        'propagate': True,
-
     }
-
 }
 # Your common stuff:
 # Below this line define 3rd party library settings
