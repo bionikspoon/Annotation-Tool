@@ -63,4 +63,8 @@ staticfiles/
 
 wheelhouse/
 logs/
-yo/
+
+.tmp
+bower_components
+test/bower_components
+core/static/dist/
