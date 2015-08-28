@@ -10,8 +10,8 @@ import config
 
 urlpatterns = [
 
-    # url(r'^$', TemplateView.as_view(template_name='pages/home.html'),
-    #     name="home"),
+    url(r'^$', TemplateView.as_view(template_name='pages/home.html'),
+        name="home"),
 
     url(r'^api/', include(config.api, namespace='api')),
 

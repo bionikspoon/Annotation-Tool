@@ -1,9 +1,9 @@
 {% load i18n core_tags %}
 
-<!-- Static navbar -->
+{#<!-- Static navbar -->#}
 <nav class="navbar navbar-default navbar-static-top">
   <section class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
+    {#<!-- Brand and toggle get grouped for better mobile display -->#}
     <article class="navbar-header">
       <button type="button"
               class="navbar-toggle collapsed"
@@ -16,11 +16,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{% url 'home' %}">
-        {% block branding %}Annotation Tool{% endblock %}</a>
+
+      {% block branding %}
+        <a class="navbar-brand" href="{% url 'home' %}">
+          Annotation Tool
+        </a>
+      {% endblock %}
     </article>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    {#<!-- Collect the nav links, forms, and other content for toggling -->#}
     <article id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         {% active_url 'Home' 'home' %}
@@ -67,9 +71,10 @@
             {% block nav-global %}{% endblock %}
           </li>
         {% else %}
-
-          {% active_url 'Sign Up' 'account_signup' %}
-          {% active_url 'Login' 'account_login' %}
+          {% block anonymous_userlinks %}
+            {% active_url 'Sign Up' 'account_signup' %}
+            {% active_url 'Login' 'account_login' %}
+          {% endblock anonymous_userlinks %}
 
         {% endif %}
       </ul>
