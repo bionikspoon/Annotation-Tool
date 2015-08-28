@@ -85,30 +85,36 @@ gulp.task('html', ['styles'], () => {
 gulp.task('images', () => {
   return gulp.src('core/static/app/images/**/*')
 
-    .pipe($.if($.if.isFile, $.cache($.imagemin({
-      progressive: true,
-      interlaced:  true, // don't remove IDs from SVGs, they are often used
-      // as hooks for embedding and styling
-      svgoPlugins: [{cleanupIDs: false}]
-    })).on('error', function (err) {
-      console.log(err);
-      this.end();
-    })))
+    .pipe($.if(//
+      $.if.isFile, $.cache(//
+        $.imagemin({
+          progressive: true,
+          interlaced:  true, // don't remove IDs from SVGs, they are often used
+          // as hooks for embedding and styling
+          svgoPlugins: [{cleanupIDs: false}]
+        })//
+      ).on('error', function (err) {
+          console.log(err);
+          this.end();
+        })//
+    ))
 
     .pipe(gulp.dest('core/static/dist/images'));
 });
 
 gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')({
+  return gulp
 
-    filter: '**/*.{eot,svg,ttf,woff,woff2}'
-  }).concat('core/static/app/fonts/**/*'))
+    .src(require('main-bower-files')({
+      filter: '**/*.{eot,svg,ttf,woff,woff2}'
+    }).concat('core/static/app/fonts/**/*'))
 
     .pipe(gulp.dest('.tmp/fonts'))
 
     .pipe(gulp.dest('core/static/dist/fonts'));
 });
 
+//copy all files in app root directory to dist
 gulp.task('extras', () => {
   return gulp.src([
     'core/static/app/*.*', '!core/static/app/*.html'
@@ -119,6 +125,7 @@ gulp.task('extras', () => {
     .pipe(gulp.dest('core/static/dist'));
 });
 
+//delete .tmp and dist directories
 gulp.task('clean', del.bind(null, ['.tmp', 'core/static/dist']));
 
 gulp.task('serve', ['styles', 'fonts'], () => {
