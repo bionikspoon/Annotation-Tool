@@ -25,7 +25,7 @@ gulp.task('styles', () => {
 
     .pipe($.sourcemaps.write())
 
-    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(gulp.dest('.tmp/dist/styles'))
 
     .pipe(reload({stream: true}));
 });
@@ -74,12 +74,17 @@ gulp.task('html', ['styles'], () => {
 
     .pipe($.useref())
 
+
     .pipe($.if('*.html', $.minifyHtml({
       conditionals: true,
       loose:        true
     })))
 
-    .pipe(gulp.dest('core/static/dist'));
+    .pipe($.if('*.html',
+      gulp.dest('core/static/dist'),
+      gulp.dest('core/static')));
+
+
 });
 
 gulp.task('images', () => {
@@ -109,7 +114,7 @@ gulp.task('fonts', () => {
       filter: '**/*.{eot,svg,ttf,woff,woff2}'
     }).concat('core/static/app/fonts/**/*'))
 
-    .pipe(gulp.dest('.tmp/fonts'))
+    .pipe(gulp.dest('.tmp/dist/fonts'))
 
     .pipe(gulp.dest('core/static/dist/fonts'));
 });
@@ -125,7 +130,7 @@ gulp.task('extras', () => {
     .pipe(gulp.dest('core/static/dist'));
 });
 
-//delete .tmp and dist directories
+//delete .tmp/dist and dist directories
 gulp.task('clean', del.bind(null, ['.tmp', 'core/static/dist']));
 
 gulp.task('serve', ['styles', 'fonts'], () => {
@@ -133,7 +138,7 @@ gulp.task('serve', ['styles', 'fonts'], () => {
     notify: false,
     port:   9000,
     server: {
-      baseDir: ['.tmp', 'core/static/app'],
+      baseDir: ['.tmp/dist', 'core/static/app'],
       routes:  {
         '/bower_components': 'bower_components'
       }
@@ -144,7 +149,7 @@ gulp.task('serve', ['styles', 'fonts'], () => {
     'core/static/app/*.html',
     'core/static/app/scripts/**/*.js',
     'core/static/app/images/**/*',
-    '.tmp/fonts/**/*'
+    '.tmp/dist/fonts/**/*'
   ]).on('change', reload);
 
   gulp.watch('core/static/app/styles/**/*.scss', ['styles']);
