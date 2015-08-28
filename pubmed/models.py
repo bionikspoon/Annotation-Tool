@@ -164,3 +164,19 @@ class Entry(TimeStampedModel):
 
     class Meta:
         verbose_name_plural = 'Entries'
+
+
+class EntryMeta(object):
+    model = Entry
+    fields = (
+        'user', 'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax',
+        'syntax_text', 'operator', 'rule_level', 'chromosome', 'start', 'stop',
+        'breakend_strand', 'breakend_direction', 'mate_chromosome',
+        'mate_start', 'mate_end', 'mate_breakend_strand',
+        'minimum_number_of_copies', 'maximum_number_of_copies',
+        'coordinate_predicate', 'partner_coordinate_predicate', 'variant_type',
+        'variant_consequence', 'variant_clinical_grade', 'disease',
+        'treatment_1', 'treatment_2', 'treatment_3', 'treatment_4',
+        'treatment_5', 'population_size', 'sex', 'ethnicity',
+        'assessed_patient_outcomes', 'significant_patient_outcomes', 'design',
+        'reference_claims', 'comments')

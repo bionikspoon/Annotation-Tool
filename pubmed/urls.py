@@ -1,16 +1,24 @@
 #!/usr/bin/env python
 # coding=utf-8
-from django.conf.urls import url
+from django.conf.urls import url, include
 
-from . import views
-urlpatterns = [
+from .views import *
 
-    url(regex=r'^$', view=views.EntryListView.as_view(), name='list'),
-    url(regex=r'^(?P<pk>\d+)/$', view=views.EntryDetailView.as_view(),
-        name='detail'),
-    url(regex=r'^new/$', view=views.EntryCreateView.as_view(), name='create'),
-    url(regex=r'^(?P<pk>\d+)/edit$', view=views.EntryUpdateView.as_view(),
-        name='update'),
+api_urlpatterns = [
+
+    url(r'^$', EntryListCreateView.as_view(), name='entry_rest_api'),
+    url(r'^(?P<pk>\d+)/$', EntryReadUpdateDeleteView.as_view(),
+        name='entry_rest_api'),
 
 ]
 
+urlpatterns = [
+
+    # url(r'^api/', include(api_urlpatterns)),
+
+    url(r'^$', EntryListView.as_view(), name='list'),
+    url(r'^(?P<pk>\d+)/$', EntryDetailView.as_view(), name='detail'),
+    url(r'^new/$', EntryCreateView.as_view(), name='create'),
+    url(r'^(?P<pk>\d+)/edit$', EntryUpdateView.as_view(), name='update'),
+
+]

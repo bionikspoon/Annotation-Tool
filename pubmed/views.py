@@ -1,11 +1,15 @@
+# coding=utf-8
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib import messages
 
 from braces.views import LoginRequiredMixin, UserFormKwargsMixin
+from rest_framework.generics import (RetrieveUpdateDestroyAPIView,
+    ListCreateAPIView)
 
 from .models import Entry
 from .forms import EntryModelForm
+from pubmed.serializers import EntrySerializer
 
 
 class EntryMixin(object):
@@ -52,3 +56,16 @@ class EntryCreateView(EntryFormMixin, CreateView):
 class EntryUpdateView(EntryFormMixin, UpdateView):
     success_msg = 'Entry Updated'
     action_text = 'Update'
+
+
+class EntryAPIMixin(object):
+    queryset = Entry.objects.all()
+    serializer_class = EntrySerializer
+
+
+class EntryListCreateView(EntryAPIMixin, ListCreateAPIView):
+    pass
+
+
+class EntryReadUpdateDeleteView(EntryAPIMixin, RetrieveUpdateDestroyAPIView):
+    pass
