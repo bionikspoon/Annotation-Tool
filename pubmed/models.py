@@ -47,10 +47,6 @@ class BreakendDirectionLookup(LookupTable):
     pass
 
 
-class MateBreakendStrandLookup(LookupTable):
-    pass
-
-
 class VariantTypeLookup(LookupTable):
     pass
 
@@ -67,11 +63,7 @@ class DiseaseLookup(LookupTable):
     pass
 
 
-class AssessedPatientOutcomeLookup(LookupTable):
-    pass
-
-
-class SignificantPatientOutcomeLookup(LookupTable):
+class PatientOutcomeLookup(LookupTable):
     pass
 
 
@@ -113,7 +105,13 @@ class Entry(TimeStampedModel):
     mate_end = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     mate_breakend_strand = models.ForeignKey(
 
-        MateBreakendStrandLookup, **DEFAULTS.ForeignKey)
+        BreakendStrandLookup, related_name='mate_breakend_strand',
+        **DEFAULTS.ForeignKey)
+
+    mate_breakend_direction = models.ForeignKey(
+
+        BreakendDirectionLookup, related_name='mate_breakend_direction',
+        **DEFAULTS.ForeignKey)
 
     minimum_number_of_copies = models.PositiveIntegerField(
         **DEFAULTS.IntegerField)
@@ -141,10 +139,14 @@ class Entry(TimeStampedModel):
     sex = models.ForeignKey(SexLookup, **DEFAULTS.ForeignKey)
     ethnicity = models.CharField(**DEFAULTS.CharField)
     assessed_patient_outcomes = models.ManyToManyField(
-        AssessedPatientOutcomeLookup, **DEFAULTS.ManyToManyField)
+
+        PatientOutcomeLookup, related_name='assessed_patient_outcomes',
+        **DEFAULTS.ManyToManyField)
 
     significant_patient_outcomes = models.ManyToManyField(
-        SignificantPatientOutcomeLookup, **DEFAULTS.ManyToManyField)
+
+        PatientOutcomeLookup, related_name='significant_patient_outcomes',
+        **DEFAULTS.ManyToManyField)
 
     design = models.TextField(**DEFAULTS.TextField)
     reference_claims = models.TextField(**DEFAULTS.TextField)
@@ -159,7 +161,7 @@ class Entry(TimeStampedModel):
 
     def __str__(self):
         gene = ':%s' % self.gene if self.gene else ''
-        return '%s:%s%s' % (self.pubmed_id, self.id,gene)
+        return '%s:%s%s' % (self.pubmed_id, self.id, gene)
 
     class Meta:
         verbose_name_plural = 'Entries'
@@ -168,14 +170,17 @@ class Entry(TimeStampedModel):
 class EntryMeta(object):
     model = Entry
     fields = (
-        'user', 'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax',
+
+        'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax',
         'syntax_text', 'operator', 'rule_level', 'chromosome', 'start', 'stop',
         'breakend_strand', 'breakend_direction', 'mate_chromosome',
         'mate_start', 'mate_end', 'mate_breakend_strand',
-        'minimum_number_of_copies', 'maximum_number_of_copies',
-        'coordinate_predicate', 'partner_coordinate_predicate', 'variant_type',
-        'variant_consequence', 'variant_clinical_grade', 'disease',
-        'treatment_1', 'treatment_2', 'treatment_3', 'treatment_4',
-        'treatment_5', 'population_size', 'sex', 'ethnicity',
-        'assessed_patient_outcomes', 'significant_patient_outcomes', 'design',
-        'reference_claims', 'comments')
+        'mate_breakend_direction', 'minimum_number_of_copies',
+        'maximum_number_of_copies', 'coordinate_predicate',
+        'partner_coordinate_predicate', 'variant_type', 'variant_consequence',
+        'variant_clinical_grade', 'disease', 'treatment_1', 'treatment_2',
+        'treatment_3', 'treatment_4', 'treatment_5', 'population_size', 'sex',
+        'ethnicity', 'assessed_patient_outcomes',
+        'significant_patient_outcomes', 'design', 'reference_claims',
+        'comments')
+    # fields = Entry._meta.get_fields(include_parents=False)[1:]

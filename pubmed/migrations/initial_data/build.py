@@ -73,7 +73,7 @@ class SummaryManager(object):
         self.write('class %s(InitialData):' % model)
         self.write('choices = [', indent=1)
         self.write()
-        [self.write('\'%s\'' % choice, indent=2) for choice in sorted(choices)]
+        [self.write('\'%s\',' % choice, indent=2) for choice in sorted(choices)]
         self.write()
         self.write(']', indent=1)
         self.write('\n')
@@ -84,7 +84,7 @@ class SummaryManager(object):
 
         :return:
         """
-        with self.fp() as f:
+        with self.fp as f:
             print(self)
             f.write(str(self))
 
@@ -201,10 +201,11 @@ def generate_data():
     """
     with SummaryManager() as summary:
         process = ModelFactory.with_manager(summary)
-        process('AssessedPatientOutcome')
+        # process('AssessedPatientOutcome')
         process('Disease')
+        process('PatientOutcome')
 
-        process('SignificantPatientOutcome')
+        # process('SignificantPatientOutcome')
         process('Treatment')
         process('VariantConsequence')
         process('VariantType')

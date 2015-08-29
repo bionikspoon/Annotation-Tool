@@ -1,17 +1,13 @@
-from collections import defaultdict
 from django.contrib import admin
-from django.contrib.admin import RelatedOnlyFieldListFilter, TabularInline
-from django.contrib.admin.options import InlineModelAdmin
 
 from .models import Entry, LookupTable
-from pubmed import models
 
 lookup_tables = (lookup_table for lookup_table in LookupTable.__subclasses__())
 
 FOREIGN_FIELDS = (
     'user', 'structure', 'mutation_type', 'syntax', 'operator', 'rule_level',
     'breakend_strand', 'breakend_direction', 'mate_breakend_strand',
-    'variant_type', 'variant_consequence', 'sex',)
+    'mate_breakend_direction', 'variant_type', 'variant_consequence', 'sex',)
 
 MANY_FIELDS = (
     'disease', 'assessed_patient_outcomes', 'significant_patient_outcomes',)
