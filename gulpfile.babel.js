@@ -134,16 +134,16 @@ gulp.task('extras', () => {
 gulp.task('clean', del.bind(null, ['.tmp', 'core/static/dist']));
 
 gulp.task('serve', ['styles', 'fonts'], () => {
-  browserSync({
-    notify: false,
-    port:   9000,
-    server: {
-      baseDir: ['.tmp/dist', 'core/static/app'],
-      routes:  {
-        '/bower_components': 'bower_components'
-      }
-    }
-  });
+  //browserSync({
+  //  notify: false,
+  //  port:   9000,
+  //  server: {
+  //    baseDir: ['.tmp/dist', 'core/static/app'],
+  //    routes:  {
+  //      '/bower_components': 'bower_components'
+  //    }
+  //  }
+  //});
 
   gulp.watch([
     'core/static/app/*.html',
