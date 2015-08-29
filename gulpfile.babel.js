@@ -125,7 +125,7 @@ gulp.task('extras', () => {
 //delete .tmp/dist and dist directories
 gulp.task('clean', del.bind(null, ['.tmp', 'core/static/dist']));
 
-gulp.task('serve', ['styles', 'fonts'], () => {
+gulp.task('serve', ['build'], () => {
 
 
   gulp.watch([
@@ -133,11 +133,11 @@ gulp.task('serve', ['styles', 'fonts'], () => {
     'core/static/app/scripts/**/*.js',
     'core/static/app/images/**/*',
     '.tmp/dist/fonts/**/*'
-  ]);
+  ], ['build']);
 
   gulp.watch('core/static/app/styles/**/*.scss', ['styles']);
   gulp.watch('core/static/app/fonts/**/*', ['fonts']);
-  gulp.watch('bower.json', ['wiredep', 'fonts']);
+  gulp.watch('bower.json', ['wiredep', 'build']);
 });
 
 

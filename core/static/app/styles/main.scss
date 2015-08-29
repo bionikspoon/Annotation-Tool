@@ -1,11 +1,11 @@
 $icon-font-path: '../fonts/';
-@import "variables";
+//@import "variables";
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import "bootswatch";
+//@import "bootswatch";
 @import "select2-bootstrap";
 
 .browserupgrade {
