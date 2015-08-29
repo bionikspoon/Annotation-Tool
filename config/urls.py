@@ -11,7 +11,7 @@ import config
 
 urlpatterns = [
 
-    url(r'^$', RedirectView.as_view(pattern_name='pubmed:list'), name="home"),
+    url(r'^$', RedirectView.as_view(pattern_name='pubmed:list',permanent=False), name="home"),
     # url(r'^$', TemplateView.as_view(template_name='pages/home.html'),
     #     name="home"),
 

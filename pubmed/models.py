@@ -170,7 +170,8 @@ class Entry(TimeStampedModel):
 class EntryMeta(object):
     model = Entry
     fields = (
-        'user', 'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax',
+
+        'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax',
         'syntax_text', 'operator', 'rule_level', 'chromosome', 'start', 'stop',
         'breakend_strand', 'breakend_direction', 'mate_chromosome',
         'mate_start', 'mate_end', 'mate_breakend_strand',
@@ -182,3 +183,4 @@ class EntryMeta(object):
         'ethnicity', 'assessed_patient_outcomes',
         'significant_patient_outcomes', 'design', 'reference_claims',
         'comments')
+    # fields = Entry._meta.get_fields(include_parents=False)[1:]

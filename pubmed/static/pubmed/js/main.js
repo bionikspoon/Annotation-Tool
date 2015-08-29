@@ -8,7 +8,7 @@ $(function () {
    * Elements of Interest
    * */
   // Select box for # of arms
-  var $treatmentSelect = $form.find('#id_treatment');
+  var $treatmentSelect = $form.find('input:radio[name=treatment]');
   // List of treatment fields
   var $treatmentsFields = [
     $form.find('#div_id_treatment_1'),
