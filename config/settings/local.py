@@ -16,8 +16,8 @@ from .common import *  # noqa
 
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = env.bool('DJANGO_DEBUG', default=True)
-TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
+DEBUG = TEMPLATES[0]['OPTIONS']['debug'] = env.bool('DJANGO_DEBUG',
+                                                    default=True)
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -65,13 +65,27 @@ INSTALLED_APPS += ('django_extensions',)
 # ------------------------------------------------------------------------------
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
+
+# STATIC FILE CONFIGURATION
+# ------------------------------------------------------------------------------
+
+if not DEBUG:
+    STATIC_URL = '/staticfiles/'
+
+STATICFILES_STORAGE = ('whitenoise.django.GzipManifestStaticFilesStorage')
+
+
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/
+# #std:setting-STATICFILES_DIRS
+STATICFILES_DIRS = (
+
+    str(ROOT_DIR.path('.tmp')),
+
+)
+
 # Your local stuff: Below this line define 3rd party library settings
 
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
-if not DEBUG:
-    STATIC_URL = '/staticfiles/'
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
