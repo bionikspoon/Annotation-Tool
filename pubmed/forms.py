@@ -54,7 +54,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     def helper(self):
         helper = FormHelper(self)
         helper.form_id = 'entry-form'
-        helper.form_class = 'form-horizontal well well-lg'
+        helper.form_class = 'form-horizontal'
         helper.label_class = 'col-xs-4 col-md-3 col-lg-2'
         helper.field_class = 'col-xs-8 col-md-9 col-lg-10'
         helper.html5_required = True
