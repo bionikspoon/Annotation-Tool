@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 WSGI config for annotation_tool project.
 
@@ -35,8 +36,3 @@ application = get_wsgi_application()
 # See: https://whitenoise.readthedocs.org/
 if settings.SETTINGS_MODULE == 'config.settings.local':
     application = DjangoWhiteNoise(application)
-
-
-# Apply WSGI middleware here.
-# from helloworld.wsgi import HelloWorldApplication
-# application = HelloWorldApplication(application)
