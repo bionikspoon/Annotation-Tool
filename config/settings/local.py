@@ -32,6 +32,12 @@ EMAIL_PORT = 1025
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
                     default='django.core.mail.backends.console.EmailBackend')
 
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+
+# SERVER
+# ------------------------------------------------------------------------------
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
 # CACHING
 # ------------------------------------------------------------------------------
 CACHES = {
@@ -83,9 +89,6 @@ STATICFILES_DIRS = (
 
 )
 
-# Your local stuff: Below this line define 3rd party library settings
-
-ACCOUNT_EMAIL_VERIFICATION = 'optional'
-
+# FORMS CONFIGURATION
+# ------------------------------------------------------------------------------
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']

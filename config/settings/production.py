@@ -143,6 +143,3 @@ CACHES = {
         }
     }
 }
-
-
-# Your production stuff: Below this line define 3rd party library settings
