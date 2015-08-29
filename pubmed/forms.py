@@ -2,12 +2,14 @@
 # coding=utf-8
 from crispy_forms.bootstrap import InlineRadios, FormActions
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import (Submit, Layout, Fieldset, Button, Row, Column, HTML)
+from crispy_forms.layout import (Submit, Layout, Fieldset, Button, Row, Column,
+    HTML, Field, MultiField, Div)
 from django import forms
 from django.db.models import BLANK_CHOICE_DASH
 from django.forms import ModelForm
 from django.db import models
 from braces.forms import UserKwargModelFormMixin
+from model_utils import Choices
 
 from .models import Entry
 
@@ -46,9 +48,12 @@ def formfield_callback(field, **kwargs):
 class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     formfield_callback = formfield_callback
 
+    treatment = forms.TypedChoiceField(choices=Choices(*range(1, 6)))
+
     @property
     def helper(self):
         helper = FormHelper(self)
+        helper.form_id = 'entry-form'
         helper.form_class = 'form-horizontal well well-lg'
         helper.label_class = 'col-xs-4 col-md-3 col-lg-2'
         helper.field_class = 'col-xs-8 col-md-9 col-lg-10'
@@ -57,59 +62,68 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
 
             Fieldset(
 
-                'Pubmed', 'pubmed_id', ),
+                'Pubmed',
 
-            Fieldset(
+                'pubmed_id', ),
 
-                'Gene Description', 'gene', 'structure', 'mutation_type',
-                'syntax', 'syntax_text', 'operator', 'rule_level',
+            Fieldset('Gene Description',
 
-                Row(
+                     'gene', 'structure', 'mutation_type', 'syntax',
+                     'syntax_text', 'operator', 'rule_level',
 
-                    Column(
+                     Row(
 
-                        'chromosome', 'start', 'stop', 'breakend_strand',
-                        'breakend_direction',
+                         Column(
 
-                        css_class='col-lg-6'
+                             'chromosome', 'start', 'stop', 'breakend_strand',
+                             'breakend_direction',
 
-                    ),
+                             css_class='col-lg-6'
 
-                    HTML('<hr class="hidden-lg">'),
+                         ),
 
-                    Column(
+                         HTML('<hr class="hidden-lg">'),
 
-                        'mate_chromosome', 'mate_start', 'mate_end',
-                        'mate_breakend_strand',
+                         Column(
 
-                        css_class='col-lg-6'
+                             'mate_chromosome', 'mate_start', 'mate_end',
+                             'mate_breakend_strand',
 
-                    ),
+                             css_class='col-lg-6'
 
-                    css_class='well',
+                         ),
 
-                ),
+                         css_class='well',
 
-                'minimum_number_of_copies', 'maximum_number_of_copies',
-                'coordinate_predicate', 'partner_coordinate_predicate',
-                'variant_type', 'variant_consequence', 'variant_clinical_grade',
+                     ),
 
-            ),
+                     'minimum_number_of_copies', 'maximum_number_of_copies',
+                     'coordinate_predicate', 'partner_coordinate_predicate',
+                     'variant_type', 'variant_consequence',
+                     'variant_clinical_grade',
 
-            Fieldset(
+                     ),
 
-                'Treatment', 'disease', 'treatment_1', 'treatment_2',
-                'treatment_3', 'treatment_4', 'treatment_5'
+            Fieldset('Treatment',
 
-            ),
+                     'disease',
 
-            Fieldset(
+                     Field('treatment',
+                           data_minimum_results_for_search='Infinity'),
 
-                'Study', 'population_size', 'sex', 'ethnicity',
-                'assessed_patient_outcomes', 'significant_patient_outcomes',
-                'design', 'reference_claims', 'comments'
+                     'treatment_1', 'treatment_2', 'treatment_3', 'treatment_4',
+                     'treatment_5'
 
-            ),
+                     ),
+
+            Fieldset('Study',
+
+                     'population_size', 'sex', 'ethnicity',
+                     'assessed_patient_outcomes',
+                     'significant_patient_outcomes', 'design',
+                     'reference_claims', 'comments'
+
+                     ),
 
             FormActions(
 
