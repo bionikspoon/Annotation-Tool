@@ -313,7 +313,12 @@ LOGGING = {
         }
     }
 }
-# Your common stuff:
-# Below this line define 3rd party library settings
+
+# Admin Configuration
+# ------------------------------------------------------------------------------
+GRAPPELLI_ADMIN_TITLE = 'Annotation Tool'
+
+# Other Configuration
+# ------------------------------------------------------------------------------
 
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
