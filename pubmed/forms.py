@@ -44,7 +44,6 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     formfield_callback = formfield_callback
 
     treatment = TypedChoiceField(choices=Choices(*range(1, 6)), initial=1)
-    # treatment = forms.RadioSelect(choices=Choices(*range(1, 6)))
 
 
     @property
