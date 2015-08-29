@@ -28,7 +28,6 @@ class ModelChoiceField(forms.ModelChoiceField):
 
 class TypedChoiceField(forms.TypedChoiceField):
     widget = forms.RadioSelect
-    initial = ''
 
 
 def formfield_callback(field, **kwargs):
@@ -43,8 +42,7 @@ def formfield_callback(field, **kwargs):
 class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     formfield_callback = formfield_callback
 
-    treatment = TypedChoiceField(choices=Choices(*range(1, 6)), initial=1)
-
+    treatment = TypedChoiceField(choices=Choices(*range(1, 6)))
 
     @property
     def helper(self):
@@ -134,6 +132,14 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
 
         helper.filter_by_widget(forms.RadioSelect).wrap(bootstrap.InlineRadios)
         return helper
+
+    def clean(self):
+        cleaned_data = super().clean()
+        treatment = int(cleaned_data.get('treatment'))
+        for i in range(treatment + 1, 6):
+            cleaned_data['treatment_%s' % i] = ''
+
+        return cleaned_data
 
     def save(self, commit=True):
         self.instance.user = self.user

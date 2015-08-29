@@ -1,3 +1,16 @@
+(function ($) {
+  /**
+   *
+   * jquery utility, filter inputs by value.
+   * */
+  $.fn.filterValue = function (value) {
+    return this.filter(//
+      function (index, $el) {
+        return ($el.value === value.toString());
+      });
+  }
+})(jQuery);
+
 $(function () {
 
 
@@ -8,15 +21,16 @@ $(function () {
    * Elements of Interest
    * */
   // Select box for # of arms
-  var $treatmentSelect = $form.find('input:radio[name=treatment]');
-  // List of treatment fields
-  var $treatmentsFields = [
+  var $treatmentRadio = $form.find('input[type=radio][name=treatment]');
+  // List of treatment field containers
+  var $treatmentsFieldDivs = [
     $form.find('#div_id_treatment_1'),
     $form.find('#div_id_treatment_2'),
     $form.find('#div_id_treatment_3'),
     $form.find('#div_id_treatment_4'),
     $form.find('#div_id_treatment_5')
   ];
+  // all select boxes for select2
   var $select2 = $form.find('select');
 
 
@@ -24,7 +38,9 @@ $(function () {
    *
    * Bind to form.
    * */
-  $treatmentSelect.change(showFields);
+    //watch for changes to treatment radio select field
+  $treatmentRadio.change(showFields);
+  //init select2
   $select2.select2({
     theme: 'bootstrap'
   });
@@ -34,22 +50,31 @@ $(function () {
    * Form Methods
    * */
   function init() {
-    showFields(1);
+
+    //Find last filled treatment, skipping blanks. Default 1.
+    var numberOfTreatments = $treatmentsFieldDivs.reduce(//
+      //reduce cb.
+      function (previousValue, $div, index) {
+        var $field = $div.find('input[type=text]');
+
+        return $field.val() ? ++index : previousValue;
+      }, 1);
+
+    //Click radio select for corresponding number of treatments.
+    $treatmentRadio.filterValue(numberOfTreatments).click();
   }
 
+  //Show fields for selected number of treatments, hide the rest.
   function showFields(e) {
-    var fields;
-    if (typeof e === 'number') {
-      fields = e;
-    } else {
-      fields = e.target.value
-    }
+    var fields = e.target.value;
 
-    $treatmentsFields.slice(0, fields).map(function (treatment) {
+    //Show fields.
+    $treatmentsFieldDivs.slice(0, fields).map(function (treatment) {
       treatment.show();
     });
 
-    $treatmentsFields.slice(fields).map(function (treatment) {
+    //Hide the rest.
+    $treatmentsFieldDivs.slice(fields).map(function (treatment) {
       treatment.hide();
     });
   }
