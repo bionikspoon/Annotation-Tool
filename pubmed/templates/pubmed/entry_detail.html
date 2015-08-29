@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+
+{% block page_header_h1 %}
+  Pubmed Entry
+{% endblock page_header_h1 %}
+
+{% block content %}
+  {{ entry.pubmed_id }} | {{ entry.gene }}
+{% endblock content %}

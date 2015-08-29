@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+
+{% block body_attrs %}
+  {{ block.super }} ng-app
+{% endblock %}
+
+{% block angular %}
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+{% endblock %}

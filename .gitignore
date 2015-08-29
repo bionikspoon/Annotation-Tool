@@ -53,4 +53,18 @@ node_modules/
 .sass-cache
 
 # virtual environments
+!.env.sample
 .env
+.env.production
+.env.test
+
+
+staticfiles/
+
+wheelhouse/
+logs/
+
+.tmp
+bower_components
+test/bower_components
+core/static/dist/

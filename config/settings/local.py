@@ -1,25 +1,29 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Local settings
 
 - Run in Debug mode
 - Use console backend for emails
 - Add Django Debug Toolbar
 - Add django-extensions as app
-'''
+"""
+from environ import Env
+
+Env().read_env('.env')
 
 from .common import *  # noqa
 
+
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = env.bool('DJANGO_DEBUG', default=True)
-TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
+DEBUG = TEMPLATES[0]['OPTIONS']['debug'] = env.bool('DJANGO_DEBUG',
+                                                    default=True)
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default='CHANGEME!!!')
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # Mail settings
 # ------------------------------------------------------------------------------
@@ -40,23 +44,48 @@ CACHES = {
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
 MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-INSTALLED_APPS += ('debug_toolbar', )
+INSTALLED_APPS += ('debug_toolbar',)
 
 INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
-        'debug_toolbar.panels.redirects.RedirectsPanel',
+
+        'debug_toolbar.panels.redirects.RedirectsPanel'
+
     ],
-    'SHOW_TEMPLATE_CONTEXT': True,
+    'SHOW_TEMPLATE_CONTEXT': True
 }
 
 # django-extensions
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += ('django_extensions', )
+INSTALLED_APPS += ('django_extensions',)
 
 # TESTING
 # ------------------------------------------------------------------------------
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
+
+# STATIC FILE CONFIGURATION
+# ------------------------------------------------------------------------------
+
+if not DEBUG:
+    STATIC_URL = '/staticfiles/'
+
+STATICFILES_STORAGE = ('whitenoise.django.GzipManifestStaticFilesStorage')
+
+
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/
+# #std:setting-STATICFILES_DIRS
+STATICFILES_DIRS = (
+
+    str(ROOT_DIR.path('.tmp')),
+
+)
+
 # Your local stuff: Below this line define 3rd party library settings
+
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+
+CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']

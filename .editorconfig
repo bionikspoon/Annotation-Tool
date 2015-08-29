@@ -3,10 +3,16 @@
 root = true
 
 [*]
-charset = utf-8
+
+# change these settings to your own preference
+indent_style = space
+indent_size = 2
+
+# we recommend you to keep these unchanged
 end_of_line = lf
-insert_final_newline = true
+charset = utf-8
 trim_trailing_whitespace = true
+insert_final_newline = true
 
 [*.{py,rst,ini}]
 indent_style = space
@@ -15,7 +21,7 @@ indent_size = 4
 [*.py]
 # https://github.com/timothycrosley/isort/wiki/isort-Settings
 line_length=120
-known_first_party=annotation-tool
+known_first_party=annotation_tool
 multi_line_output=3
 default_section=THIRDPARTY
 
@@ -28,3 +34,7 @@ trim_trailing_whitespace = false
 
 [Makefile]
 indent_style = tab
+
+[{package,bower}.json]
+indent_style = space
+indent_size = 2
