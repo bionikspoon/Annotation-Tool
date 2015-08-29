@@ -1,0 +1,87 @@
+[
+    {
+        "fields": "Disease Progression",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 0
+    },
+    {
+        "fields": "Disease-Control Rate",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 1
+    },
+    {
+        "fields": "Disease-Free Survival",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 2
+    },
+    {
+        "fields": "Event-Free Survival",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 3
+    },
+    {
+        "fields": "Median Survival",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 4
+    },
+    {
+        "fields": "Objective Response",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 5
+    },
+    {
+        "fields": "Overall Response Rate",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 6
+    },
+    {
+        "fields": "Overall Survival",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 7
+    },
+    {
+        "fields": "Post-Recurrence Survival",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 8
+    },
+    {
+        "fields": "Prognosis",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 9
+    },
+    {
+        "fields": "Progression-Free Survival",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 10
+    },
+    {
+        "fields": "Remission",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 11
+    },
+    {
+        "fields": "Response Rate",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 12
+    },
+    {
+        "fields": "Time To Progression",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 13
+    },
+    {
+        "fields": "Time To Relapse",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 14
+    },
+    {
+        "fields": "Toxicity",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 15
+    },
+    {
+        "fields": "Treatment-Related Mortality",
+        "model": "pubmed.PatientOutcomeLookup",
+        "pk": 16
+    }
+]

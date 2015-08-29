@@ -75,7 +75,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
 
                          Column(
 
-                             'chromosome', 'start', 'stop', 'breakend_strand',
+                             Field('chromosome',wrapper_class=''), 'start', 'stop', 'breakend_strand',
                              'breakend_direction',
 
                              css_class='col-lg-6'
@@ -87,7 +87,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
                          Column(
 
                              'mate_chromosome', 'mate_start', 'mate_end',
-                             'mate_breakend_strand',
+                             'mate_breakend_strand', 'mate_breakend_direction',
 
                              css_class='col-lg-6'
 
