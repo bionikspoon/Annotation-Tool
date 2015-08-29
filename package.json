@@ -15,23 +15,7 @@
     "grunt-contrib-compass": "^0.7.2",
     "grunt-contrib-watch": "^0.5.3",
     "load-grunt-tasks": "^0.2.1",
-    "time-grunt": "^0.2.10"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bionikspoon/Annotation-Tool.git"
-  },
-  "author": "Manu Phatak",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bionikspoon/Annotation-Tool/issues"
-  },
-  "homepage": "https://github.com/bionikspoon/Annotation-Tool#readme",
-  "private": true,
-  "engines": {
-    "node": ">=0.12.0"
-  },
-  "devDependencies": {
+    "time-grunt": "^0.2.10",
     "babel-core": "^5.5.6",
     "browser-sync": "^2.2.1",
     "del": "^1.1.1",
@@ -53,6 +37,22 @@
     "main-bower-files": "^2.5.0",
     "opn": "^1.0.1",
     "wiredep": "^2.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bionikspoon/Annotation-Tool.git"
+  },
+  "author": "Manu Phatak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bionikspoon/Annotation-Tool/issues"
+  },
+  "homepage": "https://github.com/bionikspoon/Annotation-Tool#readme",
+  "private": true,
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "devDependencies": {
   },
   "eslintConfig": {
     "env": {
