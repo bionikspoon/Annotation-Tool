@@ -1,8 +1,12 @@
 $icon-font-path: '../fonts/';
 @import "variables";
+
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+@import "bootswatch";
+@import "select2-bootstrap";
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -11,7 +15,7 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
-@import "bootswatch";
+//@import "bootswatch";
 
 @import "django";
 
