@@ -14,8 +14,6 @@ api_urlpatterns = [
 
 urlpatterns = [
 
-    # url(r'^api/', include(api_urlpatterns)),
-
     url(r'^$', EntryListView.as_view(), name='list'),
     url(r'^(?P<pk>\d+)/$', EntryDetailView.as_view(), name='detail'),
     url(r'^new/$', EntryCreateView.as_view(), name='create'),

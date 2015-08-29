@@ -29,7 +29,8 @@ DJANGO_APPS = (  # :off
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.postgres',
+
+    # 'django.contrib.postgres',
     # Useful template tags:
     # 'django.contrib.humanize',
 
@@ -37,6 +38,7 @@ DJANGO_APPS = (  # :off
 
 ADMIN_APPS = (  # :off
 
+    'django.contrib.admindocs',
     'grappelli',
     'django.contrib.admin',
 
@@ -75,6 +77,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.admindocs.middleware.XViewMiddleware',
 
 )
 

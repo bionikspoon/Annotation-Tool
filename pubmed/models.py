@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
-from django.contrib.postgres.fields import ArrayField, IntegerRangeField
 from model_utils import FieldTracker, Choices
 from model_utils.models import TimeStampedModel
 
@@ -160,7 +159,7 @@ class Entry(TimeStampedModel):
 
     def __str__(self):
         gene = ':%s' % self.gene if self.gene else ''
-        return '%s:%s%s' % (self.id, self.pubmed_id, gene)
+        return '%s:%s%s' % (self.pubmed_id, self.id,gene)
 
     class Meta:
         verbose_name_plural = 'Entries'

@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 # coding=utf-8
-from crispy_forms.bootstrap import InlineField, InlineRadios, FormActions
+from crispy_forms.bootstrap import InlineRadios, FormActions
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import (Submit, Field, Layout, Fieldset, Button,
-    MultiField, Div, Row, Column, HTML)
+from crispy_forms.layout import (Submit, Layout, Fieldset, Button, Row, Column, HTML)
 from django import forms
 from django.db.models import BLANK_CHOICE_DASH
-
 from django.forms import ModelForm
 from django.db import models
-
 from braces.forms import UserKwargModelFormMixin
 
 from .models import Entry
@@ -52,7 +49,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     @property
     def helper(self):
         helper = FormHelper(self)
-        helper.form_class = 'form-horizontal'
+        helper.form_class = 'form-horizontal well well-lg'
         helper.label_class = 'col-xs-4 col-md-3 col-lg-2'
         helper.field_class = 'col-xs-8 col-md-9 col-lg-10'
         helper.html5_required = True
