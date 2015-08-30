@@ -28,7 +28,6 @@ class ModelChoiceField(forms.ModelChoiceField):
 
 class TypedChoiceField(forms.TypedChoiceField):
     widget = forms.RadioSelect
-    initial = ''
 
 
 def formfield_callback(field, **kwargs):
@@ -43,8 +42,7 @@ def formfield_callback(field, **kwargs):
 class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     formfield_callback = formfield_callback
 
-    treatment = TypedChoiceField(choices=Choices(*range(1, 6)), initial=1)
-
+    treatment = TypedChoiceField(choices=Choices(*range(1, 6)))
 
     @property
     def helper(self):
@@ -71,16 +69,15 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
 
                                 layout.Column(
 
-                                    layout.Field('chromosome',
-                                                 wrapper_class=''), 'start',
-                                    'stop', 'breakend_strand',
-                                    'breakend_direction',
+                                    'chromosome', 'start', 'stop',
+                                    'breakend_strand', 'breakend_direction',
 
-                                    css_class='col-lg-6'
+                                    css_class='col-sm-6',
+                                    data_form_column='true'
 
                                 ),
 
-                                layout.HTML('<hr class="hidden-lg">'),
+                                layout.HTML('<hr class="visible-xs">'),
 
                                 layout.Column(
 
@@ -88,7 +85,8 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
                                     'mate_breakend_strand',
                                     'mate_breakend_direction',
 
-                                    css_class='col-lg-6'
+                                    css_class='col-sm-6',
+                                    data_form_column='true'
 
                                 ),
 
@@ -123,17 +121,29 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
 
                             ),
 
-            bootstrap.FormActions(
+            layout.Fieldset('{{ action_text }} Entry',
 
-                layout.Submit('save', '{{ action_text }} Entry'),
-                layout.Button('cancel', 'Cancel')
+                            bootstrap.FormActions(
 
-            )
+                                layout.Submit('submit', 'Submit'),
+                                layout.Button('cancel', 'Cancel')
+
+                            ),
+
+                            ),
 
         )
 
         helper.filter_by_widget(forms.RadioSelect).wrap(bootstrap.InlineRadios)
         return helper
+
+    def clean(self):
+        cleaned_data = super().clean()
+        treatment = int(cleaned_data.get('treatment'))
+        for i in range(treatment + 1, 6):
+            cleaned_data['treatment_%s' % i] = ''
+
+        return cleaned_data
 
     def save(self, commit=True):
         self.instance.user = self.user
