@@ -14,11 +14,8 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{py,rst,ini}]
+[*.{py,rst,ini,js}]
 indent_style = space
-indent_size = 4
-
-[*.js]
 indent_size = 4
 
 [*.py]
@@ -34,6 +31,9 @@ indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.html]
+indent_size = 3
 
 [Makefile]
 indent_style = tab
