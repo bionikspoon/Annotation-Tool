@@ -50,7 +50,7 @@ gulp.task('lint:test', lint('tests/spec/**/*.js', testLintOptions));
 gulp.task('html', ['styles'], () => {
   const assets = $.useref.assets({
     searchPath: [
-      '.tmp', 'core/static/app', '.'
+      '.tmp', 'core/static/app','pubmed/static', '.'
     ]
   });
 

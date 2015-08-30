@@ -85,3 +85,12 @@ $(function () {
    * */
   init();
 });
+
+$(function () {
+
+  var $form = $('#entry-form');
+
+  var $columnDiv = $form.find('div[data-form-column=True] > div').find('label.col-xs-4.col-md-3.col-lg-2', 'div.col-xs-8.col-md-9.col-lg-10');
+
+  $columnDiv.hide();
+});
