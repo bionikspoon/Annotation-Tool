@@ -1,14 +1,15 @@
 from collections import OrderedDict
+
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
-from model_utils import FieldTracker, Choices
-from model_utils.models import TimeStampedModel
+from model_utils import FieldTracker, Choices, models as model_utils_models
 
 from annotation_tool.users.models import User
+from .utils import classproperty
 
 
-class LookupTable(TimeStampedModel):
+class LookupTable(model_utils_models.TimeStampedModel):
     choice = models.CharField(max_length=100, unique=True)
 
     tracker = FieldTracker()
@@ -76,7 +77,7 @@ class DEFAULTS(object):
     ManyToManyField = dict(blank=True)
 
 
-class Entry(TimeStampedModel):
+class Entry(model_utils_models.TimeStampedModel):
     user = models.ForeignKey(
 
         settings.AUTH_USER_MODEL, editable=False, related_name='pubmed_entries',
@@ -166,14 +167,6 @@ class Entry(TimeStampedModel):
 
     class Meta:
         verbose_name_plural = 'Entries'
-
-
-class classproperty(object):
-    def __init__(self, attr):
-        self.attr = attr
-
-    def __get__(self, obj, owner):
-        return self.attr(owner)
 
 
 class EntryMeta(object):
