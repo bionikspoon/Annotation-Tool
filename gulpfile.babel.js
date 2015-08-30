@@ -47,10 +47,24 @@ const testLintOptions = {
 gulp.task('lint', lint('core/static/source/scripts/**/*.js'));
 gulp.task('lint:test', lint('tests/spec/**/*.js', testLintOptions));
 
-gulp.task('html', ['styles'], () => {
+gulp.task('scripts', () => {
+  return gulp.src('core/static/source/*.html')
+
+    .pipe($.useref.assets({
+      searchPath: ['.']
+    }))
+
+    .pipe($.if('*.js', $.uglify()))
+
+    .pipe(gulp.dest('core/static'))
+
+
+});
+
+gulp.task('html', ['scripts', 'styles'], () => {
   const assets = $.useref.assets({
     searchPath: [
-      '.tmp', 'core/static', 'pubmed/static', '.'
+      '.tmp', '.'
     ]
   });
 
@@ -58,24 +72,23 @@ gulp.task('html', ['styles'], () => {
 
     .pipe(assets)
 
-    .pipe($.if('*.js', $.uglify()))
-
     .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
 
-    .pipe(assets.restore())
+    //.pipe(assets.restore())
 
-    .pipe($.useref())
+    //.pipe($.useref())
 
 
-    .pipe($.if('*.html', $.minifyHtml({
-      conditionals: true,
-      loose:        true
-    })))
+    //.pipe($.if('*.html', $.minifyHtml({
+    //  conditionals: true,
+    //  loose:        true
+    //})))
 
-    .pipe($.if('*.html',
-      gulp.dest('core/static/dist'),
-      gulp.dest('core/static')));
+    //.pipe($.if('*.html',
+    //  gulp.dest('core/static/dist'),
+    //  gulp.dest('core/static')));
 
+    .pipe($.if('*.css', gulp.dest('core/static')));
 
 });
 
@@ -129,17 +142,18 @@ gulp.task('clean', del.bind(null, [
 
 gulp.task('serve', ['build'], () => {
 
-
   gulp.watch([
-      'core/static/source/*.html',
-      'core/static/*/scripts/**/*.js',
-      'core/static/source/images/**/*',
-      '.tmp/dist/fonts/**/*'
-    ],
-    ['build']);
+    'core/static/source/*.html'
+  ], ['html']);
+  gulp.watch([
+    'core/static/source/images/**/*', '.tmp/dist/fonts/**/*'
+  ], ['extra']);
 
-  gulp.watch('core/static/*/styles/**/*.scss', ['styles']);
-  gulp.watch('core/static/*/fonts/**/*', ['fonts']);
+  gulp.watch(['{core,pubmed}/static/{source,pubmed}/scripts/*.js'],
+    ['scripts']);
+  gulp.watch('{core,pubmed}/static/{source,pubmed}/styles/**/*.scss',
+    ['styles']);
+  gulp.watch('{core,pubmed}/static/{source,pubmed}/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'build']);
 });
 

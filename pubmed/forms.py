@@ -39,7 +39,6 @@ def formfield_callback(field, **kwargs):
         return field.formfield(**kwargs)
 
 
-
 class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     formfield_callback = formfield_callback
 
@@ -73,11 +72,12 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
                                     'chromosome', 'start', 'stop',
                                     'breakend_strand', 'breakend_direction',
 
-                                    css_class='col-lg-6', data_form_column=True
+                                    css_class='col-sm-6',
+                                    data_form_column='true'
 
                                 ),
 
-                                layout.HTML('<hr class="hidden-lg">'),
+                                layout.HTML('<hr class="visible-xs">'),
 
                                 layout.Column(
 
@@ -85,7 +85,8 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
                                     'mate_breakend_strand',
                                     'mate_breakend_direction',
 
-                                    css_class='col-lg-6', data_form_column=True
+                                    css_class='col-sm-6',
+                                    data_form_column='true'
 
                                 ),
 
@@ -120,12 +121,16 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
 
                             ),
 
-            bootstrap.FormActions(
+            layout.Fieldset('{{ action_text }} Entry',
 
-                layout.Submit('save', '{{ action_text }} Entry'),
-                layout.Button('cancel', 'Cancel')
+                            bootstrap.FormActions(
 
-            )
+                                layout.Submit('submit', 'Submit'),
+                                layout.Button('cancel', 'Cancel')
+
+                            ),
+
+                            ),
 
         )
 

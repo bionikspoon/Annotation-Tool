@@ -1,21 +1,35 @@
 (function ($) {
   /**
    *
-   * jquery utility, filter inputs by value.
+   * jQuery utility, filter inputs by value.
    * */
   $.fn.filterValue = function (value) {
     return this.filter(//
       function (index, $el) {
         return ($el.value === value.toString());
       });
-  }
+  };
+
+
 })(jQuery);
 
 $(function () {
-
-
+  /**
+   *
+   * Main DOM Node
+   * */
   var $form = $('#entry-form');
 
+  /**
+   *
+   * Impressively well organized modules.
+   * */
+  treatmentBehavior($form);
+  chromosomeStyles($form);
+  select2Init($form);
+});
+
+var treatmentBehavior = function ($form) {
   /**
    *
    * Elements of Interest
@@ -30,8 +44,6 @@ $(function () {
     $form.find('#div_id_treatment_4'),
     $form.find('#div_id_treatment_5')
   ];
-  // all select boxes for select2
-  var $select2 = $form.find('select');
 
 
   /**
@@ -40,14 +52,10 @@ $(function () {
    * */
     //watch for changes to treatment radio select field
   $treatmentRadio.change(showFields);
-  //init select2
-  $select2.select2({
-    theme: 'bootstrap'
-  });
 
   /**
    *
-   * Form Methods
+   * Module Methods
    * */
   function init() {
 
@@ -84,13 +92,39 @@ $(function () {
    * Initialize Module
    * */
   init();
-});
+};
 
-$(function () {
+var chromosomeStyles = function ($form) {
+  /**
+   *
+   * Query main element
+   * */
+  var $formGroup = $form.find('[data-form-column=true] .form-group');
 
-  var $form = $('#entry-form');
+  /**
+   *
+   * Hack Styles
+   * */
+  $formGroup.find('*')//
+    .removeClass('col-xs-4 col-md-3 col-lg-2 col-xs-8 col-md-9 col-lg-10');
+  $formGroup.find('input.form-control')//
+    .css('width', '95%')
+};
 
-  var $columnDiv = $form.find('div[data-form-column=True] > div').find('label.col-xs-4.col-md-3.col-lg-2', 'div.col-xs-8.col-md-9.col-lg-10');
+var select2Init = function ($form) {
+  /**
+   *
+   * Query all select boxes for select2
+   * */
+  var $select2 = $form.find('select');
 
-  $columnDiv.hide();
-});
+  //noinspection JSUnresolvedFunction
+  /**
+   *
+   * Initialize Select 2
+   * */
+  $select2.select2({
+    theme: 'bootstrap'
+  });
+
+};
