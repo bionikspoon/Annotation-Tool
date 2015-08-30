@@ -7,7 +7,7 @@ import {stream as wiredep} from 'wiredep';
 const $ = gulpLoadPlugins();
 
 gulp.task('styles', () => {
-  return gulp.src('core/static/app/styles/*.scss')
+  return gulp.src('core/static/source/styles/*.scss')
 
     .pipe($.plumber())
 
@@ -44,17 +44,17 @@ const testLintOptions = {
   }
 };
 
-gulp.task('lint', lint('core/static/app/scripts/**/*.js'));
+gulp.task('lint', lint('core/static/source/scripts/**/*.js'));
 gulp.task('lint:test', lint('tests/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['styles'], () => {
   const assets = $.useref.assets({
     searchPath: [
-      '.tmp', 'core/static/app','pubmed/static', '.'
+      '.tmp', 'core/static', 'pubmed/static', '.'
     ]
   });
 
-  return gulp.src('core/static/app/*.html')
+  return gulp.src('core/static/source/*.html')
 
     .pipe(assets)
 
@@ -80,7 +80,7 @@ gulp.task('html', ['styles'], () => {
 });
 
 gulp.task('images', () => {
-  return gulp.src('core/static/app/images/**/*')
+  return gulp.src('core/static/source/images/**/*')
 
     .pipe($.if(//
       $.if.isFile, $.cache(//
@@ -104,17 +104,17 @@ gulp.task('fonts', () => {
 
     .src(require('main-bower-files')({
       filter: '**/*.{eot,svg,ttf,woff,woff2}'
-    }).concat('core/static/app/fonts/**/*'))
+    }).concat('core/static/source/fonts/**/*'))
 
     .pipe(gulp.dest('.tmp/dist/fonts'))
 
     .pipe(gulp.dest('core/static/dist/fonts'));
 });
 
-//copy all files in app root directory to dist
+//copy all files in source root directory to dist
 gulp.task('extras', () => {
   return gulp.src([
-    'core/static/app/*.*', '!core/static/app/*.html'
+    'core/static/source/*.*', '!core/static/source/*.html'
   ], {
     dot: true
   })
@@ -123,42 +123,45 @@ gulp.task('extras', () => {
 });
 
 //delete .tmp/dist and dist directories
-gulp.task('clean', del.bind(null, ['.tmp', 'core/static/dist']));
+gulp.task('clean', del.bind(null, [
+  '.tmp', '.sass-cache', 'core/static/dist', 'core/static/pubmed'
+]));
 
 gulp.task('serve', ['build'], () => {
 
 
   gulp.watch([
-    'core/static/app/*.html',
-    'core/static/app/scripts/**/*.js',
-    'core/static/app/images/**/*',
-    '.tmp/dist/fonts/**/*'
-  ], ['build']);
+      'core/static/source/*.html',
+      'core/static/*/scripts/**/*.js',
+      'core/static/source/images/**/*',
+      '.tmp/dist/fonts/**/*'
+    ],
+    ['build']);
 
-  gulp.watch('core/static/app/styles/**/*.scss', ['styles']);
-  gulp.watch('core/static/app/fonts/**/*', ['fonts']);
+  gulp.watch('core/static/*/styles/**/*.scss', ['styles']);
+  gulp.watch('core/static/*/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'build']);
 });
 
 
 // inject bower components
 gulp.task('wiredep', () => {
-  gulp.src('core/static/app/styles/*.scss')
+  gulp.src('core/static/source/styles/*.scss')
 
     .pipe(wiredep({
       ignorePath: /^(\.\.\/)+/
     }))
 
-    .pipe(gulp.dest('core/static/app/styles'));
+    .pipe(gulp.dest('core/static/source/styles'));
 
-  gulp.src('core/static/app/*.html')
+  gulp.src('core/static/source/*.html')
 
     .pipe(wiredep({
       exclude:    ['bootstrap-sass'],
       ignorePath: /^(\.\.\/)*\.\./
     }))
 
-    .pipe(gulp.dest('core/static/app'));
+    .pipe(gulp.dest('core/static/source'));
 });
 
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
