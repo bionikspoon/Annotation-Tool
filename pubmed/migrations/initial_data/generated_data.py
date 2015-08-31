@@ -6,30 +6,6 @@ Generated Data.
 
 from . import InitialData
 
-class AssessedPatientOutcomeLookup(InitialData):
-    choices = [
-
-        'Disease Progression',
-        'Disease-Control Rate',
-        'Disease-Free Survival',
-        'Event-Free Survival',
-        'Median Survival',
-        'Objective Response',
-        'Overall Response Rate',
-        'Overall Survival',
-        'Post-Recurrence Survival',
-        'Prognosis',
-        'Progression-Free Survival',
-        'Remission',
-        'Response Rate',
-        'Time To Progression',
-        'Time To Relapse',
-        'Toxicity',
-        'Treatment-Related Mortality',
-
-    ]
-
-
 class DiseaseLookup(InitialData):
     choices = [
 
@@ -58,31 +34,7 @@ class DiseaseLookup(InitialData):
     ]
 
 
-class PatientOutcomeLookup(InitialData):
-    choices = [
-
-        'Disease Progression',
-        'Disease-Control Rate',
-        'Disease-Free Survival',
-        'Event-Free Survival',
-        'Median Survival',
-        'Objective Response',
-        'Overall Response Rate',
-        'Overall Survival',
-        'Post-Recurrence Survival',
-        'Prognosis',
-        'Progression-Free Survival',
-        'Remission',
-        'Response Rate',
-        'Time To Progression',
-        'Time To Relapse',
-        'Toxicity',
-        'Treatment-Related Mortality',
-
-    ]
-
-
-class SignificantPatientOutcomeLookup(InitialData):
+class PatientOutcomesLookup(InitialData):
     choices = [
 
         'Disease Progression',

@@ -65,7 +65,7 @@ class DiseaseLookup(LookupTable):
     pass
 
 
-class PatientOutcomeLookup(LookupTable):
+class PatientOutcomesLookup(LookupTable):
     pass
 
 
@@ -96,11 +96,13 @@ class Entry(model_utils_models.TimeStampedModel):
     stop = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     breakend_strand = models.ForeignKey(
 
-        BreakendStrandLookup, **DEFAULTS.ForeignKey)
+        BreakendStrandLookup, related_name='breakend_strand',
+        **DEFAULTS.ForeignKey)
 
     breakend_direction = models.ForeignKey(
 
-        BreakendDirectionLookup, **DEFAULTS.ForeignKey)
+        BreakendDirectionLookup, related_name='breakend_direction',
+        **DEFAULTS.ForeignKey)
 
     mate_chromosome = models.CharField(**DEFAULTS.CharField)
     mate_start = models.PositiveIntegerField(**DEFAULTS.IntegerField)
@@ -142,12 +144,12 @@ class Entry(model_utils_models.TimeStampedModel):
     ethnicity = models.CharField(**DEFAULTS.CharField)
     assessed_patient_outcomes = models.ManyToManyField(
 
-        PatientOutcomeLookup, related_name='assessed_patient_outcomes',
+        PatientOutcomesLookup, related_name='assessed_patient_outcomes',
         **DEFAULTS.ManyToManyField)
 
     significant_patient_outcomes = models.ManyToManyField(
 
-        PatientOutcomeLookup, related_name='significant_patient_outcomes',
+        PatientOutcomesLookup, related_name='significant_patient_outcomes',
         **DEFAULTS.ManyToManyField)
 
     design = models.TextField(**DEFAULTS.TextField)

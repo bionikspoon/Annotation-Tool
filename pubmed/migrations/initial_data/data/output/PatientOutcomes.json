@@ -1,0 +1,82 @@
+[
+    {
+        "fields": "Disease Progression",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 1
+    },
+    {
+        "fields": "Disease-Control Rate",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 2
+    },
+    {
+        "fields": "Disease-Free Survival",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 3
+    },
+    {
+        "fields": "Event-Free Survival",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 4
+    },
+    {
+        "fields": "Median Survival",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 5
+    },
+    {
+        "fields": "Objective Response",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 6
+    },
+    {
+        "fields": "Overall Response Rate",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 7
+    },
+    {
+        "fields": "Overall Survival",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 8
+    },
+    {
+        "fields": "Post-Recurrence Survival",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 9
+    },
+    {
+        "fields": "Prognosis",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 10
+    },
+    {
+        "fields": "Progression-Free Survival",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 11
+    },
+    {
+        "fields": "Remission",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 12
+    },
+    {
+        "fields": "Response Rate",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 13
+    },
+    {
+        "fields": "Time To Progression",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 14
+    },
+    {
+        "fields": "Time To Relapse",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 15
+    },
+    {
+        "fields": "Toxicity",
+        "model": "pubmed.PatientOutcomesLookup",
+        "pk": 16
+    }
+]
