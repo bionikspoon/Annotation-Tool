@@ -31,7 +31,7 @@ lookup_router.register(r'variantconsequencelookup',
                        views.VariantConsequenceLookupViewSet)
 lookup_router.register(r'sexlookup', views.SexLookupViewSet)
 lookup_router.register(r'diseaselookup', views.DiseaseLookupViewSet)
-# lookup_router.register(r'patientoutcomelookup', views.PatientOutcomesLookupViewSet)
+lookup_router.register(r'patientoutcomeslookup', views.PatientOutcomesLookupViewSet)
 router.register(r'lookup', lookup_router.get_api_root_view, base_name='lookup')
 urlpatterns = [
 

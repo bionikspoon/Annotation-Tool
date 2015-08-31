@@ -97,7 +97,7 @@ class DiseaseLookupSerializer(LookupTableSerializer):
 
 
 class PatientOutcomesLookupSerializer(LookupTableSerializer):
-    url = HyperlinkedIdentityField(view_name='api:patientoutcomelookup-detail')
+    url = HyperlinkedIdentityField(view_name='api:patientoutcomeslookup-detail')
 
     class Meta(LookupTableSerializer.Meta):
         model = models.PatientOutcomesLookup
@@ -125,8 +125,8 @@ class EntrySerializer(ModelSerializer):
     variant_consequence = VariantConsequenceLookupSerializer()
     sex = SexLookupSerializer()
     disease = DiseaseLookupSerializer(many=True)
-    # assessed_patient_outcomes = PatientOutcomesLookupSerializer(many=True )
-    # significant_patient_outcomes = PatientOutcomesLookupSerializer(many=True)
+    assessed_patient_outcomes = PatientOutcomesLookupSerializer(many=True)
+    significant_patient_outcomes = PatientOutcomesLookupSerializer(many=True)
 
     class Meta:
         model = models.Entry
