@@ -2,12 +2,12 @@
 from __future__ import unicode_literals
 
 from django.db import migrations
-
 import pubmed_lookup.migrations.initial_data
 
 
 class Migration(migrations.Migration):
-    dependencies = [('pubmed', '0001_initial'), ('pubmed_lookup', '0001_initial'), ]
+    dependencies = [('pubmed', '0001_initial'),
+                    ('pubmed_lookup', '0001_initial'), ]
 
     operations = [migrations.RunPython(
 

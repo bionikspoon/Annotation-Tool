@@ -76,18 +76,15 @@ def populate_lookup_tables(apps, schema_editor):
     :param schema_editor:
     :return:
     """
-    for entries in InitialData.export_groups():
+    for entry in InitialData.export_flat():
         try:
             # noinspection PyPep8Naming
-            Model = apps.get_model('pubmed_lookup', entries.cls)
+            Model = apps.get_model('pubmed_lookup', entry.cls)
         except LookupError:
+            logger.warning('pubmed_lookup.%s could not be found', entry.cls)
             continue
 
-        Model.objects.bulk_create(
-
-            Model(**entry) for entry in entries.objects
-
-        )
+        Model.objects.update_or_create(choice=entry.choice)
 
 
 # noinspection PyUnusedLocal
