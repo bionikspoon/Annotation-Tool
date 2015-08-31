@@ -466,6 +466,10 @@ class EntryMeta(object):
             )
 
     @classproperty
+    def all_fields(cls):
+        return tuple(field for field, _ in cls.fields_manifest.items())
+
+    @classproperty
     def relationship_fields(cls):
         return cls.filter({
             'field_type': ('ForeignKey', 'ManyToManyField')

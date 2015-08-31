@@ -2,21 +2,19 @@
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib import messages
-
-from braces.views import LoginRequiredMixin, UserFormKwargsMixin
-from rest_framework.generics import (RetrieveUpdateDestroyAPIView,
-    ListCreateAPIView)
+from braces.views import (LoginRequiredMixin, UserFormKwargsMixin,
+    SelectRelatedMixin)
+from rest_framework.viewsets import ModelViewSet
 
 from .models import Entry
 from .forms import EntryModelForm
-from pubmed.serializers import EntrySerializer
+from .serializers import EntrySerializer
 
 
 class EntryMixin(object):
     model = Entry
 
 
-# noinspection PyUnresolvedReferences
 class EntryFormMixin(LoginRequiredMixin, UserFormKwargsMixin, EntryMixin):
     form_class = EntryModelForm
     template_name = 'pubmed/entry_form.html'
@@ -30,18 +28,21 @@ class EntryFormMixin(LoginRequiredMixin, UserFormKwargsMixin, EntryMixin):
     def action_text(self):
         return NotImplemented
 
+    # noinspection PyUnresolvedReferences
     def form_valid(self, form):
         messages.info(self.request, self.success_msg)
         return super().form_valid(form)
 
+    # noinspection PyUnresolvedReferences
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['action_text'] = self.action_text
         return context
 
 
-class EntryListView(EntryMixin, ListView):
+class EntryListView(EntryMixin, SelectRelatedMixin, ListView):
     template_name = 'pubmed/entry_list.html'
+    select_related = ('structure', 'mutation_type')
 
 
 class EntryDetailView(EntryMixin, DetailView):
@@ -58,14 +59,12 @@ class EntryUpdateView(EntryFormMixin, UpdateView):
     action_text = 'Update'
 
 
-class EntryAPIMixin(object):
+class EntryViewSet(ModelViewSet):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
-class EntryListCreateView(EntryAPIMixin, ListCreateAPIView):
-    pass
-
-
-class EntryReadUpdateDeleteView(EntryAPIMixin, RetrieveUpdateDestroyAPIView):
-    pass
+    def perform_update(self, serializer):
+        serializer.save(user=self.request.user)

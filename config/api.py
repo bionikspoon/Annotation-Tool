@@ -2,11 +2,17 @@
 # coding=utf-8
 
 from django.conf.urls import url, include
+from rest_framework.routers import DefaultRouter
 
-from pubmed.urls import api_urlpatterns as pubmed
+from annotation_tool.users.views import UserViewSet
+from pubmed.views import EntryViewSet
+
+router = DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'pubmed', EntryViewSet)
 
 urlpatterns = [
 
-    url(r'^pubmed/', include(pubmed))
+    url(r'^', include(router.urls))
 
 ]

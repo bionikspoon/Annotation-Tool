@@ -29,6 +29,7 @@
       <ul class="nav navbar-nav">
         {% active_url 'Home' 'home' %}
         {% active_url 'Pubmed' 'pubmed:list' %}
+        {% active_url 'API' 'api:index' %}
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -49,7 +50,6 @@
             <ul class="dropdown-menu">
               {% block userlinks %}
 
-                {#{% active_url 'My Profile' 'users:detail' request.user.username %}#}
                 {% active_url 'Admin' 'admin:index' %}
 
                 {% if request.user.is_active and request.user.is_staff %}

@@ -74,20 +74,6 @@ gulp.task('html', ['scripts', 'styles'], () => {
 
     .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
 
-    //.pipe(assets.restore())
-
-    //.pipe($.useref())
-
-
-    //.pipe($.if('*.html', $.minifyHtml({
-    //  conditionals: true,
-    //  loose:        true
-    //})))
-
-    //.pipe($.if('*.html',
-    //  gulp.dest('core/static/dist'),
-    //  gulp.dest('core/static')));
-
     .pipe($.if('*.css', gulp.dest('core/static')));
 
 });
@@ -147,7 +133,7 @@ gulp.task('serve', ['build'], () => {
   ], ['html']);
   gulp.watch([
     'core/static/source/images/**/*', '.tmp/dist/fonts/**/*'
-  ], ['extra']);
+  ], ['extras']);
 
   gulp.watch(['{core,pubmed}/static/{source,pubmed}/scripts/*.js'],
     ['scripts']);
