@@ -62,6 +62,7 @@ class EntryUpdateView(EntryFormMixin, UpdateView):
 class EntryViewSet(ModelViewSet):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
+    filter_fields = ('pubmed_id',)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)

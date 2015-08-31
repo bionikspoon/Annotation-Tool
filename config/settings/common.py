@@ -319,6 +319,12 @@ LOGGING = {
 # ------------------------------------------------------------------------------
 GRAPPELLI_ADMIN_TITLE = 'Annotation Tool'
 
+# REST FRAMEWORK
+# ------------------------------------------------------------------------------
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
+}
+
 # Other Configuration
 # ------------------------------------------------------------------------------
 
