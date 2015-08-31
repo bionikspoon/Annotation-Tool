@@ -2,71 +2,11 @@ from collections import OrderedDict
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
-from django.db import models
-from model_utils import FieldTracker, Choices, models as model_utils_models
+from model_utils import Choices
 
 from annotation_tool.users.models import User
+from pubmed_lookup.models import *
 from .utils import classproperty
-
-
-class LookupTable(model_utils_models.TimeStampedModel):
-    choice = models.CharField(max_length=100, unique=True)
-
-    tracker = FieldTracker()
-
-    class Meta:
-        abstract = True
-
-    def __str__(self):
-        return self.choice
-
-
-class StructureLookup(LookupTable):
-    pass
-
-
-class MutationTypeLookup(LookupTable):
-    pass
-
-
-class SyntaxLookup(LookupTable):
-    pass
-
-
-class OperatorLookup(LookupTable):
-    pass
-
-
-class RuleLevelLookup(LookupTable):
-    pass
-
-
-class BreakendStrandLookup(LookupTable):
-    pass
-
-
-class BreakendDirectionLookup(LookupTable):
-    pass
-
-
-class VariantTypeLookup(LookupTable):
-    pass
-
-
-class VariantConsequenceLookup(LookupTable):
-    pass
-
-
-class SexLookup(LookupTable):
-    pass
-
-
-class DiseaseLookup(LookupTable):
-    pass
-
-
-class PatientOutcomesLookup(LookupTable):
-    pass
 
 
 class DEFAULTS(object):

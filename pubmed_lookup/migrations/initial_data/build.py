@@ -13,9 +13,9 @@ from django.conf import settings
 
 class CONFIG(object):
     """ Config object. """
-    data = settings.ROOT_DIR.path('pubmed', 'migrations', 'initial_data',
+    data = settings.ROOT_DIR.path('pubmed_lookup', 'migrations', 'initial_data',
                                   'data')
-    module = 'pubmed'
+    module = 'pubmed_lookup'
     data_input = data.path('input')
     data_output = data.path('output')
 

@@ -76,7 +76,7 @@ def populate_lookup_tables(apps, schema_editor):
     for entries in InitialData.export_groups():
         try:
             # noinspection PyPep8Naming
-            Model = apps.get_model('pubmed', entries.cls)
+            Model = apps.get_model('pubmed_lookup', entries.cls)
         except LookupError:
             continue
 
@@ -99,7 +99,7 @@ def clean_lookup_tables(apps, schema_editor):
     for subclass in InitialData.__subclasses__():
         try:
             # noinspection PyPep8Naming
-            Model = apps.get_model('pubmed', subclass.__name__)
+            Model = apps.get_model('pubmed_lookup', subclass.__name__)
             Model.objects.all().delete()
         except LookupError:
             pass
