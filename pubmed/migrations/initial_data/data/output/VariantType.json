@@ -2,26 +2,26 @@
     {
         "fields": "Deletion",
         "model": "pubmed.VariantTypeLookup",
-        "pk": 0
+        "pk": 1
     },
     {
         "fields": "Duplication",
         "model": "pubmed.VariantTypeLookup",
-        "pk": 1
+        "pk": 2
     },
     {
         "fields": "Indel",
         "model": "pubmed.VariantTypeLookup",
-        "pk": 2
+        "pk": 3
     },
     {
         "fields": "Insertion",
         "model": "pubmed.VariantTypeLookup",
-        "pk": 3
+        "pk": 4
     },
     {
         "fields": "Substitution",
         "model": "pubmed.VariantTypeLookup",
-        "pk": 4
+        "pk": 5
     }
 ]

@@ -38,7 +38,7 @@ class PopulatedEntryFactory(EntryFactory):
     mate_start = faker.random_int()
     mate_end = faker.random_int()
     mate_breakend_strand = Iterator(
-        models.MateBreakendStrandLookup.objects.all())
+        models.BreakendStrandLookup.objects.all())
     minimum_number_of_copies = faker.random_int()
     maximum_number_of_copies = faker.random_int()
     coordinate_predicate = faker.text(max_nb_chars=100)

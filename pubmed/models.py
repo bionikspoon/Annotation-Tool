@@ -1,13 +1,15 @@
+from collections import OrderedDict
+
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
-from model_utils import FieldTracker, Choices
-from model_utils.models import TimeStampedModel
+from model_utils import FieldTracker, Choices, models as model_utils_models
 
 from annotation_tool.users.models import User
+from .utils import classproperty
 
 
-class LookupTable(TimeStampedModel):
+class LookupTable(model_utils_models.TimeStampedModel):
     choice = models.CharField(max_length=100, unique=True)
 
     tracker = FieldTracker()
@@ -63,7 +65,7 @@ class DiseaseLookup(LookupTable):
     pass
 
 
-class PatientOutcomeLookup(LookupTable):
+class PatientOutcomesLookup(LookupTable):
     pass
 
 
@@ -75,7 +77,7 @@ class DEFAULTS(object):
     ManyToManyField = dict(blank=True)
 
 
-class Entry(TimeStampedModel):
+class Entry(model_utils_models.TimeStampedModel):
     user = models.ForeignKey(
 
         settings.AUTH_USER_MODEL, editable=False, related_name='pubmed_entries',
@@ -94,11 +96,13 @@ class Entry(TimeStampedModel):
     stop = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     breakend_strand = models.ForeignKey(
 
-        BreakendStrandLookup, **DEFAULTS.ForeignKey)
+        BreakendStrandLookup, related_name='breakend_strand',
+        **DEFAULTS.ForeignKey)
 
     breakend_direction = models.ForeignKey(
 
-        BreakendDirectionLookup, **DEFAULTS.ForeignKey)
+        BreakendDirectionLookup, related_name='breakend_direction',
+        **DEFAULTS.ForeignKey)
 
     mate_chromosome = models.CharField(**DEFAULTS.CharField)
     mate_start = models.PositiveIntegerField(**DEFAULTS.IntegerField)
@@ -140,12 +144,12 @@ class Entry(TimeStampedModel):
     ethnicity = models.CharField(**DEFAULTS.CharField)
     assessed_patient_outcomes = models.ManyToManyField(
 
-        PatientOutcomeLookup, related_name='assessed_patient_outcomes',
+        PatientOutcomesLookup, related_name='assessed_patient_outcomes',
         **DEFAULTS.ManyToManyField)
 
     significant_patient_outcomes = models.ManyToManyField(
 
-        PatientOutcomeLookup, related_name='significant_patient_outcomes',
+        PatientOutcomesLookup, related_name='significant_patient_outcomes',
         **DEFAULTS.ManyToManyField)
 
     design = models.TextField(**DEFAULTS.TextField)
@@ -169,18 +173,342 @@ class Entry(TimeStampedModel):
 
 class EntryMeta(object):
     model = Entry
-    fields = (
 
-        'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax',
-        'syntax_text', 'operator', 'rule_level', 'chromosome', 'start', 'stop',
-        'breakend_strand', 'breakend_direction', 'mate_chromosome',
-        'mate_start', 'mate_end', 'mate_breakend_strand',
-        'mate_breakend_direction', 'minimum_number_of_copies',
-        'maximum_number_of_copies', 'coordinate_predicate',
-        'partner_coordinate_predicate', 'variant_type', 'variant_consequence',
-        'variant_clinical_grade', 'disease', 'treatment_1', 'treatment_2',
-        'treatment_3', 'treatment_4', 'treatment_5', 'population_size', 'sex',
-        'ethnicity', 'assessed_patient_outcomes',
-        'significant_patient_outcomes', 'design', 'reference_claims',
-        'comments')
-    # fields = Entry._meta.get_fields(include_parents=False)[1:]
+    fields_manifest = OrderedDict([
+
+        ('id', {
+            'public': False,
+            'field_type': 'AutoField',
+            'summary': False
+        }),
+
+        ('created', {
+            'public': False,
+            'field_type': 'AutoCreatedField',
+            'summary': False
+        }),
+
+        ('modified', {
+            'public': False,
+            'field_type': 'AutoLastModifiedField',
+            'summary': True
+        }),
+
+        ('user', {
+            'public': False,
+            'field_type': 'ForeignKey',
+            'summary': True
+        }),
+
+        ('pubmed_id', {
+            'public': True,
+            'field_type': 'PositiveIntegerField',
+            'summary': False
+        }),
+
+        ('gene', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': True
+        }),
+
+        ('structure', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': True
+        }),
+
+        ('mutation_type', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': True
+        }),
+
+        ('syntax', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': True
+        }),
+
+        ('syntax_text', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': True
+        }),
+
+        ('operator', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': True
+        }),
+
+        ('rule_level', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': True
+        }),
+
+        ('chromosome', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('start', {
+            'public': True,
+            'field_type': 'PositiveIntegerField',
+            'summary': False
+        }),
+
+        ('stop', {
+            'public': True,
+            'field_type': 'PositiveIntegerField',
+            'summary': False
+        }),
+
+        ('breakend_strand', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': False
+        }),
+
+        ('breakend_direction', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': False
+        }),
+
+        ('mate_chromosome', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('mate_start', {
+            'public': True,
+            'field_type': 'PositiveIntegerField',
+            'summary': False
+        }),
+
+        ('mate_end', {
+            'public': True,
+            'field_type': 'PositiveIntegerField',
+            'summary': False
+        }),
+
+        ('mate_breakend_strand', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': False
+        }),
+
+        ('mate_breakend_direction', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': False
+        }),
+
+        ('minimum_number_of_copies', {
+            'public': True,
+            'field_type': 'PositiveIntegerField',
+            'summary': False
+        }),
+
+        ('maximum_number_of_copies', {
+            'public': True,
+            'field_type': 'PositiveIntegerField',
+            'summary': False
+        }),
+
+        ('coordinate_predicate', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('partner_coordinate_predicate', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('variant_type', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': False
+        }),
+
+        ('variant_consequence', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': False
+        }),
+
+        ('variant_clinical_grade', {
+            'public': True,
+            'field_type': 'PositiveIntegerField',
+            'summary': False
+        }),
+
+        ('disease', {
+            'public': True,
+            'field_type': 'ManyToManyField',
+            'summary': False
+        }),
+
+        ('treatment_1', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('treatment_2', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('treatment_3', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('treatment_4', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('treatment_5', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('population_size', {
+            'public': True,
+            'field_type': 'PositiveIntegerField',
+            'summary': False
+        }),
+
+        ('sex', {
+            'public': True,
+            'field_type': 'ForeignKey',
+            'summary': False
+        }),
+
+        ('ethnicity', {
+            'public': True,
+            'field_type': 'CharField',
+            'summary': False
+        }),
+
+        ('assessed_patient_outcomes', {
+            'public': True,
+            'field_type': 'ManyToManyField',
+            'summary': False
+        }),
+
+        ('significant_patient_outcomes', {
+            'public': True,
+            'field_type': 'ManyToManyField',
+            'summary': False
+        }),
+
+        ('design', {
+            'public': True,
+            'field_type': 'TextField',
+            'summary': False
+        }),
+
+        ('reference_claims', {
+            'public': True,
+            'field_type': 'TextField',
+            'summary': False
+        }),
+
+        ('comments', {
+            'public': True,
+            'field_type': 'TextField',
+            'summary': False
+        }),
+
+    ])
+
+    @classmethod
+    def filter(cls, term):
+
+        if isinstance(term, (dict,)):
+            key, value = tuple((k, v) for k, v in term.items())[0]
+        else:
+            key, value = term
+
+        try:
+
+            return tuple(
+
+                field
+
+                for field, meta in cls.fields_manifest.items()
+
+                if meta.get(key) is value or meta.get(key) in value
+
+            )
+        except TypeError:
+
+            return tuple(
+
+                field
+
+                for field, meta in cls.fields_manifest.items()
+
+                if meta.get(key) is value
+
+            )
+
+    @classproperty
+    def all_fields(cls):
+        return tuple(field for field, _ in cls.fields_manifest.items())
+
+    @classproperty
+    def relationship_fields(cls):
+        return cls.filter({
+            'field_type': ('ForeignKey', 'ManyToManyField')
+        })
+
+    @classproperty
+    def foreign_fields(cls):
+        return cls.filter({
+            'field_type': 'ForeignKey'
+        })
+
+    @classproperty
+    def many_to_many_fields(cls):
+        return cls.filter({
+            'field_type': 'ManyToManyField'
+        })
+
+    @classproperty
+    def text_fields(cls):
+        return cls.filter({
+            'field_type': ('ForeignKey', 'ManyToManyField')
+        })
+
+    @classproperty
+    def int_fields(cls):
+        return cls.filter({
+            'field_type': 'PositiveIntegerField'
+        })
+
+    @classproperty
+    def public_fields(cls):
+        return cls.filter({
+            'public': True
+        })
+
+    @classproperty
+    def summary_fields(cls):
+        return cls.filter({
+            'summary': True
+        })

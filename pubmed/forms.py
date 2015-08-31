@@ -151,4 +151,4 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
 
     class Meta:
         model = EntryMeta.model
-        fields = EntryMeta.fields
+        fields = EntryMeta.public_fields

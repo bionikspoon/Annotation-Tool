@@ -177,8 +177,11 @@ class ModelFactory(object):
         :return:
         """
         fixture_name = '%s.%s' % (self.fixture_prefix, self.model_name)
-        return [{'model': fixture_name, 'pk': pk, 'fields': data} for pk, data
-                in enumerate(sorted(self.model_choices))]
+        return [{
+                    'model': fixture_name,
+                    'pk': pk,
+                    'fields': data
+                } for pk, data in enumerate(sorted(self.model_choices))]
 
 
 def pprint_json(data, fp):
@@ -201,11 +204,9 @@ def generate_data():
     """
     with SummaryManager() as summary:
         process = ModelFactory.with_manager(summary)
-        # process('AssessedPatientOutcome')
         process('Disease')
-        process('PatientOutcome')
+        process('PatientOutcomes')
 
-        # process('SignificantPatientOutcome')
         process('Treatment')
         process('VariantConsequence')
         process('VariantType')

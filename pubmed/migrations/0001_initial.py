@@ -2,10 +2,10 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import model_utils.fields
+import django.db.models.deletion
 from django.conf import settings
 import django.utils.timezone
-import django.db.models.deletion
+import model_utils.fields
 
 
 class Migration(migrations.Migration):
@@ -18,9 +18,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='BreakendDirectionLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -30,9 +30,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='BreakendStrandLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -42,9 +42,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='DiseaseLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -54,30 +54,30 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Entry',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('pubmed_id', models.PositiveIntegerField()),
-                ('gene', models.CharField(max_length=100, blank=True)),
-                ('syntax_text', models.CharField(max_length=100, blank=True)),
-                ('chromosome', models.CharField(max_length=100, blank=True)),
-                ('start', models.PositiveIntegerField(null=True, blank=True)),
-                ('stop', models.PositiveIntegerField(null=True, blank=True)),
-                ('mate_chromosome', models.CharField(max_length=100, blank=True)),
-                ('mate_start', models.PositiveIntegerField(null=True, blank=True)),
-                ('mate_end', models.PositiveIntegerField(null=True, blank=True)),
-                ('minimum_number_of_copies', models.PositiveIntegerField(null=True, blank=True)),
-                ('maximum_number_of_copies', models.PositiveIntegerField(null=True, blank=True)),
-                ('coordinate_predicate', models.CharField(max_length=100, blank=True)),
-                ('partner_coordinate_predicate', models.CharField(max_length=100, blank=True)),
-                ('variant_clinical_grade', models.PositiveIntegerField(null=True, blank=True, choices=[(1, 1), (2, 2), (3, 3), (4, 4), (5, 5)])),
-                ('treatment_1', models.CharField(max_length=100, blank=True)),
-                ('treatment_2', models.CharField(max_length=100, blank=True)),
-                ('treatment_3', models.CharField(max_length=100, blank=True)),
-                ('treatment_4', models.CharField(max_length=100, blank=True)),
-                ('treatment_5', models.CharField(max_length=100, blank=True)),
-                ('population_size', models.PositiveIntegerField(null=True, blank=True)),
-                ('ethnicity', models.CharField(max_length=100, blank=True)),
+                ('gene', models.CharField(blank=True, max_length=100)),
+                ('syntax_text', models.CharField(blank=True, max_length=100)),
+                ('chromosome', models.CharField(blank=True, max_length=100)),
+                ('start', models.PositiveIntegerField(blank=True, null=True)),
+                ('stop', models.PositiveIntegerField(blank=True, null=True)),
+                ('mate_chromosome', models.CharField(blank=True, max_length=100)),
+                ('mate_start', models.PositiveIntegerField(blank=True, null=True)),
+                ('mate_end', models.PositiveIntegerField(blank=True, null=True)),
+                ('minimum_number_of_copies', models.PositiveIntegerField(blank=True, null=True)),
+                ('maximum_number_of_copies', models.PositiveIntegerField(blank=True, null=True)),
+                ('coordinate_predicate', models.CharField(blank=True, max_length=100)),
+                ('partner_coordinate_predicate', models.CharField(blank=True, max_length=100)),
+                ('variant_clinical_grade', models.PositiveIntegerField(choices=[(1, 1), (2, 2), (3, 3), (4, 4), (5, 5)], blank=True, null=True)),
+                ('treatment_1', models.CharField(blank=True, max_length=100)),
+                ('treatment_2', models.CharField(blank=True, max_length=100)),
+                ('treatment_3', models.CharField(blank=True, max_length=100)),
+                ('treatment_4', models.CharField(blank=True, max_length=100)),
+                ('treatment_5', models.CharField(blank=True, max_length=100)),
+                ('population_size', models.PositiveIntegerField(blank=True, null=True)),
+                ('ethnicity', models.CharField(blank=True, max_length=100)),
                 ('design', models.TextField(blank=True)),
                 ('reference_claims', models.TextField(blank=True)),
                 ('comments', models.TextField(blank=True)),
@@ -89,9 +89,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MutationTypeLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -101,9 +101,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='OperatorLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -111,11 +111,11 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='PatientOutcomeLookup',
+            name='PatientOutcomesLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -125,9 +125,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='RuleLevelLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -137,9 +137,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='SexLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -149,9 +149,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StructureLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -161,9 +161,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='SyntaxLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -173,9 +173,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='VariantConsequenceLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -185,9 +185,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='VariantTypeLookup',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
-                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, editable=False, verbose_name='created')),
-                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, editable=False, verbose_name='modified')),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
+                ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('choice', models.CharField(max_length=100, unique=True)),
             ],
             options={
@@ -197,17 +197,17 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='entry',
             name='assessed_patient_outcomes',
-            field=models.ManyToManyField(blank=True, to='pubmed.PatientOutcomeLookup', related_name='assessed_patient_outcomes'),
+            field=models.ManyToManyField(to='pubmed.PatientOutcomesLookup', blank=True, related_name='assessed_patient_outcomes'),
         ),
         migrations.AddField(
             model_name='entry',
             name='breakend_direction',
-            field=models.ForeignKey(to='pubmed.BreakendDirectionLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, to='pubmed.BreakendDirectionLookup', on_delete=django.db.models.deletion.SET_NULL, related_name='breakend_direction'),
         ),
         migrations.AddField(
             model_name='entry',
             name='breakend_strand',
-            field=models.ForeignKey(to='pubmed.BreakendStrandLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, to='pubmed.BreakendStrandLookup', on_delete=django.db.models.deletion.SET_NULL, related_name='breakend_strand'),
         ),
         migrations.AddField(
             model_name='entry',
@@ -217,61 +217,61 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='entry',
             name='mate_breakend_direction',
-            field=models.ForeignKey(to='pubmed.BreakendDirectionLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL, related_name='mate_breakend_direction'),
+            field=models.ForeignKey(blank=True, null=True, to='pubmed.BreakendDirectionLookup', on_delete=django.db.models.deletion.SET_NULL, related_name='mate_breakend_direction'),
         ),
         migrations.AddField(
             model_name='entry',
             name='mate_breakend_strand',
-            field=models.ForeignKey(to='pubmed.BreakendStrandLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL, related_name='mate_breakend_strand'),
+            field=models.ForeignKey(blank=True, null=True, to='pubmed.BreakendStrandLookup', on_delete=django.db.models.deletion.SET_NULL, related_name='mate_breakend_strand'),
         ),
         migrations.AddField(
             model_name='entry',
             name='mutation_type',
-            field=models.ForeignKey(to='pubmed.MutationTypeLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='pubmed.MutationTypeLookup'),
         ),
         migrations.AddField(
             model_name='entry',
             name='operator',
-            field=models.ForeignKey(to='pubmed.OperatorLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='pubmed.OperatorLookup'),
         ),
         migrations.AddField(
             model_name='entry',
             name='rule_level',
-            field=models.ForeignKey(to='pubmed.RuleLevelLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='pubmed.RuleLevelLookup'),
         ),
         migrations.AddField(
             model_name='entry',
             name='sex',
-            field=models.ForeignKey(to='pubmed.SexLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='pubmed.SexLookup'),
         ),
         migrations.AddField(
             model_name='entry',
             name='significant_patient_outcomes',
-            field=models.ManyToManyField(blank=True, to='pubmed.PatientOutcomeLookup', related_name='significant_patient_outcomes'),
+            field=models.ManyToManyField(to='pubmed.PatientOutcomesLookup', blank=True, related_name='significant_patient_outcomes'),
         ),
         migrations.AddField(
             model_name='entry',
             name='structure',
-            field=models.ForeignKey(to='pubmed.StructureLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='pubmed.StructureLookup'),
         ),
         migrations.AddField(
             model_name='entry',
             name='syntax',
-            field=models.ForeignKey(to='pubmed.SyntaxLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='pubmed.SyntaxLookup'),
         ),
         migrations.AddField(
             model_name='entry',
             name='user',
-            field=models.ForeignKey(to=settings.AUTH_USER_MODEL, editable=False, on_delete=django.db.models.deletion.PROTECT, related_name='pubmed_entries'),
+            field=models.ForeignKey(editable=False, to=settings.AUTH_USER_MODEL, on_delete=django.db.models.deletion.PROTECT, related_name='pubmed_entries'),
         ),
         migrations.AddField(
             model_name='entry',
             name='variant_consequence',
-            field=models.ForeignKey(to='pubmed.VariantConsequenceLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='pubmed.VariantConsequenceLookup'),
         ),
         migrations.AddField(
             model_name='entry',
             name='variant_type',
-            field=models.ForeignKey(to='pubmed.VariantTypeLookup', null=True, blank=True, on_delete=django.db.models.deletion.SET_NULL),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='pubmed.VariantTypeLookup'),
         ),
     ]

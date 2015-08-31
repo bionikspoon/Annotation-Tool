@@ -11,9 +11,15 @@ import config
 
 urlpatterns = [
 
-    url(r'^$', RedirectView.as_view(pattern_name='pubmed:list',permanent=False), name="home"),
+    url(r'^$',
+        RedirectView.as_view(pattern_name='pubmed:list', permanent=False),
+        name="home"),
     # url(r'^$', TemplateView.as_view(template_name='pages/home.html'),
     #     name="home"),
+
+
+    url(r'^api/auth/',
+        include('rest_framework.urls', namespace='rest_framework')),
 
     url(r'^api/', include(config.api, namespace='api')),
     # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'),
@@ -21,7 +27,9 @@ urlpatterns = [
 
     # Django Admin
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
     url(r'^admin/ui/', include('grappelli.urls')),
+
     url(r'^admin/', include(admin.site.urls)),
 
     # User management

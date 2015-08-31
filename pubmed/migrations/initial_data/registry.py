@@ -29,7 +29,7 @@ class InitialData(object):
 
             for subclass in cls.__subclasses__()
 
-            for pk, choice in enumerate(subclass.choices)
+            for pk, choice in enumerate(subclass.choices, start=1)
 
         )
 
@@ -48,13 +48,12 @@ class InitialData(object):
             :param subclass:
             :return:
             """
-            return (
+            return ({
+                        'pk': pk,
+                        'choice': choice
+                    }
 
-                {'pk': pk, 'choice': choice}
-
-                for pk, choice in enumerate(subclass.choices)
-
-            )
+                    for pk, choice in enumerate(subclass.choices, start=1))
 
         return (
 

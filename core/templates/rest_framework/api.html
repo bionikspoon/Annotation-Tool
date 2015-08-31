@@ -1,28 +1,24 @@
 {% extends "core/base.html" %}
 
 {% load static rest_framework %}
-{# Override this template in your own templates directory to customize #}
+
+
 {% block meta %}
   {{ block.super }}
   <meta name="robots" content="NONE,NOARCHIVE" />
 {% endblock meta %}
 
-{% block bootstrap_css %}
-  {{ block.super }}
-{#  <link rel="stylesheet"#}
-{#        type="text/css"#}
-{#        href="{% static "rest_framework/css/bootstrap-tweaks.css" %}" />#}
-{% endblock bootstrap_css %}
+
 
 {% block css %}
   {{ block.super }}
 
   <link rel="stylesheet"
         type="text/css"
-        href="{% static "rest_framework/css/prettify.css" %}" />
+        href="{% static "rest_framework/css/default.css" %}" />
   <link rel="stylesheet"
         type="text/css"
-        href="{% static "rest_framework/css/default.css" %}" />
+        href="{% static "rest_framework/css/prettify.css" %}" />
 {% endblock css %}
 
 {% block userlinks %}
@@ -38,9 +34,12 @@
     {% for breadcrumb_name, breadcrumb_url in breadcrumblist %}
       {% if forloop.last %}
         <li class="active">
-          <a href="{{ breadcrumb_url }}">{{ breadcrumb_name }}</a></li>
+          <a href="{{ breadcrumb_url }}">{{ breadcrumb_name }}</a>
+        </li>
+
       {% else %}
         <li><a href="{{ breadcrumb_url }}">{{ breadcrumb_name }}</a></li>
+
       {% endif %}
     {% endfor %}
   </ul>
