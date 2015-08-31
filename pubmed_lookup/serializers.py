@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # coding=utf-8
-from rest_framework import serializers
-from rest_framework.serializers import HyperlinkedIdentityField
-from pubmed_lookup import models
+from rest_framework.serializers import (HyperlinkedIdentityField,
+    HyperlinkedModelSerializer)
+
+from . import models
 
 
-class LookupTableSerializer(serializers.HyperlinkedModelSerializer):
+class LookupTableSerializer(HyperlinkedModelSerializer):
     url = NotImplemented
 
     class Meta:

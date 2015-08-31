@@ -5,6 +5,9 @@ Base class.  Aggregate all data.
 """
 from collections import namedtuple
 from pprint import pprint
+import logging
+
+logger = logging.getLogger(__name__)
 
 LookupChoice = namedtuple('LookupChoice', ('cls', 'pk', 'choice'))
 LookupModelGroup = namedtuple('LookupModelGroup', ('cls', 'objects'))
@@ -102,7 +105,8 @@ def clean_lookup_tables(apps, schema_editor):
             Model = apps.get_model('pubmed_lookup', subclass.__name__)
             Model.objects.all().delete()
         except LookupError:
-            pass
+            logger.warning('pubmed_lookup.%s could not be found',
+                           subclass.__name__)
 
 
 if __name__ == '__main__':

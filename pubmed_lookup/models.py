@@ -1,9 +1,9 @@
 from django.db import models
 
-from model_utils import FieldTracker, models as model_utils_models
+from model_utils import FieldTracker, models as utils_models
 
 
-class LookupTable(model_utils_models.TimeStampedModel):
+class LookupTable(utils_models.TimeStampedModel):
     choice = models.CharField(max_length=100, unique=True)
 
     tracker = FieldTracker()

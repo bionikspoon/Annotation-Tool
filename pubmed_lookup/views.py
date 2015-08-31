@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from pubmed_lookup.models import *
-from pubmed_lookup.serializers import *
+
+from . import models, serializers
 
 
 class LookupTableViewSet(ModelViewSet):
@@ -8,60 +8,60 @@ class LookupTableViewSet(ModelViewSet):
 
 
 class StructureLookupViewSet(LookupTableViewSet):
-    queryset = StructureLookup.objects.all()
-    serializer_class = StructureLookupSerializer
+    queryset = models.StructureLookup.objects.all()
+    serializer_class = serializers.StructureLookupSerializer
 
 
 class MutationTypeLookupViewSet(LookupTableViewSet):
-    queryset = MutationTypeLookup.objects.all()
-    serializer_class = MutationTypeLookupSerializer
+    queryset = models.MutationTypeLookup.objects.all()
+    serializer_class = serializers.MutationTypeLookupSerializer
 
 
 class SyntaxLookupViewSet(LookupTableViewSet):
-    queryset = SyntaxLookup.objects.all()
-    serializer_class = SyntaxLookupSerializer
+    queryset = models.SyntaxLookup.objects.all()
+    serializer_class = serializers.SyntaxLookupSerializer
 
 
 class OperatorLookupViewSet(LookupTableViewSet):
-    queryset = OperatorLookup.objects.all()
-    serializer_class = OperatorLookupSerializer
+    queryset = models.OperatorLookup.objects.all()
+    serializer_class = serializers.OperatorLookupSerializer
 
 
 class RuleLevelLookupViewSet(LookupTableViewSet):
-    queryset = RuleLevelLookup.objects.all()
-    serializer_class = RuleLevelLookupSerializer
+    queryset = models.RuleLevelLookup.objects.all()
+    serializer_class = serializers.RuleLevelLookupSerializer
 
 
 class BreakendStrandLookupViewSet(LookupTableViewSet):
-    queryset = BreakendStrandLookup.objects.all()
-    serializer_class = BreakendStrandLookupSerializer
+    queryset = models.BreakendStrandLookup.objects.all()
+    serializer_class = serializers.BreakendStrandLookupSerializer
 
 
 class BreakendDirectionLookupViewSet(LookupTableViewSet):
-    queryset = BreakendDirectionLookup.objects.all()
-    serializer_class = BreakendDirectionLookupSerializer
+    queryset = models.BreakendDirectionLookup.objects.all()
+    serializer_class = serializers.BreakendDirectionLookupSerializer
 
 
 class VariantTypeLookupViewSet(LookupTableViewSet):
-    queryset = VariantTypeLookup.objects.all()
-    serializer_class = VariantTypeLookupSerializer
+    queryset = models.VariantTypeLookup.objects.all()
+    serializer_class = serializers.VariantTypeLookupSerializer
 
 
 class VariantConsequenceLookupViewSet(LookupTableViewSet):
-    queryset = VariantConsequenceLookup.objects.all()
-    serializer_class = VariantConsequenceLookupSerializer
+    queryset = models.VariantConsequenceLookup.objects.all()
+    serializer_class = serializers.VariantConsequenceLookupSerializer
 
 
 class SexLookupViewSet(LookupTableViewSet):
-    queryset = SexLookup.objects.all()
-    serializer_class = SexLookupSerializer
+    queryset = models.SexLookup.objects.all()
+    serializer_class = serializers.SexLookupSerializer
 
 
 class DiseaseLookupViewSet(LookupTableViewSet):
-    queryset = DiseaseLookup.objects.all()
-    serializer_class = DiseaseLookupSerializer
+    queryset = models.DiseaseLookup.objects.all()
+    serializer_class = serializers.DiseaseLookupSerializer
 
 
 class PatientOutcomesLookupViewSet(LookupTableViewSet):
-    queryset = PatientOutcomesLookup.objects.all()
-    serializer_class = PatientOutcomesLookupSerializer
+    queryset = models.PatientOutcomesLookup.objects.all()
+    serializer_class = serializers.PatientOutcomesLookupSerializer

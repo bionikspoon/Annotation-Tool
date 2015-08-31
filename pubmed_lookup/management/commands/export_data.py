@@ -3,7 +3,7 @@
 
 from django.core.management.base import BaseCommand
 
-from pubmed_lookup.migrations.initial_data import generate_data
+from ...migrations.initial_data.build import generate_data
 
 
 class Command(BaseCommand):

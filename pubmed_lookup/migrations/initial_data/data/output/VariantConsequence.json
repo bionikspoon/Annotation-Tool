@@ -1,12 +1,12 @@
 [
     {
         "fields": "Non Synonymous Missense",
-        "model": "pubmed.VariantConsequenceLookup",
-        "pk": 1
+        "model": "pubmed_lookup.VariantConsequenceLookup",
+        "pk": 0
     },
     {
         "fields": "Non Synonymous Nonsense",
-        "model": "pubmed.VariantConsequenceLookup",
-        "pk": 2
+        "model": "pubmed_lookup.VariantConsequenceLookup",
+        "pk": 1
     }
 ]

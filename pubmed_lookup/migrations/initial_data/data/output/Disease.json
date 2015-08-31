@@ -1,107 +1,107 @@
 [
     {
         "fields": "Adenocarcinoma Of Lung",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 1
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 0
     },
     {
         "fields": "Carcinoma Of Ampulla Of Vater",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 2
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 1
     },
     {
         "fields": "Carcinoma Of Colon",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 3
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 2
     },
     {
         "fields": "Extragastrointestinal Stromal Tumor Of Peritoneum",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 4
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 3
     },
     {
         "fields": "Glioma",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 5
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 4
     },
     {
         "fields": "Hashimoto Thyroiditis",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 6
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 5
     },
     {
         "fields": "Malignant Glioma Of Brain",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 7
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 6
     },
     {
         "fields": "Malignant Melanoma",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 8
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 7
     },
     {
         "fields": "Malignant Melanoma Of Conjunctiva",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 9
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 8
     },
     {
         "fields": "Malignant Tumor Of Thyroid Gland",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 10
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 9
     },
     {
         "fields": "Metastasis From Malignant Tumor Of Colon",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 11
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 10
     },
     {
         "fields": "Metastasis From Malignant Tumor Of Rectum",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 12
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 11
     },
     {
         "fields": "Metastatic Malignant Melanoma",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 13
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 12
     },
     {
         "fields": "Neoplasm Of Colon",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 14
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 13
     },
     {
         "fields": "Neoplasm Of Ovary",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 15
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 14
     },
     {
         "fields": "Neoplastic Disease",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 16
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 15
     },
     {
         "fields": "Non-Small Cell Lung Cancer",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 17
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 16
     },
     {
         "fields": "Papillary Thyroid Carcinoma",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 18
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 17
     },
     {
         "fields": "Primary Adenocarcinoma Of Pancreas",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 19
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 18
     },
     {
         "fields": "Secondary Malignant Neoplasm Of Brain",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 20
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 19
     },
     {
         "fields": "Serous Cystadenoma Of Ovary",
-        "model": "pubmed.DiseaseLookup",
-        "pk": 21
+        "model": "pubmed_lookup.DiseaseLookup",
+        "pk": 20
     }
 ]

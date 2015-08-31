@@ -2,7 +2,7 @@
 # coding=utf-8
 from django.contrib import admin
 
-from pubmed_lookup.models import LookupTable
+from .models import LookupTable
 
 lookup_tables = (lookup_table for lookup_table in LookupTable.__subclasses__())
 
