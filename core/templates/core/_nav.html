@@ -29,7 +29,8 @@
       <ul class="nav navbar-nav">
         {% active_url 'Home' 'home' %}
         {% active_url 'Pubmed' 'pubmed:list' %}
-        {% active_url 'API' 'api:index' %}
+        {% active_url 'API' 'api:api-root' %}
+        <a href="{% url 'api:api-root'  %}">{% url 'api:api-root'  %}</a>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

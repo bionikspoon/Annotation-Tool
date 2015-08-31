@@ -2,20 +2,20 @@
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib import messages
-from braces.views import (LoginRequiredMixin, UserFormKwargsMixin,
-    SelectRelatedMixin)
+from braces import views as braces_views
 from rest_framework.viewsets import ModelViewSet
 
 from .forms import EntryModelForm
-from .models import (Entry)
-from .serializers import (EntrySerializer)
+from .models import Entry
+from .serializers import EntrySerializer
 
 
 class EntryMixin(object):
     model = Entry
 
 
-class EntryFormMixin(LoginRequiredMixin, UserFormKwargsMixin, EntryMixin):
+class EntryFormMixin(braces_views.LoginRequiredMixin,
+                     braces_views.UserFormKwargsMixin, EntryMixin):
     form_class = EntryModelForm
     template_name = 'pubmed/entry_form.html'
     success_url = reverse_lazy('pubmed:list')
@@ -40,7 +40,7 @@ class EntryFormMixin(LoginRequiredMixin, UserFormKwargsMixin, EntryMixin):
         return context
 
 
-class EntryListView(EntryMixin, SelectRelatedMixin, ListView):
+class EntryListView(EntryMixin, braces_views.SelectRelatedMixin, ListView):
     template_name = 'pubmed/entry_list.html'
     select_related = ('structure', 'mutation_type')
 

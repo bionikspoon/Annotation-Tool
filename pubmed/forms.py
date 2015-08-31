@@ -4,7 +4,7 @@ from django import forms
 from django.forms import ModelForm
 from django.db import models
 from crispy_forms import layout, bootstrap, helper as crispy_helper
-from braces.forms import UserKwargModelFormMixin
+from braces import forms as braces_forms
 from model_utils import Choices
 
 from .models import EntryMeta
@@ -39,7 +39,7 @@ def formfield_callback(field, **kwargs):
         return field.formfield(**kwargs)
 
 
-class EntryModelForm(UserKwargModelFormMixin, ModelForm):
+class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
     formfield_callback = formfield_callback
 
     treatment = TypedChoiceField(choices=Choices(*range(1, 6)))
