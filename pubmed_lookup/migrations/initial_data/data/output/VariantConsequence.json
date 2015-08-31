@@ -1,0 +1,12 @@
+[
+    {
+        "fields": "Non Synonymous Missense",
+        "model": "pubmed_lookup.VariantConsequenceLookup",
+        "pk": 0
+    },
+    {
+        "fields": "Non Synonymous Nonsense",
+        "model": "pubmed_lookup.VariantConsequenceLookup",
+        "pk": 1
+    }
+]
