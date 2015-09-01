@@ -24,10 +24,21 @@ $(function () {
 
     /**
      *
+     * Impressively well organized modules.
+     ***************************************************************************
+     * */
+    treatmentBehavior($form);
+    chromosomeStyles($form);
+    select2Init($form);
+    pubmedLookup($form);
+
+
+    /**
+     *
      * Module Definitions
      ***************************************************************************
      * */
-    var treatmentBehavior = function ($form) {
+    function treatmentBehavior($form) {
         /**
          *
          * Elements of Interest
@@ -90,9 +101,9 @@ $(function () {
          * Initialize Module
          * */
         init();
-    };
+    }
 
-    var chromosomeStyles = function ($form) {
+    function chromosomeStyles($form) {
         /**
          *
          * Query main element
@@ -107,9 +118,9 @@ $(function () {
             .removeClass('col-xs-4 col-md-3 col-lg-2 col-xs-8 col-md-9 col-lg-10');
         $formGroup.find('input.form-control')//
             .css('width', '95%')
-    };
+    }
 
-    var select2Init = function ($form) {
+    function select2Init($form) {
         /**
          *
          * Query all select boxes for select2
@@ -125,16 +136,74 @@ $(function () {
             theme: 'bootstrap'
         });
 
-    };
+    }
+
+    function pubmedLookup($form) {
+        /**
+         *
+         * Queries of interest.
+         * */
+        var $pubmedId = $form.find('#id_pubmed_id');
+        var $summaryDiv = $form.find('#summary');
+        var $resultsDiv = $form.find('#results');
+
+        /**
+         *
+         * Bind to DOM
+         * */
+        $pubmedId.keyup(getEntries);
+
+        /**
+         *
+         * Methods
+         * */
+
+        function getEntries(e) {
+            var pubmedId = (typeof e === "string") ? e : e.target.value;
+            if (pubmedId) {
+                $.getJSON('/api/pubmed/', {'pubmed_id': pubmedId}, setResults)
+            } else {
+                setResults(false);
+            }
+        }
+
+        function setResults(response) {
+            render(response ? response : []);
+        }
+
+        function renderSummaryMessage(count) {
+            var adjective = count.toString();
+            var noun = (count === 1 ? ' pubmed entry found.'
+                : ' pubmed entries found.');
+            var verb = count > 0 ? ' <a href=#results>Jump</a>' : '';
+
+            return adjective + noun + verb
+        }
+
+        function renderResults(results) {
+            var jump = '<a href=#entry-form>Jump</a>';
+            var openTag = '<pre class=prettyprint><code class=language-js>';
+            var resultsString = JSON.stringify(results, null, 4);
+            var closeTag = '</code></pre>';
+            return jump + openTag + resultsString + closeTag;
+        }
+
+        function render(results) {
+            $summaryDiv.html(renderSummaryMessage(results.length));
+            $resultsDiv.html(renderResults(results));
+            window.prettyPrint()
+        }
+
+        /**
+         *
+         * Initialization
+         * */
+
+        getEntries($pubmedId.val());
 
 
-    /**
-     *
-     * Impressively well organized modules.
-     ***************************************************************************
-     * */
-    treatmentBehavior($form);
-    chromosomeStyles($form);
-    select2Init($form);
+    }
+
+
 });
 
