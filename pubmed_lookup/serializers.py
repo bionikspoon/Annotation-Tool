@@ -2,12 +2,14 @@
 # coding=utf-8
 from rest_framework.serializers import (HyperlinkedIdentityField,
     HyperlinkedModelSerializer)
-
+from pubmed import EntrySerializer
 from . import models
 
 
 class LookupTableSerializer(HyperlinkedModelSerializer):
     url = NotImplemented
+    entry = pubmed.serializers.EntrySerializer(many=True, read_only=True,
+                                               view_name='api:entry-detail')
 
     class Meta:
         model = models.LookupTable
