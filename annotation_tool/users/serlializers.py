@@ -8,9 +8,9 @@ from .models import User
 
 
 class UserSerializer(ModelSerializer):
-    pubmed_entries = HyperlinkedRelatedField(view_name='api:entry-detail',
+    pubmed_entries = HyperlinkedRelatedField(view_name='entry-detail',
                                              read_only=True, many=True)
-    url = HyperlinkedIdentityField(view_name='api:user-detail')
+    url = HyperlinkedIdentityField(view_name='user-detail')
 
     class Meta:
         model = User
