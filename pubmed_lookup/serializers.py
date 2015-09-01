@@ -1,53 +1,59 @@
 #!/usr/bin/env python
 # coding=utf-8
+from rest_framework.relations import HyperlinkedRelatedField
 from rest_framework.serializers import (HyperlinkedIdentityField,
     HyperlinkedModelSerializer)
-from pubmed import EntrySerializer
+
 from . import models
 
 
 class LookupTableSerializer(HyperlinkedModelSerializer):
-    url = NotImplemented
-    entry = pubmed.serializers.EntrySerializer(many=True, read_only=True,
-                                               view_name='api:entry-detail')
+    class Meta:
+        model = models.LookupTable
+        fields = ('id', 'choice', 'url')
+
+
+class EntrySetLookupTableSerializer(LookupTableSerializer):
+    entry_set = HyperlinkedRelatedField(view_name='api:entry-detail',
+                                        read_only=True, many=True)
 
     class Meta:
         model = models.LookupTable
         fields = ('id', 'choice', 'url')
 
 
-class StructureLookupSerializer(LookupTableSerializer):
+class StructureLookupSerializer(EntrySetLookupTableSerializer):
     url = HyperlinkedIdentityField(view_name='api:structurelookup-detail')
 
-    class Meta(LookupTableSerializer.Meta):
+    class Meta(EntrySetLookupTableSerializer.Meta):
         model = models.StructureLookup
 
 
-class MutationTypeLookupSerializer(LookupTableSerializer):
+class MutationTypeLookupSerializer(EntrySetLookupTableSerializer):
     url = HyperlinkedIdentityField(view_name='api:mutationtypelookup-detail')
 
-    class Meta(LookupTableSerializer.Meta):
+    class Meta(EntrySetLookupTableSerializer.Meta):
         model = models.MutationTypeLookup
 
 
-class SyntaxLookupSerializer(LookupTableSerializer):
+class SyntaxLookupSerializer(EntrySetLookupTableSerializer):
     url = HyperlinkedIdentityField(view_name='api:syntaxlookup-detail')
 
-    class Meta(LookupTableSerializer.Meta):
+    class Meta(EntrySetLookupTableSerializer.Meta):
         model = models.SyntaxLookup
 
 
-class OperatorLookupSerializer(LookupTableSerializer):
+class OperatorLookupSerializer(EntrySetLookupTableSerializer):
     url = HyperlinkedIdentityField(view_name='api:operatorlookup-detail')
 
-    class Meta(LookupTableSerializer.Meta):
+    class Meta(EntrySetLookupTableSerializer.Meta):
         model = models.OperatorLookup
 
 
-class RuleLevelLookupSerializer(LookupTableSerializer):
+class RuleLevelLookupSerializer(EntrySetLookupTableSerializer):
     url = HyperlinkedIdentityField(view_name='api:rulelevellookup-detail')
 
-    class Meta(LookupTableSerializer.Meta):
+    class Meta(EntrySetLookupTableSerializer.Meta):
         model = models.RuleLevelLookup
 
 
@@ -55,6 +61,7 @@ class BreakendStrandLookupSerializer(LookupTableSerializer):
     url = HyperlinkedIdentityField(view_name='api:breakendstrandlookup-detail')
 
     class Meta(LookupTableSerializer.Meta):
+
         model = models.BreakendStrandLookup
 
 
@@ -63,28 +70,29 @@ class BreakendDirectionLookupSerializer(LookupTableSerializer):
         view_name='api:breakenddirectionlookup-detail')
 
     class Meta(LookupTableSerializer.Meta):
+
         model = models.BreakendDirectionLookup
 
 
-class VariantTypeLookupSerializer(LookupTableSerializer):
+class VariantTypeLookupSerializer(EntrySetLookupTableSerializer):
     url = HyperlinkedIdentityField(view_name='api:varianttypelookup-detail')
 
-    class Meta(LookupTableSerializer.Meta):
+    class Meta(EntrySetLookupTableSerializer.Meta):
         model = models.VariantTypeLookup
 
 
-class VariantConsequenceLookupSerializer(LookupTableSerializer):
+class VariantConsequenceLookupSerializer(EntrySetLookupTableSerializer):
     url = HyperlinkedIdentityField(
         view_name='api:variantconsequencelookup-detail')
 
-    class Meta(LookupTableSerializer.Meta):
+    class Meta(EntrySetLookupTableSerializer.Meta):
         model = models.VariantConsequenceLookup
 
 
-class SexLookupSerializer(LookupTableSerializer):
+class SexLookupSerializer(EntrySetLookupTableSerializer):
     url = HyperlinkedIdentityField(view_name='api:sexlookup-detail')
 
-    class Meta(LookupTableSerializer.Meta):
+    class Meta(EntrySetLookupTableSerializer.Meta):
         model = models.SexLookup
 
 
