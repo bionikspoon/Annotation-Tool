@@ -4,7 +4,7 @@ from factory import SubFactory, DjangoModelFactory, Iterator
 from faker import Faker
 
 from annotation_tool.users.factories import UserFactory
-from pubmed_lookup import models as lookup_models
+import pubmed_lookup
 from . import models
 
 faker = Faker()
@@ -24,32 +24,32 @@ class EntryFactory(DjangoModelFactory):
 class PopulatedEntryFactory(EntryFactory):
     """Create populated pubmed entry for testing."""
     gene = faker.text(max_nb_chars=100)
-    structure = Iterator(lookup_models.StructureLookup.objects.all())
-    mutation_type = Iterator(lookup_models.MutationTypeLookup.objects.all())
-    syntax = Iterator(lookup_models.SyntaxLookup.objects.all())
+    structure = Iterator(pubmed_lookup.StructureLookup.objects.all())
+    mutation_type = Iterator(pubmed_lookup.MutationTypeLookup.objects.all())
+    syntax = Iterator(pubmed_lookup.SyntaxLookup.objects.all())
     syntax_text = faker.text(max_nb_chars=100)
-    operator = Iterator(lookup_models.OperatorLookup.objects.all())
-    rule_level = Iterator(lookup_models.RuleLevelLookup.objects.all())
+    operator = Iterator(pubmed_lookup.OperatorLookup.objects.all())
+    rule_level = Iterator(pubmed_lookup.RuleLevelLookup.objects.all())
     chromosome = faker.text(max_nb_chars=100)
     start = faker.random_int()
     stop = faker.random_int()
-    breakend_strand = Iterator(lookup_models.BreakendStrandLookup.objects.all())
+    breakend_strand = Iterator(pubmed_lookup.BreakendStrandLookup.objects.all())
     breakend_direction = Iterator(
-        lookup_models.BreakendDirectionLookup.objects.all())
+        pubmed_lookup.BreakendDirectionLookup.objects.all())
     mate_chromosome = faker.text(max_nb_chars=100)
     mate_start = faker.random_int()
     mate_end = faker.random_int()
     mate_breakend_strand = Iterator(
-        lookup_models.BreakendStrandLookup.objects.all())
+        pubmed_lookup.BreakendStrandLookup.objects.all())
     minimum_number_of_copies = faker.random_int()
     maximum_number_of_copies = faker.random_int()
     coordinate_predicate = faker.text(max_nb_chars=100)
     partner_coordinate_predicate = faker.text(max_nb_chars=100)
-    variant_type = Iterator(lookup_models.VariantTypeLookup.objects.all())
+    variant_type = Iterator(pubmed_lookup.VariantTypeLookup.objects.all())
     variant_consequence = Iterator(
-        lookup_models.VariantConsequenceLookup.objects.all())
+        pubmed_lookup.VariantConsequenceLookup.objects.all())
     variant_clinical_grade = faker.random_int()
-    # disease = lookup_models.ManyToManyField(DiseaseLookup,
+    # disease = pubmed_lookup.ManyToManyField(DiseaseLookup,
     # **DEFAULTS.ManyToManyField)
     treatment_1 = faker.text(max_nb_chars=100)
     treatment_2 = faker.text(max_nb_chars=100)
@@ -57,12 +57,12 @@ class PopulatedEntryFactory(EntryFactory):
     treatment_4 = faker.text(max_nb_chars=100)
     treatment_5 = faker.text(max_nb_chars=100)
     population_size = faker.random_int()
-    sex = Iterator(lookup_models.SexLookup.objects.all())
+    sex = Iterator(pubmed_lookup.SexLookup.objects.all())
     ethnicity = faker.text(max_nb_chars=100)
-    # assessed_patient_outcomes = lookup_models.ManyToManyField(
+    # assessed_patient_outcomes = pubmed_lookup.ManyToManyField(
     # AssessedPatientOutcomeLookup,
     #     **DEFAULTS.ManyToManyField)
-    # significant_patient_outcomes = lookup_models.ManyToManyField(
+    # significant_patient_outcomes = pubmed_lookup.ManyToManyField(
     #     SignificantPatientOutcomeLookup, **DEFAULTS.ManyToManyField)
     design = faker.paragraphs()
     reference_claims = faker.paragraphs()

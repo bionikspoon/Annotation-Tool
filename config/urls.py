@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^api/auth/',
         include('rest_framework.urls', namespace='rest_framework')),
 
-    url(r'^api/', include(config.api, namespace='api')),
+    url(r'^api/', include(config.api)),
     # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'),
     #     name="about"),
 

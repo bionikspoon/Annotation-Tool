@@ -54,11 +54,35 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
         helper.html5_required = True
         helper.layout = layout.Layout(
 
-            layout.Fieldset(
+            layout.Fieldset('Pubmed',
 
-                'Pubmed',
+                            layout.Field('pubmed_id', autocomplete='off'),
 
-                'pubmed_id', ),
+                            layout.Div(
+
+                                layout.Div(css_class=helper.label_class),
+
+                                layout.Div(
+
+                                    layout.HTML(
+
+                                        '<p id=summary '
+                                        'class=help-block></p>'
+
+                                    ),
+
+                                    css_class=helper.field_class + (
+                                        'col-xs-offset-4 '
+                                        'col-md-offset-3 '
+                                        'col-lg-offset-2')
+
+                                ),
+
+                                css_class='form-group'
+
+                            )
+
+                            ),
 
             layout.Fieldset('Gene Description',
 
@@ -103,12 +127,9 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
             layout.Fieldset('Treatment',
 
-                            'disease',
-
-                            'treatment',
-
-                            'treatment_1', 'treatment_2', 'treatment_3',
-                            'treatment_4', 'treatment_5'
+                            'disease', 'treatment', 'treatment_1',
+                            'treatment_2', 'treatment_3', 'treatment_4',
+                            'treatment_5'
 
                             ),
 
@@ -131,6 +152,8 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
                             ),
 
                             ),
+
+            layout.Div(css_id='results')
 
         )
 
