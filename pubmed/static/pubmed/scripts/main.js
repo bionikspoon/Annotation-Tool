@@ -139,6 +139,9 @@ $(function () {
     }
 
     function pubmedLookup($form) {
+
+        var _summary = [];
+        var _results = null;
         /**
          *
          * Queries of interest.
@@ -151,55 +154,77 @@ $(function () {
          *
          * Bind to DOM
          * */
-        $pubmedId.keyup(getEntries);
+        $pubmedId.keyup(getEntriesSummary);
+        $pubmedId.keyup(getEntriesResults);
 
         /**
          *
          * Methods
          * */
 
-        function getEntries(e) {
+        function getEntriesSummary(e) {
             var pubmedId = (typeof e === "string") ? e : e.target.value;
             if (pubmedId) {
-                $.getJSON('/api/pubmed/', {'pubmed_id': pubmedId}, setResults)
+                $.getJSON('/api/pubmed/', {'pubmed_id': pubmedId}, setSummary)
             } else {
-                setResults(false);
+                setSummary(false);
             }
         }
 
+        function getEntriesResults(e) {
+            var pubmedId = (typeof e === "string") ? e : e.target.value;
+            if (pubmedId) {
+                $.get('/api/pubmed/html/', {'pubmed_id': pubmedId}, setResults)
+            } else {
+                setResults(false)
+            }
+
+        }
+
+        function setSummary(response) {
+            _summary = response ? response : [];
+            renderSummaryMessage();
+            toggleSummaryVisibility();
+        }
+
         function setResults(response) {
-            render(response ? response : []);
+            _results = response ? response : '';
+            renderResults();
+
         }
 
-        function renderSummaryMessage(count) {
-            var adjective = count.toString();
-            var noun = (count === 1 ? ' pubmed entry found.'
+        function toggleSummaryVisibility() {
+            if (_summary.length) {
+                $resultsDiv.show();
+            } else {
+                $resultsDiv.hide();
+            }
+
+        }
+
+        function renderSummaryMessage() {
+            var adjective = _summary.length.toString();
+            var noun = (_summary.length === 1 ? ' pubmed entry found.'
                 : ' pubmed entries found.');
-            var verb = count > 0 ? ' <a href=#results>Jump</a>' : '';
+            var verb = _summary.length > 0 ? ' <a href=#results>Jump</a>' : '';
 
-            return adjective + noun + verb
+            $summaryDiv.html(adjective + noun + verb);
         }
 
-        function renderResults(results) {
+        function renderResults() {
             var jump = '<a href=#entry-form>Jump</a>';
-            var openTag = '<pre class=prettyprint><code class=language-js>';
-            var resultsString = JSON.stringify(results, null, 4);
-            var closeTag = '</code></pre>';
-            return jump + openTag + resultsString + closeTag;
+
+            $resultsDiv.html(jump + _results);
         }
 
-        function render(results) {
-            $summaryDiv.html(renderSummaryMessage(results.length));
-            $resultsDiv.html(renderResults(results));
-            window.prettyPrint()
-        }
 
         /**
          *
          * Initialization
          * */
 
-        getEntries($pubmedId.val());
+        getEntriesSummary($pubmedId.val());
+        getEntriesResults($pubmedId.val());
 
 
     }
