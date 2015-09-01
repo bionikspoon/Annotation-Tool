@@ -3,7 +3,10 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib import messages
 from braces import views as braces_views
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.decorators import list_route
+from rest_framework.renderers import TemplateHTMLRenderer
+from rest_framework.response import Response
+from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from .forms import EntryModelForm
 from .models import Entry
@@ -59,15 +62,15 @@ class EntryUpdateView(EntryFormMixin, UpdateView):
     action_text = 'Update'
 
 
-class EntryViewSet(ModelViewSet):
+class EntryViewSet(ReadOnlyModelViewSet):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
     filter_fields = ('pubmed_id',)
 
+    @list_route(renderer_classes=(TemplateHTMLRenderer,))
+    def html(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
 
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
-    def perform_update(self, serializer):
-        serializer.save(user=self.request.user)
+        return Response(data={
+            'entry_list': queryset
+        }, template_name='pubmed/_entry_list_items.html')
