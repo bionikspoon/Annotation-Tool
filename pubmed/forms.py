@@ -1,14 +1,19 @@
 #!/usr/bin/env python
 # coding=utf-8
+import logging
+
+from crispy_forms.utils import flatatt, render_field
 from django import forms
 from django.forms import ModelForm
 from django.db import models
-from crispy_forms import layout, bootstrap, helper as crispy_helper
+from crispy_forms import layout, bootstrap, helper
 from braces import forms as braces_forms
+from django.template.loader import render_to_string
 from model_utils import Choices
 
 from .models import EntryMeta
 
+logger = logging.getLogger(__name__)
 models.BLANK_CHOICE_DASH[0] = ('', 'Null')
 
 
@@ -39,20 +44,51 @@ def formfield_callback(field, **kwargs):
         return field.formfield(**kwargs)
 
 
+class Flat(layout.LayoutObject):
+    template = "flat/layout/flat.html"
+
+    def __init__(self, *fields, **kwargs):
+        self.fields = list(fields)
+        self.css_class = kwargs.pop('css_class', '')
+        self.css_id = kwargs.pop('css_id', None)
+        self.template = kwargs.pop('template', self.template)
+        self.flat_attrs = flatatt(kwargs)
+
+    def get_rendered_fields(self, form, form_style, context,
+                            template_pack='flat', **kwargs):
+        kwargs['template'] = 'flat/layout/field.html'
+
+        return ''.join(
+            render_field(field, form, form_style, context, template_pack='flat',
+                         **kwargs) for field in self.fields)
+
+    def render(self, form, form_style, context, template_pack='flat', **kwargs):
+        fields = self.get_rendered_fields(form, form_style, context,
+                                          template_pack, **kwargs)
+
+        template = self.get_template_name(template_pack)
+        return render_to_string(template, {
+            'fieldset': self,
+            'fields': fields,
+            'form_style': form_style
+        })
+
+
 class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
     formfield_callback = formfield_callback
 
     treatment = TypedChoiceField(choices=Choices(*range(1, 6)))
 
-    @property
-    def helper(self):
-        helper = crispy_helper.FormHelper(self)
-        helper.form_id = 'entry-form'
-        helper.form_class = 'form-horizontal'
-        helper.label_class = 'col-xs-4 col-md-3 col-lg-2'
-        helper.field_class = 'col-xs-8 col-md-9 col-lg-10'
-        helper.html5_required = True
-        helper.layout = layout.Layout(
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.helper = helper.FormHelper(self)
+        self.helper.form_id = 'entry-form'
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-sm-3'
+        self.helper.field_class = 'col-sm-9'
+        self.helper.html5_required = True
+        self.helper.layout = layout.Layout(
 
             layout.Fieldset('Pubmed',
 
@@ -60,7 +96,7 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
                             layout.Div(
 
-                                layout.Div(css_class=helper.label_class),
+                                layout.Div(css_class=self.helper.label_class),
 
                                 layout.Div(
 
@@ -71,10 +107,7 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
                                     ),
 
-                                    css_class=helper.field_class + (
-                                        'col-xs-offset-4 '
-                                        'col-md-offset-3 '
-                                        'col-lg-offset-2')
+                                    css_class=self.helper.field_class
 
                                 ),
 
@@ -93,8 +126,12 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
                                 layout.Column(
 
-                                    'chromosome', 'start', 'stop',
-                                    'breakend_strand', 'breakend_direction',
+                                    Flat(
+
+                                        'chromosome', 'start', 'stop',
+                                        'breakend_strand', 'breakend_direction',
+
+                                    ),
 
                                     css_class='col-sm-6',
                                     data_form_column='true'
@@ -105,9 +142,13 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
                                 layout.Column(
 
-                                    'mate_chromosome', 'mate_start', 'mate_end',
-                                    'mate_breakend_strand',
-                                    'mate_breakend_direction',
+                                    Flat(
+
+                                        'mate_chromosome', 'mate_start',
+                                        'mate_end', 'mate_breakend_strand',
+                                        'mate_breakend_direction',
+
+                                    ),
 
                                     css_class='col-sm-6',
                                     data_form_column='true'
@@ -118,10 +159,48 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
                             ),
 
-                            'minimum_number_of_copies',
-                            'maximum_number_of_copies', 'coordinate_predicate',
-                            'partner_coordinate_predicate', 'variant_type',
-                            'variant_consequence', 'variant_clinical_grade',
+                            layout.Row(
+
+                                layout.Column(
+
+                                    Flat('minimum_number_of_copies'),
+
+                                    css_class='col-sm-6'
+
+                                ),
+
+                                layout.Column(
+
+                                    Flat('maximum_number_of_copies'),
+
+                                    css_class='col-sm-6',
+
+                                )
+
+                            ),
+
+                            layout.Row(
+
+                                layout.Column(
+
+                                    Flat('coordinate_predicate'),
+
+                                    css_class='col-sm-6'
+
+                                ),
+
+                                layout.Column(
+
+                                    Flat('partner_coordinate_predicate'),
+
+                                    css_class='col-sm-6',
+
+                                )
+
+                            ),
+
+                            'variant_type', 'variant_consequence',
+                            'variant_clinical_grade',
 
                             ),
 
@@ -157,8 +236,8 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
         )
 
-        helper.filter_by_widget(forms.RadioSelect).wrap(bootstrap.InlineRadios)
-        return helper
+        self.helper.filter_by_widget(forms.RadioSelect).wrap(
+            bootstrap.InlineRadios)
 
     def clean(self):
         cleaned_data = super().clean()

@@ -59,8 +59,7 @@ LOCAL_APPS = (
 
     'core',  # templates and static
     'annotation_tool.users',  # custom users app
-    'pubmed',
-    'pubmed_lookup',
+    'pubmed', 'pubmed_lookup',
 
 )
 
@@ -279,6 +278,20 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(name)s %(levelname)s %(asctime)s %(module)s '
+                      '%(process)d %(thread)d %(message)s'
+        },
+        'human': {
+            'format': '%(levelname)s %(name)s Line %(lineno)d '
+                      '%(asctime)s\n'
+                      '%(message)s\n'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        }
+    },
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
@@ -293,13 +306,27 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
-        'file': {
+        'django': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR.path('logs', 'django.log')),
+            'filters': ['require_debug_true'],
+            'backupCount': 10,
+            'when': 'MIDNIGHT',
+            'formatter': 'verbose'
+        },
+        'debug': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': str(ROOT_DIR.path('logs', 'debug.log')),
             'filters': ['require_debug_true'],
-            'backupCount': 10
+            'backupCount': 10,
+            'when': 'm',
+            'interval': 10,
+            'formatter': 'human'
+
         }
+
     },
     'loggers': {
         'django.request': {
@@ -308,10 +335,16 @@ LOGGING = {
             'propagate': True
         },
         'django': {
-            'handlers': ['file'],
+            'handlers': ['django'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+        'pubmed': {
+            'handlers': ['debug'],
             'level': 'DEBUG',
             'propagate': True
         }
+
     }
 }
 

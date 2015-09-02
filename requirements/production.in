@@ -1,0 +1,19 @@
+# Pro-tip: Try not to put anything here. There should be no dependency in
+#	production that isn't in development.
+-r base.in
+
+# WSGI Handler
+# ------------------------------------------------
+gevent
+gunicorn
+
+# Static and Media Storage
+# ------------------------------------------------
+boto
+django-storages-redux
+
+
+# Mailgun Support
+# ---------------
+django-mailgun
+

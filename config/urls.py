@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.views.generic import RedirectView
+from django.views.generic import RedirectView, TemplateView
 
 import config
 
@@ -38,7 +38,10 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
-    url(r'^pubmed/', include('pubmed.urls', namespace='pubmed'))
+    url(r'^pubmed/', include('pubmed.urls', namespace='pubmed')),
+
+    url(r'^google51945c962ca81cb4.html$',
+        TemplateView.as_view(template_name='google/google51945c962ca81cb4.html'))
 
 ]
 

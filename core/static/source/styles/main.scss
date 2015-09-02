@@ -15,12 +15,5 @@ $icon-font-path: '../fonts/';
 }
 
 @import "django";
-.breadcrumb {
-
-  > li {
-
-    + li:before {
-      content: "#{$breadcrumb-separator} "; // Unicode space added since inline-block means non-collapsing white-space
-    }
-  }
-}
+@import "rest_framework";
+@import "pubmed";
