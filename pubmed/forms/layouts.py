@@ -48,26 +48,14 @@ class EntryFormLayout(Layout):
 
                      Field('pubmed_id', autocomplete='off'),
 
-                     Div(
+                     HTML(
 
-                         Div(css_class=self.label_class),
+                         '<div class=form-group>'
+                         '<div class="%s"></div>'
+                         '<p id=summary class=help-block></p>'
+                         '</div>' % self.label_class
 
-                         Div(
-
-                             HTML(
-
-                                 '<p id=summary '
-                                 'class=help-block></p>'
-
-                             ),
-
-                             css_class=self.field_class
-
-                         ),
-
-                         css_class='form-group'
-
-                     )
+                     ),
 
                      ),
 
