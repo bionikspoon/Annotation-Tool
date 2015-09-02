@@ -37,6 +37,7 @@ indent_size = 3
 
 [Makefile]
 indent_style = tab
+indent_size = 4
 
 [{package,bower}.json]
 indent_style = space
