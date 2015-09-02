@@ -175,7 +175,9 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
                                     css_class='col-sm-6',
 
-                                )
+                                ),
+
+                                css_class='well well-sm'
 
                             ),
 
@@ -195,7 +197,9 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
                                     css_class='col-sm-6',
 
-                                )
+                                ),
+
+                                css_class='well well-sm'
 
                             ),
 
