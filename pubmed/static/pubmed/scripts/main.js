@@ -28,7 +28,6 @@ $(function () {
      ***************************************************************************
      * */
     treatmentBehavior($form);
-    chromosomeStyles($form);
     select2Init($form);
     pubmedLookup($form);
 
@@ -103,22 +102,6 @@ $(function () {
         init();
     }
 
-    function chromosomeStyles($form) {
-        /**
-         *
-         * Query main element
-         * */
-        var $formGroup = $form.find('[data-form-column=true] .form-group');
-
-        /**
-         *
-         * Hack Styles
-         * */
-        $formGroup.find('*')//
-            .removeClass('col-xs-4 col-md-3 col-lg-2 col-xs-8 col-md-9 col-lg-10');
-        $formGroup.find('input.form-control')//
-            .css('width', '95%')
-    }
 
     function select2Init($form) {
         /**
