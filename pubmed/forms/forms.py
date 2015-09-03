@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
     formfield_callback = entryform_formfield_callback
 
-    treatment = TypedChoiceField(choices=Choices(*range(1, 6)))
+    treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -36,7 +36,7 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
-        treatment = int(cleaned_data.get('treatment'))
+        treatment = int(cleaned_data.get('treatment') or 1)
         for i in range(treatment + 1, 6):
             cleaned_data['treatment_%s' % i] = ''
 

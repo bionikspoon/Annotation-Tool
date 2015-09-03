@@ -301,6 +301,9 @@ LOGGING = {
         },
         'not_django': {
             '()': 'core.utils.log.NotDjangoFilter'
+        },
+        'not_production': {
+            '()': 'core.utils.log.NotProductionFilter'
         }
     },
     'handlers': {
@@ -322,7 +325,6 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': str(ROOT_DIR.path('logs', 'pubmed.log')),
-            'filters': ['require_debug_true'],
             'backupCount': 10,
             'when': 'm',
             'interval': 10,
@@ -356,7 +358,8 @@ LOGGING = {
         'pubmed': {
             'handlers': ['pubmed'],
             'level': 'DEBUG',
-            'propagate': True
+            'propagate': True,
+            'filter': ['not_production']
         },
         '': {
             'handlers': ['debug'],

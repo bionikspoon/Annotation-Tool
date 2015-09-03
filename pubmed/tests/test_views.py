@@ -1,14 +1,21 @@
 #!/usr/bin/env python
 # coding=utf-8
 
+import logging
+
 from django.core.exceptions import ObjectDoesNotExist
+
 from django.http import Http404
+from test_plus import TestCase
+from test_plus.test import CBVTestCase
 
 from .. import views, factories
-from core.utils.test import BaseTestCase, BaseCBVTestCase
+from core.utils.test import BaseTestMixin
+
+logger = logging.getLogger(__name__)
 
 
-class EntryListViewTest(BaseCBVTestCase):
+class EntryListViewTest(BaseTestMixin, CBVTestCase):
     view = views.EntryListView
 
     def test_normal_response_with_empty_list(self):
@@ -25,7 +32,7 @@ class EntryListViewTest(BaseCBVTestCase):
         self.assertIn(entry, self.get_context('entry_list'))
 
 
-class EntryDetailViewTest(BaseCBVTestCase):
+class EntryDetailViewTest(BaseTestMixin, CBVTestCase):
     view = views.EntryDetailView
 
     def test_normal_response(self):
@@ -45,62 +52,82 @@ class EntryDetailViewTest(BaseCBVTestCase):
 
 # noinspection PyUnresolvedReferences
 class EntryFormMixin(object):
-    url = NotImplemented
-    action = NotImplemented
+    post_to_url = NotImplemented
+    expected_action = NotImplemented
     entry = NotImplemented
     user = NotImplemented
     data_url = NotImplemented
+    post_success_response = NotImplemented
     template = 'pubmed/entry_form.html'
-    data = {'data': {'pubmed_id': 1}}
+    data = {
+        'data': {
+            'pubmed_id': 1
+        }
+    }
 
     def setUp(self):
         self.user = self.make_user()
-        self.data_url = dict(self.url, **self.data)
+        self.data_url = dict(self.post_to_url, **self.data)
 
     def test_auth_required(self):
         """Test login required."""
-        self.assertLoginRequired(**self.url)
+        self.assertLoginRequired(**self.post_to_url)
 
-    def test_without_logged_in_user(self):
-        """Test template is not even accessed for anonymous users"""
-        response = self.get(**self.url)
-
-        self.response_302()
-        self.assertTemplateNotUsed(response, self.template)
-
-    def test_with_logged_in_user(self):
+    def test_get_with_logged_in_user(self):
         """Test view works with auth user."""
 
         with self.login(self.user):
-            response = self.assertGoodView(**self.url)
-        self.assertContains(response, '%s Entry' % self.action)
+            response = self.assertGoodView(**self.post_to_url)
+        self.assertContains(response, '%s Entry' % self.expected_action)
         self.assertTemplateUsed(response, self.template)
-        self.assertContext('action_text', self.action)
+        self.assertContext('action_text', self.expected_action)
+        self.response_200()
 
-    def test_without_logged_in_user__post_with_data(self):
+    def test_get_without_logged_in_user(self):
+        """Test template is not even accessed for anonymous users"""
+        response = self.get(**self.post_to_url)
+
+        self.response_401()
+        self.assertTemplateNotUsed(response, self.template)
+
+    def test_post_with_logged_in_user__post_with_data(self):
+        with self.login(self.user):
+            response = self.post(**self.data_url)
+        logger.debug(response)
+        self.post_success_response()
+
+    def test_post_with_logged_in_user__post_without_data(self):
+        with self.login(self.user):
+            self.post(**self.post_to_url)
+        self.response_304()
+
+    def test_post_without_logged_in_user__post_with_data(self):
         self.post(**self.data_url)
-        self.response_403()
-
-    def test_with_logged_in_user__post_with_data(self):
-        with self.login(self.user):
-            self.post(**self.data_url)
-        self.response_201()
-
-    def test_with_logged_in_user__post_without_data(self):
-        with self.login(self.user):
-            self.post(**self.url)
-        self.response_302()
+        self.response_401()
 
 
-class EntryCreateViewTest(EntryFormMixin, BaseTestCase):
-    url = {'url_name': 'pubmed:create'}
-    action = 'Create'
+class EntryCreateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
+    post_to_url = {
+        'url_name': 'pubmed:create'
+    }
+    expected_action = 'Create'
+
+    @property
+    def post_success_response(self):
+        return self.response_201
 
 
-class EntryUpdateViewTest(EntryFormMixin, BaseTestCase):
+class EntryUpdateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
     entry = factories.EntryFactory()
-    url = {'url_name': 'pubmed:update', 'pk': entry.pk}
-    action = 'Update'
+    post_to_url = {
+        'url_name': 'pubmed:update',
+        'pk': entry.pk
+    }
+    expected_action = 'Update'
+
+    @property
+    def post_success_response(self):
+        return self.response_200
 
     def setUp(self):
         self.entry.save()

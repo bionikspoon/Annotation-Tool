@@ -2,7 +2,6 @@
 # coding=utf-8
 from django.conf import settings
 from django.core.urlresolvers import reverse, NoReverseMatch
-from test_plus.test import CBVTestCase, TestCase
 
 from annotation_tool.users.factories import UserFactory
 
@@ -21,12 +20,14 @@ class BaseTestMixin(object):
         except NoReverseMatch:
             login_url = settings.LOGIN_URL
         expected_url = "{0}?next={1}".format(login_url, reversed_url)
-        self.assertRedirects(response, expected_url)
+        self.assertRedirects(response, expected_url, status_code=401)
 
+    def response_304(self, response=None):
+        """ Given response has status_code 304 """
+        response = self._which_response(response)
+        self.assertEqual(response.status_code, 304)
 
-class BaseTestCase(BaseTestMixin, TestCase):
-    pass
-
-
-class BaseCBVTestCase(BaseTestMixin, CBVTestCase):
-    pass
+    def response_401(self, response=None):
+        """ Given response has status_code 403 """
+        response = self._which_response(response)
+        self.assertEqual(response.status_code, 401)
