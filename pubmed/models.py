@@ -542,7 +542,7 @@ class EntryMeta(object):
     def public_fields(cls: Entry) -> tuple:
         """
         Get fields to show on admin pages and forms.
-g
+
         :param cls:
         :return:
         """
