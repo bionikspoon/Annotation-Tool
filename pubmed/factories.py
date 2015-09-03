@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
+"""
+Pubmed factory definitions.
+"""
+
 from factory import SubFactory, DjangoModelFactory, Iterator, LazyAttribute
 from faker import Faker
 
@@ -14,6 +18,7 @@ _ = lambda field, **kw: LazyAttribute(lambda __: field(**kw))
 class EntryFactory(DjangoModelFactory):
     """Create empty pubmed entry for testing."""
 
+    # noinspection PyDocstring
     class Meta:
         model = Entry
 

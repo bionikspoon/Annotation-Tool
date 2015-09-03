@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
+"""
+Pubmed forms.
+"""
+
 import logging
 
 from django import forms
@@ -16,9 +20,17 @@ logger = logging.getLogger(__name__)
 
 
 class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
+    """
+    Form representation of Pubmed Entry.
+
+    :param args:
+    :param kwargs:
+    """
     formfield_callback = entryform_formfield_callback
+    """Use radio inline widjets by default"""
 
     treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False)
+    """Helper field for dynamic treatment behavior."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -35,6 +47,11 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
             bootstrap.InlineRadios)
 
     def clean(self):
+        """
+        Remove unused treatment entries.
+
+        :return:
+        """
         cleaned_data = super().clean()
         treatment = int(cleaned_data.get('treatment') or 1)
         for i in range(treatment + 1, 6):
@@ -43,9 +60,16 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
         return cleaned_data
 
     def save(self, commit=True):
+        """
+        Inject current user into model.
+
+        :type commit: bool
+        :return:
+        """
         self.instance.user = self.user
         return super().save(commit)
 
+    # noinspection PyDocstring
     class Meta:
         model = EntryMeta.model
         fields = EntryMeta.public_fields
