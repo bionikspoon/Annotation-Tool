@@ -427,14 +427,15 @@ class EntryMeta(object):
     ])
     """List of fields of pubmed entry fields with meta data for grouping."""
 
-    def filter(cls, term: dict or tuple) -> tuple:
+    @classmethod
+    def filter(cls: Entry, term: dict or tuple) -> object:
         """
-        Get fields with matching properties.
+            Get fields with matching properties.
 
-        :param term:
-        :return:
-        """
-
+            :param cls:
+            :param term:
+            :return:
+            """
         if isinstance(term, (dict,)):
             key, value = tuple((k, v) for k, v in term.items())[0]
         else:
@@ -462,6 +463,7 @@ class EntryMeta(object):
 
             )
 
+    @classproperty
     def all_fields(cls: Entry) -> tuple:
         """
         Get all fields.
@@ -540,7 +542,7 @@ class EntryMeta(object):
     def public_fields(cls: Entry) -> tuple:
         """
         Get fields to show on admin pages and forms.
-
+g
         :param cls:
         :return:
         """
