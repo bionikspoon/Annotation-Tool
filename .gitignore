@@ -69,3 +69,5 @@ bower_components
 test/bower_components
 core/static/dist/
 core/static/pubmed/
+.ipynb_checkpoints/
+shell.ipynb

@@ -298,6 +298,9 @@ LOGGING = {
         },
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue'
+        },
+        'not_django': {
+            '()': 'core.utils.log.NotDjangoFilter'
         }
     },
     'handlers': {
@@ -314,6 +317,17 @@ LOGGING = {
             'backupCount': 10,
             'when': 'MIDNIGHT',
             'formatter': 'verbose'
+        },
+        'pubmed': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR.path('logs', 'pubmed.log')),
+            'filters': ['require_debug_true'],
+            'backupCount': 10,
+            'when': 'm',
+            'interval': 10,
+            'formatter': 'human'
+
         },
         'debug': {
             'level': 'DEBUG',
@@ -340,9 +354,15 @@ LOGGING = {
             'propagate': True
         },
         'pubmed': {
-            'handlers': ['debug'],
+            'handlers': ['pubmed'],
             'level': 'DEBUG',
             'propagate': True
+        },
+        '': {
+            'handlers': ['debug'],
+            'level': 'DEBUG',
+            'propagate': True,
+            'filter': ['not_django']
         }
 
     }
