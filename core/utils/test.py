@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
+"""
+Utilities for testing.
+"""
 from django.conf import settings
 from django.core.urlresolvers import reverse, NoReverseMatch
 
@@ -11,8 +14,15 @@ class BaseTestMixin(object):
     """Override user factory"""
     user_factory = UserFactory
 
+
+    # noinspection PyPep8Naming
     def assertLoginRequired(self, url_name, *args, **kwargs):
-        """ Ensure login is required to GET this URL """
+        """
+        Ensure login is required to GET this URL.
+        :param url_name: Named URL to test.
+        :param args:
+        :param kwargs:
+        """
         response = self.get(url_name, *args, **kwargs)
         reversed_url = reverse(url_name, args=args, kwargs=kwargs)
         try:
