@@ -4,7 +4,6 @@
 import logging
 
 from django.core.exceptions import ObjectDoesNotExist
-
 from django.http import Http404
 from test_plus import TestCase
 from test_plus.test import CBVTestCase
@@ -57,7 +56,6 @@ class EntryFormMixin(object):
     entry = NotImplemented
     user = NotImplemented
     data_url = NotImplemented
-    post_success_response = NotImplemented
     template = 'pubmed/entry_form.html'
     data = {
         'data': {
@@ -91,12 +89,14 @@ class EntryFormMixin(object):
         self.assertTemplateNotUsed(response, self.template)
 
     def test_post_form__logged_in_user__data(self):
+        """Test data is posted if user is logged in."""
         with self.login(self.user):
             response = self.post(**self.data_url)
         logger.debug(response)
-        self.post_success_response()
+        self.response_200()
 
     def test_post_form__logged_in_user__no_data(self):
+        """Test form error displayed when posted with empty data."""
         with self.login(self.user):
             response = self.post(**self.post_to_url)
         self.response_200()
@@ -104,6 +104,7 @@ class EntryFormMixin(object):
                              'This field is required.')
 
     def test_post_form__anonymous_user__data(self):
+        """Test 401 response if posted from anonymous user."""
         self.post(**self.data_url)
         self.response_401()
 
@@ -114,10 +115,6 @@ class EntryCreateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
     }
     expected_action = 'Create'
 
-    @property
-    def post_success_response(self):
-        return self.response_201
-
 
 class EntryUpdateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
     entry = factories.EntryFactory()
@@ -126,10 +123,6 @@ class EntryUpdateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
         'pk': entry.pk
     }
     expected_action = 'Update'
-
-    @property
-    def post_success_response(self):
-        return self.response_200
 
     def setUp(self):
         self.entry.save()

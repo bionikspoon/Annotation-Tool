@@ -66,7 +66,7 @@ class EntryFormMixin(braces_views.LoginRequiredMixin,
 
         # noinspection PyUnresolvedReferences
         response = super().form_valid(form)
-        response.status_code = self.form_success_code
+        # response.status_code = self.form_success_code
         messages.info(self.request, self.success_msg)
         return response
 
