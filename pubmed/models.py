@@ -1,3 +1,7 @@
+# coding=utf-8
+"""
+Pubmed model definitions.
+"""
 from collections import OrderedDict
 
 from django.conf import settings
@@ -11,6 +15,9 @@ from .utils import classproperty
 
 
 class DEFAULTS(object):
+    """
+    Default parameters for given key.
+    """
     CharField = dict(max_length=100, blank=True)
     ForeignKey = dict(blank=True, null=True, on_delete=models.SET_NULL)
     IntegerField = dict(null=True, blank=True)
@@ -19,6 +26,9 @@ class DEFAULTS(object):
 
 
 class Entry(utils_models.TimeStampedModel):
+    """
+    Pubmed Entry definition.
+    """
     user = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False,
                              related_name='pubmed_entries',
                              on_delete=models.PROTECT)
@@ -44,40 +54,58 @@ class Entry(utils_models.TimeStampedModel):
     chromosome = models.CharField(**DEFAULTS.CharField)
     start = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     stop = models.PositiveIntegerField(**DEFAULTS.IntegerField)
-    breakend_strand = models.ForeignKey(pubmed_lookup.BreakendStrandLookup,
-                                        related_name='breakend_strand_entry_set',
-                                        **DEFAULTS.ForeignKey)
+    breakend_strand = models.ForeignKey(
+
+        pubmed_lookup.BreakendStrandLookup,
+        related_name='breakend_strand_entry_set', **DEFAULTS.ForeignKey
+
+    )
 
     breakend_direction = models.ForeignKey(
         pubmed_lookup.BreakendDirectionLookup,
-        related_name='breakend_direction_entry_set', **DEFAULTS.ForeignKey)
+        related_name='breakend_direction_entry_set', **DEFAULTS.ForeignKey
+
+    )
 
     mate_chromosome = models.CharField(**DEFAULTS.CharField)
     mate_start = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     mate_end = models.PositiveIntegerField(**DEFAULTS.IntegerField)
-    mate_breakend_strand = models.ForeignKey(pubmed_lookup.BreakendStrandLookup,
-                                             related_name='mate_breakend_strand_entry_set',
-                                             **DEFAULTS.ForeignKey)
+    mate_breakend_strand = models.ForeignKey(
+
+        pubmed_lookup.BreakendStrandLookup,
+        related_name='mate_breakend_strand_entry_set', **DEFAULTS.ForeignKey
+
+    )
 
     mate_breakend_direction = models.ForeignKey(
         pubmed_lookup.BreakendDirectionLookup,
-        related_name='mate_breakend_direction_entry_set', **DEFAULTS.ForeignKey)
+        related_name='mate_breakend_direction_entry_set', **DEFAULTS.ForeignKey
+
+    )
 
     minimum_number_of_copies = models.PositiveIntegerField(
-        **DEFAULTS.IntegerField)
+        **DEFAULTS.IntegerField
+
+    )
 
     maximum_number_of_copies = models.PositiveIntegerField(
-        **DEFAULTS.IntegerField)
+        **DEFAULTS.IntegerField
+
+    )
 
     coordinate_predicate = models.CharField(**DEFAULTS.CharField)
     partner_coordinate_predicate = models.CharField(**DEFAULTS.CharField)
     variant_type = models.ForeignKey(pubmed_lookup.VariantTypeLookup,
                                      **DEFAULTS.ForeignKey)
     variant_consequence = models.ForeignKey(
-        pubmed_lookup.VariantConsequenceLookup, **DEFAULTS.ForeignKey)
+        pubmed_lookup.VariantConsequenceLookup, **DEFAULTS.ForeignKey
+
+    )
 
     variant_clinical_grade = models.PositiveIntegerField(
-        choices=Choices(*range(1, 6)), **DEFAULTS.IntegerField)
+        choices=Choices(*range(1, 6)), **DEFAULTS.IntegerField
+
+    )
 
     disease = models.ManyToManyField(pubmed_lookup.DiseaseLookup,
                                      **DEFAULTS.ManyToManyField)
@@ -92,11 +120,17 @@ class Entry(utils_models.TimeStampedModel):
     ethnicity = models.CharField(**DEFAULTS.CharField)
     assessed_patient_outcomes = models.ManyToManyField(
         pubmed_lookup.PatientOutcomesLookup,
-        related_name='assessed_patient_outcomes_entry_set', **DEFAULTS.ManyToManyField)
+        related_name='assessed_patient_outcomes_entry_set',
+        **DEFAULTS.ManyToManyField
+
+    )
 
     significant_patient_outcomes = models.ManyToManyField(
         pubmed_lookup.PatientOutcomesLookup,
-        related_name='significant_patient_outcomes_entry_set', **DEFAULTS.ManyToManyField)
+        related_name='significant_patient_outcomes_entry_set',
+        **DEFAULTS.ManyToManyField
+
+    )
 
     design = models.TextField(**DEFAULTS.TextField)
     reference_claims = models.TextField(**DEFAULTS.TextField)
@@ -105,11 +139,19 @@ class Entry(utils_models.TimeStampedModel):
     tracker = FieldTracker()
 
     def get_absolute_url(self):
+        """
+        Link to entry.
+
+        :rtype : str
+        :return: URL path.
+
+        """
+
         return reverse('pubmed:detail', kwargs={
             'pk': self.id
         })
 
-    def __str__(self):
+    def __str__(self) -> str:
         gene = ':%s' % self.gene if self.gene else ''
         return '%s:%s%s' % (self.pubmed_id, self.id, gene)
 
@@ -117,7 +159,11 @@ class Entry(utils_models.TimeStampedModel):
         verbose_name_plural = 'Entries'
 
 
+# noinspection PyMethodParameters
 class EntryMeta(object):
+    """
+    Describe pubmed entry class.
+    """
     model = Entry
 
     fields_manifest = OrderedDict([
@@ -381,14 +427,22 @@ class EntryMeta(object):
         }),
 
     ])
+    """List of fields of pubmed entry fields with meta data for grouping."""
 
     @classmethod
     def filter(cls, term):
+        """
+        Get fields with matching properties.
 
-        if isinstance(term, (dict,)):
-            key, value = tuple((k, v) for k, v in term.items())[0]
-        else:
-            key, value = term
+        :param cls:
+        :type cls: EntryMeta
+        :param term: Key-Value dictionary to filter by.
+        :type term: dict | tuple
+        :return: A tuple of fields that survive the filter.
+        :rtype : tuple(str)
+        """
+
+        key, value = tuple((k, v) for k, v in term.items())[0]
 
         try:
 
@@ -415,46 +469,98 @@ class EntryMeta(object):
 
     @classproperty
     def all_fields(cls):
+        """
+        Get all fields.
+
+        :param cls: Entry
+        :return:
+        """
+
         return tuple(field for field, _ in cls.fields_manifest.items())
 
     @classproperty
     def relationship_fields(cls):
+        """
+        Get many to many fields and foreign key fields.
+
+        :param cls: Entry
+        :return:
+        """
+
         return cls.filter({
             'field_type': ('ForeignKey', 'ManyToManyField')
         })
 
     @classproperty
     def foreign_fields(cls):
+        """
+        Get foreign key fields.
+
+        :param cls:
+        :return:
+        """
+
         return cls.filter({
             'field_type': 'ForeignKey'
         })
 
     @classproperty
     def many_to_many_fields(cls):
+        """
+        Get many to many fields.
+
+        :param cls:
+        :return:
+        """
+
         return cls.filter({
             'field_type': 'ManyToManyField'
         })
 
     @classproperty
     def text_fields(cls):
+        """
+        Get all text entry fields.
+
+        :param cls:
+        :return:
+        """
         return cls.filter({
-            'field_type': ('ForeignKey', 'ManyToManyField')
+            'field_type': ('CharField', 'TextField')
         })
 
     @classproperty
     def int_fields(cls):
+        """
+        Get all integer fields.
+
+        :param cls:
+        :return:
+        """
+
         return cls.filter({
             'field_type': 'PositiveIntegerField'
         })
 
     @classproperty
     def public_fields(cls):
+        """
+        Get fields to show on admin pages and forms.
+
+        :param cls:
+        :return:
+        """
         return cls.filter({
             'public': True
         })
 
     @classproperty
     def summary_fields(cls):
+        """
+        Get fields to show on summary page and admin list pages.
+        :param cls:
+        :return:
+        """
         return cls.filter({
             'summary': True
         })

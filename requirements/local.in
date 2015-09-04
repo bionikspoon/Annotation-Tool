@@ -12,7 +12,7 @@ fake-factory
 django-debug-toolbar
 
 # improved REPL
-ipdb
+-r ipython.in
 
 
 httpie

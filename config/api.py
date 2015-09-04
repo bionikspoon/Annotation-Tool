@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
-
+"""
+Build API router.
+"""
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
 

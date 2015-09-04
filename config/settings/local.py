@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
 """
 Local settings
 
@@ -78,7 +78,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 if not DEBUG:
     STATIC_URL = '/staticfiles/'
 
-STATICFILES_STORAGE = ('whitenoise.django.GzipManifestStaticFilesStorage')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/

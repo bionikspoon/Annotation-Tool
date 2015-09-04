@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # coding=utf-8
+"""
+Test Settings
 
+- Debug off
+- Disable template processors
+- Use faster password hash algorithm.
+
+"""
 # noinspection PyPackageRequirements
 import environ
 
@@ -9,7 +16,7 @@ from .common import *  # NOQA
 
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = env.bool('DJANGO_DEBUG', default=True)
+DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -44,22 +51,6 @@ EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
                     default='django.core.mail.backends.console.EmailBackend')
-
-
-# DATABASE CONFIGURATION
-# ------------------------------------------------------------------------------
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-# DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
-# DATABASES['default']['ATOMIC_REQUESTS'] = True
-# DATABASES['pg'] = DATABASES['default']
-# DATABASES['pg']['TEST_DEPENDENCIES'] = []
-# DATABASES['default'] = {
-#
-#     'ENGINE': 'django.db.backends.sqlite3',
-#     'ATOMIC_REQUESTS': True,
-#     'TEST_DEPENDENCIES': []
-#
-# }
 
 # CACHING
 # ------------------------------------------------------------------------------

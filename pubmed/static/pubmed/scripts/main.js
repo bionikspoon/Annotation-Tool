@@ -195,7 +195,7 @@ $(function () {
         }
 
         function renderResults() {
-            var jump = '<a href=#entry-form>Jump</a>';
+            var jump = '<p><a href=#entry-form>Jump</a></p>';
 
             $resultsDiv.html(jump + _results);
         }

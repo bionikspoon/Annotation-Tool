@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
 """
 Django settings for annotation_tool project.
 
@@ -298,6 +298,12 @@ LOGGING = {
         },
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue'
+        },
+        'not_django': {
+            '()': 'core.utils.log.NotDjangoFilter'
+        },
+        'not_production': {
+            '()': 'core.utils.log.NotProductionFilter'
         }
     },
     'handlers': {
@@ -314,6 +320,16 @@ LOGGING = {
             'backupCount': 10,
             'when': 'MIDNIGHT',
             'formatter': 'verbose'
+        },
+        'pubmed': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR.path('logs', 'pubmed.log')),
+            'backupCount': 10,
+            'when': 'm',
+            'interval': 10,
+            'formatter': 'human'
+
         },
         'debug': {
             'level': 'DEBUG',
@@ -340,9 +356,16 @@ LOGGING = {
             'propagate': True
         },
         'pubmed': {
+            'handlers': ['pubmed'],
+            'level': 'DEBUG',
+            'propagate': True,
+            'filter': ['not_production']
+        },
+        '': {
             'handlers': ['debug'],
             'level': 'DEBUG',
-            'propagate': True
+            'propagate': True,
+            'filter': ['not_django']
         }
 
     }

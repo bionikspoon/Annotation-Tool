@@ -1,11 +1,20 @@
 #!/usr/bin/env python
 # coding=utf-8
 
+import logging
+from factory import LazyAttribute
+
 from factory.django import DjangoModelFactory
 from faker import Faker
+
 from . import models
 
+logger = logging.getLogger(__name__)
 faker = Faker()
+
+_ = lambda declaration: LazyAttribute(lambda __: declaration())
+"""...translate this!"""
+
 
 class UserFactory(DjangoModelFactory):
     class Meta:
@@ -16,9 +25,9 @@ class UserFactory(DjangoModelFactory):
         manager = cls._get_manager(model_class)
         return manager.create_user(*args, **kwargs)
 
-    username = faker.user_name()
-    email = faker.email()
-    name = faker.name()
+    username = _(faker.user_name)
+    email = _(faker.email)
+    name = _(faker.name)
 
 
 class SuperUserFactory(UserFactory):

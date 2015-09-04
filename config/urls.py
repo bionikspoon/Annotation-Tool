@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
+"""
+Project URL configuration.
+"""
 from __future__ import unicode_literals
 
 from django.conf import settings
@@ -14,16 +17,11 @@ urlpatterns = [
     url(r'^$',
         RedirectView.as_view(pattern_name='pubmed:list', permanent=False),
         name="home"),
-    # url(r'^$', TemplateView.as_view(template_name='pages/home.html'),
-    #     name="home"),
-
 
     url(r'^api/auth/',
         include('rest_framework.urls', namespace='rest_framework')),
 
     url(r'^api/', include(config.api)),
-    # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'),
-    #     name="about"),
 
     # Django Admin
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -40,8 +38,8 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     url(r'^pubmed/', include('pubmed.urls', namespace='pubmed')),
 
-    url(r'^google51945c962ca81cb4.html$',
-        TemplateView.as_view(template_name='google/google51945c962ca81cb4.html'))
+    url(r'^google51945c962ca81cb4.html$', TemplateView.as_view(
+        template_name='google/google51945c962ca81cb4.html'))
 
 ]
 
