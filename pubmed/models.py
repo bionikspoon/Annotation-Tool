@@ -142,16 +142,14 @@ class Entry(utils_models.TimeStampedModel):
         """
         Link to entry.
 
-        :rtype : str
         :return: URL path.
-
         """
 
         return reverse('pubmed:detail', kwargs={
             'pk': self.id
         })
 
-    def __str__(self) -> str:
+    def __str__(self):
         gene = ':%s' % self.gene if self.gene else ''
         return '%s:%s%s' % (self.pubmed_id, self.id, gene)
 
