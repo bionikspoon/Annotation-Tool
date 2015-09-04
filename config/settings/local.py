@@ -43,13 +43,26 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': ''
+        'LOCATION': '',
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "IGNORE_EXCEPTIONS": not DEBUG
+            # mimics memcache behavior.
+            # http://niwinz.github.io/django-redis/latest/
+            # #_memcached_exceptions_behavior
+        },
+        'TIMEOUT': 5
+
     }
 }
 
+UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
+
+FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
+
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+DEBUG_TOOLBAR_MIDDLEWARE = ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 INSTALLED_APPS += ('debug_toolbar',)
 
 INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
@@ -92,3 +105,16 @@ STATICFILES_DIRS = (
 # FORMS CONFIGURATION
 # ------------------------------------------------------------------------------
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)
+
+# COMBINE MIDDLEWARE
+# ------------------------------------------------------------------------------
+# Make sure djangosecure.middleware.SecurityMiddleware is listed first
+MIDDLEWARE_CLASSES = (
+
+    # UPDATE_CACHE_MIDDLEWARE +
+
+    MIDDLEWARE_CLASSES + DEBUG_TOOLBAR_MIDDLEWARE
+
+    # + FETCH_CACHE_MIDDLEWARE
+
+)

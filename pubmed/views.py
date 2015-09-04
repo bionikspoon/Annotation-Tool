@@ -12,7 +12,7 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from .forms import EntryModelForm
-from .models import Entry
+from .models import Entry, EntryMeta
 from .serializers import EntrySerializer
 
 
@@ -31,8 +31,6 @@ class EntryFormMixin(braces_views.LoginRequiredMixin,
     form_class = EntryModelForm
     template_name = 'pubmed/entry_form.html'
     success_url = reverse_lazy('pubmed:list')
-    form_success_code = NotImplemented
-    """HTTP statuse code sent on successful form submit. (200 or 201"""
     success_msg = NotImplemented
     """Flash message sent on successful form submit."""
     action_text = NotImplemented
@@ -66,7 +64,6 @@ class EntryFormMixin(braces_views.LoginRequiredMixin,
 
         # noinspection PyUnresolvedReferences
         response = super().form_valid(form)
-        # response.status_code = self.form_success_code
         messages.info(self.request, self.success_msg)
         return response
 
@@ -75,7 +72,6 @@ class EntryListView(EntryMixin, braces_views.SelectRelatedMixin, ListView):
     """
     List pubmed entries.
     """
-    template_name = 'pubmed/entry_list.html'
     select_related = ('structure', 'mutation_type')
 
 
@@ -83,7 +79,6 @@ class EntryDetailView(EntryMixin, DetailView):
     """
     Show single pubmed entry.
     """
-    template_name = 'pubmed/entry_detail.html'
 
 
 class EntryCreateView(EntryFormMixin, CreateView):
@@ -92,7 +87,13 @@ class EntryCreateView(EntryFormMixin, CreateView):
     """
     success_msg = 'Entry Created'
     action_text = 'Create'
-    form_success_code = 201
+
+
+class EntryCreateViewCopy(EntryFormMixin, braces_views.SelectRelatedMixin, braces_views.PrefetchRelatedMixin, CreateView):
+    prefetch_related = EntryMeta.foreign_fields
+    select_related = EntryMeta.many_to_many_fields
+    success_msg = 'Copy Entry Created'
+    action_text = 'Copy'
 
 
 class EntryUpdateView(EntryFormMixin, UpdateView):
@@ -101,7 +102,6 @@ class EntryUpdateView(EntryFormMixin, UpdateView):
     """
     success_msg = 'Entry Updated'
     action_text = 'Update'
-    form_success_code = 200
 
 
 class EntryViewSet(ReadOnlyModelViewSet):
