@@ -9,7 +9,6 @@ from django.core.urlresolvers import reverse, NoReverseMatch
 from annotation_tool.users.factories import UserFactory
 
 
-# noinspection PyUnresolvedReferences
 class BaseTestMixin(object):
     """Override user factory"""
     user_factory = UserFactory
@@ -30,7 +29,7 @@ class BaseTestMixin(object):
         except NoReverseMatch:
             login_url = settings.LOGIN_URL
         expected_url = "{0}?next={1}".format(login_url, reversed_url)
-        self.assertRedirects(response, expected_url, status_code=401)
+        self.assertRedirects(response, expected_url, status_code=302)
 
     def response_304(self, response=None):
         """ Given response has status_code 304 """
@@ -40,4 +39,4 @@ class BaseTestMixin(object):
     def response_401(self, response=None):
         """ Given response has status_code 403 """
         response = self._which_response(response)
-        self.assertEqual(response.status_code, 401)
+        self.assertEqual(response.status_code, 302)

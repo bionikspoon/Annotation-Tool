@@ -3,10 +3,11 @@
 Pubmed view definitions.
 """
 from django.core.urlresolvers import reverse_lazy
-from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib import messages
 from braces import views as braces_views
+from rest_framework.decorators import list_route
+from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
@@ -37,59 +38,36 @@ class EntryFormMixin(braces_views.LoginRequiredMixin,
     action_text = NotImplemented
     """(Update/Create) Descriptive text used for buttons and headers."""
 
-    def get_context_data(self, **kwargs) -> dict:
+    def get_context_data(self, **kwargs):
         """
         Add `action_text` to response context.
 
-        :rtype : dict
         :param kwargs:
         :return: context
+        :rtype : dict
         """
 
+        # noinspection PyUnresolvedReferences
         context = super().get_context_data(**kwargs)
         context['action_text'] = self.action_text
         return context
 
-    def no_permissions_fail(self, request=None) -> HttpResponse:
-        """
-        Set response code to the proper 401.
-
-        :param request:
-        :return: response object
-        :rtype: django.http.HttpResponse
-        """
-
-        response = super().no_permissions_fail(request)
-        response.status_code = 401
-        return response
-
-    def form_valid(self, form) -> HttpResponse:
+    def form_valid(self, form):
         """
         Set correct response code 200/201.  Inject flash message into
         response.
 
+        :type self: django.views.generic.base.View | self
         :type form: pubmed.forms.forms.EntryModelForm
+        :param form:
         :return: response object
-        :rtype: django.http.HttpResponse
+        :rtype: django.http.response.HttpResponse
         """
 
+        # noinspection PyUnresolvedReferences
         response = super().form_valid(form)
         response.status_code = self.form_success_code
         messages.info(self.request, self.success_msg)
-        return response
-
-    def form_invalid(self, form) -> HttpResponse:
-        """
-        Set correct response code for invalid form submission.
-
-        :param form:
-        :type form: pubmed.forms.forms.EntryModelForm
-        :return: response object
-        :rtype: django.http.HttpResponse
-        """
-
-        response = super().form_invalid(form)
-        response.status_code = 304
         return response
 
 
@@ -134,16 +112,19 @@ class EntryViewSet(ReadOnlyModelViewSet):
     serializer_class = EntrySerializer
     filter_fields = ('pubmed_id',)
 
-    def html(self, request, *args, **kwargs) -> Response:
+    # noinspection PyUnusedLocal
+    @list_route(renderer_classes=(TemplateHTMLRenderer,))
+    def html(self, request, *args, **kwargs):
         """
-            Get rendered HTML representation of pubmed entries.  (Filter by
-            `pubmed_id`.)
+        Get rendered HTML representation of pubmed entries.
+        (Filter by `pubmed_id`.)
 
-            :param request:
-            :param args:
-            :param kwargs:
-            :return:
-            """
+        :param request:
+        :param args:
+        :param kwargs:
+        :return:
+        :rtype : rest_framework.response.Response
+        """
         queryset = self.filter_queryset(self.get_queryset())
         return Response(data={
             'entry_list': queryset

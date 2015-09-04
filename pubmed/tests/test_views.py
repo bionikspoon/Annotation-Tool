@@ -18,14 +18,14 @@ logger = logging.getLogger(__name__)
 class EntryListViewTest(BaseTestMixin, CBVTestCase):
     view = views.EntryListView
 
-    def test_normal_response_with_empty_list(self):
+    def test_get_list_view__with_no_items(self):
         response = self.assertGoodView(self.view)
 
         self.assertContains(response, 'Pubmed Entries')
         self.assertTemplateUsed(response, 'pubmed/entry_list.html')
         self.assertFalse(self.get_context('entry_list'))
 
-    def test_normal_response_with_populated_list(self):
+    def test_get_list_view__with_many_items(self):
         entry = factories.EntryFactory()
 
         self.assertGoodView(self.view)
@@ -35,7 +35,7 @@ class EntryListViewTest(BaseTestMixin, CBVTestCase):
 class EntryDetailViewTest(BaseTestMixin, CBVTestCase):
     view = views.EntryDetailView
 
-    def test_normal_response(self):
+    def test_get_detail_view__with_one_item(self):
         entry = factories.EntryFactory()
 
         response = self.assertGoodView(self.view, pk=entry.pk)
@@ -44,7 +44,7 @@ class EntryDetailViewTest(BaseTestMixin, CBVTestCase):
 
         self.assertEqual(entry, response.context_data['entry'])
 
-    def test_not_found_response(self):
+    def ttest_get_detail_view__with_no_items(self):
         with self.assertRaises(Http404), self.assertRaises(ObjectDoesNotExist):
             self.get(self.view, pk=1)
             self.response_404()
@@ -73,7 +73,7 @@ class EntryFormMixin(object):
         """Test login required."""
         self.assertLoginRequired(**self.post_to_url)
 
-    def test_get_with_logged_in_user(self):
+    def test_get_form__logged_in_user(self):
         """Test view works with auth user."""
 
         with self.login(self.user):
@@ -83,25 +83,27 @@ class EntryFormMixin(object):
         self.assertContext('action_text', self.expected_action)
         self.response_200()
 
-    def test_get_without_logged_in_user(self):
+    def test_get_form__anonymous_in_user(self):
         """Test template is not even accessed for anonymous users"""
         response = self.get(**self.post_to_url)
 
-        self.response_401()
+        self.response_302()
         self.assertTemplateNotUsed(response, self.template)
 
-    def test_post_with_logged_in_user__post_with_data(self):
+    def test_post_form__logged_in_user__data(self):
         with self.login(self.user):
             response = self.post(**self.data_url)
         logger.debug(response)
         self.post_success_response()
 
-    def test_post_with_logged_in_user__post_without_data(self):
+    def test_post_form__logged_in_user__no_data(self):
         with self.login(self.user):
-            self.post(**self.post_to_url)
-        self.response_304()
+            response = self.post(**self.post_to_url)
+        self.response_200()
+        self.assertFormError(response, 'form', 'pubmed_id',
+                             'This field is required.')
 
-    def test_post_without_logged_in_user__post_with_data(self):
+    def test_post_form__anonymous_user__data(self):
         self.post(**self.data_url)
         self.response_401()
 
