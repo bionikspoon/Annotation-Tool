@@ -138,11 +138,13 @@ class Entry(utils_models.TimeStampedModel):
 
     tracker = FieldTracker()
 
-    def get_absolute_url(self) -> object:
+    def get_absolute_url(self):
         """
         Link to entry.
 
-        :return:
+        :rtype : str
+        :return: URL path.
+
         """
 
         return reverse('pubmed:detail', kwargs={
@@ -428,18 +430,20 @@ class EntryMeta(object):
     """List of fields of pubmed entry fields with meta data for grouping."""
 
     @classmethod
-    def filter(cls: Entry, term: dict or tuple) -> object:
+    def filter(cls, term):
         """
-            Get fields with matching properties.
+        Get fields with matching properties.
 
-            :param cls:
-            :param term:
-            :return:
-            """
-        if isinstance(term, (dict,)):
-            key, value = tuple((k, v) for k, v in term.items())[0]
-        else:
-            key, value = term
+        :param cls:
+        :type cls: EntryMeta
+        :param term: Key-Value dictionary to filter by.
+        :type term: dict | tuple
+        :return: A tuple of fields that survive the filter.
+        :rtype : tuple(str)
+        """
+
+        key, value = tuple((k, v) for k, v in term.items())[0]
+
         try:
 
             return tuple(
@@ -464,7 +468,7 @@ class EntryMeta(object):
             )
 
     @classproperty
-    def all_fields(cls: Entry) -> tuple:
+    def all_fields(cls):
         """
         Get all fields.
 
@@ -475,7 +479,7 @@ class EntryMeta(object):
         return tuple(field for field, _ in cls.fields_manifest.items())
 
     @classproperty
-    def relationship_fields(cls: Entry) -> tuple:
+    def relationship_fields(cls):
         """
         Get many to many fields and foreign key fields.
 
@@ -488,7 +492,7 @@ class EntryMeta(object):
         })
 
     @classproperty
-    def foreign_fields(cls: Entry) -> tuple:
+    def foreign_fields(cls):
         """
         Get foreign key fields.
 
@@ -501,7 +505,7 @@ class EntryMeta(object):
         })
 
     @classproperty
-    def many_to_many_fields(cls: Entry) -> tuple:
+    def many_to_many_fields(cls):
         """
         Get many to many fields.
 
@@ -514,7 +518,7 @@ class EntryMeta(object):
         })
 
     @classproperty
-    def text_fields(cls: Entry) -> tuple:
+    def text_fields(cls):
         """
         Get all text entry fields.
 
@@ -526,7 +530,7 @@ class EntryMeta(object):
         })
 
     @classproperty
-    def int_fields(cls: Entry) -> tuple:
+    def int_fields(cls):
         """
         Get all integer fields.
 
@@ -539,7 +543,7 @@ class EntryMeta(object):
         })
 
     @classproperty
-    def public_fields(cls: Entry) -> tuple:
+    def public_fields(cls):
         """
         Get fields to show on admin pages and forms.
 
@@ -551,7 +555,7 @@ class EntryMeta(object):
         })
 
     @classproperty
-    def summary_fields(cls: Entry) -> tuple:
+    def summary_fields(cls):
         """
         Get fields to show on summary page and admin list pages.
         :param cls:

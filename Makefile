@@ -10,3 +10,6 @@ req:
 	pip-compile requirements/local.in
 	pip-compile requirements/production.in
 	pip-compile requirements/test.in
+
+coverage:
+	coverage run manage.py test -v 2 && coverage html

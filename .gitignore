@@ -71,3 +71,4 @@ core/static/dist/
 core/static/pubmed/
 .ipynb_checkpoints/
 shell.ipynb
+.htmlcov/
