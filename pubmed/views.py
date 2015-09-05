@@ -109,7 +109,8 @@ class EntryViewSet(ReadOnlyModelViewSet):
     """
     Pubmed entry api.
     """
-    queryset = Entry.objects.all()
+    queryset = Entry.objects.prefetch_related(
+        *EntryMeta.relationship_fields)
     serializer_class = EntrySerializer
     filter_fields = ('pubmed_id',)
 
@@ -132,5 +133,5 @@ class EntryViewSet(ReadOnlyModelViewSet):
         if page is not None:
             return self.get_paginated_response(page)
         return Response({
-            'entry_list': page
+            'entry_list': queryset
         }, template_name='pubmed/_entry_list_items.html')
