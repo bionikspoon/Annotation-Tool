@@ -87,7 +87,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
-LOCAL_APPS += ('core_local', 'core_production')
+LOCAL_APPS += ('core.local', 'core.production')
 
 if not DEBUG:
     STATIC_URL = '/staticfiles/'

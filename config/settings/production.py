@@ -92,7 +92,7 @@ MEDIA_URL = 'https://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 
 # Static Assests
 # ------------------------
-LOCAL_APPS += ('core_production',)
+LOCAL_APPS += ('core.production',)
 
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
