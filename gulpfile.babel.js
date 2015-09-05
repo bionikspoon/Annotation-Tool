@@ -6,12 +6,12 @@ import opn from 'opn';
 
 const $ = gulpLoadPlugins();
 const config = {
-    'local':       'core_local/static/core/',
+    'local':       'core/local/static/core/',
     'tmp':         '.tmp/core/',
     'tests':       'tests/spec/',
-    'dist':        'core_production/static/core/',
-    'dist_static': 'core_production/static/',
-    'static':      '{core_local,pubmed}/static/{core,pubmed}/'
+    'dist':        'core/production/static/core/',
+    'dist_static': 'core/production/static/',
+    'static':      '{core/local,pubmed}/static/{core,pubmed}/'
 
 };
 gulp.task('styles', () => {
@@ -64,7 +64,7 @@ gulp.task('scripts', () => {
 
         .pipe($.if('*.js', $.uglify()))
 
-        .pipe(gulp.dest('core_production/static'))
+        .pipe(gulp.dest(config.dist_static))
 
 
 });
@@ -82,7 +82,7 @@ gulp.task('html', ['scripts', 'styles'], () => {
 
         .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
 
-        .pipe($.if('*.css', gulp.dest('core_production/static')));
+        .pipe($.if('*.css', gulp.dest(config.dist_static)));
 
 });
 

@@ -72,4 +72,4 @@ core/static/pubmed/
 .ipynb_checkpoints/
 shell.ipynb
 .htmlcov/
-core_production/static/
+core/production/static/
