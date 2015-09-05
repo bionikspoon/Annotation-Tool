@@ -3,6 +3,7 @@
   <tr>
 
     <td>Pubmed Id</td>
+    <td>View</td>
     <td>Edit</td>
     <td>Created</td>
     <td>Updated</td>
@@ -16,10 +17,14 @@
     <tr>
       <th scope="row">{{ entry.pubmed_id }}</th>
       <td>
-        <a href="{% url 'pubmed:update' entry.id %}">
-          <span class="glyphicon glyphicon-edit"></span>
+        <a href="{% url 'pubmed:detail' entry.id %}">
+          <span class="glyphicon glyphicon-eye-open"></span>
         </a>
-      </td>
+      </td><td>
+      <a href="{% url 'pubmed:update' entry.id %}">
+        <span class="glyphicon glyphicon-edit"></span>
+      </a>
+    </td>
       <td>{{ entry.created }}</td>
       <td>{{ entry.modified }}</td>
       <td>{{ entry.gene }}</td>

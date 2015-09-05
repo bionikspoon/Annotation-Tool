@@ -10,7 +10,6 @@ from django.db import models
 from model_utils import Choices, models as utils_models, FieldTracker
 
 from annotation_tool.users.models import User
-from pubmed.validators import validate_pubmed_id
 import pubmed_lookup
 from .utils import classproperty
 
@@ -34,7 +33,7 @@ class Entry(utils_models.TimeStampedModel):
                              related_name='pubmed_entries',
                              on_delete=models.PROTECT)
 
-    pubmed_id = models.PositiveIntegerField(validators=[validate_pubmed_id])
+    pubmed_id = models.PositiveIntegerField()
     gene = models.CharField(**DEFAULTS.CharField)
     structure = models.ForeignKey(pubmed_lookup.StructureLookup,
                                   **DEFAULTS.ForeignKey)

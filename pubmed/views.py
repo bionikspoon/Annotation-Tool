@@ -75,10 +75,12 @@ class EntryListView(EntryMixin, braces_views.SelectRelatedMixin, ListView):
     select_related = ('structure', 'mutation_type')
 
 
-class EntryDetailView(EntryMixin, DetailView):
+class EntryDetailView(EntryMixin, braces_views.SelectRelatedMixin, DetailView):
     """
     Show single pubmed entry.
     """
+    select_related = EntryMeta.foreign_fields
+    prefetch_related = EntryMeta.relationship_fields
 
 
 class EntryCreateView(EntryFormMixin, CreateView):
@@ -89,11 +91,16 @@ class EntryCreateView(EntryFormMixin, CreateView):
     action_text = 'Create'
 
 
-class EntryCreateViewCopy(EntryFormMixin, braces_views.SelectRelatedMixin, braces_views.PrefetchRelatedMixin, CreateView):
-    prefetch_related = EntryMeta.foreign_fields
-    select_related = EntryMeta.many_to_many_fields
-    success_msg = 'Copy Entry Created'
-    action_text = 'Copy'
+# class EntryUpdateViewCopy(EntryFormMixin,
+#
+#                           braces_views.SelectRelatedMixin,
+#                           braces_views.PrefetchRelatedMixin,
+#
+#                           UpdateView):
+#     prefetch_related = EntryMeta.relationship_fields
+#     select_related = EntryMeta.foreign_fields
+#     success_msg = 'Copy Entry Updated'
+#     action_text = 'Copy'
 
 
 class EntryUpdateView(EntryFormMixin, UpdateView):
