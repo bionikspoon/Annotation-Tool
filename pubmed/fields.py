@@ -18,11 +18,11 @@ class ModelChoiceField(forms.ModelChoiceField):
     :param args:
     :param kwargs:
     """
-    widget = forms.RadioSelect
 
-    def __init__(self, empty_label=models.BLANK_CHOICE_DASH[0][1], *args,
-                 **kwargs):
-        super().__init__(empty_label=empty_label, *args, **kwargs)
+    def __init__(self, empty_label=models.BLANK_CHOICE_DASH[0][1],
+                 widget=forms.RadioSelect, *args, **kwargs):
+        super().__init__(empty_label=empty_label, widget=widget, *args,
+                         **kwargs)
 
 
 class TypedChoiceField(forms.TypedChoiceField):

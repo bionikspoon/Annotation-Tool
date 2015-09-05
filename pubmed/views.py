@@ -12,7 +12,7 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from .forms import EntryModelForm
-from .models import Entry
+from .models import Entry, EntryMeta
 from .serializers import EntrySerializer
 
 
@@ -31,8 +31,6 @@ class EntryFormMixin(braces_views.LoginRequiredMixin,
     form_class = EntryModelForm
     template_name = 'pubmed/entry_form.html'
     success_url = reverse_lazy('pubmed:list')
-    form_success_code = NotImplemented
-    """HTTP statuse code sent on successful form submit. (200 or 201"""
     success_msg = NotImplemented
     """Flash message sent on successful form submit."""
     action_text = NotImplemented
@@ -66,7 +64,6 @@ class EntryFormMixin(braces_views.LoginRequiredMixin,
 
         # noinspection PyUnresolvedReferences
         response = super().form_valid(form)
-        response.status_code = self.form_success_code
         messages.info(self.request, self.success_msg)
         return response
 
@@ -75,24 +72,29 @@ class EntryListView(EntryMixin, braces_views.SelectRelatedMixin, ListView):
     """
     List pubmed entries.
     """
-    template_name = 'pubmed/entry_list.html'
     select_related = ('structure', 'mutation_type')
 
 
-class EntryDetailView(EntryMixin, DetailView):
+class EntryDetailView(EntryMixin, braces_views.SelectRelatedMixin, DetailView):
     """
     Show single pubmed entry.
     """
-    template_name = 'pubmed/entry_detail.html'
+    select_related = EntryMeta.foreign_fields
+    prefetch_related = EntryMeta.relationship_fields
 
 
-class EntryCreateView(EntryFormMixin, CreateView):
+class EntryCreateView(EntryFormMixin,
+
+                      # braces_views.PrefetchRelatedMixin,
+                      CreateView):
     """
     Form. Create an entry.
     """
+
+    prefetch_related = (
+        'assessed_patient_outcomes', 'significant_patient_outcomes')
     success_msg = 'Entry Created'
     action_text = 'Create'
-    form_success_code = 201
 
 
 class EntryUpdateView(EntryFormMixin, UpdateView):
@@ -101,14 +103,14 @@ class EntryUpdateView(EntryFormMixin, UpdateView):
     """
     success_msg = 'Entry Updated'
     action_text = 'Update'
-    form_success_code = 200
 
 
 class EntryViewSet(ReadOnlyModelViewSet):
     """
     Pubmed entry api.
     """
-    queryset = Entry.objects.all()
+    queryset = Entry.objects.prefetch_related(
+        *EntryMeta.relationship_fields)
     serializer_class = EntrySerializer
     filter_fields = ('pubmed_id',)
 
@@ -126,6 +128,10 @@ class EntryViewSet(ReadOnlyModelViewSet):
         :rtype : rest_framework.response.Response
         """
         queryset = self.filter_queryset(self.get_queryset())
-        return Response(data={
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            return self.get_paginated_response(page)
+        return Response({
             'entry_list': queryset
         }, template_name='pubmed/_entry_list_items.html')

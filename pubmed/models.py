@@ -3,10 +3,14 @@
 Pubmed model definitions.
 """
 from collections import OrderedDict
+from django import forms
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.forms import RadioSelect
+from django.forms.widgets import RadioChoiceInput, RadioFieldRenderer
+from django.utils import six
 from model_utils import Choices, models as utils_models, FieldTracker
 
 from annotation_tool.users.models import User
@@ -25,6 +29,30 @@ class DEFAULTS(object):
     ManyToManyField = dict(blank=True)
 
 
+class ModelChoiceRadioField(forms.ModelChoiceField):
+    widget = RadioSelect
+    # def __init__(self, *args, **kwargs):
+    #     # defaults = {
+    #     #     'widget': RadioSelect
+    #     # }
+    #     # defaults.update(kwargs)
+    #     super().__init__(widget=RadioChoiceInput, *args, **kwargs)
+
+
+class ChoicesForeignKey(models.ForeignKey):
+    def formfield(self, **kwargs):
+        # if isinstance(self.rel.to, six.string_types):
+        #     raise ValueError("Cannot create form field for %r yet, because "
+        #                      "its related model %r has not been loaded yet"
+        # % (
+        #                          self.name, self.rel.to))
+        defaults = {
+            'form_class': ModelChoiceRadioField
+        }
+        defaults.update(kwargs)
+        return super().formfield(**defaults)
+
+
 class Entry(utils_models.TimeStampedModel):
     """
     Pubmed Entry definition.
@@ -35,7 +63,7 @@ class Entry(utils_models.TimeStampedModel):
 
     pubmed_id = models.PositiveIntegerField()
     gene = models.CharField(**DEFAULTS.CharField)
-    structure = models.ForeignKey(pubmed_lookup.StructureLookup,
+    structure = ChoicesForeignKey(pubmed_lookup.StructureLookup,
                                   **DEFAULTS.ForeignKey)
 
     mutation_type = models.ForeignKey(pubmed_lookup.MutationTypeLookup,
@@ -142,16 +170,14 @@ class Entry(utils_models.TimeStampedModel):
         """
         Link to entry.
 
-        :rtype : str
         :return: URL path.
-
         """
 
         return reverse('pubmed:detail', kwargs={
             'pk': self.id
         })
 
-    def __str__(self) -> str:
+    def __str__(self):
         gene = ':%s' % self.gene if self.gene else ''
         return '%s:%s%s' % (self.pubmed_id, self.id, gene)
 

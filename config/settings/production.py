@@ -36,8 +36,7 @@ SECURITY_MIDDLEWARE = (
 )
 
 
-# Make sure djangosecure.middleware.SecurityMiddleware is listed first
-MIDDLEWARE_CLASSES = SECURITY_MIDDLEWARE + MIDDLEWARE_CLASSES
+
 
 # set this to 60 seconds and then to 518400 when you can prove it works
 SECURE_HSTS_SECONDS = 60
@@ -141,6 +140,23 @@ CACHES = {
             # mimics memcache behavior.
             # http://niwinz.github.io/django-redis/latest/
             # #_memcached_exceptions_behavior
-        }
+        },
+        'TIMEOUT': 60 * 60 * 24
     }
 }
+UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
+
+FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
+
+# COMBINE MIDDLEWARE
+# ------------------------------------------------------------------------------
+# Make sure djangosecure.middleware.SecurityMiddleware is listed first
+MIDDLEWARE_CLASSES = (SECURITY_MIDDLEWARE
+
+                      # + UPDATE_CACHE_MIDDLEWARE
+
+                      + MIDDLEWARE_CLASSES
+
+                      # + FETCH_CACHE_MIDDLEWARE
+
+                      )

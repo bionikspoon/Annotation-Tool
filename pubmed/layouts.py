@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 # coding=utf-8
+import logging
+
 from crispy_forms.bootstrap import FormActions
 from django.template.loader import render_to_string
 from crispy_forms.layout import (Layout, LayoutObject, Fieldset, Field, Div,
     HTML, Row, Column, Submit, Button)
 from crispy_forms.utils import flatatt, render_field
+
+logger = logging.getLogger(__name__)
 
 
 class Flat(LayoutObject):
@@ -20,15 +24,16 @@ class Flat(LayoutObject):
     def get_rendered_fields(self, form, form_style, context,
                             template_pack='flat', **kwargs):
         kwargs['template'] = 'flat/layout/field.html'
+        template_pack = 'flat'
 
-        return ''.join(
-            render_field(field, form, form_style, context, template_pack='flat',
-                         **kwargs) for field in self.fields)
+        return ''.join(render_field(field, form, form_style, context,
+                                    template_pack=template_pack, **kwargs) for
+                       field in self.fields)
 
     def render(self, form, form_style, context, template_pack='flat', **kwargs):
+        template_pack = 'flat'
         fields = self.get_rendered_fields(form, form_style, context,
                                           template_pack, **kwargs)
-
         template = self.get_template_name(template_pack)
         return render_to_string(template, {
             'fieldset': self,
@@ -47,15 +52,6 @@ class EntryFormLayout(Layout):
             Fieldset('Pubmed',
 
                      Field('pubmed_id', autocomplete='off'),
-
-                     HTML(
-
-                         '<div class=form-group>'
-                         '<div class="%s"></div>'
-                         '<p id=summary class=help-block></p>'
-                         '</div>' % self.label_class
-
-                     ),
 
                      ),
 

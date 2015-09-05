@@ -4,12 +4,11 @@
 import logging
 
 from django.core.exceptions import ObjectDoesNotExist
-
 from django.http import Http404
 from test_plus import TestCase
 from test_plus.test import CBVTestCase
 
-from .. import views, factories
+from .. import views, factories, Entry
 from core.utils.test import BaseTestMixin
 
 logger = logging.getLogger(__name__)
@@ -57,11 +56,12 @@ class EntryFormMixin(object):
     entry = NotImplemented
     user = NotImplemented
     data_url = NotImplemented
-    post_success_response = NotImplemented
     template = 'pubmed/entry_form.html'
     data = {
         'data': {
-            'pubmed_id': 1
+            'pubmed_id': 1,
+            'gene': 'BRAF'
+
         }
     }
 
@@ -91,12 +91,16 @@ class EntryFormMixin(object):
         self.assertTemplateNotUsed(response, self.template)
 
     def test_post_form__logged_in_user__data(self):
+        """Test data is posted if user is logged in."""
         with self.login(self.user):
             response = self.post(**self.data_url)
-        logger.debug(response)
-        self.post_success_response()
+        self.response_302()
+        entry = Entry.objects.latest('created')
+        self.assertEqual(entry.pubmed_id, self.data['data']['pubmed_id'])
+        self.assertEqual(entry.gene, self.data['data']['gene'])
 
     def test_post_form__logged_in_user__no_data(self):
+        """Test form error displayed when posted with empty data."""
         with self.login(self.user):
             response = self.post(**self.post_to_url)
         self.response_200()
@@ -104,6 +108,7 @@ class EntryFormMixin(object):
                              'This field is required.')
 
     def test_post_form__anonymous_user__data(self):
+        """Test 401 response if posted from anonymous user."""
         self.post(**self.data_url)
         self.response_401()
 
@@ -114,23 +119,30 @@ class EntryCreateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
     }
     expected_action = 'Create'
 
-    @property
-    def post_success_response(self):
-        return self.response_201
+    def test_post_form__logged_in_user__data(self):
+        with self.assertRaises(Entry.DoesNotExist):
+            Entry.objects.latest('created')
+
+        super().test_post_form__logged_in_user__data()
 
 
 class EntryUpdateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
-    entry = factories.EntryFactory()
+    entry_1 = factories.EntryFactory()
+    entry_2 = factories.EntryFactory()
     post_to_url = {
         'url_name': 'pubmed:update',
-        'pk': entry.pk
+        'pk': entry_2.pk
     }
     expected_action = 'Update'
 
-    @property
-    def post_success_response(self):
-        return self.response_200
-
     def setUp(self):
-        self.entry.save()
+        self.entry_1.save()
+        self.entry_2.save()
         super().setUp()
+
+    def test_post_form__logged_in_user__data(self):
+        entry = Entry.objects.latest('created')
+        self.assertNotEqual(entry.pubmed_id, self.data['data']['pubmed_id'])
+        self.assertNotEqual(entry.gene, self.data['data']['gene'])
+
+        super().test_post_form__logged_in_user__data()
