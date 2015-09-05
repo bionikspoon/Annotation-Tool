@@ -8,7 +8,7 @@ from django.http import Http404
 from test_plus import TestCase
 from test_plus.test import CBVTestCase
 
-from .. import views, factories
+from .. import views, factories, Entry
 from core.utils.test import BaseTestMixin
 
 logger = logging.getLogger(__name__)
@@ -59,7 +59,9 @@ class EntryFormMixin(object):
     template = 'pubmed/entry_form.html'
     data = {
         'data': {
-            'pubmed_id': 1
+            'pubmed_id': 1,
+            'gene': 'BRAF'
+
         }
     }
 
@@ -92,8 +94,10 @@ class EntryFormMixin(object):
         """Test data is posted if user is logged in."""
         with self.login(self.user):
             response = self.post(**self.data_url)
-        logger.debug(response)
-        self.response_200()
+        self.response_302()
+        entry = Entry.objects.latest('created')
+        self.assertEqual(entry.pubmed_id, self.data['data']['pubmed_id'])
+        self.assertEqual(entry.gene, self.data['data']['gene'])
 
     def test_post_form__logged_in_user__no_data(self):
         """Test form error displayed when posted with empty data."""
@@ -115,15 +119,30 @@ class EntryCreateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
     }
     expected_action = 'Create'
 
+    def test_post_form__logged_in_user__data(self):
+        with self.assertRaises(Entry.DoesNotExist):
+            Entry.objects.latest('created')
+
+        super().test_post_form__logged_in_user__data()
+
 
 class EntryUpdateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
-    entry = factories.EntryFactory()
+    entry_1 = factories.EntryFactory()
+    entry_2 = factories.EntryFactory()
     post_to_url = {
         'url_name': 'pubmed:update',
-        'pk': entry.pk
+        'pk': entry_2.pk
     }
     expected_action = 'Update'
 
     def setUp(self):
-        self.entry.save()
+        self.entry_1.save()
+        self.entry_2.save()
         super().setUp()
+
+    def test_post_form__logged_in_user__data(self):
+        entry = Entry.objects.latest('created')
+        self.assertNotEqual(entry.pubmed_id, self.data['data']['pubmed_id'])
+        self.assertNotEqual(entry.gene, self.data['data']['gene'])
+
+        super().test_post_form__logged_in_user__data()
