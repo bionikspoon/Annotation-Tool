@@ -1,31 +1,31 @@
 {% extends 'core/base.html' %}
 {% block css %}
-  <!-- build:css dist/styles/vendor.css -->
+  <!-- build:css core/styles/vendor.css -->
   <!-- bower:css -->
   <!-- endbower -->
   <!-- endbuild -->
 
-  <!-- build:css dist/styles/main.css -->
-  <link rel="stylesheet" href="dist/styles/main.css">
+  <!-- build:css core/styles/main.css -->
+  <link rel="stylesheet" href="core/styles/main.css">
   <!-- endbuild -->
 {% endblock css %}
 
 
 {% block head_javascript %}
-  <!-- build:js dist/scripts/modernizr.js -->
+  <!-- build:js core/scripts/modernizr.js -->
   <script src="/bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
 {% endblock head_javascript %}
 
 
 {% block javascript %}
-  <!-- build:js dist/scripts/vendor.js -->
+  <!-- build:js core/scripts/vendor.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
-  <!-- build:js dist/scripts/plugins.js -->
+  <!-- build:js core/scripts/plugins.js -->
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
@@ -40,8 +40,8 @@
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
   <!-- endbuild -->
 
-  <!-- build:js dist/scripts/main.js -->
-  <script src="core/static/source/scripts/main.js"></script>
+  <!-- build:js core/scripts/main.js -->
+  <script src="core_local/static/core/scripts/main.js"></script>
   <!-- endbuild -->
 
   <!-- build:js pubmed/scripts/main.js -->

@@ -87,6 +87,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
+LOCAL_APPS += ('core_local', 'core_production')
 
 if not DEBUG:
     STATIC_URL = '/staticfiles/'
@@ -111,6 +112,8 @@ CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)
 # ------------------------------------------------------------------------------
 # THIRD_PARTY_APPS += ('silk',)
 # DEV_MIDDLEWARE += ('silk.middleware.SilkyMiddleware',)
+
+
 # COMBINE INSTALLED APPS
 # ------------------------------------------------------------------------------
 INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS
