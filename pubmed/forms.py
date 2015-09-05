@@ -6,20 +6,23 @@ Pubmed forms.
 
 import logging
 
-from django import forms
-from django.forms import ModelForm
+from django.db import models
+from django.forms import ModelForm, RadioSelect
 from crispy_forms import bootstrap, helper
 from braces import forms as braces_forms
 from model_utils import Choices
 
-from pubmed.models import EntryMeta, Entry
-from pubmed.layouts import EntryFormLayout
-from pubmed.fields import entryform_formfield_callback, TypedChoiceField
-from pubmed_lookup import StructureLookup, BreakendStrandLookup
+from .models import EntryMeta, Entry
+from .layouts import EntryFormLayout
+from .fields import TypedChoiceField
+from pubmed_lookup import (BreakendStrandLookup, BreakendDirectionLookup,
+    PatientOutcomesLookup)
 
 logger = logging.getLogger(__name__)
 
-# breakend_strand = BreakendStrandLookup.objects.all()
+models.BLANK_CHOICE_DASH[0] = ('', 'Null')
+
+
 class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
     """
     Form representation of Pubmed Entry.
@@ -27,17 +30,31 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
     :param args:
     :param kwargs:
     """
-    formfield_callback = entryform_formfield_callback
-    """Use radio inline widjets by default"""
+    # formfield_callback = entryform_formfield_callback
+    # """Use radio inline widgets by default"""
 
     treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False)
     """Helper field for dynamic treatment behavior."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        for field in filter(lambda x: x not in ('user',),
+                            EntryMeta.foreign_fields):
+            self.fields[field].empty_label = models.BLANK_CHOICE_DASH[0][1]
 
-        # self.fields['breakend_strand'].queryset = breakend_strand
-        # self.fields['mate_breakend_strand'].queryset = breakend_strand
+        breakend_strand = BreakendStrandLookup.objects.all()
+        self.fields['breakend_strand'].queryset = breakend_strand
+        self.fields['mate_breakend_strand'].queryset = breakend_strand
+
+        breakend_direction = BreakendDirectionLookup.objects.all()
+        self.fields['breakend_direction'].queryset = breakend_direction
+        self.fields['mate_breakend_direction'].queryset = breakend_direction
+
+        patient_outcomes = PatientOutcomesLookup.objects.all()
+        self.fields['assessed_patient_outcomes'].queryset = patient_outcomes
+        self.fields['significant_patient_outcomes'].queryset = patient_outcomes
+
+        self.fields['pubmed_id'].help_text = ' '
 
         self.helper = helper.FormHelper(self)
         self.helper.form_id = 'entry-form'
@@ -47,8 +64,7 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
         self.helper.html5_required = True
         self.helper.layout = EntryFormLayout(helper=self.helper)
 
-        self.helper.filter_by_widget(forms.RadioSelect).wrap(
-            bootstrap.InlineRadios)
+        self.helper.filter_by_widget(RadioSelect).wrap(bootstrap.InlineRadios)
 
     def clean(self):
         """
@@ -77,3 +93,6 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
     class Meta:
         model = Entry
         fields = EntryMeta.public_fields
+        widgets = {field: RadioSelect for field in EntryMeta.foreign_fields if
+                   not field == 'user'}
+        widgets['treatment'] = RadioSelect

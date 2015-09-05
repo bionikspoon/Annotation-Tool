@@ -83,13 +83,16 @@ class EntryDetailView(EntryMixin, braces_views.SelectRelatedMixin, DetailView):
     prefetch_related = EntryMeta.relationship_fields
 
 
-class EntryCreateView(EntryFormMixin, braces_views.PrefetchRelatedMixin,
+class EntryCreateView(EntryFormMixin,
+
+                      # braces_views.PrefetchRelatedMixin,
                       CreateView):
     """
     Form. Create an entry.
     """
 
-    prefetch_related = ('structure_lookup',)
+    prefetch_related = (
+        'assessed_patient_outcomes', 'significant_patient_outcomes')
     success_msg = 'Entry Created'
     action_text = 'Create'
 

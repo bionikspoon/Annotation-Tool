@@ -151,6 +151,12 @@ FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
 # COMBINE MIDDLEWARE
 # ------------------------------------------------------------------------------
 # Make sure djangosecure.middleware.SecurityMiddleware is listed first
-MIDDLEWARE_CLASSES = (
-    SECURITY_MIDDLEWARE + UPDATE_CACHE_MIDDLEWARE + MIDDLEWARE_CLASSES +
-    FETCH_CACHE_MIDDLEWARE)
+MIDDLEWARE_CLASSES = (SECURITY_MIDDLEWARE
+
+                      # + UPDATE_CACHE_MIDDLEWARE
+
+                      + MIDDLEWARE_CLASSES
+
+                      # + FETCH_CACHE_MIDDLEWARE
+
+                      )

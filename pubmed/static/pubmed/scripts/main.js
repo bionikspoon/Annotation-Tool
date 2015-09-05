@@ -28,7 +28,7 @@ $(function () {
      ***************************************************************************
      * */
     treatmentBehavior($form);
-    select2Init($form);
+    selectTwoSetup($form);
     pubmedLookup($form);
 
 
@@ -103,7 +103,7 @@ $(function () {
     }
 
 
-    function select2Init($form) {
+    function selectTwoSetup($form) {
         /**
          *
          * Query all select boxes for select2
@@ -130,7 +130,7 @@ $(function () {
          * Queries of interest.
          * */
         var $pubmedId = $form.find('#id_pubmed_id');
-        var $summaryDiv = $form.find('#summary');
+        var $summaryDiv = $form.find('#hint_id_pubmed_id');
         var $resultsDiv = $form.find('#results');
 
         /**
