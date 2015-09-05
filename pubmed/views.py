@@ -83,24 +83,15 @@ class EntryDetailView(EntryMixin, braces_views.SelectRelatedMixin, DetailView):
     prefetch_related = EntryMeta.relationship_fields
 
 
-class EntryCreateView(EntryFormMixin, CreateView):
+class EntryCreateView(EntryFormMixin, braces_views.PrefetchRelatedMixin,
+                      CreateView):
     """
     Form. Create an entry.
     """
+
+    prefetch_related = ('structure_lookup',)
     success_msg = 'Entry Created'
     action_text = 'Create'
-
-
-# class EntryUpdateViewCopy(EntryFormMixin,
-#
-#                           braces_views.SelectRelatedMixin,
-#                           braces_views.PrefetchRelatedMixin,
-#
-#                           UpdateView):
-#     prefetch_related = EntryMeta.relationship_fields
-#     select_related = EntryMeta.foreign_fields
-#     success_msg = 'Copy Entry Updated'
-#     action_text = 'Copy'
 
 
 class EntryUpdateView(EntryFormMixin, UpdateView):
@@ -133,6 +124,10 @@ class EntryViewSet(ReadOnlyModelViewSet):
         :rtype : rest_framework.response.Response
         """
         queryset = self.filter_queryset(self.get_queryset())
-        return Response(data={
-            'entry_list': queryset
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            return self.get_paginated_response(page)
+        return Response({
+            'entry_list': page
         }, template_name='pubmed/_entry_list_items.html')

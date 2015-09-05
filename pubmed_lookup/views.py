@@ -1,9 +1,9 @@
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from . import models, serializers
 
 
-class LookupTableViewSet(ModelViewSet):
+class LookupTableViewSet(ReadOnlyModelViewSet):
     pass
 
 

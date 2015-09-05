@@ -12,13 +12,14 @@ from crispy_forms import bootstrap, helper
 from braces import forms as braces_forms
 from model_utils import Choices
 
-from ..models import EntryMeta
-from .layouts import EntryFormLayout
-from .fields import entryform_formfield_callback, TypedChoiceField
+from pubmed.models import EntryMeta, Entry
+from pubmed.layouts import EntryFormLayout
+from pubmed.fields import entryform_formfield_callback, TypedChoiceField
+from pubmed_lookup import StructureLookup, BreakendStrandLookup
 
 logger = logging.getLogger(__name__)
 
-
+# breakend_strand = BreakendStrandLookup.objects.all()
 class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
     """
     Form representation of Pubmed Entry.
@@ -34,6 +35,9 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        # self.fields['breakend_strand'].queryset = breakend_strand
+        # self.fields['mate_breakend_strand'].queryset = breakend_strand
 
         self.helper = helper.FormHelper(self)
         self.helper.form_id = 'entry-form'
@@ -71,5 +75,5 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
     # noinspection PyDocstring
     class Meta:
-        model = EntryMeta.model
+        model = Entry
         fields = EntryMeta.public_fields

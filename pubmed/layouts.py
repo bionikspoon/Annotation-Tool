@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 # coding=utf-8
+import logging
+
 from crispy_forms.bootstrap import FormActions
 from django.template.loader import render_to_string
 from crispy_forms.layout import (Layout, LayoutObject, Fieldset, Field, Div,
     HTML, Row, Column, Submit, Button)
 from crispy_forms.utils import flatatt, render_field
+
+logger = logging.getLogger(__name__)
 
 
 class Flat(LayoutObject):
@@ -19,6 +23,7 @@ class Flat(LayoutObject):
 
     def get_rendered_fields(self, form, form_style, context,
                             template_pack='flat', **kwargs):
+        # kwargs['template_pack'] = 'flat'
         kwargs['template'] = 'flat/layout/field.html'
 
         return ''.join(
@@ -28,7 +33,7 @@ class Flat(LayoutObject):
     def render(self, form, form_style, context, template_pack='flat', **kwargs):
         fields = self.get_rendered_fields(form, form_style, context,
                                           template_pack, **kwargs)
-
+        logger.debug(fields)
         template = self.get_template_name(template_pack)
         return render_to_string(template, {
             'fieldset': self,
