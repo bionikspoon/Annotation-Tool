@@ -48,7 +48,7 @@ class RuleLevelLookupSerializer(EntrySetLookupTableSerializer):
 class BreakendStrandLookupSerializer(LookupTableSerializer):
     breakend_strand_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True, many=True)
     mate_breakend_strand_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
-        many=True)
+                                                             many=True)
 
     class Meta:
         model = models.BreakendStrandLookup
@@ -58,9 +58,9 @@ class BreakendStrandLookupSerializer(LookupTableSerializer):
 
 class BreakendDirectionLookupSerializer(LookupTableSerializer):
     breakend_direction_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
-        many=True)
+                                                           many=True)
     mate_breakend_direction_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
-        many=True)
+                                                                many=True)
 
     class Meta:
         model = models.BreakendDirectionLookup
@@ -90,9 +90,9 @@ class DiseaseLookupSerializer(EntrySetLookupTableSerializer):
 
 class PatientOutcomesLookupSerializer(LookupTableSerializer):
     assessed_patient_outcomes_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
-        many=True)
+                                                                  many=True)
     significant_patient_outcomes_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
-        many=True)
+                                                                     many=True)
 
     class Meta:
         model = models.PatientOutcomesLookup

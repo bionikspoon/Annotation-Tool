@@ -1,6 +1,5 @@
 """
-Pubmed Lookup app.  Separate lookup logic because its repetitive and
-obfuscates core app.
+Pubmed Lookup app.  Separate lookup logic because its repetitive and obfuscates core app.
 """
 
 from .models import (StructureLookup, MutationTypeLookup, SyntaxLookup, OperatorLookup, RuleLevelLookup,
