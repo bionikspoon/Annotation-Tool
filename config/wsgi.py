@@ -13,10 +13,12 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
+
+# Python Libraries
 import os
 
+# Django Packages
 from django.core.wsgi import get_wsgi_application
-
 
 # We defer to a DJANGO_SETTINGS_MODULE already in the environment. This breaks
 # if running multiple sites in the same mod_wsgi process. To fix this, use

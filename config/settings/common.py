@@ -8,8 +8,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
+# Compatibility
 from __future__ import absolute_import, unicode_literals
 
+# Third Party Packages
 # noinspection PyPackageRequirements
 import environ
 

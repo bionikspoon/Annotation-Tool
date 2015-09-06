@@ -7,11 +7,18 @@ Production Configurations
 - Use Redis on Heroku
 
 """
+
+# Compatibility
 from __future__ import absolute_import, unicode_literals
 
+# Django Packages
 from django.utils import six
+
+# Third Party Packages
 # noinspection PyUnresolvedReferences
 import boto.s3.connection
+
+# Local Application
 from .common import *  # noqa
 
 # SECRET CONFIGURATION

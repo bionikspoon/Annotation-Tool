@@ -7,11 +7,14 @@ Local settings
 - Add django-extensions as app
 """
 
+# Third Party Packages
 from environ import Env
+
+# Local Application
+from .common import *  # noqa
 
 Env().read_env('.env')
 
-from .common import *  # noqa
 
 
 # DEBUG

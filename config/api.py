@@ -2,14 +2,17 @@
 Build API router.
 """
 
-from django.conf.urls import url, include
+# Django Packages
+from django.conf.urls import include, url
 
+# Third Party Packages
 from rest_framework.routers import DefaultRouter
 from rest_framework.viewsets import ViewSet
 
+# Annotation Tool Project
 from annotation_tool.users.views import UserViewSet
-from pubmed.views import EntryViewSet
 from pubmed import lookups
+from pubmed.views import EntryViewSet
 
 lookup_router = DefaultRouter()
 lookup_router.register(r'structurelookup', lookups.StructureLookupViewSet, base_name='structurelookup')
