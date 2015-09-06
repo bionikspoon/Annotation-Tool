@@ -4,13 +4,13 @@ Django
 # Configuration
 django-environ
 django-secure
-whitenoise
+# whitenoise
 
 
 # Forms
 django-braces
 django-crispy-forms
-django-floppyforms
+# django-floppyforms
 
 # Models
 django-model-utils
@@ -43,3 +43,5 @@ django-grappelli
 djangorestframework
 docutils
 django-filter
+
+pip-tools

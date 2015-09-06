@@ -5,7 +5,6 @@
 #    pip-compile local.in
 #
 alabaster==0.7.6          # via sphinx
-autopep8==1.2             # via django-silk
 babel==2.0                # via sphinx
 click==5.1                # via pip-tools
 coverage==3.7.1
@@ -19,12 +18,10 @@ django-debug-toolbar==1.3.2
 django-environ==0.3.0
 django-extensions==1.5.6
 django-filter==0.11.0
-django-floppyforms==1.5.2
 django-grappelli==2.7.1
 django-model-utils==2.3.1
 django-redis==4.2.0
 django-secure==1.0.1
-django-silk==0.5.5
 django-test-plus==1.0.9
 django==1.8.4
 djangorestframework==3.2.3
@@ -49,32 +46,28 @@ nbformat==4.0.0
 notebook==4.0.4
 oauthlib==1.0.3           # via requests-oauthlib
 path.py==8.1              # via pickleshare
-pep8==1.6.2               # via autopep8
 pexpect==3.3              # via ipython
 pickleshare==0.5          # via ipython
 pillow==2.9.0
 pip-tools==1.1.4
 psycopg2==2.6.1
 ptyprocess==0.5
-pygments==2.0.2           # via django-silk, httpie, nbconvert, sphinx
-python-dateutil==2.4.2    # via django-silk
+pygments==2.0.2           # via httpie, nbconvert, sphinx
 python3-openid==3.0.6     # via django-allauth
 pytz==2015.4
 pyzmq==14.7.0
 redis==2.10.3
 requests-oauthlib==0.5.0  # via django-allauth
-requests==2.7.0           # via django-allauth, django-silk, httpie, requests-oauthlib
+requests==2.7.0           # via django-allauth, httpie, requests-oauthlib
 simplegeneric==0.8.1      # via ipython
-simplejson==3.8.0         # via django-silk
-six==1.9.0                # via django-braces, django-extensions, pip-tools, python-dateutil, sphinx, unicode-slugify
+six==1.9.0                # via django-braces, django-extensions, pip-tools, sphinx, unicode-slugify
 snowballstemmer==1.2.0    # via sphinx
 sphinx-rtd-theme==0.1.8   # via sphinx
 sphinx==1.3.1
-sqlparse==0.1.16          # via django-debug-toolbar, django-silk
+sqlparse==0.1.16          # via django-debug-toolbar
 terminado==0.5
 tornado==4.2.1
 traitlets==4.0.0          # via ipykernel, ipython, jupyter-client, jupyter-core, nbconvert, nbformat, notebook
 unicode-slugify==0.1.3
 unidecode==0.4.18         # via unicode-slugify
 werkzeug==0.10.4
-whitenoise==2.0.3
