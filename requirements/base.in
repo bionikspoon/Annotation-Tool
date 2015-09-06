@@ -36,12 +36,17 @@ pytz
 django-redis
 redis
 
-
-
-# Your custom requirements go here
+# Admin
 django-grappelli
-djangorestframework
 docutils
+
+# Rest API
+djangorestframework
 django-filter
 
+# Cache
+django-cache-machine
+python-memcached
+
+# Environment Management
 pip-tools

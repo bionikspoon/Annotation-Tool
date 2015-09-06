@@ -7,6 +7,9 @@ Local settings
 - Add Django Debug Toolbar
 - Add django-extensions as app
 """
+import warnings
+
+from django.utils.module_loading import import_string
 from environ import Env
 
 Env().read_env('.env')
@@ -38,24 +41,28 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 # ------------------------------------------------------------------------------
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
+# SESSION
+# ------------------------------------------------------------------------------
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
 # CACHING
 # ------------------------------------------------------------------------------
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': '',
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "{0}/{1}".format(env.cache_url('REDIS_URL'), 0),
+
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "IGNORE_EXCEPTIONS": not DEBUG
-            # mimics memcache behavior.
-            # http://niwinz.github.io/django-redis/latest/
-            # #_memcached_exceptions_behavior
+            "IGNORE_EXCEPTIONS": True
+
         },
-        'TIMEOUT': 5
+        'TIMEOUT': 300
 
     }
 }
-
+DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
 UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
 
 FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)

@@ -36,8 +36,6 @@ SECURITY_MIDDLEWARE = (
 )
 
 
-
-
 # set this to 60 seconds and then to 518400 when you can prove it works
 SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
@@ -49,6 +47,8 @@ SECURE_BROWSER_XSS_FILTER = True
 SESSION_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = True
 SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
 
 # SITE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -115,17 +115,22 @@ SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 # See:
 # https://docs.djangoproject.com/en/dev/ref/templates/api/
 # #django.template.loaders.cached.Loader
-TEMPLATES[0]['OPTIONS']['loaders'] = [
-    ('django.template.loaders.cached.Loader', [
+TEMPLATES[0]['OPTIONS']['loaders'] = [(
+
+    'django.template.loaders.cached.Loader',
+
+    [
 
         'django.template.loaders.filesystem.Loader',
-        'django.template.loaders.app_directories.Loader',
+        'django.template.loaders.app_directories.Loader'
 
-    ]), ]
+    ]
+
+)]
+
 
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
-# Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
 DATABASES['default'] = env.db("DATABASE_URL")
 
 # CACHING
@@ -135,20 +140,24 @@ CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "{0}/{1}".format(
-            env.cache_url('REDIS_URL', default="redis://127.0.0.1:6379"), 0),
+            env.cache_url('REDIS_URL'), 'default'),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "IGNORE_EXCEPTIONS": True
-            # mimics memcache behavior.
-            # http://niwinz.github.io/django-redis/latest/
-            # #_memcached_exceptions_behavior
+
         },
         'TIMEOUT': 60 * 60 * 24
-    }
+    },
+
 }
+DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
+
 UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
 
 FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
+
+CACHE_COUNT_TIMEOUT = 60
+"""Invalidate `QuerySet.Count()` entries"""
 
 # COMBINE INSTALLED APPS
 # ------------------------------------------------------------------------------
