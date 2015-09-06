@@ -2,9 +2,13 @@
 Serialize Pubmed objects.
 """
 
+# Third Party Packages
 from rest_framework.serializers import HyperlinkedModelSerializer
 
+# Annotation Tool Project
 from annotation_tool.users.serlializers import UserSerializer
+
+# Local Application
 from .models import EntryMeta
 
 

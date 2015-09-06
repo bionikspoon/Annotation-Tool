@@ -2,9 +2,11 @@
 Pubmed url definitions.
 """
 
+# Django Packages
 from django.conf.urls import url
 
-from .views import *
+# Local Application
+from .views import EntryCreateView, EntryDetailView, EntryListView, EntryUpdateView
 
 urlpatterns = [
 

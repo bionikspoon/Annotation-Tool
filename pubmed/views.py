@@ -2,15 +2,19 @@
 Pubmed view definitions.
 """
 
-from django.core.urlresolvers import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+# Django Packages
 from django.contrib import messages
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
+
+# Third Party Packages
 from braces import views as braces_views
 from rest_framework.decorators import list_route
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
+# Local Application
 from .forms import EntryModelForm
 from .models import Entry, EntryMeta
 from .serializers import EntrySerializer
@@ -23,8 +27,7 @@ class EntryMixin(object):
     model = Entry
 
 
-class EntryFormMixin(braces_views.LoginRequiredMixin,
-    braces_views.UserFormKwargsMixin, EntryMixin):
+class EntryFormMixin(braces_views.LoginRequiredMixin, braces_views.UserFormKwargsMixin, EntryMixin):
     """
     Common form configuration.
     """
@@ -83,16 +86,12 @@ class EntryDetailView(EntryMixin, braces_views.SelectRelatedMixin, DetailView):
     prefetch_related = EntryMeta.relationship_fields
 
 
-class EntryCreateView(EntryFormMixin,
-
-    # braces_views.PrefetchRelatedMixin,
-    CreateView):
+class EntryCreateView(EntryFormMixin, braces_views.PrefetchRelatedMixin, CreateView):
     """
     Form. Create an entry.
     """
 
-    prefetch_related = (
-        'assessed_patient_outcomes', 'significant_patient_outcomes')
+    prefetch_related = ('assessed_patient_outcomes', 'significant_patient_outcomes')
     success_msg = 'Entry Created'
     action_text = 'Create'
 

@@ -2,12 +2,15 @@
 Pubmed factory definitions.
 """
 
-from factory import SubFactory, DjangoModelFactory, Iterator, LazyAttribute
+# Third Party Packages
+from factory import DjangoModelFactory, Iterator, LazyAttribute, SubFactory
 from faker import Faker
 
+# Annotation Tool Project
 import annotation_tool.users.factories
-from . import lookups
-from . import Entry
+
+# Local Application
+from . import Entry, lookups
 
 faker = Faker()
 _ = lambda field, **kw: LazyAttribute(lambda __: field(**kw))
@@ -34,20 +37,17 @@ class EntryFactory(DjangoModelFactory):
     start = _(faker.random_int)
     stop = _(faker.random_int)
     breakend_strand = Iterator(lookups.BreakendStrandLookup.objects.all())
-    breakend_direction = Iterator(
-        lookups.BreakendDirectionLookup.objects.all())
+    breakend_direction = Iterator(lookups.BreakendDirectionLookup.objects.all())
     mate_chromosome = _(faker.text, max_nb_chars=100)
     mate_start = _(faker.random_int)
     mate_end = _(faker.random_int)
-    mate_breakend_strand = Iterator(
-        lookups.BreakendStrandLookup.objects.all())
+    mate_breakend_strand = Iterator(lookups.BreakendStrandLookup.objects.all())
     minimum_number_of_copies = _(faker.random_int)
     maximum_number_of_copies = _(faker.random_int)
     coordinate_predicate = _(faker.text, max_nb_chars=100)
     partner_coordinate_predicate = _(faker.text, max_nb_chars=100)
     variant_type = Iterator(lookups.VariantTypeLookup.objects.all())
-    variant_consequence = Iterator(
-        lookups.VariantConsequenceLookup.objects.all())
+    variant_consequence = Iterator(lookups.VariantConsequenceLookup.objects.all())
     variant_clinical_grade = _(faker.random_int)
     # disease = lookups.ManyToManyField(DiseaseLookup,
     # **DEFAULTS.ManyToManyField)
