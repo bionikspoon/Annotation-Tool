@@ -2,9 +2,10 @@
 Base class.  Aggregate all data.
 """
 
+# Python Libraries
+import logging
 from collections import namedtuple
 from pprint import pprint
-import logging
 
 logger = logging.getLogger(__name__)
 

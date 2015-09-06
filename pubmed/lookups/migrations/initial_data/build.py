@@ -2,11 +2,13 @@
 Compile generated_data.py from raw data.
 """
 
-from io import StringIO
-from itertools import chain
+# Python Libraries
 import json
 import re
+from io import StringIO
+from itertools import chain
 
+# Django Packages
 from django.conf import settings
 
 

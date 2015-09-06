@@ -21,7 +21,7 @@ indent_size = 4
 [*.py]
 # https://github.com/timothycrosley/isort/wiki/isort-Settings
 line_length = 100
-multi_line_output = 4
+multi_line_output = 5
 default_section = THIRDPARTY
 import_heading_future = Compatibility
 import_heading_stdlib = Python Libraries
