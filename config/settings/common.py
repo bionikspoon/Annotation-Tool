@@ -134,6 +134,22 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # CACHE CONFIGURATION
 # ------------------------------------------------------------------------------
+
+
+CACHES = {
+    'default': {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "{0}/{1}".format(env.str('REDIS_URL'), 0),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "IGNORE_EXCEPTIONS": True
+        },
+        'TIMEOUT': 300
+    }
+}
+
+DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
+
 THIRD_PARTY_APPS += ('cacheops',)
 CACHEOPS_REDIS = {key.lower(): value for key, value in
                   env.db('REDIS_URL').items() if value}
@@ -142,6 +158,7 @@ CACHEOPS_REDIS['db'] = 1
 CACHEOPS = {
     'lookups.*': ('all', 300)
 }
+
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
 # Local time zone for this installation. Choices can be found here:
@@ -262,7 +279,6 @@ AUTHENTICATION_BACKENDS = (
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 # Custom user app defaults

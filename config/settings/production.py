@@ -135,29 +135,11 @@ DATABASES['default'] = env.db("DATABASE_URL")
 
 # CACHING
 # ------------------------------------------------------------------------------
-# Heroku URL does not pass the DB number, so we parse it in
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "{0}/{1}".format(env.cache('REDIS_URL').get('LOCATION'),
-                                     0),
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "IGNORE_EXCEPTIONS": True
-
-        },
-        'TIMEOUT': 60 * 60 * 24
-    },
-
-}
-DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
 
 UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
 
 FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
 
-CACHE_COUNT_TIMEOUT = 60
-"""Invalidate `QuerySet.Count()` entries"""
 
 # COMBINE INSTALLED APPS
 # ------------------------------------------------------------------------------
