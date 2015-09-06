@@ -7,8 +7,7 @@ from collections import OrderedDict
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
-
-from model_utils import Choices, models as utils_models, FieldTracker
+from model_utils import Choices, models as utils_models
 
 from annotation_tool.users.models import User
 from . import lookups
@@ -136,7 +135,7 @@ class Entry(utils_models.TimeStampedModel):
     reference_claims = models.TextField(**DEFAULTS.TextField)
     comments = models.TextField(**DEFAULTS.TextField)
 
-    tracker = FieldTracker()
+    # tracker = FieldTracker()
 
     def get_absolute_url(self):
         """
@@ -144,10 +143,10 @@ class Entry(utils_models.TimeStampedModel):
 
         :return: URL path.
         """
-
-        return reverse('pubmed:detail', kwargs={
+        kwargs = {
             'pk': self.id
-        })
+        }
+        return reverse('pubmed:detail', kwargs=kwargs)
 
     def __str__(self):
         gene = ':%s' % self.gene if self.gene else ''

@@ -35,8 +35,7 @@ trim_trailing_whitespace = false
 [*.html]
 indent_size = 3
 
-[Makefile]
-indent_style = tab
+[.*rc]
 indent_size = 4
 
 [{package,bower}.json]
