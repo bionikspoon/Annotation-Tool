@@ -19,8 +19,7 @@ class EntryUserSerializer(UserSerializer):
 
     # noinspection PyDocstring
     class Meta(UserSerializer.Meta):
-        fields = tuple(field for field in UserSerializer.Meta.fields if
-                       field != 'pubmed_entries')
+        fields = tuple(field for field in UserSerializer.Meta.fields if field != 'pubmed_entries')
 
 
 class EntrySerializer(HyperlinkedModelSerializer):

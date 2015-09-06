@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
-
 # Django Packages
 from django.contrib import admin
 

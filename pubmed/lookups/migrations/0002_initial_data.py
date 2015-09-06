@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Compatibility
 from __future__ import unicode_literals
 

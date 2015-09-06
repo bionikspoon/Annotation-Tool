@@ -1,8 +1,7 @@
-#!/usr/bin/env python
-# coding=utf-8
 """
 Compile generated_data.py from raw data.
 """
+
 from io import StringIO
 from itertools import chain
 import json
@@ -13,8 +12,7 @@ from django.conf import settings
 
 class CONFIG(object):
     """ Config object. """
-    data = settings.ROOT_DIR.path('pubmed', 'lookups', 'migrations',
-                                  'initial_data', 'data')
+    data = settings.ROOT_DIR.path('pubmed', 'lookups', 'migrations', 'initial_data', 'data')
     module = 'lookups'
     data_input = data.path('input')
     data_output = data.path('output')

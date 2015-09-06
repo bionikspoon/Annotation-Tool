@@ -1,4 +1,3 @@
-
 # noinspection PyPep8Naming
 class classproperty(object):
     """Decorator.  Define class property."""

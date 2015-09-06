@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
-
 # Python Libraries
 import logging
 
@@ -111,8 +108,7 @@ class EntryFormMixin(object):
         with self.login(self.user):
             response = self.post(**self.post_to_url)
         self.response_200()
-        self.assertFormError(response, 'form', 'pubmed_id',
-                             'This field is required.')
+        self.assertFormError(response, 'form', 'pubmed_id', 'This field is required.')
 
     def test_post_form__anonymous_user__data(self):
         """Test 401 response if posted from anonymous user."""

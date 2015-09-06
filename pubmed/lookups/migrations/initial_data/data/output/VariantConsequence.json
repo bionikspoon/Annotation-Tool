@@ -1,12 +1,12 @@
 [
-    {
-        "fields": "Non Synonymous Missense",
-        "model": "lookups.VariantConsequenceLookup",
-        "pk": 0
-    },
-    {
-        "fields": "Non Synonymous Nonsense",
-        "model": "lookups.VariantConsequenceLookup",
-        "pk": 1
-    }
+  {
+    "fields": "Non Synonymous Missense",
+    "model":  "lookups.VariantConsequenceLookup",
+    "pk":     0
+  },
+  {
+    "fields": "Non Synonymous Nonsense",
+    "model":  "lookups.VariantConsequenceLookup",
+    "pk":     1
+  }
 ]

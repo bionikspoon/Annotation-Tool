@@ -1,5 +1,3 @@
-# coding=utf-8
-
 # Django Packages
 from django.db import models
 
