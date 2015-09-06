@@ -2,6 +2,7 @@
 """
 Pubmed view definitions.
 """
+
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib import messages
@@ -24,7 +25,7 @@ class EntryMixin(object):
 
 
 class EntryFormMixin(braces_views.LoginRequiredMixin,
-                     braces_views.UserFormKwargsMixin, EntryMixin):
+    braces_views.UserFormKwargsMixin, EntryMixin):
     """
     Common form configuration.
     """
@@ -85,8 +86,8 @@ class EntryDetailView(EntryMixin, braces_views.SelectRelatedMixin, DetailView):
 
 class EntryCreateView(EntryFormMixin,
 
-                      # braces_views.PrefetchRelatedMixin,
-                      CreateView):
+    # braces_views.PrefetchRelatedMixin,
+    CreateView):
     """
     Form. Create an entry.
     """

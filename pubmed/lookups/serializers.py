@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 # coding=utf-8
-from rest_framework.relations import HyperlinkedRelatedField
-from rest_framework.serializers import (HyperlinkedModelSerializer, Serializer)
 
+# Third Party Packages
+from rest_framework.relations import HyperlinkedRelatedField
+from rest_framework.serializers import HyperlinkedModelSerializer, Serializer
+
+# Local Application
 from . import models
 
 

@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 # coding=utf-8
+
+# Python Libraries
 import logging
 
-from crispy_forms.bootstrap import FormActions
+# Django Packages
 from django.template.loader import render_to_string
-from crispy_forms.layout import (Layout, LayoutObject, Fieldset, Field, Div,
-    HTML, Row, Column, Submit, Button)
+
+# Third Party Packages
+from crispy_forms.bootstrap import FormActions
+from crispy_forms.layout import HTML, Button, Column, Div, Field, Fieldset, Layout, LayoutObject, Row, Submit
 from crispy_forms.utils import flatatt, render_field
 
 logger = logging.getLogger(__name__)

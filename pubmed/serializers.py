@@ -3,6 +3,7 @@
 """
 Serialize Pubmed objects.
 """
+
 from rest_framework.serializers import HyperlinkedModelSerializer
 
 from annotation_tool.users.serlializers import UserSerializer

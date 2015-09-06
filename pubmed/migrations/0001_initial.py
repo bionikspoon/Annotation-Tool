@@ -1,10 +1,15 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
+
+# Compatibility
 from __future__ import unicode_literals
 
-from django.db import models, migrations
-from django.conf import settings
+# Django Packages
 import django.db.models.deletion
 import django.utils.timezone
+from django.conf import settings
+from django.db import migrations, models
+
+# Third Party Packages
 import model_utils.fields
 
 
