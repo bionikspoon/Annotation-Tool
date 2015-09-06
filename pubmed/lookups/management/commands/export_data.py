@@ -1,16 +1,18 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-from django.core.management.base import BaseCommand
+from django.core.management.base import NoArgsCommand
 
 from ...migrations.initial_data.build import generate_data
 
 
-class Command(BaseCommand):
-    help = "Generate initial data used to populate lookup tables."
+class Command(NoArgsCommand):
+    """Generate initial data used to populate lookup tables."""
 
-    def handle(self, *args, **options):
+    def handle_noargs(self, **options):
         generate_data()
+
+    help = __doc__
 
 
 if __name__ == '__main__':

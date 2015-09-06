@@ -4,11 +4,10 @@ Pubmed model definitions.
 """
 from collections import OrderedDict
 
-from django import forms
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
-from django.forms import RadioSelect
+
 from model_utils import Choices, models as utils_models, FieldTracker
 
 from annotation_tool.users.models import User
@@ -27,30 +26,6 @@ class DEFAULTS(object):
     ManyToManyField = dict(blank=True)
 
 
-class ModelChoiceRadioField(forms.ModelChoiceField):
-    widget = RadioSelect
-    # def __init__(self, *args, **kwargs):
-    #     # defaults = {
-    #     #     'widget': RadioSelect
-    #     # }
-    #     # defaults.update(kwargs)
-    #     super().__init__(widget=RadioChoiceInput, *args, **kwargs)
-
-
-class ChoicesForeignKey(models.ForeignKey):
-    def formfield(self, **kwargs):
-        # if isinstance(self.rel.to, six.string_types):
-        #     raise ValueError("Cannot create form field for %r yet, because "
-        #                      "its related model %r has not been loaded yet"
-        # % (
-        #                          self.name, self.rel.to))
-        defaults = {
-            'form_class': ModelChoiceRadioField
-        }
-        defaults.update(kwargs)
-        return super().formfield(**defaults)
-
-
 class Entry(utils_models.TimeStampedModel):
     """
     Pubmed Entry definition.
@@ -67,12 +42,10 @@ class Entry(utils_models.TimeStampedModel):
     mutation_type = models.ForeignKey(lookups.MutationTypeLookup,
                                       **DEFAULTS.ForeignKey)
 
-    syntax = models.ForeignKey(lookups.SyntaxLookup,
-                               **DEFAULTS.ForeignKey)
+    syntax = models.ForeignKey(lookups.SyntaxLookup, **DEFAULTS.ForeignKey)
 
     syntax_text = models.CharField(**DEFAULTS.CharField)
-    operator = models.ForeignKey(lookups.OperatorLookup,
-                                 **DEFAULTS.ForeignKey)
+    operator = models.ForeignKey(lookups.OperatorLookup, **DEFAULTS.ForeignKey)
 
     rule_level = models.ForeignKey(lookups.RuleLevelLookup,
                                    **DEFAULTS.ForeignKey)
@@ -82,12 +55,13 @@ class Entry(utils_models.TimeStampedModel):
     stop = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     breakend_strand = models.ForeignKey(
 
-        lookups.BreakendStrandLookup,
-        related_name='breakend_strand_entry_set', **DEFAULTS.ForeignKey
+        lookups.BreakendStrandLookup, related_name='breakend_strand_entry_set',
+        **DEFAULTS.ForeignKey
 
     )
 
     breakend_direction = models.ForeignKey(
+
         lookups.BreakendDirectionLookup,
         related_name='breakend_direction_entry_set', **DEFAULTS.ForeignKey
 
@@ -103,11 +77,11 @@ class Entry(utils_models.TimeStampedModel):
 
     )
 
-    mate_breakend_direction = models.ForeignKey(
-        lookups.BreakendDirectionLookup,
-        related_name='mate_breakend_direction_entry_set', **DEFAULTS.ForeignKey
+    mate_breakend_direction = models.ForeignKey(lookups.BreakendDirectionLookup,
+                                                related_name='mate_breakend_direction_entry_set',
+                                                **DEFAULTS.ForeignKey
 
-    )
+                                                )
 
     minimum_number_of_copies = models.PositiveIntegerField(
         **DEFAULTS.IntegerField
@@ -123,10 +97,10 @@ class Entry(utils_models.TimeStampedModel):
     partner_coordinate_predicate = models.CharField(**DEFAULTS.CharField)
     variant_type = models.ForeignKey(lookups.VariantTypeLookup,
                                      **DEFAULTS.ForeignKey)
-    variant_consequence = models.ForeignKey(
-        lookups.VariantConsequenceLookup, **DEFAULTS.ForeignKey
+    variant_consequence = models.ForeignKey(lookups.VariantConsequenceLookup,
+                                            **DEFAULTS.ForeignKey
 
-    )
+                                            )
 
     variant_clinical_grade = models.PositiveIntegerField(
         choices=Choices(*range(1, 6)), **DEFAULTS.IntegerField
