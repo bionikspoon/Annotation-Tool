@@ -79,9 +79,9 @@ def populate_lookup_tables(apps, schema_editor):
     for entry in InitialData.export_flat():
         try:
             # noinspection PyPep8Naming
-            Model = apps.get_model('pubmed_lookup', entry.cls)
+            Model = apps.get_model('lookups', entry.cls)
         except LookupError:
-            logger.warning('pubmed_lookup.%s could not be found', entry.cls)
+            logger.warning('lookups.%s could not be found', entry.cls)
             continue
 
         Model.objects.update_or_create(choice=entry.choice)
@@ -99,10 +99,10 @@ def clean_lookup_tables(apps, schema_editor):
     for subclass in InitialData.__subclasses__():
         try:
             # noinspection PyPep8Naming
-            Model = apps.get_model('pubmed_lookup', subclass.__name__)
+            Model = apps.get_model('lookups', subclass.__name__)
             Model.objects.all().delete()
         except LookupError:
-            logger.warning('pubmed_lookup.%s could not be found',
+            logger.warning('lookups.%s could not be found',
                            subclass.__name__)
 
 

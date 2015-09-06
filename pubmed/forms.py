@@ -15,7 +15,7 @@ from model_utils import Choices
 from .models import EntryMeta, Entry
 from .layouts import EntryFormLayout
 from .fields import TypedChoiceField
-from pubmed_lookup import (BreakendStrandLookup, BreakendDirectionLookup,
+from .lookups import (BreakendStrandLookup, BreakendDirectionLookup,
     PatientOutcomesLookup)
 
 logger = logging.getLogger(__name__)

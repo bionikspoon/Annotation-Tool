@@ -3,18 +3,15 @@
 Pubmed model definitions.
 """
 from collections import OrderedDict
-from django import forms
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
-from django.forms import RadioSelect
-from django.forms.widgets import RadioChoiceInput, RadioFieldRenderer
-from django.utils import six
+
 from model_utils import Choices, models as utils_models, FieldTracker
 
 from annotation_tool.users.models import User
-import pubmed_lookup
+from . import lookups
 from .utils import classproperty
 
 
@@ -29,30 +26,6 @@ class DEFAULTS(object):
     ManyToManyField = dict(blank=True)
 
 
-class ModelChoiceRadioField(forms.ModelChoiceField):
-    widget = RadioSelect
-    # def __init__(self, *args, **kwargs):
-    #     # defaults = {
-    #     #     'widget': RadioSelect
-    #     # }
-    #     # defaults.update(kwargs)
-    #     super().__init__(widget=RadioChoiceInput, *args, **kwargs)
-
-
-class ChoicesForeignKey(models.ForeignKey):
-    def formfield(self, **kwargs):
-        # if isinstance(self.rel.to, six.string_types):
-        #     raise ValueError("Cannot create form field for %r yet, because "
-        #                      "its related model %r has not been loaded yet"
-        # % (
-        #                          self.name, self.rel.to))
-        defaults = {
-            'form_class': ModelChoiceRadioField
-        }
-        defaults.update(kwargs)
-        return super().formfield(**defaults)
-
-
 class Entry(utils_models.TimeStampedModel):
     """
     Pubmed Entry definition.
@@ -63,20 +36,18 @@ class Entry(utils_models.TimeStampedModel):
 
     pubmed_id = models.PositiveIntegerField()
     gene = models.CharField(**DEFAULTS.CharField)
-    structure = ChoicesForeignKey(pubmed_lookup.StructureLookup,
+    structure = models.ForeignKey(lookups.StructureLookup,
                                   **DEFAULTS.ForeignKey)
 
-    mutation_type = models.ForeignKey(pubmed_lookup.MutationTypeLookup,
+    mutation_type = models.ForeignKey(lookups.MutationTypeLookup,
                                       **DEFAULTS.ForeignKey)
 
-    syntax = models.ForeignKey(pubmed_lookup.SyntaxLookup,
-                               **DEFAULTS.ForeignKey)
+    syntax = models.ForeignKey(lookups.SyntaxLookup, **DEFAULTS.ForeignKey)
 
     syntax_text = models.CharField(**DEFAULTS.CharField)
-    operator = models.ForeignKey(pubmed_lookup.OperatorLookup,
-                                 **DEFAULTS.ForeignKey)
+    operator = models.ForeignKey(lookups.OperatorLookup, **DEFAULTS.ForeignKey)
 
-    rule_level = models.ForeignKey(pubmed_lookup.RuleLevelLookup,
+    rule_level = models.ForeignKey(lookups.RuleLevelLookup,
                                    **DEFAULTS.ForeignKey)
 
     chromosome = models.CharField(**DEFAULTS.CharField)
@@ -84,13 +55,14 @@ class Entry(utils_models.TimeStampedModel):
     stop = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     breakend_strand = models.ForeignKey(
 
-        pubmed_lookup.BreakendStrandLookup,
-        related_name='breakend_strand_entry_set', **DEFAULTS.ForeignKey
+        lookups.BreakendStrandLookup, related_name='breakend_strand_entry_set',
+        **DEFAULTS.ForeignKey
 
     )
 
     breakend_direction = models.ForeignKey(
-        pubmed_lookup.BreakendDirectionLookup,
+
+        lookups.BreakendDirectionLookup,
         related_name='breakend_direction_entry_set', **DEFAULTS.ForeignKey
 
     )
@@ -100,16 +72,16 @@ class Entry(utils_models.TimeStampedModel):
     mate_end = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     mate_breakend_strand = models.ForeignKey(
 
-        pubmed_lookup.BreakendStrandLookup,
+        lookups.BreakendStrandLookup,
         related_name='mate_breakend_strand_entry_set', **DEFAULTS.ForeignKey
 
     )
 
-    mate_breakend_direction = models.ForeignKey(
-        pubmed_lookup.BreakendDirectionLookup,
-        related_name='mate_breakend_direction_entry_set', **DEFAULTS.ForeignKey
+    mate_breakend_direction = models.ForeignKey(lookups.BreakendDirectionLookup,
+                                                related_name='mate_breakend_direction_entry_set',
+                                                **DEFAULTS.ForeignKey
 
-    )
+                                                )
 
     minimum_number_of_copies = models.PositiveIntegerField(
         **DEFAULTS.IntegerField
@@ -123,19 +95,19 @@ class Entry(utils_models.TimeStampedModel):
 
     coordinate_predicate = models.CharField(**DEFAULTS.CharField)
     partner_coordinate_predicate = models.CharField(**DEFAULTS.CharField)
-    variant_type = models.ForeignKey(pubmed_lookup.VariantTypeLookup,
+    variant_type = models.ForeignKey(lookups.VariantTypeLookup,
                                      **DEFAULTS.ForeignKey)
-    variant_consequence = models.ForeignKey(
-        pubmed_lookup.VariantConsequenceLookup, **DEFAULTS.ForeignKey
+    variant_consequence = models.ForeignKey(lookups.VariantConsequenceLookup,
+                                            **DEFAULTS.ForeignKey
 
-    )
+                                            )
 
     variant_clinical_grade = models.PositiveIntegerField(
         choices=Choices(*range(1, 6)), **DEFAULTS.IntegerField
 
     )
 
-    disease = models.ManyToManyField(pubmed_lookup.DiseaseLookup,
+    disease = models.ManyToManyField(lookups.DiseaseLookup,
                                      **DEFAULTS.ManyToManyField)
 
     treatment_1 = models.CharField(**DEFAULTS.CharField)
@@ -144,17 +116,17 @@ class Entry(utils_models.TimeStampedModel):
     treatment_4 = models.CharField(**DEFAULTS.CharField)
     treatment_5 = models.CharField(**DEFAULTS.CharField)
     population_size = models.PositiveIntegerField(**DEFAULTS.IntegerField)
-    sex = models.ForeignKey(pubmed_lookup.SexLookup, **DEFAULTS.ForeignKey)
+    sex = models.ForeignKey(lookups.SexLookup, **DEFAULTS.ForeignKey)
     ethnicity = models.CharField(**DEFAULTS.CharField)
     assessed_patient_outcomes = models.ManyToManyField(
-        pubmed_lookup.PatientOutcomesLookup,
+        lookups.PatientOutcomesLookup,
         related_name='assessed_patient_outcomes_entry_set',
         **DEFAULTS.ManyToManyField
 
     )
 
     significant_patient_outcomes = models.ManyToManyField(
-        pubmed_lookup.PatientOutcomesLookup,
+        lookups.PatientOutcomesLookup,
         related_name='significant_patient_outcomes_entry_set',
         **DEFAULTS.ManyToManyField
 

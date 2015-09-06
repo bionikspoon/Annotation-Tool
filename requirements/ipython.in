@@ -2,3 +2,15 @@ ipython
 pyzmq
 Tornado
 Jinja2
+ipdb
+
+mistune
+jupyter-core
+jupyter-client
+notebook
+ipykernel
+nbconvert
+jsonschema
+terminado
+nbformat
+ptyprocess

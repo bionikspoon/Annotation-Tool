@@ -57,14 +57,14 @@ SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
 ALLOWED_HOSTS = ['annotation-tool.herokuapp.com']
 # END SITE CONFIGURATION
 
-INSTALLED_APPS += ("gunicorn",)
+THIRD_PARTY_APPS += ("gunicorn",)
 
 # STORAGE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Uploaded Media Files
 # ------------------------
 # See: http://django-storages.readthedocs.org/en/latest/index.html
-INSTALLED_APPS += ('storages',)
+THIRD_PARTY_APPS += ('storages',)
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 AWS_ACCESS_KEY_ID = env('DJANGO_AWS_ACCESS_KEY_ID')
@@ -92,6 +92,8 @@ MEDIA_URL = 'https://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 
 # Static Assests
 # ------------------------
+LOCAL_APPS += ('core.production',)
+
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
@@ -147,6 +149,10 @@ CACHES = {
 UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
 
 FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
+
+# COMBINE INSTALLED APPS
+# ------------------------------------------------------------------------------
+INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 # COMBINE MIDDLEWARE
 # ------------------------------------------------------------------------------

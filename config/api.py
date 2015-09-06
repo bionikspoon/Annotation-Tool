@@ -8,7 +8,7 @@ from rest_framework.routers import DefaultRouter
 
 from annotation_tool.users.views import UserViewSet
 from pubmed.views import EntryViewSet
-from pubmed_lookup import views
+from pubmed.lookups import views
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
