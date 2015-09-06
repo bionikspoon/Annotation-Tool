@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
-from django.test import override_settings, SimpleTestCase
+
+# Django Packages
+from django.test import SimpleTestCase, override_settings
 
 
 @override_settings(DATABASES={'default': {}})

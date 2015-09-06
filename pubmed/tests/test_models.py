@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-from django.test import TestCase
-from pubmed import EntryMeta
-
-from pubmed.factories import EntryFactory
-
+# Python Libraries
 import logging
+
+# Django Packages
+from django.test import TestCase
+
+# Annotation Tool Project
+from pubmed import EntryMeta
+from pubmed.factories import EntryFactory
 
 logger = logging.getLogger(__name__)
 

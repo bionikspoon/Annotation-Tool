@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # coding=utf-8
 
+# Django Packages
 from django.core.management.base import NoArgsCommand
 
+# Local Application
 from ...migrations.initial_data.build import generate_data
 
 

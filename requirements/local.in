@@ -16,3 +16,4 @@ django-debug-toolbar
 
 
 httpie
+isort

@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-# coding=utf-8
 """
 Custom fields for pubmed.
 """
 
+# Django Packages
 from django import forms
 from django.db import models
 
@@ -19,10 +18,8 @@ class ModelChoiceField(forms.ModelChoiceField):
     :param kwargs:
     """
 
-    def __init__(self, empty_label=models.BLANK_CHOICE_DASH[0][1],
-                 widget=forms.RadioSelect, *args, **kwargs):
-        super().__init__(empty_label=empty_label, widget=widget, *args,
-                         **kwargs)
+    def __init__(self, empty_label=models.BLANK_CHOICE_DASH[0][1], widget=forms.RadioSelect, *args, **kwargs):
+        super().__init__(empty_label=empty_label, widget=widget, *args, **kwargs)
 
 
 class TypedChoiceField(forms.TypedChoiceField):

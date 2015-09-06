@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
+
+# Compatibility
 from __future__ import unicode_literals
 
-from django.db import models, migrations
-import model_utils.fields
+# Django Packages
 import django.utils.timezone
+from django.db import migrations, models
+
+# Third Party Packages
+import model_utils.fields
 
 
 class Migration(migrations.Migration):

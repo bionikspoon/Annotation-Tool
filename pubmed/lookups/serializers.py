@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 # coding=utf-8
-from rest_framework.relations import HyperlinkedRelatedField
-from rest_framework.serializers import (HyperlinkedModelSerializer)
 
+# Third Party Packages
+from rest_framework.relations import HyperlinkedRelatedField
+from rest_framework.serializers import HyperlinkedModelSerializer, Serializer
+
+# Local Application
 from . import models
 
 
@@ -14,7 +17,7 @@ class LookupTableSerializer(HyperlinkedModelSerializer):
 
 class EntrySetLookupTableSerializer(LookupTableSerializer):
     entry_set = HyperlinkedRelatedField(view_name='entry-detail',
-                                        read_only=True, many=True)
+        read_only=True, many=True)
 
     class Meta:
         model = models.LookupTable
@@ -101,3 +104,7 @@ class PatientOutcomesLookupSerializer(LookupTableSerializer):
         fields = LookupTableSerializer.Meta.fields + (
             'assessed_patient_outcomes_entry_set',
             'significant_patient_outcomes_entry_set')
+
+
+class LookupBaseSerializer(Serializer):
+    LookupTable = LookupTableSerializer()

@@ -20,10 +20,18 @@ indent_size = 4
 
 [*.py]
 # https://github.com/timothycrosley/isort/wiki/isort-Settings
-line_length=120
-known_first_party=annotation_tool
-multi_line_output=3
-default_section=THIRDPARTY
+line_length = 100
+multi_line_output = 4
+default_section = THIRDPARTY
+import_heading_future = Compatibility
+import_heading_stdlib = Python Libraries
+import_heading_django = Django Packages
+known_django = django
+import_heading_thirdparty = Third Party Packages
+import_heading_firstparty = Annotation Tool Project
+known_first_party = annotation_tool,pubmed,config,core
+import_heading_localfolder = Local Application
+sections = FUTURE,STDLIB,DJANGO,THIRDPARTY,FIRSTPARTY,LOCALFOLDER
 
 [*.yml]
 indent_style = space
