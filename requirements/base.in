@@ -35,13 +35,17 @@ pytz
 # Redis support
 django-redis
 redis
+django-cacheops
 
-
-
-# Your custom requirements go here
+# Admin
 django-grappelli
-djangorestframework
 docutils
+
+# Rest API
+djangorestframework
 django-filter
 
+
+
+# Environment Management
 pip-tools

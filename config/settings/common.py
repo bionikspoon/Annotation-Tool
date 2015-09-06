@@ -65,8 +65,6 @@ LOCAL_APPS = (
 
 )
 
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -134,6 +132,32 @@ DATABASES = {
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
+# CACHE CONFIGURATION
+# ------------------------------------------------------------------------------
+
+
+CACHES = {
+    'default': {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "{0}/{1}".format(env.str('REDIS_URL'), 0),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "IGNORE_EXCEPTIONS": True
+        },
+        'TIMEOUT': 300
+    }
+}
+
+DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
+
+THIRD_PARTY_APPS += ('cacheops',)
+CACHEOPS_REDIS = {key.lower(): value for key, value in
+                  env.db('REDIS_URL').items() if value}
+CACHEOPS_REDIS['db'] = 1
+
+CACHEOPS = {
+    'lookups.*': ('all', 300)
+}
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -255,7 +279,6 @@ AUTHENTICATION_BACKENDS = (
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 # Custom user app defaults
@@ -383,7 +406,13 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
 }
 
-# Other Configuration
+# Form Configuration
 # ------------------------------------------------------------------------------
 
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
+
+# Combine Apps
+# ------------------------------------------------------------------------------
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
+INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS
