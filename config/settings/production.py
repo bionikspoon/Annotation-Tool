@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 Production Configurations
 
@@ -21,8 +20,7 @@ from .common import *  # noqa
 # Raises ImproperlyConfigured exception if DJANGO_SECRET_KEY not in os.environ
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 
-# This ensures that Django will be able to detect a secure connection
-# properly on Heroku.
+# This ensures that Django will be able to detect a secure connectionproperly on Heroku.
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # django-secure
@@ -38,11 +36,9 @@ SECURITY_MIDDLEWARE = (
 
 # set this to 60 seconds and then to 518400 when you can prove it works
 SECURE_HSTS_SECONDS = 60
-SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
-    "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool("DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True)
 SECURE_FRAME_DENY = env.bool("DJANGO_SECURE_FRAME_DENY", default=True)
-SECURE_CONTENT_TYPE_NOSNIFF = env.bool("DJANGO_SECURE_CONTENT_TYPE_NOSNIFF",
-                                       default=True)
+SECURE_CONTENT_TYPE_NOSNIFF = env.bool("DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", default=True)
 SECURE_BROWSER_XSS_FILTER = True
 SESSION_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = True
@@ -55,6 +51,7 @@ SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ['annotation-tool.herokuapp.com']
+
 # END SITE CONFIGURATION
 
 THIRD_PARTY_APPS += ("gunicorn",)
@@ -79,18 +76,16 @@ AWS_S3_CALLING_FORMAT = boto.s3.connection.OrdinaryCallingFormat()
 AWS_EXPIRY = 60 * 60 * 24 * 7
 
 # See: https://github.com/jschneier/django-storages/issues/47
-# Revert the following and use str after the above-mentioned bug is fixed in
-# either django-storage-redux or boto
+# Revert the following and use str after the above-mentioned bug is fixed in either django-storage-redux or
+#  boto
 AWS_HEADERS = {
-    'Cache-Control': six.b(
-        'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIRY, AWS_EXPIRY))
+    'Cache-Control': six.b('max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIRY, AWS_EXPIRY))
 }
 
-# URL that handles the media served from MEDIA_ROOT, used for managing
-# stored files.
+# URL that handles the media served from MEDIA_ROOT, used for managing stored files.
 MEDIA_URL = 'https://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 
-# Static Assests
+# Static Assets
 # ------------------------
 LOCAL_APPS += ('core.production',)
 
@@ -101,30 +96,20 @@ STATIC_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 
 # EMAIL
 # ------------------------------------------------------------------------------
-DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
-                         default='annotation_tool <noreply@example.com>')
+DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL', default='annotation_tool <noreply@example.com>')
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
 MAILGUN_ACCESS_KEY = env('DJANGO_MAILGUN_API_KEY')
 MAILGUN_SERVER_NAME = env('DJANGO_MAILGUN_SERVER_NAME')
-EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX",
-                           default='[annotation_tool] ')
+EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default='[annotation_tool] ')
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
-# See:
-# https://docs.djangoproject.com/en/dev/ref/templates/api/
-# #django.template.loaders.cached.Loader
+# See: https://docs.djangoproject.com/en/dev/ref/templates/api/#django.template.loaders.cached.Loader
 TEMPLATES[0]['OPTIONS']['loaders'] = [(
 
     'django.template.loaders.cached.Loader',
-
-    [
-
-        'django.template.loaders.filesystem.Loader',
-        'django.template.loaders.app_directories.Loader'
-
-    ]
+    ['django.template.loaders.filesystem.Loader', 'django.template.loaders.app_directories.Loader']
 
 )]
 

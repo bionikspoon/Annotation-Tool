@@ -52,8 +52,8 @@ class SummaryManager(object):
 
         :return:
         """
-        self.write('#!/usr/bin/env python')
-        self.write('# coding=utf-8')
+        self.write('')
+        self.write('')
         self.write('"""\n%s\n"""\n' % self.__doc__)
         self.write(self.IMPORT_LINE)
         self.write()

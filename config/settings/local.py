@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 Local settings
 
@@ -17,8 +16,7 @@ from .common import *  # noqa
 
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = TEMPLATES[0]['OPTIONS']['debug'] = env.bool('DJANGO_DEBUG',
-                                                    default=True)
+DEBUG = TEMPLATES[0]['OPTIONS']['debug'] = env.bool('DJANGO_DEBUG', default=True)
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -30,8 +28,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # ------------------------------------------------------------------------------
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    default='django.core.mail.backends.console.EmailBackend')
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
@@ -86,8 +83,7 @@ if not DEBUG:
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/
-# #std:setting-STATICFILES_DIRS
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
 
     str(ROOT_DIR.path('.tmp')),

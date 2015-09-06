@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 WSGI config for annotation_tool project.
 

@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 Django settings for annotation_tool project.
 
@@ -8,6 +7,7 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
+
 from __future__ import absolute_import, unicode_literals
 
 # noinspection PyPackageRequirements
@@ -68,13 +68,11 @@ LOCAL_APPS = (
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES = (
 
-    # Make sure djangosecure.middleware.SecurityMiddleware is listed first
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+# Make sure djangosecure.middleware.SecurityMiddleware is listed first
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.admindocs.middleware.XViewMiddleware',
@@ -84,9 +82,7 @@ MIDDLEWARE_CLASSES = (
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-
     'sites': 'annotation_tool.contrib.sites.migrations'
-
 }
 
 # DEBUG
@@ -98,25 +94,16 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/
 # #std:setting-FIXTURE_DIRS
-FIXTURE_DIRS = (
-
-    str(APPS_DIR.path('fixtures')),
-
-)
+FIXTURE_DIRS = (str(APPS_DIR.path('fixtures')),)
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    default='django.core.mail.backends.smtp.EmailBackend')
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
 
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (
-
-    ("""Manu Phatak""", 'bionikspoon@gmail.com'),
-
-)
+ADMINS = (("""Manu Phatak""", 'bionikspoon@gmail.com'),)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
@@ -151,8 +138,7 @@ CACHES = {
 DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
 
 THIRD_PARTY_APPS += ('cacheops',)
-CACHEOPS_REDIS = {key.lower(): value for key, value in
-                  env.db('REDIS_URL').items() if value}
+CACHEOPS_REDIS = {key.lower(): value for key, value in env.db('REDIS_URL').items() if value}
 CACHEOPS_REDIS['db'] = 1
 
 CACHEOPS = {
@@ -186,45 +172,32 @@ USE_TZ = True
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#templates
 TEMPLATES = [{
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/
-    # #std:setting-TEMPLATES-BACKEND
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
     'DIRS': [str(APPS_DIR.path('templates'))],
     'OPTIONS': {
-        # See: https://docs.djangoproject.com/en/dev/ref/settings/
-        # #template-debug
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
         'debug': DEBUG,
-        # See: https://docs.djangoproject.com/en/dev/ref/settings/
-        # #template-loaders
+
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
         # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
-        'loaders': [
+        'loaders': ['django.template.loaders.filesystem.Loader',
+                    'django.template.loaders.app_directories.Loader'],
 
-            'django.template.loaders.filesystem.Loader',
-            'django.template.loaders.app_directories.Loader'
-
-        ],
-
-        # See: https://docs.djangoproject.com/en/dev/ref/settings/
-        # #template-context-processors
-        'context_processors': [
-
-            'django.template.context_processors.debug',
-            'django.template.context_processors.request',
-            'django.contrib.auth.context_processors.auth',
-            'django.template.context_processors.i18n',
-            'django.template.context_processors.media',
-            'django.template.context_processors.static',
-            'django.template.context_processors.tz',
-            'django.contrib.messages.context_processors.messages',
-            # Your stuff: custom template context processors go here
-
-        ]
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+        'context_processors': ['django.template.context_processors.debug',
+                               'django.template.context_processors.request',
+                               'django.contrib.auth.context_processors.auth',
+                               'django.template.context_processors.i18n',
+                               'django.template.context_processors.media',
+                               'django.template.context_processors.static',
+                               'django.template.context_processors.tz',
+                               'django.contrib.messages.context_processors.messages']
     }
 }]
 
-# See: http://django-crispy-forms.readthedocs.org/en/latest/install.html
-# #template-packs
+# See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # STATIC FILE CONFIGURATION
@@ -235,22 +208,16 @@ STATIC_ROOT = str(ROOT_DIR('staticfiles'))
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 
-# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/
-# #std:setting-STATICFILES_DIRS
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
 
     # str(APPS_DIR.path('static')),
 
 )
 
-# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/
-# #staticfiles-finders
-STATICFILES_FINDERS = (
-
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-
-)
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
+STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
+                       'django.contrib.staticfiles.finders.AppDirectoriesFinder')
 
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -270,9 +237,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = (
-
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend', 'allauth.account.auth_backends.AuthenticationBackend'
 
 )
 
@@ -354,7 +319,6 @@ LOGGING = {
             'when': 'm',
             'interval': 10,
             'formatter': 'human'
-
         },
         'debug': {
             'level': 'DEBUG',
@@ -365,9 +329,7 @@ LOGGING = {
             'when': 'm',
             'interval': 10,
             'formatter': 'human'
-
         }
-
     },
     'loggers': {
         'django.request': {
@@ -392,7 +354,6 @@ LOGGING = {
             'propagate': True,
             'filter': ['not_django']
         }
-
     }
 }
 
