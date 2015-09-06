@@ -30,7 +30,7 @@ def active_url(context, label, url, *args, **kwargs):
     template_string = '<li{li_attrs}><a href="{url}">{label}</a></li>'
     try:
         url = reverse(url, args=args, kwargs=kwargs)
-        pattern = '^%s$' % url
+        pattern = '^%s' % url
     except NoReverseMatch:
         pattern = url
 
