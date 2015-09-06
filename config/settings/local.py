@@ -43,15 +43,15 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # SESSION
 # ------------------------------------------------------------------------------
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-SESSION_CACHE_ALIAS = "default"
+# SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+# SESSION_CACHE_ALIAS = "default"
 
 # CACHING
 # ------------------------------------------------------------------------------
 CACHES = {
     'default': {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "{0}/{1}".format(env.cache_url('REDIS_URL'), 0),
+        "LOCATION": "{0}/{1}".format(env.cache('REDIS_URL').get('LOCATION'), 0),
 
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
@@ -62,6 +62,16 @@ CACHES = {
 
     }
 }
+THIRD_PARTY_APPS += ('cacheops',)
+CACHEOPS_REDIS = {key.lower(): value for key, value in
+                  env.db('REDIS_URL').items() if value}
+CACHEOPS_REDIS['db'] = 0
+
+CACHEOPS = {
+    'lookups.*': ('all', 300)
+
+}
+
 DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
 UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
 

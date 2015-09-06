@@ -35,6 +35,7 @@ pytz
 # Redis support
 django-redis
 redis
+django-cacheops
 
 # Admin
 django-grappelli
@@ -44,9 +45,7 @@ docutils
 djangorestframework
 django-filter
 
-# Cache
-django-cache-machine
-python-memcached
+
 
 # Environment Management
 pip-tools

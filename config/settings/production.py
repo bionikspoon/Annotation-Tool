@@ -139,8 +139,8 @@ DATABASES['default'] = env.db("DATABASE_URL")
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "{0}/{1}".format(
-            env.cache_url('REDIS_URL'), 'default'),
+        "LOCATION": "{0}/{1}".format(env.cache('REDIS_URL').get('LOCATION'),
+                                     0),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "IGNORE_EXCEPTIONS": True
