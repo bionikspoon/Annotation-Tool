@@ -65,8 +65,6 @@ LOCAL_APPS = (
 
 )
 
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -134,7 +132,16 @@ DATABASES = {
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
+# CACHE CONFIGURATION
+# ------------------------------------------------------------------------------
+THIRD_PARTY_APPS += ('cacheops',)
+CACHEOPS_REDIS = {key.lower(): value for key, value in
+                  env.db('REDIS_URL').items() if value}
+CACHEOPS_REDIS['db'] = 1
 
+CACHEOPS = {
+    'lookups.*': ('all', 300)
+}
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
 # Local time zone for this installation. Choices can be found here:
@@ -383,7 +390,13 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
 }
 
-# Other Configuration
+# Form Configuration
 # ------------------------------------------------------------------------------
 
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
+
+# Combine Apps
+# ------------------------------------------------------------------------------
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
+INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS

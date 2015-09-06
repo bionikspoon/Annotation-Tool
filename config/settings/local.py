@@ -7,9 +7,7 @@ Local settings
 - Add Django Debug Toolbar
 - Add django-extensions as app
 """
-import warnings
 
-from django.utils.module_loading import import_string
 from environ import Env
 
 Env().read_env('.env')
@@ -52,25 +50,14 @@ CACHES = {
     'default': {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "{0}/{1}".format(env.cache('REDIS_URL').get('LOCATION'), 0),
-
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "IGNORE_EXCEPTIONS": True
-
         },
         'TIMEOUT': 300
-
     }
 }
-THIRD_PARTY_APPS += ('cacheops',)
-CACHEOPS_REDIS = {key.lower(): value for key, value in
-                  env.db('REDIS_URL').items() if value}
-CACHEOPS_REDIS['db'] = 0
 
-CACHEOPS = {
-    'lookups.*': ('all', 300)
-
-}
 
 DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
 UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
