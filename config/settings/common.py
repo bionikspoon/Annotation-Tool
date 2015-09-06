@@ -59,7 +59,9 @@ LOCAL_APPS = (
 
     'core',  # templates and static
     'annotation_tool.users',  # custom users app
-    'pubmed', 'pubmed_lookup',
+    'pubmed',
+
+    'pubmed.lookups',
 
 )
 

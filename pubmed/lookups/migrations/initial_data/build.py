@@ -13,9 +13,9 @@ from django.conf import settings
 
 class CONFIG(object):
     """ Config object. """
-    data = settings.ROOT_DIR.path('pubmed_lookup', 'migrations', 'initial_data',
-                                  'data')
-    module = 'pubmed_lookup'
+    data = settings.ROOT_DIR.path('pubmed', 'lookups', 'migrations',
+                                  'initial_data', 'data')
+    module = 'lookups'
     data_input = data.path('input')
     data_output = data.path('output')
 
@@ -28,7 +28,6 @@ class SummaryManager(object):
     """Generated Data."""
 
     IMPORT_LINE = "from . import InitialData"
-    # fp = lambda *args: CONFIG.summary_dir.file(CONFIG.summary_file, 'w')
     fp = CONFIG.summary_dir.file(CONFIG.summary_file, 'w')
 
     def __init__(self):
