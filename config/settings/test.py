@@ -8,13 +8,13 @@ Test Settings
 """
 
 # Third Party Packages
-# noinspection PyPackageRequirements
 import environ
+
+environ.Env().read_env('.env.test')
 
 # Local Application
 from .common import *  # NOQA
 
-environ.Env().read_env('.env.test')
 
 # DEBUG
 # ------------------------------------------------------------------------------

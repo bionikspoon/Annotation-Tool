@@ -143,9 +143,9 @@ THIRD_PARTY_APPS += ('cacheops',)
 CACHEOPS_REDIS = {key.lower(): value for key, value in env.db('REDIS_URL').items() if value}
 CACHEOPS_REDIS['db'] = 1
 
-CACHEOPS = {
-    'lookups.*': ('all', 300)
-}
+# CACHEOPS = {
+#     'lookups.*': ('all', 300)
+# }
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
