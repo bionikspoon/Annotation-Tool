@@ -32,7 +32,8 @@ gulp.task('styles', () => {
 
         .pipe($.sourcemaps.write())
 
-        .pipe(gulp.dest(config.tmp_core + 'styles'))
+        .pipe(gulp.dest(config.tmp_core + 'styles'));
+
 
 });
 
@@ -72,9 +73,7 @@ gulp.task('scripts', () => {
 
 gulp.task('html', ['scripts', 'styles'], () => {
     const assets = $.useref.assets({
-        searchPath: [
-            '.tmp/', config.local_static, 'pubmed/static/', '.'
-        ]
+        searchPath: ['.tmp/', config.local_static, 'pubmed/static/', '.']
     });
 
     return gulp.src(config.local_static + '*.html')
@@ -172,18 +171,21 @@ gulp.task('wiredep', () => {
 
         .pipe(gulp.dest(config.local_static_core + 'styles'));
 
-    gulp.src(config.local_static_core + '*.html')
+
+    gulp.src(config.local_static + '*.html')
 
         .pipe(wiredep({
             exclude:    ['bootstrap-sass'],
             ignorePath: /^(\.\.\/)*\.\./
         }))
 
-        .pipe(gulp.dest(config.local_static_core));
+        .pipe(gulp.dest(config.local_static));
 });
 
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', [
+    'wiredep', 'lint', 'html', 'images', 'fonts', 'extras'
+], () => {
     return gulp.src(config.prod_static_core + '**/*')
 
         .pipe($.size({

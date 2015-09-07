@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# coding=utf-8
+# Local Application
 from . import InitialData
 
 

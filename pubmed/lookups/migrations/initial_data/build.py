@@ -1,20 +1,20 @@
-#!/usr/bin/env python
-# coding=utf-8
 """
 Compile generated_data.py from raw data.
 """
-from io import StringIO
-from itertools import chain
+
+# Python Libraries
 import json
 import re
+from io import StringIO
+from itertools import chain
 
+# Django Packages
 from django.conf import settings
 
 
 class CONFIG(object):
     """ Config object. """
-    data = settings.ROOT_DIR.path('pubmed', 'lookups', 'migrations',
-                                  'initial_data', 'data')
+    data = settings.ROOT_DIR.path('pubmed', 'lookups', 'migrations', 'initial_data', 'data')
     module = 'lookups'
     data_input = data.path('input')
     data_output = data.path('output')
@@ -52,8 +52,8 @@ class SummaryManager(object):
 
         :return:
         """
-        self.write('#!/usr/bin/env python')
-        self.write('# coding=utf-8')
+        self.write('')
+        self.write('')
         self.write('"""\n%s\n"""\n' % self.__doc__)
         self.write(self.IMPORT_LINE)
         self.write()

@@ -1,11 +1,11 @@
-#!/usr/bin/env python
-# coding=utf-8
 """
 Base class.  Aggregate all data.
 """
+
+# Python Libraries
+import logging
 from collections import namedtuple
 from pprint import pprint
-import logging
 
 logger = logging.getLogger(__name__)
 
@@ -102,8 +102,7 @@ def clean_lookup_tables(apps, schema_editor):
             Model = apps.get_model('lookups', subclass.__name__)
             Model.objects.all().delete()
         except LookupError:
-            logger.warning('lookups.%s could not be found',
-                           subclass.__name__)
+            logger.warning('lookups.%s could not be found', subclass.__name__)
 
 
 if __name__ == '__main__':

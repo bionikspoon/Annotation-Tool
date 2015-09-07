@@ -1,15 +1,23 @@
-# coding=utf-8
 """
 Pubmed model definitions.
 """
+
+# Python Libraries
 from collections import OrderedDict
 
+# Django Packages
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
-from model_utils import Choices, models as utils_models
 
+# Third Party Packages
+from model_utils import models as utils_models
+from model_utils import Choices
+
+# Annotation Tool Project
 from annotation_tool.users.models import User
+
+# Local Application
 from . import lookups
 from .utils import classproperty
 
@@ -29,86 +37,58 @@ class Entry(utils_models.TimeStampedModel):
     """
     Pubmed Entry definition.
     """
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False,
-                             related_name='pubmed_entries',
-                             on_delete=models.PROTECT)
+    user = models.ForeignKey(
 
+        settings.AUTH_USER_MODEL, editable=False, related_name='pubmed_entries', on_delete=models.PROTECT
+
+    )
     pubmed_id = models.PositiveIntegerField()
     gene = models.CharField(**DEFAULTS.CharField)
-    structure = models.ForeignKey(lookups.StructureLookup,
-                                  **DEFAULTS.ForeignKey)
-
-    mutation_type = models.ForeignKey(lookups.MutationTypeLookup,
-                                      **DEFAULTS.ForeignKey)
-
+    structure = models.ForeignKey(lookups.StructureLookup, **DEFAULTS.ForeignKey)
+    mutation_type = models.ForeignKey(lookups.MutationTypeLookup, **DEFAULTS.ForeignKey)
     syntax = models.ForeignKey(lookups.SyntaxLookup, **DEFAULTS.ForeignKey)
-
     syntax_text = models.CharField(**DEFAULTS.CharField)
     operator = models.ForeignKey(lookups.OperatorLookup, **DEFAULTS.ForeignKey)
-
-    rule_level = models.ForeignKey(lookups.RuleLevelLookup,
-                                   **DEFAULTS.ForeignKey)
-
+    rule_level = models.ForeignKey(lookups.RuleLevelLookup, **DEFAULTS.ForeignKey)
     chromosome = models.CharField(**DEFAULTS.CharField)
     start = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     stop = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     breakend_strand = models.ForeignKey(
 
-        lookups.BreakendStrandLookup, related_name='breakend_strand_entry_set',
-        **DEFAULTS.ForeignKey
+        lookups.BreakendStrandLookup, related_name='breakend_strand_entry_set', **DEFAULTS.ForeignKey
 
     )
-
     breakend_direction = models.ForeignKey(
 
-        lookups.BreakendDirectionLookup,
-        related_name='breakend_direction_entry_set', **DEFAULTS.ForeignKey
+        lookups.BreakendDirectionLookup, related_name='breakend_direction_entry_set', **DEFAULTS.ForeignKey
 
     )
-
     mate_chromosome = models.CharField(**DEFAULTS.CharField)
     mate_start = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     mate_end = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     mate_breakend_strand = models.ForeignKey(
 
-        lookups.BreakendStrandLookup,
-        related_name='mate_breakend_strand_entry_set', **DEFAULTS.ForeignKey
+        lookups.BreakendStrandLookup, related_name='mate_breakend_strand_entry_set', **DEFAULTS.ForeignKey
 
     )
+    mate_breakend_direction = models.ForeignKey(
 
-    mate_breakend_direction = models.ForeignKey(lookups.BreakendDirectionLookup,
-                                                related_name='mate_breakend_direction_entry_set',
-                                                **DEFAULTS.ForeignKey
-
-                                                )
-
-    minimum_number_of_copies = models.PositiveIntegerField(
-        **DEFAULTS.IntegerField
+        lookups.BreakendDirectionLookup, related_name='mate_breakend_direction_entry_set',
+        **DEFAULTS.ForeignKey
 
     )
-
-    maximum_number_of_copies = models.PositiveIntegerField(
-        **DEFAULTS.IntegerField
-
-    )
-
+    minimum_number_of_copies = models.PositiveIntegerField(**DEFAULTS.IntegerField)
+    maximum_number_of_copies = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     coordinate_predicate = models.CharField(**DEFAULTS.CharField)
     partner_coordinate_predicate = models.CharField(**DEFAULTS.CharField)
-    variant_type = models.ForeignKey(lookups.VariantTypeLookup,
-                                     **DEFAULTS.ForeignKey)
-    variant_consequence = models.ForeignKey(lookups.VariantConsequenceLookup,
-                                            **DEFAULTS.ForeignKey
-
-                                            )
-
+    variant_type = models.ForeignKey(lookups.VariantTypeLookup, **DEFAULTS.ForeignKey)
+    variant_consequence = models.ForeignKey(lookups.VariantConsequenceLookup, **DEFAULTS.ForeignKey)
     variant_clinical_grade = models.PositiveIntegerField(
+
         choices=Choices(*range(1, 6)), **DEFAULTS.IntegerField
 
     )
-
-    disease = models.ManyToManyField(lookups.DiseaseLookup,
-                                     **DEFAULTS.ManyToManyField)
-
+    disease = models.ManyToManyField(lookups.DiseaseLookup, **DEFAULTS.ManyToManyField)
     treatment_1 = models.CharField(**DEFAULTS.CharField)
     treatment_2 = models.CharField(**DEFAULTS.CharField)
     treatment_3 = models.CharField(**DEFAULTS.CharField)
@@ -118,19 +98,17 @@ class Entry(utils_models.TimeStampedModel):
     sex = models.ForeignKey(lookups.SexLookup, **DEFAULTS.ForeignKey)
     ethnicity = models.CharField(**DEFAULTS.CharField)
     assessed_patient_outcomes = models.ManyToManyField(
-        lookups.PatientOutcomesLookup,
-        related_name='assessed_patient_outcomes_entry_set',
+
+        lookups.PatientOutcomesLookup, related_name='assessed_patient_outcomes_entry_set',
         **DEFAULTS.ManyToManyField
 
     )
-
     significant_patient_outcomes = models.ManyToManyField(
-        lookups.PatientOutcomesLookup,
-        related_name='significant_patient_outcomes_entry_set',
+
+        lookups.PatientOutcomesLookup, related_name='significant_patient_outcomes_entry_set',
         **DEFAULTS.ManyToManyField
 
     )
-
     design = models.TextField(**DEFAULTS.TextField)
     reference_claims = models.TextField(**DEFAULTS.TextField)
     comments = models.TextField(**DEFAULTS.TextField)

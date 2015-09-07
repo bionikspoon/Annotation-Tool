@@ -1,22 +1,24 @@
-#!/usr/bin/env python
-# coding=utf-8
 """
 Pubmed forms.
 """
 
+# Python Libraries
 import logging
 
+# Django Packages
 from django.db import models
 from django.forms import ModelForm, RadioSelect
-from crispy_forms import bootstrap, helper
+
+# Third Party Packages
 from braces import forms as braces_forms
+from crispy_forms import bootstrap, helper
 from model_utils import Choices
 
-from .models import EntryMeta, Entry
-from .layouts import EntryFormLayout
+# Local Application
 from .fields import TypedChoiceField
-from .lookups import (BreakendStrandLookup, BreakendDirectionLookup,
-    PatientOutcomesLookup)
+from .layouts import EntryFormLayout
+from .lookups import BreakendDirectionLookup, BreakendStrandLookup, PatientOutcomesLookup
+from .models import Entry, EntryMeta
 
 logger = logging.getLogger(__name__)
 
@@ -38,8 +40,7 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for field in filter(lambda x: x not in ('user',),
-                            EntryMeta.foreign_fields):
+        for field in filter(lambda x: x not in ('user',), EntryMeta.foreign_fields):
             self.fields[field].empty_label = models.BLANK_CHOICE_DASH[0][1]
 
         breakend_strand = BreakendStrandLookup.objects.all()
@@ -93,6 +94,5 @@ class EntryModelForm(braces_forms.UserKwargModelFormMixin, ModelForm):
     class Meta:
         model = Entry
         fields = EntryMeta.public_fields
-        widgets = {field: RadioSelect for field in EntryMeta.foreign_fields if
-                   not field == 'user'}
+        widgets = {field: RadioSelect for field in EntryMeta.foreign_fields if not field == 'user'}
         widgets['treatment'] = RadioSelect

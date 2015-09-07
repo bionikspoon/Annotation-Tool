@@ -1,15 +1,19 @@
-#!/usr/bin/env python
-# coding=utf-8
-
+# Python Libraries
 import logging
 
+# Django Packages
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
+
+# Third Party Packages
 from test_plus import TestCase
 from test_plus.test import CBVTestCase
 
-from .. import views, factories, Entry
+# Annotation Tool Project
 from core.utils.test import BaseTestMixin
+
+# Local Application
+from .. import Entry, factories, views
 
 logger = logging.getLogger(__name__)
 
@@ -104,8 +108,7 @@ class EntryFormMixin(object):
         with self.login(self.user):
             response = self.post(**self.post_to_url)
         self.response_200()
-        self.assertFormError(response, 'form', 'pubmed_id',
-                             'This field is required.')
+        self.assertFormError(response, 'form', 'pubmed_id', 'This field is required.')
 
     def test_post_form__anonymous_user__data(self):
         """Test 401 response if posted from anonymous user."""

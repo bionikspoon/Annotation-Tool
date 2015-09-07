@@ -1,10 +1,12 @@
-# coding=utf-8
 """
 Admin pages definitions.
 """
+
+# Django Packages
 from django.contrib import admin
 
-from .models import EntryMeta, Entry
+# Local Application
+from .models import Entry, EntryMeta
 
 
 @admin.register(EntryMeta.model)
@@ -18,8 +20,7 @@ class EntryAdmin(admin.ModelAdmin):
     readonly_fields = ('show_url', 'created', 'modified')
     filter_horizontal = EntryMeta.many_to_many_fields
 
-    list_filter = tuple((field, admin.RelatedOnlyFieldListFilter) for field in
-                        EntryMeta.relationship_fields)
+    list_filter = tuple((field, admin.RelatedOnlyFieldListFilter) for field in EntryMeta.relationship_fields)
     radio_fields = {field: admin.HORIZONTAL for field in
                     EntryMeta.foreign_fields + ('variant_clinical_grade',)}
 

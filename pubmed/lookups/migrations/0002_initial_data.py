@@ -1,8 +1,10 @@
-# -*- coding: utf-8 -*-
+# Compatibility
 from __future__ import unicode_literals
 
+# Django Packages
 from django.db import migrations
 
+# Annotation Tool Project
 import pubmed.lookups.migrations.initial_data
 from pubmed.lookups.migrations.initial_data import populate_lookup_tables
 

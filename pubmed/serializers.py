@@ -1,11 +1,14 @@
-#!/usr/bin/env python
-# coding=utf-8
 """
 Serialize Pubmed objects.
 """
+
+# Third Party Packages
 from rest_framework.serializers import HyperlinkedModelSerializer
 
+# Annotation Tool Project
 from annotation_tool.users.serlializers import UserSerializer
+
+# Local Application
 from .models import EntryMeta
 
 
@@ -16,8 +19,7 @@ class EntryUserSerializer(UserSerializer):
 
     # noinspection PyDocstring
     class Meta(UserSerializer.Meta):
-        fields = tuple(field for field in UserSerializer.Meta.fields if
-                       field != 'pubmed_entries')
+        fields = tuple(field for field in UserSerializer.Meta.fields if field != 'pubmed_entries')
 
 
 class EntrySerializer(HyperlinkedModelSerializer):

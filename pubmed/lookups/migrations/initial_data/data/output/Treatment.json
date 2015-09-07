@@ -1,277 +1,277 @@
 [
-    {
-        "fields": "5-Fluorouracil",
-        "model": "lookups.TreatmentLookup",
-        "pk": 0
-    },
-    {
-        "fields": "5-FuLv",
-        "model": "lookups.TreatmentLookup",
-        "pk": 1
-    },
-    {
-        "fields": "And Irinotecan",
-        "model": "lookups.TreatmentLookup",
-        "pk": 2
-    },
-    {
-        "fields": "And Mitomycin",
-        "model": "lookups.TreatmentLookup",
-        "pk": 3
-    },
-    {
-        "fields": "Bevacizumab",
-        "model": "lookups.TreatmentLookup",
-        "pk": 4
-    },
-    {
-        "fields": "Calgb 89803",
-        "model": "lookups.TreatmentLookup",
-        "pk": 5
-    },
-    {
-        "fields": "Capecitabine",
-        "model": "lookups.TreatmentLookup",
-        "pk": 6
-    },
-    {
-        "fields": "Capecitabine Irinotecan Or Oxaliplatin Plus Cetuximab",
-        "model": "lookups.TreatmentLookup",
-        "pk": 7
-    },
-    {
-        "fields": "Capecitabine Or 5-Fluorouracil (5- Fu) Oxaliplatin",
-        "model": "lookups.TreatmentLookup",
-        "pk": 8
-    },
-    {
-        "fields": "Carboplatin",
-        "model": "lookups.TreatmentLookup",
-        "pk": 9
-    },
-    {
-        "fields": "Cetuximab",
-        "model": "lookups.TreatmentLookup",
-        "pk": 10
-    },
-    {
-        "fields": "Cetuximab Plus Chemotherapy",
-        "model": "lookups.TreatmentLookup",
-        "pk": 11
-    },
-    {
-        "fields": "Cetuximab With Irinotecan And",
-        "model": "lookups.TreatmentLookup",
-        "pk": 12
-    },
-    {
-        "fields": "Cyclophosphamide",
-        "model": "lookups.TreatmentLookup",
-        "pk": 13
-    },
-    {
-        "fields": "Dabrafenib",
-        "model": "lookups.TreatmentLookup",
-        "pk": 14
-    },
-    {
-        "fields": "Dabrafenib Or Dacarbazine",
-        "model": "lookups.TreatmentLookup",
-        "pk": 15
-    },
-    {
-        "fields": "Dacarbazine",
-        "model": "lookups.TreatmentLookup",
-        "pk": 16
-    },
-    {
-        "fields": "Dacarbazine Cisplatin Vinblastine And Tamoxifen",
-        "model": "lookups.TreatmentLookup",
-        "pk": 17
-    },
-    {
-        "fields": "Docetaxel Erlotinib Or Temsirolimus",
-        "model": "lookups.TreatmentLookup",
-        "pk": 18
-    },
-    {
-        "fields": "Fluoropirimidins",
-        "model": "lookups.TreatmentLookup",
-        "pk": 19
-    },
-    {
-        "fields": "Fluorouracil",
-        "model": "lookups.TreatmentLookup",
-        "pk": 20
-    },
-    {
-        "fields": "Folfiri",
-        "model": "lookups.TreatmentLookup",
-        "pk": 21
-    },
-    {
-        "fields": "Folfox",
-        "model": "lookups.TreatmentLookup",
-        "pk": 22
-    },
-    {
-        "fields": "Folinic Acid",
-        "model": "lookups.TreatmentLookup",
-        "pk": 23
-    },
-    {
-        "fields": "Fu And Lv (Ifl)",
-        "model": "lookups.TreatmentLookup",
-        "pk": 24
-    },
-    {
-        "fields": "FuIrinotecan",
-        "model": "lookups.TreatmentLookup",
-        "pk": 25
-    },
-    {
-        "fields": "FuOxaliplatin",
-        "model": "lookups.TreatmentLookup",
-        "pk": 26
-    },
-    {
-        "fields": "Imatinib",
-        "model": "lookups.TreatmentLookup",
-        "pk": 27
-    },
-    {
-        "fields": "Ipilimumab",
-        "model": "lookups.TreatmentLookup",
-        "pk": 28
-    },
-    {
-        "fields": "Irinotecan",
-        "model": "lookups.TreatmentLookup",
-        "pk": 29
-    },
-    {
-        "fields": "Irinotecan (Cpt11)",
-        "model": "lookups.TreatmentLookup",
-        "pk": 30
-    },
-    {
-        "fields": "Irinotecan With Fluorouracil (Fu)Leucovorin",
-        "model": "lookups.TreatmentLookup",
-        "pk": 31
-    },
-    {
-        "fields": "Leucovorin",
-        "model": "lookups.TreatmentLookup",
-        "pk": 32
-    },
-    {
-        "fields": "Leucovorin (FuLv)",
-        "model": "lookups.TreatmentLookup",
-        "pk": 33
-    },
-    {
-        "fields": "Or Cetuximab",
-        "model": "lookups.TreatmentLookup",
-        "pk": 34
-    },
-    {
-        "fields": "Or Irinotecan And Bevacizumab",
-        "model": "lookups.TreatmentLookup",
-        "pk": 35
-    },
-    {
-        "fields": "Oxaliplatin",
-        "model": "lookups.TreatmentLookup",
-        "pk": 36
-    },
-    {
-        "fields": "Paclitaxel",
-        "model": "lookups.TreatmentLookup",
-        "pk": 37
-    },
-    {
-        "fields": "Panitumumab",
-        "model": "lookups.TreatmentLookup",
-        "pk": 38
-    },
-    {
-        "fields": "Panitumumab And Cetuximab",
-        "model": "lookups.TreatmentLookup",
-        "pk": 39
-    },
-    {
-        "fields": "Plx4032",
-        "model": "lookups.TreatmentLookup",
-        "pk": 40
-    },
-    {
-        "fields": "Radioactive Iodine Therapy",
-        "model": "lookups.TreatmentLookup",
-        "pk": 41
-    },
-    {
-        "fields": "Radioiodine",
-        "model": "lookups.TreatmentLookup",
-        "pk": 42
-    },
-    {
-        "fields": "Radiotherapy",
-        "model": "lookups.TreatmentLookup",
-        "pk": 43
-    },
-    {
-        "fields": "Selumetinib",
-        "model": "lookups.TreatmentLookup",
-        "pk": 44
-    },
-    {
-        "fields": "Selumetinib In Combination With Dacarbazine",
-        "model": "lookups.TreatmentLookup",
-        "pk": 45
-    },
-    {
-        "fields": "Standard Chemotherapy",
-        "model": "lookups.TreatmentLookup",
-        "pk": 46
-    },
-    {
-        "fields": "Standard First Line Chemo Therapy",
-        "model": "lookups.TreatmentLookup",
-        "pk": 47
-    },
-    {
-        "fields": "Surgical And Chemotherapy",
-        "model": "lookups.TreatmentLookup",
-        "pk": 48
-    },
-    {
-        "fields": "Systemic Chemotherapy",
-        "model": "lookups.TreatmentLookup",
-        "pk": 49
-    },
-    {
-        "fields": "Temozolomide",
-        "model": "lookups.TreatmentLookup",
-        "pk": 50
-    },
-    {
-        "fields": "Thyroidectomy",
-        "model": "lookups.TreatmentLookup",
-        "pk": 51
-    },
-    {
-        "fields": "Trametinib",
-        "model": "lookups.TreatmentLookup",
-        "pk": 52
-    },
-    {
-        "fields": "Vemurafenib",
-        "model": "lookups.TreatmentLookup",
-        "pk": 53
-    },
-    {
-        "fields": "With Interleukin 2 And Ifn\u03b1-2B",
-        "model": "lookups.TreatmentLookup",
-        "pk": 54
-    }
+  {
+    "fields": "5-Fluorouracil",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     0
+  },
+  {
+    "fields": "5-FuLv",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     1
+  },
+  {
+    "fields": "And Irinotecan",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     2
+  },
+  {
+    "fields": "And Mitomycin",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     3
+  },
+  {
+    "fields": "Bevacizumab",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     4
+  },
+  {
+    "fields": "Calgb 89803",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     5
+  },
+  {
+    "fields": "Capecitabine",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     6
+  },
+  {
+    "fields": "Capecitabine Irinotecan Or Oxaliplatin Plus Cetuximab",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     7
+  },
+  {
+    "fields": "Capecitabine Or 5-Fluorouracil (5- Fu) Oxaliplatin",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     8
+  },
+  {
+    "fields": "Carboplatin",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     9
+  },
+  {
+    "fields": "Cetuximab",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     10
+  },
+  {
+    "fields": "Cetuximab Plus Chemotherapy",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     11
+  },
+  {
+    "fields": "Cetuximab With Irinotecan And",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     12
+  },
+  {
+    "fields": "Cyclophosphamide",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     13
+  },
+  {
+    "fields": "Dabrafenib",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     14
+  },
+  {
+    "fields": "Dabrafenib Or Dacarbazine",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     15
+  },
+  {
+    "fields": "Dacarbazine",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     16
+  },
+  {
+    "fields": "Dacarbazine Cisplatin Vinblastine And Tamoxifen",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     17
+  },
+  {
+    "fields": "Docetaxel Erlotinib Or Temsirolimus",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     18
+  },
+  {
+    "fields": "Fluoropirimidins",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     19
+  },
+  {
+    "fields": "Fluorouracil",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     20
+  },
+  {
+    "fields": "Folfiri",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     21
+  },
+  {
+    "fields": "Folfox",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     22
+  },
+  {
+    "fields": "Folinic Acid",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     23
+  },
+  {
+    "fields": "Fu And Lv (Ifl)",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     24
+  },
+  {
+    "fields": "FuIrinotecan",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     25
+  },
+  {
+    "fields": "FuOxaliplatin",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     26
+  },
+  {
+    "fields": "Imatinib",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     27
+  },
+  {
+    "fields": "Ipilimumab",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     28
+  },
+  {
+    "fields": "Irinotecan",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     29
+  },
+  {
+    "fields": "Irinotecan (Cpt11)",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     30
+  },
+  {
+    "fields": "Irinotecan With Fluorouracil (Fu)Leucovorin",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     31
+  },
+  {
+    "fields": "Leucovorin",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     32
+  },
+  {
+    "fields": "Leucovorin (FuLv)",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     33
+  },
+  {
+    "fields": "Or Cetuximab",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     34
+  },
+  {
+    "fields": "Or Irinotecan And Bevacizumab",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     35
+  },
+  {
+    "fields": "Oxaliplatin",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     36
+  },
+  {
+    "fields": "Paclitaxel",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     37
+  },
+  {
+    "fields": "Panitumumab",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     38
+  },
+  {
+    "fields": "Panitumumab And Cetuximab",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     39
+  },
+  {
+    "fields": "Plx4032",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     40
+  },
+  {
+    "fields": "Radioactive Iodine Therapy",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     41
+  },
+  {
+    "fields": "Radioiodine",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     42
+  },
+  {
+    "fields": "Radiotherapy",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     43
+  },
+  {
+    "fields": "Selumetinib",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     44
+  },
+  {
+    "fields": "Selumetinib In Combination With Dacarbazine",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     45
+  },
+  {
+    "fields": "Standard Chemotherapy",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     46
+  },
+  {
+    "fields": "Standard First Line Chemo Therapy",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     47
+  },
+  {
+    "fields": "Surgical And Chemotherapy",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     48
+  },
+  {
+    "fields": "Systemic Chemotherapy",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     49
+  },
+  {
+    "fields": "Temozolomide",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     50
+  },
+  {
+    "fields": "Thyroidectomy",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     51
+  },
+  {
+    "fields": "Trametinib",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     52
+  },
+  {
+    "fields": "Vemurafenib",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     53
+  },
+  {
+    "fields": "With Interleukin 2 And Ifn\u03b1-2B",
+    "model":  "lookups.TreatmentLookup",
+    "pk":     54
+  }
 ]

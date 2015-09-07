@@ -1,8 +1,8 @@
-#!/usr/bin/env python
-# coding=utf-8
+# Third Party Packages
 from rest_framework.relations import HyperlinkedRelatedField
-from rest_framework.serializers import (HyperlinkedModelSerializer)
+from rest_framework.serializers import HyperlinkedModelSerializer, Serializer
 
+# Local Application
 from . import models
 
 
@@ -13,8 +13,7 @@ class LookupTableSerializer(HyperlinkedModelSerializer):
 
 
 class EntrySetLookupTableSerializer(LookupTableSerializer):
-    entry_set = HyperlinkedRelatedField(view_name='entry-detail',
-                                        read_only=True, many=True)
+    entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True, many=True)
 
     class Meta:
         model = models.LookupTable
@@ -47,10 +46,9 @@ class RuleLevelLookupSerializer(EntrySetLookupTableSerializer):
 
 
 class BreakendStrandLookupSerializer(LookupTableSerializer):
-    breakend_strand_entry_set = HyperlinkedRelatedField(
-        view_name='entry-detail', read_only=True, many=True)
-    mate_breakend_strand_entry_set = HyperlinkedRelatedField(
-        view_name='entry-detail', read_only=True, many=True)
+    breakend_strand_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True, many=True)
+    mate_breakend_strand_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
+                                                             many=True)
 
     class Meta:
         model = models.BreakendStrandLookup
@@ -59,10 +57,10 @@ class BreakendStrandLookupSerializer(LookupTableSerializer):
 
 
 class BreakendDirectionLookupSerializer(LookupTableSerializer):
-    breakend_direction_entry_set = HyperlinkedRelatedField(
-        view_name='entry-detail', read_only=True, many=True)
-    mate_breakend_direction_entry_set = HyperlinkedRelatedField(
-        view_name='entry-detail', read_only=True, many=True)
+    breakend_direction_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
+                                                           many=True)
+    mate_breakend_direction_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
+                                                                many=True)
 
     class Meta:
         model = models.BreakendDirectionLookup
@@ -91,13 +89,16 @@ class DiseaseLookupSerializer(EntrySetLookupTableSerializer):
 
 
 class PatientOutcomesLookupSerializer(LookupTableSerializer):
-    assessed_patient_outcomes_entry_set = HyperlinkedRelatedField(
-        view_name='entry-detail', read_only=True, many=True)
-    significant_patient_outcomes_entry_set = HyperlinkedRelatedField(
-        view_name='entry-detail', read_only=True, many=True)
+    assessed_patient_outcomes_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
+                                                                  many=True)
+    significant_patient_outcomes_entry_set = HyperlinkedRelatedField(view_name='entry-detail', read_only=True,
+                                                                     many=True)
 
     class Meta:
         model = models.PatientOutcomesLookup
         fields = LookupTableSerializer.Meta.fields + (
-            'assessed_patient_outcomes_entry_set',
-            'significant_patient_outcomes_entry_set')
+            'assessed_patient_outcomes_entry_set', 'significant_patient_outcomes_entry_set')
+
+
+class LookupBaseSerializer(Serializer):
+    LookupTable = LookupTableSerializer()

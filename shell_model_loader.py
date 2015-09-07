@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# coding=utf-8
+
+
 """
 Load all the important models and factories into current scope.
 

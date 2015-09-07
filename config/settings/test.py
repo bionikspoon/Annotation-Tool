@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
 """
 Test Settings
 
@@ -8,11 +6,15 @@ Test Settings
 - Use faster password hash algorithm.
 
 """
-# noinspection PyPackageRequirements
+
+# Third Party Packages
 import environ
 
 environ.Env().read_env('.env.test')
+
+# Local Application
 from .common import *  # NOQA
+
 
 # DEBUG
 # ------------------------------------------------------------------------------
@@ -30,13 +32,11 @@ SECRET_KEY = env("DJANGO_SECRET_KEY", default='secret')
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 TEMPLATE_DEBUG = DEBUG
 
-# See: https://docs.djangoproject.com/en/dev/ref/settings/
-# #template-context-processors
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
 TEMPLATES[0]['OPTIONS']['context_processors'] = [
 
     # 'django.template.context_processors.debug',
-    'django.template.context_processors.request',
-    'django.contrib.auth.context_processors.auth',
+    'django.template.context_processors.request', 'django.contrib.auth.context_processors.auth',
     # 'django.template.context_processors.i18n',
     # 'django.template.context_processors.media',
     # 'django.template.context_processors.static',
@@ -49,8 +49,7 @@ TEMPLATES[0]['OPTIONS']['context_processors'] = [
 # ------------------------------------------------------------------------------
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    default='django.core.mail.backends.console.EmailBackend')
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 
 # CACHING
 # ------------------------------------------------------------------------------
@@ -78,8 +77,7 @@ CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
 
 MIDDLEWARE_CLASSES = (
 
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 
@@ -89,8 +87,7 @@ MIDDLEWARE_CLASSES = (
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = (
 
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend', 'allauth.account.auth_backends.AuthenticationBackend',
 
 )
 
@@ -98,11 +95,11 @@ AUTHENTICATION_BACKENDS = (
 # LOGGING CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#logging
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
+#
+# A sample logging configuration. The only tangible logging performed by this configuration is to send an
+# email to the site admins on every HTTP 500 error when DEBUG=False. See
+# http://docs.djangoproject.com/en/dev/topics/logging for more details on how to customize your logging
+# configuration.
 LOGGING['disable_existing_loggers'] = True
 
 # OTHER CONFIGURATION

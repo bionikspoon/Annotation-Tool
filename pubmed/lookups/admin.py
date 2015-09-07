@@ -1,7 +1,7 @@
-#!/usr/bin/env python
-# coding=utf-8
+# Django Packages
 from django.contrib import admin
 
+# Local Application
 from .models import LookupTable
 
 lookup_tables = (lookup_table for lookup_table in LookupTable.__subclasses__())

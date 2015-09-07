@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
-"""
-Pubmed Utilities.
-"""
-
-
 # noinspection PyPep8Naming
 class classproperty(object):
     """Decorator.  Define class property."""

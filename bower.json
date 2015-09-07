@@ -1,11 +1,11 @@
 {
-  "name": "yo",
-  "private": true,
-  "dependencies": {
+  "name":            "Annotation Tool",
+  "private":         true,
+  "dependencies":    {
     "bootstrap-sass": "~3.3.5",
-    "modernizr": "~2.8.1"
+    "modernizr":      "~2.8.1",
   },
-  "overrides": {
+  "overrides":       {
     "bootstrap-sass": {
       "main": [
         "assets/stylesheets/_bootstrap.scss",
@@ -15,7 +15,7 @@
     }
   },
   "devDependencies": {
-    "chai": "~3.2.0",
+    "chai":  "~3.2.0",
     "mocha": "~2.2.5"
   }
 }

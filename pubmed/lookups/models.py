@@ -1,6 +1,9 @@
+# Django Packages
 from django.db import models
 
-from model_utils import FieldTracker, models as utils_models
+# Third Party Packages
+from model_utils import models as utils_models
+from model_utils import FieldTracker
 
 
 class LookupTable(utils_models.TimeStampedModel):

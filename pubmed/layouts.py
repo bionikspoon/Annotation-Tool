@@ -1,11 +1,14 @@
-#!/usr/bin/env python
-# coding=utf-8
+# Python Libraries
 import logging
 
-from crispy_forms.bootstrap import FormActions
+# Django Packages
 from django.template.loader import render_to_string
-from crispy_forms.layout import (Layout, LayoutObject, Fieldset, Field, Div,
-    HTML, Row, Column, Submit, Button)
+
+# Third Party Packages
+from crispy_forms.bootstrap import FormActions
+from crispy_forms.layout import (
+  HTML, Button, Column, Div, Field, Fieldset, Layout, LayoutObject, Row, Submit
+)
 from crispy_forms.utils import flatatt, render_field
 
 logger = logging.getLogger(__name__)
@@ -21,19 +24,18 @@ class Flat(LayoutObject):
         self.template = kwargs.pop('template', self.template)
         self.flat_attrs = flatatt(kwargs)
 
-    def get_rendered_fields(self, form, form_style, context,
-                            template_pack='flat', **kwargs):
+    def get_rendered_fields(self, form, form_style, context, template_pack='flat', **kwargs):
         kwargs['template'] = 'flat/layout/field.html'
         template_pack = 'flat'
 
-        return ''.join(render_field(field, form, form_style, context,
-                                    template_pack=template_pack, **kwargs) for
-                       field in self.fields)
+        render = lambda field: render_field(field, form, form_style, context, template_pack=template_pack,
+                                            **kwargs)
+
+        return ''.join(render(field) for field in self.fields)
 
     def render(self, form, form_style, context, template_pack='flat', **kwargs):
         template_pack = 'flat'
-        fields = self.get_rendered_fields(form, form_style, context,
-                                          template_pack, **kwargs)
+        fields = self.get_rendered_fields(form, form_style, context, template_pack, **kwargs)
         template = self.get_template_name(template_pack)
         return render_to_string(template, {
             'fieldset': self,
@@ -51,14 +53,13 @@ class EntryFormLayout(Layout):
 
             Fieldset('Pubmed',
 
-                     Field('pubmed_id', autocomplete='off'),
+                     Field('pubmed_id', autocomplete='off')
 
                      ),
 
             Fieldset('Gene Description',
 
-                     'gene', 'structure', 'mutation_type', 'syntax',
-                     'syntax_text', 'operator', 'rule_level',
+                     'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator', 'rule_level',
 
                      Row(
 
@@ -66,8 +67,7 @@ class EntryFormLayout(Layout):
 
                              Flat(
 
-                                 'chromosome', 'start', 'stop',
-                                 'breakend_strand', 'breakend_direction',
+                                 'chromosome', 'start', 'stop', 'breakend_strand', 'breakend_direction',
 
                              ),
 
@@ -81,8 +81,7 @@ class EntryFormLayout(Layout):
 
                              Flat(
 
-                                 'mate_chromosome', 'mate_start', 'mate_end',
-                                 'mate_breakend_strand',
+                                 'mate_chromosome', 'mate_start', 'mate_end', 'mate_breakend_strand',
                                  'mate_breakend_direction',
 
                              ),
@@ -139,24 +138,21 @@ class EntryFormLayout(Layout):
 
                      ),
 
-                     'variant_type', 'variant_consequence',
-                     'variant_clinical_grade',
+                     'variant_type', 'variant_consequence', 'variant_clinical_grade',
 
                      ),
 
             Fieldset('Treatment',
 
-                     'disease', 'treatment', 'treatment_1', 'treatment_2',
-                     'treatment_3', 'treatment_4', 'treatment_5'
+                     'disease', 'treatment', 'treatment_1', 'treatment_2', 'treatment_3', 'treatment_4',
+                     'treatment_5'
 
                      ),
 
             Fieldset('Study',
 
-                     'population_size', 'sex', 'ethnicity',
-                     'assessed_patient_outcomes',
-                     'significant_patient_outcomes', 'design',
-                     'reference_claims', 'comments'
+                     'population_size', 'sex', 'ethnicity', 'assessed_patient_outcomes',
+                     'significant_patient_outcomes', 'design', 'reference_claims', 'comments'
 
                      ),
 
@@ -166,7 +162,7 @@ class EntryFormLayout(Layout):
 
                          Submit('submit', 'Submit'), Button('cancel', 'Cancel')
 
-                     ),
+                     )
 
                      ),
 

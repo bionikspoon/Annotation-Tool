@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
 """
 Add data to registry.
 """

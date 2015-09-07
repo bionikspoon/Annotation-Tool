@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# coding=utf-8
+
+
 from rest_framework.relations import HyperlinkedIdentityField, \
     HyperlinkedRelatedField
 from rest_framework.serializers import ModelSerializer
