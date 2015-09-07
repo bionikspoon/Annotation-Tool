@@ -52,7 +52,9 @@ SESSION_CACHE_ALIAS = "default"
 UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
 
 FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
-
+CACHEOPS = {
+    'lookups.*': ('all', 300)
+}
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
 DEV_MIDDLEWARE = ('debug_toolbar.middleware.DebugToolbarMiddleware',)
