@@ -10,24 +10,27 @@ from itertools import chain
 
 # Django Packages
 from django.conf import settings
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class CONFIG(object):
     """ Config object. """
     data = settings.ROOT_DIR.path('pubmed', 'lookups', 'migrations', 'initial_data', 'data')
-    module = 'lookups'
+    module = 'pubmed.lookups'
     data_input = data.path('input')
     data_output = data.path('output')
 
-    summary_dir = data - 1
+    summary_dir = data - 1  # ...initial_data/
     summary_file = 'generated_data.py'
+    import_line = "from . import InitialData"
 
 
 # noinspection PyUnresolvedReferences
 class SummaryManager(object):
     """Generated Data."""
 
-    IMPORT_LINE = "from . import InitialData"
     fp = CONFIG.summary_dir.file(CONFIG.summary_file, 'w')
 
     def __init__(self):
@@ -55,7 +58,7 @@ class SummaryManager(object):
         self.write('')
         self.write('')
         self.write('"""\n%s\n"""\n' % self.__doc__)
-        self.write(self.IMPORT_LINE)
+        self.write(CONFIG.import_line)
         self.write()
 
     def add_model(self, model, choices):
@@ -76,6 +79,7 @@ class SummaryManager(object):
         self.write()
         self.write(']', indent=1)
         self.write('\n')
+        logger.debug('Writing %r to buffer', model)
 
     def save(self):
         """
@@ -84,6 +88,7 @@ class SummaryManager(object):
         :return:
         """
         with self.fp as f:
+            logger.info('Saving summary: %r' % self)
             print(self)
             f.write(str(self))
 
@@ -112,9 +117,6 @@ class ModelFactory(object):
     """
     Parse raw data.
     """
-    data_in = CONFIG.data_input
-    data_out = CONFIG.data_output
-    fixture_prefix = CONFIG.module
     model_name = NotImplemented
     file_name = NotImplemented
     model_choices = NotImplemented
@@ -125,7 +127,7 @@ class ModelFactory(object):
         self.file_name = '%s.txt' % name
         self.json_file_name = '%s.json' % name
 
-        with self.data_in.file(self.file_name) as f:
+        with CONFIG.data_input.file(self.file_name) as f:
             raw_data = f.read().splitlines()
 
         self.model_choices = self.get_choices(raw_data)
@@ -175,7 +177,7 @@ class ModelFactory(object):
 
         :return:
         """
-        fixture_name = '%s.%s' % (self.fixture_prefix, self.model_name)
+        fixture_name = '%s.%s' % (CONFIG.module, self.model_name)
         return [{
                     'model': fixture_name,
                     'pk': pk,
@@ -191,6 +193,7 @@ def pprint_json(data, fp):
     :type fp: str
     :return:
     """
+    logger.debug('Printing data to JSON. FP: %r, Data: %r' % (fp, data))
     with CONFIG.data_output.file(fp, 'w') as f:
         json.dump(data, f, sort_keys=True, indent=4, separators=(',', ': '))
 

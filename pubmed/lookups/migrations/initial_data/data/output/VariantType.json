@@ -1,27 +1,27 @@
 [
-  {
-    "fields": "Deletion",
-    "model":  "lookups.VariantTypeLookup",
-    "pk":     0
-  },
-  {
-    "fields": "Duplication",
-    "model":  "lookups.VariantTypeLookup",
-    "pk":     1
-  },
-  {
-    "fields": "Indel",
-    "model":  "lookups.VariantTypeLookup",
-    "pk":     2
-  },
-  {
-    "fields": "Insertion",
-    "model":  "lookups.VariantTypeLookup",
-    "pk":     3
-  },
-  {
-    "fields": "Substitution",
-    "model":  "lookups.VariantTypeLookup",
-    "pk":     4
-  }
+    {
+        "fields": "Deletion",
+        "model": "pubmed.lookups.VariantTypeLookup",
+        "pk": 0
+    },
+    {
+        "fields": "Duplication",
+        "model": "pubmed.lookups.VariantTypeLookup",
+        "pk": 1
+    },
+    {
+        "fields": "Indel",
+        "model": "pubmed.lookups.VariantTypeLookup",
+        "pk": 2
+    },
+    {
+        "fields": "Insertion",
+        "model": "pubmed.lookups.VariantTypeLookup",
+        "pk": 3
+    },
+    {
+        "fields": "Substitution",
+        "model": "pubmed.lookups.VariantTypeLookup",
+        "pk": 4
+    }
 ]
