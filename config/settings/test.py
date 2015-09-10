@@ -35,8 +35,8 @@ EMAIL_FILE_PATH = str(ROOT_DIR.path('logs', 'test_emails'))
 # MIDDLEWARE
 # ------------------------------------------------------------------------------
 MIDDLEWARE_CLASSES = (
-
-    'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 

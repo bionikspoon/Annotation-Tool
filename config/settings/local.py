@@ -17,6 +17,10 @@ Env().read_env('.env')
 from .common import *  # noqa
 
 
+# CACHE CONFIGURATION
+# ------------------------------------------------------------------------------
+CACHEOPS_REDIS['db'] = 0
+
 # DEV TOOLS: django-debug-toolbar
 # ------------------------------------------------------------------------------
 DEV_MIDDLEWARE = ('debug_toolbar.middleware.DebugToolbarMiddleware',)
@@ -32,6 +36,16 @@ DEBUG_TOOLBAR_CONFIG = {
     ],
     'SHOW_TEMPLATE_CONTEXT': True
 }
+DEBUG_TOOLBAR_PANELS = ['debug_toolbar.panels.sql.SQLPanel', 'debug_toolbar.panels.cache.CachePanel',
+                        'debug_toolbar.panels.timer.TimerPanel', 'debug_toolbar.panels.headers.HeadersPanel',
+                        'debug_toolbar.panels.request.RequestPanel',
+                        'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+                        'debug_toolbar.panels.templates.TemplatesPanel',
+                        'debug_toolbar.panels.signals.SignalsPanel',
+                        'debug_toolbar.panels.logging.LoggingPanel',
+                        'debug_toolbar.panels.settings.SettingsPanel',
+                        'debug_toolbar.panels.versions.VersionsPanel',
+                        'debug_toolbar.panels.redirects.RedirectsPanel', ]
 
 # DEV TOOLS: django-extensions
 # ------------------------------------------------------------------------------
@@ -63,11 +77,13 @@ if not DEBUG:
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (str(ROOT_DIR.path('.tmp')),)
 
-
+# TEMPLATE CONFIGURATION
+# ------------------------------------------------------------------------------
+TEMPLATES[0]['OPTIONS']['context_processors'].insert(0, 'django.template.context_processors.debug')
 # COMBINE INSTALLED APPS
 # ------------------------------------------------------------------------------
 INSTALLED_APPS = (DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS)
 
 # COMBINE MIDDLEWARE_CLASSES
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES = (MIDDLEWARE_CLASSES + DEV_MIDDLEWARE)
+MIDDLEWARE_CLASSES = (DEV_MIDDLEWARE + MIDDLEWARE_CLASSES)

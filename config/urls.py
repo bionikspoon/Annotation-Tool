@@ -6,6 +6,7 @@ Project URL configuration.
 from __future__ import unicode_literals
 
 # Django Packages
+import debug_toolbar
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
@@ -54,6 +55,11 @@ if settings.DEBUG:
         url(r'^403/$', 'django.views.defaults.permission_denied'),
         url(r'^404/$', 'django.views.defaults.page_not_found'),
         url(r'^500/$', 'django.views.defaults.server_error'),
-        # url(r'^silk/', include('silk.urls', namespace='silk'))
+
+    ]
+
+    urlpatterns += [
+
+        url(r'^__debug__/', include(debug_toolbar.urls))
 
     ]
