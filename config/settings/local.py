@@ -17,45 +17,7 @@ Env().read_env('.env')
 from .common import *  # noqa
 
 
-
-
-# DEBUG
-# ------------------------------------------------------------------------------
-DEBUG = TEMPLATES[0]['OPTIONS']['debug'] = env.bool('DJANGO_DEBUG', default=True)
-
-# SECRET CONFIGURATION
-# ------------------------------------------------------------------------------
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-# Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY")
-
-# Mail settings
-# ------------------------------------------------------------------------------
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
-
-ACCOUNT_EMAIL_VERIFICATION = 'optional'
-
-# SERVER
-# ------------------------------------------------------------------------------
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
-# SESSION
-# ------------------------------------------------------------------------------
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-SESSION_CACHE_ALIAS = "default"
-
-# CACHING
-# ------------------------------------------------------------------------------
-
-UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
-
-FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
-CACHEOPS = {
-    'lookups.*': ('all', 300)
-}
-# django-debug-toolbar
+# DEV TOOLS: django-debug-toolbar
 # ------------------------------------------------------------------------------
 DEV_MIDDLEWARE = ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 THIRD_PARTY_APPS += ('debug_toolbar',)
@@ -63,7 +25,7 @@ THIRD_PARTY_APPS += ('debug_toolbar',)
 INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
 
 DEBUG_TOOLBAR_CONFIG = {
-    'DISABLE_PANELS': [
+    'DISABLE_PANELS':        [
 
         'debug_toolbar.panels.redirects.RedirectsPanel'
 
@@ -71,13 +33,24 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TEMPLATE_CONTEXT': True
 }
 
-# django-extensions
+# DEV TOOLS: django-extensions
 # ------------------------------------------------------------------------------
 THIRD_PARTY_APPS += ('django_extensions',)
 
-# TESTING
+# MAIL SETTINGS
 # ------------------------------------------------------------------------------
-TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = str(ROOT_DIR.path('logs', 'emails'))
+
+
+# SERVER
+# ------------------------------------------------------------------------------
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+SECURE_SSL_REDIRECT = False
+
+CACHEOPS = {
+    'lookups.*': ('all', 300)
+}
 
 
 # STATIC FILE CONFIGURATION
@@ -87,41 +60,14 @@ LOCAL_APPS += ('core.local', 'core.production')
 if not DEBUG:
     STATIC_URL = '/staticfiles/'
 
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (
-
-    str(ROOT_DIR.path('.tmp')),
-
-)
-
-# FORMS CONFIGURATION
-# ------------------------------------------------------------------------------
-CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', False)
-
-
-# SILK CONFIGURATION
-# ------------------------------------------------------------------------------
-# THIRD_PARTY_APPS += ('silk',)
-# DEV_MIDDLEWARE += ('silk.middleware.SilkyMiddleware',)
+STATICFILES_DIRS = (str(ROOT_DIR.path('.tmp')),)
 
 
 # COMBINE INSTALLED APPS
 # ------------------------------------------------------------------------------
-INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = (DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS)
 
 # COMBINE MIDDLEWARE_CLASSES
 # ------------------------------------------------------------------------------
-# Make sure djangosecure.middleware.SecurityMiddleware is listed first
-MIDDLEWARE_CLASSES = (
-
-    # UPDATE_CACHE_MIDDLEWARE +
-
-    MIDDLEWARE_CLASSES + DEV_MIDDLEWARE
-
-
-    # + FETCH_CACHE_MIDDLEWARE
-
-)
+MIDDLEWARE_CLASSES = (MIDDLEWARE_CLASSES + DEV_MIDDLEWARE)
