@@ -19,7 +19,13 @@ from .common import *  # noqa
 
 # CACHE CONFIGURATION
 # ------------------------------------------------------------------------------
-CACHEOPS_REDIS['db'] = 0
+
+CACHEOPS = {
+    'lookups.*': {
+        'ops':     'get',
+        'timeout': 300
+    }
+}
 
 # DEV TOOLS: django-debug-toolbar
 # ------------------------------------------------------------------------------
@@ -62,12 +68,6 @@ EMAIL_FILE_PATH = str(ROOT_DIR.path('logs', 'emails'))
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 SECURE_SSL_REDIRECT = False
 
-CACHEOPS = {
-    'lookups.*': {
-        'ops':     'get',
-        'timeout': 300
-    }
-}
 
 
 # STATIC FILE CONFIGURATION

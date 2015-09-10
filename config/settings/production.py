@@ -49,6 +49,12 @@ AWS_HEADERS = {
 # CACHING
 # ------------------------------------------------------------------------------
 
+CACHEOPS = {
+    'lookups.*': {
+        'ops':     'get',
+        'timeout': 300
+    }
+}
 # Add UPDATE_CACHE_MIDDLEWARE and FETCH_CACHE_MIDDLEWARE to middleware!
 # TODO, don't forget this.
 
@@ -116,4 +122,4 @@ INSTALLED_APPS = (DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS)
 # COMBINE MIDDLEWARE
 # ------------------------------------------------------------------------------
 # Make sure djangosecure.middleware.SecurityMiddleware is listed first
-MIDDLEWARE_CLASSES = (SECURITY_MIDDLEWARE + MIDDLEWARE_CLASSES)
+MIDDLEWARE_CLASSES = (SECURITY_MIDDLEWARE +  UPDATE_CACHE_MIDDLEWARE + MIDDLEWARE_CLASSES + FETCH_CACHE_MIDDLEWARE)
