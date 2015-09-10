@@ -63,7 +63,10 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 SECURE_SSL_REDIRECT = False
 
 CACHEOPS = {
-    'lookups.*': ('all', 300)
+    'lookups.*': {
+        'ops':     'get',
+        'timeout': 300
+    }
 }
 
 
@@ -86,4 +89,4 @@ INSTALLED_APPS = (DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS)
 
 # COMBINE MIDDLEWARE_CLASSES
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES = (DEV_MIDDLEWARE + MIDDLEWARE_CLASSES)
+MIDDLEWARE_CLASSES = (DEV_MIDDLEWARE + UPDATE_CACHE_MIDDLEWARE + MIDDLEWARE_CLASSES + FETCH_CACHE_MIDDLEWARE)
