@@ -49,3 +49,6 @@ drf-nested-routers
 
 # Environment Management
 pip-tools
+
+
+django_compressor

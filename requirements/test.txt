@@ -8,9 +8,11 @@ click==5.1                # via pip-tools
 coverage==3.7.1
 defusedxml==0.4.1         # via python3-openid
 django-allauth==0.23.0
+django-appconf==1.0.1     # via django-compressor
 django-autoslug==1.8.0
 django-braces==1.8.1
 django-cacheops==2.4.1
+django-compressor==1.5
 django-crispy-forms==1.5.1
 django-environ==0.3.0
 django-filter==0.11.0
@@ -40,6 +42,6 @@ pytz==2015.4
 redis==2.10.3
 requests-oauthlib==0.5.0  # via django-allauth
 requests==2.7.0           # via django-allauth, requests-oauthlib
-six==1.9.0                # via django-braces, django-cacheops, pip-tools, unicode-slugify
+six==1.9.0                # via django-appconf, django-braces, django-cacheops, pip-tools, unicode-slugify
 unicode-slugify==0.1.3
 unidecode==0.4.18         # via unicode-slugify
