@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__version__ = '0.7.1'
+__version__ = '0.7.2'
 __version_info__ = tuple(  # :off
     [
         int(num) if num.isdigit() else num
