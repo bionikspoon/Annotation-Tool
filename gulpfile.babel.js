@@ -32,7 +32,7 @@ gulp.task('styles', () => {
 
         .pipe($.sourcemaps.write())
 
-        .pipe(gulp.dest(config.tmp_core + 'styles'));
+        .pipe(gulp.dest(config.tmp_core + 'styles'))
 
 
 });
