@@ -95,6 +95,9 @@ class EntryCreateView(EntryFormMixin, braces_views.PrefetchRelatedMixin, CreateV
     success_msg = 'Entry Created'
     action_text = 'Create'
 
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
 
 class EntryUpdateView(EntryFormMixin, UpdateView):
     """

@@ -21,58 +21,10 @@ import boto.s3.connection
 # Local Application
 from .common import *  # noqa
 
-
-# DEBUG
+# AWS CONFIGURATION
 # ------------------------------------------------------------------------------
-DEBUG = env.bool('DJANGO_DEBUG', default=False)
-
-# SECRET CONFIGURATION
-# ------------------------------------------------------------------------------
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-# Raises ImproperlyConfigured exception if DJANGO_SECRET_KEY not in os.environ
-SECRET_KEY = env("DJANGO_SECRET_KEY")
-
-# This ensures that Django will be able to detect a secure connectionproperly on Heroku.
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# django-secure
-# ------------------------------------------------------------------------------
-INSTALLED_APPS += ("djangosecure",)
-
-SECURITY_MIDDLEWARE = (
-
-    'djangosecure.middleware.SecurityMiddleware',
-
-)
-
-
-# set this to 60 seconds and then to 518400 when you can prove it works
-SECURE_HSTS_SECONDS = 60
-SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool("DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True)
-SECURE_FRAME_DENY = env.bool("DJANGO_SECURE_FRAME_DENY", default=True)
-SECURE_CONTENT_TYPE_NOSNIFF = env.bool("DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", default=True)
-SECURE_BROWSER_XSS_FILTER = True
-SESSION_COOKIE_SECURE = False
-SESSION_COOKIE_HTTPONLY = True
-SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
-# SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-# SESSION_CACHE_ALIAS = "default"
-
-# SITE CONFIGURATION
-# ------------------------------------------------------------------------------
-# Hosts/domain names that are valid for this site
-# See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = [env.str('DJANGO_ALLOW_HOSTS', default='annotation-tool.herokuapp.com')]
-
-# END SITE CONFIGURATION
-
-THIRD_PARTY_APPS += ("gunicorn",)
-
-# STORAGE CONFIGURATION
-# ------------------------------------------------------------------------------
-# Uploaded Media Files
-# ------------------------
 # See: http://django-storages.readthedocs.org/en/latest/index.html
+# noinspection PyUnresolvedReferences
 THIRD_PARTY_APPS += ('storages',)
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
@@ -94,10 +46,50 @@ AWS_HEADERS = {
     'Cache-Control': six.b('max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIRY, AWS_EXPIRY))
 }
 
+# CACHING
+# ------------------------------------------------------------------------------
+
+# Add UPDATE_CACHE_MIDDLEWARE and FETCH_CACHE_MIDDLEWARE to middleware!
+# TODO, don't forget this.
+
+# EMAIL
+# ------------------------------------------------------------------------------
+DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
+                         default='annotation_tool <noreply@annotation-tool.herkokapp.com>')
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = env('DJANGO_MAILGUN_API_KEY')
+MAILGUN_SERVER_NAME = env('DJANGO_MAILGUN_SERVER_NAME')
+EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default='[annotation_tool] ')
+SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
+
+# MEDIA
+# ------------------------------------------------------------------------------
 # URL that handles the media served from MEDIA_ROOT, used for managing stored files.
 MEDIA_URL = 'https://s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 
-# Static Assets
+# SECURITY
+# ------------------------------------------------------------------------------
+INSTALLED_APPS += ("djangosecure",)
+
+SECURITY_MIDDLEWARE = ('djangosecure.middleware.SecurityMiddleware',)
+# set this to 60 seconds and then to 518400 when you can prove it works
+SECURE_HSTS_SECONDS = 60
+SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool("DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True)
+
+
+# SERVER SETTINGS
+# ------------------------------------------------------------------------------
+# noinspection PyUnresolvedReferences
+THIRD_PARTY_APPS += ("gunicorn",)
+
+# SITE CONFIGURATION
+# ------------------------------------------------------------------------------
+# Hosts/domain names that are valid for this site
+# See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = [env.str('DJANGO_ALLOW_HOSTS', default='annotation-tool.herokuapp.com')]
+
+
+# STATIC
 # ------------------------
 LOCAL_APPS += ('core.production',)
 
@@ -106,14 +98,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 
-# EMAIL
-# ------------------------------------------------------------------------------
-DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL', default='annotation_tool <noreply@example.com>')
-EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-MAILGUN_ACCESS_KEY = env('DJANGO_MAILGUN_API_KEY')
-MAILGUN_SERVER_NAME = env('DJANGO_MAILGUN_SERVER_NAME')
-EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default='[annotation_tool] ')
-SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -125,32 +109,11 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [(
 
 )]
 
-
-# DATABASE CONFIGURATION
-# ------------------------------------------------------------------------------
-DATABASES['default'] = env.db("DATABASE_URL")
-
-# CACHING
-# ------------------------------------------------------------------------------
-
-UPDATE_CACHE_MIDDLEWARE = ('django.middleware.cache.UpdateCacheMiddleware',)
-
-FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
-
-
 # COMBINE INSTALLED APPS
 # ------------------------------------------------------------------------------
-INSTALLED_APPS = DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = (DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS)
 
 # COMBINE MIDDLEWARE
 # ------------------------------------------------------------------------------
 # Make sure djangosecure.middleware.SecurityMiddleware is listed first
-MIDDLEWARE_CLASSES = (SECURITY_MIDDLEWARE
-
-                      # + UPDATE_CACHE_MIDDLEWARE
-
-                      + MIDDLEWARE_CLASSES
-
-                      # + FETCH_CACHE_MIDDLEWARE
-
-                      )
+MIDDLEWARE_CLASSES = (SECURITY_MIDDLEWARE + MIDDLEWARE_CLASSES)
