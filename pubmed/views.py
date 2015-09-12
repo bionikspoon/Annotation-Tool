@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 # Third Party Packages
-from braces.views import LoginRequiredMixin, UserFormKwargsMixin, SelectRelatedMixin
+from braces.views import LoginRequiredMixin, UserFormKwargsMixin, SelectRelatedMixin, PrefetchRelatedMixin
 from rest_framework.decorators import list_route
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
@@ -89,10 +89,8 @@ class EntryCreateView(EntryFormMixin, CreateView):
     """
     Form. Create an entry.
     """
-
     success_msg = 'Entry Created'
     action_text = 'Create'
-
 
 
 class EntryUpdateView(EntryFormMixin, UpdateView):

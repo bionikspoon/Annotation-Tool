@@ -11,18 +11,21 @@ from django.db import models
 from django.forms import ModelForm, RadioSelect
 
 # Third Party Packages
-from crispy_forms import bootstrap, helper
+from crispy_forms import helper
 from model_utils import Choices
 
 # Local Application
 from .fields import TypedChoiceField
-from .layouts import EntryFormLayout
-from .lookups import BreakendDirectionLookup, BreakendStrandLookup, PatientOutcomesLookup
+from .lookups import *
 from .models import Entry, EntryMeta
 
 logger = logging.getLogger(__name__)
 
 models.BLANK_CHOICE_DASH[0] = ('', 'Null')
+
+
+def model_choices(model):
+    return ((lookup.pk, lookup.choice) for lookup in model.objects.only('choice'))
 
 
 class EntryModelForm(UserKwargModelFormMixin, ModelForm):
@@ -43,17 +46,26 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
         for field in filter(lambda x: x not in ('user',), EntryMeta.foreign_fields):
             self.fields[field].empty_label = models.BLANK_CHOICE_DASH[0][1]
 
-        breakend_strand = [(lookup.pk, lookup.choice) for lookup in BreakendStrandLookup.objects.all()]
+        breakend_strand = tuple(model_choices(BreakendStrandLookup))
         self.fields['breakend_strand'].choices = breakend_strand
         self.fields['mate_breakend_strand'].choices = breakend_strand
 
-        breakend_direction = [(lookup.pk, lookup.choice) for lookup in BreakendDirectionLookup.objects.all()]
+        breakend_direction = tuple(model_choices(BreakendDirectionLookup))
         self.fields['breakend_direction'].choices = breakend_direction
         self.fields['mate_breakend_direction'].choices = breakend_direction
 
-        patient_outcomes = [(lookup.pk, lookup.choice) for lookup in PatientOutcomesLookup.objects.all()]
+        patient_outcomes = tuple(model_choices(PatientOutcomesLookup))
         self.fields['assessed_patient_outcomes'].choices = patient_outcomes
         self.fields['significant_patient_outcomes'].choices = patient_outcomes
+
+        self.fields['structure'].choices = model_choices(StructureLookup)
+        self.fields['mutation_type'].choices = model_choices(MutationTypeLookup)
+        self.fields['syntax'].choices = model_choices(SyntaxLookup)
+        self.fields['operator'].choices = model_choices(OperatorLookup)
+        self.fields['rule_level'].choices = model_choices(RuleLevelLookup)
+        self.fields['variant_type'].choices = model_choices(VariantTypeLookup)
+        self.fields['variant_consequence'].choices = model_choices(VariantConsequenceLookup)
+        self.fields['sex'].choices = model_choices(SexLookup)
 
         self.fields['pubmed_id'].help_text = ' '
 
@@ -63,7 +75,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
         self.helper.label_class = 'col-sm-3'
         self.helper.field_class = 'col-sm-9'
         self.helper.html5_required = True
-        self.helper.layout = EntryFormLayout(helper=self.helper)
+        # self.helper.layout = EntryFormLayout(helper=self.helper)
 
         # self.helper.filter_by_widget(RadioSelect).wrap(bootstrap.InlineRadios)
 
@@ -94,5 +106,5 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     class Meta:
         model = Entry
         fields = EntryMeta.public_fields
-        # widgets = {field: RadioSelect for field in EntryMeta.foreign_fields if not field == 'user'}
-        # widgets['treatment'] = RadioSelect
+        widgets = {field: RadioSelect() for field in EntryMeta.foreign_fields if not field == 'user'}
+        widgets['treatment'] = RadioSelect
