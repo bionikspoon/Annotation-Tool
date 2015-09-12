@@ -99,10 +99,10 @@ ALLOWED_HOSTS = [env.str('DJANGO_ALLOW_HOSTS', default='annotation-tool.herokuap
 # ------------------------
 LOCAL_APPS += ('core.production',)
 
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+COMPRESS_STORAGE = STATICFILES_STORAGE = 'core.utils.compressor.CachedS3BotoStorage'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-STATIC_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
+COMPRESS_URL = STATIC_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 
 
 # TEMPLATE CONFIGURATION
@@ -122,4 +122,5 @@ INSTALLED_APPS = (DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS)
 # COMBINE MIDDLEWARE
 # ------------------------------------------------------------------------------
 # Make sure djangosecure.middleware.SecurityMiddleware is listed first
-MIDDLEWARE_CLASSES = (SECURITY_MIDDLEWARE +  UPDATE_CACHE_MIDDLEWARE + MIDDLEWARE_CLASSES + FETCH_CACHE_MIDDLEWARE)
+MIDDLEWARE_CLASSES = (
+SECURITY_MIDDLEWARE + UPDATE_CACHE_MIDDLEWARE + MIDDLEWARE_CLASSES + FETCH_CACHE_MIDDLEWARE)

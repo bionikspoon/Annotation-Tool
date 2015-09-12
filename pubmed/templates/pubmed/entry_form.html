@@ -1,16 +1,16 @@
-{% extends 'core/base.html' %}{% load crispy_forms_tags static %}
+{% extends 'core/base.html' %}{% load crispy_forms_tags static compress %}
 
-{% block css %}
+{% compress css file css %}
   {{ block.super }}
   <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css"
         rel="stylesheet" />
-{% endblock css %}
+{% endcompress css %}
 
-{% block javascript %}
+{% compress js file javascript %}
   {{ block.super }}
   <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
   <script src="{% static 'pubmed/scripts/main.js' %}"></script>
-{% endblock javascript %}
+{% endcompress javascript %}
 
 {% block page_header_h1 %}
   {{ action_text }} Entry
