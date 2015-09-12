@@ -352,6 +352,7 @@ COMPRESS_OFFLINE = True
 COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',
                         'compressor.filters.yuglify.YUglifyCSSFilter']
 COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter', 'compressor.filters.yuglify.YUglifyJSFilter']
+COMPRESS_YUGLIFY_BINARY = ROOT_DIR.path('node_modules', '.bin', 'yuglify')
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
