@@ -24,7 +24,12 @@ CACHEOPS = {
         'ops': 'all',
         'timeout': 300
     },
-    'pubmed':{
+    'pubmed': {
+        'ops': 'all',
+        'timeout': 300
+
+    },
+    'users': {
         'ops': 'all',
         'timeout': 300
     }
