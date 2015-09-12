@@ -4,13 +4,11 @@ Django
 # Configuration
 django-environ
 django-secure
-# whitenoise
 
 
 # Forms
 django-braces
 django-crispy-forms
-# django-floppyforms
 
 # Models
 django-model-utils
@@ -44,11 +42,10 @@ docutils
 # Rest API
 djangorestframework
 django-filter
-drf-nested-routers
 
 
 # Environment Management
 pip-tools
 
-
+# Static
 django_compressor

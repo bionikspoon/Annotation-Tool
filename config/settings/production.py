@@ -51,7 +51,7 @@ AWS_HEADERS = {
 
 CACHEOPS = {
     'lookups.*': {
-        'ops':     'get',
+        'ops': 'get',
         'timeout': 300
     }
 }
@@ -63,7 +63,7 @@ CACHEOPS = {
 DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
                          default='annotation_tool <noreply@annotation-tool.herkokapp.com>')
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-MAILGUN_ACCESS_KEY = env('DJANGO_MAILGUN_API_KEY')
+MAILGUN_ACCESS_KEY = env('DJANGO_MAILGUN_ACCESS_KEY')
 MAILGUN_SERVER_NAME = env('DJANGO_MAILGUN_SERVER_NAME')
 EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default='[annotation_tool] ')
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
@@ -99,10 +99,10 @@ ALLOWED_HOSTS = [env.str('DJANGO_ALLOW_HOSTS', default='annotation-tool.herokuap
 # ------------------------
 LOCAL_APPS += ('core.production',)
 
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+COMPRESS_STORAGE = STATICFILES_STORAGE = 'core.utils.compressor.CachedS3BotoStorage'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-STATIC_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
+COMPRESS_URL = STATIC_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 
 
 # TEMPLATE CONFIGURATION
@@ -122,4 +122,6 @@ INSTALLED_APPS = (DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS)
 # COMBINE MIDDLEWARE
 # ------------------------------------------------------------------------------
 # Make sure djangosecure.middleware.SecurityMiddleware is listed first
-MIDDLEWARE_CLASSES = (SECURITY_MIDDLEWARE +  UPDATE_CACHE_MIDDLEWARE + MIDDLEWARE_CLASSES + FETCH_CACHE_MIDDLEWARE)
+
+MIDDLEWARE_CLASSES = (
+    SECURITY_MIDDLEWARE + UPDATE_CACHE_MIDDLEWARE + MIDDLEWARE_CLASSES + FETCH_CACHE_MIDDLEWARE)

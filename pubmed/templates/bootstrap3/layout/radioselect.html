@@ -5,7 +5,7 @@
   {% include 'bootstrap3/layout/field_errors_block.html' %}
 
   {% for choice in field.field.choices %}
-    <label class="radio{% if inline_class %}-{{ inline_class }}{% endif %}">
+    <label class="radio-inline">
       <input type="radio"
              name="{{ field.html_name }}"
              id="id_{{ field.html_name }}_{{ forloop.counter }}"

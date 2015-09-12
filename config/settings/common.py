@@ -78,6 +78,7 @@ THIRD_PARTY_APPS = (  # :off
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',
+    'compressor'
 
 )  # :on
 
@@ -103,13 +104,13 @@ AUTHENTICATION_BACKENDS = (
 # ------------------------------------------------------------------------------
 CACHES = {
     'default': {
-        "BACKEND":  "django_redis.cache.RedisCache",
+        "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "{0}/{1}".format(env.str('REDIS_URL'), 0),
-        "OPTIONS":  {
-            "CLIENT_CLASS":      "django_redis.client.DefaultClient",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "IGNORE_EXCEPTIONS": True
         },
-        'TIMEOUT':  300
+        'TIMEOUT': 300
     }
 }
 
@@ -118,7 +119,7 @@ FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
 
 DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
 
-THIRD_PARTY_APPS += ('cacheops',)
+# THIRD_PARTY_APPS += ('cacheops',)
 CACHEOPS_REDIS = {key.lower(): value for key, value in env.db('REDIS_URL').items() if value}
 CACHEOPS_REDIS['db'] = 1
 
@@ -170,93 +171,93 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 # more details on how to customize your logging configuration.
 
 LOGGING = {
-    'version':                  1,
+    'version': 1,
     'disable_existing_loggers': False,
-    'formatters':               {
+    'formatters': {
         'verbose': {
             'format': '%(name)s %(levelname)s %(asctime)s %(module)s '
                       '%(process)d %(thread)d %(message)s'
         },
-        'human':   {
+        'human': {
             'format': '%(levelname)s %(name)s Line %(lineno)d '
                       '%(asctime)s\n'
                       '%(message)s\n'
         },
-        'simple':  {
+        'simple': {
             'format': '%(levelname)s %(message)s'
         }
     },
-    'filters':                  {
+    'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
         },
-        'require_debug_true':  {
+        'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue'
         },
-        'not_django':          {
+        'not_django': {
             '()': 'core.utils.log.NotDjangoFilter'
         },
-        'not_production':      {
+        'not_production': {
             '()': 'core.utils.log.NotProductionFilter'
         }
     },
-    'handlers':                 {
+    'handlers': {
         'mail_admins': {
-            'level':   'ERROR',
+            'level': 'ERROR',
             'filters': ['require_debug_false'],
-            'class':   'django.utils.log.AdminEmailHandler'
+            'class': 'django.utils.log.AdminEmailHandler'
         },
-        'django':      {
-            'level':       'DEBUG',
-            'class':       'logging.handlers.TimedRotatingFileHandler',
-            'filename':    str(ROOT_DIR.path('logs', 'django.log')),
-            'filters':     ['require_debug_true'],
+        'django': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR.path('logs', 'django.log')),
+            'filters': ['require_debug_true'],
             'backupCount': 10,
-            'when':        'MIDNIGHT',
-            'formatter':   'verbose'
+            'when': 'MIDNIGHT',
+            'formatter': 'verbose'
         },
-        'pubmed':      {
-            'level':       'DEBUG',
-            'class':       'logging.handlers.TimedRotatingFileHandler',
-            'filename':    str(ROOT_DIR.path('logs', 'pubmed.log')),
+        'pubmed': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR.path('logs', 'pubmed.log')),
             'backupCount': 10,
-            'when':        'm',
-            'interval':    10,
-            'formatter':   'human'
+            'when': 'm',
+            'interval': 10,
+            'formatter': 'human'
         },
-        'debug':       {
-            'level':       'DEBUG',
-            'class':       'logging.handlers.TimedRotatingFileHandler',
-            'filename':    str(ROOT_DIR.path('logs', 'debug.log')),
-            'filters':     ['require_debug_true'],
+        'debug': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': str(ROOT_DIR.path('logs', 'debug.log')),
+            'filters': ['require_debug_true'],
             'backupCount': 10,
-            'when':        'm',
-            'interval':    10,
-            'formatter':   'human'
+            'when': 'm',
+            'interval': 10,
+            'formatter': 'human'
         }
     },
-    'loggers':                  {
+    'loggers': {
         'django.request': {
-            'handlers':  ['mail_admins'],
-            'level':     'ERROR',
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
             'propagate': True
         },
-        'django':         {
-            'handlers':  ['django'],
-            'level':     'DEBUG',
+        'django': {
+            'handlers': ['django'],
+            'level': 'DEBUG',
             'propagate': True
         },
-        'pubmed':         {
-            'handlers':  ['pubmed'],
-            'level':     'DEBUG',
+        'pubmed': {
+            'handlers': ['pubmed'],
+            'level': 'DEBUG',
             'propagate': True,
-            'filter':    ['not_production']
+            'filter': ['not_production']
         },
-        '':               {
-            'handlers':  ['debug'],
-            'level':     'DEBUG',
+        '': {
+            'handlers': ['debug'],
+            'level': 'DEBUG',
             'propagate': True,
-            'filter':    ['not_django']
+            'filter': ['not_django']
         }
     }
 }
@@ -338,16 +339,19 @@ SESSION_COOKIE_HTTPONLY = True
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
 STATIC_ROOT = str(ROOT_DIR('staticfiles'))
-
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-STATIC_URL = '/static/'
-
+COMPRESS_URL = STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = []
-
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
-                       'django.contrib.staticfiles.finders.AppDirectoriesFinder')
+                       'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+                       'compressor.finders.CompressorFinder')
+COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
+COMPRESS_OFFLINE = True
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',
+                        'compressor.filters.yuglify.YUglifyCSSFilter']
+COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter', 'compressor.filters.yuglify.YUglifyJSFilter']
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -356,14 +360,14 @@ TEMPLATES = [{
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-    'DIRS':    [str(APPS_DIR.path('templates'))],
+    'DIRS': [str(APPS_DIR.path('templates'))],
     'OPTIONS': {
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
-        'debug':              DEBUG,
+        'debug': DEBUG,
 
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
         # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
-        'loaders':            [
+        'loaders': [
 
             'django.template.loaders.filesystem.Loader',
 

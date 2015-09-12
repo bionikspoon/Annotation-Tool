@@ -13,7 +13,7 @@ django-autoslug==1.8.0
 django-braces==1.8.1
 django-cacheops==2.4.1
 django-compressor==1.5
-django-crispy-forms==1.5.1
+django-crispy-forms==1.5.2
 django-environ==0.3.0
 django-filter==0.11.0
 django-grappelli==2.7.1
@@ -24,7 +24,6 @@ django-test-plus==1.0.9
 django==1.8.4
 djangorestframework==3.2.3
 docutils==0.12
-drf-nested-routers==0.10.0
 factory-boy==2.5.2
 first==2.0.1              # via pip-tools
 flake8==2.4.1
