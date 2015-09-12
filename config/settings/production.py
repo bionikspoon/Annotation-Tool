@@ -101,6 +101,7 @@ ALLOWED_HOSTS = [env.str('DJANGO_ALLOW_HOSTS', default='annotation-tool.herokuap
 LOCAL_APPS += ('core.production',)
 
 COMPRESS_STORAGE = STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# COMPRESS_STORAGE = 'compressor.storage.GzipCompressorFileStorage'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 
