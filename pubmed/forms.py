@@ -16,7 +16,10 @@ from model_utils import Choices
 
 # Local Application
 from .fields import TypedChoiceField
-from .lookups import *
+from .lookups import (BreakendStrandLookup, BreakendDirectionLookup, PatientOutcomesLookup, StructureLookup,
+    SexLookup, VariantConsequenceLookup, VariantTypeLookup, RuleLevelLookup, OperatorLookup, SyntaxLookup,
+    MutationTypeLookup)
+
 from .models import Entry, EntryMeta
 
 logger = logging.getLogger(__name__)
