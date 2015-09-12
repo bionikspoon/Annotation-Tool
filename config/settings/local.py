@@ -62,13 +62,10 @@ THIRD_PARTY_APPS += ('django_extensions',)
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = str(ROOT_DIR.path('logs', 'emails'))
 
-
 # SERVER
 # ------------------------------------------------------------------------------
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 SECURE_SSL_REDIRECT = False
-
-
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
