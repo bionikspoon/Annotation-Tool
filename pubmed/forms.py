@@ -21,6 +21,7 @@ from .lookups import (BreakendStrandLookup, BreakendDirectionLookup, PatientOutc
     MutationTypeLookup)
 
 from .models import Entry, EntryMeta
+from .layouts import EntryFormLayout
 
 logger = logging.getLogger(__name__)
 
@@ -78,7 +79,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
         self.helper.label_class = 'col-sm-3'
         self.helper.field_class = 'col-sm-9'
         self.helper.html5_required = True
-        # self.helper.layout = EntryFormLayout(helper=self.helper)
+        self.helper.layout = EntryFormLayout(helper=self.helper)
 
         # self.helper.filter_by_widget(RadioSelect).wrap(bootstrap.InlineRadios)
 

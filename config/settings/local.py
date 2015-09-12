@@ -16,7 +16,6 @@ Env().read_env('.env')
 # Local Application
 from .common import *  # noqa
 
-
 # CACHE CONFIGURATION
 # ------------------------------------------------------------------------------
 
@@ -72,7 +71,7 @@ SECURE_SSL_REDIRECT = False
 LOCAL_APPS += ('core.local', 'core.production')
 
 if not DEBUG:
-    STATIC_URL = '/staticfiles/'
+    COMPRESS_URL = STATIC_URL = '/staticfiles/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (str(ROOT_DIR.path('.tmp')),)
