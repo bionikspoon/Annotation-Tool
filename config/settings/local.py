@@ -20,12 +20,12 @@ from .common import *  # noqa
 # CACHE CONFIGURATION
 # ------------------------------------------------------------------------------
 
-CACHEOPS = {
-    'lookups.*': {
-        'ops':     'get',
-        'timeout': 300
-    }
-}
+# CACHEOPS = {
+#     'lookups.*': {
+#         'ops': 'get',
+#         'timeout': 300
+#     }
+# }
 
 # DEV TOOLS: django-debug-toolbar
 # ------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ THIRD_PARTY_APPS += ('debug_toolbar',)
 INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
 
 DEBUG_TOOLBAR_CONFIG = {
-    'DISABLE_PANELS':        [
+    'DISABLE_PANELS': [
 
         'debug_toolbar.panels.redirects.RedirectsPanel'
 
@@ -89,4 +89,6 @@ INSTALLED_APPS = (DJANGO_APPS + ADMIN_APPS + LOCAL_APPS + THIRD_PARTY_APPS)
 
 # COMBINE MIDDLEWARE_CLASSES
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES = (DEV_MIDDLEWARE + UPDATE_CACHE_MIDDLEWARE + MIDDLEWARE_CLASSES + FETCH_CACHE_MIDDLEWARE)
+# MIDDLEWARE_CLASSES = (DEV_MIDDLEWARE + UPDATE_CACHE_MIDDLEWARE + MIDDLEWARE_CLASSES +
+# FETCH_CACHE_MIDDLEWARE)
+MIDDLEWARE_CLASSES = (DEV_MIDDLEWARE + MIDDLEWARE_CLASSES)

@@ -118,7 +118,7 @@ FETCH_CACHE_MIDDLEWARE = ('django.middleware.cache.FetchFromCacheMiddleware',)
 
 DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
 
-THIRD_PARTY_APPS += ('cacheops',)
+# THIRD_PARTY_APPS += ('cacheops',)
 CACHEOPS_REDIS = {key.lower(): value for key, value in env.db('REDIS_URL').items() if value}
 CACHEOPS_REDIS['db'] = 1
 
