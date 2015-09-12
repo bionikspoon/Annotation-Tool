@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 # Third Party Packages
-from braces import views as braces_views
+from braces.views import LoginRequiredMixin, UserFormKwargsMixin, SelectRelatedMixin
 from rest_framework.decorators import list_route
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
@@ -27,7 +27,7 @@ class EntryMixin(object):
     model = Entry
 
 
-class EntryFormMixin(braces_views.LoginRequiredMixin, braces_views.UserFormKwargsMixin, EntryMixin):
+class EntryFormMixin(LoginRequiredMixin, UserFormKwargsMixin, EntryMixin):
     """
     Common form configuration.
     """
@@ -71,32 +71,28 @@ class EntryFormMixin(braces_views.LoginRequiredMixin, braces_views.UserFormKwarg
         return response
 
 
-class EntryListView(EntryMixin, braces_views.SelectRelatedMixin, ListView):
+class EntryListView(EntryMixin, SelectRelatedMixin, ListView):
     """
     List pubmed entries.
     """
     select_related = ('structure', 'mutation_type')
 
 
-class EntryDetailView(EntryMixin, braces_views.SelectRelatedMixin, DetailView):
+class EntryDetailView(EntryMixin, SelectRelatedMixin, DetailView):
     """
     Show single pubmed entry.
     """
     select_related = EntryMeta.foreign_fields
-    prefetch_related = EntryMeta.relationship_fields
 
 
-class EntryCreateView(EntryFormMixin, braces_views.PrefetchRelatedMixin, CreateView):
+class EntryCreateView(EntryFormMixin, CreateView):
     """
     Form. Create an entry.
     """
 
-    prefetch_related = ('assessed_patient_outcomes', 'significant_patient_outcomes')
     success_msg = 'Entry Created'
     action_text = 'Create'
 
-    def get(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
 
 
 class EntryUpdateView(EntryFormMixin, UpdateView):
