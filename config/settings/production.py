@@ -16,7 +16,7 @@ from django.utils import six
 
 # Third Party Packages
 # noinspection PyUnresolvedReferences
-import boto.s3.connection
+from boto.s3.connection import OrdinaryCallingFormat
 
 # Local Application
 from .common import *  # noqa
@@ -25,7 +25,9 @@ from .common import *  # noqa
 # ------------------------------------------------------------------------------
 # See: http://django-storages.readthedocs.org/en/latest/index.html
 # noinspection PyUnresolvedReferences
+# DJANGO_APPS = ('collectfast', ) + DJANGO_APPS
 THIRD_PARTY_APPS += ('storages',)
+# AWS_PRELOAD_METADATA = True
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 AWS_ACCESS_KEY_ID = env('DJANGO_AWS_ACCESS_KEY_ID')
@@ -34,7 +36,7 @@ AWS_STORAGE_BUCKET_NAME = env('DJANGO_AWS_STORAGE_BUCKET_NAME')
 AWS_AUTO_CREATE_BUCKET = True
 AWS_QUERYSTRING_AUTH = False
 
-AWS_S3_CALLING_FORMAT = boto.s3.connection.OrdinaryCallingFormat()
+AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
 
 # AWS cache settings, don't change unless you know what you're doing:
 AWS_EXPIRY = 60 * 60 * 24 * 7
@@ -55,8 +57,7 @@ CACHEOPS = {
         'timeout': 300
     }
 }
-# Add UPDATE_CACHE_MIDDLEWARE and FETCH_CACHE_MIDDLEWARE to middleware!
-# TODO, don't forget this.
+
 
 # EMAIL
 # ------------------------------------------------------------------------------
@@ -99,10 +100,10 @@ ALLOWED_HOSTS = [env.str('DJANGO_ALLOW_HOSTS', default='annotation-tool.herokuap
 # ------------------------
 LOCAL_APPS += ('core.production',)
 
-COMPRESS_STORAGE = STATICFILES_STORAGE = 'core.utils.compressor.CachedS3BotoStorage'
+COMPRESS_STORAGE = STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-COMPRESS_URL = STATIC_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
+
 
 
 # TEMPLATE CONFIGURATION

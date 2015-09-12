@@ -76,3 +76,4 @@ traitlets==4.0.0          # via ipykernel, ipython, jupyter-client, jupyter-core
 unicode-slugify==0.1.3
 unidecode==0.4.18         # via unicode-slugify
 werkzeug==0.10.4
+whitenoise==2.0.3
