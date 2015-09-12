@@ -1,1 +1,2 @@
-python manage.py compress
+#!/usr/bin/env bash
+#python manage.py compress
