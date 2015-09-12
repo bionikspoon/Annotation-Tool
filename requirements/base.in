@@ -49,3 +49,4 @@ pip-tools
 
 # Static
 django_compressor
+whitenoise
