@@ -16,7 +16,6 @@ Env().read_env('.env')
 # Local Application
 from .common import *  # noqa
 
-
 # CACHE CONFIGURATION
 # ------------------------------------------------------------------------------
 
