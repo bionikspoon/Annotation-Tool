@@ -1,4 +1,4 @@
-{% load static i18n compress %}
+{% load static from staticfiles %}{% load  i18n compress %}
 
 <!DOCTYPE html>
 <html>
@@ -85,11 +85,7 @@
       a.async = 1;
       a.src = g;
       m.parentNode.insertBefore(a, m)
-    })(window,
-      document,
-      'script',
-      '//www.google-analytics.com/analytics.js',
-      'ga');
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-67073807-1', 'auto');
     ga('send', 'pageview');
