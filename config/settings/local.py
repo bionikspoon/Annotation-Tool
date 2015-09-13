@@ -12,7 +12,6 @@ from environ import Env
 
 Env().read_env('.env')
 
-
 # Local Application
 from .common import *  # noqa
 
