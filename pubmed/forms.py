@@ -6,21 +6,22 @@ Pubmed forms.
 import logging
 
 # Django Packages
-from braces.forms import UserKwargModelFormMixin
 from django.db import models
 from django.forms import ModelForm, RadioSelect, TypedChoiceField
 
 # Third Party Packages
+from braces.forms import UserKwargModelFormMixin
 from crispy_forms import helper
 from model_utils import Choices
 
 # Local Application
-from .lookups import (BreakendStrandLookup, BreakendDirectionLookup, PatientOutcomesLookup, StructureLookup,
-    SexLookup, VariantConsequenceLookup, VariantTypeLookup, RuleLevelLookup, OperatorLookup, SyntaxLookup,
-    MutationTypeLookup)
-
-from .models import Entry, EntryMeta
 from .layouts import EntryFormLayout
+from .lookups import (
+  BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup, OperatorLookup,
+  PatientOutcomesLookup, RuleLevelLookup, SexLookup, StructureLookup, SyntaxLookup,
+  VariantConsequenceLookup, VariantTypeLookup
+)
+from .models import Entry, EntryMeta
 
 logger = logging.getLogger(__name__)
 
