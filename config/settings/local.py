@@ -10,10 +10,11 @@ Local settings
 # Third Party Packages
 from environ import Env
 
-Env().read_env('.env')
-
 # Local Application
 from .common import *  # noqa
+
+Env().read_env('.env')
+
 
 # CACHE CONFIGURATION
 # ------------------------------------------------------------------------------
