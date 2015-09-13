@@ -1,13 +1,8 @@
-
-
-
 import logging
 from factory import LazyAttribute
 
 from factory.django import DjangoModelFactory
 from faker import Faker
-
-from . import models
 
 logger = logging.getLogger(__name__)
 faker = Faker()
@@ -18,7 +13,7 @@ _ = lambda declaration: LazyAttribute(lambda __: declaration())
 
 class UserFactory(DjangoModelFactory):
     class Meta:
-        model = models.User
+        model = 'users.User'
 
     @classmethod
     def _create(cls, model_class, *args, **kwargs):

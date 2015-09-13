@@ -130,17 +130,16 @@ class EntryCreateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
 
 
 class EntryUpdateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
-    entry_1 = factories.EntryFactory()
-    entry_2 = factories.EntryFactory()
-    post_to_url = {
-        'url_name': 'pubmed:update',
-        'pk': entry_2.pk
-    }
     expected_action = 'Update'
 
     def setUp(self):
-        self.entry_1.save()
-        self.entry_2.save()
+        self.entry_1 = factories.EntryFactory()
+        self.entry_2 = factories.EntryFactory()
+
+        self.post_to_url = {
+            'url_name': 'pubmed:update',
+            'pk': self.entry_2.pk
+        }
         super().setUp()
 
     def test_post_form__logged_in_user__data(self):

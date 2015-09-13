@@ -15,7 +15,7 @@ class EntryModelTestCase(TestCase):
     def setUp(self):
         self.entry = EntryFactory()
 
-    def test_entry_absulate_url_resolves_entry_instance(self):
+    def test_entry_absolute_url_resolves_entry_instance(self):
         self.assertEqual(self.entry.get_absolute_url(), '/pubmed/%s/' % self.entry.pk)
 
     def test_str_representation_joins_id_pubmed_and_gene(self):
