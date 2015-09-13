@@ -1,6 +1,8 @@
+# Python Libraries
 import logging
-from factory import LazyAttribute
 
+# Third Party Packages
+from factory import LazyAttribute
 from factory.django import DjangoModelFactory
 from faker import Faker
 

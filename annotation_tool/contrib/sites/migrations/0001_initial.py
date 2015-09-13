@@ -1,8 +1,9 @@
-# -*- coding: utf-8 -*-
+# Compatibility
 from __future__ import unicode_literals
 
-from django.db import models, migrations
+# Django Packages
 import django.contrib.sites.models
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):

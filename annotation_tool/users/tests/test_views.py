@@ -1,11 +1,11 @@
+# Django Packages
 from django.test import RequestFactory
 
+# Third Party Packages
 from test_plus.test import TestCase
 
-from ..views import (
-    UserRedirectView,
-    UserUpdateView
-)
+# Local Application
+from ..views import UserRedirectView, UserUpdateView
 
 
 class BaseUserTestCase(TestCase):

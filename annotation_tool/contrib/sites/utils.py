@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-# coding=utf-8
-
-
+# Django Packages
 from django.conf import settings
 
 
