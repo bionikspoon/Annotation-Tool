@@ -7,6 +7,8 @@ import logging
 from collections import namedtuple
 from pprint import pprint
 
+from .build import generate_data
+
 logger = logging.getLogger(__name__)
 
 LookupChoice = namedtuple('LookupChoice', ('cls', 'pk', 'choice'))
@@ -76,6 +78,8 @@ def populate_lookup_tables(apps, schema_editor):
     :param schema_editor:
     :return:
     """
+    generate_data()
+
     for entry in InitialData.export_flat():
         try:
             # noinspection PyPep8Naming

@@ -132,8 +132,11 @@ CACHEOPS_REDIS['db'] = 1
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL"), }
+    'default': env.db("DATABASE_URL")
+}
 DATABASES['default']['ATOMIC_REQUESTS'] = True
+DATABASES['default']['TEST'] = env.db("TEST_DATABASE_URL", default='')
+
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------

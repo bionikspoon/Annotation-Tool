@@ -2,6 +2,8 @@
 Compile generated_data.py from raw data.
 """
 
+
+
 # Python Libraries
 import json
 import re
@@ -31,8 +33,6 @@ class CONFIG(object):
 class SummaryManager(object):
     """Generated Data."""
 
-    fp = CONFIG.summary_dir.file(CONFIG.summary_file, 'w')
-
     def __init__(self):
         self.buffer = StringIO()
         self.build_header()
@@ -55,8 +55,7 @@ class SummaryManager(object):
 
         :return:
         """
-        self.write('')
-        self.write('')
+
         self.write('"""\n%s\n"""\n' % self.__doc__)
         self.write(CONFIG.import_line)
         self.write()
@@ -87,7 +86,7 @@ class SummaryManager(object):
 
         :return:
         """
-        with self.fp as f:
+        with CONFIG.summary_dir.file(CONFIG.summary_file, 'w') as f:
             logger.info('Saving summary: %r' % self)
             print(self)
             f.write(str(self))
