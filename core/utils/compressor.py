@@ -3,7 +3,6 @@ from django.core.files.storage import get_storage_class
 
 # Third Party Packages
 import storages.backends.s3boto
-from whitenoise.django import GzipManifestStaticFilesStorage
 
 
 class CachedS3BotoStorage(storages.backends.s3boto.S3BotoStorage):
