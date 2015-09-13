@@ -10,10 +10,11 @@ Test Settings
 # Third Party Packages
 import environ
 
+environ.Env().read_env('.env')
 environ.Env().read_env('.env.test')
 
 # Local Application
-from .common import *  # NOQA
+from .local import *  # NOQA
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -27,6 +28,11 @@ CACHES = {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache', }
 }
 
+
+# DATABASE CONFIGURATION
+# ------------------------------------------------------------------------------
+DATABASES['default']['ATOMIC_REQUESTS'] = False
+
 # MAIL SETTINGS
 # ------------------------------------------------------------------------------
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
@@ -35,8 +41,7 @@ EMAIL_FILE_PATH = str(ROOT_DIR.path('logs', 'test_emails'))
 # MIDDLEWARE
 # ------------------------------------------------------------------------------
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 

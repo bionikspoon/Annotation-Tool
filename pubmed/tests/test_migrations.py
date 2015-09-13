@@ -1,10 +1,7 @@
 # Django Packages
-from django.test import SimpleTestCase, override_settings
+from django.test import SimpleTestCase
 
 
-@override_settings(DATABASES={
-    'default': {}
-})
 class InitialDataSummaryTest(SimpleTestCase):
     def test_summary(self):
         pass
