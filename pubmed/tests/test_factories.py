@@ -1,8 +1,9 @@
 import logging
+
 from django.test import TestCase
 
 from ..factories import EntryFactory
-from pubmed.lookups import DiseaseLookup, StructureLookup
+from pubmed.lookups import DiseaseLookup
 
 logger = logging.getLogger(__name__)
 
@@ -21,8 +22,9 @@ class TestEntryFactory(TestCase):
         self.assertNotEqual(entry1.pubmed_id, entry2.pubmed_id)
 
     def test_factories_populate_many_to_many_fields(self):
-        # self.assertEqual(StructureLookup.objects.count(), 10)
-        self.assertEqual(DiseaseLookup.objects.count(), 10)
-        entry = EntryFactory(disease=(22,))
-        # self.assertTrue(len(entry.disease) > 1)
-        pass
+        self.assertGreater(DiseaseLookup.objects.count(), 1)
+        entry1 = EntryFactory()
+
+        self.assertGreater(entry1.disease.count(), 0)
+        self.assertGreater(entry1.assessed_patient_outcomes.count(), 0)
+        self.assertGreater(entry1.significant_patient_outcomes.count(), 0)

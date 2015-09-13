@@ -3,25 +3,50 @@ Pubmed factory definitions.
 """
 
 # Third Party Packages
-from factory import DjangoModelFactory, Iterator, LazyAttribute, SubFactory
+import random
+
+from factory import DjangoModelFactory, Iterator, LazyAttribute, SubFactory, PostGeneration
 from faker import Faker
+
 
 # Annotation Tool Project
 import annotation_tool.users.factories
 
 # Local Application
-from . import Entry, lookups
-
-faker = Faker()
-
-
-# def make(field, **kwargs):
-#     return LazyAttribute(lambda _: field(**kwargs))
-make = lambda field, **kw: LazyAttribute(lambda __: field(**kw))
+from . import lookups
 
 import logging
 
+faker = Faker()
+
 logger = logging.getLogger(__name__)
+
+
+def make(field, **kwargs):
+    return LazyAttribute(lambda _: field(**kwargs))
+
+
+def many_to_many(model, name):
+    def wrapper(self, create, extracted, **kwargs):
+        field = getattr(self, name)
+        if not create:
+            # Simple build, do nothing.
+            return
+
+        if extracted:
+            # A list of groups were passed in, use them
+            for item in extracted:
+
+                field.add(item)
+
+        else:
+            items = model.objects.all()
+            ids = [item.id for item in items]
+            number_of_items_to_add = random.randint(1, len(ids))
+            for _ in range(number_of_items_to_add):
+                field.add(random.choice(ids))
+
+    return PostGeneration(wrapper)
 
 
 class EntryFactory(DjangoModelFactory):
@@ -57,22 +82,7 @@ class EntryFactory(DjangoModelFactory):
     variant_type = Iterator(lookups.VariantTypeLookup.objects.all())
     variant_consequence = Iterator(lookups.VariantConsequenceLookup.objects.all())
     variant_clinical_grade = make(faker.random_int)
-    # disease = Sequence()
-    # disease = lookups.ManyToManyField(DiseaseLookup,
-    # **DEFAULTS.ManyToManyField)
-
-    # @post_generation
-    # def disease(self, create, extracted, **kwargs):
-    #     if not create:
-    #         # Simple build, do nothing.
-    #         return
-    #
-    #     if extracted:
-    #         # A list of groups were passed in, use them
-    #         for item in extracted:
-    #             disease = lookups.DiseaseLookup.objects.first()
-    #             self.disease.add(disease)
-
+    disease = many_to_many(lookups.DiseaseLookup, 'disease')
     treatment_1 = make(faker.text, max_nb_chars=100)
     treatment_2 = make(faker.text, max_nb_chars=100)
     treatment_3 = make(faker.text, max_nb_chars=100)
@@ -81,13 +91,8 @@ class EntryFactory(DjangoModelFactory):
     population_size = make(faker.random_int)
     sex = Iterator(lookups.SexLookup.objects.all())
     ethnicity = make(faker.text, max_nb_chars=100)
-
-
-    # assessed_patient_outcomes = lookups.ManyToManyField(
-    # AssessedPatientOutcomeLookup,
-    #     **DEFAULTS.ManyToManyField)
-    # significant_patient_outcomes = lookups.ManyToManyField(
-    #     SignificantPatientOutcomeLookup, **DEFAULTS.ManyToManyField)
-    design = make(faker.paragraphs)
-    reference_claims = make(faker.paragraphs)
-    comments = make(faker.paragraphs)
+    assessed_patient_outcomes = many_to_many(lookups.DiseaseLookup, 'assessed_patient_outcomes')
+    significant_patient_outcomes = many_to_many(lookups.DiseaseLookup, 'significant_patient_outcomes')
+    design = make(faker.paragraph, nb_sentences=15)
+    reference_claims = make(faker.paragraph, nb_sentences=15)
+    comments = make(faker.paragraph, nb_sentences=15)
