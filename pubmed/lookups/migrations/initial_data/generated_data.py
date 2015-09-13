@@ -4,57 +4,6 @@ Generated Data.
 
 from . import InitialData
 
-class DiseaseLookup(InitialData):
-    choices = [
-
-        'Adenocarcinoma Of Lung',
-        'Carcinoma Of Ampulla Of Vater',
-        'Carcinoma Of Colon',
-        'Extragastrointestinal Stromal Tumor Of Peritoneum',
-        'Glioma',
-        'Hashimoto Thyroiditis',
-        'Malignant Glioma Of Brain',
-        'Malignant Melanoma',
-        'Malignant Melanoma Of Conjunctiva',
-        'Malignant Tumor Of Thyroid Gland',
-        'Metastasis From Malignant Tumor Of Colon',
-        'Metastasis From Malignant Tumor Of Rectum',
-        'Metastatic Malignant Melanoma',
-        'Neoplasm Of Colon',
-        'Neoplasm Of Ovary',
-        'Neoplastic Disease',
-        'Non-Small Cell Lung Cancer',
-        'Papillary Thyroid Carcinoma',
-        'Primary Adenocarcinoma Of Pancreas',
-        'Secondary Malignant Neoplasm Of Brain',
-        'Serous Cystadenoma Of Ovary',
-
-    ]
-
-
-class PatientOutcomesLookup(InitialData):
-    choices = [
-
-        'Disease Progression',
-        'Disease-Control Rate',
-        'Disease-Free Survival',
-        'Event-Free Survival',
-        'Median Survival',
-        'Objective Response',
-        'Overall Response Rate',
-        'Overall Survival',
-        'Post-Recurrence Survival',
-        'Prognosis',
-        'Progression-Free Survival',
-        'Remission',
-        'Response Rate',
-        'Time To Progression',
-        'Time To Relapse',
-        'Toxicity',
-
-    ]
-
-
 class TreatmentLookup(InitialData):
     choices = [
 
@@ -113,6 +62,57 @@ class TreatmentLookup(InitialData):
         'Trametinib',
         'Vemurafenib',
         'With Interleukin 2 And Ifnα-2B',
+
+    ]
+
+
+class DiseaseLookup(InitialData):
+    choices = [
+
+        'Adenocarcinoma Of Lung',
+        'Carcinoma Of Ampulla Of Vater',
+        'Carcinoma Of Colon',
+        'Extragastrointestinal Stromal Tumor Of Peritoneum',
+        'Glioma',
+        'Hashimoto Thyroiditis',
+        'Malignant Glioma Of Brain',
+        'Malignant Melanoma',
+        'Malignant Melanoma Of Conjunctiva',
+        'Malignant Tumor Of Thyroid Gland',
+        'Metastasis From Malignant Tumor Of Colon',
+        'Metastasis From Malignant Tumor Of Rectum',
+        'Metastatic Malignant Melanoma',
+        'Neoplasm Of Colon',
+        'Neoplasm Of Ovary',
+        'Neoplastic Disease',
+        'Non-Small Cell Lung Cancer',
+        'Papillary Thyroid Carcinoma',
+        'Primary Adenocarcinoma Of Pancreas',
+        'Secondary Malignant Neoplasm Of Brain',
+        'Serous Cystadenoma Of Ovary',
+
+    ]
+
+
+class PatientOutcomesLookup(InitialData):
+    choices = [
+
+        'Disease Progression',
+        'Disease-Control Rate',
+        'Disease-Free Survival',
+        'Event-Free Survival',
+        'Median Survival',
+        'Objective Response',
+        'Overall Response Rate',
+        'Overall Survival',
+        'Post-Recurrence Survival',
+        'Prognosis',
+        'Progression-Free Survival',
+        'Remission',
+        'Response Rate',
+        'Time To Progression',
+        'Time To Relapse',
+        'Toxicity',
 
     ]
 
