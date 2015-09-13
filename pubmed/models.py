@@ -19,7 +19,7 @@ from annotation_tool.users.models import User
 
 # Local Application
 from . import lookups
-from .utils import classproperty
+from core.utils.decorators import classproperty
 
 
 class DEFAULTS(object):

@@ -1,8 +1,7 @@
-
-
 """
 Utilities for log config.
 """
+
 import logging
 
 from django.conf import settings
