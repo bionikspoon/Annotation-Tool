@@ -1,10 +1,13 @@
+# Python Libraries
 import logging
 
+# Django Packages
 from django.test import TestCase
 
+# Local Application
 from ..factories import EntryFactory
-from pubmed import Entry
-from pubmed.lookups import DiseaseLookup
+from ..lookups import DiseaseLookup
+from ..models import Entry
 
 logger = logging.getLogger(__name__)
 

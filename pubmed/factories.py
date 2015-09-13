@@ -2,20 +2,19 @@
 Pubmed factory definitions.
 """
 
-# Third Party Packages
+# Python Libraries
+import logging
 import random
 
-from factory import DjangoModelFactory, Iterator, LazyAttribute, SubFactory, PostGeneration
+# Third Party Packages
+from factory import DjangoModelFactory, Iterator, LazyAttribute, PostGeneration, SubFactory
 from faker import Faker
-
 
 # Annotation Tool Project
 import annotation_tool.users.factories
 
 # Local Application
 from . import lookups
-
-import logging
 
 faker = Faker()
 

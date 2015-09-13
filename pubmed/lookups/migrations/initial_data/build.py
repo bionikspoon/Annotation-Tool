@@ -4,16 +4,15 @@ Compile generated_data.py from raw data.
 
 # Python Libraries
 import json
-from os.path import basename
+import logging
 import re
+from glob import glob
 from io import StringIO
 from itertools import chain
+from os.path import basename
 
 # Django Packages
 from django.conf import settings
-import logging
-
-from glob import glob
 
 logger = logging.getLogger(__name__)
 

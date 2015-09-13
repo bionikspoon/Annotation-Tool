@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 # Third Party Packages
-from braces.views import LoginRequiredMixin, UserFormKwargsMixin, SelectRelatedMixin, PrefetchRelatedMixin
+from braces.views import LoginRequiredMixin, SelectRelatedMixin, UserFormKwargsMixin
 from rest_framework.decorators import list_route
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
