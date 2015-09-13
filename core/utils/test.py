@@ -2,9 +2,11 @@
 Utilities for testing.
 """
 
+# Django Packages
 from django.conf import settings
-from django.core.urlresolvers import reverse, NoReverseMatch
+from django.core.urlresolvers import NoReverseMatch, reverse
 
+# Annotation Tool Project
 from annotation_tool.users.factories import UserFactory
 
 
