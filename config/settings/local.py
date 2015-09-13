@@ -7,13 +7,12 @@ Local settings
 - Add django-extensions as app
 """
 
-# Third Party Packages
-from environ import Env
+try:
+    from environ import Env
 
-# Local Application
-from .common import *  # noqa
-
-Env().read_env('.env')
+    Env().read_env('.env')
+finally:
+    from .common import *  # noqa
 
 
 # CACHE CONFIGURATION
