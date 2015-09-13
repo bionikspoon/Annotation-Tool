@@ -31,7 +31,8 @@ class EntryListViewTest(BaseTestMixin, CBVTestCase):
     def test_get_list_view__with_many_items(self):
         entry = factories.EntryFactory()
 
-        self.assertGoodView(self.view)
+        with self.assertNumQueries(1):
+            self.assertGoodView(self.view)
         self.assertIn(entry, self.get_context('entry_list'))
 
 
@@ -39,9 +40,14 @@ class EntryDetailViewTest(BaseTestMixin, CBVTestCase):
     view = views.EntryDetailView
 
     def test_get_detail_view__with_one_item(self):
+        factories.EntryFactory()
+        factories.EntryFactory()
+        factories.EntryFactory()
+        factories.EntryFactory()
         entry = factories.EntryFactory()
 
-        response = self.assertGoodView(self.view, pk=entry.pk)
+        with self.assertNumQueries(1):
+            response = self.assertGoodView(self.view, pk=entry.pk)
         self.assertContains(response, 'Pubmed Entry')
         self.assertTemplateUsed(response, 'pubmed/entry_detail.html')
 
@@ -60,6 +66,7 @@ class EntryFormMixin(object):
     entry = NotImplemented
     user = NotImplemented
     data_url = NotImplemented
+    number_of_queries = NotImplemented
     template = 'pubmed/entry_form.html'
     data = {
         'data': {
@@ -80,7 +87,7 @@ class EntryFormMixin(object):
     def test_get_form__logged_in_user(self):
         """Test view works with auth user."""
 
-        with self.login(self.user):
+        with self.login(self.user), self.assertNumQueries(self.number_of_queries):
             response = self.assertGoodView(**self.post_to_url)
         self.assertContains(response, '%s Entry' % self.expected_action)
         self.assertTemplateUsed(response, self.template)
@@ -97,7 +104,7 @@ class EntryFormMixin(object):
     def test_post_form__logged_in_user__data(self):
         """Test data is posted if user is logged in."""
         with self.login(self.user):
-            response = self.post(**self.data_url)
+            self.post(**self.data_url)
         self.response_302()
         entry = Entry.objects.latest('created')
         self.assertEqual(entry.pubmed_id, self.data['data']['pubmed_id'])
@@ -121,6 +128,7 @@ class EntryCreateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
         'url_name': 'pubmed:create'
     }
     expected_action = 'Create'
+    number_of_queries = 14
 
     def test_post_form__logged_in_user__data(self):
         with self.assertRaises(Entry.DoesNotExist):
@@ -131,6 +139,7 @@ class EntryCreateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
 
 class EntryUpdateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
     expected_action = 'Update'
+    number_of_queries = 18
 
     def setUp(self):
         self.entry_1 = factories.EntryFactory()
