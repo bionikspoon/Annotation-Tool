@@ -6,9 +6,8 @@ from django.template.loader import render_to_string
 
 # Third Party Packages
 from crispy_forms.bootstrap import FormActions
-from crispy_forms.layout import (
-  HTML, Button, Column, Div, Field, Fieldset, Layout, LayoutObject, Row, Submit
-)
+from crispy_forms.layout import (HTML, Button, Column, Div, Field, Fieldset, Layout, LayoutObject, Row,
+    Submit)
 from crispy_forms.utils import flatatt, render_field
 
 logger = logging.getLogger(__name__)
@@ -28,8 +27,8 @@ class Flat(LayoutObject):
         kwargs['template'] = 'flat/layout/field.html'
         template_pack = 'flat'
 
-        render = lambda field: render_field(field, form, form_style, context, template_pack=template_pack,
-                                            **kwargs)
+        def render(field):
+            return render_field(field, form, form_style, context, template_pack=template_pack, **kwargs)
 
         return ''.join(render(field) for field in self.fields)
 

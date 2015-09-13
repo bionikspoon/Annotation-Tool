@@ -8,14 +8,13 @@ import logging
 # Django Packages
 from braces.forms import UserKwargModelFormMixin
 from django.db import models
-from django.forms import ModelForm, RadioSelect
+from django.forms import ModelForm, RadioSelect, TypedChoiceField
 
 # Third Party Packages
 from crispy_forms import helper
 from model_utils import Choices
 
 # Local Application
-from .fields import TypedChoiceField
 from .lookups import (BreakendStrandLookup, BreakendDirectionLookup, PatientOutcomesLookup, StructureLookup,
     SexLookup, VariantConsequenceLookup, VariantTypeLookup, RuleLevelLookup, OperatorLookup, SyntaxLookup,
     MutationTypeLookup)
@@ -42,7 +41,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     # formfield_callback = entryform_formfield_callback
     # """Use radio inline widgets by default"""
 
-    treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False)
+    treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False, widget=RadioSelect)
     """Helper field for dynamic treatment behavior."""
 
     def __init__(self, *args, **kwargs):
@@ -111,4 +110,3 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
         model = Entry
         fields = EntryMeta.public_fields
         widgets = {field: RadioSelect() for field in EntryMeta.foreign_fields if not field == 'user'}
-        widgets['treatment'] = RadioSelect
