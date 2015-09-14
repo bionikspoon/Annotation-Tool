@@ -143,6 +143,16 @@ class EntryViewSet(ReadOnlyModelViewSet):
         page = self.paginate_queryset(queryset)
         if page is not None:
             return self.get_paginated_response(page)
-        return Response({
-            'entry_list': queryset
-        }, template_name='pubmed/_entry_list_items.html')
+        return Response(
+
+            {
+                'entry_list': queryset
+            },
+
+            headers={
+                'count': queryset.count()
+            },
+
+            template_name='pubmed/_entry_list_items.html'
+
+        )

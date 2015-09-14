@@ -132,12 +132,13 @@ $(function () {
         var $pubmedId = $form.find('#id_pubmed_id');
         var $summaryDiv = $form.find('#hint_id_pubmed_id');
         var $resultsDiv = $form.find('#results');
+        var entryId = $form.find('#id_id').val();
 
         /**
          *
          * Bind to DOM
          * */
-        $pubmedId.keyup(getEntriesSummary);
+
         $pubmedId.keyup(getEntriesResults);
 
         /**
@@ -145,34 +146,44 @@ $(function () {
          * Methods
          * */
 
-        function getEntriesSummary(e) {
-            var pubmedId = (typeof e === "string") ? e : e.target.value;
-            if (pubmedId) {
-                $.getJSON('/api/pubmed/', {'pubmed_id': pubmedId}, setSummary)
-            } else {
-                setSummary(false);
-            }
-        }
-
         function getEntriesResults(e) {
             var pubmedId = (typeof e === "string") ? e : e.target.value;
-            if (pubmedId) {
-                $.get('/api/pubmed/html/', {'pubmed_id': pubmedId}, setResults)
-            } else {
-                setResults(false)
+            var payload = {'pubmed_id': pubmedId};
+            if (entryId) {
+                payload['exclude__entry'] = entryId
+
             }
 
+            if (pubmedId) {
+                $.get('/api/pubmed/html/', payload, setResults)
+            } else {
+                setResults(false);
+            }
         }
 
-        function setSummary(response) {
-            _summary = response ? response : [];
-            renderSummaryMessage();
-            toggleSummaryVisibility();
-        }
 
-        function setResults(response) {
-            _results = response ? response : '';
-            renderResults();
+        function setResults(response, _, jqXHR) {
+            if (response) {
+                jqXHR
+
+                    .done(function (response) {
+
+                        _results = response ? response : '';
+                        _summary = jqXHR.getResponseHeader('count');
+                    })
+
+                    .fail(function () {
+
+                    })
+
+                    .always(function () {
+                        renderSummaryMessage();
+                        toggleSummaryVisibility();
+                        renderResults();
+
+                    });
+            }
+
 
         }
 
@@ -186,10 +197,10 @@ $(function () {
         }
 
         function renderSummaryMessage() {
-            var adjective = _summary.length.toString();
-            var noun = (_summary.length === 1 ? ' pubmed entry found.'
+            var adjective = _summary.toString();
+            var noun = (_summary === 1 ? ' pubmed entry found.'
                 : ' pubmed entries found.');
-            var verb = _summary.length > 0 ? ' <a href=#results>Jump</a>' : '';
+            var verb = _summary > 0 ? ' <a href=#results>Jump</a>' : '';
 
             $summaryDiv.html(adjective + noun + verb);
         }
@@ -206,7 +217,6 @@ $(function () {
          * Initialization
          * */
 
-        getEntriesSummary($pubmedId.val());
         getEntriesResults($pubmedId.val());
 
 

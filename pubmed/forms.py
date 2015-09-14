@@ -7,7 +7,7 @@ import logging
 
 # Django Packages
 from django.db import models
-from django.forms import ModelForm, RadioSelect, TypedChoiceField
+from django.forms import ModelForm, RadioSelect, TypedChoiceField, HiddenInput, IntegerField
 
 # Third Party Packages
 from braces.forms import UserKwargModelFormMixin
@@ -16,11 +16,9 @@ from model_utils import Choices
 
 # Local Application
 from .layouts import EntryFormLayout
-from .lookups import (
-  BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup, OperatorLookup,
-  PatientOutcomesLookup, RuleLevelLookup, SexLookup, StructureLookup, SyntaxLookup,
-  VariantConsequenceLookup, VariantTypeLookup
-)
+from .lookups import (BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup, OperatorLookup,
+    PatientOutcomesLookup, RuleLevelLookup, SexLookup, StructureLookup, SyntaxLookup,
+    VariantConsequenceLookup, VariantTypeLookup)
 from .models import Entry, EntryMeta
 
 logger = logging.getLogger(__name__)
@@ -44,6 +42,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
 
     treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False, widget=RadioSelect)
     """Helper field for dynamic treatment behavior."""
+    id = IntegerField(widget=HiddenInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -109,5 +108,5 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     # noinspection PyDocstring
     class Meta:
         model = Entry
-        fields = EntryMeta.public_fields
+        fields = ('id',) + EntryMeta.public_fields
         widgets = {field: RadioSelect() for field in EntryMeta.foreign_fields if not field == 'user'}
