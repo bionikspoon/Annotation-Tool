@@ -42,7 +42,7 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
 
     treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False, widget=RadioSelect)
     """Helper field for dynamic treatment behavior."""
-    id = IntegerField(widget=HiddenInput)
+    id = IntegerField(widget=HiddenInput, required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
