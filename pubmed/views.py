@@ -140,6 +140,10 @@ class EntryViewSet(ReadOnlyModelViewSet):
         """
         queryset = self.filter_queryset(self.get_queryset())
 
+        exclude = request.query_params.get('exclude__entry')
+        if exclude:
+            queryset = queryset.exclude(id=exclude)
+
         page = self.paginate_queryset(queryset)
         if page is not None:
             return self.get_paginated_response(page)
