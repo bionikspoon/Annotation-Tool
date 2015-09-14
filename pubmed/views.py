@@ -105,7 +105,8 @@ class EntryViewSet(ReadOnlyModelViewSet):
     """
     Pubmed entry api.
     """
-    queryset = Entry.objects.prefetch_related(*EntryMeta.relationship_fields)
+    queryset = Entry.objects.all().select_related(*EntryMeta.foreign_fields).prefetch_related(
+        *EntryMeta.many_to_many_fields)
     serializer_class = EntrySerializer
     filter_fields = ('pubmed_id',)
 
