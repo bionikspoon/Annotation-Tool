@@ -128,7 +128,7 @@ class EntryCreateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
         'url_name': 'pubmed:create'
     }
     expected_action = 'Create'
-    number_of_queries = 14
+    number_of_queries = 13
 
     def test_post_form__logged_in_user__data(self):
         with self.assertRaises(Entry.DoesNotExist):
@@ -139,7 +139,7 @@ class EntryCreateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
 
 class EntryUpdateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
     expected_action = 'Update'
-    number_of_queries = 18
+    number_of_queries = 17
 
     def setUp(self):
         self.entry_1 = factories.EntryFactory()
