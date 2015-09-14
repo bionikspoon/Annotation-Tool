@@ -19,6 +19,8 @@ import os
 
 # Django Packages
 from django.core.wsgi import get_wsgi_application
+
+# Third Party Packages
 from whitenoise.django import DjangoWhiteNoise
 
 # We defer to a DJANGO_SETTINGS_MODULE already in the environment. This breaks

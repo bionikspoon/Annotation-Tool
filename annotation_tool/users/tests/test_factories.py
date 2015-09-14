@@ -1,0 +1,22 @@
+# Python Libraries
+import logging
+
+# Django Packages
+from django.test import TestCase
+from ..factories import UserFactory, SuperUserFactory
+
+logger = logging.getLogger(__name__)
+
+
+class UserFactoryTest(TestCase):
+    def setUp(self):
+        self.user = UserFactory()
+        self.superuser = SuperUserFactory()
+
+    def test_factory_creates_entry(self):
+        self.assertTrue(self.user)
+        self.assertTrue(self.superuser)
+
+    def test_superuser_is_admin(self):
+        self.assertTrue(self.superuser.is_superuser)
+        self.assertFalse(self.user.is_superuser)

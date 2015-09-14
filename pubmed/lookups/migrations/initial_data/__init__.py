@@ -2,6 +2,8 @@
 Add data to registry.
 """
 
-from .registry import (InitialData, populate_lookup_tables, clean_lookup_tables)
-from .entered_data import *
-from .generated_data import *
+try:
+    from .registry import InitialData, clean_lookup_tables, populate_lookup_tables
+finally:
+    from .entered_data import *
+    from .generated_data import *

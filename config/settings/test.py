@@ -7,14 +7,15 @@ Test Settings
 
 """
 
-# Third Party Packages
-import environ
+try:
+    import environ
 
-environ.Env().read_env('.env')
-environ.Env().read_env('.env.test')
+    environ.Env().read_env('.env')
+    environ.Env().read_env('.env.test')
+finally:
+    from .local import *  # NOQA
 
-# Local Application
-from .local import *  # NOQA
+
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------

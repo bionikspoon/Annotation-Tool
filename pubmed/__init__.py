@@ -1,5 +1,5 @@
-from . import forms, models, serializers, urls, utils
+# Local Application
+from . import forms, models, serializers, urls
 from .forms import EntryModelForm
 from .models import Entry, EntryMeta
-from .serializers import EntrySerializer
-from .utils import classproperty
+from .serializers import EntryListSerializer

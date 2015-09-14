@@ -16,10 +16,10 @@ from model_utils import Choices
 
 # Annotation Tool Project
 from annotation_tool.users.models import User
+from core.utils.decorators import classproperty
 
 # Local Application
 from . import lookups
-from .utils import classproperty
 
 
 class DEFAULTS(object):

@@ -2,17 +2,17 @@
 Compile generated_data.py from raw data.
 """
 
-
-
 # Python Libraries
 import json
+import logging
 import re
+from glob import glob
 from io import StringIO
 from itertools import chain
+from os.path import basename
 
 # Django Packages
 from django.conf import settings
-import logging
 
 logger = logging.getLogger(__name__)
 
@@ -88,7 +88,6 @@ class SummaryManager(object):
         """
         with CONFIG.summary_dir.file(CONFIG.summary_file, 'w') as f:
             logger.info('Saving summary: %r' % self)
-            print(self)
             f.write(str(self))
 
     def __str__(self):
@@ -205,9 +204,8 @@ def generate_data():
     """
     with SummaryManager() as summary:
         process = ModelFactory.with_manager(summary)
-        process('Disease')
-        process('PatientOutcomes')
 
-        process('Treatment')
-        process('VariantConsequence')
-        process('VariantType')
+        # Walk through input directory.
+        for raw_data in glob('%s/*.txt' % CONFIG.data_input):
+            base = basename(raw_data).replace('.txt', '')
+            process(base)

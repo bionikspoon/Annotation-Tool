@@ -1,1 +1,2 @@
-from . import settings, api
+# Local Application
+from . import api, settings

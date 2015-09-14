@@ -1,8 +1,10 @@
-# -*- coding: utf-8 -*-
+# Compatibility
 from __future__ import absolute_import, unicode_literals
 
+# Django Packages
 from django.conf.urls import url
 
+# Local Application
 from . import views
 
 urlpatterns = [

@@ -2,51 +2,23 @@
 Pubmed factory definitions.
 """
 
+# Python Libraries
+import logging
+
 # Third Party Packages
-import random
-
-from factory import DjangoModelFactory, Iterator, LazyAttribute, SubFactory, PostGeneration
+from factory import DjangoModelFactory, Iterator, SubFactory
 from faker import Faker
-
 
 # Annotation Tool Project
 import annotation_tool.users.factories
 
 # Local Application
 from . import lookups
-
-import logging
+from core.utils.factories import make, many_to_many
 
 faker = Faker()
 
 logger = logging.getLogger(__name__)
-
-
-def make(field, **kwargs):
-    return LazyAttribute(lambda _: field(**kwargs))
-
-
-def many_to_many(model, name):
-    def wrapper(self, create, extracted, **kwargs):
-        field = getattr(self, name)
-        if not create:
-            # Simple build, do nothing.
-            return
-
-        if extracted:
-            # A list of groups were passed in, use them
-            for item in extracted:
-
-                field.add(item)
-
-        else:
-            items = model.objects.all()
-            ids = [item.id for item in items]
-            number_of_items_to_add = random.randint(1, len(ids))
-            for _ in range(number_of_items_to_add):
-                field.add(random.choice(ids))
-
-    return PostGeneration(wrapper)
 
 
 class EntryFactory(DjangoModelFactory):
@@ -91,8 +63,8 @@ class EntryFactory(DjangoModelFactory):
     population_size = make(faker.random_int)
     sex = Iterator(lookups.SexLookup.objects.all())
     ethnicity = make(faker.text, max_nb_chars=100)
-    assessed_patient_outcomes = many_to_many(lookups.DiseaseLookup, 'assessed_patient_outcomes')
-    significant_patient_outcomes = many_to_many(lookups.DiseaseLookup, 'significant_patient_outcomes')
+    assessed_patient_outcomes = many_to_many(lookups.PatientOutcomesLookup, 'assessed_patient_outcomes')
+    significant_patient_outcomes = many_to_many(lookups.PatientOutcomesLookup, 'significant_patient_outcomes')
     design = make(faker.paragraph, nb_sentences=15)
     reference_claims = make(faker.paragraph, nb_sentences=15)
     comments = make(faker.paragraph, nb_sentences=15)

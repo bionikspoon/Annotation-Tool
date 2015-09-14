@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 # Third Party Packages
-from braces.views import LoginRequiredMixin, UserFormKwargsMixin, SelectRelatedMixin, PrefetchRelatedMixin
+from braces.views import LoginRequiredMixin, SelectRelatedMixin, UserFormKwargsMixin
 from rest_framework.decorators import list_route
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
@@ -17,7 +17,7 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 # Local Application
 from .forms import EntryModelForm
 from .models import Entry, EntryMeta
-from .serializers import EntrySerializer
+from .serializers import EntryListSerializer, EntryDetailSerializer
 
 
 class EntryMixin(object):
@@ -105,11 +105,27 @@ class EntryViewSet(ReadOnlyModelViewSet):
     """
     Pubmed entry api.
     """
-    queryset = Entry.objects.prefetch_related(*EntryMeta.relationship_fields)
-    serializer_class = EntrySerializer
+
+    queryset = Entry.objects.all()
+
     filter_fields = ('pubmed_id',)
 
-    # noinspection PyUnusedLocal
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset_map = {
+            'list': lambda query: query.prefetch_related(*EntryMeta.many_to_many_fields),
+            'html': lambda query: query.prefetch_related(*EntryMeta.many_to_many_fields),
+            'retrieve': lambda query: query.select_related(*EntryMeta.foreign_fields)
+        }
+        return queryset_map[self.action](queryset)
+
+    def get_serializer_class(self):
+        serial_map = {
+            'list': EntryListSerializer,
+            'retrieve': EntryDetailSerializer
+        }
+        return serial_map[self.action]
+
     @list_route(renderer_classes=(TemplateHTMLRenderer,))
     def html(self, request, *args, **kwargs):
         """
@@ -124,9 +140,23 @@ class EntryViewSet(ReadOnlyModelViewSet):
         """
         queryset = self.filter_queryset(self.get_queryset())
 
+        exclude = request.query_params.get('exclude__entry')
+        if exclude:
+            queryset = queryset.exclude(id=exclude)
+
         page = self.paginate_queryset(queryset)
         if page is not None:
             return self.get_paginated_response(page)
-        return Response({
-            'entry_list': queryset
-        }, template_name='pubmed/_entry_list_items.html')
+        return Response(
+
+            {
+                'entry_list': queryset
+            },
+
+            headers={
+                'count': queryset.count()
+            },
+
+            template_name='pubmed/_entry_list_items.html'
+
+        )

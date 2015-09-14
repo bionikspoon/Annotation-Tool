@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__version__ = '0.10.0'
+__version__ = '0.11.0'
 __version_info__ = tuple(  # :off
     [
         int(num) if num.isdigit() else num
@@ -7,4 +7,5 @@ __version_info__ = tuple(  # :off
     ]
 )  # :on
 
-from . import users, contrib
+# Local Application
+from . import contrib, users

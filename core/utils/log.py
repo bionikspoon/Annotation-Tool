@@ -1,10 +1,11 @@
-
-
 """
 Utilities for log config.
 """
+
+# Python Libraries
 import logging
 
+# Django Packages
 from django.conf import settings
 
 
@@ -13,7 +14,7 @@ class NotDjangoFilter(logging.Filter):
     Filter out 'django' loggers.
     """
 
-    def filter(self, record) -> bool:
+    def filter(self, record):
         """
         Check if starts with 'django'.
 
@@ -28,7 +29,7 @@ class NotProductionFilter(logging.Filter):
     Filter by config settings.
     """
 
-    def filter(self, record) -> bool:
+    def filter(self, record):
         """
         Check if running in production config.
 

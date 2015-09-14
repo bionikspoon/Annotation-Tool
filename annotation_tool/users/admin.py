@@ -1,11 +1,13 @@
-# -*- coding: utf-8 -*-
+# Compatibility
 from __future__ import absolute_import, unicode_literals
 
+# Django Packages
 from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 
+# Local Application
 from .models import User
 
 

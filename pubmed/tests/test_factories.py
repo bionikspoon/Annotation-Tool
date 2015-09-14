@@ -1,14 +1,18 @@
+# Python Libraries
 import logging
 
+# Django Packages
 from django.test import TestCase
 
+# Local Application
 from ..factories import EntryFactory
-from pubmed.lookups import DiseaseLookup
+from ..lookups import DiseaseLookup
+from ..models import Entry
 
 logger = logging.getLogger(__name__)
 
 
-class TestEntryFactory(TestCase):
+class EntryFactoryTestCase(TestCase):
     def test_factory_creates_entry(self):
         entry = EntryFactory()
         self.assertTrue(entry)
@@ -28,3 +32,10 @@ class TestEntryFactory(TestCase):
         self.assertGreater(entry1.disease.count(), 0)
         self.assertGreater(entry1.assessed_patient_outcomes.count(), 0)
         self.assertGreater(entry1.significant_patient_outcomes.count(), 0)
+
+    def test_factory_can_by_used_several_tyimes(self):
+
+        for _ in range(20):
+            EntryFactory()
+
+        self.assertEqual(Entry.objects.count(), 20)

@@ -1,13 +1,17 @@
-# -*- coding: utf-8 -*-
+# Compatibility
 from __future__ import absolute_import, unicode_literals
 
+# Django Packages
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
+
+# Third Party Packages
 from braces.views import LoginRequiredMixin
 from rest_framework.viewsets import ReadOnlyModelViewSet
 
-from .serlializers import UserSerializer
+# Local Application
 from .models import User
+from .serlializers import UserSerializer
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):

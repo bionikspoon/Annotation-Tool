@@ -22,9 +22,19 @@ class EntryUserSerializer(UserSerializer):
         fields = tuple(field for field in UserSerializer.Meta.fields if field != 'pubmed_entries')
 
 
-class EntrySerializer(HyperlinkedModelSerializer):
+class EntryListSerializer(HyperlinkedModelSerializer):
     """
     Serialize pubmed entries.
+    """
+
+    class Meta:
+        model = EntryMeta.model
+        fields = ('url', 'pubmed_id') + EntryMeta.all_fields
+
+
+class EntryDetailSerializer(HyperlinkedModelSerializer):
+    """
+    Serialize pubmed entry.
     """
 
     user = EntryUserSerializer()
@@ -33,4 +43,5 @@ class EntrySerializer(HyperlinkedModelSerializer):
     class Meta:
         model = EntryMeta.model
         fields = ('url', 'pubmed_id') + EntryMeta.all_fields
+
         depth = 1

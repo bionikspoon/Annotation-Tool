@@ -1,10 +1,11 @@
-# -*- coding: utf-8 -*-
+# Compatibility
 from __future__ import unicode_literals
 
-from django.db import models, migrations
+# Django Packages
 import django.contrib.auth.models
 import django.core.validators
 import django.utils.timezone
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):

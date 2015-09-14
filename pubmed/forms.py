@@ -6,22 +6,20 @@ Pubmed forms.
 import logging
 
 # Django Packages
-from braces.forms import UserKwargModelFormMixin
 from django.db import models
-from django.forms import ModelForm, RadioSelect
+from django.forms import ModelForm, RadioSelect, TypedChoiceField, HiddenInput, IntegerField
 
 # Third Party Packages
+from braces.forms import UserKwargModelFormMixin
 from crispy_forms import helper
 from model_utils import Choices
 
 # Local Application
-from .fields import TypedChoiceField
-from .lookups import (BreakendStrandLookup, BreakendDirectionLookup, PatientOutcomesLookup, StructureLookup,
-    SexLookup, VariantConsequenceLookup, VariantTypeLookup, RuleLevelLookup, OperatorLookup, SyntaxLookup,
-    MutationTypeLookup)
-
-from .models import Entry, EntryMeta
 from .layouts import EntryFormLayout
+from .lookups import (BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup, OperatorLookup,
+    PatientOutcomesLookup, RuleLevelLookup, SexLookup, StructureLookup, SyntaxLookup,
+    VariantConsequenceLookup, VariantTypeLookup)
+from .models import Entry, EntryMeta
 
 logger = logging.getLogger(__name__)
 
@@ -42,8 +40,9 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     # formfield_callback = entryform_formfield_callback
     # """Use radio inline widgets by default"""
 
-    treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False)
+    treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False, widget=RadioSelect)
     """Helper field for dynamic treatment behavior."""
+    id = IntegerField(widget=HiddenInput, required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -109,6 +108,5 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     # noinspection PyDocstring
     class Meta:
         model = Entry
-        fields = EntryMeta.public_fields
+        fields = ('id',) + EntryMeta.public_fields
         widgets = {field: RadioSelect() for field in EntryMeta.foreign_fields if not field == 'user'}
-        widgets['treatment'] = RadioSelect
