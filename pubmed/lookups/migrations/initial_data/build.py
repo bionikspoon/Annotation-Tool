@@ -88,7 +88,6 @@ class SummaryManager(object):
         """
         with CONFIG.summary_dir.file(CONFIG.summary_file, 'w') as f:
             logger.info('Saving summary: %r' % self)
-            print(self)
             f.write(str(self))
 
     def __str__(self):

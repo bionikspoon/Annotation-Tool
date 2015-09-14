@@ -18,7 +18,7 @@ from .. import Entry, factories, views
 logger = logging.getLogger(__name__)
 
 
-class EntryListViewTest(BaseTestMixin, CBVTestCase):
+class EntryListViewTestCase(BaseTestMixin, CBVTestCase):
     view = views.EntryListView
 
     def test_get_list_view__with_no_items(self):
@@ -36,7 +36,7 @@ class EntryListViewTest(BaseTestMixin, CBVTestCase):
         self.assertIn(entry, self.get_context('entry_list'))
 
 
-class EntryDetailViewTest(BaseTestMixin, CBVTestCase):
+class EntryDetailViewTestCase(BaseTestMixin, CBVTestCase):
     view = views.EntryDetailView
 
     def test_get_detail_view__with_one_item(self):
@@ -123,7 +123,7 @@ class EntryFormMixin(object):
         self.response_401()
 
 
-class EntryCreateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
+class EntryCreateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
     post_to_url = {
         'url_name': 'pubmed:create'
     }
@@ -137,7 +137,7 @@ class EntryCreateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
         super().test_post_form__logged_in_user__data()
 
 
-class EntryUpdateViewTest(EntryFormMixin, BaseTestMixin, TestCase):
+class EntryUpdateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
     expected_action = 'Update'
     number_of_queries = 18
 

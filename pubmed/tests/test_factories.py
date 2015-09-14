@@ -12,7 +12,7 @@ from ..models import Entry
 logger = logging.getLogger(__name__)
 
 
-class TestEntryFactory(TestCase):
+class EntryFactoryTestCase(TestCase):
     def test_factory_creates_entry(self):
         entry = EntryFactory()
         self.assertTrue(entry)
