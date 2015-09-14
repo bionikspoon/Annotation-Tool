@@ -17,7 +17,7 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 # Local Application
 from .forms import EntryModelForm
 from .models import Entry, EntryMeta
-from .serializers import EntrySerializer
+from .serializers import EntryListSerializer, EntryDetailSerializer
 
 
 class EntryMixin(object):
@@ -105,12 +105,27 @@ class EntryViewSet(ReadOnlyModelViewSet):
     """
     Pubmed entry api.
     """
-    queryset = Entry.objects.all().select_related(*EntryMeta.foreign_fields).prefetch_related(
-        *EntryMeta.many_to_many_fields)
-    serializer_class = EntrySerializer
+
+    queryset = Entry.objects.all()
+
     filter_fields = ('pubmed_id',)
 
-    # noinspection PyUnusedLocal
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset_map = {
+            'list': lambda query: query.prefetch_related(*EntryMeta.many_to_many_fields),
+            'html': lambda query: query.prefetch_related(*EntryMeta.many_to_many_fields),
+            'retrieve': lambda query: query.select_related(*EntryMeta.foreign_fields)
+        }
+        return queryset_map[self.action](queryset)
+
+    def get_serializer_class(self):
+        serial_map = {
+            'list': EntryListSerializer,
+            'retrieve': EntryDetailSerializer
+        }
+        return serial_map[self.action]
+
     @list_route(renderer_classes=(TemplateHTMLRenderer,))
     def html(self, request, *args, **kwargs):
         """
