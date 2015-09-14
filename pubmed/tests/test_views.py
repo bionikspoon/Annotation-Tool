@@ -72,7 +72,6 @@ class EntryFormMixin(object):
         'data': {
             'pubmed_id': 1,
             'gene': 'BRAF'
-
         }
     }
 
@@ -87,7 +86,7 @@ class EntryFormMixin(object):
     def test_get_form__logged_in_user(self):
         """Test view works with auth user."""
 
-        with self.login(self.user), self.assertNumQueries(self.number_of_queries):
+        with self.login(self.user), self.assertNumQueriesLessThan(self.number_of_queries + 1):
             response = self.assertGoodView(**self.post_to_url)
         self.assertContains(response, '%s Entry' % self.expected_action)
         self.assertTemplateUsed(response, self.template)
@@ -128,7 +127,7 @@ class EntryCreateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
         'url_name': 'pubmed:create'
     }
     expected_action = 'Create'
-    number_of_queries = 13
+    number_of_queries = 14
 
     def test_post_form__logged_in_user__data(self):
         with self.assertRaises(Entry.DoesNotExist):
@@ -139,7 +138,7 @@ class EntryCreateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
 
 class EntryUpdateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
     expected_action = 'Update'
-    number_of_queries = 17
+    number_of_queries = 18
 
     def setUp(self):
         self.entry_1 = factories.EntryFactory()
