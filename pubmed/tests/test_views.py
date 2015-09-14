@@ -10,7 +10,7 @@ from test_plus import TestCase
 from test_plus.test import CBVTestCase
 
 # Annotation Tool Project
-from core.utils.test import BaseTestMixin
+from core.utils.test import UserTestMixin
 
 # Local Application
 from .. import Entry, factories, views
@@ -18,7 +18,7 @@ from .. import Entry, factories, views
 logger = logging.getLogger(__name__)
 
 
-class EntryListViewTestCase(BaseTestMixin, CBVTestCase):
+class EntryListViewTestCase(UserTestMixin, CBVTestCase):
     view = views.EntryListView
 
     def test_get_list_view__with_no_items(self):
@@ -36,7 +36,7 @@ class EntryListViewTestCase(BaseTestMixin, CBVTestCase):
         self.assertIn(entry, self.get_context('entry_list'))
 
 
-class EntryDetailViewTestCase(BaseTestMixin, CBVTestCase):
+class EntryDetailViewTestCase(UserTestMixin, CBVTestCase):
     view = views.EntryDetailView
 
     def test_get_detail_view__with_one_item(self):
@@ -122,7 +122,7 @@ class EntryFormMixin(object):
         self.response_401()
 
 
-class EntryCreateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
+class EntryCreateViewTestCase(EntryFormMixin, UserTestMixin, TestCase):
     post_to_url = {
         'url_name': 'pubmed:create'
     }
@@ -136,7 +136,7 @@ class EntryCreateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
         super().test_post_form__logged_in_user__data()
 
 
-class EntryUpdateViewTestCase(EntryFormMixin, BaseTestMixin, TestCase):
+class EntryUpdateViewTestCase(EntryFormMixin, UserTestMixin, TestCase):
     expected_action = 'Update'
     number_of_queries = 18
 
