@@ -135,7 +135,6 @@ DATABASES = {
     'default': env.db("DATABASE_URL")
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-DATABASES['default']['TEST'] = env.db("TEST_DATABASE_URL", default='')
 
 
 # EMAIL CONFIGURATION
