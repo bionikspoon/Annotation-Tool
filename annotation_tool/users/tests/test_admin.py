@@ -5,7 +5,7 @@ from test_plus.test import TestCase
 from ..admin import MyUserCreationForm
 
 
-class TestMyUserCreationForm(TestCase):
+class UserCreationFormTestCase(TestCase):
 
     def setUp(self):
         self.user = self.make_user()

@@ -8,7 +8,7 @@ from ..factories import UserFactory, SuperUserFactory
 logger = logging.getLogger(__name__)
 
 
-class UserFactoryTest(TestCase):
+class UserFactoryTestCase(TestCase):
     def setUp(self):
         self.user = UserFactory()
         self.superuser = SuperUserFactory()

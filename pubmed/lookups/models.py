@@ -9,6 +9,7 @@ from model_utils import FieldTracker
 class LookupTable(utils_models.TimeStampedModel):
     choice = models.CharField(max_length=100, unique=True)
 
+    objects = models.Manager()
     tracker = FieldTracker()
 
     class Meta:

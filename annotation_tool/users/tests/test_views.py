@@ -15,7 +15,7 @@ class BaseUserTestCase(TestCase):
         self.factory = RequestFactory()
 
 
-class TestUserRedirectView(BaseUserTestCase):
+class UserRedirectViewTestCase(BaseUserTestCase):
 
     def test_get_redirect_url(self):
         # Instantiate the view directly. Never do this outside a test!
@@ -34,11 +34,11 @@ class TestUserRedirectView(BaseUserTestCase):
         )
 
 
-class TestUserUpdateView(BaseUserTestCase):
+class UserUpdateViewTestCase(BaseUserTestCase):
 
     def setUp(self):
         # call BaseUserTestCase.setUp()
-        super(TestUserUpdateView, self).setUp()
+        super().setUp()
         # Instantiate the view directly. Never do this outside a test!
         self.view = UserUpdateView()
         # Generate a fake request

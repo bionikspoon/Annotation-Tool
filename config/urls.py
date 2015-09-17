@@ -38,13 +38,11 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     url(r'^pubmed/', include('pubmed.urls', namespace='pubmed')),
 
-    url(r'^google51945c962ca81cb4.html$',
-        TemplateView.as_view(template_name='google/google51945c962ca81cb4.html'))
-
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += [url(r'^(?P<url>.*/)', include('django.contrib.flatpages.urls'))]
 
 if settings.DEBUG:
     # Debug error pages

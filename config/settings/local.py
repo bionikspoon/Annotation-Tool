@@ -71,7 +71,7 @@ EMAIL_FILE_PATH = str(ROOT_DIR.path('logs', 'emails'))
 
 # SERVER
 # ------------------------------------------------------------------------------
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost:8000', '127.0.0.1:8000']
 SECURE_SSL_REDIRECT = False
 
 # STATIC FILE CONFIGURATION
