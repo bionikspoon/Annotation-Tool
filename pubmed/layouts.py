@@ -13,34 +13,34 @@ from crispy_forms.utils import flatatt, render_field
 logger = logging.getLogger(__name__)
 
 
-class Flat(LayoutObject):
-    template = "flat/layout/flat.html"
-
-    def __init__(self, *fields, **kwargs):
-        self.fields = list(fields)
-        self.css_class = kwargs.pop('css_class', '')
-        self.css_id = kwargs.pop('css_id', None)
-        self.template = kwargs.pop('template', self.template)
-        self.flat_attrs = flatatt(kwargs)
-
-    def get_rendered_fields(self, form, form_style, context, template_pack='flat', **kwargs):
-        kwargs['template'] = 'flat/layout/field.html'
-        template_pack = 'flat'
-
-        def render(field):
-            return render_field(field, form, form_style, context, template_pack=template_pack, **kwargs)
-
-        return ''.join(render(field) for field in self.fields)
-
-    def render(self, form, form_style, context, template_pack='flat', **kwargs):
-        template_pack = 'flat'
-        fields = self.get_rendered_fields(form, form_style, context, template_pack, **kwargs)
-        template = self.get_template_name(template_pack)
-        return render_to_string(template, {
-            'fieldset': self,
-            'fields': fields,
-            'form_style': form_style
-        })
+# class Flat(LayoutObject):
+#     # template = "flat/layout/flat.html"
+#
+#     def __init__(self, *fields, **kwargs):
+#         self.fields = list(fields)
+#         self.css_class = kwargs.pop('css_class', '')
+#         self.css_id = kwargs.pop('css_id', None)
+#         # self.template = kwargs.pop('template', self.template)
+#         self.flat_attrs = flatatt(kwargs)
+#
+#     def get_rendered_fields(self, form, form_style, context, template_pack='flat', **kwargs):
+#         # kwargs['template'] = 'flat/layout/field.html'
+#         # template_pack = 'flat'
+#
+#         def render(field):
+#             return render_field(field, form, form_style, context, template_pack=template_pack, **kwargs)
+#
+#         return ''.join(render(field) for field in self.fields)
+#
+#     def render(self, form, form_style, context, template_pack='flat', **kwargs):
+#         # template_pack = 'flat'
+#         fields = self.get_rendered_fields(form, form_style, context, template_pack, **kwargs)
+#         template = self.get_template_name(template_pack)
+#         return render_to_string(template, {
+#             'fieldset': self,
+#             'fields': fields,
+#             'form_style': form_style
+#         })
 
 
 class EntryFormLayout(Layout):
@@ -67,11 +67,11 @@ class EntryFormLayout(Layout):
 
                          Column(
 
-                             Flat(
-
-                                 'chromosome', 'start', 'stop', 'breakend_strand', 'breakend_direction',
-
-                             ),
+                             # Flat(
+                             #
+                             #     'chromosome', 'start', 'stop', 'breakend_strand', 'breakend_direction',
+                             #
+                             # ),
 
                              css_class='col-sm-6', data_form_column='true'
 
@@ -81,12 +81,12 @@ class EntryFormLayout(Layout):
 
                          Column(
 
-                             Flat(
-
-                                 'mate_chromosome', 'mate_start', 'mate_end', 'mate_breakend_strand',
-                                 'mate_breakend_direction',
-
-                             ),
+                             # Flat(
+                             #
+                             #     'mate_chromosome', 'mate_start', 'mate_end', 'mate_breakend_strand',
+                             #     'mate_breakend_direction',
+                             #
+                             # ),
 
                              css_class='col-sm-6', data_form_column='true'
 
@@ -100,7 +100,7 @@ class EntryFormLayout(Layout):
 
                          Column(
 
-                             Flat('minimum_number_of_copies'),
+                             # Flat('minimum_number_of_copies'),
 
                              css_class='col-sm-6'
 
@@ -108,7 +108,7 @@ class EntryFormLayout(Layout):
 
                          Column(
 
-                             Flat('maximum_number_of_copies'),
+                             # Flat('maximum_number_of_copies'),
 
                              css_class='col-sm-6',
 
@@ -122,7 +122,7 @@ class EntryFormLayout(Layout):
 
                          Column(
 
-                             Flat('coordinate_predicate'),
+                             # Flat('coordinate_predicate'),
 
                              css_class='col-sm-6'
 
@@ -130,7 +130,7 @@ class EntryFormLayout(Layout):
 
                          Column(
 
-                             Flat('partner_coordinate_predicate'),
+                             # Flat('partner_coordinate_predicate'),
 
                              css_class='col-sm-6',
 
@@ -160,11 +160,11 @@ class EntryFormLayout(Layout):
 
             Fieldset('{{ action_text }} Entry',
 
-                     FormActions(
-
-                         Submit('submit', 'Submit'), Button('cancel', 'Cancel')
-
-                     )
+                     # FormActions(
+                     #
+                     #     Submit('submit', 'Submit'), Button('cancel', 'Cancel')
+                     #
+                     # )
 
                      ),
 

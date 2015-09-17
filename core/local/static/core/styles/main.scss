@@ -1,11 +1,13 @@
 $icon-font-path: '../fonts/';
-//@import "variables";
+@import "variables";
 
+@import "bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui/_variables.scss";
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/flat-ui-sass/vendor/assets/stylesheets/flat-ui.scss";
 // endbower
 
-@import "select2-bootstrap";
+//@import "select2-bootstrap";
 
 .browserupgrade {
   margin: 0.2em 0;

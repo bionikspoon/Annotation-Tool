@@ -1,60 +1,40 @@
-{% extends 'core/base.html' %}
-{% block css %}
-  <!-- build:css core/styles/vendor.css -->
-  <!-- bower:css -->
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!-- build:css core/styles/select2.css -->
-  <link rel="stylesheet" href="/bower_components/select2/dist/css/select2.css" />
-  <!-- endbuild -->
+<!-- build:css core/styles/vendor.css -->
+<!-- bower:css -->
+<link rel="stylesheet" href="/bower_components/videojs/dist/video-js/video-js.css" />
+<link rel="stylesheet" href="/bower_components/select2/dist/css/select2.css" />
+<!-- endbower -->
+<!-- endbuild -->
 
 
-  <!-- build:css core/styles/main.css -->
-  <link rel="stylesheet" href="core/styles/main.css">
-  <!-- endbuild -->
-{% endblock css %}
+<!-- build:css core/styles/main.css -->
+<link rel="stylesheet" href="core/styles/main.css">
+<!-- endbuild -->
 
 
-{% block head_javascript %}
-  <!-- build:js core/scripts/modernizr.js -->
-  <script src="/bower_components/modernizr/modernizr.js"></script>
-  <!-- endbuild -->
-{% endblock head_javascript %}
+<!-- build:js core/scripts/modernizr.js -->
+<script src="/bower_components/modernizr/modernizr.js"></script>
+<!-- endbuild -->
 
 
-{% block javascript %}
-  <!-- build:js core/scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
+<!-- build:js core/scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/videojs/dist/video-js/video.js"></script>
+<script src="/bower_components/flat-ui/dist/js/flat-ui.js"></script>
+<script src="/bower_components/select2/dist/js/select2.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
 
-  <!-- build:js core/scripts/plugins.js -->
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-  <!-- endbuild -->
 
-  <!-- build:js core/scripts/select2.js -->
-  <script src="/bower_components/select2/dist/js/select2.js"></script>
-  <!-- endbuild -->
+<!-- build:js core/scripts/main.js -->
+<script src="core/scripts/main.js"></script>
+<!-- endbuild -->
 
-  <!-- build:js core/scripts/main.js -->
-  <script src="core/scripts/main.js"></script>
-  <!-- endbuild -->
+<!-- build:js pubmed/scripts/main.js -->
+<script src="core/scripts/main.js"></script>
+<script src="pubmed/scripts/main.js"></script>
+<!-- endbuild -->
 
-  <!-- build:js pubmed/scripts/main.js -->
-  <script src="pubmed/scripts/main.js"></script>
-  <!-- endbuild -->
-{% endblock javascript %}
-
+<!-- IGNORE -->
+<link rel="stylesheet" href="/bower_components/flat-ui/dist/css/flat-ui.css" />
+<!-- END IGNORE -->
