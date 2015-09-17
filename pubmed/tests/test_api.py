@@ -56,8 +56,20 @@ class PubmedListAPITestCase(BaseAPITestCase):
         payload = {
             'pubmed_id': 100
         }
-        response = self.client.post('/api/pubmed/', data=payload)
-        self.assertEqual(response.status_code, 405)
+        self.post(data=payload)
+        self.assert_405()
+
+        self.put(data=payload)
+        self.assert_405()
+
+        self.patch(data=payload)
+        self.assert_405()
+
+        self.delete(data=payload)
+        self.assert_405()
+
+        self.delete(data=payload)
+        self.assert_405()
 
 
 class PubmedRetreiveAPITestCase(BaseAPITestCase):
@@ -73,7 +85,7 @@ class PubmedRetreiveAPITestCase(BaseAPITestCase):
         self.get(pk=entry.pk)
 
         self.assertEqual(len(self.data), 43)
-        self.assertEqual(self.response.status_code, 200)
+        self.assert_200()
 
     def test_results_have_depth_1(self):
         entry = EntryFactory()

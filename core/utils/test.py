@@ -122,11 +122,17 @@ class BaseAPITestCase(APITestCase):
     def request(self, *args, **kwargs):
         return self.client.request(*args, **kwargs)
 
+    def assert_200(self):
+        self.assertEqual(self.response.status_code, 200)
+
     def assert_404(self):
         self.assertEqual(self.response.status_code, 404)
         self.assertEqual(self.data['detail'], 'Not found.')
 
     def assert_405(self):
+        """
+        Method not allowed.
+        """
         self.assertEqual(self.response.status_code, 405)
 
     def url(self, suffix=None):
