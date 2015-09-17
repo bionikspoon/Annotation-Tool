@@ -3,8 +3,10 @@ from pubmed.factories import EntryFactory
 
 
 class PubmedListAPITestCase(BaseAPITestCase):
+    PATH = '/api/pubmed/'
+
     def test_api_returns_an_empty_list__no_data(self):
-        self.get('/api/pubmed/')
+        self.get()
         self.assertEqual(self.data, [])
         self.assertEqual(len(self.data), 0)
 
@@ -12,20 +14,20 @@ class PubmedListAPITestCase(BaseAPITestCase):
         EntryFactory()
 
         with self.assertNumQueries(4):
-            self.get('/api/pubmed/')
+            self.get()
         self.assertEqual(len(self.data), 1)
 
     def test_api_returns_a_list_of_entries__multiple_entries(self):
         for _ in range(10):
             EntryFactory()
         with self.assertNumQueries(4):
-            self.get('/api/pubmed/')
+            self.get()
         self.assertEqual(len(self.data), 10)
 
     def test_depth_is_zero(self):
         EntryFactory()
 
-        self.get('/api/pubmed/')
+        self.get()
         entry = self.data[0]
 
         self.assertIsInstance(entry['user'], str)
@@ -45,7 +47,45 @@ class PubmedListAPITestCase(BaseAPITestCase):
     def test_entry_includes_link_to_self(self):
         EntryFactory()
 
-        self.get('/api/pubmed/')
+        self.get()
         entry = self.data[0]
 
         self.assertTrue(entry['url'].startswith(self.url('api/pubmed')))
+
+    def test_api_readonly(self):
+        payload = {
+            'pubmed_id': 100
+        }
+        response = self.client.post('/api/pubmed/', data=payload)
+        self.assertEqual(response.status_code, 405)
+
+
+class PubmedRetreiveAPITestCase(BaseAPITestCase):
+    PATH = '/api/pubmed/%s/'
+
+    def test_api_returns_404_not_found__no_data(self):
+        self.get()
+        self.assert_404()
+
+    def test_api_returns_a_single_item(self):
+        entry = EntryFactory()
+
+        self.get(pk=entry.pk)
+
+        self.assertEqual(len(self.data), 43)
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_results_have_depth_1(self):
+        entry = EntryFactory()
+
+        self.get(pk=entry.pk)
+
+        self.assertTrue(self.data['user']['url'].startswith(self.url('api/users')))
+        self.assertTrue(self.data['disease'][0]['url'].startswith(self.url('api/lookup/diseaselookup')))
+
+    def test_efficient_orm_usage(self):
+        entry = EntryFactory()
+
+        # 4: 1 SELECT * with joins, 1 each many to many relationship(3).
+        with self.assertNumQueries(4):
+            self.get(pk=entry.pk)

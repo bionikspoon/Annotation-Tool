@@ -42,6 +42,6 @@ class EntryDetailSerializer(HyperlinkedModelSerializer):
     # noinspection PyDocstring
     class Meta:
         model = EntryMeta.model
-        fields = ('url', 'pubmed_id') + EntryMeta.all_fields
+        fields = ('pubmed_id',) + EntryMeta.all_fields
 
         depth = 1
