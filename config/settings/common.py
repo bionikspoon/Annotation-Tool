@@ -14,7 +14,7 @@ from __future__ import absolute_import, unicode_literals
 # Third Party Packages
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 3  # /annotation-tool/
+ROOT_DIR = environ.Path(__file__) - 3  # /annotation_tool/
 APPS_DIR = ROOT_DIR.path('annotation_tool')
 
 env = environ.Env()

@@ -1,7 +1,7 @@
 postgres:
   image: postgres:9.4
   volumes:
-    - /data/annotation-tool/postgres:/var/lib/postgresql/data
+    - /data/annotation_tool/postgres:/var/lib/postgresql/data
   env_file: .env
 
 django:
