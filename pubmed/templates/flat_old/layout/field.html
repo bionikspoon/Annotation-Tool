@@ -28,11 +28,11 @@
   {% endif %}
 
   {% if field|is_checkboxselectmultiple %}
-    {% include 'bootstrap3/layout/checkboxselectmultiple.html' %}
+    {% include 'bootstrap3_old/layout/checkboxselectmultiple.html' %}
   {% endif %}
 
   {% if field|is_radioselect %}
-    {% include 'flat/layout/radioselect.html' %}
+    {% include 'flat_old/layout/radioselect.html' %}
   {% endif %}
 
   {% if not field|is_checkboxselectmultiple and not field|is_radioselect %}
@@ -41,12 +41,12 @@
              class="{% if field.field.required %} requiredField{% endif %}">
         {% crispy_field field %}
         {{ field.label|safe }}
-        {% include 'bootstrap3/layout/help_text_and_errors.html' %}
+        {% include 'bootstrap3_old/layout/help_text_and_errors.html' %}
       </label>
     {% else %}
       <div class="controls">
         {% crispy_field field %}
-        {% include 'bootstrap3/layout/help_text_and_errors.html' %}
+        {% include 'bootstrap3_old/layout/help_text_and_errors.html' %}
       </div>
     {% endif %}
   {% endif %}

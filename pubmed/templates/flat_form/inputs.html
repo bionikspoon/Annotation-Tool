@@ -1,0 +1,8 @@
+{% if inputs %}
+   <div class="buttonHolder">
+      {% for input in inputs %}
+         {% include "flat_form/layout/baseinput.html" %}
+      {% endfor %}
+   </div>
+{% endif %}
+

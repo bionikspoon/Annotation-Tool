@@ -1,0 +1,38 @@
+{% load crispy_forms_field pubmed.tags %}
+
+{% if field.is_hidden %}
+   {{ field }}
+{% else %}
+
+
+   <div {% css_class 'form-group' wrapper_class field.css_classes hasError=field.errors checkbox=field|is_checkbox %}>
+      {% if form_show_errors %}
+         {% for error in field.errors %}
+            <p class=help-block>
+               {{ error }}
+            </p>
+         {% endfor %}
+      {% endif %}
+      {% if field.label %}
+         {% if field|is_checkbox %}
+            {% crispy_field field %}
+         {% endif %}
+
+         <label {% css_class required=field.field.required %}
+            for="{{ field.id_for_label }}"
+            required="{{ field.field.required }}">
+            {{ field.label|safe }}{% if field.field.required %}
+               <span class="asteriskField">*</span>{% endif %}
+         </label>
+      {% endif %}
+
+      {% if not field|is_checkbox %}
+         {% crispy_field field %}
+      {% endif %}
+
+      {% if field.help_text %}
+         <p class="helptext">{{ field.help_text|safe }}</p>
+      {% endif %}
+   </div>
+{% endif %}
+

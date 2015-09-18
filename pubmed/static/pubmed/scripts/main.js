@@ -27,9 +27,9 @@ $(function () {
      * Impressively well organized modules.
      ***************************************************************************
      * */
-    treatmentBehavior($form);
-    selectTwoSetup($form);
-    pubmedLookup($form);
+    //treatmentBehavior($form);
+    //select2Setup($form);
+    //pubmedLookup($form);
 
 
     /**
@@ -103,7 +103,7 @@ $(function () {
     }
 
 
-    function selectTwoSetup($form) {
+    function select2Setup($form) {
         /**
          *
          * Query all select boxes for select2

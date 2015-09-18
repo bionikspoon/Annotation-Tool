@@ -12,11 +12,12 @@
             {% if field.is_hidden %}
                 {{ field }}
             {% else %}
-                {% include "flat/field.html" %}
+                {% include "flat_form/field.html" %}
             {% endif %}
         {% endfor %}
     {% if not forloop.last or not fieldset_open %}
         </fieldset>
     {% endif %}
 {% endfor %}
+
 
