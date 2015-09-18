@@ -1,16 +1,17 @@
 {% load crispy_forms_filters l10n %}
 
-<div class="controls"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
+<div class="controls {{ field_class }}"
+  {% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
   {% include 'bootstrap3_old/layout/field_errors_block.html' %}
 
   {% for choice in field.field.choices %}
     <label class="radio-inline">
       <input type="radio"
-        {% if choice.0|stringformat:"s" == field.value|stringformat:"s" %}
-             checked="checked"{% endif %}
              name="{{ field.html_name }}"
              id="id_{{ field.html_name }}_{{ forloop.counter }}"
-             value="{{ choice.0|unlocalize }}" {{ field.field.widget.attrs|flatatt }}>{{ choice.1|unlocalize }}
+             value="{{ choice.0|unlocalize }}" {{ field.field.widget.attrs|flatatt }}
+             {% if choice.0|stringformat:"s" == field.value|stringformat:"s" %}checked="checked"{% endif %}>
+      {{ choice.1|unlocalize }}
     </label>
   {% endfor %}
 
