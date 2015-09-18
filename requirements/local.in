@@ -17,3 +17,5 @@ django-debug-toolbar
 
 httpie
 isort
+pyinotify
+watchdog

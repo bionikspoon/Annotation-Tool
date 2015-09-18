@@ -17,22 +17,27 @@ finally:
 
 # CACHE CONFIGURATION
 # ------------------------------------------------------------------------------
-
-CACHEOPS = {
-    'lookups.*': {
-        'ops': 'all',
-        'timeout': 300
-    },
-    'pubmed': {
-        'ops': 'all',
-        'timeout': 300
-
-    },
-    'users': {
-        'ops': 'all',
-        'timeout': 300
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
     }
 }
+CACHEOPS = {}
+# CACHEOPS = {
+#     'lookups.*': {
+#         'ops': 'all',
+#         'timeout': 300
+#     },
+#     'pubmed': {
+#         'ops': 'all',
+#         'timeout': 300
+#
+#     },
+#     'users': {
+#         'ops': 'all',
+#         'timeout': 300
+#     }
+# }
 
 # DEV TOOLS: django-debug-toolbar
 # ------------------------------------------------------------------------------

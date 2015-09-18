@@ -28,8 +28,7 @@
       "main": [
         "less/flat-ui.less",
         "dist/css/flat-ui.css",
-        "dist/js/flat-ui.js",
-        "dist/fonts/{glyphicons,lato}/*.{eot,svg,ttf,woff,woff2}"
+        "dist/js/flat-ui.js"
       ]
     }
   },

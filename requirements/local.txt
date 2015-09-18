@@ -5,6 +5,7 @@
 #    pip-compile local.in
 #
 alabaster==0.7.6          # via sphinx
+argh==0.26.1              # via watchdog
 babel==2.0                # via sphinx
 click==5.1                # via pip-tools
 coverage==3.7.1
@@ -42,7 +43,7 @@ isort==4.1.2
 jinja2==2.8
 jsonschema==2.5.1
 jupyter-client==4.0.0
-jupyter-core==4.0.4
+jupyter-core==4.0.6
 markupsafe==0.23          # via jinja2
 mistune==0.7.1
 msgpack-python==0.4.6     # via django-redis
@@ -51,6 +52,7 @@ nbformat==4.0.0
 notebook==4.0.4
 oauthlib==1.0.3           # via requests-oauthlib
 path.py==8.1.1            # via pickleshare
+pathtools==0.1.2          # via watchdog
 pexpect==3.3              # via ipython
 pickleshare==0.5          # via ipython
 pillow==2.9.0
@@ -58,8 +60,10 @@ pip-tools==1.1.4
 psycopg2==2.6.1
 ptyprocess==0.5
 pygments==2.0.2           # via httpie, nbconvert, sphinx
+pyinotify==0.9.6
 python3-openid==3.0.7     # via django-allauth
 pytz==2015.4
+pyyaml==3.11              # via watchdog
 pyzmq==14.7.0
 redis==2.10.3
 requests-oauthlib==0.5.0  # via django-allauth
@@ -75,5 +79,6 @@ tornado==4.2.1
 traitlets==4.0.0          # via ipykernel, ipython, jupyter-client, jupyter-core, nbconvert, nbformat, notebook
 unicode-slugify==0.1.3
 unidecode==0.4.18         # via unicode-slugify
+watchdog==0.8.3
 werkzeug==0.10.4
 whitenoise==2.0.3

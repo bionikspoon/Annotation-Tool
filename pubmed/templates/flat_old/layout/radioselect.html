@@ -1,7 +1,7 @@
 {% load crispy_forms_filters l10n %}
 
 <div class="controls"{% if flat_attrs %} {{ flat_attrs|safe }}{% endif %}>
-  {% include 'bootstrap3_old/layout/field_errors_block.html' %}
+  {% include 'bootstrap3/layout/field_errors_block.html' %}
 
   {% for choice in field.field.choices %}
     <label class="radio-inline">
@@ -14,5 +14,5 @@
     </label>
   {% endfor %}
 
-  {% include 'bootstrap3_old/layout/help_text.html' %}
+  {% include 'bootstrap3/layout/help_text.html' %}
 </div>
