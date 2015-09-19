@@ -1,17 +1,21 @@
-{{ form.media }}
-{% if form_show_errors %}
-   {% include "flat_form/errors.html" %}
-{% endif %}
+{% load crispy_forms_utils %}
 
-{% if form_style == "" or form_style %}
+{% specialspaceless %}
+   {{ form.media }}
+   {% if form_show_errors %}
+      {% include "flat_form/errors.html" %}
+   {% endif %}
+
+   {% comment %}{% if form_style == "" or form_style %}
    <fieldset class="{{ form_style }}">
    <legend></legend>
-{% endif %}
+{% endif %}{% endcomment %}
 
-{% for field in form %}
-   {% include "flat_form/field.html" %}
-{% endfor %}
+   {% for field in form %}
+      {% include "flat_form/field.html" %}
+   {% endfor %}
 
-{% if form_style == "" or form_style %}
+   {% comment %}{% if form_style == "" or form_style %}
    </fieldset>
-{% endif %}
+{% endif %}{% endcomment %}
+{% endspecialspaceless %}

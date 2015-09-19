@@ -14,4 +14,7 @@ def css_class(*args, **kwargs):
     css_classes = ' '.join(str(arg) for arg in set(args + more_args) if arg) or ' '
     return ' class="%s" ' % css_classes if css_classes else ' '
 
-a=2
+
+@register.simple_tag(takes_context=True)
+def field_required(context):
+    return ' <span class="asteriskField">*</span>' if context['field'].field.required else ''

@@ -26,11 +26,11 @@ class DEFAULTS(object):
     """
     Default parameters for given key.
     """
-    CharField = dict(max_length=100, blank=True)
-    ForeignKey = dict(blank=True, null=True, on_delete=models.SET_NULL)
-    IntegerField = dict(null=True, blank=True)
-    TextField = dict(blank=True)
-    ManyToManyField = dict(blank=True)
+    CharField = dict(max_length=100, blank=False)
+    ForeignKey = dict(blank=False, null=True, on_delete=models.SET_NULL)
+    IntegerField = dict(null=True, blank=False)
+    TextField = dict(blank=False)
+    ManyToManyField = dict(blank=False)
 
 
 class Entry(utils_models.TimeStampedModel):
@@ -43,7 +43,7 @@ class Entry(utils_models.TimeStampedModel):
 
     )
     pubmed_id = models.PositiveIntegerField()
-    gene = models.CharField(**DEFAULTS.CharField)
+    gene = models.CharField(help_text='Gene goes here.', **DEFAULTS.CharField)
     structure = models.ForeignKey(lookups.StructureLookup, **DEFAULTS.ForeignKey)
     mutation_type = models.ForeignKey(lookups.MutationTypeLookup, **DEFAULTS.ForeignKey)
     syntax = models.ForeignKey(lookups.SyntaxLookup, **DEFAULTS.ForeignKey)

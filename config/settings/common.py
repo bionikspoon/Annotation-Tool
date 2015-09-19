@@ -275,7 +275,11 @@ CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
 CRISPY_TEMPLATE_PACK = 'flat_form'
 CRISPY_ALLOWED_TEMPLATE_PACKS = ('flat_form',)
-
+CRISPY_CLASS_CONVERTERS = {
+    'textinput': 'form-control',
+    'numberinput': 'form-control',
+    'textarea': 'form-control'
+}
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins

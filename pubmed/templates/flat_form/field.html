@@ -1,12 +1,21 @@
-{% load crispy_forms_field pubmed.tags %}
+{% load crispy_forms_field %}
 
 {% if field.is_hidden %}
    {{ field }}
+{% elif field|is_checkboxselectmultiple %}
+   {{ field }}
+{% elif field|is_radioselect %}
+   {{ field }}
+{% elif field|is_checkbox %}
+   {{ field }}
+{% elif field|is_select %}
+   {{ field }}
 {% else %}
+   {% include 'flat_form/layout/generic_input.html' %}
 
-
-   <div {% css_class 'form-group' wrapper_class field.css_classes hasError=field.errors checkbox=field|is_checkbox %}>
-      {% if form_show_errors %}
+   {#      {% include 'flat_form/layout/help_text_and_errors.html' %}#}
+   {#      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">#}
+   {% comment %}     {% if form_show_errors %}
          {% for error in field.errors %}
             <p class=help-block>
                {{ error }}
@@ -32,7 +41,7 @@
 
       {% if field.help_text %}
          <p class="helptext">{{ field.help_text|safe }}</p>
-      {% endif %}
-   </div>
+      {% endif %}{% endcomment %}
+
 {% endif %}
 
