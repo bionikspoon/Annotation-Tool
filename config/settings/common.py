@@ -278,7 +278,10 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = ('flat_form',)
 CRISPY_CLASS_CONVERTERS = {
     'textinput': 'form-control',
     'numberinput': 'form-control',
-    'textarea': 'form-control'
+    'textarea': 'form-control',
+    'selectmultiple': 'form-control multiselect multiselect-info',
+    'select': 'form-control select select-primary select-block'
+
 }
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------

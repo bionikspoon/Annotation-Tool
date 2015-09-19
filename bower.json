@@ -27,8 +27,8 @@
     "flat-ui": {
       "main": [
         "less/flat-ui.less",
-        "dist/css/flat-ui.css",
-        "dist/js/flat-ui.js"
+        "dist/css/flat-ui.min.css",
+        "dist/js/flat-ui.min.js"
       ]
     }
   },

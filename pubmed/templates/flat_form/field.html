@@ -1,21 +1,23 @@
-{% load crispy_forms_field %}
+{% load crispy_forms_field  pubmed.tags %}
 
-{% if field.is_hidden %}
-   {{ field }}
-{% elif field|is_checkboxselectmultiple %}
-   {{ field }}
-{% elif field|is_radioselect %}
-   {% include 'flat_form/layout/input_radioselect.html' %}
-{% elif field|is_checkbox %}
-   {{ field }}
-{% elif field|is_select %}
-   {{ field }}
-{% else %}
-   {% include 'flat_form/layout/input_generic.html' %}
+<div {% css_class 'form-group' wrapper_class hasError=field.errors required=field.field.required %}>
 
-   {#      {% include 'flat_form/layout/help_text_and_errors.html' %}#}
-   {#      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">#}
-   {% comment %}     {% if form_show_errors %}
+   {% if field.is_hidden %}
+      {{ field }}
+   {% elif field|is_checkboxselectmultiple %}
+      is_checkboxselectmultiple: {{ field }}
+   {% elif field|is_radioselect %}
+      {% include 'flat_form/layout/input_radioselect.html' %}
+   {% elif field|is_checkbox %}
+      is_checkbox: {{ field }}
+   {% elif field|is_select %}
+      {% include 'flat_form/layout/input_select.html' %}
+   {% else %}
+      {% include 'flat_form/layout/input_generic.html' %}
+
+      {#      {% include 'flat_form/layout/help_text_and_errors.html' %}#}
+      {#      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">#}
+      {% comment %}     {% if form_show_errors %}
          {% for error in field.errors %}
             <p class=help-block>
                {{ error }}
@@ -43,5 +45,6 @@
          <p class="helptext">{{ field.help_text|safe }}</p>
       {% endif %}{% endcomment %}
 
-{% endif %}
-
+   {% endif %}
+   {% include 'flat_form/layout/help_text_and_errors.html' %}
+</div>

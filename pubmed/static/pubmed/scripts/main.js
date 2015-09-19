@@ -105,6 +105,7 @@ $(function () {
 
     function formUI($form) {
         $form.find(':radio').radiocheck();
+        $form.find('select').select2();
     }
 
 
