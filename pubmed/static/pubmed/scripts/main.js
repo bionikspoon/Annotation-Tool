@@ -27,10 +27,11 @@ $(function () {
      * Impressively well organized modules.
      ***************************************************************************
      * */
-    //treatmentBehavior($form);
-    //select2Setup($form);
-    //pubmedLookup($form);
 
+        //treatmentBehavior($form);
+        //select2Setup($form);
+        //pubmedLookup($form);
+    formUI($form);
 
     /**
      *
@@ -100,6 +101,10 @@ $(function () {
          * Initialize Module
          * */
         init();
+    }
+
+    function formUI($form) {
+        $form.find(':radio').radiocheck();
     }
 
 

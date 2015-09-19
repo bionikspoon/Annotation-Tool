@@ -1,5 +1,5 @@
 {% load  crispy_forms_field  pubmed.tags %}
-<div {% css_class 'form-group' wrapper_class field.css_classes hasError=field.errors required=field.field.required %}>
+<div {% css_class 'form-group' wrapper_class hasError=field.errors required=field.field.required %}>
    <label for="{{ field.id_for_label }}" {% css_class required=field.field.required %}>
       {{ field.label|safe|title }}:{% field_required %}
    </label>

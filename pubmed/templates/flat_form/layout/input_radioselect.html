@@ -1,0 +1,18 @@
+{% load crispy_forms_field  crispy_forms_filters  pubmed.tags %}
+<div {% css_class 'form-group' wrapper_class hasError=field.errors required=field.field.required %}>
+   <label {% css_class required=field.field.required %}>
+      {{ field.label|safe|title }}:{% field_required %}
+   </label>
+
+   {% for choice in field %}
+      <label for={{ choice.id_for_label }} class='radio radio-inline'>
+      {{ choice.choice_label|safe }}
+      <input type={{ choice.input_type }}
+                name='{{ choice.name }}'
+             value='{{ choice.value }}'
+             data-toggle=radio {{ choice.attrs|flatatt }}> </label>
+
+   {% endfor %}
+
+   {% include 'flat_form/layout/help_text_and_errors.html' %}
+</div>

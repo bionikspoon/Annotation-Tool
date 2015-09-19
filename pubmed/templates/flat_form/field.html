@@ -5,13 +5,13 @@
 {% elif field|is_checkboxselectmultiple %}
    {{ field }}
 {% elif field|is_radioselect %}
-   {{ field }}
+   {% include 'flat_form/layout/input_radioselect.html' %}
 {% elif field|is_checkbox %}
    {{ field }}
 {% elif field|is_select %}
    {{ field }}
 {% else %}
-   {% include 'flat_form/layout/generic_input.html' %}
+   {% include 'flat_form/layout/input_generic.html' %}
 
    {#      {% include 'flat_form/layout/help_text_and_errors.html' %}#}
    {#      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">#}
