@@ -19,16 +19,20 @@
     "flat-ui-sass": {
       "main":[
         "vendor/assets/stylesheets/flat-ui/_variables.scss",
+        "vendor/assets/stylesheets/flat-ui/_mixins.scss",
+        "vendor/assets/stylesheets/flat-ui/modules/_glyphicons.scss",
         "vendor/assets/stylesheets/flat-ui.scss",
-        "vendor/assets/fonts/flat-ui/*",
-        "vendor/assets/javascripts/flat-ui/*"
+        "vendor/assets/fonts/*/*.{eot,svg,ttf,woff,woff2}",
+        "vendor/assets/javascripts/flat-ui/*",
+        "vendor/assets/images/**/*"
       ]
     },
     "flat-ui": {
       "main": [
         "less/flat-ui.less",
         "dist/css/flat-ui.min.css",
-        "dist/js/flat-ui.min.js"
+        "dist/js/flat-ui.min.js",
+        "dist/fonts/*/*.{eot,svg,ttf,woff,woff2}"
       ]
     }
   },

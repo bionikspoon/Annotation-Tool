@@ -4,7 +4,9 @@ import del from 'del';
 import {stream as wiredep} from 'wiredep';
 import opn from 'opn';
 
-const $ = gulpLoadPlugins();
+const $ = gulpLoadPlugins({
+    pattern: ['gulp-*', 'gulp.*', 'main-bower-files', 'merge-stream']
+});
 const config = {
     local_static_core: 'core/local/static/core/',
     local_static:      'core/local/static/',
@@ -26,8 +28,7 @@ gulp.task('styles', () => {
             outputStyle:  'expanded',
             precision:    10,
             includePaths: [
-                '.',
-                'bower_components/flat-ui-sass/vendor/assets/stylesheets/'
+                '.', 'bower_components/flat-ui-sass/vendor/assets/stylesheets/'
             ]
         }).on('error', $.sass.logError))
 
@@ -90,7 +91,10 @@ gulp.task('html', ['scripts', 'styles'], () => {
 });
 
 gulp.task('images', () => {
-    return gulp.src(config.local_static_core + 'images/**/*')
+    const local = gulp.src(config.local_static_core + 'images/**/*');
+    const bower = gulp.src($.mainBowerFiles('**/{img,images}/**/*.{png,svg}'));
+
+    return $.mergeStream(local, bower)
 
         .pipe($.if(//
             $.if.isFile, $.cache(//
@@ -113,9 +117,8 @@ gulp.task('images', () => {
 gulp.task('fonts', () => {
     return gulp
 
-        .src(require('main-bower-files')({
-            filter: '**/*.{eot,svg,ttf,woff,woff2}'
-        }).concat(config.local_static_core + 'fonts/**/*'))
+        .src($.mainBowerFiles('**/fonts/*/*.{eot,svg,ttf,woff,woff2}'))
+
 
         .pipe(gulp.dest(config.tmp_core + 'fonts'))
 
@@ -142,9 +145,7 @@ gulp.task('clean', del.bind(null, [
 
 gulp.task('serve', ['build'], () => {
 
-    gulp.watch([
-        config.local_static_core + '*.html'
-    ], ['html']);
+    gulp.watch([config.local_static_core + '*.html'], ['html']);
     gulp.watch([
         config.local_static_core + 'images/**/*', config.tmp_core + 'fonts/**/*'
     ], ['extras']);
