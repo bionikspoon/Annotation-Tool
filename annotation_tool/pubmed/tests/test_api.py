@@ -1,5 +1,5 @@
-from utils import BaseAPITestCase
-from pubmed.factories import EntryFactory
+from ...core.utils.test import BaseAPITestCase
+from ..factories import EntryFactory
 
 
 class PubmedListAPITestCase(BaseAPITestCase):
@@ -93,7 +93,8 @@ class PubmedRetreiveAPITestCase(BaseAPITestCase):
         self.get(pk=entry.pk)
 
         self.assertTrue(self.data['user']['url'].startswith(self.url('api/users')))
-        self.assertTrue(self.data['disease'][0]['url'].startswith(self.url('api/lookup/diseaselookup')))
+        self.assertTrue(
+            self.data['disease'][0]['url'].startswith(self.url('api/lookup/diseaselookup')))
 
     def test_efficient_orm_usage(self):
         entry = EntryFactory()

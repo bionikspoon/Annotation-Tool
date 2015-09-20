@@ -9,11 +9,9 @@ from django.http import Http404
 from test_plus import TestCase
 from test_plus.test import CBVTestCase
 
-# Annotation Tool Project
-from utils import UserTestMixin
-
 # Local Application
 from .. import Entry, factories, views
+from ...core.utils.test import UserTestMixin
 
 logger = logging.getLogger(__name__)
 

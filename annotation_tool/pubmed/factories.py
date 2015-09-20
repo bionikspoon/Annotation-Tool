@@ -9,12 +9,11 @@ import logging
 from factory import DjangoModelFactory, Iterator, SubFactory
 from faker import Faker
 
-# Annotation Tool Project
-import annotation_tool.users.factories
 
 # Local Application
 from . import lookups
-from utils import make, many_to_many
+from ..core.utils.factories import make, many_to_many
+from ..users.factories import UserFactory
 
 faker = Faker()
 
@@ -29,7 +28,7 @@ class EntryFactory(DjangoModelFactory):
         model = 'pubmed.Entry'
 
     pubmed_id = make(faker.random_int)
-    user = SubFactory(annotation_tool.users.factories.UserFactory)
+    user = SubFactory(UserFactory)
 
     gene = make(faker.text, max_nb_chars=100)
     structure = Iterator(lookups.StructureLookup.objects.all())
@@ -63,8 +62,10 @@ class EntryFactory(DjangoModelFactory):
     population_size = make(faker.random_int)
     sex = Iterator(lookups.SexLookup.objects.all())
     ethnicity = make(faker.text, max_nb_chars=100)
-    assessed_patient_outcomes = many_to_many(lookups.PatientOutcomesLookup, 'assessed_patient_outcomes')
-    significant_patient_outcomes = many_to_many(lookups.PatientOutcomesLookup, 'significant_patient_outcomes')
+    assessed_patient_outcomes = many_to_many(lookups.PatientOutcomesLookup,
+                                             'assessed_patient_outcomes')
+    significant_patient_outcomes = many_to_many(lookups.PatientOutcomesLookup,
+                                                'significant_patient_outcomes')
     design = make(faker.paragraph, nb_sentences=15)
     reference_claims = make(faker.paragraph, nb_sentences=15)
     comments = make(faker.paragraph, nb_sentences=15)
