@@ -50,12 +50,11 @@ const testLintOptions = {
 
 gulp.task('lint', () => gulp
 
-        .src(config.src('scripts/**/*.js'))
+    .src(config.src('scripts/**/*.js'))
 
-        .pipe($.eslint())
+    .pipe($.eslint())
 
-        .pipe($.eslint.format())
-);
+    .pipe($.eslint.format()));
 const sassOptions = {
 
     outputStyle:  'expanded',
@@ -70,40 +69,45 @@ const sourcemapOptions = {
 };
 gulp.task('styles', ()=> gulp
 
-        .src(config.src('styles/*.scss'))
+    .src(config.src('styles/*.scss'))
 
-        .pipe($.plumber())
+    .pipe($.plumber())
 
-        .pipe($.sourcemaps.init())
+    .pipe($.sourcemaps.init())
 
-        .pipe($.sass.sync(sassOptions).on('error', $.sass.logError))
+    .pipe($.sass.sync(sassOptions).on('error', $.sass.logError))
 
-        .pipe($.autoprefixer({browsers: ['last 2 version']}))
+    .pipe($.autoprefixer({browsers: ['last 2 version']}))
 
-        .pipe($.sourcemaps.write('.', sourcemapOptions))
+    .pipe($.sourcemaps.write('.', sourcemapOptions))
 
-        .pipe(gulp.dest(config.dist('styles')))
+    .pipe(gulp.dest(config.dist('styles')))
 
-        .pipe($.rename({suffix: '.min'}))
+    .pipe($.rename({suffix: '.min'}))
 
-        .pipe($.minifyCss())
+    .pipe($.bytediff.start())
 
-        .pipe(gulp.dest(config.dist('styles')))
+    .pipe($.minifyCss())
 
-        .pipe($.gzip(gzip_options))
+    .pipe(gulp.dest(config.dist('styles')))
 
-        .pipe(gulp.dest(config.dist('styles')))
+    .pipe($.gzip(gzip_options))
 
-        .pipe($.livereload())
-);
-function javascript(srcPath, dist, name) {
+    .pipe($.bytediff.stop())
+
+    .pipe(gulp.dest(config.dist('styles')))
+
+    .pipe($.livereload()));
+const buildScripts = function (srcPath, dist, name) {
     gulp
 
         .src(srcPath)
 
-        .pipe($.debug({title: name}))
+        //.pipe($.debug({title: name}))
 
         .pipe($.plumber())
+
+        .pipe($.bytediff.start())
 
         .pipe($.sourcemaps.init())
 
@@ -121,30 +125,59 @@ function javascript(srcPath, dist, name) {
 
         .pipe($.gzip(gzip_options))
 
+        .pipe($.bytediff.stop())
+
         .pipe(gulp.dest(dist))
 
         .pipe($.livereload());
-}
+};
 gulp.task('scripts',
-    javascript(config.src('scripts/*.js'), config.dist('scripts'), 'main.js')
-);
+    buildScripts(config.src('scripts/*.js'),
+        config.dist('scripts'),
+        'main.js'));
 gulp.task('scripts:vendor',
-    javascript($.mainBowerFiles('**/*.js'), config.dist('scripts'), 'vendor.js'
-    )
-);
+    buildScripts($.mainBowerFiles('**/*.js'),
+        config.dist('scripts'),
+        'vendor.js'));
 
+// don't remove IDs from SVGs, they are often used as hooks for embedding and
+// styling
+const imageminOptions = {
+    progressive: true,
+    interlaced:  true,
+    svgoPlugins: [{cleanupIDs: false}]
+};
+gulp.task('images', () => {
+    const local = gulp.src(config.src('images/*'));
+    const bower = gulp.src($.mainBowerFiles('**/{img,images}/**/*.{png,svg}'));
 
+    return $.mergeStream(local, bower)
+
+        .pipe($.plumber())
+
+        .pipe($.bytediff.start())
+
+        .pipe($.if($.if.isFile, $.cache($.imagemin(imageminOptions))
+
+            .on('error', function (err) {
+                console.log(err);
+                this.end();
+            })))
+
+        .pipe($.bytediff.stop())
+
+        .pipe(gulp.dest(config.dist('images')))
+
+});
 gulp.task('watch', () => {
-        $.livereload.listen();
-        gulp.watch(config.src('styles/*.scss'), ['lint', 'styles']);
-        gulp.watch(config.src('scripts/*.js'), ['lint', 'scripts']);
-        gulp.watch(config.root('bower.json'), ['scripts:vendor']);
-        gulp.watch('**/templates/*').on('change', $.livereload.changed)
-    }
-);
+    $.livereload.listen();
+    gulp.watch(config.src('styles/*.scss'), ['lint', 'styles']);
+    gulp.watch(config.src('scripts/*.js'), ['lint', 'scripts']);
+    gulp.watch(config.root('bower.json'), ['scripts:vendor']);
+    gulp.watch('**/templates/*').on('change', $.livereload.changed)
+});
 gulp.task('build', [
-        'clean', 'styles', 'scripts', 'scripts:vendor'
-    ]
-);
+    'clean', 'styles', 'scripts', 'scripts:vendor', 'images'
+]);
 gulp.task('default', ['build', 'watch']);
 
