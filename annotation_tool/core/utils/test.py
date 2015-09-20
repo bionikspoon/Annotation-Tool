@@ -5,13 +5,15 @@ Utilities for testing.
 # Django Packages
 from functools import wraps
 from urllib.parse import urljoin
+
 from django.conf import settings
 from django.core.urlresolvers import NoReverseMatch, reverse
 
+
+
 # Annotation Tool Project
-from django.test.client import MULTIPART_CONTENT
 from rest_framework.test import APITestCase
-from annotation_tool.users.factories import UserFactory
+from ...users.factories import UserFactory
 
 import logging
 

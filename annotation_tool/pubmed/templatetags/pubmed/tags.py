@@ -1,5 +1,5 @@
 import re
-from autoslug.utils import slugify
+
 from django import template
 
 register = template.Library()
