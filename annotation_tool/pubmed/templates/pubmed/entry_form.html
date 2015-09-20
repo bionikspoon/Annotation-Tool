@@ -1,16 +1,11 @@
 {% extends 'base.html' %}{% load static from staticfiles %}{% load crispy_forms_tags  compress %}
 
-{% block javascript %}
-  {{ block.super }}
-  {% compress js file %}
-    <script src="{% static 'pubmed/scripts/main.js' %}"></script>
-  {% endcompress javascript %}
-{% endblock javascript %}
+
 
 {% block page_header_h1 %}
-  {{ action_text }} Entry
+   {{ action_text }} Entry
 {% endblock %}
 
 {% block content %}
-  {% crispy form %}
+   {% crispy form %}
 {% endblock %}

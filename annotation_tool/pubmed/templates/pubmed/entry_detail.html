@@ -1,91 +1,91 @@
 {% extends 'base.html' %}
 
 {% block page_header_h1 %}
-  Pubmed Entry
+   Pubmed Entry
 {% endblock page_header_h1 %}
 
 {% block content %}
-  <dl class="dl-horizontal">
-    <dt>user</dt>
-    <dd>{{ entry.user }}</dd>
-    <dt>pubmed_id</dt>
-    <dd>{{ entry.pubmed_id }}</dd>
-    <dt>gene</dt>
-    <dd>{{ entry.gene }}</dd>
-    <dt>structure</dt>
-    <dd>{{ entry.structure }}</dd>
-    <dt>mutation_type</dt>
-    <dd>{{ entry.mutation_type }}</dd>
-    <dt>syntax</dt>
-    <dd>{{ entry.syntax }}</dd>
-    <dt>syntax_text</dt>
-    <dd>{{ entry.syntax_text }}</dd>
-    <dt>operator</dt>
-    <dd>{{ entry.operator }}</dd>
-    <dt>rule_level</dt>
-    <dd>{{ entry.rule_level }}</dd>
-    <dt>chromosome</dt>
-    <dd>{{ entry.chromosome }}</dd>
-    <dt>start</dt>
-    <dd>{{ entry.start }}</dd>
-    <dt>stop</dt>
-    <dd>{{ entry.stop }}</dd>
-    <dt>breakend_strand</dt>
-    <dd>{{ entry.breakend_strand }}</dd>
-    <dt>breakend_direction</dt>
-    <dd>{{ entry.breakend_direction }}</dd>
-    <dt>mate_chromosome</dt>
-    <dd>{{ entry.mate_chromosome }}</dd>
-    <dt>mate_start</dt>
-    <dd>{{ entry.mate_start }}</dd>
-    <dt>mate_end</dt>
-    <dd>{{ entry.mate_end }}</dd>
-    <dt>mate_breakend_strand</dt>
-    <dd>{{ entry.mate_breakend_strand }}</dd>
-    <dt>mate_breakend_direction</dt>
-    <dd>{{ entry.mate_breakend_direction }}</dd>
-    <dt>minimum_number_of_copies</dt>
-    <dd>{{ entry.minimum_number_of_copies }}</dd>
-    <dt>maximum_number_of_copies</dt>
-    <dd>{{ entry.maximum_number_of_copies }}</dd>
-    <dt>coordinate_predicate</dt>
-    <dd>{{ entry.coordinate_predicate }}</dd>
-    <dt>partner_coordinate_predicate</dt>
-    <dd>{{ entry.partner_coordinate_predicate }}</dd>
-    <dt>variant_type</dt>
-    <dd>{{ entry.variant_type }}</dd>
-    <dt>variant_consequence</dt>
-    <dd>{{ entry.variant_consequence }}</dd>
-    <dt>variant_clinical_grade</dt>
-    <dd>{{ entry.variant_clinical_grade }}</dd>
-    <dt>disease</dt>
-    <dd>{{ entry.disease }}</dd>
-    <dt>treatment_1</dt>
-    <dd>{{ entry.treatment_1 }}</dd>
-    <dt>treatment_2</dt>
-    <dd>{{ entry.treatment_2 }}</dd>
-    <dt>treatment_3</dt>
-    <dd>{{ entry.treatment_3 }}</dd>
-    <dt>treatment_4</dt>
-    <dd>{{ entry.treatment_4 }}</dd>
-    <dt>treatment_5</dt>
-    <dd>{{ entry.treatment_5 }}</dd>
-    <dt>population_size</dt>
-    <dd>{{ entry.population_size }}</dd>
-    <dt>sex</dt>
-    <dd>{{ entry.sex }}</dd>
-    <dt>ethnicity</dt>
-    <dd>{{ entry.ethnicity }}</dd>
-    <dt>assessed_patient_outcomes</dt>
-    <dd>{{ entry.assessed_patient_outcomes }}</dd>
-    <dt>significant_patient_outcomes</dt>
-    <dd>{{ entry.significant_patient_outcomes }}</dd>
-    <dt>design</dt>
-    <dd>{{ entry.design }}</dd>
-    <dt>reference_claims</dt>
-    <dd>{{ entry.reference_claims }}</dd>
-    <dt>comments</dt>
-    <dd>{{ entry.comments }}</dd>
-  </dl>
+   <dl class="dl-horizontal">
+      <dt>user</dt>
+      <dd>{{ entry.user }}</dd>
+      <dt>pubmed_id</dt>
+      <dd>{{ entry.pubmed_id }}</dd>
+      <dt>gene</dt>
+      <dd>{{ entry.gene }}</dd>
+      <dt>structure</dt>
+      <dd>{{ entry.structure }}</dd>
+      <dt>mutation_type</dt>
+      <dd>{{ entry.mutation_type }}</dd>
+      <dt>syntax</dt>
+      <dd>{{ entry.syntax }}</dd>
+      <dt>syntax_text</dt>
+      <dd>{{ entry.syntax_text }}</dd>
+      <dt>operator</dt>
+      <dd>{{ entry.operator }}</dd>
+      <dt>rule_level</dt>
+      <dd>{{ entry.rule_level }}</dd>
+      <dt>chromosome</dt>
+      <dd>{{ entry.chromosome }}</dd>
+      <dt>start</dt>
+      <dd>{{ entry.start }}</dd>
+      <dt>stop</dt>
+      <dd>{{ entry.stop }}</dd>
+      <dt>breakend_strand</dt>
+      <dd>{{ entry.breakend_strand }}</dd>
+      <dt>breakend_direction</dt>
+      <dd>{{ entry.breakend_direction }}</dd>
+      <dt>mate_chromosome</dt>
+      <dd>{{ entry.mate_chromosome }}</dd>
+      <dt>mate_start</dt>
+      <dd>{{ entry.mate_start }}</dd>
+      <dt>mate_end</dt>
+      <dd>{{ entry.mate_end }}</dd>
+      <dt>mate_breakend_strand</dt>
+      <dd>{{ entry.mate_breakend_strand }}</dd>
+      <dt>mate_breakend_direction</dt>
+      <dd>{{ entry.mate_breakend_direction }}</dd>
+      <dt>minimum_number_of_copies</dt>
+      <dd>{{ entry.minimum_number_of_copies }}</dd>
+      <dt>maximum_number_of_copies</dt>
+      <dd>{{ entry.maximum_number_of_copies }}</dd>
+      <dt>coordinate_predicate</dt>
+      <dd>{{ entry.coordinate_predicate }}</dd>
+      <dt>partner_coordinate_predicate</dt>
+      <dd>{{ entry.partner_coordinate_predicate }}</dd>
+      <dt>variant_type</dt>
+      <dd>{{ entry.variant_type }}</dd>
+      <dt>variant_consequence</dt>
+      <dd>{{ entry.variant_consequence }}</dd>
+      <dt>variant_clinical_grade</dt>
+      <dd>{{ entry.variant_clinical_grade }}</dd>
+      <dt>disease</dt>
+      <dd>{{ entry.disease }}</dd>
+      <dt>treatment_1</dt>
+      <dd>{{ entry.treatment_1 }}</dd>
+      <dt>treatment_2</dt>
+      <dd>{{ entry.treatment_2 }}</dd>
+      <dt>treatment_3</dt>
+      <dd>{{ entry.treatment_3 }}</dd>
+      <dt>treatment_4</dt>
+      <dd>{{ entry.treatment_4 }}</dd>
+      <dt>treatment_5</dt>
+      <dd>{{ entry.treatment_5 }}</dd>
+      <dt>population_size</dt>
+      <dd>{{ entry.population_size }}</dd>
+      <dt>sex</dt>
+      <dd>{{ entry.sex }}</dd>
+      <dt>ethnicity</dt>
+      <dd>{{ entry.ethnicity }}</dd>
+      <dt>assessed_patient_outcomes</dt>
+      <dd>{{ entry.assessed_patient_outcomes }}</dd>
+      <dt>significant_patient_outcomes</dt>
+      <dd>{{ entry.significant_patient_outcomes }}</dd>
+      <dt>design</dt>
+      <dd>{{ entry.design }}</dd>
+      <dt>reference_claims</dt>
+      <dd>{{ entry.reference_claims }}</dd>
+      <dt>comments</dt>
+      <dd>{{ entry.comments }}</dd>
+   </dl>
 
 {% endblock content %}
