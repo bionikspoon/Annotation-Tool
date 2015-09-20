@@ -87,7 +87,7 @@ if not DEBUG:
     COMPRESS_URL = STATIC_URL = '/staticfiles/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (str(ROOT_DIR.path('.tmp')),)
+STATICFILES_DIRS = (str(ROOT_DIR.path('static')),)
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------

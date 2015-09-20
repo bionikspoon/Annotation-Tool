@@ -7,5 +7,3 @@ __version_info__ = tuple(  # :off
     ]
 )  # :on
 
-# Local Application
-from . import contrib, users

@@ -11,8 +11,8 @@ from rest_framework.viewsets import ViewSet
 
 # Annotation Tool Project
 from annotation_tool.users.views import UserViewSet
-from pubmed import lookups
-from pubmed.views import EntryViewSet
+import lookups
+from views import EntryViewSet
 
 lookup_router = DefaultRouter()
 lookup_router.register(r'structurelookup', lookups.StructureLookupViewSet, base_name='structurelookup')

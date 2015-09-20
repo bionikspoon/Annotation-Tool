@@ -4,7 +4,7 @@ import logging
 # Third Party Packages
 from factory.django import DjangoModelFactory
 from faker import Faker
-from core.utils.factories import make
+from ..core.utils.factories import make
 
 logger = logging.getLogger(__name__)
 faker = Faker()

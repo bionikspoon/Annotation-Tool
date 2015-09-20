@@ -1,5 +1,5 @@
 # Local development dependencies go here
--r base.in
+-r common.in
 coverage
 Sphinx
 django-extensions

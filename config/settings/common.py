@@ -78,6 +78,7 @@ THIRD_PARTY_APPS = (  # :off
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',
+    'djangobower',
     'compressor'
 
 )  # :on
@@ -95,8 +96,8 @@ LOCAL_APPS = (
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend', 'allauth.account.auth_backends.AuthenticationBackend'
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
+                           'allauth.account.auth_backends.AuthenticationBackend'
 
 )
 
@@ -309,13 +310,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Make sure djangosecure.middleware.SecurityMiddleware is listed first
-MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.contrib.admindocs.middleware.XViewMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
+MIDDLEWARE_CLASSES = ('django.contrib.sessions.middleware.SessionMiddleware',
+                      'django.middleware.common.CommonMiddleware',
+                      'django.middleware.csrf.CsrfViewMiddleware',
+                      'django.contrib.auth.middleware.AuthenticationMiddleware',
+                      'django.contrib.messages.middleware.MessageMiddleware',
+                      'django.middleware.clickjacking.XFrameOptionsMiddleware',
+                      'django.contrib.admindocs.middleware.XViewMiddleware',
+                      'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
 
 )
 
@@ -361,12 +363,15 @@ STATICFILES_DIRS = []
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
                        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-                       'compressor.finders.CompressorFinder')
-COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
-COMPRESS_OFFLINE = True
+                       'djangobower.finders.BowerFinder', 'compressor.finders.CompressorFinder')
+COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', True)
+# COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
+COMPRESS_OFFLINE = False
+# COMPRESS_OFFLINE = True
 # COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',
 #                         'compressor.filters.yuglify.YUglifyCSSFilter']
-# COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter', 'compressor.filters.yuglify.YUglifyJSFilter']
+# COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter',
+# 'compressor.filters.yuglify.YUglifyJSFilter']
 COMPRESS_YUGLIFY_BINARY = ROOT_DIR.path('node_modules', '.bin', 'yuglify')
 
 # TEMPLATE CONFIGURATION

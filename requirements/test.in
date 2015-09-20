@@ -1,5 +1,5 @@
 # Test dependencies go here.
--r base.in
+-r common.in
 coverage
 flake8
 django-test-plus
