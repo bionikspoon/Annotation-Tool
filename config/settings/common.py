@@ -97,7 +97,9 @@ LOCAL_APPS = (
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = (
-'django.contrib.auth.backends.ModelBackend', 'allauth.account.auth_backends.AuthenticationBackend'
+
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
 
 )
 
@@ -311,13 +313,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # ------------------------------------------------------------------------------
 # Make sure djangosecure.middleware.SecurityMiddleware is listed first
 MIDDLEWARE_CLASSES = (
-'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware',
-'django.middleware.csrf.CsrfViewMiddleware',
-'django.contrib.auth.middleware.AuthenticationMiddleware',
-'django.contrib.messages.middleware.MessageMiddleware',
-'django.middleware.clickjacking.XFrameOptionsMiddleware',
-'django.contrib.admindocs.middleware.XViewMiddleware',
-'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
+
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.admindocs.middleware.XViewMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
 
 )
 
@@ -355,11 +358,11 @@ SESSION_COOKIE_HTTPONLY = True
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-COMPRESS_ROOT = STATIC_ROOT = ROOT_DIR('staticfiles')
+STATIC_ROOT = ROOT_DIR('staticfiles')
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-COMPRESS_URL = STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [APPS_DIR('static')]
+STATICFILES_DIRS = [ROOT_DIR('dist')]
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
                        'django.contrib.staticfiles.finders.AppDirectoriesFinder',

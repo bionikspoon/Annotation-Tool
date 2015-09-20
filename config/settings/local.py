@@ -82,6 +82,9 @@ ALLOWED_HOSTS = ['localhost:8000', '127.0.0.1:8000']
 SECURE_SSL_REDIRECT = False
 
 
+# STATIC FILE CONFIGURATION
+# ------------------------------------------------------------------------------
+STATICFILES_DIRS = [APPS_DIR('static'), ROOT_DIR('dist')]
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
 TEMPLATES[0]['OPTIONS']['context_processors'].insert(0, 'django.template.context_processors.debug')

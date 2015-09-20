@@ -1,7 +1,8 @@
 @charset "UTF-8";
 @import "main_settings";
-
-
+/*
+Foundation
+*/
 @import '../../../bower_components/foundation/scss/foundation/components/grid';
 @import '../../../bower_components/foundation/scss/foundation/components/accordion';
 @import '../../../bower_components/foundation/scss/foundation/components/alert-boxes';
@@ -39,3 +40,9 @@
 @import '../../../bower_components/foundation/scss/foundation/components/type';
 @import '../../../bower_components/foundation/scss/foundation/components/offcanvas';
 @import '../../../bower_components/foundation/scss/foundation/components/visibility';
+/*
+Project
+*/
+@import "django";
+//@import "rest_framework";
+@import "pubmed";

@@ -70,4 +70,4 @@ test/bower_components
 .ipynb_checkpoints/
 shell.ipynb
 .htmlcov/
-core/production/static/
+dist/
