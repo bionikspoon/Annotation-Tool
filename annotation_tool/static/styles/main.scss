@@ -1,8 +1,18 @@
 @charset "UTF-8";
+/*
+Normalize
+*/
+@import 'normalize';
+/*
+Local Overrides
+*/
 @import "main_settings";
 /*
 Foundation
 */
+//Setup
+@import 'foundation/functions';
+//Components
 @import 'foundation/components/grid';
 @import 'foundation/components/accordion';
 @import 'foundation/components/alert-boxes';

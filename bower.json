@@ -2,7 +2,8 @@
   "name": "Annotation Tool",
   "private": true,
   "dependencies": {
-    "foundation": "~5.5.2"
+    "foundation": "~5.5.2",
+    "modernizr": "~3.0.0"
   },
   "devDependencies": {
     "chai": "~3.2.0",

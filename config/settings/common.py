@@ -370,6 +370,10 @@ STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
 COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
 COMPRESS_OFFLINE = True
 
+BOWER_COMPONENTS_ROOT = ROOT_DIR('bower_components')
+
+BOWER_INSTALLED_APPS = ('modernizr', 'foundation',)
+BOWER_PATH = ROOT_DIR('node_modules/.bin/bower')
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
