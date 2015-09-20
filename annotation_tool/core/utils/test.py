@@ -2,20 +2,20 @@
 Utilities for testing.
 """
 
-# Django Packages
+# Python Libraries
+import logging
 from functools import wraps
 from urllib.parse import urljoin
 
+# Django Packages
 from django.conf import settings
 from django.core.urlresolvers import NoReverseMatch, reverse
 
-
-
-# Annotation Tool Project
+# Third Party Packages
 from rest_framework.test import APITestCase
-from ...users.factories import UserFactory
 
-import logging
+# Local Application
+from ...users.factories import UserFactory
 
 logger = logging.getLogger(__name__)
 

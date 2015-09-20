@@ -1,5 +1,7 @@
+# Python Libraries
 import re
 
+# Django Packages
 from django import template
 
 register = template.Library()

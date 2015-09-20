@@ -14,8 +14,6 @@ from django.db import models
 from model_utils import models as utils_models
 from model_utils import Choices
 
-# Annotation Tool Project
-
 # Local Application
 from . import lookups
 from ..core.utils.decorators import classproperty

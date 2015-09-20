@@ -3,8 +3,10 @@ import logging
 
 # Django Packages
 from django.test import TestCase
-from ..models import EntryMeta
+
+# Local Application
 from ..factories import EntryFactory
+from ..models import EntryMeta
 
 logger = logging.getLogger(__name__)
 

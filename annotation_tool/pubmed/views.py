@@ -17,7 +17,7 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 # Local Application
 from .forms import EntryModelForm
 from .models import Entry, EntryMeta
-from .serializers import EntryListSerializer, EntryDetailSerializer
+from .serializers import EntryDetailSerializer, EntryListSerializer
 
 
 class EntryMixin(object):

@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 # Django Packages
 from django.db import migrations
 
-# Annotation Tool Project
-from .initial_data import populate_lookup_tables, clean_lookup_tables
+# Local Application
+from .initial_data import clean_lookup_tables, populate_lookup_tables
 
 
 class Migration(migrations.Migration):

@@ -1,11 +1,10 @@
 # Python Libraries
 import logging
 
-# Django Packages
-
 # Third Party Packages
-from crispy_forms_foundation.layout import (HTML, Button, Column, Div, Field, Fieldset, Layout, Row,
-    Submit, ButtonHolder)
+from crispy_forms_foundation.layout import (
+  HTML, Button, ButtonHolder, Column, Div, Field, Fieldset, Layout, Row, Submit
+)
 
 logger = logging.getLogger(__name__)
 

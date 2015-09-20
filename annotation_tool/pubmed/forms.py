@@ -7,7 +7,7 @@ import logging
 
 # Django Packages
 from django.db import models
-from django.forms import ModelForm, RadioSelect, TypedChoiceField, HiddenInput, IntegerField
+from django.forms import HiddenInput, IntegerField, ModelForm, RadioSelect, TypedChoiceField
 
 # Third Party Packages
 from braces.forms import UserKwargModelFormMixin
@@ -16,9 +16,11 @@ from model_utils import Choices
 
 # Local Application
 from .layouts import EntryFormLayout
-from .lookups import (BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup, OperatorLookup,
-    PatientOutcomesLookup, RuleLevelLookup, SexLookup, StructureLookup, SyntaxLookup,
-    VariantConsequenceLookup, VariantTypeLookup)
+from .lookups import (
+  BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup, OperatorLookup,
+  PatientOutcomesLookup, RuleLevelLookup, SexLookup, StructureLookup, SyntaxLookup,
+  VariantConsequenceLookup, VariantTypeLookup
+)
 from .models import Entry, EntryMeta
 
 logger = logging.getLogger(__name__)

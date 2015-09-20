@@ -3,7 +3,9 @@ import logging
 
 # Django Packages
 from django.test import TestCase
-from ..factories import UserFactory, SuperUserFactory
+
+# Local Application
+from ..factories import SuperUserFactory, UserFactory
 
 logger = logging.getLogger(__name__)
 

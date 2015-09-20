@@ -9,7 +9,6 @@ import logging
 from factory import DjangoModelFactory, Iterator, SubFactory
 from faker import Faker
 
-
 # Local Application
 from . import lookups
 from ..core.utils.factories import make, many_to_many

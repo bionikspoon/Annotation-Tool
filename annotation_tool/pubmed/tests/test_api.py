@@ -1,3 +1,4 @@
+# Local Application
 from ...core.utils.test import BaseAPITestCase
 from ..factories import EntryFactory
 

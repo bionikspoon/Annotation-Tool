@@ -1,7 +1,10 @@
+# Compatibility
 from __future__ import unicode_literals
 
+# Django Packages
 from django.db import migrations
 
+# Local Application
 from . import add_page, remove_page
 
 
