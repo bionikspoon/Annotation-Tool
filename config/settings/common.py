@@ -74,6 +74,7 @@ ADMIN_APPS = (  # :off
 THIRD_PARTY_APPS = (  # :off
 
     'crispy_forms',  # Form layouts
+    'crispy_forms_foundation',
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
@@ -276,8 +277,8 @@ LOGGING = {
 
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
-CRISPY_TEMPLATE_PACK = 'flat_form'
-CRISPY_ALLOWED_TEMPLATE_PACKS = ('flat_form',)
+CRISPY_TEMPLATE_PACK = 'foundation-5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap', 'uni_form', 'bootstrap3', 'foundation-5',)
 CRISPY_CLASS_CONVERTERS = {
     'textinput': 'form-control',
     'numberinput': 'form-control',
@@ -370,7 +371,7 @@ STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
 COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
 COMPRESS_OFFLINE = True
 
-BOWER_COMPONENTS_ROOT = ROOT_DIR('bower_components')
+# BOWER_COMPONENTS_ROOT = ROOT_DIR('bower_components')
 
 BOWER_INSTALLED_APPS = ('modernizr', 'foundation',)
 BOWER_PATH = ROOT_DIR('node_modules/.bin/bower')

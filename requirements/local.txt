@@ -9,6 +9,7 @@ argh==0.26.1              # via watchdog
 babel==2.0                # via sphinx
 click==5.1                # via pip-tools
 coverage==3.7.1
+crispy-forms-foundation==0.5.2
 decorator==4.0.2          # via ipython, traitlets
 defusedxml==0.4.1         # via python3-openid
 django-allauth==0.23.0

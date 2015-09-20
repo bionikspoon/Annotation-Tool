@@ -6,8 +6,8 @@ from django.template.loader import render_to_string
 
 # Third Party Packages
 from crispy_forms.bootstrap import FormActions
-from crispy_forms.layout import (HTML, Button, Column, Div, Field, Fieldset, Layout, LayoutObject, Row,
-    Submit)
+from crispy_forms_foundation.layout import (HTML, Button, Column, Div, Field, Fieldset, Layout, Row,
+    Submit, ButtonHolder)
 from crispy_forms.utils import flatatt, render_field, TEMPLATE_PACK
 
 logger = logging.getLogger(__name__)
@@ -23,12 +23,14 @@ logger = logging.getLogger(__name__)
 #         self.template = kwargs.pop('template', self.template)
 #         self.flat_attrs = flatatt(kwargs)
 #
-#     def get_rendered_fields(self, form, form_style, context, template_pack=TEMPLATE_PACK, **kwargs):
+#     def get_rendered_fields(self, form, form_style, context, template_pack=TEMPLATE_PACK,
+# **kwargs):
 #         kwargs['template'] = 'flat/layout/field.html'
 #         template_pack = 'flat'
 #
 #         def render(field):
-#             return render_field(field, form, form_style, context, template_pack=template_pack, **kwargs)
+#             return render_field(field, form, form_style, context, template_pack=template_pack,
+# **kwargs)
 #
 #         return ''.join(render(field) for field in self.fields)
 #
@@ -60,7 +62,8 @@ class EntryFormLayout(Layout):
 
             Fieldset('Gene Description',
 
-                     'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator', 'rule_level',
+                     'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator',
+                     'rule_level',
 
                      Row(
 
@@ -93,7 +96,7 @@ class EntryFormLayout(Layout):
 
                              'minimum_number_of_copies',
 
-                             css_class='col-sm-6'
+                             css_class='large-6'
 
                          ),
 
@@ -101,7 +104,7 @@ class EntryFormLayout(Layout):
 
                              'maximum_number_of_copies',
 
-                             css_class='col-sm-6',
+                             css_class='large-6',
 
                          ),
 
@@ -115,7 +118,7 @@ class EntryFormLayout(Layout):
 
                              'coordinate_predicate',
 
-                             css_class='col-sm-6'
+                             css_class='large-6'
 
                          ),
 
@@ -123,7 +126,7 @@ class EntryFormLayout(Layout):
 
                              'partner_coordinate_predicate',
 
-                             css_class='col-sm-6',
+                             css_class='large-6',
 
                          ),
 
@@ -137,8 +140,8 @@ class EntryFormLayout(Layout):
 
             Fieldset('Treatment',
 
-                     'disease', 'treatment', 'treatment_1', 'treatment_2', 'treatment_3', 'treatment_4',
-                     'treatment_5'
+                     'disease', 'treatment', 'treatment_1', 'treatment_2', 'treatment_3',
+                     'treatment_4', 'treatment_5'
 
                      ),
 
@@ -151,7 +154,7 @@ class EntryFormLayout(Layout):
 
             Fieldset('{{ action_text }} Entry',
 
-                     Submit('submit', 'Submit'), Button('cancel', 'Cancel')
+                     ButtonHolder(Submit('submit', 'Submit'), Button('cancel', 'Cancel'))
 
                      ),
 

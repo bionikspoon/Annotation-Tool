@@ -171,8 +171,8 @@ gulp.task('images', () => {
 });
 gulp.task('watch', () => {
     $.livereload.listen();
-    gulp.watch(config.src('styles/*.scss'), ['lint', 'styles']);
-    gulp.watch(config.src('scripts/*.js'), ['lint', 'scripts']);
+    gulp.watch(config.src('styles/*.scss'), ['styles']);
+    gulp.watch(config.src('scripts/*.js'), ['scripts']);
     gulp.watch(config.root('bower.json'), ['scripts:vendor']);
     gulp.watch('**/templates/*').on('change', $.livereload.changed)
 });
