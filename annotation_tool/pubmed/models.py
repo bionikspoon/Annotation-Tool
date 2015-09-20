@@ -15,10 +15,10 @@ from model_utils import models as utils_models
 from model_utils import Choices
 
 # Annotation Tool Project
-from utils import classproperty
 
 # Local Application
 from . import lookups
+from ..core.utils.decorators import classproperty
 
 
 class DEFAULTS(object):
@@ -38,7 +38,8 @@ class Entry(utils_models.TimeStampedModel):
     """
     user = models.ForeignKey(
 
-        settings.AUTH_USER_MODEL, editable=False, related_name='pubmed_entries', on_delete=models.PROTECT
+        settings.AUTH_USER_MODEL, editable=False, related_name='pubmed_entries',
+        on_delete=models.PROTECT
 
     )
     pubmed_id = models.PositiveIntegerField()
@@ -54,12 +55,14 @@ class Entry(utils_models.TimeStampedModel):
     stop = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     breakend_strand = models.ForeignKey(
 
-        lookups.BreakendStrandLookup, related_name='breakend_strand_entry_set', **DEFAULTS.ForeignKey
+        lookups.BreakendStrandLookup, related_name='breakend_strand_entry_set',
+        **DEFAULTS.ForeignKey
 
     )
     breakend_direction = models.ForeignKey(
 
-        lookups.BreakendDirectionLookup, related_name='breakend_direction_entry_set', **DEFAULTS.ForeignKey
+        lookups.BreakendDirectionLookup, related_name='breakend_direction_entry_set',
+        **DEFAULTS.ForeignKey
 
     )
     mate_chromosome = models.CharField(**DEFAULTS.CharField)
@@ -67,7 +70,8 @@ class Entry(utils_models.TimeStampedModel):
     mate_end = models.PositiveIntegerField(**DEFAULTS.IntegerField)
     mate_breakend_strand = models.ForeignKey(
 
-        lookups.BreakendStrandLookup, related_name='mate_breakend_strand_entry_set', **DEFAULTS.ForeignKey
+        lookups.BreakendStrandLookup, related_name='mate_breakend_strand_entry_set',
+        **DEFAULTS.ForeignKey
 
     )
     mate_breakend_direction = models.ForeignKey(

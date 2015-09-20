@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 from django.db import migrations
 
 # Annotation Tool Project
+from .initial_data import populate_lookup_tables, clean_lookup_tables
 
 
 class Migration(migrations.Migration):
@@ -12,7 +13,6 @@ class Migration(migrations.Migration):
 
     operations = [migrations.RunPython(
 
-        code=lookups.migrations.initial_data.populate_lookup_tables,
-        reverse_code=lookups.migrations.initial_data.clean_lookup_tables,
+        code=populate_lookup_tables, reverse_code=clean_lookup_tables,
 
     )]

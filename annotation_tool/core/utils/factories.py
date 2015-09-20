@@ -9,7 +9,7 @@ def make(field, **kwargs):
 
 
 def many_to_many(model, name):
-    def wrapper(self, create, extracted, **kwargs):
+    def wrapper(self, create, extracted, **_):
         field = getattr(self, name)
         if not create:
             # Simple build, do nothing.

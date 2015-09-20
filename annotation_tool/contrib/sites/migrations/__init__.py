@@ -2,7 +2,7 @@
 from django.conf import settings
 
 
-def update_site_forward(apps, schema_editor):
+def update_site_forward(apps, _):
     """Set site domain and name."""
     Site = apps.get_model("sites", "Site")
     Site.objects.update_or_create(id=settings.SITE_ID, defaults={
@@ -11,7 +11,7 @@ def update_site_forward(apps, schema_editor):
     })
 
 
-def update_site_backward(apps, schema_editor):
+def update_site_backward(apps, _):
     """Revert site domain and name to default."""
     Site = apps.get_model("sites", "Site")
     Site.objects.update_or_create(id=settings.SITE_ID, defaults={

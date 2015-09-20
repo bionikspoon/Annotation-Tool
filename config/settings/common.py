@@ -86,18 +86,18 @@ THIRD_PARTY_APPS = (  # :off
 # Apps specific for this project go here.
 LOCAL_APPS = (
 
-    'core',  # templates and static
+    'annotation_tool.core',  # templates and static
     'annotation_tool.users',  # custom users app
-    'pubmed',
+    'annotation_tool.pubmed',
 
-    'pubmed.lookups',
+    'annotation_tool.pubmed.lookups',
 
 )
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
-AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
-                           'allauth.account.auth_backends.AuthenticationBackend'
+AUTHENTICATION_BACKENDS = (
+'django.contrib.auth.backends.ModelBackend', 'allauth.account.auth_backends.AuthenticationBackend'
 
 )
 
@@ -201,10 +201,10 @@ LOGGING = {
             '()': 'django.utils.log.RequireDebugTrue'
         },
         'not_django': {
-            '()': 'core.utils.log.NotDjangoFilter'
+            '()': 'annotation_tool.core.utils.log.NotDjangoFilter'
         },
         'not_production': {
-            '()': 'core.utils.log.NotProductionFilter'
+            '()': 'annotation_tool.core.utils.log.NotProductionFilter'
         }
     },
     'handlers': {
@@ -216,16 +216,16 @@ LOGGING = {
         'django': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': str(ROOT_DIR.path('logs', 'django.log')),
+            'filename': ROOT_DIR('logs', 'django.log'),
             'filters': ['require_debug_true'],
             'backupCount': 10,
             'when': 'MIDNIGHT',
             'formatter': 'verbose'
         },
-        'pubmed': {
+        'annotation_tool': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': str(ROOT_DIR.path('logs', 'pubmed.log')),
+            'filename': ROOT_DIR('logs', 'annotation_tool.log'),
             'backupCount': 10,
             'when': 'm',
             'interval': 10,
@@ -234,7 +234,7 @@ LOGGING = {
         'debug': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': str(ROOT_DIR.path('logs', 'debug.log')),
+            'filename': ROOT_DIR('logs', 'debug.log'),
             'filters': ['require_debug_true'],
             'backupCount': 10,
             'when': 'm',
@@ -253,8 +253,8 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True
         },
-        'pubmed': {
-            'handlers': ['pubmed'],
+        'annotation_tool': {
+            'handlers': ['annotation_tool'],
             'level': 'DEBUG',
             'propagate': True,
             'filter': ['not_production']
@@ -294,7 +294,7 @@ MANAGERS = ADMINS
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR('media'))
+MEDIA_ROOT = APPS_DIR('media')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
@@ -310,14 +310,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Make sure djangosecure.middleware.SecurityMiddleware is listed first
-MIDDLEWARE_CLASSES = ('django.contrib.sessions.middleware.SessionMiddleware',
-                      'django.middleware.common.CommonMiddleware',
-                      'django.middleware.csrf.CsrfViewMiddleware',
-                      'django.contrib.auth.middleware.AuthenticationMiddleware',
-                      'django.contrib.messages.middleware.MessageMiddleware',
-                      'django.middleware.clickjacking.XFrameOptionsMiddleware',
-                      'django.contrib.admindocs.middleware.XViewMiddleware',
-                      'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
+MIDDLEWARE_CLASSES = (
+'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware',
+'django.middleware.csrf.CsrfViewMiddleware',
+'django.contrib.auth.middleware.AuthenticationMiddleware',
+'django.contrib.messages.middleware.MessageMiddleware',
+'django.middleware.clickjacking.XFrameOptionsMiddleware',
+'django.contrib.admindocs.middleware.XViewMiddleware',
+'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
 
 )
 
@@ -355,24 +355,18 @@ SESSION_COOKIE_HTTPONLY = True
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-COMPRESS_ROOT = STATIC_ROOT = str(ROOT_DIR('staticfiles'))
+COMPRESS_ROOT = STATIC_ROOT = ROOT_DIR('staticfiles')
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 COMPRESS_URL = STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [APPS_DIR('static')]
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
                        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
                        'djangobower.finders.BowerFinder', 'compressor.finders.CompressorFinder')
-COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', True)
-# COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
-COMPRESS_OFFLINE = False
-# COMPRESS_OFFLINE = True
-# COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',
-#                         'compressor.filters.yuglify.YUglifyCSSFilter']
-# COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter',
-# 'compressor.filters.yuglify.YUglifyJSFilter']
-COMPRESS_YUGLIFY_BINARY = ROOT_DIR.path('node_modules', '.bin', 'yuglify')
+COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
+COMPRESS_OFFLINE = True
+
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -381,7 +375,7 @@ TEMPLATES = [{
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-    'DIRS': [str(APPS_DIR.path('templates'))],
+    'DIRS': [APPS_DIR('templates')],
     'OPTIONS': {
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
         'debug': DEBUG,
