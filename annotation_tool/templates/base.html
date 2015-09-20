@@ -43,14 +43,14 @@
   <![endif]-->
    {% block css %}
       {% compress css file %}
-         <link rel=stylesheet href={% static 'styles/main.css' %}>
+         <link rel=stylesheet href={% static 'styles/main.min.css' %}>
       {% endcompress %}
    {% endblock css %}
 
 
    {% block head_javascript %}
       {% compress js file %}
-         <script type="text/javascript" src='{% static 'modernizr/modernizr.js' %}'></script>
+         <script type="text/javascript" src='{% static 'scripts/modernizr.min.js' %}'></script>
       {% endcompress %}
    {% endblock head_javascript %}
 
@@ -125,8 +125,8 @@
 {% endcompress %}
 {% block javascript %}
    {% compress js file %}
-      <script src={% static 'scripts/vendor.js' %}></script>
-      <script src={% static 'scripts/main.js' %}></script>
+      <script src={% static 'scripts/vendor.min.js' %}></script>
+      <script src={% static 'scripts/main.min.js' %}></script>
    {% endcompress js %}
 {% endblock javascript %}
 

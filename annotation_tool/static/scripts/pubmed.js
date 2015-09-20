@@ -7,8 +7,7 @@
         return this.filter(//
             function (index, $el) {
                 return ($el.value === value.toString());
-            }
-        );
+            });
     };
 
 
@@ -29,9 +28,9 @@ $(function () {
          ***************************************************************************
          * */
 
-        //treatmentBehavior($form);
+        treatmentBehavior($form);
         //select2Setup($form);
-        //pubmedLookup($form);
+        pubmedLookup($form);
         //formUI($form);
 
         /**
@@ -76,8 +75,7 @@ $(function () {
                         var $field = $div.find('input[type=text]');
 
                         return $field.val() ? ++index : previousValue;
-                    }, 1
-                );
+                    }, 1);
 
                 //Click radio select for corresponding number of treatments.
                 $treatmentRadio.filterValue(numberOfTreatments).click();
@@ -90,14 +88,12 @@ $(function () {
                 //Show fields.
                 $treatmentsFieldDivs.slice(0, fields).map(function (treatment) {
                         treatment.show();
-                    }
-                );
+                    });
 
                 //Hide the rest.
                 $treatmentsFieldDivs.slice(fields).map(function (treatment) {
                         treatment.hide();
-                    }
-                );
+                    });
             }
 
             /**
@@ -127,8 +123,7 @@ $(function () {
              * */
             $select2.select2({
                     theme: 'bootstrap'
-                }
-            );
+                });
 
         }
 
@@ -181,21 +176,18 @@ $(function () {
 
                             _results = response ? response : '';
                             _summary = jqXHR.getResponseHeader('count');
-                        }
-                    )
+                        })
 
                         .fail(function () {
 
-                        }
-                    )
+                        })
 
                         .always(function () {
                             renderSummaryMessage();
                             toggleSummaryVisibility();
                             renderResults();
 
-                        }
-                    );
+                        });
                 }
 
 
@@ -237,6 +229,5 @@ $(function () {
         }
 
 
-    }
-);
+    });
 

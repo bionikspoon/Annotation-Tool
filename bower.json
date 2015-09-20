@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "foundation": "~5.5.2",
-    "modernizr": "~3.0.0"
+    "modernizr": "~2.8.1"
   },
   "devDependencies": {
     "chai": "~3.2.0",
