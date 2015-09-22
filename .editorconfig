@@ -20,7 +20,6 @@ indent_size = 4
 
 [*.py]
 quote_type = single
-continuation_indent_size = 2
 # https://github.com/timothycrosley/isort/wiki/isort-Settings
 line_length = 100
 multi_line_output = 5

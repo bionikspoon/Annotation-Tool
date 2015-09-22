@@ -52,7 +52,7 @@ mistune==0.7.1
 msgpack-python==0.4.6     # via django-redis
 nbconvert==4.0.0
 nbformat==4.0.0
-notebook==4.0.4
+notebook==4.0.5.post1
 oauthlib==1.0.3           # via requests-oauthlib
 path.py==8.1.1            # via pickleshare
 pathtools==0.1.2          # via watchdog

@@ -12,14 +12,14 @@ import sys
 import time
 
 from django.contrib.staticfiles.handlers import StaticFilesHandler
-from django_extensions.management.commands.runserver_plus import Command as RunServerPlusCommand, \
-    set_werkzeug_log_color, DEFAULT_PORT, naiveip_re, HAS_MIGRATIONS, USE_STATICFILES
+from django_extensions.management.commands.runserver_plus import (Command as RunServerPlusCommand,
+    set_werkzeug_log_color, DEFAULT_PORT, naiveip_re, HAS_MIGRATIONS, USE_STATICFILES)
 from django.conf import settings
 from django.core.management.base import CommandError
 from django.core.exceptions import ImproperlyConfigured
 from django_extensions.management.technical_response import null_technical_500_response
-from django_extensions.management.utils import RedirectHandler, setup_logger, signalcommand, \
-    has_ipdb
+from django_extensions.management.utils import (RedirectHandler, setup_logger, signalcommand,
+    has_ipdb)
 
 logger = logging.getLogger(__name__)
 
