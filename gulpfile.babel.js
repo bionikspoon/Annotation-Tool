@@ -189,11 +189,24 @@ gulp.task('images', () => {
         .pipe(gulp.dest(config.dist('images')))
 
 });
-gulp.task('watch', () => {
+
+gulp.task('clean:cov', () => $.del([config.root('.htmlcov')]));
+
+gulp.task('serve:cov', () => {
+    $.connect.server({
+        root: '.htmlcov',
+        port: 8002
+    });
+
+    opn('http://localhost:8002');
+
+});
+
+gulp.task('watch:project', () => {
     $.livereload.listen();
     gulp.watch(config.src('styles/**/*.scss'), ['styles']);
-    gulp.watch(config.src(['scripts/**/*.js', config.root('bower.json')]),
-        ['scripts']);
+    gulp.watch(config.src('scripts/**/*.js'), ['scripts']);
+    gulp.watch(config.src(config.root('bower.json')), ['scripts']);
     gulp.watch('**/templates/*').on('change', $.livereload.changed)
 });
 
@@ -205,5 +218,7 @@ gulp.task('build', ['clean', 'wiredep'], () => {
     gulp.start('build:project');
 });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('watch', ['build', 'watch:project']);
+
+gulp.task('default', ['build']);
 

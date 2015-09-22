@@ -19,7 +19,8 @@ logger = logging.getLogger(__name__)
 
 class CONFIG(object):
     """ Config object. """
-    data = settings.ROOT_DIR.path('pubmed', 'lookups', 'migrations', 'initial_data', 'data')
+    data = settings.ROOT_DIR.path('annotation_tool', 'pubmed', 'lookups', 'migrations',
+                                  'initial_data', 'data')
     module = 'pubmed.lookups'
     data_input = data.path('input')
     data_output = data.path('output')

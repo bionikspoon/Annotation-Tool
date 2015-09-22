@@ -29,7 +29,7 @@ docutils==0.12
 factory-boy==2.5.2
 first==2.0.1              # via pip-tools
 flake8==2.4.1
-funcy==1.5                # via django-cacheops
+funcy==1.6                # via django-cacheops
 mccabe==0.3.1             # via flake8
 msgpack-python==0.4.6     # via django-redis
 oauthlib==1.0.3           # via requests-oauthlib
@@ -39,7 +39,7 @@ pip-tools==1.1.4
 psycopg2==2.6.1
 pyflakes==0.8.1           # via flake8
 python3-openid==3.0.7     # via django-allauth
-pytz==2015.4
+pytz==2015.6
 redis==2.10.3
 requests-oauthlib==0.5.0  # via django-allauth
 requests==2.7.0           # via django-allauth, requests-oauthlib

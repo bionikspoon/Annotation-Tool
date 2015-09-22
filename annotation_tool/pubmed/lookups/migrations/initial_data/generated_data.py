@@ -2,9 +2,7 @@
 Generated Data.
 """
 
-# Local Application
 from . import InitialData
-
 
 class TreatmentLookup(InitialData):
     choices = [
@@ -138,3 +136,5 @@ class VariantTypeLookup(InitialData):
         'Substitution',
 
     ]
+
+

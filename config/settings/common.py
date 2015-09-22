@@ -37,7 +37,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 # Select the correct user model
 AUTH_USER_MODEL = 'users.User'
 LOGIN_REDIRECT_URL = 'users:redirect'
-LOGIN_URL = 'account_login'
+LOGIN_URL = 'home'
 
 
 # ADMIN CONFIGURATION
@@ -79,7 +79,6 @@ THIRD_PARTY_APPS = (  # :off
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',
-    'djangobower',
     'compressor'
 
 )  # :on
@@ -278,15 +277,15 @@ LOGGING = {
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
 CRISPY_TEMPLATE_PACK = 'foundation-5'
-CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap', 'uni_form', 'bootstrap3', 'foundation-5',)
-CRISPY_CLASS_CONVERTERS = {
-    'textinput': 'form-control',
-    'numberinput': 'form-control',
-    'textarea': 'form-control',
-    'selectmultiple': 'form-control multiselect multiselect-info',
-    'select': 'form-control select select-primary select-block'
-
-}
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('foundation-5',)
+# CRISPY_CLASS_CONVERTERS = {
+#     'textinput': 'form-control',
+#     'numberinput': 'form-control',
+#     'textarea': 'form-control',
+#     'selectmultiple': 'form-control multiselect multiselect-info',
+#     'select': 'form-control select select-primary select-block'
+#
+# }
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
@@ -367,7 +366,7 @@ STATICFILES_DIRS = [ROOT_DIR('dist')]
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
                        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-                       'djangobower.finders.BowerFinder', 'compressor.finders.CompressorFinder')
+                       'compressor.finders.CompressorFinder')
 COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
 COMPRESS_OFFLINE = True
 

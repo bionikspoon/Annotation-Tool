@@ -1,6 +1,0 @@
-{% load  crispy_forms_field  pubmed.tags %}
-<label for="{{ field.id_for_label }}" {% css_class required=field.field.required %}>
-   {{ field.label|safe|title }}:{% field_required %}
-</label>
-
-{% crispy_field field %}
