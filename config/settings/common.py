@@ -36,8 +36,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 # Custom user app defaults
 # Select the correct user model
 AUTH_USER_MODEL = 'users.User'
-LOGIN_REDIRECT_URL = 'users:redirect'
-LOGIN_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'account_login'
 
 
 # ADMIN CONFIGURATION
@@ -73,6 +73,7 @@ ADMIN_APPS = (  # :off
 
 THIRD_PARTY_APPS = (  # :off
 
+    'floppyforms',
     'crispy_forms',  # Form layouts
     'crispy_forms_foundation',
     'allauth',  # registration
@@ -277,7 +278,8 @@ LOGGING = {
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
 CRISPY_TEMPLATE_PACK = 'foundation-5'
-CRISPY_ALLOWED_TEMPLATE_PACKS = ('foundation-5',)
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('uni_form', 'foundation-5',)
 # CRISPY_CLASS_CONVERTERS = {
 #     'textinput': 'form-control',
 #     'numberinput': 'form-control',
@@ -371,9 +373,9 @@ COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
 COMPRESS_OFFLINE = True
 
 # BOWER_COMPONENTS_ROOT = ROOT_DIR('bower_components')
-
-BOWER_INSTALLED_APPS = ('modernizr', 'foundation',)
-BOWER_PATH = ROOT_DIR('node_modules/.bin/bower')
+#
+# BOWER_INSTALLED_APPS = ('modernizr', 'foundation',)
+# BOWER_PATH = ROOT_DIR('node_modules/.bin/bower')
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------

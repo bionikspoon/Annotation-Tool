@@ -2,15 +2,30 @@
 import logging
 
 # Third Party Packages
-from crispy_forms_foundation.layout import (HTML, Button, ButtonHolder, Column, Div, Field,
-    Fieldset, Layout, Row, Submit)
+from crispy_forms.layout import BaseInput
+from crispy_forms_foundation.layout import (HTML, ButtonHolder, Column, Div, Field, Fieldset,
+    Layout, Row, ButtonGroup)
 
 logger = logging.getLogger(__name__)
 
 
+class Button(BaseInput):
+    input_type = 'button'
+    field_classes = 'button'
+
+
+class Submit(BaseInput):
+    input_type = 'submit'
+    field_classes = 'submit button'
+
+
+class Reset(BaseInput):
+    input_type = 'reset'
+    field_classes = 'reset button'
+
+
 class EntryFormLayout(Layout):
     def __init__(self, helper, *args, **kwargs):
-
         super().__init__(
 
             Field('id'),
@@ -32,22 +47,22 @@ class EntryFormLayout(Layout):
 
                              'chromosome', 'start', 'stop', 'breakend_strand', 'breakend_direction',
 
-                             css_class='col-sm-6', data_form_column='true'
+                             css_class='medium-6'
 
                          ),
 
-                         HTML('<hr class="visible-xs">'),
+                         HTML('<hr class="show-for-small-only">'),
 
                          Column(
 
                              'mate_chromosome', 'mate_start', 'mate_end', 'mate_breakend_strand',
                              'mate_breakend_direction',
 
-                             css_class='col-sm-6', data_form_column='true'
+                             css_class='medium-6'
 
                          ),
 
-                         css_class='well',
+                         css_class='panel radius',
 
                      ),
 
@@ -57,7 +72,7 @@ class EntryFormLayout(Layout):
 
                              'minimum_number_of_copies',
 
-                             css_class='large-6'
+                             css_class='medium-6'
 
                          ),
 
@@ -65,11 +80,11 @@ class EntryFormLayout(Layout):
 
                              'maximum_number_of_copies',
 
-                             css_class='large-6',
+                             css_class='medium-6',
 
                          ),
 
-                         css_class='well well-sm'
+                         css_class='panel radius'
 
                      ),
 
@@ -79,7 +94,7 @@ class EntryFormLayout(Layout):
 
                              'coordinate_predicate',
 
-                             css_class='large-6'
+                             css_class='medium-6'
 
                          ),
 
@@ -87,11 +102,11 @@ class EntryFormLayout(Layout):
 
                              'partner_coordinate_predicate',
 
-                             css_class='large-6',
+                             css_class='medium-6',
 
                          ),
 
-                         css_class='well well-sm'
+                         css_class='panel radius'
 
                      ),
 
@@ -115,7 +130,9 @@ class EntryFormLayout(Layout):
 
             Fieldset('{{ action_text }} Entry',
 
-                     ButtonHolder(Submit('submit', 'Submit'), Button('cancel', 'Cancel'))
+                     ButtonGroup(Submit('submit', 'Submit'),
+                                 Button('cancel', 'Cancel', css_class='secondary'),
+                                 css_class='radius')
 
                      ),
 

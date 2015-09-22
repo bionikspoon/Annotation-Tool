@@ -6,21 +6,19 @@ Pubmed forms.
 import logging
 
 # Django Packages
+from crispy_forms import helper
 from django.db import models
-from django.forms import HiddenInput, IntegerField, ModelForm, RadioSelect, TypedChoiceField
 
 # Third Party Packages
 from braces.forms import UserKwargModelFormMixin
-from crispy_forms import helper
 from model_utils import Choices
+import floppyforms.__future__ as forms
 
 # Local Application
 from .layouts import EntryFormLayout
-from .lookups import (
-  BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup, OperatorLookup,
-  PatientOutcomesLookup, RuleLevelLookup, SexLookup, StructureLookup, SyntaxLookup,
-  VariantConsequenceLookup, VariantTypeLookup
-)
+from .lookups import (BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup,
+    OperatorLookup, PatientOutcomesLookup, RuleLevelLookup, SexLookup, StructureLookup,
+    SyntaxLookup, VariantConsequenceLookup, VariantTypeLookup)
 from .models import Entry, EntryMeta
 
 logger = logging.getLogger(__name__)
@@ -32,7 +30,7 @@ def model_choices(model):
     return ((lookup.pk, lookup.choice) for lookup in model.objects.only('choice'))
 
 
-class EntryModelForm(UserKwargModelFormMixin, ModelForm):
+class EntryModelForm(UserKwargModelFormMixin, forms.ModelForm):
     """
     Form representation of Pubmed Entry.
 
@@ -42,9 +40,10 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     # formfield_callback = entryform_formfield_callback
     # """Use radio inline widgets by default"""
 
-    treatment = TypedChoiceField(choices=Choices(*range(1, 6)), required=False, widget=RadioSelect)
+    treatment = forms.TypedChoiceField(choices=Choices(*range(1, 6)), required=False,
+                                       widget=forms.RadioSelect)
     """Helper field for dynamic treatment behavior."""
-    id = IntegerField(widget=HiddenInput, required=False)
+    id = forms.IntegerField(widget=forms.HiddenInput, required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -75,8 +74,8 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
         self.fields['pubmed_id'].help_text = ' '
 
         self.helper = helper.FormHelper(self)
-        self.helper.form_id = 'entry-form'
-        self.helper.html5_required = True
+        # self.helper.form_id = 'entry-form'
+        # self.helper.html5_required = True
         self.helper.layout = EntryFormLayout(helper=self.helper)
 
         # self.helper.filter_by_widget(RadioSelect).wrap(bootstrap.InlineRadios)
@@ -108,4 +107,5 @@ class EntryModelForm(UserKwargModelFormMixin, ModelForm):
     class Meta:
         model = Entry
         fields = ('id',) + EntryMeta.public_fields
-        widgets = {field: RadioSelect() for field in EntryMeta.foreign_fields if not field == 'user'}
+        widgets = {field: forms.RadioSelect() for field in EntryMeta.foreign_fields if
+                   not field == 'user'}

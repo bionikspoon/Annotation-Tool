@@ -64,22 +64,34 @@
 
 <main class=container>
 
-   {% block breadcrumbs %}
-   {% endblock breadcrumbs %}
+
+   <div class="row">
+      <div class="small-12 medium-10 large-8 columns">
+         {% block breadcrumbs %}
+         {% endblock breadcrumbs %}
+      </div>
+   </div>
 
    {% if messages %}
-      {% for message in messages %}
-         <div class="alert-box {% if message.tags %}{{ message.tags }}{% endif %} radius"
-              data-alert>
-            {{ message }} <a href="#" class="close">&times;</a>
+
+      <div class="row">
+         <div class="small-12 medium-10 large-8 columns">
+            {% for message in messages %}
+               <div class="alert-box {% if message.tags %}{{ message.tags }}{% endif %} radius"
+                    data-alert>
+                  {{ message }} <a href="#" class="close">&times;</a>
+               </div>
+               <!-- /.alert-box -->
+            {% endfor %}
+
          </div>
-         <!-- /.alert-box -->
-      {% endfor %}
+      </div>
+
    {% endif %}
 
    {% block page_header %}
       <div class="row">
-         <div class="large-12 columns">
+         <div class="small-12 medium-10 large-8 columns">
             <h1>
                {% block page_header_h1 %}
 
@@ -91,7 +103,7 @@
    {% endblock page_header %}
 
    <div class="row">
-      <div class="large-12 columns">
+      <div class="small-12 medium-10 large-8 columns">
          {% block content %}
          {% endblock content %}
       </div>
