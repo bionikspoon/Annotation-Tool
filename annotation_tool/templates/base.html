@@ -63,7 +63,7 @@
 <body class="{% block bodyclass %}{% endblock %}"{% block body_attrs %}{% endblock body_attrs %}>
 
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
    {% include '_nav.html' %}
 
    <main class="mdl-layout__content mdl-color--grey-100">
@@ -85,28 +85,23 @@
 
          {% endif %}
 
-{% comment %}         {% block page_header %}
+         {% comment %}
+         {% block page_header %}
             <h1>
                {% block page_header_h1 %}
 
                {% endblock page_header_h1 %}
             </h1>
 
-         {% endblock page_header %}{% endcomment %}
+         {% endblock page_header %}
+         {% endcomment %}
 
          {% block content %}
          {% endblock content %}
 
       </div>
       <!-- /.mdl-grid -->
-{#      <footer class="mdl-mini-footer">#}
-{#         <div class="mdl-mini-footer__left-section">#}
-{#            Test#}
-{#         </div>#}
-{#         <!-- /.mdl-mini-footer__left-section -->#}
-{##}
-{#      </footer>#}
-{#      <!-- /.mdl-mini-footer -->#}
+
    </main>
    <!-- /.mdl-layout__content -->
 
