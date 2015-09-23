@@ -71,11 +71,10 @@ class EntryModelForm(UserKwargModelFormMixin, forms.ModelForm):
         self.fields['variant_consequence'].choices = model_choices(VariantConsequenceLookup)
         self.fields['sex'].choices = model_choices(SexLookup)
 
-        self.fields['pubmed_id'].help_text = ' '
+        self.fields['pubmed_id'].help_text = '&nbsp;'
 
         self.helper = helper.FormHelper(self)
         # self.helper.form_id = 'entry-form'
-        # self.helper.html5_required = True
         self.helper.layout = EntryFormLayout(helper=self.helper)
 
         # self.helper.filter_by_widget(RadioSelect).wrap(bootstrap.InlineRadios)

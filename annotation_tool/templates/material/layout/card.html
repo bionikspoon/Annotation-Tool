@@ -1,0 +1,13 @@
+<fieldset
+   {% if fieldset.css_id %}id="{{ fieldset.css_id }}"{% endif %}
+
+   class="mdl-card mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col {{ fieldset.css_class }} {{ form_style }}"{{ fieldset.flat_attrs|safe }}>
+   <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">
+         {{ legend|safe }}
+      </h2>
+   </div>
+   <div class="mdl-card__supporting-text">
+      {{ fields|safe }}
+   </div>
+</fieldset>

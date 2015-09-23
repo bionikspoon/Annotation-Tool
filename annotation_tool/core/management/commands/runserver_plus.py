@@ -197,9 +197,7 @@ class Command(RunServerPlusCommand):
         # noinspection PyDocstring
         def inner_run():
             if extra_files:
-                print('Watching extra files:')
-                for file in extra_files:
-                    print(' * %s' % file)
+                print('Watching __%d__ extra files' % len(extra_files))
 
             print("Performing system checks...\n")
             if hasattr(self, 'check'):
