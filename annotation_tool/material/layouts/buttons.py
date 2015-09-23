@@ -14,7 +14,7 @@ from crispy_forms.utils import render_field
 from crispy_forms import layout as crispy_forms_layout
 
 from . import TEMPLATE_PACK
-from annotation_tool.core.material.layouts._base import Input
+from annotation_tool.material.layouts._base import Input
 
 
 class ButtonHolder(crispy_forms_layout.ButtonHolder):

@@ -88,6 +88,7 @@ THIRD_PARTY_APPS = (  # :off
 LOCAL_APPS = (
 
     'annotation_tool.core',  # templates and static
+    'annotation_tool.material',  # templates and static
     'annotation_tool.users',  # custom users app
     'annotation_tool.pubmed',
 

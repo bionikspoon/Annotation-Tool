@@ -5,8 +5,7 @@ Basic layout items
 from crispy_forms import layout as crispy_forms_layout
 from crispy_forms.layout import BaseInput
 
-from annotation_tool.core.material.layouts import TEMPLATE_PACK
-
+from annotation_tool.material.layouts import TEMPLATE_PACK
 
 
 class Input(BaseInput):

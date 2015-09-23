@@ -2,9 +2,9 @@
 import logging
 
 # Third Party Packages
-from annotation_tool.core.material.layouts.cards import Card
-from ..core.material.layouts import Submit, Button
-from ..core.material.layouts import (HTML, Column, Div, Field, Fieldset, Layout, Row, ButtonGroup)
+from annotation_tool.material.layouts.cards import Card
+from annotation_tool.material.layouts import Submit, Button
+from annotation_tool.material.layouts import (HTML, Column, Div, Field, Layout, Row, ButtonGroup)
 
 logger = logging.getLogger(__name__)
 
