@@ -10,7 +10,7 @@ Local settings
 try:
     from environ import Env
 
-    Env().read_env('.env')
+    Env().read_env('.env.local')
 finally:
     from .common import *  # noqa
 

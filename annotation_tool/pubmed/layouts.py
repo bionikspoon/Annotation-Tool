@@ -2,26 +2,10 @@
 import logging
 
 # Third Party Packages
-from crispy_forms.layout import BaseInput
-from crispy_forms_foundation.layout import (HTML, ButtonHolder, Column, Div, Field, Fieldset,
-    Layout, Row, ButtonGroup)
+from ..core.material.layouts import Submit, Button
+from ..core.material.layouts import (HTML, Column, Div, Field, Fieldset, Layout, Row, ButtonGroup)
 
 logger = logging.getLogger(__name__)
-
-
-class Button(BaseInput):
-    input_type = 'button'
-    field_classes = 'button'
-
-
-class Submit(BaseInput):
-    input_type = 'submit'
-    field_classes = 'submit button'
-
-
-class Reset(BaseInput):
-    input_type = 'reset'
-    field_classes = 'reset button'
 
 
 class EntryFormLayout(Layout):

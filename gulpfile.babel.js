@@ -123,6 +123,43 @@ gulp.task('styles', ()=> gulp
         .pipe($.livereload())//
 );
 
+gulp.task('styles:vendor', ()=> gulp
+
+        .src(config.src('manifest.html'))
+
+        .pipe($.plumber())
+
+        .pipe($.useref.assets(config.userefOptions))
+
+        .pipe($.filter('**/*.css'))
+
+        .pipe($.sourcemaps.init())
+
+        .pipe(gulp.dest(config.dist()))
+
+        .pipe($.sourcemaps.write('.', config.sourcemapOptions))
+
+        .pipe($.rename({suffix: '.min'}))
+
+        .pipe($.bytediff.start())
+
+        .pipe($.minifyCss())
+
+        .pipe($.bytediff.stop())
+
+        .pipe(gulp.dest(config.dist()))
+
+        .pipe($.bytediff.start())
+
+        .pipe($.gzip(config.gzipOptions))
+
+        .pipe($.bytediff.stop())
+
+        .pipe(gulp.dest(config.dist()))
+
+        .pipe($.livereload())//
+);
+
 
 gulp.task('scripts', () => gulp
 
@@ -207,11 +244,11 @@ gulp.task('watch:project', () => {
     gulp.watch(config.src('styles/**/*.scss'), ['styles']);
     gulp.watch(config.src('scripts/**/*.js'), ['scripts']);
     gulp.watch(config.src(config.root('bower.json')), ['scripts']);
-    gulp.watch('**/templates/*').on('change', $.livereload.changed)
+    gulp.watch(config.apps('**/templates/*')).on('change', $.livereload.changed)
 });
 
 gulp.task('build:project', [
-    'styles', 'scripts', 'images'
+    'styles', 'styles:vendor', 'scripts', 'images'
 ]);
 
 gulp.task('build', ['clean', 'wiredep'], () => {

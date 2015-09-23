@@ -1,66 +1,106 @@
-{% load i18n core.tags %}
+{% load i18n core.tags %}{% load static from staticfiles %}
 
-{#<!-- Static navbar -->#}
-<nav class="top-bar" data-topbar role="navigation">
-   <ul class="title-area">
-      <li class="name">
-         <h1><a href="{% url 'home' %}"> Annotation Tool </a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-      <!-- /.toggle-topbar menu-icon -->
-   </ul>
+<header class="mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
+   <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Annotation Tool</span>
+      <!-- /.mdl-layout-title -->
+      <div class="mdl-layout-spacer"></div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
 
-   <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-         {% if request.user.is_authenticated %}
-            <li class="has-dropdown">
-               <a href="#">
-                  {% block welcome-msg %}
-                     {% trans 'Hello' %},
-                     <strong>{% firstof request.user.get_short_name request.user.get_username %}</strong>!
-                     <span class="caret"></span>
-                  {% endblock %}
-               </a>
-               <ul class="dropdown">
-                  {% block userlinks %}
+         <label for="search" class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">search</i>
+         </label>
 
-                     {% active_url 'Admin' 'admin:index' %}
+         <div class="mdl-textfield__expandable-holder">
+            <input type="search" class="mdl-textfield__input" name="search" id="search">
+            <label for="search" class="mdl-textfield__label">Enter your search.</label>
+            <!-- /.mdl-textfield__label -->
+         </div>
+         <!-- /.mdl-textfield__expandable-holder -->
 
-                     {% if request.user.is_active and request.user.is_staff %}
-                        {% url 'django-admindocs-docroot' as docsroot %}
-                        {% if docsroot %}
-                           {% active_url 'Documentation' docsroot %}
-                        {% endif %}
+      </div>
+      <!-- /.mdl-textfield mdl-js-textfield mdl-textfield--expandable -->
+
+   </div>
+   <!-- /.mdl-layout__header-row -->
+</header>
+<!-- /.mdl-layout__header -->
+
+<div class="demo-layout mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+   {% if request.user.is_authenticated %}
+      <header class="demo-drawer-header">
+         <img src="{% static 'images/user.jpg' %}" class=demo-avatar>
+
+         <div class="demo-avatar-dropdown">
+            {% block welcome-msg %}
+               <span>
+               {% trans 'Hello' %},
+               <strong>{% firstof request.user.get_short_name request.user.get_username %}</strong>!
+               </span>
+            {% endblock %}
+            <div class="mdl-layout-spacer"></div>
+            <button id="account-button"
+                    class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+               <i class="material-icons" role="presentation">arrow_drop_down</i>
+               <span class="visuallyhidden"></span>
+            </button>
+            <!-- /#account-button.mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon -->
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu msl-js-ripple-effect"
+                for="account-button">
+               {% block userlinks %}
+                  <li class="mdl-menu__item"><a href="{% url 'admin:index' %}">Admin</a></li>
+
+                  {% if request.user.is_active and request.user.is_staff %}
+                     {% url 'django-admindocs-docroot' as docsroot %}
+                     {% if docsroot %}
+                        <li class="mdl-menu__item">
+                           <a href="{{ docsroot }}">Documentation</a>
+                        </li>
                      {% endif %}
+                  {% endif %}
 
-                     {% if request.user.has_usable_password %}
-                        {% active_url 'Change password' 'admin:password_change' %}
-                     {% endif %}
+                  {% if request.user.has_usable_password %}
 
-                     {% active_url 'Logout' 'account_logout' %}
+                     <li class="mdl-menu__item">
+                        <a href="{% url 'admin:password_change' %}">Change password</a>
+                     </li>
+                  {% endif %}
+                  <li class="mdl-menu__item"><a href="{% url 'account_logout' %}">Logout</a></li>
 
-                  {% endblock %}
-               </ul>
+               {% endblock userlinks %}
+            </ul>
+            <!-- /.mdl-menu mdl-menu--bottom-right mdl-js-menu msl-js-ripple-effect -->
+         </div>
+         <!-- /.demo-avatar-dropdown -->
+      </header>
+      <!-- /.demo-drawer-header -->
 
-               {% block nav-global %}{% endblock %}
-            </li>
-         {% else %}
-            {% block anonymous_userlinks %}
-               {% active_url 'Sign Up' 'account_signup' %}
-               {% active_url 'Login' 'account_login' %}
-            {% endblock anonymous_userlinks %}
+   {% endif %}
+   <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+      <a href="{% url 'home' %}" class="mdl-navigation__link">
+         <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i> Home
+      </a>
 
-         {% endif %}
-      </ul>
-      <!-- /.right -->
+      <a href="{% url 'pubmed:list' %}" class="mdl-navigation__link">
+         <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dns</i> Pubmed
+      </a>
 
+      <a href="{% url 'api-root' %}" class="mdl-navigation__link">
+         <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">code</i> API
+      </a>
 
-      <!-- Left Nav Section -->
-      <ul class="left">
-         {% active_url 'Pubmed' 'pubmed:list' %} {% active_url 'API' 'api-root' %}
-      </ul>
-      <!-- /.left -->
-   </section>
-   <!-- /.top-bar-section -->
-</nav>
+      {% if not request.user.is_authenticated %}
+         <a href="{% url 'account_signup' %}" class="mdl-navigation__link">
+            <i class="mdl-color-text--blue-grey-400 material-icons"
+               role="presentation">account_box</i> Sign Up </a>
+
+         <a href="{% url 'account_login' %}" class="mdl-navigation__link">
+            <i class="mdl-color-text--blue-grey-400 material-icons"
+               role="presentation">lock</i> Login </a>
+      {% endif %}
+
+   </nav>
+      <!-- /.mdl-navigation -->
+</div>
+<!-- /.mdl-layout__drawer -->
+

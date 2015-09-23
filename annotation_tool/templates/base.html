@@ -43,7 +43,11 @@
   <![endif]-->
    {% block css %}
       {% compress css file %}
+         <link rel=stylesheet href={% static 'styles/vendor.min.css' %}>
          <link rel=stylesheet href={% static 'styles/main.min.css' %}>
+         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+         <link rel="stylesheet"
+               href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
       {% endcompress %}
    {% endblock css %}
 
@@ -58,24 +62,18 @@
 
 <body class="{% block bodyclass %}{% endblock %}"{% block body_attrs %}{% endblock body_attrs %}>
 
-{% block navbar %}
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
    {% include '_nav.html' %}
-{% endblock navbar %}
 
-<main class=container>
-
-
-   <div class="row">
-      <div class="small-12 medium-10 large-8 columns">
+   <main class="mdl-layout__content mdl-color--grey-100">
+      <div class="mdl-grid">
          {% block breadcrumbs %}
          {% endblock breadcrumbs %}
-      </div>
-   </div>
 
-   {% if messages %}
 
-      <div class="row">
-         <div class="small-12 medium-10 large-8 columns">
+         {% if messages %}
+
             {% for message in messages %}
                <div class="alert-box {% if message.tags %}{{ message.tags }}{% endif %} radius"
                     data-alert>
@@ -84,34 +82,37 @@
                <!-- /.alert-box -->
             {% endfor %}
 
-         </div>
-      </div>
 
-   {% endif %}
+         {% endif %}
 
-   {% block page_header %}
-      <div class="row">
-         <div class="small-12 medium-10 large-8 columns">
+{% comment %}         {% block page_header %}
             <h1>
                {% block page_header_h1 %}
 
                {% endblock page_header_h1 %}
             </h1>
 
-         </div>
-      </div>
-   {% endblock page_header %}
+         {% endblock page_header %}{% endcomment %}
 
-   <div class="row">
-      <div class="small-12 medium-10 large-8 columns">
          {% block content %}
          {% endblock content %}
+
       </div>
-   </div>
+      <!-- /.mdl-grid -->
+{#      <footer class="mdl-mini-footer">#}
+{#         <div class="mdl-mini-footer__left-section">#}
+{#            Test#}
+{#         </div>#}
+{#         <!-- /.mdl-mini-footer__left-section -->#}
+{##}
+{#      </footer>#}
+{#      <!-- /.mdl-mini-footer -->#}
+   </main>
+   <!-- /.mdl-layout__content -->
 
 
-</main>
-<!-- /container -->
+</div>
+<!-- /.mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header -->
 
 {% block modal %}{% endblock modal %}
 {% compress js inline %}
