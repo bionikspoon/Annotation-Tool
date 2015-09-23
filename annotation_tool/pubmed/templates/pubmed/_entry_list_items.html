@@ -1,6 +1,5 @@
-<table role="grid"
-       summary="List of Pubmed entries."
-       class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+<table
+   class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
    <thead>
    <tr>
       <th>Pubmed Id</th>
@@ -16,7 +15,7 @@
    <tbody>
    {% for entry in entry_list %}
       <tr>
-         <th scope="row">{{ entry.pubmed_id }}</th>
+         <td scope="row">{{ entry.pubmed_id }}</td>
          <td class="mdl-data-table__cell--non-numeric">
             <a href="{% url 'pubmed:detail' entry.id %}"> <span class="fui-eye"></span><span
                class="sr-only">View</span>
