@@ -1,3 +1,4 @@
+{% comment %}
 {% for fieldset in form.fieldsets %}{% spaceless %}
     <fieldset class="fieldset-{{ forloop.counter }} {{ fieldset.classes }}">
         {% if fieldset.legend %}
@@ -19,4 +20,5 @@
         </fieldset>
     {% endif %}
 {% endspaceless %}{% endfor %}
+{% endcomment %}
 

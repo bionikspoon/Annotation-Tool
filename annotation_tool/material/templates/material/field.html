@@ -1,8 +1,32 @@
-{% load crispy_forms_field  %}
+{% load  material_tags %}
 
 {% if field.is_hidden %}
    {{ field }}
 {% else %}
+
+   {% if not field %}
+   {% elif field|is_textarea %}
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+         {{ field }}
+         <label for="{{ field.id_for_label }}" class="mdl-textfield__label">
+            {{ field.label }}
+         </label>
+      </div>
+
+   {% elif field|is_input %}
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+         {{ field }}
+         <label for="{{ field.id_for_label }}" class="mdl-textfield__label">
+            {{ field.label }}
+         </label>
+      </div>
+   {% else %}
+      <pre>
+         {{ field.field.widget }}
+      {{ field }}
+      </pre>
+   {% endif %}
+   {% comment %}
    <div id="div_{{ field.auto_id }}"
         class="holder{% if wrapper_class %} {{ wrapper_class }}{% endif %}{% if field.errors and form_show_errors %} error{% endif %}{% if field|is_checkbox %} checkbox{% endif %}{% if field.css_classes %} {{ field.css_classes }}{% endif %}">
       {% spaceless %}
@@ -46,5 +70,6 @@
          {% if field.help_text %}
             <div id="hint_{{ field.auto_id }}" class="hint">{{ field.help_text|safe }}</div>
          {% endif %}
-      {% endspaceless %}</div>
+      {% endspaceless %}</div>{% endcomment %}
 {% endif %}
+

@@ -1,5 +1,18 @@
 <div class="mdl-textfield mdl-js-textfield">
-   <input type="text" class="mdl-textfield__input">
-   <label for="" class="mdl-textfield__label"></label>
+   <input type="{{ input.input_type }}"
+          name="{% if input.name|wordcount > 1 %}{{ input.name|slugify }}{% else %}{{ input.name }}{% endif %}"
+          value="{{ input.value }} {{ input.field_classes }}"
+          class="mdl-textfield__input" about=""
+          id="{% if input.id %}{{ input.id }}{% else %}{{ input.input_type }}-id-{{ input.name|slugify }}{% endif %}"
+          {{ input.flat_attrs|safe }}
+      >
+{{ input }}
+   <label for="{% if input.id %}{{ input.id }}{% else %}{{ input.input_type }}-id-{{ input.name|slugify }}{% endif %}" class="mdl-textfield__label"></label>
    <!-- /.mdl-textfield__label -->
 </div>
+<input type="{{ input.input_type }}"
+       name="{% if input.name|wordcount > 1 %}{{ input.name|slugify }}{% else %}{{ input.name }}{% endif %}"
+       value="{{ input.value }}"{% if input.input_type != "hidden" %}
+       class="{{ input.field_classes }}"
+       id="{% if input.id %}{{ input.id }}{% else %}{{ input.input_type }}-id-{{ input.name|slugify }}{% endif %}"{% endif %} {{ input.flat_attrs|safe }}
+   >
