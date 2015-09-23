@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 
 class EntryFormLayout(Layout):
     html5_required = True
-    css_class = 'mdl-grid'
 
     def __init__(self, helper, *args, **kwargs):
         super().__init__(

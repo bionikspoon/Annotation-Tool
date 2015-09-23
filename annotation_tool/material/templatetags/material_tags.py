@@ -13,3 +13,16 @@ def is_input(field):
 @register.filter
 def is_textarea(field):
     return isinstance(field.field.widget, widgets.Textarea)
+
+
+@register.filter
+def is_radio(field):
+    return isinstance(field.field.widget, widgets.RadioSelect)
+
+@register.filter
+def is_select(field):
+    return isinstance(field.field.widget, widgets.Select)
+
+@register.filter
+def is_select_multiple(field):
+    return isinstance(field.field.widget, widgets.SelectMultiple)

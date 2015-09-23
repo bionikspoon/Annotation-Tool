@@ -17,7 +17,7 @@ html, body {
   .mdl-layout__header .mdl-layout__drawer-button {
     color: rgba(0, 0, 0, 0.54)
   }
-  .demo-navigation{
+  .demo-navigation {
     .mdl-navigation__link {
       display:        flex !important;
       flex-direction: row;
@@ -85,3 +85,4 @@ Project
 @import "django";
 //@import "rest_framework";
 @import "pubmed";
+@import "forms";

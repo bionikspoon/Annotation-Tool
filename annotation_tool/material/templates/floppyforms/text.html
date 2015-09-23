@@ -1,16 +1,19 @@
 {% extends "floppyforms/input.html" %}
 {% block content %}
-   <input type="{{ type }}"
-          name="{{ name }}"{% if value %}
-          value="{{ value }}"{% endif %}{% if required %}
-          required{% endif %}{% include "floppyforms/attrs.html" %}{% if datalist %}
-          list="{{ attrs.id }}_list"{% endif %}
-          class="mdl-textfield__input"
+   <input
+      type="{{ type }}"
+      name="{{ name }}"{% if value %}
+      value="{{ value }}"{% endif %}{% if required %}
+      required{% endif %}{% include "floppyforms/attrs.html" %}{% if datalist %}
+      list="{{ attrs.id }}_list"{% endif %}
+      class="mdl-textfield__input"
       >
 
    {% if datalist %}
-      <datalist id="{{ attrs.id }}_list">{% for item in datalist %}
-         <option value="{{ item }}">{% endfor %}
+      <datalist id="{{ attrs.id }}_list">
+         {% for item in datalist %}
+            <option value="{{ item }}">
+         {% endfor %}
       </datalist>
    {% endif %}
 {% endblock %}
