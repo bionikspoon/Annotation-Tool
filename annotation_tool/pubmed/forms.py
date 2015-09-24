@@ -11,7 +11,6 @@ from django.db import models
 # Third Party Packages
 from braces.forms import UserKwargModelFormMixin
 from model_utils import Choices
-# import floppyforms.__future__ as forms
 # Local Application
 from .layouts import EntryFormLayout
 from .lookups import (BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup,
@@ -74,7 +73,7 @@ class EntryModelForm(UserKwargModelFormMixin, forms.ModelForm):
         self.fields['pubmed_id'].help_text = '&nbsp;'
 
         self.helper = helper.FormHelper(self)
-        # self.helper.form_id = 'entry-form'
+        self.helper.form_id = 'entry-form'
         self.helper.layout = EntryFormLayout(helper=self.helper)
 
         # self.helper.filter_by_widget(RadioSelect).wrap(bootstrap.InlineRadios)

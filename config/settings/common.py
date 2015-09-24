@@ -84,6 +84,7 @@ THIRD_PARTY_APPS = (  # :off
 # Apps specific for this project go here.
 LOCAL_APPS = (
 
+    'annotation_tool.bootstrap',  # templates and static
     'annotation_tool.core',  # templates and static
     'annotation_tool.users',  # custom users app
     'annotation_tool.pubmed',

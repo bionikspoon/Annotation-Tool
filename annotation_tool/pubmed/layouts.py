@@ -1,7 +1,7 @@
 # Python Libraries
 import logging
 # Third Party Packages
-from crispy_forms.layout import Layout, Field, Fieldset, Row, Column, HTML, Div, Submit, Button
+from crispy_forms.layout import (Layout, Field, Fieldset, Row, Div, Submit, Button, Column)
 
 logger = logging.getLogger(__name__)
 
@@ -31,22 +31,22 @@ class EntryFormLayout(Layout):
 
                              'chromosome', 'start', 'stop', 'breakend_strand', 'breakend_direction',
 
-                             css_class='medium-6'
+                             css_class='mdl-cell mdl-cell--6-col'
 
                          ),
 
-                         HTML('<hr class="show-for-small-only">'),
+                         # HTML('<hr class="show-for-small-only">'),
 
                          Column(
 
                              'mate_chromosome', 'mate_start', 'mate_end', 'mate_breakend_strand',
                              'mate_breakend_direction',
 
-                             css_class='medium-6'
+                             css_class='mdl-cell mdl-cell--6-col'
 
                          ),
 
-                         css_class='panel radius',
+                         css_class='well mdl-grid'
 
                      ),
 
@@ -56,7 +56,7 @@ class EntryFormLayout(Layout):
 
                              'minimum_number_of_copies',
 
-                             css_class='medium-6'
+                             css_class='mdl-cell mdl-cell--6-col'
 
                          ),
 
@@ -64,11 +64,11 @@ class EntryFormLayout(Layout):
 
                              'maximum_number_of_copies',
 
-                             css_class='medium-6',
+                             css_class='mdl-cell mdl-cell--6-col',
 
                          ),
 
-                         css_class='panel radius'
+                         css_class='well mdl-grid'
 
                      ),
 
@@ -78,7 +78,7 @@ class EntryFormLayout(Layout):
 
                              'coordinate_predicate',
 
-                             css_class='medium-6'
+                             css_class='mdl-cell mdl-cell--6-col'
 
                          ),
 
@@ -86,11 +86,11 @@ class EntryFormLayout(Layout):
 
                              'partner_coordinate_predicate',
 
-                             css_class='medium-6',
+                             css_class='mdl-cell mdl-cell--6-col',
 
                          ),
 
-                         css_class='panel radius'
+                         css_class='well mdl-grid'
 
                      ),
 
@@ -101,14 +101,14 @@ class EntryFormLayout(Layout):
             Fieldset('Treatment',
 
                      'disease', 'treatment', 'treatment_1', 'treatment_2', 'treatment_3',
-                     'treatment_4', 'treatment_5'
+                     'treatment_4', 'treatment_5',
 
                      ),
 
             Fieldset('Study',
 
                      'population_size', 'sex', 'ethnicity', 'assessed_patient_outcomes',
-                     'significant_patient_outcomes', 'design', 'reference_claims', 'comments'
+                     'significant_patient_outcomes', 'design', 'reference_claims', 'comments',
 
                      ),
 
