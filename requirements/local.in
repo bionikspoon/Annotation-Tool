@@ -1,5 +1,5 @@
 # Local development dependencies go here
--r base.in
+-r common.in
 coverage
 Sphinx
 django-extensions
@@ -17,3 +17,5 @@ django-debug-toolbar
 
 httpie
 isort
+pyinotify
+watchdog

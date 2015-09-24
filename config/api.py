@@ -10,22 +10,25 @@ from rest_framework.routers import DefaultRouter
 from rest_framework.viewsets import ViewSet
 
 # Annotation Tool Project
+from annotation_tool.pubmed.views import EntryViewSet
 from annotation_tool.users.views import UserViewSet
-from pubmed import lookups
-from pubmed.views import EntryViewSet
+from annotation_tool.pubmed import lookups
 
 lookup_router = DefaultRouter()
-lookup_router.register(r'structurelookup', lookups.StructureLookupViewSet, base_name='structurelookup')
+lookup_router.register(r'structurelookup', lookups.StructureLookupViewSet,
+                       base_name='structurelookup')
 lookup_router.register(r'mutationtypelookup', lookups.MutationTypeLookupViewSet,
                        base_name='mutationtypelookup')
 lookup_router.register(r'syntaxlookup', lookups.SyntaxLookupViewSet, base_name='syntaxlookup')
 lookup_router.register(r'operatorlookup', lookups.OperatorLookupViewSet, base_name='operatorlookup')
-lookup_router.register(r'rulelevellookup', lookups.RuleLevelLookupViewSet, base_name='rulelevellookup')
+lookup_router.register(r'rulelevellookup', lookups.RuleLevelLookupViewSet,
+                       base_name='rulelevellookup')
 lookup_router.register(r'breakendstrandlookup', lookups.BreakendStrandLookupViewSet,
                        base_name='breakendstrandlookup')
 lookup_router.register(r'breakenddirectionlookup', lookups.BreakendDirectionLookupViewSet,
                        base_name='breakenddirectionlookup')
-lookup_router.register(r'varianttypelookup', lookups.VariantTypeLookupViewSet, base_name='varianttypelookup')
+lookup_router.register(r'varianttypelookup', lookups.VariantTypeLookupViewSet,
+                       base_name='varianttypelookup')
 lookup_router.register(r'variantconsequencelookup', lookups.VariantConsequenceLookupViewSet,
                        base_name='variantconsequencelookup')
 lookup_router.register(r'sexlookup', lookups.SexLookupViewSet, base_name='sexlookup')

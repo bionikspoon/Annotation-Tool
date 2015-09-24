@@ -7,32 +7,37 @@ Local settings
 - Add django-extensions as app
 """
 
-try:
-    from environ import Env
+from annotation_tool.core.utils.env import Env
 
-    Env().read_env('.env')
+try:
+    Env().read_env('.env.local')
 finally:
     from .common import *  # noqa
 
 
 # CACHE CONFIGURATION
 # ------------------------------------------------------------------------------
-
-CACHEOPS = {
-    'lookups.*': {
-        'ops': 'all',
-        'timeout': 300
-    },
-    'pubmed': {
-        'ops': 'all',
-        'timeout': 300
-
-    },
-    'users': {
-        'ops': 'all',
-        'timeout': 300
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
     }
 }
+CACHEOPS = {}
+# CACHEOPS = {
+#     'lookups.*': {
+#         'ops': 'all',
+#         'timeout': 300
+#     },
+#     'pubmed': {
+#         'ops': 'all',
+#         'timeout': 300
+#
+#     },
+#     'users': {
+#         'ops': 'all',
+#         'timeout': 300
+#     }
+# }
 
 # DEV TOOLS: django-debug-toolbar
 # ------------------------------------------------------------------------------
@@ -49,8 +54,10 @@ DEBUG_TOOLBAR_CONFIG = {
     ],
     'SHOW_TEMPLATE_CONTEXT': True
 }
-DEBUG_TOOLBAR_PANELS = ['debug_toolbar.panels.sql.SQLPanel', 'debug_toolbar.panels.cache.CachePanel',
-                        'debug_toolbar.panels.timer.TimerPanel', 'debug_toolbar.panels.headers.HeadersPanel',
+DEBUG_TOOLBAR_PANELS = ['debug_toolbar.panels.sql.SQLPanel',
+                        'debug_toolbar.panels.cache.CachePanel',
+                        'debug_toolbar.panels.timer.TimerPanel',
+                        'debug_toolbar.panels.headers.HeadersPanel',
                         'debug_toolbar.panels.request.RequestPanel',
                         'debug_toolbar.panels.staticfiles.StaticFilesPanel',
                         'debug_toolbar.panels.templates.TemplatesPanel',
@@ -67,23 +74,17 @@ THIRD_PARTY_APPS += ('django_extensions',)
 # MAIL SETTINGS
 # ------------------------------------------------------------------------------
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = str(ROOT_DIR.path('logs', 'emails'))
+EMAIL_FILE_PATH = ROOT_DIR('logs', 'emails')
 
 # SERVER
 # ------------------------------------------------------------------------------
 ALLOWED_HOSTS = ['localhost:8000', '127.0.0.1:8000']
 SECURE_SSL_REDIRECT = False
 
+
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
-LOCAL_APPS += ('core.local', 'core.production')
-
-if not DEBUG:
-    COMPRESS_URL = STATIC_URL = '/staticfiles/'
-
-# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (str(ROOT_DIR.path('.tmp')),)
-
+STATICFILES_DIRS = [APPS_DIR('static'), ROOT_DIR('dist')]
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
 TEMPLATES[0]['OPTIONS']['context_processors'].insert(0, 'django.template.context_processors.debug')

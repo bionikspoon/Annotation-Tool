@@ -1,0 +1,41 @@
+<table
+   class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+   <thead>
+   <tr>
+      <th>Pubmed Id</th>
+      <th class="mdl-data-table__cell--non-numeric">View</th>
+      <th class="mdl-data-table__cell--non-numeric">Edit</th>
+      <th class="mdl-data-table__cell--non-numeric">Created</th>
+      <th class="mdl-data-table__cell--non-numeric">Updated</th>
+      <th class="mdl-data-table__cell--non-numeric">Gene</th>
+      <th class="mdl-data-table__cell--non-numeric">Structure</th>
+      <th class="mdl-data-table__cell--non-numeric">Mutation</th>
+   </tr>
+   </thead>
+   <tbody>
+   {% for entry in entry_list %}
+      <tr>
+         <td scope="row">{{ entry.pubmed_id }}</td>
+         <td class="mdl-data-table__cell--non-numeric">
+            <a href="{% url 'pubmed:detail' entry.id %}"> <span class="fui-eye"></span><span
+               class="sr-only">View</span>
+               <!-- /.sr-only -->
+            </a>
+         </td>
+         <td class="mdl-data-table__cell--non-numeric">
+            <a href="{% url 'pubmed:update' entry.id %}"> <span class="fui-new"></span><span
+               class="sr-only">Edit</span>
+               <!-- /.sr-only -->
+            </a>
+         </td>
+         <td class="mdl-data-table__cell--non-numeric">{{ entry.created }}</td>
+         <td class="mdl-data-table__cell--non-numeric">{{ entry.modified }}</td>
+         <td class="mdl-data-table__cell--non-numeric">{{ entry.gene }}</td>
+         <td class="mdl-data-table__cell--non-numeric">{{ entry.structure }}</td>
+         <td class="mdl-data-table__cell--non-numeric">{{ entry.mutation_type }}</td>
+      </tr>
+   {% endfor %}
+
+   </tbody>
+
+</table>

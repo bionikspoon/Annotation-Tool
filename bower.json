@@ -2,18 +2,10 @@
   "name": "Annotation Tool",
   "private": true,
   "dependencies": {
+    "bootstrap": "~3.3.5",
     "bootstrap-sass": "~3.3.5",
-    "modernizr": "~2.8.1",
-    "select2": "~4.0.0"
-  },
-  "overrides": {
-    "bootstrap-sass": {
-      "main": [
-        "assets/stylesheets/_bootstrap.scss",
-        "assets/fonts/bootstrap/*",
-        "assets/javascripts/bootstrap.js"
-      ]
-    }
+    "material-design-lite": "~1.0.4",
+    "modernizr": "~2.8.1"
   },
   "devDependencies": {
     "chai": "~3.2.0",

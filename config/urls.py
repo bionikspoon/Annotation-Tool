@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
-    url(r'^pubmed/', include('pubmed.urls', namespace='pubmed')),
+    url(r'^pubmed/', include('annotation_tool.pubmed.urls', namespace='pubmed')),
 
 ]
 

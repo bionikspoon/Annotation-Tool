@@ -10,15 +10,13 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 # Compatibility
 from __future__ import absolute_import, unicode_literals
-
 # Third Party Packages
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 3  # /annotation-tool/
+ROOT_DIR = environ.Path(__file__) - 3  # /annotation_tool/
 APPS_DIR = ROOT_DIR.path('annotation_tool')
 
 env = environ.Env()
-
 
 # DEBUG
 # ------------------------------------------------------------------------------
@@ -36,9 +34,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 # Custom user app defaults
 # Select the correct user model
 AUTH_USER_MODEL = 'users.User'
-LOGIN_REDIRECT_URL = 'users:redirect'
+LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'account_login'
-
 
 # ADMIN CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -73,7 +70,9 @@ ADMIN_APPS = (  # :off
 
 THIRD_PARTY_APPS = (  # :off
 
+    'floppyforms',
     'crispy_forms',  # Form layouts
+    'crispy_forms_foundation',
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
@@ -85,18 +84,21 @@ THIRD_PARTY_APPS = (  # :off
 # Apps specific for this project go here.
 LOCAL_APPS = (
 
-    'core',  # templates and static
+    'annotation_tool.bootstrap',  # templates and static
+    'annotation_tool.core',  # templates and static
     'annotation_tool.users',  # custom users app
-    'pubmed',
+    'annotation_tool.pubmed',
 
-    'pubmed.lookups',
+    'annotation_tool.pubmed.lookups',
 
 )
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend', 'allauth.account.auth_backends.AuthenticationBackend'
+
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
 
 )
 
@@ -136,11 +138,9 @@ DATABASES = {
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
-
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
-
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -164,7 +164,6 @@ USE_L10N = True
 USE_TZ = True
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
-
 
 # LOGGING CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -200,10 +199,10 @@ LOGGING = {
             '()': 'django.utils.log.RequireDebugTrue'
         },
         'not_django': {
-            '()': 'core.utils.log.NotDjangoFilter'
+            '()': 'annotation_tool.core.utils.log.NotDjangoFilter'
         },
         'not_production': {
-            '()': 'core.utils.log.NotProductionFilter'
+            '()': 'annotation_tool.core.utils.log.NotProductionFilter'
         }
     },
     'handlers': {
@@ -215,16 +214,16 @@ LOGGING = {
         'django': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': str(ROOT_DIR.path('logs', 'django.log')),
+            'filename': ROOT_DIR('logs', 'django.log'),
             'filters': ['require_debug_true'],
             'backupCount': 10,
             'when': 'MIDNIGHT',
             'formatter': 'verbose'
         },
-        'pubmed': {
+        'annotation_tool': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': str(ROOT_DIR.path('logs', 'pubmed.log')),
+            'filename': ROOT_DIR('logs', 'annotation_tool.log'),
             'backupCount': 10,
             'when': 'm',
             'interval': 10,
@@ -233,7 +232,7 @@ LOGGING = {
         'debug': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': str(ROOT_DIR.path('logs', 'debug.log')),
+            'filename': ROOT_DIR('logs', 'debug.log'),
             'filters': ['require_debug_true'],
             'backupCount': 10,
             'when': 'm',
@@ -252,8 +251,8 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True
         },
-        'pubmed': {
-            'handlers': ['pubmed'],
+        'annotation_tool': {
+            'handlers': ['annotation_tool'],
             'level': 'DEBUG',
             'propagate': True,
             'filter': ['not_production']
@@ -267,7 +266,6 @@ LOGGING = {
     }
 }
 
-
 # Form Configuration
 # ------------------------------------------------------------------------------
 
@@ -275,6 +273,15 @@ CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap3',)
+# CRISPY_CLASS_CONVERTERS = {
+#     'textinput': 'form-control',
+#     'numberinput': 'form-control',
+#     'textarea': 'form-control',
+#     'selectmultiple': 'form-control multiselect multiselect-info',
+#     'select': 'form-control select select-primary select-block'
+#
+# }
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
@@ -285,7 +292,7 @@ MANAGERS = ADMINS
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR('media'))
+MEDIA_ROOT = APPS_DIR('media')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
@@ -297,14 +304,13 @@ ROOT_URLCONF = 'config.urls'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Make sure djangosecure.middleware.SecurityMiddleware is listed first
 MIDDLEWARE_CLASSES = (
+
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -343,25 +349,25 @@ SESSION_CACHE_ALIAS = "default"
 SESSION_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = True
 
-
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-COMPRESS_ROOT = STATIC_ROOT = str(ROOT_DIR('staticfiles'))
+STATIC_ROOT = ROOT_DIR('staticfiles')
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-COMPRESS_URL = STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [ROOT_DIR('dist')]
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
                        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
                        'compressor.finders.CompressorFinder')
 COMPRESS_ENABLED = env.bool('DJANGO_COMPRESS_ENABLED', not DEBUG)
 COMPRESS_OFFLINE = True
-# COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',
-#                         'compressor.filters.yuglify.YUglifyCSSFilter']
-# COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter', 'compressor.filters.yuglify.YUglifyJSFilter']
-COMPRESS_YUGLIFY_BINARY = ROOT_DIR.path('node_modules', '.bin', 'yuglify')
+
+# BOWER_COMPONENTS_ROOT = ROOT_DIR('bower_components')
+#
+# BOWER_INSTALLED_APPS = ('modernizr', 'foundation',)
+# BOWER_PATH = ROOT_DIR('node_modules/.bin/bower')
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -370,7 +376,7 @@ TEMPLATES = [{
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-    'DIRS': [str(APPS_DIR.path('templates'))],
+    'DIRS': [APPS_DIR('templates')],
     'OPTIONS': {
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
         'debug': DEBUG,
@@ -400,13 +406,11 @@ TEMPLATES = [{
     }
 }]
 
-
 # REST FRAMEWORK
 # ------------------------------------------------------------------------------
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
 }
-
 
 # Combine Apps
 # ------------------------------------------------------------------------------
