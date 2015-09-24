@@ -1,0 +1,18 @@
+.m-form {
+  &__field_group {
+    width:          100%;
+    padding-bottom: 20px;
+    .mdl-textfield__input {
+      line-height: 2;
+
+    }
+    .mdl-radio {
+      margin-left: 20px;
+    }
+  }
+  &__field_label {
+    display:        block;
+    font-size:      16px;
+    padding-bottom: 10px;
+  }
+}

@@ -6,41 +6,46 @@
 
    {% if not field %}
    {% elif field|is_select_multiple %}
-      <div>
-         <label for="{{ field.id_for_label }}">
-            {{ field.label }}
+      <div class="m-form__field_group">
+         <label for="{{ field.id_for_label }}" class="m-form__field_label">
+            {{ field.label }}:
          </label>
          {{ field }}
       </div>
 
    {% elif field|is_select %}
-      <div>
-         <label for="{{ field.id_for_label }}">
-            {{ field.label }}
+      <div class="m-form__field_group">
+         <label for="{{ field.id_for_label }}" class="m-form__field_label">
+            {{ field.label }}:
          </label>
          {{ field }}
       </div>
    {% elif field|is_radio %}
-      <div>
-         <label for="" class="mdl-typography--title">{{ field.label }}</label>
+      <div class="m-form__field_group">
+         <label for="{{ field.id_for_label }}" class="m-form__field_label">
+            {{ field.label }}:
+         </label>
          {{ field }}
       </div>
    {% elif field|is_textarea %}
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-         {{ field }}
-         <label for="{{ field.id_for_label }}" class="mdl-textfield__label">
-            {{ field.label }}
+      <div
+         class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label m-form__field_group">
+         <label for="{{ field.id_for_label }}" class="m-form__field-label">
+            {{ field.label }}:
          </label>
+         {{ field }}
          <span class="mdl-textfield__error">
 
          </span>
       </div>
    {% elif field|is_input %}
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-         {{ field }}
-         <label for="{{ field.id_for_label }}" class="mdl-textfield__label">
-            {{ field.label }}
+      <div
+         class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label m-form__field_group">
+
+         <label for="{{ field.id_for_label }}" class="m-form__field-label">
+            {{ field.label|title }}:
          </label>
+         {{ field }}
       </div>
    {% else %}
       <pre>

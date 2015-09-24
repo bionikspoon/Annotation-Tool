@@ -278,9 +278,9 @@ LOGGING = {
 
 CRISPY_FAIL_SILENTLY = env.bool('CRISPY_FAIL_SILENTLY', not DEBUG)
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
-CRISPY_TEMPLATE_PACK = 'material'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = ('material',)
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap3',)
 # CRISPY_CLASS_CONVERTERS = {
 #     'textinput': 'form-control',
 #     'numberinput': 'form-control',

@@ -2,6 +2,8 @@
   "name": "Annotation Tool",
   "private": true,
   "dependencies": {
+    "bootstrap": "~3.3.5",
+    "bootstrap-sass": "~3.3.5",
     "material-design-lite": "~1.0.4",
     "modernizr": "~2.8.1"
   },

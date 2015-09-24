@@ -4,16 +4,14 @@ Pubmed forms.
 
 # Python Libraries
 import logging
-
 # Django Packages
 from crispy_forms import helper
+from django import forms
 from django.db import models
-
 # Third Party Packages
 from braces.forms import UserKwargModelFormMixin
 from model_utils import Choices
-import floppyforms.__future__ as forms
-
+# import floppyforms.__future__ as forms
 # Local Application
 from .layouts import EntryFormLayout
 from .lookups import (BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup,
@@ -71,6 +69,8 @@ class EntryModelForm(UserKwargModelFormMixin, forms.ModelForm):
         self.fields['variant_consequence'].choices = model_choices(VariantConsequenceLookup)
         self.fields['sex'].choices = model_choices(SexLookup)
 
+        self.fields['variant_clinical_grade'].choices = Choices(*range(1, 6))
+
         self.fields['pubmed_id'].help_text = '&nbsp;'
 
         self.helper = helper.FormHelper(self)
@@ -108,3 +108,4 @@ class EntryModelForm(UserKwargModelFormMixin, forms.ModelForm):
         fields = ('id',) + EntryMeta.public_fields
         widgets = {field: forms.RadioSelect() for field in EntryMeta.foreign_fields if
                    not field == 'user'}
+        widgets['variant_clinical_grade'] = forms.RadioSelect()

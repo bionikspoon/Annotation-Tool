@@ -1,10 +1,7 @@
 # Python Libraries
 import logging
-
 # Third Party Packages
-from annotation_tool.material.layouts.cards import Card
-from annotation_tool.material.layouts import Submit, Button
-from annotation_tool.material.layouts import (HTML, Column, Div, Field, Layout, Row, ButtonGroup)
+from crispy_forms.layout import Layout, Field, Fieldset, Row, Column, HTML, Div, Submit, Button
 
 logger = logging.getLogger(__name__)
 
@@ -17,110 +14,111 @@ class EntryFormLayout(Layout):
 
             Field('id'),
 
-            Card('Pubmed',
+            Fieldset('Pubmed',
 
-                 Field('pubmed_id', autocomplete='off')
-
-                 ),
-
-            Card('Gene Description',
-
-                 'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator',
-                 'rule_level',
-
-                 Row(
-
-                     Column(
-
-                         'chromosome', 'start', 'stop', 'breakend_strand', 'breakend_direction',
-
-                         css_class='medium-6'
+                     Field('pubmed_id', autocomplete='off')
 
                      ),
 
-                     HTML('<hr class="show-for-small-only">'),
+            Fieldset('Gene Description',
 
-                     Column(
+                     'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator',
+                     'rule_level',
 
-                         'mate_chromosome', 'mate_start', 'mate_end', 'mate_breakend_strand',
-                         'mate_breakend_direction',
+                     Row(
 
-                         css_class='medium-6'
+                         Column(
 
-                     ),
+                             'chromosome', 'start', 'stop', 'breakend_strand', 'breakend_direction',
 
-                     css_class='panel radius',
+                             css_class='medium-6'
 
-                 ),
+                         ),
 
-                 Row(
+                         HTML('<hr class="show-for-small-only">'),
 
-                     Column(
+                         Column(
 
-                         'minimum_number_of_copies',
+                             'mate_chromosome', 'mate_start', 'mate_end', 'mate_breakend_strand',
+                             'mate_breakend_direction',
 
-                         css_class='medium-6'
+                             css_class='medium-6'
 
-                     ),
+                         ),
 
-                     Column(
-
-                         'maximum_number_of_copies',
-
-                         css_class='medium-6',
+                         css_class='panel radius',
 
                      ),
 
-                     css_class='panel radius'
+                     Row(
 
-                 ),
+                         Column(
 
-                 Row(
+                             'minimum_number_of_copies',
 
-                     Column(
+                             css_class='medium-6'
 
-                         'coordinate_predicate',
+                         ),
 
-                         css_class='medium-6'
+                         Column(
+
+                             'maximum_number_of_copies',
+
+                             css_class='medium-6',
+
+                         ),
+
+                         css_class='panel radius'
 
                      ),
 
-                     Column(
+                     Row(
 
-                         'partner_coordinate_predicate',
+                         Column(
 
-                         css_class='medium-6',
+                             'coordinate_predicate',
+
+                             css_class='medium-6'
+
+                         ),
+
+                         Column(
+
+                             'partner_coordinate_predicate',
+
+                             css_class='medium-6',
+
+                         ),
+
+                         css_class='panel radius'
 
                      ),
 
-                     css_class='panel radius'
+                     'variant_type', 'variant_consequence', 'variant_clinical_grade',
 
-                 ),
+                     ),
 
-                 'variant_type', 'variant_consequence', 'variant_clinical_grade',
+            Fieldset('Treatment',
 
-                 ),
+                     'disease', 'treatment', 'treatment_1', 'treatment_2', 'treatment_3',
+                     'treatment_4', 'treatment_5'
 
-            Card('Treatment',
+                     ),
 
-                 'disease', 'treatment', 'treatment_1', 'treatment_2', 'treatment_3', 'treatment_4',
-                 'treatment_5'
+            Fieldset('Study',
 
-                 ),
+                     'population_size', 'sex', 'ethnicity', 'assessed_patient_outcomes',
+                     'significant_patient_outcomes', 'design', 'reference_claims', 'comments'
 
-            Card('Study',
+                     ),
 
-                 'population_size', 'sex', 'ethnicity', 'assessed_patient_outcomes',
-                 'significant_patient_outcomes', 'design', 'reference_claims', 'comments'
+            Fieldset('{{ action_text }} Entry',
 
-                 ),
+                     Submit('submit', 'Submit'),
 
-            Card('{{ action_text }} Entry',
+                     Button('cancel', 'Cancel', css_class='secondary')
 
-                 ButtonGroup(Submit('submit', 'Submit'),
-                             Button('cancel', 'Cancel', css_class='secondary'), css_class='radius')
-
-                 ),
+                     ),
 
             Div(css_id='results')
 
