@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 # Compatibility
 from __future__ import absolute_import, unicode_literals
-
 # Third Party Packages
 import environ
 
@@ -18,7 +17,6 @@ ROOT_DIR = environ.Path(__file__) - 3  # /annotation_tool/
 APPS_DIR = ROOT_DIR.path('annotation_tool')
 
 env = environ.Env()
-
 
 # DEBUG
 # ------------------------------------------------------------------------------
@@ -38,7 +36,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'optional'
 AUTH_USER_MODEL = 'users.User'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'account_login'
-
 
 # ADMIN CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -88,7 +85,6 @@ THIRD_PARTY_APPS = (  # :off
 LOCAL_APPS = (
 
     'annotation_tool.core',  # templates and static
-    'annotation_tool.material',  # templates and static
     'annotation_tool.users',  # custom users app
     'annotation_tool.pubmed',
 
@@ -141,11 +137,9 @@ DATABASES = {
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
-
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
-
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -169,7 +163,6 @@ USE_L10N = True
 USE_TZ = True
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
-
 
 # LOGGING CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -272,7 +265,6 @@ LOGGING = {
     }
 }
 
-
 # Form Configuration
 # ------------------------------------------------------------------------------
 
@@ -310,7 +302,6 @@ ROOT_URLCONF = 'config.urls'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'config.wsgi.application'
-
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -356,7 +347,6 @@ SESSION_CACHE_ALIAS = "default"
 
 SESSION_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = True
-
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -415,13 +405,11 @@ TEMPLATES = [{
     }
 }]
 
-
 # REST FRAMEWORK
 # ------------------------------------------------------------------------------
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
 }
-
 
 # Combine Apps
 # ------------------------------------------------------------------------------
