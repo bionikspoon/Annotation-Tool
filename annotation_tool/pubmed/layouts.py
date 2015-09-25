@@ -47,7 +47,7 @@ class EntryFormLayout(Layout):
 
                          ),
 
-                         css_class='well mdl-grid'
+                         css_class='well well-sm mdl-grid'
 
                      ),
 
@@ -69,7 +69,7 @@ class EntryFormLayout(Layout):
 
                          ),
 
-                         css_class='well mdl-grid'
+                         css_class='well well-sm mdl-grid'
 
                      ),
 
@@ -91,7 +91,7 @@ class EntryFormLayout(Layout):
 
                          ),
 
-                         css_class='well mdl-grid'
+                         css_class='well well-sm mdl-grid'
 
                      ),
 
@@ -120,7 +120,5 @@ class EntryFormLayout(Layout):
                      Cancel('cancel', 'Cancel')
 
                      ),
-
-            Div(css_id='results')
 
         )
