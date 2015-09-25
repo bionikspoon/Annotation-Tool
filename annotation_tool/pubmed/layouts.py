@@ -1,13 +1,14 @@
 # Python Libraries
 import logging
 # Third Party Packages
-from crispy_forms.layout import (Layout, Field, Fieldset, Row, Div, Submit, Button, Column)
+from crispy_forms.layout import (Layout, Field, Fieldset, Row, Div, Button, Column)
+
+from ..bootstrap.layout import Column6, Submit, Cancel
 
 logger = logging.getLogger(__name__)
 
 
 class EntryFormLayout(Layout):
-    html5_required = True
 
     def __init__(self, helper, *args, **kwargs):
         super().__init__(
@@ -27,7 +28,7 @@ class EntryFormLayout(Layout):
 
                      Row(
 
-                         Column(
+                         Column6(
 
                              'chromosome', 'start', 'stop', 'breakend_strand', 'breakend_direction',
 
@@ -37,7 +38,7 @@ class EntryFormLayout(Layout):
 
                          # HTML('<hr class="show-for-small-only">'),
 
-                         Column(
+                         Column6(
 
                              'mate_chromosome', 'mate_start', 'mate_end', 'mate_breakend_strand',
                              'mate_breakend_direction',
@@ -116,7 +117,7 @@ class EntryFormLayout(Layout):
 
                      Submit('submit', 'Submit'),
 
-                     Button('cancel', 'Cancel', css_class='secondary')
+                     Cancel('cancel', 'Cancel')
 
                      ),
 

@@ -1,6 +1,18 @@
 .mdl-cell {
-  .form-control {
-    padding-left:  0;
-    padding-right: 0;
-  }
+    .form-control {
+        padding-left:  0;
+        padding-right: 0;
+    }
+}
+
+.form-group.mdl-grid {
+    margin-bottom:  inherit;
+    padding-top:    0;
+    padding-bottom: 0;
+    .control-label {
+        padding-top: 20px;
+    }
+    .controls--radio {
+        padding-top: 20px;
+    }
 }

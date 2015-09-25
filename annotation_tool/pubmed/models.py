@@ -4,16 +4,13 @@ Pubmed model definitions.
 
 # Python Libraries
 from collections import OrderedDict
-
 # Django Packages
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
-
 # Third Party Packages
 from model_utils import models as utils_models
 from model_utils import Choices
-
 # Local Application
 from . import lookups
 from ..core.utils.decorators import classproperty
@@ -23,11 +20,11 @@ class DEFAULTS(object):
     """
     Default parameters for given key.
     """
-    CharField = dict(max_length=100, blank=False)
-    ForeignKey = dict(blank=False, null=True, on_delete=models.SET_NULL)
-    IntegerField = dict(null=True, blank=False)
-    TextField = dict(blank=False)
-    ManyToManyField = dict(blank=False)
+    CharField = dict(max_length=100, blank=True)
+    ForeignKey = dict(blank=True, null=True, on_delete=models.SET_NULL)
+    IntegerField = dict(null=True, blank=True)
+    TextField = dict(blank=True)
+    ManyToManyField = dict(blank=True)
 
 
 class Entry(utils_models.TimeStampedModel):
@@ -41,7 +38,7 @@ class Entry(utils_models.TimeStampedModel):
 
     )
     pubmed_id = models.PositiveIntegerField()
-    gene = models.CharField(help_text='Gene goes here.', **DEFAULTS.CharField)
+    gene = models.CharField(**DEFAULTS.CharField)
     structure = models.ForeignKey(lookups.StructureLookup, **DEFAULTS.ForeignKey)
     mutation_type = models.ForeignKey(lookups.MutationTypeLookup, **DEFAULTS.ForeignKey)
     syntax = models.ForeignKey(lookups.SyntaxLookup, **DEFAULTS.ForeignKey)
@@ -122,9 +119,7 @@ class Entry(utils_models.TimeStampedModel):
 
         :return: URL path.
         """
-        kwargs = {
-            'pk': self.id
-        }
+        kwargs = {'pk': self.id}
         return reverse('pubmed:detail', kwargs=kwargs)
 
     def __str__(self):
@@ -144,263 +139,98 @@ class EntryMeta(object):
 
     fields_manifest = OrderedDict([
 
-        ('id', {
-            'public': False,
-            'field_type': 'AutoField',
-            'summary': False
-        }),
+        ('id', {'public': False, 'field_type': 'AutoField', 'summary': False}),
 
-        ('created', {
-            'public': False,
-            'field_type': 'AutoCreatedField',
-            'summary': False
-        }),
+        ('created', {'public': False, 'field_type': 'AutoCreatedField', 'summary': False}),
 
-        ('modified', {
-            'public': False,
-            'field_type': 'AutoLastModifiedField',
-            'summary': True
-        }),
+        ('modified', {'public': False, 'field_type': 'AutoLastModifiedField', 'summary': True}),
 
-        ('user', {
-            'public': False,
-            'field_type': 'ForeignKey',
-            'summary': True
-        }),
+        ('user', {'public': False, 'field_type': 'ForeignKey', 'summary': True}),
 
-        ('pubmed_id', {
-            'public': True,
-            'field_type': 'PositiveIntegerField',
-            'summary': False
-        }),
+        ('pubmed_id', {'public': True, 'field_type': 'PositiveIntegerField', 'summary': False}),
 
-        ('gene', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': True
-        }),
+        ('gene', {'public': True, 'field_type': 'CharField', 'summary': True}),
 
-        ('structure', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': True
-        }),
+        ('structure', {'public': True, 'field_type': 'ForeignKey', 'summary': True}),
 
-        ('mutation_type', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': True
-        }),
+        ('mutation_type', {'public': True, 'field_type': 'ForeignKey', 'summary': True}),
 
-        ('syntax', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': True
-        }),
+        ('syntax', {'public': True, 'field_type': 'ForeignKey', 'summary': True}),
 
-        ('syntax_text', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': True
-        }),
+        ('syntax_text', {'public': True, 'field_type': 'CharField', 'summary': True}),
 
-        ('operator', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': True
-        }),
+        ('operator', {'public': True, 'field_type': 'ForeignKey', 'summary': True}),
 
-        ('rule_level', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': True
-        }),
+        ('rule_level', {'public': True, 'field_type': 'ForeignKey', 'summary': True}),
 
-        ('chromosome', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('chromosome', {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('start', {
-            'public': True,
-            'field_type': 'PositiveIntegerField',
-            'summary': False
-        }),
+        ('start', {'public': True, 'field_type': 'PositiveIntegerField', 'summary': False}),
 
-        ('stop', {
-            'public': True,
-            'field_type': 'PositiveIntegerField',
-            'summary': False
-        }),
+        ('stop', {'public': True, 'field_type': 'PositiveIntegerField', 'summary': False}),
 
-        ('breakend_strand', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': False
-        }),
+        ('breakend_strand', {'public': True, 'field_type': 'ForeignKey', 'summary': False}),
 
-        ('breakend_direction', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': False
-        }),
+        ('breakend_direction', {'public': True, 'field_type': 'ForeignKey', 'summary': False}),
 
-        ('mate_chromosome', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('mate_chromosome', {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('mate_start', {
-            'public': True,
-            'field_type': 'PositiveIntegerField',
-            'summary': False
-        }),
+        ('mate_start', {'public': True, 'field_type': 'PositiveIntegerField', 'summary': False}),
 
-        ('mate_end', {
-            'public': True,
-            'field_type': 'PositiveIntegerField',
-            'summary': False
-        }),
+        ('mate_end', {'public': True, 'field_type': 'PositiveIntegerField', 'summary': False}),
 
-        ('mate_breakend_strand', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': False
-        }),
+        ('mate_breakend_strand', {'public': True, 'field_type': 'ForeignKey', 'summary': False}),
 
-        ('mate_breakend_direction', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': False
-        }),
+        ('mate_breakend_direction', {'public': True, 'field_type': 'ForeignKey', 'summary': False}),
 
-        ('minimum_number_of_copies', {
-            'public': True,
-            'field_type': 'PositiveIntegerField',
-            'summary': False
-        }),
+        ('minimum_number_of_copies',
+         {'public': True, 'field_type': 'PositiveIntegerField', 'summary': False}),
 
-        ('maximum_number_of_copies', {
-            'public': True,
-            'field_type': 'PositiveIntegerField',
-            'summary': False
-        }),
+        ('maximum_number_of_copies',
+         {'public': True, 'field_type': 'PositiveIntegerField', 'summary': False}),
 
-        ('coordinate_predicate', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('coordinate_predicate', {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('partner_coordinate_predicate', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('partner_coordinate_predicate',
+         {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('variant_type', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': False
-        }),
+        ('variant_type', {'public': True, 'field_type': 'ForeignKey', 'summary': False}),
 
-        ('variant_consequence', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': False
-        }),
+        ('variant_consequence', {'public': True, 'field_type': 'ForeignKey', 'summary': False}),
 
-        ('variant_clinical_grade', {
-            'public': True,
-            'field_type': 'PositiveIntegerField',
-            'summary': False
-        }),
+        ('variant_clinical_grade',
+         {'public': True, 'field_type': 'PositiveIntegerField', 'summary': False}),
 
-        ('disease', {
-            'public': True,
-            'field_type': 'ManyToManyField',
-            'summary': False
-        }),
+        ('disease', {'public': True, 'field_type': 'ManyToManyField', 'summary': False}),
 
-        ('treatment_1', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('treatment_1', {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('treatment_2', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('treatment_2', {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('treatment_3', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('treatment_3', {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('treatment_4', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('treatment_4', {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('treatment_5', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('treatment_5', {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('population_size', {
-            'public': True,
-            'field_type': 'PositiveIntegerField',
-            'summary': False
-        }),
+        ('population_size',
+         {'public': True, 'field_type': 'PositiveIntegerField', 'summary': False}),
 
-        ('sex', {
-            'public': True,
-            'field_type': 'ForeignKey',
-            'summary': False
-        }),
+        ('sex', {'public': True, 'field_type': 'ForeignKey', 'summary': False}),
 
-        ('ethnicity', {
-            'public': True,
-            'field_type': 'CharField',
-            'summary': False
-        }),
+        ('ethnicity', {'public': True, 'field_type': 'CharField', 'summary': False}),
 
-        ('assessed_patient_outcomes', {
-            'public': True,
-            'field_type': 'ManyToManyField',
-            'summary': False
-        }),
+        ('assessed_patient_outcomes',
+         {'public': True, 'field_type': 'ManyToManyField', 'summary': False}),
 
-        ('significant_patient_outcomes', {
-            'public': True,
-            'field_type': 'ManyToManyField',
-            'summary': False
-        }),
+        ('significant_patient_outcomes',
+         {'public': True, 'field_type': 'ManyToManyField', 'summary': False}),
 
-        ('design', {
-            'public': True,
-            'field_type': 'TextField',
-            'summary': False
-        }),
+        ('design', {'public': True, 'field_type': 'TextField', 'summary': False}),
 
-        ('reference_claims', {
-            'public': True,
-            'field_type': 'TextField',
-            'summary': False
-        }),
+        ('reference_claims', {'public': True, 'field_type': 'TextField', 'summary': False}),
 
-        ('comments', {
-            'public': True,
-            'field_type': 'TextField',
-            'summary': False
-        }),
+        ('comments', {'public': True, 'field_type': 'TextField', 'summary': False}),
 
     ])
     """List of fields of pubmed entry fields with meta data for grouping."""
@@ -463,9 +293,7 @@ class EntryMeta(object):
         :return:
         """
 
-        return cls.filter({
-            'field_type': ('ForeignKey', 'ManyToManyField')
-        })
+        return cls.filter({'field_type': ('ForeignKey', 'ManyToManyField')})
 
     @classproperty
     def foreign_fields(cls):
@@ -476,9 +304,7 @@ class EntryMeta(object):
         :return:
         """
 
-        return cls.filter({
-            'field_type': 'ForeignKey'
-        })
+        return cls.filter({'field_type': 'ForeignKey'})
 
     @classproperty
     def many_to_many_fields(cls):
@@ -489,9 +315,7 @@ class EntryMeta(object):
         :return:
         """
 
-        return cls.filter({
-            'field_type': 'ManyToManyField'
-        })
+        return cls.filter({'field_type': 'ManyToManyField'})
 
     @classproperty
     def text_fields(cls):
@@ -501,9 +325,7 @@ class EntryMeta(object):
         :param cls:
         :return:
         """
-        return cls.filter({
-            'field_type': ('CharField', 'TextField')
-        })
+        return cls.filter({'field_type': ('CharField', 'TextField')})
 
     @classproperty
     def int_fields(cls):
@@ -514,9 +336,7 @@ class EntryMeta(object):
         :return:
         """
 
-        return cls.filter({
-            'field_type': 'PositiveIntegerField'
-        })
+        return cls.filter({'field_type': 'PositiveIntegerField'})
 
     @classproperty
     def public_fields(cls):
@@ -526,9 +346,7 @@ class EntryMeta(object):
         :param cls:
         :return:
         """
-        return cls.filter({
-            'public': True
-        })
+        return cls.filter({'public': True})
 
     @classproperty
     def summary_fields(cls):
@@ -537,6 +355,4 @@ class EntryMeta(object):
         :param cls:
         :return:
         """
-        return cls.filter({
-            'summary': True
-        })
+        return cls.filter({'summary': True})

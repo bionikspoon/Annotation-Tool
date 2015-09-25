@@ -14,8 +14,8 @@ from model_utils import Choices
 # Local Application
 from .layouts import EntryFormLayout
 from .lookups import (BreakendDirectionLookup, BreakendStrandLookup, MutationTypeLookup,
-    OperatorLookup, PatientOutcomesLookup, RuleLevelLookup, SexLookup, StructureLookup,
-    SyntaxLookup, VariantConsequenceLookup, VariantTypeLookup)
+                      OperatorLookup, PatientOutcomesLookup, RuleLevelLookup, SexLookup,
+                      StructureLookup, SyntaxLookup, VariantConsequenceLookup, VariantTypeLookup)
 from .models import Entry, EntryMeta
 
 logger = logging.getLogger(__name__)
@@ -74,6 +74,7 @@ class EntryModelForm(UserKwargModelFormMixin, forms.ModelForm):
 
         self.helper = helper.FormHelper(self)
         self.helper.form_id = 'entry-form'
+        self.html5_required = True
         self.helper.layout = EntryFormLayout(helper=self.helper)
 
         # self.helper.filter_by_widget(RadioSelect).wrap(bootstrap.InlineRadios)
