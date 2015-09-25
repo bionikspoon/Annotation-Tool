@@ -4,12 +4,16 @@ from crispy_forms.layout import Div, BaseInput
 from crispy_forms.utils import TEMPLATE_PACK
 from django.template.loader import render_to_string
 
+class Button(BaseInput):
+    template = "%s/layout/button.html"
+    input_type = 'button'
 
-class Submit(BaseInput):
+class Submit(Button):
+    template = "%s/layout/submit.html"
     input_type = 'submit'
-    field_classes = 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
+    field_classes = 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent'
 
-class Cancel(BaseInput):
+class Cancel(Button):
     input_type = 'button'
     field_classes = 'mdl-button mdl-js-button mdl-js-ripple-effect'
 

@@ -1,5 +1,5 @@
-<table
-   class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+<table id="entry-list--table"
+   role="grid" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
    <thead>
    <tr>
       <th>Pubmed Id</th>
@@ -17,15 +17,11 @@
       <tr>
          <td scope="row">{{ entry.pubmed_id }}</td>
          <td class="mdl-data-table__cell--non-numeric">
-            <a href="{% url 'pubmed:detail' entry.id %}"> <span class="fui-eye"></span><span
-               class="sr-only">View</span>
-               <!-- /.sr-only -->
+            <a href="{% url 'pubmed:detail' entry.id %}"><i class="material-icons">launch</i>
             </a>
          </td>
          <td class="mdl-data-table__cell--non-numeric">
-            <a href="{% url 'pubmed:update' entry.id %}"> <span class="fui-new"></span><span
-               class="sr-only">Edit</span>
-               <!-- /.sr-only -->
+            <a href="{% url 'pubmed:update' entry.id %}"> <i class="material-icons">mode_edit</i>
             </a>
          </td>
          <td class="mdl-data-table__cell--non-numeric">{{ entry.created }}</td>

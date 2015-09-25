@@ -1,226 +1,226 @@
 (function ($) {
-    /**
-     *
-     * jQuery utility, filter inputs by value.
-     * */
-    $.fn.filterValue = function (value) {
-        return this.filter(//
-            function (index, $el) {
-                return ($el.value === value.toString());
-            });
-    };
+  /**
+   *
+   * jQuery utility, filter inputs by value.
+   * */
+  $.fn.filterValue = function (value) {
+    return this.filter(//
+      function (index, $el) {
+        return ($el.value === value.toString());
+      });
+  };
 
 
 })(jQuery);
 
 $(function () {
+  /**
+   *
+   * Main DOM Node
+   ***************************************************************************
+   * */
+  var $form = $('#entry-form');
+
+
+  /**
+   *
+   * Impressively well organized modules.
+   ***************************************************************************
+   * */
+
+  treatmentBehavior($form);
+  //select2Setup($form);
+  pubmedLookup($form);
+  /**
+   *
+   * Module Definitions
+   ***************************************************************************
+   * */
+  function treatmentBehavior($form) {
     /**
      *
-     * Main DOM Node
-     ***************************************************************************
+     * Elements of Interest
      * */
-    var $form = $('#entry-form');
+    // Select box for # of arms
+    var $treatmentRadio = $form.find('input[type=radio][name=treatment]');
+    // List of treatment field containers
+    var $treatmentsFieldDivs = [
+      $form.find('#div_id_treatment_1'),
+      $form.find('#div_id_treatment_2'),
+      $form.find('#div_id_treatment_3'),
+      $form.find('#div_id_treatment_4'),
+      $form.find('#div_id_treatment_5')
+    ];
 
 
     /**
      *
-     * Impressively well organized modules.
-     ***************************************************************************
+     * Bind to form.
      * */
+      //watch for changes to treatment radio select field
+    $treatmentRadio.change(showFields);
 
-    treatmentBehavior($form);
-    //select2Setup($form);
-    pubmedLookup($form);
     /**
      *
-     * Module Definitions
-     ***************************************************************************
+     * Module Methods
      * */
-    function treatmentBehavior($form) {
-        /**
-         *
-         * Elements of Interest
-         * */
-        // Select box for # of arms
-        var $treatmentRadio = $form.find('input[type=radio][name=treatment]');
-        // List of treatment field containers
-        var $treatmentsFieldDivs = [
-            $form.find('#div_id_treatment_1'),
-            $form.find('#div_id_treatment_2'),
-            $form.find('#div_id_treatment_3'),
-            $form.find('#div_id_treatment_4'),
-            $form.find('#div_id_treatment_5')
-        ];
+    function init() {
+
+      //Find last filled treatment, skipping blanks. Default 1.
+      var numberOfTreatments = $treatmentsFieldDivs.reduce(//
+        //reduce cb.
+        function (previousValue, $div, index) {
+          var $field = $div.find('input[type=text]');
+
+          return $field.val() ? ++index : previousValue;
+        }, 1);
+
+      //Click radio select for corresponding number of treatments.
+      $treatmentRadio.filterValue(numberOfTreatments).click();
+    }
+
+    //Show fields for selected number of treatments, hide the rest.
+    function showFields(e) {
+      var fields = e.target.value;
+
+      //Show fields.
+      $treatmentsFieldDivs.slice(0, fields).map(function (treatment) {
+        treatment.show();
+      });
+
+      //Hide the rest.
+      $treatmentsFieldDivs.slice(fields).map(function (treatment) {
+        treatment.hide();
+      });
+    }
+
+    /**
+     *
+     * Initialize Module
+     * */
+    init();
+  }
 
 
-        /**
-         *
-         * Bind to form.
-         * */
-            //watch for changes to treatment radio select field
-        $treatmentRadio.change(showFields);
+  function select2Setup($form) {
+    /**
+     *
+     * Query all select boxes for select2
+     * */
+    var $select2 = $form.find('select');
 
-        /**
-         *
-         * Module Methods
-         * */
-        function init() {
+    //noinspection JSUnresolvedFunction
+    /**
+     *
+     * Initialize Select 2
+     * */
+    $select2.select2({
+      theme: 'bootstrap'
+    });
 
-            //Find last filled treatment, skipping blanks. Default 1.
-            var numberOfTreatments = $treatmentsFieldDivs.reduce(//
-                //reduce cb.
-                function (previousValue, $div, index) {
-                    var $field = $div.find('input[type=text]');
+  }
 
-                    return $field.val() ? ++index : previousValue;
-                }, 1);
+  function pubmedLookup($form) {
 
-            //Click radio select for corresponding number of treatments.
-            $treatmentRadio.filterValue(numberOfTreatments).click();
-        }
+    var _summary = [];
+    var _results = null;
+    /**
+     *
+     * Queries of interest.
+     * */
+    var $pubmedId = $form.find('#id_pubmed_id');
+    var $summaryDiv = $form.find('#hint_id_pubmed_id');
+    var $resultsDiv = $('#results');
+    var entryId = $form.find('#id_id').val();
 
-        //Show fields for selected number of treatments, hide the rest.
-        function showFields(e) {
-            var fields = e.target.value;
+    /**
+     *
+     * Bind to DOM
+     * */
 
-            //Show fields.
-            $treatmentsFieldDivs.slice(0, fields).map(function (treatment) {
-                treatment.show();
-            });
+    $pubmedId.keyup(getEntriesResults);
 
-            //Hide the rest.
-            $treatmentsFieldDivs.slice(fields).map(function (treatment) {
-                treatment.hide();
-            });
-        }
+    /**
+     *
+     * Methods
+     * */
 
-        /**
-         *
-         * Initialize Module
-         * */
-        init();
+    function getEntriesResults(e) {
+      var pubmedId = (typeof e === "string") ? e : e.target.value;
+      var payload = {'pubmed_id': pubmedId};
+      if (entryId) {
+        payload['exclude__entry'] = entryId
+
+      }
+
+      if (pubmedId) {
+        $.get('/api/pubmed/html/', payload, setResults)
+      } else {
+        setResults(false);
+      }
     }
 
 
+    function setResults(response, _, jqXHR) {
+      if (response) {
+        jqXHR
 
-    function select2Setup($form) {
-        /**
-         *
-         * Query all select boxes for select2
-         * */
-        var $select2 = $form.find('select');
+          .done(function (response) {
 
-        //noinspection JSUnresolvedFunction
-        /**
-         *
-         * Initialize Select 2
-         * */
-        $select2.select2({
-            theme: 'bootstrap'
-        });
+            _results = response ? response : '';
+            _summary = jqXHR.getResponseHeader('count');
+          })
 
-    }
+          .fail(function () {
 
-    function pubmedLookup($form) {
+          })
 
-        var _summary = [];
-        var _results = null;
-        /**
-         *
-         * Queries of interest.
-         * */
-        var $pubmedId = $form.find('#id_pubmed_id');
-        var $summaryDiv = $form.find('#hint_id_pubmed_id');
-        var $resultsDiv = $('#results');
-        var entryId = $form.find('#id_id').val();
+          .always(function () {
+            renderSummaryMessage();
+            toggleSummaryVisibility();
+            renderResults();
 
-        /**
-         *
-         * Bind to DOM
-         * */
-
-        $pubmedId.keyup(getEntriesResults);
-
-        /**
-         *
-         * Methods
-         * */
-
-        function getEntriesResults(e) {
-            var pubmedId = (typeof e === "string") ? e : e.target.value;
-            var payload = {'pubmed_id': pubmedId};
-            if (entryId) {
-                payload['exclude__entry'] = entryId
-
-            }
-
-            if (pubmedId) {
-                $.get('/api/pubmed/html/', payload, setResults)
-            } else {
-                setResults(false);
-            }
-        }
-
-
-        function setResults(response, _, jqXHR) {
-            if (response) {
-                jqXHR
-
-                    .done(function (response) {
-
-                        _results = response ? response : '';
-                        _summary = jqXHR.getResponseHeader('count');
-                    })
-
-                    .fail(function () {
-
-                    })
-
-                    .always(function () {
-                        renderSummaryMessage();
-                        toggleSummaryVisibility();
-                        renderResults();
-
-                    });
-            }
-
-
-        }
-
-        function toggleSummaryVisibility() {
-            if (_summary.length) {
-                $resultsDiv.show();
-            } else {
-                $resultsDiv.hide();
-            }
-
-        }
-
-        function renderSummaryMessage() {
-            var adjective = _summary.toString();
-            var noun = (_summary === 1 ? ' pubmed entry found.'
-                : ' pubmed entries found.');
-            var verb = _summary > 0 ? ' <a href=#results>Jump</a>' : '';
-
-            $summaryDiv.html(adjective + noun + verb);
-        }
-
-        function renderResults() {
-            var jump = '<p><a href=#entry-form>Jump</a></p>';
-
-            $resultsDiv.html(jump + _results);
-        }
-
-
-        /**
-         *
-         * Initialization
-         * */
-
-        getEntriesResults($pubmedId.val());
+          });
+      }
 
 
     }
+
+    function toggleSummaryVisibility() {
+      if (_summary.length) {
+        $resultsDiv.show();
+      } else {
+        $resultsDiv.hide();
+      }
+
+    }
+
+    function renderSummaryMessage() {
+      var adjective = _summary.toString();
+      var noun = (_summary === 1 ? ' pubmed entry found.'
+        : ' pubmed entries found.');
+      var verb = _summary > 0 ? ' <a href=#results>Jump</a>' : '';
+
+      $summaryDiv.html(adjective + noun + verb);
+    }
+
+    function renderResults() {
+      var jump = '<p class="mdl-cell mdl-cell--col-12"><a href=#entry-form>Jump</a></p>';
+
+
+      $resultsDiv.html(jump + _results);
+    }
+
+
+    /**
+     *
+     * Initialization
+     * */
+
+    getEntriesResults($pubmedId.val());
+
+
+  }
 
 
 });

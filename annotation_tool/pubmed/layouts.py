@@ -9,7 +9,6 @@ logger = logging.getLogger(__name__)
 
 
 class EntryFormLayout(Layout):
-
     def __init__(self, helper, *args, **kwargs):
         super().__init__(
 
@@ -115,7 +114,7 @@ class EntryFormLayout(Layout):
 
             Fieldset('{{ action_text }} Entry',
 
-                     Submit('submit', 'Submit'),
+                     Submit('submit', '{{ action_text }}'),
 
                      Cancel('cancel', 'Cancel')
 
