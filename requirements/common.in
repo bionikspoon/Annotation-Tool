@@ -10,7 +10,6 @@ django-secure
 django-floppyforms
 django-braces
 django-crispy-forms
-crispy-forms-foundation
 
 # Models
 django-model-utils

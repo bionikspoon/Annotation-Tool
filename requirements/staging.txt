@@ -4,8 +4,8 @@
 #
 #    pip-compile staging.in
 #
+boto==2.38.0
 click==5.1                # via pip-tools
-crispy-forms-foundation==0.5.2
 defusedxml==0.4.1         # via python3-openid
 django-allauth==0.23.0
 django-appconf==1.0.1     # via django-compressor
@@ -15,18 +15,23 @@ django-braces==1.8.1
 django-cacheops==2.4.1
 django-compressor==1.5
 django-crispy-forms==1.5.2
-django-environ==0.3.0
+django-environ==0.4.0
 django-filter==0.11.0
 django-floppyforms==1.5.2
 django-grappelli==2.7.1
+django-mailgun==0.7.2
 django-model-utils==2.3.1
 django-redis==4.2.0
 django-secure==1.0.1
+django-storages-redux==1.3
 django==1.8.4
-djangorestframework==3.2.3
+djangorestframework==3.2.4
 docutils==0.12
 first==2.0.1              # via pip-tools
 funcy==1.6                # via django-cacheops
+gevent==1.0.2
+greenlet==0.4.9           # via gevent
+gunicorn==19.3.0
 msgpack-python==0.4.6     # via django-redis
 oauthlib==1.0.3           # via requests-oauthlib
 pillow==2.9.0
@@ -36,8 +41,8 @@ python3-openid==3.0.7     # via django-allauth
 pytz==2015.6
 redis==2.10.3
 requests-oauthlib==0.5.0  # via django-allauth
-requests==2.7.0           # via django-allauth, requests-oauthlib
-six==1.9.0                # via django-appconf, django-bower, django-braces, django-cacheops, pip-tools, unicode-slugify
+requests==2.7.0           # via django-allauth, django-mailgun, requests-oauthlib
+six==1.9.0                # via django-appconf, django-bower, django-braces, django-cacheops, django-environ, django-mailgun, pip-tools, unicode-slugify
 unicode-slugify==0.1.3
 unidecode==0.4.18         # via unicode-slugify
 whitenoise==2.0.4
