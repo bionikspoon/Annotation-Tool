@@ -1,148 +1,115 @@
 {% load static rest_framework %}
 
 <!-- Content -->
-<div id="content">
+<div id="content" class="mdl-card mdl-card--expand mdl-cell mdl-shadow--2dp">
+   <div class="mdl-card__menu">
 
-   {% if 'GET' in allowed_methods %}
-      <form id="get-form" class="pull-right">
-         <fieldset>
-            {% if api_settings.URL_FORMAT_OVERRIDE %}
-               <div class="btn-group format-selection">
+      {% if options_form %}
+         <form class="button-form" action="{{ request.get_full_path }}" method="POST">
+            {% csrf_token %} <input type="hidden"
+                                    name="{{ api_settings.FORM_METHOD_OVERRIDE }}"
+                                    value="OPTIONS" />
+            <button class="mdl-button mdl-js-button mdl-js-button mdl-js-ripple-effect" id="OPTIONS"
+            >OPTIONS
+            </button>
+            <p class="mdl-tooltip"
+               for="OPTIONS">Make an OPTIONS request on the {{ name }} resource</p>
+         </form>
+      {% endif %}
+
+
+      {% if delete_form %}
+         <form class="button-form" action="{{ request.get_full_path }}" method="POST">
+            {% csrf_token %} <input type="hidden"
+                                    name="{{ api_settings.FORM_METHOD_OVERRIDE }}"
+                                    value="DELETE" />
+            <button id="DELETE" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-js-button">
+               DELETE
+            </button>
+            <p class="mdl-tooltip" for="DELETE">Make a DELETE request on the {{ name }} resource</p>
+         </form>
+      {% endif %}
+
+      {% if 'GET' in allowed_methods %}
+         <form id="get-form" class="button-form">
+            <fieldset>
+               {% if api_settings.URL_FORMAT_OVERRIDE %}
+                  <a class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                     href="{{ request.get_full_path }}"
+                     rel="nofollow"
+                     id="GET"> GET </a>
+                  <p class="mdl-tooltip"
+                     for="GET">Make a GET request on the {{ name }} resource
+                  </p>
+
+                  <button id="FORMAT"
+                          type="button"
+                          class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon  mdl-button--primary">
+                     <i class="material-icons">more_vert</i>
+                  </button>
+                  <p class="mdl-tooltip" for="FORMAT">Specify a format for the GET request</p>
+
+
+                  <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right"
+                      for="FORMAT">
+                     {% for format in available_formats %}
+                        <li>
+                           <a class="format-option mdl-menu__item"
+                              href="{% add_query_param request api_settings.URL_FORMAT_OVERRIDE format %}"
+                              rel="nofollow"
+                              id="FORMAT-{{ format|slugify }}">
+                              {{ format }}
+                           </a>
+
+                        </li>
+                     {% endfor %}
+                  </ul>
+                  {% for format in available_formats %}
+                     <p class="mdl-tooltip" for="FORMAT-{{ format|slugify }}">
+                        Make a GET request on the {{ name }} resource with the format set to `{{ format }}`
+                     </p>
+                  {% endfor %}
+
+               {% else %}
                   <a class="btn btn-primary js-tooltip"
                      href="{{ request.get_full_path }}"
                      rel="nofollow"
                      title="Make a GET request on the {{ name }} resource">GET</a>
-
-                  <button class="btn btn-primary dropdown-toggle js-tooltip"
-                          data-toggle="dropdown"
-                          title="Specify a format for the GET request">
-                     <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                     {% for format in available_formats %}
-                        <li>
-                           <a class="js-tooltip format-option"
-                              href="{% add_query_param request api_settings.URL_FORMAT_OVERRIDE format %}"
-                              rel="nofollow"
-                              title="Make a GET request on the {{ name }} resource with the format set to `{{ format }}`">{{ format }}</a>
-                        </li>
-                     {% endfor %}
-                  </ul>
-               </div>
-            {% else %}
-               <a class="btn btn-primary js-tooltip"
-                  href="{{ request.get_full_path }}"
-                  rel="nofollow"
-                  title="Make a GET request on the {{ name }} resource">GET</a>
-            {% endif %}
-         </fieldset>
-      </form>
-   {% endif %}
-
-   {% if options_form %}
-      <form class="button-form" action="{{ request.get_full_path }}" method="POST">
-         {% csrf_token %} <input type="hidden"
-                                 name="{{ api_settings.FORM_METHOD_OVERRIDE }}"
-                                 value="OPTIONS" />
-         <button class="btn btn-primary js-tooltip"
-                 title="Make an OPTIONS request on the {{ name }} resource">OPTIONS
-         </button>
-      </form>
-   {% endif %}
-
-   {% if delete_form %}
-      <form class="button-form" action="{{ request.get_full_path }}" method="POST">
-         {% csrf_token %} <input type="hidden"
-                                 name="{{ api_settings.FORM_METHOD_OVERRIDE }}"
-                                 value="DELETE" />
-         <button class="btn btn-danger js-tooltip"
-                 title="Make a DELETE request on the {{ name }} resource">DELETE
-         </button>
-      </form>
-   {% endif %}
-
-   <div class="content-main">
-      <div class="page-header">
-         <h1>{{ name }}</h1>
-      </div>
-      <div style="float:left">
-         {% block description %}
-            {{ description }}
-         {% endblock %}
-      </div>
-
-      {% if paginator %}
-         <nav style="float: right">
-            {% get_pagination_html paginator %}
-         </nav>
+               {% endif %}
+            </fieldset>
+         </form>
       {% endif %}
 
-      <div class="request-info" style="clear: both">
-         <pre class="prettyprint"><b>{{ request.method }}</b> {{ request.get_full_path }}</pre>
-      </div>
-
-      <div class="response-info">
-              <pre class="prettyprint"><span class="meta nocode"><b>HTTP {{ response.status_code }} {{ response.status_text }}</b>
-                 {% autoescape off %}
-                    {% for key, val in response_headers.items %}
-                       <b>{{ key }}:</b>
-                       <span class="lit">{{ val|break_long_headers|urlize_quoted_links }}</span>
-                    {% endfor %}
-                    </span>{{ content|urlize_quoted_links }}</pre>{% endautoescape %}
-      </div>
    </div>
 
-   {#  {% if display_edit_forms %}#} {##} {#    {% if post_form or raw_data_post_form %}#}
-   {#      <div {% if post_form %}class="tabbable"{% endif %}>#} {#        {% if post_form %}#}
-   {#          <ul class="nav nav-tabs form-switcher">#} {#            <li>#}
-   {#              <a name='html-tab' href="#post-object-form" data-toggle="tab">HTML form</a>#}
-   {#            </li>#} {#            <li>#}
-   {#              <a name='raw-tab' href="#post-generic-content-form" data-toggle="tab">Raw data</a>#}
-   {#            </li>#} {#          </ul>#} {#        {% endif %}#} {##}
-   {#        <div class="well tab-content">#} {#          {% if post_form %}#}
-   {#            <div class="tab-pane" id="post-object-form">#}
-   {#              {% with form=post_form %}#}
-   {#                <form action="{{ request.get_full_path }}" method="POST" enctype="multipart/form-data" class="form-horizontal" novalidate>#}
-   {#                  <fieldset>#} {#                    {{ post_form }}#}
-   {#                    <div class="form-actions">#}
-   {#                      <button class="btn btn-primary" title="Make a POST request on the {{ name }} resource">POST</button>#}
-   {#                    </div>#} {#                  </fieldset>#} {#                </form>#}
-   {#              {% endwith %}#} {#            </div>#} {#          {% endif %}#} {##}
-   {#          <div {% if post_form %}class="tab-pane"{% endif %} id="post-generic-content-form">#}
-   {#            {% with form=raw_data_post_form %}#}
-   {#              <form action="{{ request.get_full_path }}" method="POST" class="form-horizontal">#}
-   {#                <fieldset>#}
-   {#                  {% include "rest_framework/raw_data_form.html" %}#}
-   {#                  <div class="form-actions">#}
-   {#                    <button class="btn btn-primary" title="Make a POST request on the {{ name }} resource">POST</button>#}
-   {#                  </div>#} {#                </fieldset>#} {#              </form>#}
-   {#            {% endwith %}#} {#          </div>#} {#        </div>#} {#      </div>#}
-   {#    {% endif %}#} {##} {#    {% if put_form or raw_data_put_form or raw_data_patch_form %}#}
-   {#      <div {% if put_form %}class="tabbable"{% endif %}>#} {#        {% if put_form %}#}
-   {#          <ul class="nav nav-tabs form-switcher">#} {#            <li>#}
-   {#              <a name='html-tab' href="#put-object-form" data-toggle="tab">HTML form</a>#}
-   {#            </li>#} {#            <li>#}
-   {#              <a  name='raw-tab' href="#put-generic-content-form" data-toggle="tab">Raw data</a>#}
-   {#            </li>#} {#          </ul>#} {#        {% endif %}#} {##}
-   {#        <div class="well tab-content">#} {#          {% if put_form %}#}
-   {#            <div class="tab-pane" id="put-object-form">#}
-   {#              <form action="{{ request.get_full_path }}" method="POST" enctype="multipart/form-data" class="form-horizontal" novalidate>#}
-   {#                <fieldset>#} {#                  {{ put_form }}#}
-   {#                  <div class="form-actions">#}
-   {#                    <button class="btn btn-primary js-tooltip" name="{{ api_settings.FORM_METHOD_OVERRIDE }}" value="PUT" title="Make a PUT request on the {{ name }} resource">PUT</button>#}
-   {#                  </div>#} {#                </fieldset>#} {#              </form>#}
-   {#            </div>#} {#          {% endif %}#} {##}
-   {#          <div {% if put_form %}class="tab-pane"{% endif %} id="put-generic-content-form">#}
-   {#            {% with form=raw_data_put_or_patch_form %}#}
-   {#              <form action="{{ request.get_full_path }}" method="POST" class="form-horizontal">#}
-   {#                <fieldset>#}
-   {#                  {% include "rest_framework/raw_data_form.html" %}#}
-   {#                  <div class="form-actions">#}
-   {#                    {% if raw_data_put_form %}#}
-   {#                      <button class="btn btn-primary js-tooltip" name="{{ api_settings.FORM_METHOD_OVERRIDE }}" value="PUT" title="Make a PUT request on the {{ name }} resource">PUT</button>#}
-   {#                    {% endif %}#} {#                    {% if raw_data_patch_form %}#}
-   {#                      <button class="btn btn-primary js-tooltip" name="{{ api_settings.FORM_METHOD_OVERRIDE }}" value="PATCH" title="Make a PATCH request on the {{ name }} resource">PATCH</button>#}
-   {#                    {% endif %}#} {#                  </div>#} {#                </fieldset>#}
-   {#              </form>#} {#            {% endwith %}#} {#          </div>#} {#        </div>#}
-   {#      </div>#} {#    {% endif %}#} {#  {% endif %}#}
+
+   <div class="mdl-card__title">
+      <h1 class="mdl-card__title-text">{{ name }}</h1>
+      {% block description %}
+         <p class="mdl-card__subtitle-text">
+            {{ description }}
+         </p>
+      {% endblock %}
+   </div>
+
+   {% comment %}
+   {% if paginator %}
+      <nav>
+         {% get_pagination_html paginator %}
+      </nav>
+   {% endif %}
+   {% endcomment %}
+
+   <div class="mdl-card__supporting-text request-info">
+      <b>{{ request.method }}</b> {{ request.get_full_path }}
+
+   </div>
+
+   <div class="mdl-card__media response-info">
+
+      {% include 'rest_framework/_code.html' %}
+
+
+   </div>
+
 </div><!-- /.content -->

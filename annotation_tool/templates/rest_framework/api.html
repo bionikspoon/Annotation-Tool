@@ -30,19 +30,11 @@
 {% endblock anonymous_userlinks %}
 
 {% block breadcrumbs %}
-   <ul class="breadcrumb">
+   <section class="mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">
       {% for breadcrumb_name, breadcrumb_url in breadcrumblist %}
-         {% if forloop.last %}
-            <li class="active">
-               <a href="{{ breadcrumb_url }}">{{ breadcrumb_name }}</a>
-            </li>
-
-         {% else %}
-            <li><a href="{{ breadcrumb_url }}">{{ breadcrumb_name }}</a></li>
-
-         {% endif %}
+         <a class="mdl-button mdl-js-button mdl-button--primary mdl-js-ripple" href="{{ breadcrumb_url }}">{{ breadcrumb_name }}</a>
       {% endfor %}
-   </ul>
+   </section>
 {% endblock breadcrumbs %}
 
 {% block content %}

@@ -1,9 +1,15 @@
-.breadcrumb {
-
-  > li {
-
-    + li:before {
-      content: "#{$breadcrumb-separator} "; // Unicode space added since inline-block means non-collapsing white-space
+.mdl-card {
+    &__media {
+        .prettyprint {
+            margin-top:    0;
+            margin-bottom: 0;
+        }
     }
-  }
+    &__menu {
+        .button-form {
+            display: inline-block;
+            float:   none;
+            margin:  inherit;
+        }
+    }
 }
