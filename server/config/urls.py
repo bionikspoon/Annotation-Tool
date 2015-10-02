@@ -1,35 +1,40 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from rest_framework import routers
 
 from ..annotation_tool.users.views import UserViewSet
-from ..annotation_tool.pubmed.views import PubmedViewSet
+from ..annotation_tool.pubmed.views import PubmedViewSet, PatientOutcomesViewSet, DiseaseViewSet, \
+    VariantConsequenceViewSet, VariantTypeViewSet, StructureViewSet, MutationTypeViewSet, SyntaxViewSet, \
+    RuleLevelViewSet
 
 router = routers.DefaultRouter()
 router.register('users', UserViewSet)
 router.register('pubmed', PubmedViewSet)
+router.register('lookups', StructureViewSet)
+router.register('lookups', MutationTypeViewSet)
+router.register('lookups', SyntaxViewSet)
+router.register('lookups', RuleLevelViewSet)
+router.register('lookups', VariantTypeViewSet)
+router.register('lookups', VariantConsequenceViewSet)
+router.register('lookups', DiseaseViewSet)
+router.register('lookups', PatientOutcomesViewSet)
 
 urlpatterns = [
 
-    url(r'^api/', include(router.urls))
-    # url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
-    # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
+                  url(r'^api/', include(router.urls))
+                  # url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
+                  # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
 
-    # # Django Admin
-    # url(r'^admin/', include(admin.site.urls)),
-    #
-    # # User management
-    # url(r'^users/', include("annotation_tool.users.urls", namespace="users")),
-    # url(r'^accounts/', include('allauth.urls')),
+                  # # Django Admin# url(r'^admin/', include(admin.site.urls)),## # User management
+                  # url(r'^users/', include("annotation_tool.users.urls", namespace="users")),
+                  # url(r'^accounts/', include('allauth.urls')),
 
-    # Your stuff: custom urls includes go here
+                  # Your stuff: custom urls includes go here
 
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
 #     # This allows the error pages to be debugged during development, just visit
