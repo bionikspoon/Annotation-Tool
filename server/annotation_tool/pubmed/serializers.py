@@ -2,7 +2,7 @@
 # coding=utf-8
 from rest_framework import serializers
 
-from annotation_tool.pubmed.models import Pubmed
+from .models import Pubmed
 
 
 class PubmedSerializer(serializers.HyperlinkedModelSerializer):

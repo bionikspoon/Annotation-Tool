@@ -20,7 +20,7 @@ DJANGO_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     # 'django.contrib.sessions',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
     # 'django.contrib.messages',
     'django.contrib.staticfiles',
 
@@ -40,9 +40,9 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'annotation_tool.users',  # custom users app
+    'server.annotation_tool.users',  # custom users app
     # Your stuff: custom apps go here
-    'annotation_tool.pubmed'
+    'server.annotation_tool.pubmed'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -63,7 +63,7 @@ MIDDLEWARE_CLASSES = (
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'annotation_tool.contrib.sites.migrations'
+    'sites': 'server.annotation_tool.contrib.sites.migrations'
 }
 
 # DEBUG
@@ -193,10 +193,10 @@ MEDIA_URL = '/media/'
 
 # URL Configuration
 # ------------------------------------------------------------------------------
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'server.config.urls'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'server.config.wsgi.application'
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
