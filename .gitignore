@@ -39,7 +39,7 @@ htmlcov
 *.pot
 
 # Pycharm
-.idea
+.idea/
 
 # Vim
 
@@ -63,3 +63,9 @@ wheelhouse/
 
 !.env.sample
 .env.*
+
+
+bower_components/
+.sass-cache/
+.tmp/
+dist/
