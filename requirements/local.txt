@@ -9,15 +9,11 @@ babel==2.1.1              # via sphinx
 click==5.1                # via pip-tools
 coverage==4.0
 decorator==4.0.4          # via ipython, traitlets
-defusedxml==0.4.1         # via python3-openid
-django-allauth==0.23.0
 django-autoslug==1.8.0
 django-braces==1.8.1
-django-crispy-forms==1.5.2
 django-debug-toolbar==1.3.2
 django-environ==0.4.0
 django-extensions==1.5.7
-django-floppyforms==1.5.2
 django-model-utils==2.3.1
 django-redis==4.2.0
 django-secure==1.0.1
@@ -43,22 +39,17 @@ msgpack-python==0.4.6     # via django-redis
 nbconvert==4.0.0          # via jupyter, notebook
 nbformat==4.0.0           # via nbconvert, notebook
 notebook==4.0.5           # via ipywidgets, jupyter
-oauthlib==1.0.3           # via requests-oauthlib
 path.py==8.1.1            # via pickleshare
 pexpect==3.3              # via ipython
 pickleshare==0.5          # via ipython
-Pillow==2.9.0
 pip-tools==1.1.4
 psycopg2==2.6.1
 ptyprocess==0.5           # via terminado
 pygments==2.0.2           # via nbconvert, qtconsole, sphinx
-python3-openid==3.0.7     # via django-allauth
 pytz==2015.6
 pyzmq==14.7.0             # via jupyter-client
 qtconsole==4.0.1          # via jupyter
 redis==2.10.3
-requests-oauthlib==0.5.0  # via django-allauth
-requests==2.7.0           # via django-allauth, requests-oauthlib
 simplegeneric==0.8.1      # via ipython
 six==1.9.0                # via django-braces, django-environ, django-extensions, pip-tools, sphinx, unicode-slugify
 snowballstemmer==1.2.0    # via sphinx
@@ -70,5 +61,5 @@ tornado==4.2.1            # via notebook, terminado
 traitlets==4.0.0          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook, qtconsole
 unicode-slugify==0.1.3
 unidecode==0.4.18         # via unicode-slugify
-Werkzeug==0.10.4
+werkzeug==0.10.4
 whitenoise==2.0.4
