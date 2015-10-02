@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Production Configurations
 
 - Use djangosecure
@@ -9,9 +9,9 @@ Production Configurations
 
 - Use sentry for error logging
 
-'''
+"""
 from __future__ import absolute_import, unicode_literals
-
+# noinspection PyUnresolvedReferences
 from boto.s3.connection import OrdinaryCallingFormat
 from django.utils import six
 

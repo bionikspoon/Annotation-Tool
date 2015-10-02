@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Local settings
 
 - Run in Debug mode
 - Use console backend for emails
 - Add Django Debug Toolbar
 - Add django-extensions as app
-'''
+"""
 
 from .common import *  # noqa
 
@@ -19,7 +19,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default='CHANGEME!!!s8-@g0-+x#jegy%e)sxhsy4b^#)*dn6*!wqjypz_z3jh*3_zlv')
+SECRET_KEY = env("DJANGO_SECRET_KEY", default='secret')
 
 # Mail settings
 # ------------------------------------------------------------------------------
