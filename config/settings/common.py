@@ -15,7 +15,6 @@ import environ
 
 
 ROOT_DIR = environ.Path(__file__) - 3  # /annotation_tool/
-""" :type : """
 APPS_DIR = ROOT_DIR.path('annotation_tool')
 
 env = environ.Env()
@@ -357,7 +356,7 @@ STATIC_ROOT = ROOT_DIR('staticfiles')
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [ROOT_DIR('dist')]
+# STATICFILES_DIRS = [ROOT_DIR('dist')]
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.FileSystemFinder',
                        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
