@@ -64,10 +64,9 @@ staticfiles/
 wheelhouse/
 logs/
 
-.tmp
-bower_components
-test/bower_components
-.ipynb_checkpoints/
-shell.ipynb
-.htmlcov/
+
+node_modules/
+bower_components/
+.sass-cache/
+.tmp/
 dist/
