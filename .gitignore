@@ -32,6 +32,7 @@ pip-log.txt
 .coverage
 .tox
 nosetests.xml
+htmlcov
 
 # Translations
 *.mo
@@ -53,20 +54,8 @@ node_modules/
 .sass-cache
 
 # virtual environments
-!.env.sample
 .env
-.env.production
-.env.test
 
-
-staticfiles/
-
-wheelhouse/
-logs/
-
-
-node_modules/
-bower_components/
-.sass-cache/
-.tmp/
-dist/
+# User-uploaded media
+annotation_tool/media/
+.old/

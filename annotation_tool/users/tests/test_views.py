@@ -1,11 +1,11 @@
-# Django Packages
 from django.test import RequestFactory
 
-# Third Party Packages
 from test_plus.test import TestCase
 
-# Local Application
-from ..views import UserRedirectView, UserUpdateView
+from ..views import (
+    UserRedirectView,
+    UserUpdateView
+)
 
 
 class BaseUserTestCase(TestCase):
@@ -15,7 +15,7 @@ class BaseUserTestCase(TestCase):
         self.factory = RequestFactory()
 
 
-class UserRedirectViewTestCase(BaseUserTestCase):
+class TestUserRedirectView(BaseUserTestCase):
 
     def test_get_redirect_url(self):
         # Instantiate the view directly. Never do this outside a test!
@@ -34,11 +34,11 @@ class UserRedirectViewTestCase(BaseUserTestCase):
         )
 
 
-class UserUpdateViewTestCase(BaseUserTestCase):
+class TestUserUpdateView(BaseUserTestCase):
 
     def setUp(self):
         # call BaseUserTestCase.setUp()
-        super().setUp()
+        super(TestUserUpdateView, self).setUp()
         # Instantiate the view directly. Never do this outside a test!
         self.view = UserUpdateView()
         # Generate a fake request

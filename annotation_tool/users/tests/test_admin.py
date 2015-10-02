@@ -1,11 +1,9 @@
-# Third Party Packages
 from test_plus.test import TestCase
 
-# Local Application
 from ..admin import MyUserCreationForm
 
 
-class UserCreationFormTestCase(TestCase):
+class TestMyUserCreationForm(TestCase):
 
     def setUp(self):
         self.user = self.make_user()
