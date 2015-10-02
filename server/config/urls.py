@@ -4,9 +4,18 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
+from rest_framework import routers
+
+from ..annotation_tool.users.views import UserViewSet
+from ..annotation_tool.pubmed.views import PubmedViewSet
+
+router = routers.DefaultRouter()
+router.register('users', UserViewSet)
+router.register('pubmed', PubmedViewSet)
 
 urlpatterns = [
-    url(r'^api/', include('server.annotation_tool.pubmed.urls'))
+
+    url(r'^api/', include(router.urls))
     # url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
     # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
 
