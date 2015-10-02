@@ -24,22 +24,22 @@ DJANGO_APPS = (
     # Default Django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
+    # 'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.messages',
+    # 'django.contrib.messages',
     'django.contrib.staticfiles',
 
     # Useful template tags:
     # 'django.contrib.humanize',
 
     # Admin
-    'django.contrib.admin',
+    # 'django.contrib.admin',
 )
 THIRD_PARTY_APPS = (
-    'crispy_forms',  # Form layouts
-    'allauth',  # registration
-    'allauth.account',  # registration
-    'allauth.socialaccount',  # registration
+    # 'crispy_forms',  # Form layouts
+    # 'allauth',  # registration
+    # 'allauth.account',  # registration
+    # 'allauth.socialaccount',  # registration
 )
 
 # Apps specific for this project go here.
@@ -72,7 +72,7 @@ MIGRATION_MODULES = {
 # DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = env.bool("DJANGO_DEBUG", False)
+DEBUG = env.bool('DJANGO_DEBUG', False)
 
 # FIXTURE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -165,7 +165,7 @@ TEMPLATES = [
 ]
 
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+# CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -205,7 +205,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 # Some really nice defaults
@@ -216,8 +216,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # Custom user app defaults
 # Select the correct user model
 AUTH_USER_MODEL = 'users.User'
-LOGIN_REDIRECT_URL = 'users:redirect'
-LOGIN_URL = 'account_login'
+# LOGIN_REDIRECT_URL = 'users:redirect'
+# LOGIN_URL = 'account_login'
 
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
