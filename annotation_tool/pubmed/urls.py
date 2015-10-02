@@ -1,6 +1,11 @@
-try:
-    from django.conf.urls import *
-except ImportError:  # django < 1.4
-    from django.conf.urls.defaults import *
+from django.conf.urls import url, include
+from rest_framework import routers
 
-# place app url patterns here
+from annotation_tool.pubmed import views
+
+router = routers.DefaultRouter()
+router.register('pubmed', views.PubmedViewSet)
+
+urlpatterns = [
+    url(r'^', include(router.urls))
+]

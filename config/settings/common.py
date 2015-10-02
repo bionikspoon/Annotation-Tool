@@ -20,7 +20,7 @@ DJANGO_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     # 'django.contrib.sessions',
-    'django.contrib.sites',
+    # 'django.contrib.sites',
     # 'django.contrib.messages',
     'django.contrib.staticfiles',
 
@@ -35,12 +35,14 @@ THIRD_PARTY_APPS = (
     # 'allauth',  # registration
     # 'allauth.account',  # registration
     # 'allauth.socialaccount',  # registration
+    'rest_framework',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'annotation_tool.users',  # custom users app
     # Your stuff: custom apps go here
+    'annotation_tool.pubmed'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -132,7 +134,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         'DIRS': [
-            str(APPS_DIR.path('templates')),
+            # str(APPS_DIR.path('templates')),
         ],
         'OPTIONS': {
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
@@ -144,17 +146,17 @@ TEMPLATES = [
                 'django.template.loaders.app_directories.Loader',
             ],
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.template.context_processors.i18n',
-                'django.template.context_processors.media',
-                'django.template.context_processors.static',
-                'django.template.context_processors.tz',
-                'django.contrib.messages.context_processors.messages',
-                # Your stuff: custom template context processors go here
-            ],
+            # 'context_processors': [
+            #     'django.template.context_processors.debug',
+            #     'django.template.context_processors.request',
+            #     'django.contrib.auth.context_processors.auth',
+            #     'django.template.context_processors.i18n',
+            #     'django.template.context_processors.media',
+            #     'django.template.context_processors.static',
+            #     'django.template.context_processors.tz',
+            #     'django.contrib.messages.context_processors.messages',
+            #     # Your stuff: custom template context processors go here
+            # ],
         },
     },
 ]
@@ -198,10 +200,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    # 'allauth.account.auth_backends.AuthenticationBackend',
-)
+# AUTHENTICATION_BACKENDS = (
+#     # 'django.contrib.auth.backends.ModelBackend',
+#     # 'allauth.account.auth_backends.AuthenticationBackend',
+# )
 
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'username'

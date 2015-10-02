@@ -8,7 +8,10 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
+from annotation_tool import pubmed
+
 urlpatterns = [
+    url(r'^api/', include('annotation_tool.pubmed.urls'))
     # url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
     # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
 

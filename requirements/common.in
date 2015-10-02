@@ -38,3 +38,4 @@ redis
 
 # pip-sync, requirements management
 pip-tools
+djangorestframework
