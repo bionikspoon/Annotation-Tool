@@ -12,7 +12,8 @@ fake-factory
 django-debug-toolbar
 
 # improved REPL
--r ipython.in
+jupyter
+ipdb
 
 
 httpie
