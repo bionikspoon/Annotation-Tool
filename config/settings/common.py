@@ -10,16 +10,11 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
 
-import environ
-
-ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
-""":type: environ.Path"""
-APPS_DIR = ROOT_DIR.path('annotation_tool')
-
-env = environ.Env()
+from . import env, APPS_DIR, ROOT_DIR
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
+
 DJANGO_APPS = (
     # Default Django apps:
     'django.contrib.auth',
@@ -100,7 +95,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres:///annotation_tool"),
+    'default': env.db("DATABASE_URL"),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
