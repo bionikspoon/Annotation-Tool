@@ -34,7 +34,6 @@ greenlet==0.4.9           # via gevent
 gunicorn==19.3.0
 msgpack-python==0.4.6     # via django-redis
 oauthlib==1.0.3           # via requests-oauthlib
-pillow==2.9.0
 pip-tools==1.1.4
 psycopg2==2.6.1
 python3-openid==3.0.7     # via django-allauth

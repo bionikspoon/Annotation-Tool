@@ -13,7 +13,9 @@ from __future__ import absolute_import, unicode_literals
 # Third Party Packages
 import environ
 
+
 ROOT_DIR = environ.Path(__file__) - 3  # /annotation_tool/
+""" :type : """
 APPS_DIR = ROOT_DIR.path('annotation_tool')
 
 env = environ.Env()
@@ -72,7 +74,6 @@ THIRD_PARTY_APPS = (  # :off
 
     'floppyforms',
     'crispy_forms',  # Form layouts
-    'crispy_forms_foundation',
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
