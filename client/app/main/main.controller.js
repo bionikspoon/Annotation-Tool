@@ -37,6 +37,9 @@ class MainController {
     this.$mdSidenav('left')
       .toggle();
   }
+  openMenu($mdOpenMenu, e) {
+    $mdOpenMenu(e);
+  }
 }
 
 export default MainController;

@@ -2,6 +2,7 @@
 import config from './index.config';
 
 import routerConfig from './index.route';
+import themeConfig from './index.theme';
 
 import runBlock from './index.run';
 import MainController from './main/main.controller';
@@ -10,13 +11,15 @@ import WebDevTecService from '../app/components/webDevTec/webDevTec.service';
 import NavbarDirective from '../app/components/navbar/navbar.directive';
 import MalarkeyDirective from '../app/components/malarkey/malarkey.directive';
 
-angular.module('annotationTool', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ngMaterial'])
+angular.module('annotationTool',
+  ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ngMaterial'])
   .constant('malarkey', malarkey)
   .constant('toastr', toastr)
   .constant('moment', moment)
   .config(config)
 
   .config(routerConfig)
+  .config(themeConfig)
 
   .run(runBlock)
   .service('githubContributor', GithubContributorService)

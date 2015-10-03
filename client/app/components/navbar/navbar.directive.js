@@ -1,12 +1,12 @@
 class NavbarDirective {
-  constructor () {
+  constructor() {
     'ngInject';
 
     let directive = {
       restrict: 'E',
       templateUrl: 'app/components/navbar/navbar.html',
       scope: {
-          creationDate: '='
+        creationDate: '='
       },
       controller: NavbarController,
       controllerAs: 'vm',
@@ -18,11 +18,12 @@ class NavbarDirective {
 }
 
 class NavbarController {
-  constructor (moment) {
+  constructor(moment) {
     'ngInject';
 
     // "this.creation" is avaible by directive option "bindToController: true"
-    this.relativeDate = moment(this.creationDate).fromNow();
+    this.relativeDate = moment(this.creationDate)
+      .fromNow();
   }
 }
 
