@@ -58,6 +58,7 @@ class PatientOutcomesSerializer(HyperlinkedModelSerializer):
 
 
 class PubmedSerializer(HyperlinkedModelSerializer):
+
     class Meta:
         model = Pubmed
         fields = ('url', 'user', 'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator',

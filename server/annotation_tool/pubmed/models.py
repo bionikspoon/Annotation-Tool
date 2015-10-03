@@ -86,7 +86,7 @@ class Pubmed(TimeStampedModel):
     variant_type = models.ForeignKey(VariantTypeLookup, related_name=PUBMED_ENTRIES, null=True)
     variant_consequence = models.ForeignKey(VariantConsequenceLookup, related_name=PUBMED_ENTRIES, null=True)
     variant_clinical_grade = models.PositiveSmallIntegerField(choices=Choices.RANGE_FIVE, null=True, blank=True)
-    disease = models.ManyToManyField(DiseaseLookup, blank=True)
+    disease = models.ManyToManyField(DiseaseLookup, related_name=PUBMED_ENTRIES, blank=True)
     treatment_number_of_arms = models.PositiveSmallIntegerField(choices=Choices.RANGE_FIVE, null=True, blank=True)
     population_size = models.PositiveIntegerField(null=True, blank=True)
     sex = models.CharField(max_length=32, choices=Choices.SEX, blank=True)

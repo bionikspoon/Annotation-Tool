@@ -47,5 +47,5 @@ class PatientOutcomesViewSet(viewsets.ModelViewSet):
 
 
 class PubmedViewSet(viewsets.ModelViewSet):
-    queryset = Pubmed.objects.all()
+    queryset = Pubmed.objects.prefetch_related('disease','assessed_patient_outcomes', 'significant_patient_outcomes').all()
     serializer_class = PubmedSerializer
