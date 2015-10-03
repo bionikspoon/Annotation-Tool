@@ -1,11 +1,13 @@
 class MainController {
-  constructor ($timeout, webDevTec, toastr) {
+  constructor($timeout, webDevTec, toastr, $mdSidenav) {
     'ngInject';
 
     this.awesomeThings = [];
     this.classAnimation = '';
     this.creationDate = 1443810483786;
     this.toastr = toastr;
+    this.$mdSidenav = $mdSidenav;
+
 
     this.activate($timeout, webDevTec);
   }
@@ -26,8 +28,14 @@ class MainController {
   }
 
   showToastr() {
-    this.toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
+    this.toastr.info(
+      'Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
     this.classAnimation = '';
+  }
+
+  toggleSidenav() {
+    this.$mdSidenav('left')
+      .toggle();
   }
 }
 
