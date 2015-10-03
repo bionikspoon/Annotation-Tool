@@ -6,21 +6,21 @@ from django.conf.urls.static import static
 from rest_framework import routers
 
 from ..annotation_tool.users.views import UserViewSet
-from ..annotation_tool.pubmed.views import PubmedViewSet, PatientOutcomesViewSet, DiseaseViewSet, \
-    VariantConsequenceViewSet, VariantTypeViewSet, StructureViewSet, MutationTypeViewSet, SyntaxViewSet, \
-    RuleLevelViewSet
+from ..annotation_tool.pubmed.views import (PubmedViewSet, PatientOutcomesViewSet, DiseaseViewSet,
+                                            VariantConsequenceViewSet, VariantTypeViewSet, StructureViewSet,
+                                            MutationTypeViewSet, SyntaxViewSet, RuleLevelViewSet)
 
 router = routers.DefaultRouter()
 router.register('users', UserViewSet)
 router.register('pubmed', PubmedViewSet)
-router.register('lookups', StructureViewSet)
-router.register('lookups', MutationTypeViewSet)
-router.register('lookups', SyntaxViewSet)
-router.register('lookups', RuleLevelViewSet)
-router.register('lookups', VariantTypeViewSet)
-router.register('lookups', VariantConsequenceViewSet)
-router.register('lookups', DiseaseViewSet)
-router.register('lookups', PatientOutcomesViewSet)
+router.register('lookup-structure', StructureViewSet)
+router.register('lookup-mutation-type', MutationTypeViewSet)
+router.register('lookup-syntax', SyntaxViewSet)
+router.register('lookup-rule-level', RuleLevelViewSet)
+router.register('lookup-variant-type', VariantTypeViewSet)
+router.register('lookup-variant-consequence', VariantConsequenceViewSet)
+router.register('lookup-disease', DiseaseViewSet)
+router.register('lookup-patient-outcomes', PatientOutcomesViewSet)
 
 urlpatterns = [
 
