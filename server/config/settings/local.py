@@ -63,3 +63,5 @@ INSTALLED_APPS += ('django_extensions', )
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
+
+SHELL_PLUS_POST_IMPORTS = (('server.annotation_tool.pubmed.factories', 'PubmedFactory'),('server.annotation_tool.users.factories', 'UserFactory'))

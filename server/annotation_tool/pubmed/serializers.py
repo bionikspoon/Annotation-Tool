@@ -53,17 +53,16 @@ class DiseaseSerializer(HyperlinkedModelSerializer):
 class PatientOutcomesSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = PatientOutcomesLookup
-        fields = LOOKUP_FIELDS
+        fields = ('url', 'choice', 'created', 'modified', 'assessed_patient_outcomes_pubmed_entries',
+                  'significant_patient_outcomes_pubmed_entries')
 
 
 class PubmedSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Pubmed
-        fields = (
-
-            'url', 'user', 'created', 'modified', 'pubmed_id', 'gene', 'syntax_text', 'operator', 'chromosome',
-            'chromosome_range', 'breakend_strand', 'breakend_direction', 'mate_chromosome', 'mate_chromosome_range',
-            'number_of_copies', 'coordinate_predicate', 'variant_clinical_grade', 'treatment_number_of_arms',
-            'population_size', 'sex', 'ethnicity', 'study_design', 'reference_claims', 'comments'
-
-        )
+        fields = ('url', 'user', 'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator',
+                  'rule_level', 'chromosome', 'chromosome_range', 'breakend_strand', 'breakend_direction',
+                  'mate_chromosome', 'mate_chromosome_range', 'number_of_copies', 'coordinate_predicate',
+                  'variant_type', 'variant_consequence', 'variant_clinical_grade', 'disease',
+                  'treatment_number_of_arms', 'population_size', 'sex', 'ethnicity', 'assessed_patient_outcomes',
+                  'significant_patient_outcomes', 'study_design', 'reference_claims', 'comments')
