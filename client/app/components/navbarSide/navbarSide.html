@@ -1,0 +1,44 @@
+<md-sidenav class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-sm')"
+            md-theme="sidenav">
+  <md-toolbar class="md-tall md-hue-2">
+    <span flex></span>
+
+    <div class="md-toolbar-tools" layout="row" layout-align="space-between end">
+      <p class="md-body-1">hello@example.com</p>
+      <span flex></span>
+      <md-menu md-position-mode="target-right target">
+        <md-button class="md-icon-button md-body-1"
+                   ng-mouseover="$mdOpenMenu($event)">
+          <md-icon md-menu-origin>arrow_drop_down</md-icon>
+        </md-button>
+        <md-menu-content>
+          <md-menu-item>
+            <md-button>Admin</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button>Documentation</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button>Change Password</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button>Logout</md-button>
+          </md-menu-item>
+
+        </md-menu-content>
+      </md-menu>
+    </div>
+
+
+  </md-toolbar>
+
+  <md-list>
+    <md-list-item class="navbar-link">
+      <md-icon>crop</md-icon>
+      <p>Pubmed</p>
+    </md-list-item>
+  </md-list>
+
+</md-sidenav>

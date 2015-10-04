@@ -1,12 +1,11 @@
 class MainController {
-  constructor($timeout, webDevTec, toastr, $mdSidenav) {
+  constructor($timeout, webDevTec, toastr) {
     'ngInject';
 
     this.awesomeThings = [];
     this.classAnimation = '';
     this.creationDate = 1443810483786;
     this.toastr = toastr;
-    this.$mdSidenav = $mdSidenav;
 
 
     this.activate($timeout, webDevTec);
@@ -33,13 +32,6 @@ class MainController {
     this.classAnimation = '';
   }
 
-  toggleSidenav() {
-    this.$mdSidenav('left')
-      .toggle();
-  }
-  openMenu($mdOpenMenu, e) {
-    $mdOpenMenu(e);
-  }
 }
 
 export default MainController;

@@ -1,59 +1,16 @@
 <div layout="row" style="height: 100%;" ng-cloak>
-  <md-sidenav class="md-sidenav-left"
-              md-component-id="left"
-              md-is-locked-open="$mdMedia('gt-sm')"
-              md-theme="sidenav">
-    <md-toolbar class="md-tall md-hue-2">
-      <span flex></span>
-
-      <div class="md-toolbar-tools" layout="row" layout-align="space-between end">
-        <p class="md-body-1">hello@example.com</p>
-        <span flex></span>
-        <md-menu md-position-mode="target-right target">
-          <md-button class="md-icon-button md-body-1"
-                     ng-mouseover="main.openMenu($mdOpenMenu, $event)">
-            <md-icon md-menu-origin>arrow_drop_down</md-icon>
-          </md-button>
-          <md-menu-content>
-            <md-menu-item>
-              <md-button>Admin</md-button>
-            </md-menu-item>
-            <md-menu-item>
-              <md-button>Documentation</md-button>
-            </md-menu-item>
-            <md-menu-item>
-              <md-button>Change Password</md-button>
-            </md-menu-item>
-            <md-menu-item>
-              <md-button>Logout</md-button>
-            </md-menu-item>
-
-          </md-menu-content>
-        </md-menu>
-      </div>
-
-
-    </md-toolbar>
-
-    <md-list>
-      <md-list-item class="navbar-link">
-        <md-icon>crop</md-icon><p>Pubmed</p>
-      </md-list-item>
-    </md-list>
-
-  </md-sidenav>
+  <navbar-side style="height: 100%;"></navbar-side>
 
   <main flex layout="column" tabindex="-1" role="main">
-    <md-toolbar layout="row" md-theme="topnav" class="md-shadow-bottom-z-1 md-hue-3">
-      <md-button class="menu" hide-gt-sm ng-click="main.toggleList()" aria-label="Show User List">
-        <md-icon ng-cloak>menu</md-icon>
-      </md-button>
-      <h1 class="md-toolbar-tools ">Annotation Tool</h1>
+    <navbar-top></navbar-top>
 
-    </md-toolbar>
-    <md-content id="content" flex>
-      <md-icon class="avatar">avatar</md-icon>
-      <h2>Hello</h2>
+    <md-content id="content" layout-padding flex>
+      <md-card>
+        <md-card-content>
+          <md-icon class="">avatar</md-icon>
+          <h2>Hello</h2>
+        </md-card-content>
+      </md-card>
     </md-content>
 
   </main>

@@ -3,8 +3,7 @@ function themeConfig($mdThemingProvider) {
 
   $mdThemingProvider.theme('default')
     .primaryPalette('indigo')
-    .accentPalette('pink')
-    .backgroundPalette('grey', {'default': '100'});
+    .accentPalette('pink');
 
   $mdThemingProvider.theme('sidenav')
     .primaryPalette('blue-grey', {'hue-2': '900'});

@@ -1,21 +1,5 @@
 
-[md-theme=sidenav] {
-  background: $clr-blue-grey-800;
-  .navbar-link {
-    &, & > md-icon {
-      color: $clr-blue-grey-100;
-    }
-    &:hover {
-      background-color: $clr-pink-500;
-      &, & > md-icon {
-        color: $clr-pink-50;
-      }
-    }
-  }
-}
 
-[md-theme=topnav] {
-  h1.md-toolbar-tools {
-    color: $clr-grey-600;
-  }
+#content {
+  background: $clr-grey-100;
 }
