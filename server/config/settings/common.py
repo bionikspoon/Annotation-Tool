@@ -268,6 +268,7 @@ LOGGING = {
     }
 }
 
-REST_FRAMEWORK ={'PAGINATE_BY': 10
+REST_FRAMEWORK ={
+    # 'PAGINATE_BY': 10
 }
 # Your common stuff: Below this line define 3rd party library settings
