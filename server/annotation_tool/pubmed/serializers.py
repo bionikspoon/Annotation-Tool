@@ -61,7 +61,7 @@ class PubmedSerializer(HyperlinkedModelSerializer):
 
     class Meta:
         model = Pubmed
-        fields = ('url', 'user', 'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator',
+        fields = ('url', 'id', 'user', 'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator',
                   'rule_level', 'chromosome', 'chromosome_range', 'breakend_strand', 'breakend_direction',
                   'mate_chromosome', 'mate_chromosome_range', 'number_of_copies', 'coordinate_predicate',
                   'variant_type', 'variant_consequence', 'variant_clinical_grade', 'disease',

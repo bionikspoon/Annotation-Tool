@@ -18,6 +18,7 @@ class NavbarSideController {
   constructor() {
     'ngInject';
 
+
   }
 
 }
