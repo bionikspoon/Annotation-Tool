@@ -1,10 +1,10 @@
-<div layout="row" style="height: 100%;" ng-cloak>
+<div layout="row" style="height: 100%;" ng-cloak flex>
   <navbar-side style="height: 100%;"></navbar-side>
 
   <main flex layout="column" tabindex="-1" role="main">
     <navbar-top></navbar-top>
 
-    <md-content id="content" layout-padding flex>
+    <md-content id="content" layout="column" layout-padding flex>
       <md-card>
         <md-card-content>
           <ui-view></ui-view>

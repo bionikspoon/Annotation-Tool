@@ -18,7 +18,10 @@ class NavbarSideController {
   constructor() {
     'ngInject';
 
+  }
 
+  openMenu($mdOpenMenu, $event) {
+     $mdOpenMenu($event);
   }
 
 }
