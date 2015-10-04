@@ -21,7 +21,7 @@ class NavbarSideController {
   }
 
   openMenu($mdOpenMenu, $event) {
-     $mdOpenMenu($event);
+    $mdOpenMenu($event);
   }
 
 }
