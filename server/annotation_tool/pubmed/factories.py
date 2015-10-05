@@ -6,21 +6,26 @@ from factory import DjangoModelFactory, Iterator, LazyAttribute
 from faker import Faker
 
 from .models import (StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
-                     PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed)
+                     PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed, Gene)
 from ..users.models import User
 from ..utils import make, many_to_many
 
 faker = Faker()
 
+gene_offset = randint(0, Gene.objects.count() // 100)
+
 
 class PubmedFactory(DjangoModelFactory):
+    """Generate pubmed entry for testing with fake data."""
+
     class Meta:
+        """Pubmed Factory"""
         model = Pubmed
 
     pubmed_id = make(faker.random_int)
-    user = LazyAttribute(lambda _:choice(User.objects.all()))
+    user = LazyAttribute(lambda _: choice(User.objects.all()))
 
-    gene = make(faker.text, max_nb_chars=128)
+    gene = Iterator(Gene.objects.all()[gene_offset:gene_offset + 100], getter=lambda obj: obj.symbol)
     structure = Iterator(StructureLookup.objects.all())
     mutation_type = Iterator(MutationTypeLookup.objects.all())
     syntax = Iterator(SyntaxLookup.objects.all())

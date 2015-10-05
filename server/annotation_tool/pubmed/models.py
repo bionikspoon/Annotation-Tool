@@ -70,6 +70,9 @@ class Gene(TimeStampedModel):
     prev_name = postgres.ArrayField(models.CharField(max_length=128), null=True)
     prev_symbol = postgres.ArrayField(models.CharField(max_length=128), null=True)
 
+    def __repr__(self):
+        return '<Gene: %s>' % self.symbol
+
 
 class LookupTable(TimeStampedModel):
     choice = models.CharField(max_length=128, unique=True, db_index=True)
