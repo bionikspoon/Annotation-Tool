@@ -1,9 +1,16 @@
 # Create your views here.
 from rest_framework import viewsets
-from .models import Pubmed, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup, \
-    VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup
-from .serializers import PubmedSerializer, DiseaseSerializer, VariantConsequenceSerializer, VariantTypeSerializer, \
-    RuleLevelSerializer, PatientOutcomesSerializer, StructureSerializer, MutationTypeSerializer, SyntaxSerializer
+
+from .models import (Pubmed, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
+                     VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup, Gene)
+from .serializers import (PubmedSerializer, DiseaseSerializer, VariantConsequenceSerializer, VariantTypeSerializer,
+                          RuleLevelSerializer, PatientOutcomesSerializer, StructureSerializer, MutationTypeSerializer,
+                          SyntaxSerializer, GeneSerializer)
+
+
+class GeneViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Gene.objects.all()
+    serializer_class = GeneSerializer
 
 
 class StructureViewSet(viewsets.ModelViewSet):
@@ -47,5 +54,6 @@ class PatientOutcomesViewSet(viewsets.ModelViewSet):
 
 
 class PubmedViewSet(viewsets.ModelViewSet):
-    queryset = Pubmed.objects.prefetch_related('disease','assessed_patient_outcomes', 'significant_patient_outcomes').all()
+    queryset = Pubmed.objects.prefetch_related('disease', 'assessed_patient_outcomes',
+                                               'significant_patient_outcomes').all()
     serializer_class = PubmedSerializer

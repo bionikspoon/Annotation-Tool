@@ -26,7 +26,7 @@ class Gene(TimeStampedModel):
     cosmic = models.CharField(max_length=128)
     date_modified = models.DateTimeField(null=True)
     date_approved_reserved = models.DateTimeField(null=True)
-    name = models.CharField(max_length=128)
+    name = models.CharField(max_length=256)
     symbol = models.CharField(max_length=128, db_index=True)
     alias_name = postgres.ArrayField(models.CharField(max_length=128), null=True)  # 2
     alias_symbol = postgres.ArrayField(models.CharField(max_length=128), null=True)  # 2

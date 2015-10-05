@@ -25,9 +25,10 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         """:type parser: django.core.management.base.CommandParser"""
         parser.add_argument('--get', default=False, action='store_true', help='Check db for updates')
+        parser.add_argument('--load', default=False, action='store_true', help='Load Gene fixtures into DB.')
 
     def handle(self, *args, **options):
-        get = options.get('get')
+        get, load = options.get('get'), options.get('load')
         if get:
             pass
 
@@ -40,13 +41,19 @@ class Command(BaseCommand):
         print('Processing complete! Saving to file.  Be Patient')
         self.dump(fixture_chunks)
         print('%s fixture(s) created! %s records in %s files.' % (config.MODEL, len(fixtures), len(fixture_chunks)))
+        if load:
+            self.persist_genes()
 
     @staticmethod
     def build_fixture(doc):
         try:
-            del doc['pseudogene.org']
-        except KeyError:
-            pass
+            if doc.get('pseudogene.org'):
+                del doc['pseudogene.org']
+            if doc.get('mamit-trnadb'):
+                del doc['mamit-trnadb']
+        except KeyError as e:
+            print('Unkown exception.')
+            raise KeyError from e
         for key in doc.keys():
             if isinstance(doc[key], list):
                 try:
@@ -116,3 +123,7 @@ class Command(BaseCommand):
             start, stop = stop, stop + chunk_size
 
         return chunks
+
+    @staticmethod
+    def persist_genes():
+        pass

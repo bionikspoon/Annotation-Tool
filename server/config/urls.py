@@ -4,15 +4,17 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from rest_framework import routers
+from rest_framework.viewsets import ViewSet
 
 from ..annotation_tool.users.views import UserViewSet
-from ..annotation_tool.pubmed.views import (PubmedViewSet, PatientOutcomesViewSet, DiseaseViewSet,
+from ..annotation_tool.pubmed.views import (PubmedViewSet, GeneViewSet, PatientOutcomesViewSet, DiseaseViewSet,
                                             VariantConsequenceViewSet, VariantTypeViewSet, StructureViewSet,
                                             MutationTypeViewSet, SyntaxViewSet, RuleLevelViewSet)
 
 router = routers.DefaultRouter()
 router.register('users', UserViewSet)
 router.register('pubmed', PubmedViewSet)
+router.register('genes', GeneViewSet)
 router.register('lookup-structure', StructureViewSet)
 router.register('lookup-mutation-type', MutationTypeViewSet)
 router.register('lookup-syntax', SyntaxViewSet)
