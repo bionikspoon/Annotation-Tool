@@ -100762,7 +100762,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 7
     mgd_id: ['MGI:102491']
     name: mitochondrially encoded tRNA alanine
     omim_id: [590000]
@@ -100788,7 +100787,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 12
     mgd_id: ['MGI:102490']
     name: mitochondrially encoded tRNA cysteine
     omim_id: [590020]
@@ -100814,7 +100812,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 11
     mgd_id: ['MGI:102489']
     name: mitochondrially encoded tRNA aspartic acid
     omim_id: [590015]
@@ -100840,7 +100837,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 13
     mgd_id: ['MGI:102488']
     name: mitochondrially encoded tRNA glutamic acid
     omim_id: [590025]
@@ -100867,7 +100863,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 20
     mgd_id: ['MGI:102487']
     name: mitochondrially encoded tRNA phenylalanine
     omim_id: [590070]
@@ -100894,7 +100889,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 27
     mgd_id: ['MGI:102486']
     name: mitochondrially encoded tRNA glycine
     omim_id: [590035]
@@ -100921,7 +100915,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 15
     mgd_id: ['MGI:102485']
     name: mitochondrially encoded tRNA histidine
     omim_id: [590040]
@@ -100948,7 +100941,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 16
     mgd_id: ['MGI:102484']
     name: mitochondrially encoded tRNA isoleucine
     omim_id: [590045]
@@ -100975,7 +100967,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 28
     mgd_id: ['MGI:102483']
     name: mitochondrially encoded tRNA lysine
     omim_id: [590060]
@@ -101003,7 +100994,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 18
     mgd_id: ['MGI:102482']
     name: mitochondrially encoded tRNA leucine 1 (UUA/G)
     omim_id: [590050]
@@ -101030,7 +101020,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 17
     mgd_id: ['MGI:102481']
     name: mitochondrially encoded tRNA leucine 2 (CUN)
     omim_id: [590055]
@@ -101057,7 +101046,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 19
     mgd_id: ['MGI:102480']
     name: mitochondrially encoded tRNA methionine
     omim_id: [590065]
@@ -101083,7 +101071,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 10
     mgd_id: ['MGI:102479']
     name: mitochondrially encoded tRNA asparagine
     omim_id: [590010]
@@ -101110,7 +101097,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 21
     mgd_id: ['MGI:102478']
     name: mitochondrially encoded tRNA proline
     omim_id: [590075]
@@ -101137,7 +101123,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 14
     mgd_id: ['MGI:102477']
     name: mitochondrially encoded tRNA glutamine
     omim_id: [590030]
@@ -101164,7 +101149,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 9
     mgd_id: ['MGI:102476']
     name: mitochondrially encoded tRNA arginine
     omim_id: [590005]
@@ -101190,7 +101174,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 23
     mgd_id: ['MGI:102475']
     name: mitochondrially encoded tRNA serine 1 (UCN)
     omim_id: [590080]
@@ -101218,7 +101201,6 @@
     locus_group: non-coding RNA
     locus_type: RNA, transfer
     lsdb: [Mutations, of, the, Second, Mitochondrial, Serine, tRNA, 'Gene|http://www.retina-international.org/files/sci-news/mttsmut.htm']
-    mamit-trnadb: 22
     mgd_id: ['MGI:102474']
     name: mitochondrially encoded tRNA serine 2 (AGU/C)
     omim_id: [590085]
@@ -101245,7 +101227,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 24
     mgd_id: ['MGI:102473']
     name: mitochondrially encoded tRNA threonine
     omim_id: [590090]
@@ -101272,7 +101253,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 8
     mgd_id: ['MGI:102472']
     name: mitochondrially encoded tRNA valine
     omim_id: [590105]
@@ -101299,7 +101279,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 25
     mgd_id: ['MGI:102471']
     name: mitochondrially encoded tRNA tryptophan
     omim_id: [590095]
@@ -101326,7 +101305,6 @@
     location_sortable: mitochondria
     locus_group: non-coding RNA
     locus_type: RNA, transfer
-    mamit-trnadb: 26
     mgd_id: ['MGI:102470']
     name: mitochondrially encoded tRNA tyrosine
     omim_id: [590100]
