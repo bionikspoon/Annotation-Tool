@@ -15,6 +15,12 @@ function routerConfig($stateProvider) {
       controller:   'PubmedListController',
       controllerAs: 'vm'
     })
+    .state('pubmed.new', {
+      url:          'new',
+      templateUrl:  'app/pubmed/pubmed-form.html',
+      controller:   'PubmedFormController',
+      controllerAs: 'vm'
+    })
     .state('pubmed.item', {
       url:          '{id}',
       templateUrl:  'app/pubmed/pubmed-list.html',
@@ -23,12 +29,6 @@ function routerConfig($stateProvider) {
     })
     .state('pubmed.edit', {
       url:          '{id}/edit',
-      templateUrl:  'app/pubmed/pubmed-form.html',
-      controller:   'PubmedFormController',
-      controllerAs: 'vm'
-    })
-    .state('pubmed.new', {
-      url:          'new',
       templateUrl:  'app/pubmed/pubmed-form.html',
       controller:   'PubmedFormController',
       controllerAs: 'vm'

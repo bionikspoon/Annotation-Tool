@@ -1,1 +1,84 @@
-<p>I like forms</p>{{ id }}
+<md-toolbar class="md-primary">
+   <h1 class="md-toolbar-tools">Pubmed Entry</h1>
+</md-toolbar>
+<form name=pubmedEntry
+      novalidate>
+   <md-content layout-padding>
+      <md-input-container>
+         <label for=pubmed_id>Pubmed ID</label>
+         <input type="number"
+                name=pubmed_id
+                id=pubmed_id
+                ng-model=entry.pubmed_id>
+      </md-input-container>
+
+      <md-input-container>
+         <label for=gene>Gene</label>
+         <input name=gene
+                id=gene
+                ng-model=entry.gene>
+      </md-input-container>
+      <md-radio-group ng-model=entry.structure>
+         <label>Structure
+         </label>
+         <md-radio-button value="1">Sequence</md-radio-button>
+         <md-radio-button value="2">Structural</md-radio-button>
+         <md-button ng-show="entry.structure"
+                    ng-click="entry.structure=undefined">clear
+         </md-button>
+      </md-radio-group>
+
+      <div>
+         <label for="variant_clinical_grade">Variant clinical grade</label>
+         <div layout>
+            <md-input-container flex="20"
+                                layout
+                                layout-align="center center">
+               <input id=variant_clinical_grade
+                      name="variant_clinical_grade"
+                      aria-label="Variant clinical grade"
+                      style="text-align:center; margin-right: 10px;"
+                      type="number"
+                      flex
+                      ng-model="entry.variant_clinical_grade">
+            </md-input-container>
+            <md-slider aria-label="Variant clinical grade"
+                       flex
+                       md-discrete
+                       ng-model="entry.variant_clinical_grade"
+                       min="0"
+                       max="5"></md-slider>
+         </div>
+      </div>
+
+      <div>
+         <label for="disease">Disease</label>
+         <md-chips ng-model="vm.disease"
+                   md-autocomplete-snap
+                   md-require-match="true">
+
+            <md-input-container>
+               <input name="disease"
+                      id="disease"
+                      type="text">
+            </md-input-container>
+            <md-autocomplete md-selected-item="vm.selectedItem"
+                             md-search-text="vm.searchText"
+                             md-items="item in vm.querySearch(vm.searchText)"
+                             md-selected-item-change="vm.selectedItemChange(item)"
+                             md-item-text="item.display_name">
+               <md-item-template>
+                  <span md-highlight-text="vm.searchText"
+                        md-highlight-flags="^i">
+                     {{item.display_name}}
+                  </span>
+               </md-item-template>
+            </md-autocomplete>
+            <md-chip-template>{{ $chip.display_name }}</md-chip-template>
+         </md-chips>
+
+      </div>
+
+
+   </md-content>
+</form>
