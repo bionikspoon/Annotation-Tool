@@ -7,18 +7,18 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pubmed', '0003_auto_20151005_0901'),
+        ('pubmed', '0006_auto_20151005_0940'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='gene',
-            name='hgnc_id',
-            field=models.CharField(primary_key=True, max_length=16, serialize=False),
+            name='date_approved_reserved',
+            field=models.DateTimeField(null=True),
         ),
         migrations.AlterField(
             model_name='gene',
-            name='uuid',
-            field=models.UUIDField(db_index=True, unique=True),
+            name='date_modified',
+            field=models.DateTimeField(null=True),
         ),
     ]
