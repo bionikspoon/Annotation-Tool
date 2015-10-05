@@ -2,8 +2,8 @@ class PubmedItemController {
   constructor(/*$log, Restangular*/) {
     'ngInject';
     //
-    //this.loading = true;
-    //this.pubmedEntries = [];
+    this.loading = true;
+    this.entryOptions = {};
     //
     //Restangular.all('pubmed')
     //  .getList()
@@ -14,8 +14,10 @@ class PubmedItemController {
     //    $log.error('error:', error);
     //  })
     //  .finally(()=>this.loading = false);
-
+    this.activate();
   }
+
+  activate(){}
 
 }
 

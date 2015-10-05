@@ -4,15 +4,23 @@ import config from './index.config';
 import routerConfig from './index.route';
 
 import runBlock from './index.run';
-import exception from './components/exception/exception';
 import MainController from './main/main.controller';
 import NavbarTop from './components/navbarTop/navbarTop.directive';
 import NavbarSide from './components/navbarSide/navbarSide.directive';
 
 require('./pubmed/pubmed.module');
+require('./components/exception/exception.module');
 
 angular.module('annotationTool', [
-    'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ui.router', 'ngMaterial', 'restangular', 'pubmed'
+    'ngAnimate',
+    'ngCookies',
+    'ngTouch',
+    'ngSanitize',
+    'ui.router',
+    'ngMaterial',
+    'restangular',
+    'pubmed',
+    'main.exception'
   ])
   .constant('toastr', toastr)
   .constant('moment', moment)
@@ -21,7 +29,6 @@ angular.module('annotationTool', [
   .config(routerConfig)
 
   .run(runBlock)
-  .factory(exception)
   .directive('navbarTop', () => new NavbarTop())
   .directive('navbarSide', () => new NavbarSide())
   .controller('MainController', MainController);

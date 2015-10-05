@@ -4,8 +4,10 @@ import PubmedItemController from './pubmed-item.controller';
 import routerConfig from './pubmed.route';
 
 angular.module('pubmed', [
-    'ui.router', 'ngMaterial', 'restangular'
+    'ui.router', 'ngMaterial', 'restangular', 'main.exception'
   ])
+
+
 
   .controller('PubmedListController', PubmedListController)
   .controller('PubmedFormController', PubmedFormController)

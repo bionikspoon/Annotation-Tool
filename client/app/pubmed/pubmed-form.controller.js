@@ -66,10 +66,19 @@ const diseaseData = [
 ];
 
 class PubmedFormController {
-  constructor($log) {
+  constructor($log, Restangular, exception, toastr) {
     'ngInject';
 
     this.$log = $log;
+    this.Restangular = Restangular;
+    this.exception = exception;
+    this.toastr = toastr;
+
+
+    this.loading = true;
+    this.entryOptions = {};
+    this.fields = {'hello': 1};
+
     this.diseaseChoices = [];
     this.disease = [];
     this.activate();
@@ -81,6 +90,20 @@ class PubmedFormController {
       disease._lowername = disease.display_name.toLowerCase();
       return disease;
     });
+
+
+    this.Restangular.all('pubmed')
+      .options()
+      .then(options => {
+        this.$log.debug('options:', options);
+        this.entryOptions = options;
+        this.fields = options.actions.POST;
+        return options;
+      })
+      .catch(this.exception.catcher('OPTIONS request failed.'))
+      .finally(() => this.loading = false);
+
+
   }
 
   querySearch(query) {
@@ -99,6 +122,7 @@ class PubmedFormController {
   selectedItemChange(item) {
     this.$log.info('Select item changed to ' + JSON.stringify(item));
   }
+
 
 }
 
