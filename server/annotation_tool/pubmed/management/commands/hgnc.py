@@ -1,6 +1,8 @@
 import json
 import re
+from functools import reduce
 from pathlib import Path
+from pprint import pprint
 from uuid import UUID
 
 import ipdb
@@ -30,12 +32,14 @@ class Command(BaseCommand):
             pass
 
         docs = self.get_docs()
-        fixtures = [self.build_fixture(doc) for doc in docs][:10000]
-        fixture = [fixture for fixture in fixtures if
-                   fixture.get('pk').endswith('e446aed5-1a17-4f89-8168-5fec55a93117')]
-        # ipdb.set_trace()
-        self.dump(fixtures)
-        print('%s fixture created with %s records.' % (config.MODEL, len(fixtures)))
+        fixtures = [self.build_fixture(doc) for doc in docs]
+        fixture_chunks = self.chunk(fixtures)
+        # self._print_max_lengths(fixtures)
+        # self._get_fixture('b2d38ea3-65b2-478c-89d3-0f4c1c2559db', fixtures)
+
+        print('Processing complete! Saving to file.  Be Patient')
+        self.dump(fixture_chunks)
+        print('%s fixture(s) created! %s records in %s files.' % (config.MODEL, len(fixtures), len(fixture_chunks)))
 
     @staticmethod
     def build_fixture(doc):
@@ -65,6 +69,50 @@ class Command(BaseCommand):
         return hgnc['response']['docs']
 
     @staticmethod
-    def dump(fixtures):
-        with config.FIXTURES_DIR.joinpath('%s.yaml' % config.MODEL).open('w') as f:
-            yaml.dump(fixtures, f)
+    def dump(chunks):
+        for i, fixtures in chunks:
+            file_name = '%s-%s.yaml' % (config.MODEL, i)
+            print('Writing %s records to %s' % (len(fixtures), file_name))
+            with config.FIXTURES_DIR.joinpath(file_name).open('w') as f:
+                yaml.dump(fixtures, f)
+
+    @staticmethod
+    def _print_max_lengths(fixtures):
+        length = {}
+        for fixture in fixtures:
+            for key, value in fixture['fields'].items():
+                try:
+                    if isinstance(value, list):
+                        current = reduce(lambda a, b: max(a, len(b)), value, 0)
+                    else:
+                        current = length.get(key, 0)
+
+                    length[key] = max(current, len(value))
+                except TypeError:
+                    print(value)
+                    pass
+
+        pprint(length)
+
+    @staticmethod
+    def _get_fixture(needle, fixtures, field='pk'):
+        # noinspection PyUnresolvedReferences
+        from pprint import pprint
+
+        fixture = [fixture for fixture in fixtures if fixture.get(field).endswith(needle)][0]
+        ipdb.set_trace()
+
+    @staticmethod
+    def chunk(fixtures):
+        chunk_size = 5000
+        start = 0
+        stop = chunk_size
+        chunks = []
+        for i in range(len(fixtures) // 5000 + 1):
+            if start > len(fixtures):
+                break
+
+            chunks.append((i + 1, fixtures[start:stop]))
+            start, stop = stop, stop + chunk_size
+
+        return chunks
