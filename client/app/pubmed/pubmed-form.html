@@ -4,13 +4,10 @@
 
       <form name=pubmedEntry
             novalidate>
-         <md-input-container>
-            <label for=pubmed_id>Pubmed ID</label>
-            <input type="number"
-                   name=pubmed_id
-                   id=pubmed_id
-                   ng-model=entry.pubmed_id>
-         </md-input-container>
+         <site-control-generic field=vm.fields.pubmed_id
+                               ng-model=vm.entry.pubmed_id>
+         </site-control-generic>
+
 
          <md-input-container>
             <label for=gene>Gene</label>
