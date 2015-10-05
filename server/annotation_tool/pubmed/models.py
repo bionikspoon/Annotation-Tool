@@ -3,7 +3,6 @@ from django.contrib.postgres import fields as postgres
 from django.core.validators import MaxValueValidator
 from django.db import models
 from model_utils.models import TimeStampedModel
-
 from ..utils import choices
 
 
@@ -21,55 +20,55 @@ PUBMED_ENTRIES = 'pubmed_entries'
 
 class Gene(TimeStampedModel):
     uuid = models.UUIDField(primary_key=True)
-    version = models.PositiveIntegerField()
+    version = models.BigIntegerField()
     hgnc_id = models.CharField(max_length=16, unique=True, db_index=True)
     ccds_id = postgres.ArrayField(models.CharField(max_length=32))
     cosmic = models.CharField(max_length=32)
-    date_modified = models.DateField()
-    date_approved_reserved = models.DateField()
+    date_modified = models.DateTimeField()
+    date_approved_reserved = models.DateTimeField()
     name = models.CharField(max_length=32)
     symbol = models.CharField(max_length=16, db_index=True)
-    alias_name = postgres.ArrayField(models.CharField(max_length=64))  # 2
-    alias_symbol = postgres.ArrayField(models.CharField(max_length=16))  # 2
+    alias_name = postgres.ArrayField(models.CharField(max_length=64), null=True)  # 2
+    alias_symbol = postgres.ArrayField(models.CharField(max_length=16), null=True)  # 2
     location = models.CharField(max_length=16)
     location_sortable = models.CharField(max_length=16)
     locus_type = models.CharField(max_length=32)
     locus_group = models.CharField(max_length=32)
     gene_family = postgres.ArrayField(models.CharField(max_length=64))
-    gene_family_id = postgres.ArrayField(models.PositiveIntegerField())
+    gene_family_id = postgres.ArrayField(models.BigIntegerField())
 
     status = models.CharField(max_length=16)
-    entrez_id = models.PositiveIntegerField()
+    entrez_id = models.BigIntegerField()
     ensembl_gene_id = models.CharField(max_length=32)
     refseq_accession = postgres.ArrayField(models.CharField(max_length=16))
 
-    ena = postgres.ArrayField(models.CharField(max_length=16))
-    pubmed_id = postgres.ArrayField(models.PositiveIntegerField())
-    rgd_id = postgres.ArrayField(models.CharField(max_length=16))
-    snornabase = models.CharField(max_length=16)
-    ucsc_id = models.CharField(max_length=16)
-    uniprot_ids = postgres.ArrayField(models.CharField(max_length=16))
-    vega_id = models.CharField(max_length=16)
-    mgd_id = postgres.ArrayField(models.CharField(max_length=16))
-    omim_id = postgres.ArrayField(models.PositiveIntegerField())
-    enzyme_id = postgres.ArrayField(models.CharField(max_length=16))
-    homeodb = models.PositiveIntegerField
-    horde_id = models.CharField(max_length=16)
-    lsdb = postgres.ArrayField(models.CharField(max_length=64))
-    kznf_gene_catalog = models.PositiveIntegerField
-    lncrnadb = models.PositiveIntegerField
-    bioparadigms_slc = models.CharField(max_length=16)
-    cd = models.CharField(max_length=16)
-    date_name_changed = models.DateField()
-    date_symbol_changed = models.DateField()
-    imgt = models.CharField(max_length=16)
-    intermediate_filament_db = models.CharField(max_length=16)
-    iuphar = models.CharField(max_length=16)
-    merops = models.CharField(max_length=16)
-    mirbase = models.CharField(max_length=16)
-    orphanet = models.CharField(max_length=16)
-    prev_name = postgres.ArrayField(models.CharField(max_length=64))
-    prev_symbol = postgres.ArrayField(models.CharField(max_length=16))
+    ena = postgres.ArrayField(models.CharField(max_length=16), null=True)
+    pubmed_id = postgres.ArrayField(models.BigIntegerField(), null=True)
+    rgd_id = postgres.ArrayField(models.CharField(max_length=16), null=True)
+    snornabase = models.CharField(max_length=16, null=True)
+    ucsc_id = models.CharField(max_length=16, null=True)
+    uniprot_ids = postgres.ArrayField(models.CharField(max_length=16), null=True)
+    vega_id = models.CharField(max_length=16, null=True)
+    mgd_id = postgres.ArrayField(models.CharField(max_length=16), null=True)
+    omim_id = postgres.ArrayField(models.BigIntegerField(), null=True)
+    enzyme_id = postgres.ArrayField(models.CharField(max_length=16), null=True)
+    homeodb = models.BigIntegerField(null=True)
+    horde_id = models.CharField(max_length=16, null=True)
+    lsdb = postgres.ArrayField(models.CharField(max_length=64), null=True)
+    kznf_gene_catalog = models.BigIntegerField(null=True)
+    lncrnadb = models.BigIntegerField(null=True)
+    bioparadigms_slc = models.CharField(max_length=16, null=True)
+    cd = models.CharField(max_length=16, null=True)
+    date_name_changed = models.DateTimeField(null=True)
+    date_symbol_changed = models.DateTimeField(null=True)
+    imgt = models.CharField(max_length=16, null=True)
+    intermediate_filament_db = models.CharField(max_length=16, null=True)
+    iuphar = models.CharField(max_length=16, null=True)
+    merops = models.CharField(max_length=16, null=True)
+    mirbase = models.CharField(max_length=16, null=True)
+    orphanet = models.CharField(max_length=16, null=True)
+    prev_name = postgres.ArrayField(models.CharField(max_length=64), null=True)
+    prev_symbol = postgres.ArrayField(models.CharField(max_length=16), null=True)
 
 
 class LookupTable(TimeStampedModel):

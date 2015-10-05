@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from pprint import pprint
+from uuid import UUID
 
 import yaml
 from django.core.management.base import BaseCommand
@@ -26,18 +26,30 @@ class Command(BaseCommand):
         get = options.get('get')
         if get:
             pass
-        with config.DATA_DIR.joinpath('hgnc_complete_set.json').open() as f:
-            hgnc = json.load(f)
 
-        docs = hgnc['response']['docs']
-        fixtures = [self.build_fixture(doc) for doc in docs]
-        with config.FIXTURES_DIR.joinpath('%s.yaml' % config.MODEL).open('w') as f:
-            yaml.dump(fixtures, f)
+        docs = self.get_docs()
+        fixtures = [self.build_fixture(doc) for doc in docs][:10]
+
+        self.dump(fixtures)
+
+        print('%s fixture created with %s records.' % (config.MODEL, len(fixtures)))
 
     @staticmethod
     def build_fixture(doc):
         fixture = {}
-        fixture['pk'] = doc.pop('uuid')
+        fixture['pk'] = UUID(doc.pop('uuid')).urn
         fixture['model'] = '%s.%s' % (config.APP, config.MODEL)
         fixture['fields'] = doc
+        fixture['fields']['version'] = fixture['fields'].pop('_version_')
         return fixture
+
+    @staticmethod
+    def get_docs():
+        with config.DATA_DIR.joinpath('hgnc_complete_set.json').open() as f:
+            hgnc = json.load(f)
+        return hgnc['response']['docs']
+
+    @staticmethod
+    def dump(fixtures):
+        with config.FIXTURES_DIR.joinpath('%s.yaml' % config.MODEL).open('w') as f:
+            yaml.dump(fixtures, f)
