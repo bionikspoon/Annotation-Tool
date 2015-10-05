@@ -3,6 +3,7 @@ from django.contrib.postgres import fields as postgres
 from django.core.validators import MaxValueValidator
 from django.db import models
 from model_utils.models import TimeStampedModel
+
 from ..utils import choices
 
 
@@ -16,6 +17,59 @@ class Choices:
 
 
 PUBMED_ENTRIES = 'pubmed_entries'
+
+
+class Gene(TimeStampedModel):
+    uuid = models.UUIDField(primary_key=True)
+    version = models.PositiveIntegerField()
+    hgnc_id = models.CharField(max_length=16, unique=True, db_index=True)
+    ccds_id = postgres.ArrayField(models.CharField(max_length=32))
+    cosmic = models.CharField(max_length=32)
+    date_modified = models.DateField()
+    date_approved_reserved = models.DateField()
+    name = models.CharField(max_length=32)
+    symbol = models.CharField(max_length=16, db_index=True)
+    alias_name = postgres.ArrayField(models.CharField(max_length=64))  # 2
+    alias_symbol = postgres.ArrayField(models.CharField(max_length=16))  # 2
+    location = models.CharField(max_length=16)
+    location_sortable = models.CharField(max_length=16)
+    locus_type = models.CharField(max_length=32)
+    locus_group = models.CharField(max_length=32)
+    gene_family = postgres.ArrayField(models.CharField(max_length=64))
+    gene_family_id = postgres.ArrayField(models.PositiveIntegerField())
+
+    status = models.CharField(max_length=16)
+    entrez_id = models.PositiveIntegerField()
+    ensembl_gene_id = models.CharField(max_length=32)
+    refseq_accession = postgres.ArrayField(models.CharField(max_length=16))
+
+    ena = postgres.ArrayField(models.CharField(max_length=16))
+    pubmed_id = postgres.ArrayField(models.PositiveIntegerField())
+    rgd_id = postgres.ArrayField(models.CharField(max_length=16))
+    snornabase = models.CharField(max_length=16)
+    ucsc_id = models.CharField(max_length=16)
+    uniprot_ids = postgres.ArrayField(models.CharField(max_length=16))
+    vega_id = models.CharField(max_length=16)
+    mgd_id = postgres.ArrayField(models.CharField(max_length=16))
+    omim_id = postgres.ArrayField(models.PositiveIntegerField())
+    enzyme_id = postgres.ArrayField(models.CharField(max_length=16))
+    homeodb = models.PositiveIntegerField
+    horde_id = models.CharField(max_length=16)
+    lsdb = postgres.ArrayField(models.CharField(max_length=64))
+    kznf_gene_catalog = models.PositiveIntegerField
+    lncrnadb = models.PositiveIntegerField
+    bioparadigms_slc = models.CharField(max_length=16)
+    cd = models.CharField(max_length=16)
+    date_name_changed = models.DateField()
+    date_symbol_changed = models.DateField()
+    imgt = models.CharField(max_length=16)
+    intermediate_filament_db = models.CharField(max_length=16)
+    iuphar = models.CharField(max_length=16)
+    merops = models.CharField(max_length=16)
+    mirbase = models.CharField(max_length=16)
+    orphanet = models.CharField(max_length=16)
+    prev_name = postgres.ArrayField(models.CharField(max_length=64))
+    prev_symbol = postgres.ArrayField(models.CharField(max_length=16))
 
 
 class LookupTable(TimeStampedModel):
