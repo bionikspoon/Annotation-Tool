@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# coding=utf-8
+"""Build and load initial gene data."""
+
 import json
 import re
 from functools import reduce
@@ -5,31 +9,43 @@ from pathlib import Path
 from pprint import pprint
 from uuid import UUID
 
-import ipdb
 import yaml
 from django.core.management.base import BaseCommand
 
 
-class config:
+class Config:
+    """Config constants."""
     _CWD = Path(__file__, '..').resolve()
-    DATA_DIR = (_CWD / '_hgnc').resolve()
+    DATA_DIR = (_CWD / '_gene_data').resolve()
     FIXTURES_DIR = (_CWD / '../..' / "fixtures").resolve()
     APP = 'pubmed'
     MODEL = 'Gene'
 
 
 class Command(BaseCommand):
-    """Get gene hgnc gene data."""
+    """Get gene data."""
     help = __doc__
 
     def add_arguments(self, parser):
-        """:type parser: django.core.management.base.CommandParser"""
+        """
+        Add command arguments.
+
+        :param django.core.management.base.CommandParser parser: CommandParser object.
+        """
         parser.add_argument('--get', default=False, action='store_true', help='Check db for updates')
         parser.add_argument('--load', default=False, action='store_true', help='Load Gene fixtures into DB.')
 
     def handle(self, *args, **options):
+        """
+        Command Handle.
+
+        :param args:
+        :param dict options: Arguments from Parser object.
+        :return:
+        """
         get, load = options.get('get'), options.get('load')
         if get:
+            # TODO Pull data from API.
             pass
 
         docs = self.get_docs()
@@ -40,47 +56,71 @@ class Command(BaseCommand):
 
         print('Processing complete! Saving to file.  Be Patient')
         self.dump(fixture_chunks)
-        print('%s fixture(s) created! %s records in %s files.' % (config.MODEL, len(fixtures), len(fixture_chunks)))
+        print('%s fixture(s) created! %s records in %s files.' % (Config.MODEL, len(fixtures), len(fixture_chunks)))
         if load:
             self.persist_genes()
 
     @staticmethod
     def build_fixture(doc):
+        """
+        Build fixture from raw data.
+
+        :param dict doc: Flat dictionary data
+        :return: Fixture representation.
+        """
         try:
+            # Clean obscure keys.
             if doc.get('pseudogene.org'):
                 del doc['pseudogene.org']
             if doc.get('mamit-trnadb'):
                 del doc['mamit-trnadb']
         except KeyError as e:
-            print('Unkown exception.')
+            print('Unknown exception.')
             raise KeyError from e
+
         for key in doc.keys():
             if isinstance(doc[key], list):
                 try:
+                    # do a better job at parsing array's of strings from json.
                     doc[key] = [item.strip() for item in re.split(', ?|\s+', doc[key][0])]
                 except (TypeError, AttributeError):
-                    pass
+                    """Optional key doesn't exist"""
 
-        fixture = {}
-        fixture['pk'] = UUID(doc.pop('uuid')).urn
-        fixture['model'] = '%s.%s' % (config.APP, config.MODEL)
-        fixture['fields'] = doc
+        pk = UUID(doc.pop('uuid')).urn
+        fixture = {'pk': pk, 'model': '%s.%s' % (Config.APP, Config.MODEL), 'fields': doc}
+
+        # remove underscores.
         fixture['fields']['version'] = fixture['fields'].pop('_version_')
 
         return fixture
 
     @staticmethod
-    def get_docs():
-        with config.DATA_DIR.joinpath('hgnc_complete_set.json').open() as f:
-            hgnc = json.load(f)
-        return hgnc['response']['docs']
+    def get_docs(filepath=Config.DATA_DIR, filename='hgnc_complete_set.json'):
+        """
+        Get gene data from json file.
+
+        :param pathlib.Path filepath: Directory of json data.
+        :param filename: json data file name.
+        :return: List of docs.
+        :rtype: [dict]
+        """
+        with filepath.joinpath(filename).open() as f:
+            data = json.load(f)
+        return data['response']['docs']
 
     @staticmethod
-    def dump(chunks):
+    def dump(chunks, filepath=Config.FIXTURES_DIR, model=Config.MODEL):
+        """
+        Save fixtures to files.
+
+        :param [tuple] chunks: Chunks of fixtures.
+        :param pathlib.Path filepath: Output dir.
+        :param str model: Model to used in filename.
+        """
         for i, fixtures in chunks:
-            file_name = '%s-%s.yaml' % (config.MODEL, i)
+            file_name = '%s-%s.yaml' % (model, i)
             print('Writing %s records to %s' % (len(fixtures), file_name))
-            with config.FIXTURES_DIR.joinpath(file_name).open('w') as f:
+            with filepath.joinpath(file_name).open('w') as f:
                 yaml.dump(fixtures, f)
 
     @staticmethod
@@ -102,20 +142,41 @@ class Command(BaseCommand):
         pprint(length)
 
     @staticmethod
-    def _get_fixture(needle, fixtures, field='pk'):
+    def _get_fixture(needle, fixtures):
+        """
+        Debug helper utility.  Find fixture by uuid suffix. Start `ipdb`.
+
+        :param needle: UUID to search for.
+        :param fixtures: List of fixtures.
+        """
+
+        import ipdb
         # noinspection PyUnresolvedReferences
         from pprint import pprint
 
-        fixture = [fixture for fixture in fixtures if fixture.get(field).endswith(needle)][0]
+        """Import pprint into debug context."""
+
+        # noinspection PyUnusedLocal
+        fixture = [fixture for fixture in fixtures if fixture.get('pk').endswith(needle)][0]
+        """Load fixture into debug context."""
+
         ipdb.set_trace()
 
     @staticmethod
-    def chunk(fixtures):
-        chunk_size = 5000
+    def chunk(fixtures, chunk_size=5000):
+        """
+        Utility break large list in chunks.
+
+        :param [dict] fixtures: List of fixtures.
+        :param int chunk_size: Size of chunks.
+        :return: List of tuples.  [(id, fixtures)]
+        :rtype: [tuple]
+        """
+
         start = 0
         stop = chunk_size
         chunks = []
-        for i in range(len(fixtures) // 5000 + 1):
+        for i in range(len(fixtures) // chunk_size + 1):
             if start > len(fixtures):
                 break
 
@@ -126,4 +187,6 @@ class Command(BaseCommand):
 
     @staticmethod
     def persist_genes():
+        """Save fixtures to db."""
+        # TODO Save fixtures to db.
         pass
