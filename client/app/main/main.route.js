@@ -1,10 +1,10 @@
 function routerConfig($stateProvider) {
   'ngInject';
   $stateProvider
-    .state('core', {
+    .state('main', {
       url: '/',
-      templateUrl: 'app/core/core.html',
-      controller: 'CoreController',
+      templateUrl: 'app/main/main.html',
+      controller: 'MainController',
       controllerAs: 'main',
       abstract: true
     });

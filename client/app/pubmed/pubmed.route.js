@@ -4,7 +4,7 @@ function routerConfig($stateProvider) {
     .state('pubmed', {
       url: '',
       abstract: 'true',
-      parent: 'core',
+      parent: 'main',
       template: '<ui-view/>'
     })
     .state('pubmed.list', {

@@ -9,7 +9,7 @@ import NavbarSide from './components/navbarSide/navbarSide.directive';
 
 
 angular.module('app', [
-    'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ui.router', 'ngMaterial', 'restangular', 'app.core', 'app.pubmed'
+    'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ui.router', 'ngMaterial', 'restangular', 'app.main', 'app.pubmed'
   ])
   .constant('toastr', toastr)
   .constant('moment', moment)
