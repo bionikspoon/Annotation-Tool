@@ -1,12 +1,12 @@
-<md-radio-group ng-model=value>
-   <label>{{meta.label}}</label>
-   <div layout="row">
-      <md-radio-button ng-repeat="choice in meta.choices"
+<md-radio-group ng-model=vm.value>
+   <label>{{vm.meta.label}}</label>
+   <div layout=row>
+      <md-radio-button ng-repeat="choice in vm.meta.choices"
                        value={{choice.value}}>
          {{choice.display_name}}
       </md-radio-button>
-      <md-button ng-show=value
-                 ng-click=value=undefined>
+      <md-button ng-show=vm.value
+                 ng-click=vm.value=undefined>
          clear
       </md-button>
    </div>

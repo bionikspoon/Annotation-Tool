@@ -7,6 +7,7 @@ class radioGroupDirective {
       templateUrl: 'app/controls/radioGroup/radioGroup.html',
       controller: radioGroupController,
       controllerAs: 'vm',
+      bindToController: true,
       scope: {
         value: '=ngModel',
         name: '@',

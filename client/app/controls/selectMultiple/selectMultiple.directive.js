@@ -6,7 +6,7 @@ class selectMultipleDirective {
       restrict: 'E',
       templateUrl: 'app/controls/selectMultiple/selectMultiple.html',
       controller: selectMultipleController,
-      controllerAs: 'ctrl',
+      controllerAs: 'vm',
       bindToController: true,
       scope: {
         value: '=ngModel',

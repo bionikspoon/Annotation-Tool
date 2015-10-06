@@ -1,7 +1,7 @@
 <md-input-container>
-   <label for={{name}}>{{ meta.label }}</label>
-   <input type={{fieldType}}
-          name={{name}}
-          id={{name}}
-          ng-model="value">
+   <label for={{vm.name}}>{{vm.meta.label}}</label>
+   <input type={{vm.fieldType}}
+          name={{vm.name}}
+          id={{vm.name}}
+          ng-model=vm.value>
 </md-input-container>

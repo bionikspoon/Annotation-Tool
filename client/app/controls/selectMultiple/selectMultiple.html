@@ -1,17 +1,17 @@
-<label for={{ctrl.name}}>{{ ctrl.meta.label }}</label>
-<md-chips ng-model=ctrl.value
+<label for={{vm.name}}>{{ vm.meta.label }}</label>
+<md-chips ng-model=vm.value
           md-autocomplete-snap
           md-require-match=true>
    <md-autocomplete
-      md-selected-item=ctrl.selectedItem
-      md-search-text=ctrl.searchText
-      md-items="item in ctrl.querySearch(ctrl.searchText)"
+      md-selected-item=vm.selectedItem
+      md-search-text=vm.searchText
+      md-items="item in vm.querySearch(vm.searchText)"
       md-item-text=item.display_name
       md-select-on-match=true
-      md-input-name={{ctrl.name}}
-      md-input-id={{ctrl.name}}
+      md-input-name={{vm.name}}
+      md-input-id={{vm.name}}
       md-menu-class="select-multiple-menu">
-            <span md-highlight-text=ctrl.searchText>
+            <span md-highlight-text=vm.searchText>
             {{item.display_name}}
             </span>
    </md-autocomplete>
