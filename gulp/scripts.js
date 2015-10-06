@@ -39,7 +39,7 @@ function webpack(watch, callback) {
     }
   };
 
-  return gulp.src(path.join(conf.paths.src, '/app/index.module.js'))
+  return gulp.src(path.join(conf.paths.src, '/app/**/*.module.js'))
     .pipe($.webpack(webpackOptions, null, webpackChangeHandler))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app')));
 }

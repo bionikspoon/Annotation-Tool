@@ -1,4 +1,4 @@
-/* global require:false, toastr:false, moment:false */
+/* global toastr:false, moment:false */
 import config from './index.config';
 
 import routerConfig from './index.route';
@@ -8,8 +8,7 @@ import MainController from './main/main.controller';
 import NavbarTop from './components/navbarTop/navbarTop.directive';
 import NavbarSide from './components/navbarSide/navbarSide.directive';
 
-require('./pubmed/pubmed.module');
-require('./components/exception/exception.module');
+
 
 angular.module('annotationTool', [
     'ngAnimate',
