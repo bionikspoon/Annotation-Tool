@@ -4,8 +4,6 @@ import config from './index.config';
 import routerConfig from './index.route';
 
 import runBlock from './index.run';
-import NavbarTop from './components/navbarTop/navbarTop.directive';
-import NavbarSide from './components/navbarSide/navbarSide.directive';
 
 
 angular.module('app', [
@@ -17,6 +15,4 @@ angular.module('app', [
   .config(config)
   .config(routerConfig)
 
-  .run(runBlock)
-  .directive('navbarTop', () => new NavbarTop())
-  .directive('navbarSide', () => new NavbarSide());
+  .run(runBlock);

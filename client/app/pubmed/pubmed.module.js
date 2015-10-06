@@ -1,7 +1,7 @@
 import PubmedListController from './pubmed-list.controller';
 import PubmedFormController from './pubmed-form.controller';
 import PubmedItemController from './pubmed-item.controller';
-import genericFormControlDirective from '../components/formControls/genericFormControl.directive';
+import genericFormControlDirective from '../components/formControls/genericInput.directive.js';
 import routerConfig from './pubmed.route';
 
 angular.module('app.pubmed', [
@@ -12,4 +12,4 @@ angular.module('app.pubmed', [
   .controller('PubmedListController', PubmedListController)
   .controller('PubmedFormController', PubmedFormController)
   .controller('PubmedItemController', PubmedItemController)
-  .directive('siteControlGeneric', () => new genericFormControlDirective());
+  .directive('appGenericInput', () => new genericFormControlDirective());

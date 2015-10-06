@@ -4,7 +4,7 @@ class NavbarTopDirective {
 
     let directive = {
       restrict: 'E',
-      templateUrl: 'app/components/navbarTop/navbarTop.html',
+      templateUrl: 'app/components/navbar/navbarTop.html',
       controller: NavbarTopController,
       controllerAs: 'vm',
       bindToController: true

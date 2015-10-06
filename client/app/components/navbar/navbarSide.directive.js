@@ -4,7 +4,7 @@ class NavbarSideDirective {
 
     let directive = {
       restrict: 'E',
-      templateUrl: 'app/components/navbarSide/navbarSide.html',
+      templateUrl: 'app/components/navbar/navbarSide.html',
       controller: NavbarSideController,
       controllerAs: 'vm',
       bindToController: true
