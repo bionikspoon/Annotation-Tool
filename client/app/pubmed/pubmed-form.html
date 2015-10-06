@@ -25,34 +25,11 @@
             ng-model=vm.entry.variant_clinical_grade
             name=variant_clinical_grade></app-choice-slider>
 
-         <div>
-            <label for="disease">Disease</label>
-            <md-chips ng-model="vm.disease"
-                      md-autocomplete-snap
-                      md-require-match="true">
+         <app-select-multiple
+            meta=vm.fields.disease
+            ng-model=vm.entry.disease
+            name=disease></app-select-multiple>
 
-               <md-input-container>
-                  <input name="disease"
-                         id="disease"
-                         type="text">
-               </md-input-container>
-               <md-autocomplete
-                  md-selected-item="vm.selectedItem"
-                  md-search-text="vm.searchText"
-                  md-items="item in vm.querySearch(vm.searchText)"
-                  md-selected-item-change="vm.selectedItemChange(item)"
-                  md-item-text="item.display_name">
-                  <md-item-template>
-                  <span md-highlight-text="vm.searchText"
-                        md-highlight-flags="^i">
-                     {{item.display_name}}
-                  </span>
-                  </md-item-template>
-               </md-autocomplete>
-               <md-chip-template>{{ $chip.display_name }}</md-chip-template>
-            </md-chips>
-
-         </div>
 
       </form>
    </md-card-content>
