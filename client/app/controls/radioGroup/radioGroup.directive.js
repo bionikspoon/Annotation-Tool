@@ -1,11 +1,11 @@
-class choiceSliderDirective {
+class radioGroupDirective {
   constructor() {
     'ngInject';
 
     let directive = {
       restrict: 'E',
-      templateUrl: 'app/components/formControls/choiceSlider.html',
-      controller: choiceSliderController,
+      templateUrl: 'app/controls/radioGroup/radioGroup.html',
+      controller: radioGroupController,
       controllerAs: 'vm',
       scope: {
         value: '=ngModel',
@@ -17,8 +17,8 @@ class choiceSliderDirective {
   }
 }
 
-class choiceSliderController {
-  constructor($log) {
+class radioGroupController {
+  constructor( $log) {
     'ngInject';
 
     this.$log = $log;
@@ -26,4 +26,4 @@ class choiceSliderController {
 
 }
 
-export default choiceSliderDirective;
+export default radioGroupDirective;

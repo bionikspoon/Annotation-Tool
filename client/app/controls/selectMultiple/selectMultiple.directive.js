@@ -4,7 +4,7 @@ class selectMultipleDirective {
 
     let directive = {
       restrict: 'E',
-      templateUrl: 'app/components/formControls/selectMultiple.html',
+      templateUrl: 'app/controls/selectMultiple/selectMultiple.html',
       controller: selectMultipleController,
       controllerAs: 'ctrl',
       bindToController: true,

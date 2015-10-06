@@ -4,7 +4,7 @@ class genericInputDirective {
 
     let directive = {
       restrict: 'E',
-      templateUrl: 'app/components/formControls/genericInput.html',
+      templateUrl: 'app/controls/genericInput/genericInput.html',
       controller: genericInputController,
       controllerAs: 'vm',
       scope: {

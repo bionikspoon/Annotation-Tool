@@ -20,6 +20,28 @@
             ng-model=vm.entry.structure
             name=structure></app-radio-group>
 
+         <app-radio-group
+            meta=vm.fields.mutation_type
+            ng-model=vm.entry.mutation_type
+            name=mutation_type></app-radio-group>
+
+         <app-radio-group
+            meta=vm.fields.syntax
+            ng-model=vm.entry.syntax
+            name=syntax></app-radio-group>
+
+
+         <app-generic-input
+            meta=vm.fields.syntax_text
+            ng-model=vm.entry.syntax_text
+            name=syntax_text></app-generic-input>
+
+
+         <app-radio-group
+            meta=vm.fields.operator
+            ng-model=vm.entry.operator
+            name=operator></app-radio-group>
+
          <app-choice-slider
             meta=vm.fields.variant_clinical_grade
             ng-model=vm.entry.variant_clinical_grade
