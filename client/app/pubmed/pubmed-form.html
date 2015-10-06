@@ -1,29 +1,21 @@
 <md-card>
    <md-card-content>
-      <h2>Pubmed Entry</h2>
+      <h2>Pubmed Entry{{ vm.hello }}</h2>
 
       <form name=pubmedEntry
             novalidate>
-         <app-control-generic field=vm.fields.pubmed_id
-                               ng-model=vm.entry.pubmed_id>
-         </app-control-generic>
 
+         <app-generic-input meta=vm.fields.pubmed_id
+                            ng-model=vm.entry.pubmed_id
+                            name=pubmed_id></app-generic-input>
 
-         <md-input-container>
-            <label for=gene>Gene</label>
-            <input name=gene
-                   id=gene
-                   ng-model=entry.gene>
-         </md-input-container>
-         <md-radio-group ng-model=entry.structure>
-            <label>Structure
-            </label>
-            <md-radio-button value="1">Sequence</md-radio-button>
-            <md-radio-button value="2">Structural</md-radio-button>
-            <md-button ng-show="entry.structure"
-                       ng-click="entry.structure=undefined">clear
-            </md-button>
-         </md-radio-group>
+         <app-generic-input meta=vm.fields.gene
+                            ng-model=vm.entry.gene
+                            name=gene></app-generic-input>
+
+         <app-radio-group meta=vm.fields.structure
+                          ng-model=vm.entry.structure
+                          name=structure></app-radio-group>
 
          <div>
             <label for="variant_clinical_grade">Variant clinical grade</label>

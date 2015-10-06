@@ -6,8 +6,7 @@ class NavbarTopDirective {
       restrict: 'E',
       templateUrl: 'app/components/navbar/navbarTop.html',
       controller: NavbarTopController,
-      controllerAs: 'vm',
-      bindToController: true
+      controllerAs: 'vm'
     };
 
     return directive;

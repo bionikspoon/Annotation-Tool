@@ -6,21 +6,28 @@ class genericInputDirective {
       restrict: 'E',
       templateUrl: 'app/components/formControls/genericInput.html',
       controller: genericInputController,
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      scope: {
+        value: '=ngModel',
+        name: '=',
+        meta: '='
+      }
     };
-
     return directive;
   }
 }
 
 class genericInputController {
-  constructor() {
+  constructor($scope, $log) {
     'ngInject';
 
+    this.$log = $log;
+    $scope.fieldType = genericInputController.getFieldType($scope);
   }
 
-
-
+  static getFieldType($scope) {
+    return $scope.meta.type === 'integer' ? 'number' : 'text';
+  }
 }
 
 export default genericInputDirective;

@@ -66,18 +66,19 @@ const diseaseData = [
 ];
 
 class PubmedFormController {
-  constructor($log, Restangular, exception, toastr) {
+  constructor($log, Restangular, exception, toastr, options) {
     'ngInject';
+
 
     this.$log = $log;
     this.Restangular = Restangular;
     this.exception = exception;
     this.toastr = toastr;
+    this.options = options;
 
 
     this.loading = true;
-    this.entryOptions = {};
-    this.fields = {'hello': 1};
+    this.fields = options.actions.POST;
 
     this.diseaseChoices = [];
     this.disease = [];
@@ -95,8 +96,6 @@ class PubmedFormController {
     this.Restangular.all('pubmed')
       .options()
       .then(options => {
-        this.$log.debug('options:', options);
-        this.entryOptions = options;
         this.fields = options.actions.POST;
         return options;
       })

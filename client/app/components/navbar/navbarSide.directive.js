@@ -6,8 +6,7 @@ class NavbarSideDirective {
       restrict: 'E',
       templateUrl: 'app/components/navbar/navbarSide.html',
       controller: NavbarSideController,
-      controllerAs: 'vm',
-      bindToController: true
+      controllerAs: 'vm'
     };
 
     return directive;
