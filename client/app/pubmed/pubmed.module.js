@@ -3,6 +3,7 @@ import PubmedFormController from './pubmed-form.controller';
 import PubmedItemController from './pubmed-item.controller';
 import genericInputDirective from '../components/formControls/genericInput.directive';
 import radioGroupDirective from '../components/formControls/radioGroup.directive';
+import choiceSliderDirective from '../components/formControls/choiceSlider.directive';
 import routerConfig from './pubmed.route';
 
 angular.module('app.pubmed', [
@@ -14,4 +15,5 @@ angular.module('app.pubmed', [
   .controller('PubmedFormController', PubmedFormController)
   .controller('PubmedItemController', PubmedItemController)
   .directive('appGenericInput', () => new genericInputDirective())
-  .directive('appRadioGroup', () => new radioGroupDirective());
+  .directive('appRadioGroup', () => new radioGroupDirective())
+  .directive('appChoiceSlider', () => new choiceSliderDirective());

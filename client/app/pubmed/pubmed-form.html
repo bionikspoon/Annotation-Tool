@@ -5,40 +5,25 @@
       <form name=pubmedEntry
             novalidate>
 
-         <app-generic-input meta=vm.fields.pubmed_id
-                            ng-model=vm.entry.pubmed_id
-                            name=pubmed_id></app-generic-input>
+         <app-generic-input
+            meta=vm.fields.pubmed_id
+            ng-model=vm.entry.pubmed_id
+            name=pubmed_id></app-generic-input>
 
-         <app-generic-input meta=vm.fields.gene
-                            ng-model=vm.entry.gene
-                            name=gene></app-generic-input>
+         <app-generic-input
+            meta=vm.fields.gene
+            ng-model=vm.entry.gene
+            name=gene></app-generic-input>
 
-         <app-radio-group meta=vm.fields.structure
-                          ng-model=vm.entry.structure
-                          name=structure></app-radio-group>
+         <app-radio-group
+            meta=vm.fields.structure
+            ng-model=vm.entry.structure
+            name=structure></app-radio-group>
 
-         <div>
-            <label for="variant_clinical_grade">Variant clinical grade</label>
-            <div layout>
-               <md-input-container flex="20"
-                                   layout
-                                   layout-align="center center">
-                  <input id=variant_clinical_grade
-                         name="variant_clinical_grade"
-                         aria-label="Variant clinical grade"
-                         style="text-align:center; margin-right: 10px;"
-                         type="number"
-                         flex
-                         ng-model="entry.variant_clinical_grade">
-               </md-input-container>
-               <md-slider aria-label="Variant clinical grade"
-                          flex
-                          md-discrete
-                          ng-model="entry.variant_clinical_grade"
-                          min="0"
-                          max="5"></md-slider>
-            </div>
-         </div>
+         <app-choice-slider
+            meta=vm.fields.variant_clinical_grade
+            ng-model=vm.entry.variant_clinical_grade
+            name=variant_clinical_grade></app-choice-slider>
 
          <div>
             <label for="disease">Disease</label>
@@ -51,11 +36,12 @@
                          id="disease"
                          type="text">
                </md-input-container>
-               <md-autocomplete md-selected-item="vm.selectedItem"
-                                md-search-text="vm.searchText"
-                                md-items="item in vm.querySearch(vm.searchText)"
-                                md-selected-item-change="vm.selectedItemChange(item)"
-                                md-item-text="item.display_name">
+               <md-autocomplete
+                  md-selected-item="vm.selectedItem"
+                  md-search-text="vm.searchText"
+                  md-items="item in vm.querySearch(vm.searchText)"
+                  md-selected-item-change="vm.selectedItemChange(item)"
+                  md-item-text="item.display_name">
                   <md-item-template>
                   <span md-highlight-text="vm.searchText"
                         md-highlight-flags="^i">

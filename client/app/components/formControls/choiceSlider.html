@@ -1,0 +1,25 @@
+<div>
+   <label for={{name}}>{{meta.label}}</label>
+   <div layout>
+      <md-input-container
+         flex="20"
+         layout
+         layout-align="center center">
+         <input
+            id={{name}}
+            name={{name}}
+            aria-label={{meta.label}}
+            style="text-align:center; margin-right: 10px;"
+            type="number"
+            flex
+            ng-model=value>
+      </md-input-container>
+      <md-slider
+         aria-label={{meta.label}}
+         flex
+         md-discrete
+         ng-model=value
+         min="0"
+         max="5"></md-slider>
+   </div>
+</div>

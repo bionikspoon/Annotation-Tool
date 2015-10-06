@@ -9,7 +9,7 @@ class genericInputDirective {
       controllerAs: 'vm',
       scope: {
         value: '=ngModel',
-        name: '=',
+        name: '@',
         meta: '='
       }
     };
