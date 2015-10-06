@@ -69,7 +69,6 @@ class PubmedFormController {
   constructor($log, Restangular, exception, toastr, options) {
     'ngInject';
 
-
     this.$log = $log;
     this.Restangular = Restangular;
     this.exception = exception;
@@ -80,46 +79,6 @@ class PubmedFormController {
     this.loading = true;
     this.fields = options.actions.POST;
 
-    this.diseaseChoices = [];
-    this.disease = [];
-    this.activate();
-  }
-
-
-  activate() {
-    this.diseaseChoices = diseaseData.map(disease => {
-      disease._lowername = disease.display_name.toLowerCase();
-      return disease;
-    });
-
-
-    this.Restangular.all('pubmed')
-      .options()
-      .then(options => {
-        this.fields = options.actions.POST;
-        return options;
-      })
-      .catch(this.exception.catcher('OPTIONS request failed.'))
-      .finally(() => this.loading = false);
-
-
-  }
-
-  querySearch(query) {
-
-    return query ? this.diseaseChoices.filter(this.createFilterFor(query)) : this.diseaseChoices;
-  }
-
-  createFilterFor(query) {
-    let lowerCaseQuery = angular.lowercase(query);
-    return function filterFn(disease) {
-      return (disease._lowername.indexOf(lowerCaseQuery) === 0);
-    };
-
-  }
-
-  selectedItemChange(item) {
-    this.$log.info('Select item changed to ' + JSON.stringify(item));
   }
 
 
