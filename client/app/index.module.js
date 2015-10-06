@@ -4,30 +4,19 @@ import config from './index.config';
 import routerConfig from './index.route';
 
 import runBlock from './index.run';
-import MainController from './main/main.controller';
 import NavbarTop from './components/navbarTop/navbarTop.directive';
 import NavbarSide from './components/navbarSide/navbarSide.directive';
 
 
-
-angular.module('annotationTool', [
-    'ngAnimate',
-    'ngCookies',
-    'ngTouch',
-    'ngSanitize',
-    'ui.router',
-    'ngMaterial',
-    'restangular',
-    'pubmed',
-    'main.exception'
+angular.module('app', [
+    'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ui.router', 'ngMaterial', 'restangular', 'app.core', 'app.pubmed'
   ])
   .constant('toastr', toastr)
   .constant('moment', moment)
-  .config(config)
 
+  .config(config)
   .config(routerConfig)
 
   .run(runBlock)
   .directive('navbarTop', () => new NavbarTop())
-  .directive('navbarSide', () => new NavbarSide())
-  .controller('MainController', MainController);
+  .directive('navbarSide', () => new NavbarSide());

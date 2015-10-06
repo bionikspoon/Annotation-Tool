@@ -4,14 +4,12 @@ import PubmedItemController from './pubmed-item.controller';
 import genericFormControlDirective from '../components/formControls/genericFormControl.directive';
 import routerConfig from './pubmed.route';
 
-angular.module('pubmed', [
-    'ui.router', 'ngMaterial', 'restangular', 'main.exception'
+angular.module('app.pubmed', [
+    'ui.router', 'ngMaterial', 'restangular'
   ])
-
+  .config(routerConfig)
 
   .controller('PubmedListController', PubmedListController)
   .controller('PubmedFormController', PubmedFormController)
   .controller('PubmedItemController', PubmedItemController)
-  .directive('siteControlGeneric', () => new genericFormControlDirective())
-
-  .config(routerConfig);
+  .directive('siteControlGeneric', () => new genericFormControlDirective());

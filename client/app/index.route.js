@@ -1,14 +1,5 @@
-function routerConfig($stateProvider, $urlRouterProvider) {
+function routerConfig($urlRouterProvider) {
   'ngInject';
-  $stateProvider
-    .state('main', {
-      url:          '/',
-      templateUrl:  'app/main/main.html',
-      controller:   'MainController',
-      controllerAs: 'main',
-      abstract:     'true'
-    });
-
   $urlRouterProvider.otherwise('/');
 }
 
