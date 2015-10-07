@@ -9,9 +9,12 @@ class genericInputDirective {
       controllerAs: 'vm',
       bindToController: true,
       scope: {
-        value: '=ngModel',
-        name: '@',
-        meta: '='
+        field: '@',
+        model: '=ngModel'
+      },
+      require: '^appFormMeta',
+      link: (scope, element, attrs, meta) => {
+        scope.vm.meta = meta[scope.vm.field];
       }
     };
     return directive;
@@ -19,16 +22,14 @@ class genericInputDirective {
 }
 
 class genericInputController {
-  constructor($log) {
+  constructor($log, $timeout) {
     'ngInject';
-
-    this.$log = $log;
-    this.fieldType = this.getFieldType();
+    $timeout(()=> {
+      this.$log = $log;
+    });
   }
 
-  getFieldType() {
-    return this.meta.type === 'integer' ? 'number' : 'text';
-  }
+
 }
 
 export default genericInputDirective;

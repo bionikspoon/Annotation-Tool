@@ -8,7 +8,16 @@ class PubmedFormController {
 
 
     this.loading = true;
-    this.fields = options.actions.POST;
+    this.hello = 'hello';
+    this.entry = {};
+    this.activate();
+
+  }
+
+  activate() {
+    //this.fields = this.options.actions.POST.map(option => {
+    //  return option;
+    //});
 
   }
 

@@ -1,7 +1,14 @@
+<pre><code>{{vm|json}}</code></pre>
 <md-input-container>
-   <label for={{vm.name}}>{{vm.meta.label}}</label>
-   <input type={{vm.fieldType}}
-          name={{vm.name}}
-          id={{vm.name}}
-          ng-model=vm.value>
+   <label for={{vm.field}}>{{vm.meta.label}}</label>
+   <input
+      ng-if="vm.meta.type === 'string'"
+      type=text
+      name={{vm.field}}
+      ng-model=vm.model>
+   <input
+      ng-if="vm.meta.type === 'integer'"
+      type=number
+      name={{vm.field}}
+      ng-model=vm.model>
 </md-input-container>

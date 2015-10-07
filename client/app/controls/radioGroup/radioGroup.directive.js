@@ -9,9 +9,12 @@ class radioGroupDirective {
       controllerAs: 'vm',
       bindToController: true,
       scope: {
-        value: '=ngModel',
-        name: '@',
-        meta: '='
+        field: '@',
+        model: '=ngModel'
+      },
+      require: '^appFormMeta',
+      link: (scope, element, attrs, meta) => {
+        scope.vm.meta = meta[scope.vm.field];
       }
     };
     return directive;
@@ -19,10 +22,10 @@ class radioGroupDirective {
 }
 
 class radioGroupController {
-  constructor( $log) {
+  constructor($log, $timeout) {
     'ngInject';
+    $timeout(this.$log = $log);
 
-    this.$log = $log;
   }
 
 }

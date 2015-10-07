@@ -25,6 +25,9 @@ function config($logProvider, toastr, $mdThemingProvider, RestangularProvider, $
     .primaryPalette('grey');
 
   RestangularProvider.setBaseUrl('/api');
+  RestangularProvider.setRestangularFields({
+    selfLink: 'url'
+  });
 
 
 }

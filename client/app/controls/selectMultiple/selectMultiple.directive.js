@@ -9,9 +9,12 @@ class selectMultipleDirective {
       controllerAs: 'vm',
       bindToController: true,
       scope: {
-        value: '=ngModel',
-        name: '@',
-        meta: '='
+        field: '@',
+        model: '=ngModel'
+      },
+      require: '^appFormMeta',
+      link: (scope, element, attrs, meta) => {
+        scope.vm.meta = meta[scope.vm.field];
       }
     };
     return directive;
@@ -19,13 +22,19 @@ class selectMultipleDirective {
 }
 
 class selectMultipleController {
-  constructor($log) {
+  constructor($log, $timeout) {
     'ngInject';
-    this.$log = $log;
-    this.activate();
-    this.selectedItem = null;
-    this.searchText = null;
-    this.value = this.value || [];
+    $timeout(()=> {
+
+      this.$log = $log;
+      this.selectedItem = null;
+      this.searchText = null;
+      this.value = this.value || [];
+
+
+      this.activate();
+
+    });
   }
 
 

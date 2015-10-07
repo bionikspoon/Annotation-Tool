@@ -9,9 +9,12 @@ class choiceSliderDirective {
       controllerAs: 'vm',
       bindToController: true,
       scope: {
-        value: '=ngModel',
-        name: '@',
-        meta: '='
+        field: '@',
+        model: '=ngModel'
+      },
+      require: '^appFormMeta',
+      link: (scope, element, attrs, meta) => {
+        scope.vm.meta = meta[scope.vm.field];
       }
     };
     return directive;
