@@ -21,8 +21,11 @@ function choiceSliderDirective() {
 
 
 class choiceSliderController {
-  constructor($log) {
+  constructor($log, $mdMedia, $scope) {
     'ngInject';
+
+    $scope.$watch(()=>$mdMedia('gt-md'), gtMd => this.gtMd = gtMd);
+
 
     this.$log = $log;
   }

@@ -1,6 +1,9 @@
 <div class="choiceSlider">
-   <div layout="row" layout-align-gt-sm="start start">
-      <md-input-container flex="20">
+   <div layout-gt-md="row"
+        layout-align-gt-md="start end"
+        layout-sm="column">
+      <md-input-container flex-gt-md="20"
+                          flex-sm>
          <label for={{vm.meta.name}}
                 class="md-body-2">{{vm.meta.label}}
          </label>
@@ -9,7 +12,8 @@
             name={{vm.meta.name}}
             aria-label={{vm.meta.label}}
             type=number
-            flex
+            ng-class="{'gt-md':vm.gtMd}"
+            flex-gt-md
             ng-model=vm.model
             min=0
             max={{vm.meta.choices.length}}

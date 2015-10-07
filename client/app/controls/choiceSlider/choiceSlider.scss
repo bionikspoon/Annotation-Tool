@@ -1,8 +1,10 @@
 [app-form-meta] {
   .choiceSlider {
     input {
-      text-align:   center;
-      margin-right: 10px;
+      text-align: center;
+      &.gt-md {
+        margin-right: 10px;
+      }
     }
 
   }
