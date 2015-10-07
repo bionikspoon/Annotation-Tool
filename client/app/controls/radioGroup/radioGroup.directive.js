@@ -24,7 +24,18 @@ class radioGroupController {
   constructor($log, $timeout) {
     'ngInject';
     $timeout(this.$log = $log);
+    this.clearButtonVisible = false;
 
+  }
+
+  showClear() {
+    //if(!this.model) {return;}
+
+    this.clearButtonVisible = true;
+  }
+  hideClear() {
+
+    this.clearButtonVisible = false;
   }
 
 }

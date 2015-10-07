@@ -1,12 +1,15 @@
 <md-radio-group ng-model=vm.model>
    <label>{{vm.meta.label}}</label>
-   <div layout=row>
+   <div layout=row
+        class="wrapper">
       <md-radio-button ng-repeat="choice in vm.meta.choices"
                        value={{choice.value}}>
          {{choice.display_name}}
       </md-radio-button>
-      <md-button ng-show=vm.model
-                 ng-click=vm.model=undefined>
+      <md-button
+         class="md-primary"
+         ng-if=vm.model
+         ng-click=vm.model=undefined>
          Clear
       </md-button>
    </div>
