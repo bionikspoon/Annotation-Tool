@@ -2,13 +2,20 @@
 <md-input-container>
    <label for='{{vm.meta.name}}'>{{vm.meta.label}}</label>
    <input
-      ng-if="vm.meta.type === 'string'"
+      ng-if="vm.meta.type === 'string' && vm.meta.max_length"
       type=text
       name={{vm.meta.name}}
       ng-model=vm.model
       ng-disabled=vm.meta.disabled
       ng-maxlength={{vm.meta.max_length}}
       ng-required={{vm.meta.required}}>
+   <textarea
+      ng-if="vm.meta.type === 'string' && !vm.meta.max_length"
+      name={{vm.meta.name}}
+      ng-model=vm.model
+      ng-disabled=vm.meta.disabled
+      ng-required={{vm.meta.required}}
+      rows="5"></textarea>
 
    <input
       ng-if="vm.meta.type === 'integer'"

@@ -1,7 +1,15 @@
-<md-radio-group ng-model=vm.model>
-   <label>{{vm.meta.label}}</label>
+<md-radio-group
+   ng-model=vm.model
+   layout-sm="column"
+   layout-align-sm="start start"
+   layout-gt-sm="row"
+   layout-align-gt-sm="start center">
+   <label class="md-body-2"
+          flex-gt-sm="20">{{vm.meta.label}}
+   </label>
    <div layout=row
-        class="wrapper">
+        class="wrapper"
+        flex-gt-sm>
       <md-radio-button ng-repeat="choice in vm.meta.choices"
                        value={{choice.value}}>
          {{choice.display_name}}
