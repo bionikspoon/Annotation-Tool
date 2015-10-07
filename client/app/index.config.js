@@ -1,4 +1,4 @@
-function config($logProvider, toastr, $mdThemingProvider, RestangularProvider, $provide) {
+function config($logProvider, toastr, $mdThemingProvider, RestangularProvider, $provide, $injector) {
   'ngInject';
   // Enable log
   $logProvider.debugEnabled(true);
@@ -28,7 +28,15 @@ function config($logProvider, toastr, $mdThemingProvider, RestangularProvider, $
   RestangularProvider.setRestangularFields({
     selfLink: 'url'
   });
+  RestangularProvider.addResponseInterceptor(pubmedOptionsInterceptor);
+  RestangularProvider.setRequestSuffix('/');
+}
+function pubmedOptionsInterceptor(data, operation, what) {
+  if(operation !== 'options' && what !== 'pubmed') {return data;}
 
+  Object.keys(data.actions.POST)
+    .forEach(key => data.actions.POST[key].name = key);
+  return data;
 
 }
 

@@ -38,8 +38,6 @@ class selectMultipleController {
 
 
   activate() {
-    this.$log.debug('selectMultiple.directive this.meta.choices:', this.meta);
-
     this.meta.choices = this.meta.choices.map(choice => {
       choice._lower_display_name = choice.display_name.toLowerCase();
       return choice;

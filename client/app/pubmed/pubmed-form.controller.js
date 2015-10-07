@@ -1,21 +1,25 @@
 class PubmedFormController {
-  constructor($log, options) {
+  constructor($log, options, Restangular) {
     'ngInject';
 
     this.$log = $log;
-
-
+    this.Restangular = Restangular;
     this.fields = {};
-    angular.copy(options.actions.POST, this.fields);
-
-    Object.keys(this.fields)
-      .forEach(key => this.fields[key].name = key);
     this.entry = {};
-    this.activate(options);
 
+    Restangular.copy(options.actions.POST, this.fields);
   }
 
-  activate() {
+
+  submit(model) {
+    //model.user = 'http://localhost:8000/api/users/196/';
+    this.$log.debug('pubmed-item.controller model:', model);
+    this.Restangular.all('pubmed')
+      .post(model)
+      .then(response => {
+        this.$log.debug('pubmed-form.controller response:', response);
+      })
+      .catch(error => this.$log.error('pubmed-form.controller error:', error));
   }
 
 

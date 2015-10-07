@@ -35,7 +35,10 @@
          <app-generic-input ng-model=vm.entry.reference_claims></app-generic-input>
          <app-generic-input ng-model=vm.entry.comments></app-generic-input>
 
-         <md-button class="md-raised md-accent">Submit</md-button>
+         <md-button type=submit
+                    class="md-raised md-accent"
+                    ng-click="vm.submit(vm.entry)">Submit
+         </md-button>
       </form>
    </md-card-content>
 </md-card>

@@ -25,7 +25,7 @@ function routerConfig($stateProvider) {
       controller: 'PubmedFormController',
       controllerAs: 'vm',
       resolve: {
-        options: (Restangular) => Restangular.all('pubmed')
+        options: /*@ngInject*/ Restangular => Restangular.all('pubmed')
           .options()
           .then(options => options)
       }
