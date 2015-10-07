@@ -1,7 +1,9 @@
 <label for={{vm.name}}>{{ vm.meta.label }}</label>
-<md-chips ng-model=vm.value
+<md-chips ng-model=vm.model
           md-autocomplete-snap
-          md-require-match=true>
+          md-require-match=true
+          readonly=vm.meta.read_only
+          ng-required={{vm.meta.required}}>
    <md-autocomplete
       md-selected-item=vm.selectedItem
       md-search-text=vm.searchText
@@ -10,7 +12,9 @@
       md-select-on-match=true
       md-input-name={{vm.name}}
       md-input-id={{vm.name}}
-      md-menu-class="select-multiple-menu">
+      md-menu-class="select-multiple-menu"
+      ng-disabled=vm.meta.read_only
+      ng-required={{vm.meta.required}}>
             <span md-highlight-text=vm.searchText>
             {{item.display_name}}
             </span>

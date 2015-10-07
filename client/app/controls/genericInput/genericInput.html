@@ -1,14 +1,21 @@
-<pre><code>{{vm|json}}</code></pre>
 <md-input-container>
    <label for={{vm.field}}>{{vm.meta.label}}</label>
    <input
       ng-if="vm.meta.type === 'string'"
       type=text
       name={{vm.field}}
-      ng-model=vm.model>
+      ng-model=vm.model
+      ng-disabled=vm.meta.disabled
+      ng-maxlength={{vm.meta.max_length}}
+      ng-required={{vm.meta.required}}>
+
    <input
       ng-if="vm.meta.type === 'integer'"
       type=number
       name={{vm.field}}
-      ng-model=vm.model>
+      ng-model=vm.model
+      ng-disabled=vm.meta.disabled
+      min={{vm.meta.min_value}}
+      max={{vm.meta.max_value}}
+      ng-required={{vm.meta.required}}>
 </md-input-container>

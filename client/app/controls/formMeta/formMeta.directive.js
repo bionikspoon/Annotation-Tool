@@ -10,9 +10,7 @@ class FormMetaDirective {
       scope: {
         meta: '&appFormMeta'
       }
-
     };
-
     return directive;
   }
 }

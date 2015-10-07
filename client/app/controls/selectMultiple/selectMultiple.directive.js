@@ -29,7 +29,7 @@ class selectMultipleController {
       this.$log = $log;
       this.selectedItem = null;
       this.searchText = null;
-      this.value = this.value || [];
+      this.model = this.model || [];
 
 
       this.activate();
@@ -58,6 +58,7 @@ class selectMultipleController {
     };
 
   }
+
 
 }
 

@@ -9,17 +9,22 @@
             id={{vm.name}}
             name={{vm.name}}
             aria-label={{vm.meta.label}}
-            style="text-align:center; margin-right: 10px;"
-            type="number"
+            type=number
             flex
-            ng-model=vm.value>
+            ng-model=vm.model
+            min=0
+            max={{vm.meta.choices.length}}
+            ng-disabled=vm.meta.read_only
+            ng-required={{vm.meta.required}}>
       </md-input-container>
       <md-slider
          aria-label={{vm.meta.label}}
          flex
          md-discrete
-         ng-model=vm.value
-         min="0"
-         max="5"></md-slider>
+         ng-model=vm.model
+         min=0
+         max={{vm.meta.choices.length}}
+         ng-disabled=vm.meta.read_only
+         ng-required={{vm.meta.required}}></md-slider>
    </div>
 </div>
