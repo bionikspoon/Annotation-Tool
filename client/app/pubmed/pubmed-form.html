@@ -3,48 +3,19 @@
       <h2>Pubmed Entry</h2>
 
       <form name=pubmedEntry
-            app-form-meta=vm.options.actions.POST
+            app-form-meta=vm.fields
             novalidate>
          <pre><code>Meta:{{$id}}:{{vm.entry|json}}</code></pre>
 
-         <app-generic-input
-            field=pubmed_id
-            ng-model=vm.entry.pubmed_id></app-generic-input>
-
-         <app-generic-input
-            field=gene
-            ng-model=vm.entry.gene></app-generic-input>
-
-         <app-radio-group
-            ng-model=vm.entry.structure
-            field=structure></app-radio-group>
-
-         <app-radio-group
-            ng-model=vm.entry.mutation_type
-            field=mutation_type></app-radio-group>
-
-         <app-radio-group
-            ng-model=vm.entry.syntax
-            field=syntax></app-radio-group>
-
-
-         <app-generic-input
-            field=syntax_text
-            ng-model=vm.entry.syntax_text></app-generic-input>
-
-
-         <app-radio-group
-            ng-model=vm.entry.operator
-            field=operator></app-radio-group>
-
-         <app-choice-slider
-            ng-model=vm.entry.variant_clinical_grade
-            field=variant_clinical_grade></app-choice-slider>
-
-         <app-select-multiple
-            ng-model=vm.entry.disease
-            field=disease></app-select-multiple>
-
+         <app-generic-input ng-model=vm.entry.pubmed_id></app-generic-input>
+         <app-generic-input ng-model=vm.entry.gene></app-generic-input>
+         <app-radio-group ng-model=vm.entry.structure></app-radio-group>
+         <app-radio-group ng-model=vm.entry.mutation_type></app-radio-group>
+         <app-radio-group ng-model=vm.entry.syntax></app-radio-group>
+         <app-generic-input ng-model=vm.entry.syntax_text></app-generic-input>
+         <app-radio-group ng-model=vm.entry.operator></app-radio-group>
+         <app-choice-slider ng-model=vm.entry.variant_clinical_grade></app-choice-slider>
+         <app-select-multiple ng-model=vm.entry.disease></app-select-multiple>
 
       </form>
    </md-card-content>

@@ -1,24 +1,24 @@
-class genericInputDirective {
-  constructor() {
-    'ngInject';
+function genericInputDirective() {
+  'ngInject';
 
-    let directive = {
-      restrict: 'E',
-      templateUrl: 'app/controls/genericInput/genericInput.html',
-      controller: genericInputController,
-      controllerAs: 'vm',
-      bindToController: true,
-      scope: {
-        field: '@',
-        model: '=ngModel'
-      },
-      require: '^appFormMeta',
-      link: (scope, element, attrs, meta) => {
-        scope.vm.meta = meta[scope.vm.field];
-      }
-    };
-    return directive;
+  const directive = {
+    restrict: 'E',
+    templateUrl: 'app/controls/genericInput/genericInput.html',
+    controller: genericInputController,
+    controllerAs: 'vm',
+    bindToController: true,
+    scope: {model: '=ngModel'},
+    require: '^appFormMeta',
+    link: link
+  };
+  return directive;
+
+  function link(scope, element, attrs, meta) {
+    const field = attrs.ngModel.split('.')
+      .slice(-1);
+    scope.vm.meta = meta[field];
   }
+
 }
 
 class genericInputController {

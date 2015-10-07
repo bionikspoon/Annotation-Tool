@@ -1,24 +1,21 @@
 class PubmedFormController {
-  constructor($log, toastr, options) {
+  constructor($log, options) {
     'ngInject';
 
     this.$log = $log;
-    this.toastr = toastr;
-    this.options = options;
 
 
-    this.loading = true;
-    this.hello = 'hello';
+    this.fields = {};
+    angular.copy(options.actions.POST, this.fields);
+
+    Object.keys(this.fields)
+      .forEach(key => this.fields[key].name = key);
     this.entry = {};
-    this.activate();
+    this.activate(options);
 
   }
 
   activate() {
-    //this.fields = this.options.actions.POST.map(option => {
-    //  return option;
-    //});
-
   }
 
 

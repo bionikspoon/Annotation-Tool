@@ -1,25 +1,24 @@
-class selectMultipleDirective {
-  constructor() {
-    'ngInject';
+function selectMultipleDirective() {
+  'ngInject';
 
-    let directive = {
-      restrict: 'E',
-      templateUrl: 'app/controls/selectMultiple/selectMultiple.html',
-      controller: selectMultipleController,
-      controllerAs: 'vm',
-      bindToController: true,
-      scope: {
-        field: '@',
-        model: '=ngModel'
-      },
-      require: '^appFormMeta',
-      link: (scope, element, attrs, meta) => {
-        scope.vm.meta = meta[scope.vm.field];
-      }
-    };
-    return directive;
+  const directive = {
+    restrict: 'E',
+    templateUrl: 'app/controls/selectMultiple/selectMultiple.html',
+    controller: selectMultipleController,
+    controllerAs: 'vm',
+    bindToController: true,
+    scope: {model: '=ngModel'},
+    require: '^appFormMeta',
+    link: link
+  };
+  return directive;
+  function link(scope, element, attrs, meta) {
+    const field = attrs.ngModel.split('.')
+      .slice(-1);
+    scope.vm.meta = meta[field];
   }
 }
+
 
 class selectMultipleController {
   constructor($log, $timeout) {
@@ -39,6 +38,8 @@ class selectMultipleController {
 
 
   activate() {
+    this.$log.debug('selectMultiple.directive this.meta.choices:', this.meta);
+
     this.meta.choices = this.meta.choices.map(choice => {
       choice._lower_display_name = choice.display_name.toLowerCase();
       return choice;

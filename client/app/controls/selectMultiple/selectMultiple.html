@@ -1,4 +1,4 @@
-<label for={{vm.name}}>{{ vm.meta.label }}</label>
+<label for={{vm.meta.name}}>{{ vm.meta.label }}</label>
 <md-chips ng-model=vm.model
           md-autocomplete-snap
           md-require-match=true
@@ -10,8 +10,8 @@
       md-items="item in vm.querySearch(vm.searchText)"
       md-item-text=item.display_name
       md-select-on-match=true
-      md-input-name={{vm.name}}
-      md-input-id={{vm.name}}
+      md-input-name={{vm.meta.name}}
+      md-input-id={{vm.meta.name}}
       md-menu-class="select-multiple-menu"
       ng-disabled=vm.meta.read_only
       ng-required={{vm.meta.required}}>

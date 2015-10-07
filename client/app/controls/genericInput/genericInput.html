@@ -1,9 +1,10 @@
+<!--suppress HtmlFormInputWithoutLabel -->
 <md-input-container>
-   <label for={{vm.field}}>{{vm.meta.label}}</label>
+   <label for='{{vm.meta.name}}'>{{vm.meta.label}}</label>
    <input
       ng-if="vm.meta.type === 'string'"
       type=text
-      name={{vm.field}}
+      name={{vm.meta.name}}
       ng-model=vm.model
       ng-disabled=vm.meta.disabled
       ng-maxlength={{vm.meta.max_length}}
@@ -12,7 +13,7 @@
    <input
       ng-if="vm.meta.type === 'integer'"
       type=number
-      name={{vm.field}}
+      name={{vm.meta.name}}
       ng-model=vm.model
       ng-disabled=vm.meta.disabled
       min={{vm.meta.min_value}}
