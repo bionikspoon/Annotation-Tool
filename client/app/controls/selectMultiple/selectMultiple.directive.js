@@ -14,6 +14,8 @@ function selectMultipleDirective($log) {
   return directive;
 
   function link(scope, element, attrs, ctrl) {
+
+
     const field = attrs.ngModel.split('.').slice(-1)[0];
 
     return ctrl.then(data => {
@@ -33,6 +35,7 @@ function selectMultipleDirective($log) {
         return choice;
       });
     }
+
   }
 
 

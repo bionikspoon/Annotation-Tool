@@ -1,20 +1,23 @@
-<label for={{field.meta.name}} class="md-body-2">{{ field.meta.label }}</label>
-<md-chips ng-model=field.model
-          md-autocomplete-snap
-          md-require-match=true
-          readonly=field.meta.read_only
-          ng-required={{field.meta.required}}>
+<label for={{field.meta.name}}_{{$id}}
+       class="md-body-2">{{ field.meta.label }}
+</label>
+<md-chips
+   ng-model=field.model
+   md-autocomplete-snap
+   name={{field.meta.name}}
+   id={{field.meta.name}}_{{$id}}
+   md-require-match=true
+   readonly=field.meta.read_only
+   ng-required={{field.meta.required}}>
    <md-autocomplete
       md-selected-item=field.selectedItem
       md-search-text=field.searchText
       md-items="item in field.querySearch(field.searchText)"
       md-item-text=item.display_name
       md-select-on-match=true
-      md-input-name={{field.meta.name}}
-      md-input-id={{field.meta.name}}
+      md-input-id={{field.meta.name}}_{{$id}}_autocomplete
       md-menu-class="select-multiple-menu"
-      ng-disabled=field.meta.read_only
-      ng-required={{field.meta.required}}>
+      ng-disabled=field.meta.read_only>
             <span md-highlight-text=field.searchText>
             {{item.display_name}}
             </span>

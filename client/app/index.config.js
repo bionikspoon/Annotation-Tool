@@ -15,14 +15,14 @@ function config($logProvider, toastr, $mdThemingProvider, RestangularProvider, $
 
   // Angular Material theme config.
   $mdThemingProvider.theme('default')
-    .primaryPalette('indigo')
-    .accentPalette('pink');
+                    .primaryPalette('indigo')
+                    .accentPalette('pink');
 
   $mdThemingProvider.theme('sidenav')
-    .primaryPalette('blue-grey', {'hue-2': '900'});
+                    .primaryPalette('blue-grey', {'hue-2': '900'});
 
   $mdThemingProvider.theme('topnav')
-    .primaryPalette('grey');
+                    .primaryPalette('grey');
 
   RestangularProvider.setBaseUrl('/api');
   RestangularProvider.setRestangularFields({
@@ -32,10 +32,11 @@ function config($logProvider, toastr, $mdThemingProvider, RestangularProvider, $
   RestangularProvider.setRequestSuffix('/');
 }
 function pubmedOptionsInterceptor(data, operation, what) {
-  if(operation !== 'options' && what !== 'pubmed') {return data;}
+  if(operation !== 'options' || what !== 'pubmed') {return data;}
+
 
   Object.keys(data.actions.POST)
-    .forEach(key => data.actions.POST[key].name = key);
+        .forEach(key => data.actions.POST[key].name = key);
   return data;
 
 }

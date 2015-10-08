@@ -2,11 +2,9 @@
    <md-card-content>
       <h2>Pubmed Entry</h2>
 
-      <form name=pubmedEntry
+      <form name=vm.pubmedEntry
             app-form-meta=vm.fields
             novalidate>
-
-
          <app-generic-input ng-model=vm.entry.pubmed_id></app-generic-input>
          <app-generic-input ng-model=vm.entry.gene></app-generic-input>
          <app-radio-group ng-model=vm.entry.structure></app-radio-group>
@@ -38,11 +36,10 @@
 
          <md-button type=submit
                     class="md-raised md-accent"
-                    ng-click="vm.submit(vm.entry)">Submit
+                    ng-disabled="vm.pubmedEntry.$invalid"
+                    ng-click="vm.submit(vm.entry, vm.pubmedEntry)">Submit
          </md-button>
 
-
-         <!--<pre><code>{{pubmedEntry|json}}</code></pre>-->
       </form>
    </md-card-content>
 </md-card>
