@@ -12,10 +12,11 @@ function choiceSliderDirective() {
     link: link
   };
   return directive;
-  function link(scope, element, attrs, meta) {
+  function link(scope, element, attrs, ctrl) {
     const field = attrs.ngModel.split('.')
       .slice(-1);
-    scope.field.meta = meta[field];
+    scope.field.meta = ctrl.meta()[field];
+    scope.field.form = ctrl.form;
   }
 }
 

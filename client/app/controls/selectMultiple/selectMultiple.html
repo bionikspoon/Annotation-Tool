@@ -18,6 +18,11 @@
             <span md-highlight-text=field.searchText>
             {{item.display_name}}
             </span>
+
+      <div ng-messages=field.form[field.meta.name].$error
+           ng-show=field.form[field.meta.name].$dirty>
+         <div ng-message=required>This is required!</div>
+      </div>
    </md-autocomplete>
    <md-chip-template><span>{{ $chip.display_name }}</span></md-chip-template>
 </md-chips>

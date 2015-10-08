@@ -7,7 +7,8 @@ function formMetaDirective($log) {
     controllerAs: 'form',
     bindToController: true,
     scope: {
-      meta: '&appFormMeta'
+      meta: '&appFormMeta',
+      form: '=name'
     }
   };
   return directive;
@@ -15,9 +16,11 @@ function formMetaDirective($log) {
 
 
 class FormMetaController {
-  constructor($log ) {
+  constructor() {
     'ngInject';
-    return this.meta();
+    const constructor = this.meta();
+    constructor.form = this.form;
+    return {form: this.form, meta: this.meta()};
 
   }
 }

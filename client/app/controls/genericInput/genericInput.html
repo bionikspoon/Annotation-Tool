@@ -30,5 +30,11 @@
       max={{field.meta.max_value}}
       ng-required={{field.meta.required}}>
 
-   <div ng-messages=""></div>
+   <div ng-messages=field.form[field.meta.name].$error
+        ng-show=field.form[field.meta.name].$dirty>
+      <div ng-message=required>This is required!</div>
+      <div ng-message=maxlength>Too long! Max length is {{field.meta.max_length}}</div>
+      <div ng-message=min>Minimum value is {{field.meta.min_value}}</div>
+      <div ng-message=max>Maximum value is {{field.meta.max_value}}</div>
+   </div>
 </md-input-container>

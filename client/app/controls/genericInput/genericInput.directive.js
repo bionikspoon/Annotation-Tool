@@ -8,24 +8,27 @@ function genericInputDirective($log) {
     controllerAs: 'field',
     bindToController: true,
     scope: {model: '=ngModel'},
-    require: '^appFormMeta',
+    require: ['^appFormMeta', '?ngModel'],
     link: link
   };
   return directive;
 
-  function link(scope, element, attrs, form) {
+  function link(scope, element, attrs, controllers) {
+    const [ctrl, ngModel] = controllers;
     const field = attrs.ngModel.split('.')
-      .slice(-1);
-    scope.field.meta = form[field];
+      .slice(-1)[0];
+
+    scope.field.meta = ctrl.meta()[field];
+    scope.field.form = ctrl.form;
+
   }
 }
 
 class genericInputController {
-  constructor($log, $timeout) {
+  constructor($log) {
     'ngInject';
-    $timeout(()=> {
-      this.$log = $log;
-    });
+    this.$log = $log;
+
   }
 
 

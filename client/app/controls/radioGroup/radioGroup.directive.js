@@ -12,10 +12,12 @@ function radioGroupDirective() {
     link: link
   };
   return directive;
-  function link(scope, element, attrs, meta) {
+  function link(scope, element, attrs, ctrl) {
     const field = attrs.ngModel.split('.')
-      .slice(-1);
-    scope.field.meta = meta[field];
+      .slice(-1)[0];
+
+    scope.field.meta = ctrl.meta()[field];
+    scope.field.form = ctrl.form;
   }
 
 }

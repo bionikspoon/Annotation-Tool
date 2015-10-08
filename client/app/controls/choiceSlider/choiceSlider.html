@@ -4,11 +4,11 @@
         layout-sm="column">
       <md-input-container flex-gt-md="20"
                           flex-sm>
-         <label for={{field.meta.name}}
+         <label for={{field.meta.name}}_{{$id}}
                 class="md-body-2">{{field.meta.label}}
          </label>
          <input
-            id={{field.meta.name}}
+            id={{field.meta.name}}_{{$id}}
             name={{field.meta.name}}
             aria-label={{field.meta.label}}
             type=number
@@ -19,6 +19,14 @@
             max={{field.meta.choices.length}}
             ng-disabled=field.meta.read_only
             ng-required={{field.meta.required}}>
+
+         <div ng-messages=field.form[field.meta.name].$error
+              ng-show=field.form[field.meta.name].$dirty>
+            <div ng-message=required>This is required!</div>
+            <div ng-message=maxlength>Too long! Max length is {{field.meta.max_length}}</div>
+            <div ng-message=min>Minimum value is 0</div>
+            <div ng-message=max>Maximum value is {{field.meta.choices.length}}</div>
+         </div>
       </md-input-container>
       <md-slider
          aria-label={{field.meta.label}}
