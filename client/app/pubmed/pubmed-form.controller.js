@@ -18,13 +18,11 @@ class PubmedFormController {
     this.Restangular.all('pubmed')
       .post(model)
       .then(response => {
-        this.$log.debug('pubmed-form.controller response:', response);
         this.errors = {};
         return response;
       })
       .catch(error => {
-        this.$log.error('pubmed-form.controller error:', error);
-        this.$log.info('pubmed-form.controller model:', model);
+
         const msg = error.status + ' ' + error.statusText;
         this.toastr.error(msg, error.statusText);
         if(error.status !== 400 || !Object.keys(error.data).length) {
@@ -34,7 +32,7 @@ class PubmedFormController {
 
 
         angular.copy(error.data, this.errors);
-        this.$log.debug('pubmed-form.controller this.errors:', this.errors);
+        this.$log.error('pubmed-form.controller this.errors:', this.errors);
         return error;
 
       });

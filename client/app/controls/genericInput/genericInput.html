@@ -1,30 +1,34 @@
-<!--suppress HtmlFormInputWithoutLabel -->
+<!--suppress HtmlFormInputWithoutLabel, XmlDuplicatedId -->
 <md-input-container>
-   <label for='{{vm.meta.name}}'>{{vm.meta.label}}</label>
+   <label for='{{field.meta.name}}_{{$id}}'>{{field.meta.label}}</label>
    <input
-      ng-if="vm.meta.type === 'string' && vm.meta.max_length"
+      ng-if="field.meta.type === 'string' && field.meta.max_length"
       type=text
-      name={{vm.meta.name}}
-      ng-model=vm.model
-      ng-disabled=vm.meta.disabled
-      ng-maxlength={{vm.meta.max_length}}
-      ng-required={{vm.meta.required}}>
+      id={{field.meta.name}}_{{$id}}
+      name={{field.meta.name}}
+      ng-model=field.model
+      ng-disabled=field.meta.disabled
+      ng-maxlength={{field.meta.max_length}}
+      ng-required={{field.meta.required}}>
    <textarea
-      ng-if="vm.meta.type === 'string' && !vm.meta.max_length"
-      name={{vm.meta.name}}
-      ng-model=vm.model
-      ng-disabled=vm.meta.disabled
-      ng-required={{vm.meta.required}}
+      ng-if="field.meta.type === 'string' && !field.meta.max_length"
+      id={{field.meta.name}}_{{$id}}
+      name={{field.meta.name}}
+      ng-model=field.model
+      ng-disabled=field.meta.disabled
+      ng-required={{field.meta.required}}
       rows="5"></textarea>
 
    <input
-      ng-if="vm.meta.type === 'integer'"
+      ng-if="field.meta.type === 'integer'"
+      id={{field.meta.name}}_{{$id}}
       type=number
-      name={{vm.meta.name}}
-      ng-model=vm.model
-      ng-disabled=vm.meta.disabled
-      min={{vm.meta.min_value}}
-      max={{vm.meta.max_value}}
-      ng-required={{vm.meta.required}}>
+      name={{field.meta.name}}
+      ng-model=field.model
+      ng-disabled=field.meta.disabled
+      min={{field.meta.min_value}}
+      max={{field.meta.max_value}}
+      ng-required={{field.meta.required}}>
+
    <div ng-messages=""></div>
 </md-input-container>

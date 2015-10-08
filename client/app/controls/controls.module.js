@@ -1,12 +1,12 @@
-import GenericInputDirective from './genericInput/genericInput.directive';
-import RadioGroupDirective from './radioGroup/radioGroup.directive';
-import ChoiceSliderDirective from './choiceSlider/choiceSlider.directive';
-import SelectMultipleDirective from './selectMultiple/selectMultiple.directive';
-import FormMetaDirective from './formMeta/formMeta.directive';
+import genericInputDirective from './genericInput/genericInput.directive';
+import radioGroupDirective from './radioGroup/radioGroup.directive';
+import choiceSliderDirective from './choiceSlider/choiceSlider.directive';
+import selectMultipleDirective from './selectMultiple/selectMultiple.directive';
+import formMetaDirective from './formMeta/formMeta.directive';
 
-angular.module('app.controls', ['ngMaterial', 'ngMessages', 'ngAria' ])
-  .directive('appGenericInput',  GenericInputDirective)
-  .directive('appRadioGroup', () => new RadioGroupDirective())
-  .directive('appChoiceSlider', () => new ChoiceSliderDirective())
-  .directive('appSelectMultiple', () => new SelectMultipleDirective())
-  .directive('appFormMeta', () => new FormMetaDirective());
+angular.module('app.controls', ['ngMaterial', 'ngMessages', 'ngAria'])
+  .directive('appGenericInput', genericInputDirective)
+  .directive('appRadioGroup', radioGroupDirective)
+  .directive('appChoiceSlider', choiceSliderDirective)
+  .directive('appSelectMultiple', selectMultipleDirective)
+  .directive('appFormMeta', formMetaDirective);

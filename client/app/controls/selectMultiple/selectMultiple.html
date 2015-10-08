@@ -1,21 +1,21 @@
-<label for={{vm.meta.name}} class="md-body-2">{{ vm.meta.label }}</label>
-<md-chips ng-model=vm.model
+<label for={{field.meta.name}} class="md-body-2">{{ field.meta.label }}</label>
+<md-chips ng-model=field.model
           md-autocomplete-snap
           md-require-match=true
-          readonly=vm.meta.read_only
-          ng-required={{vm.meta.required}}>
+          readonly=field.meta.read_only
+          ng-required={{field.meta.required}}>
    <md-autocomplete
-      md-selected-item=vm.selectedItem
-      md-search-text=vm.searchText
-      md-items="item in vm.querySearch(vm.searchText)"
+      md-selected-item=field.selectedItem
+      md-search-text=field.searchText
+      md-items="item in field.querySearch(field.searchText)"
       md-item-text=item.display_name
       md-select-on-match=true
-      md-input-name={{vm.meta.name}}
-      md-input-id={{vm.meta.name}}
+      md-input-name={{field.meta.name}}
+      md-input-id={{field.meta.name}}
       md-menu-class="select-multiple-menu"
-      ng-disabled=vm.meta.read_only
-      ng-required={{vm.meta.required}}>
-            <span md-highlight-text=vm.searchText>
+      ng-disabled=field.meta.read_only
+      ng-required={{field.meta.required}}>
+            <span md-highlight-text=field.searchText>
             {{item.display_name}}
             </span>
    </md-autocomplete>

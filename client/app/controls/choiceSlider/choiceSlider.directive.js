@@ -5,7 +5,7 @@ function choiceSliderDirective() {
     restrict: 'E',
     templateUrl: 'app/controls/choiceSlider/choiceSlider.html',
     controller: choiceSliderController,
-    controllerAs: 'vm',
+    controllerAs: 'field',
     bindToController: true,
     scope: {model: '=ngModel'},
     require: '^appFormMeta',
@@ -15,7 +15,7 @@ function choiceSliderDirective() {
   function link(scope, element, attrs, meta) {
     const field = attrs.ngModel.split('.')
       .slice(-1);
-    scope.vm.meta = meta[field];
+    scope.field.meta = meta[field];
   }
 }
 

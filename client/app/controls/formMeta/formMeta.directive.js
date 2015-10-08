@@ -1,29 +1,25 @@
-class FormMetaDirective {
-  constructor() {
-    'ngInject';
+function formMetaDirective($log) {
+  'ngInject';
 
-    let directive = {
-      restrict: 'A',
-      controller: FormMetaController,
-      controllerAs: 'meta',
-      bindToController: true,
-      scope: {
-        meta: '&appFormMeta',
-        errors: '=appFormErrors'
-      }
-    };
-    return directive;
-  }
+  let directive = {
+    restrict: 'A',
+    controller: FormMetaController,
+    controllerAs: 'form',
+    bindToController: true,
+    scope: {
+      meta: '&appFormMeta'
+    }
+  };
+  return directive;
 }
+
 
 class FormMetaController {
-  constructor() {
+  constructor($log ) {
     'ngInject';
+    return this.meta();
 
-    return this.meta(); // jshint ignore:line
   }
-
-
 }
 
-export default FormMetaDirective;
+export default formMetaDirective;

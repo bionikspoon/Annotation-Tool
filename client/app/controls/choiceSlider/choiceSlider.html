@@ -4,30 +4,30 @@
         layout-sm="column">
       <md-input-container flex-gt-md="20"
                           flex-sm>
-         <label for={{vm.meta.name}}
-                class="md-body-2">{{vm.meta.label}}
+         <label for={{field.meta.name}}
+                class="md-body-2">{{field.meta.label}}
          </label>
          <input
-            id={{vm.meta.name}}
-            name={{vm.meta.name}}
-            aria-label={{vm.meta.label}}
+            id={{field.meta.name}}
+            name={{field.meta.name}}
+            aria-label={{field.meta.label}}
             type=number
-            ng-class="{'gt-md':vm.gtMd}"
+            ng-class="{'gt-md':field.gtMd}"
             flex-gt-md
-            ng-model=vm.model
+            ng-model=field.model
             min=0
-            max={{vm.meta.choices.length}}
-            ng-disabled=vm.meta.read_only
-            ng-required={{vm.meta.required}}>
+            max={{field.meta.choices.length}}
+            ng-disabled=field.meta.read_only
+            ng-required={{field.meta.required}}>
       </md-input-container>
       <md-slider
-         aria-label={{vm.meta.label}}
+         aria-label={{field.meta.label}}
          flex
          md-discrete
-         ng-model=vm.model
+         ng-model=field.model
          min=0
-         max={{vm.meta.choices.length}}
-         ng-disabled=vm.meta.read_only
-         ng-required={{vm.meta.required}}></md-slider>
+         max={{field.meta.choices.length}}
+         ng-disabled=field.meta.read_only
+         ng-required={{field.meta.required}}></md-slider>
    </div>
 </div>

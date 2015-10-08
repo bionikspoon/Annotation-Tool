@@ -5,23 +5,19 @@ function genericInputDirective($log) {
     restrict: 'E',
     templateUrl: 'app/controls/genericInput/genericInput.html',
     controller: genericInputController,
-    controllerAs: 'vm',
+    controllerAs: 'field',
     bindToController: true,
-    scope: {ngModel: '=ngModel'},
-    require: ['^appFormMeta', '^form'],
+    scope: {model: '=ngModel'},
+    require: '^appFormMeta',
     link: link
   };
   return directive;
 
-  function link(scope, element, attrs, controllers) {
-    const [meta, form] = controllers;
-    $log.debug('genericInput.directive scope:', scope);
-    $log.debug('genericInput.directive form:', form);
+  function link(scope, element, attrs, form) {
     const field = attrs.ngModel.split('.')
       .slice(-1);
-    scope.vm.meta = meta[field];
+    scope.field.meta = form[field];
   }
-
 }
 
 class genericInputController {

@@ -5,7 +5,7 @@ function radioGroupDirective() {
     restrict: 'E',
     templateUrl: 'app/controls/radioGroup/radioGroup.html',
     controller: radioGroupController,
-    controllerAs: 'vm',
+    controllerAs: 'field',
     bindToController: true,
     scope: {model: '=ngModel'},
     require: '^appFormMeta',
@@ -15,7 +15,7 @@ function radioGroupDirective() {
   function link(scope, element, attrs, meta) {
     const field = attrs.ngModel.split('.')
       .slice(-1);
-    scope.vm.meta = meta[field];
+    scope.field.meta = meta[field];
   }
 
 }
@@ -29,7 +29,6 @@ class radioGroupController {
   }
 
   showClear() {
-    //if(!this.model) {return;}
 
     this.clearButtonVisible = true;
   }
