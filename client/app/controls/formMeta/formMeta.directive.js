@@ -4,8 +4,7 @@ function formMetaDirective($log) {
   let directive = {
     restrict: 'A',
     controller: FormMetaController,
-    controllerAs: 'form',
-    bindToController: true,
+    controllerAs: 'vm',
     scope: {
       meta: '&appFormMeta',
       form: '=name'
@@ -16,11 +15,26 @@ function formMetaDirective($log) {
 
 
 class FormMetaController {
-  constructor() {
+  constructor($q, $log, $scope, $timeout) {
     'ngInject';
-    const constructor = this.meta();
-    constructor.form = this.form;
-    return {form: this.form, meta: this.meta()};
+    const deferred = $q.defer();
+
+    $timeout(() => {
+      if($scope.form && $scope.meta) {
+        deferred.resolve({
+          form: $scope.form,
+          meta: $scope.meta()
+        });
+      } else {
+        if(!$scope.form) {$log.error('formMeta.directive $scope.form:', $scope.form);}
+        if(!$scope.meta) {$log.error('formMeta.directive $scope.meta:', $scope.meta);}
+        deferred.reject('`form` or `meta` are not in current scope.');
+      }
+
+    });
+
+    return deferred.promise;
+    //return {form: this.form, meta: this.meta};
 
   }
 }

@@ -1,4 +1,4 @@
-function radioGroupDirective() {
+function radioGroupDirective($log) {
   'ngInject';
 
   const directive = {
@@ -13,19 +13,27 @@ function radioGroupDirective() {
   };
   return directive;
   function link(scope, element, attrs, ctrl) {
-    const field = attrs.ngModel.split('.')
-      .slice(-1)[0];
+    const field = attrs.ngModel.split('.').slice(-1)[0];
 
-    scope.field.meta = ctrl.meta()[field];
-    scope.field.form = ctrl.form;
+    ctrl.then(data => {
+          scope.field.meta = data.meta[field];
+          scope.field.form = data.form;
+          return data;
+        })
+        .catch(error => $log.error('radioGroup.directive error:', error));
   }
 
 }
 
 class radioGroupController {
-  constructor($log, $timeout) {
+  constructor($log) {
     'ngInject';
-    $timeout(this.$log = $log);
+
+    this.$log = $log;
+    this.meta = this.meta || {};
+    this.form = this.form || {};
+
+
     this.clearButtonVisible = false;
 
   }
@@ -34,6 +42,7 @@ class radioGroupController {
 
     this.clearButtonVisible = true;
   }
+
   hideClear() {
 
     this.clearButtonVisible = false;

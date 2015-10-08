@@ -1,4 +1,4 @@
-function selectMultipleDirective() {
+function selectMultipleDirective($log) {
   'ngInject';
 
   const directive = {
@@ -12,40 +12,46 @@ function selectMultipleDirective() {
     link: link
   };
   return directive;
-  function link(scope, element, attrs, ctrl) {
-    const field = attrs.ngModel.split('.')
-      .slice(-1);
 
-    scope.field.meta = ctrl.meta()[field];
-    scope.field.form = ctrl.form;
+  function link(scope, element, attrs, ctrl) {
+    const field = attrs.ngModel.split('.').slice(-1)[0];
+
+    return ctrl.then(data => {
+                 scope.field.meta = data.meta[field];
+                 scope.field.form = data.form;
+
+                 activate(scope.field.meta);
+
+                 return data;
+               })
+               .catch(error => $log.error('selectMultiple.directive error:', error));
+
+    function activate() {
+
+      scope.field.meta.choices = scope.field.meta.choices.map(choice => {
+        choice._lower_display_name = choice.display_name.toLowerCase();
+        return choice;
+      });
+    }
   }
+
+
 }
 
 
 class selectMultipleController {
-  constructor($log, $timeout) {
+  constructor($log) {
     'ngInject';
-    $timeout(()=> {
 
-      this.$log = $log;
-      this.selectedItem = null;
-      this.searchText = null;
-      this.model = this.model || [];
+    this.$log = $log;
 
-
-      this.activate();
-
-    });
+    this.selectedItem = null;
+    this.searchText = null;
+    this.meta = this.meta || {};
+    this.form = this.form || {};
+    this.model = this.model || [];
   }
 
-
-  activate() {
-    this.meta.choices = this.meta.choices.map(choice => {
-      choice._lower_display_name = choice.display_name.toLowerCase();
-      return choice;
-    });
-
-  }
 
   querySearch(query) {
     const results = query ? this.meta.choices.filter(this.createFilterFor(query)) : [];

@@ -1,4 +1,4 @@
-function choiceSliderDirective() {
+function choiceSliderDirective($log) {
   'ngInject';
 
   const directive = {
@@ -13,10 +13,14 @@ function choiceSliderDirective() {
   };
   return directive;
   function link(scope, element, attrs, ctrl) {
-    const field = attrs.ngModel.split('.')
-      .slice(-1);
-    scope.field.meta = ctrl.meta()[field];
-    scope.field.form = ctrl.form;
+    const field = attrs.ngModel.split('.').slice(-1)[0];
+
+    ctrl.then(data => {
+          scope.field.meta = data.meta[field];
+          scope.field.form = data.form;
+          return data;
+        })
+        .catch(error => $log.error('choiceSlider.directive error:', error));
   }
 }
 
@@ -25,10 +29,15 @@ class choiceSliderController {
   constructor($log, $mdMedia, $scope) {
     'ngInject';
 
-    $scope.$watch(()=>$mdMedia('gt-md'), gtMd => this.gtMd = gtMd);
-
-
     this.$log = $log;
+    this.meta = this.meta || {};
+    this.form = this.form || {};
+
+    this.activate($mdMedia, $scope);
+  }
+
+  activate($mdMedia, $scope) {
+    $scope.$watch(()=>$mdMedia('gt-md'), gtMd => this.gtMd = gtMd);
   }
 
 }
