@@ -1,25 +1,43 @@
 class PubmedFormController {
-  constructor($log, options, Restangular) {
+  constructor($log, options, Restangular, toastr) {
     'ngInject';
 
     this.$log = $log;
     this.Restangular = Restangular;
+    this.toastr = toastr;
     this.fields = {};
     this.entry = {};
+    this.errors = {};
 
-    Restangular.copy(options.actions.POST, this.fields);
+    angular.copy(options.actions.POST, this.fields);
   }
 
 
   submit(model) {
-    //model.user = 'http://localhost:8000/api/users/196/';
-    this.$log.debug('pubmed-item.controller model:', model);
+    model.user = 'http://localhost:8000/api/users/196/';
     this.Restangular.all('pubmed')
       .post(model)
       .then(response => {
         this.$log.debug('pubmed-form.controller response:', response);
+        this.errors = {};
+        return response;
       })
-      .catch(error => this.$log.error('pubmed-form.controller error:', error));
+      .catch(error => {
+        this.$log.error('pubmed-form.controller error:', error);
+        this.$log.info('pubmed-form.controller model:', model);
+        const msg = error.status + ' ' + error.statusText;
+        this.toastr.error(msg, error.statusText);
+        if(error.status !== 400 || !Object.keys(error.data).length) {
+          this.$log.error('Request failed, pubmed-form.controller error:', error);
+          return error;
+        }
+
+
+        angular.copy(error.data, this.errors);
+        this.$log.debug('pubmed-form.controller this.errors:', this.errors);
+        return error;
+
+      });
   }
 
 

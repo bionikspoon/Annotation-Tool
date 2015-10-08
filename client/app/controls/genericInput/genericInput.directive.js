@@ -1,4 +1,4 @@
-function genericInputDirective() {
+function genericInputDirective($log) {
   'ngInject';
 
   const directive = {
@@ -7,13 +7,16 @@ function genericInputDirective() {
     controller: genericInputController,
     controllerAs: 'vm',
     bindToController: true,
-    scope: {model: '=ngModel'},
-    require: '^appFormMeta',
+    scope: {ngModel: '=ngModel'},
+    require: ['^appFormMeta', '^form'],
     link: link
   };
   return directive;
 
-  function link(scope, element, attrs, meta) {
+  function link(scope, element, attrs, controllers) {
+    const [meta, form] = controllers;
+    $log.debug('genericInput.directive scope:', scope);
+    $log.debug('genericInput.directive form:', form);
     const field = attrs.ngModel.split('.')
       .slice(-1);
     scope.vm.meta = meta[field];

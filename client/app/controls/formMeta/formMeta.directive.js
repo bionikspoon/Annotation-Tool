@@ -8,7 +8,8 @@ class FormMetaDirective {
       controllerAs: 'meta',
       bindToController: true,
       scope: {
-        meta: '&appFormMeta'
+        meta: '&appFormMeta',
+        errors: '=appFormErrors'
       }
     };
     return directive;
@@ -18,7 +19,8 @@ class FormMetaDirective {
 class FormMetaController {
   constructor() {
     'ngInject';
-    return this.meta();
+
+    return this.meta(); // jshint ignore:line
   }
 
 

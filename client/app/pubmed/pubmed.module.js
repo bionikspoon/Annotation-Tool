@@ -8,6 +8,7 @@ angular.module('app.pubmed', [
     'ui.router', 'ngMaterial', 'restangular', 'app.controls'
   ])
   .config(routerConfig)
+  .constant('toastr', toastr) // jshint ignore:line
 
   .controller('PubmedListController', PubmedListController)
   .controller('PubmedFormController', PubmedFormController)

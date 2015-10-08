@@ -4,7 +4,7 @@ import ChoiceSliderDirective from './choiceSlider/choiceSlider.directive';
 import SelectMultipleDirective from './selectMultiple/selectMultiple.directive';
 import FormMetaDirective from './formMeta/formMeta.directive';
 
-angular.module('app.controls', ['ngMaterial'])
+angular.module('app.controls', ['ngMaterial', 'ngMessages', 'ngAria' ])
   .directive('appGenericInput',  GenericInputDirective)
   .directive('appRadioGroup', () => new RadioGroupDirective())
   .directive('appChoiceSlider', () => new ChoiceSliderDirective())
