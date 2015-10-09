@@ -5,7 +5,6 @@ import selectMultipleDirective from './selectMultiple/selectMultiple.directive';
 import formMetaDirective from './formMeta/formMeta.directive';
 
 angular.module('app.controls', ['ngMaterial', 'ngMessages', 'ngAria'])
-       .constant('_', _)
        .directive('appGenericInput', genericInputDirective)
        .directive('appRadioGroup', radioGroupDirective)
        .directive('appChoiceSlider', choiceSliderDirective)

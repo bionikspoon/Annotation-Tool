@@ -39,8 +39,8 @@ function routerConfig($stateProvider) {
     })
     .state('pubmed.item', {
       url: '{id}/',
-      templateUrl: 'app/pubmed/pubmed-list.html',
-      controller: 'PubmedListController',
+      templateUrl: 'app/pubmed/pubmed-item.html',
+      controller: 'PubmedItemController',
       controllerAs: 'vm'
     });
 }

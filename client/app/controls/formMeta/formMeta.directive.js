@@ -1,4 +1,4 @@
-function formMetaDirective($log) {
+function formMetaDirective() {
   'ngInject';
 
   let directive = {
