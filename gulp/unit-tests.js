@@ -6,7 +6,7 @@ var conf = require('./conf');
 
 var karma = require('karma');
 
-function runTests (singleRun, done) {
+function runTests(singleRun, done) {
   karma.server.start({
     configFile: path.join(__dirname, '/../karma.conf.js'),
     singleRun: singleRun,

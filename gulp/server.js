@@ -33,7 +33,7 @@ function browserSyncInit(baseDir, browser) {
    *
    * For more details and option, https://github.com/chimurai/http-proxy-middleware/blob/v0.0.5/README.md
    */
-   server.middleware = proxyMiddleware('http://localhost:8000/api');
+  server.middleware = proxyMiddleware('http://localhost:8000/api');
 
   browserSync.instance = browserSync.init({
     startPath: '/',
@@ -46,18 +46,18 @@ browserSync.use(browserSyncSpa({
   selector: '[ng-app]'// Only needed for angular apps
 }));
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('serve', ['watch'], function() {
   browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 });
 
-gulp.task('serve:dist', ['build'], function () {
+gulp.task('serve:dist', ['build'], function() {
   browserSyncInit(conf.paths.dist);
 });
 
-gulp.task('serve:e2e', ['inject'], function () {
+gulp.task('serve:e2e', ['inject'], function() {
   browserSyncInit([conf.paths.tmp + '/serve', conf.paths.src], []);
 });
 
-gulp.task('serve:e2e-dist', ['build'], function () {
+gulp.task('serve:e2e-dist', ['build'], function() {
   browserSyncInit(conf.paths.dist, []);
 });
