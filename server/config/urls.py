@@ -25,7 +25,7 @@ router.register('lookup-variant-consequence', VariantConsequenceViewSet)
 router.register('lookup-disease', DiseaseViewSet)
 router.register('lookup-patient-outcomes', PatientOutcomesViewSet)
 
-urlpatterns = [url(r'^api/', include(router.urls)), url(r'^api/login/', obtain_jwt_token)]
+urlpatterns = [url(r'^api/', include(router.urls)), url(r'^api/auth/login/', obtain_jwt_token)]
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # urlpatterns += patterns('django.contrib.staticfiles.views',

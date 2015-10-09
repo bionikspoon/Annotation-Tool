@@ -17,6 +17,7 @@ ipdb
 
 fake-factory
 httpie
+httpie-jwt-auth
 isort
 pyinotify
 watchdog

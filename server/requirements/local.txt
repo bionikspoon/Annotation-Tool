@@ -26,6 +26,7 @@ docutils==0.12            # via sphinx
 factory-boy==2.5.2
 fake-factory==0.5.3
 first==2.0.1              # via pip-tools
+httpie-jwt-auth==0.1.0
 httpie==0.9.2
 ipdb==0.8.1
 ipykernel==4.1.0          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
@@ -44,7 +45,7 @@ mistune==0.7.1            # via nbconvert
 msgpack-python==0.4.6     # via django-redis
 nbconvert==4.0.0          # via jupyter, notebook
 nbformat==4.0.1           # via nbconvert, notebook
-notebook==4.0.5           # via ipywidgets, jupyter
+notebook==4.0.6           # via ipywidgets, jupyter
 path.py==8.1.2            # via pickleshare
 pathtools==0.1.2          # via watchdog
 pexpect==4.0.1            # via ipython
