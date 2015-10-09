@@ -9,13 +9,13 @@ function routerConfig($stateProvider) {
     })
     .state('pubmed.list', {
       url: '',
-      templateUrl: 'app/pubmed/pubmed-list.html',
+      templateUrl: 'app/pubmed/list/pubmedList.html',
       controller: 'PubmedListController',
       controllerAs: 'vm'
     })
     .state('pubmed.new', {
       url: 'new/',
-      templateUrl: 'app/pubmed/pubmed-form.html',
+      templateUrl: 'app/pubmed/form/pubmedForm.html',
       controller: 'PubmedFormController',
       controllerAs: 'vm',
       resolve: {
@@ -27,7 +27,7 @@ function routerConfig($stateProvider) {
     })
     .state('pubmed.edit', {
       url: '{id}/edit/',
-      templateUrl: 'app/pubmed/pubmed-form.html',
+      templateUrl: 'app/pubmed/form/pubmedForm.html',
       controller: 'PubmedFormController',
       controllerAs: 'vm',
       resolve: {
@@ -39,7 +39,7 @@ function routerConfig($stateProvider) {
     })
     .state('pubmed.item', {
       url: '{id}/',
-      templateUrl: 'app/pubmed/pubmed-item.html',
+      templateUrl: 'app/pubmed/item/pubmedItem.html',
       controller: 'PubmedItemController',
       controllerAs: 'vm'
     });

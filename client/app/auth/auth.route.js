@@ -11,7 +11,7 @@ function routerConfig($stateProvider) {
       url: 'login/',
       controller: 'AuthLoginController',
       controllerAs: 'vm',
-      templateUrl: 'app/auth/login/AuthLogin.html'
+      templateUrl: 'app/auth/login/authLogin.html'
 
     });
 }
