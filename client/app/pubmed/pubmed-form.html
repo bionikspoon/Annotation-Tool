@@ -4,7 +4,7 @@
 
       <form name=vm.pubmedEntry
             app-form-meta=vm.fields
-            novalidate>
+            novalidate ng-cloak>
          <app-generic-input ng-model=vm.entry.pubmed_id></app-generic-input>
          <app-generic-input ng-model=vm.entry.gene></app-generic-input>
          <app-radio-group ng-model=vm.entry.structure></app-radio-group>

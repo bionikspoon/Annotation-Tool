@@ -16,16 +16,17 @@ function selectMultipleDirective($log) {
   function link(scope, element, attrs, [ctrl, ngModel]) {
     const field = attrs.ngModel.split('.').slice(-1)[0];
 
-    return ctrl.then(data => {
-                 scope.field.meta = data.meta[field];
-                 scope.field.form = data.form;
-                 scope.field.ngModel = ngModel;
+    return ctrl
+      .then(data => {
+        scope.field.meta = data.meta[field];
+        scope.field.form = data.form;
+        scope.field.ngModel = ngModel;
 
-                 activate(scope.field.meta);
+        activate(scope.field.meta);
 
-                 return data;
-               })
-               .catch(error => $log.error('selectMultiple.directive error:', error));
+        return data;
+      })
+      .catch(error => $log.error('selectMultiple.directive error:', error));
 
     function activate() {
       scope.field._choices = new Map();
@@ -66,12 +67,14 @@ class selectMultipleController {
     const results = query ? [...this._choices.values()]
       .filter(this.filterFactoryExcludeSelected(selected))
       .filter(this.filterFactoryLowercase(query)) : [];
-
-    this.$log.debug('selectMultiple.directive results:', results);
     return results;
   }
 
   filterFactoryExcludeSelected(selected) {
+    this.$log.debug('selectMultiple.directive selected:', selected);
+    this.$log.debug('selectMultiple.directive this.filterFactoryExcludeSelected.cache:',
+      this.filterFactoryExcludeSelected.cache);
+
     return choice => selected.indexOf(choice.value) === -1;
   }
 
@@ -82,7 +85,9 @@ class selectMultipleController {
 
 
   getChipDisplayName(chip) {
-    return this._choices.get(chip).display_name;
+    if(this._choices) {
+      return this._choices.get(chip).display_name;
+    }
   }
 
 }

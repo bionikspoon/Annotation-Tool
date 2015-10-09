@@ -7,12 +7,14 @@ import runBlock from './index.run';
 
 
 angular.module('app', [
-    'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ui.router', 'ngMaterial', 'restangular', 'app.main', 'app.pubmed'
-  ])
-  .constant('toastr', toastr)
-  .constant('moment', moment)
+         'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ui.router', 'ngMaterial', 'restangular', 'app.main', 'app.pubmed'
+       ])
+       .constant('toastr', toastr)
+       .constant('moment', moment)
+       .constant('_', _)
 
-  .config(config)
-  .config(routerConfig)
 
-  .run(runBlock);
+       .config(config)
+       .config(routerConfig)
+
+       .run(runBlock);
