@@ -17,7 +17,13 @@ function routerConfig($stateProvider) {
       url: 'new/',
       templateUrl: 'app/pubmed/pubmed-form.html',
       controller: 'PubmedFormController',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      resolve: {
+        optionsPrepService: /*@ngInject*/ Restangular => Restangular
+          .all('pubmed')
+          .options()
+          .then(options => options)
+      }
     })
     .state('pubmed.edit', {
       url: '{id}/edit/',
@@ -25,7 +31,8 @@ function routerConfig($stateProvider) {
       controller: 'PubmedFormController',
       controllerAs: 'vm',
       resolve: {
-        options: /*@ngInject*/ Restangular => Restangular.all('pubmed')
+        optionsPrepService: /*@ngInject*/ Restangular => Restangular
+          .all('pubmed')
           .options()
           .then(options => options)
       }

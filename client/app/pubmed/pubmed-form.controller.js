@@ -1,5 +1,5 @@
 class PubmedFormController {
-  constructor($log, options, Restangular, toastr) {
+  constructor($log, Restangular, toastr, $state, optionsPrepService) {
     'ngInject';
 
     this.$log = $log;
@@ -8,18 +8,16 @@ class PubmedFormController {
     this.fields = {};
     this.entry = {};
     this.errors = {};
+    this.loading = true;
 
-    angular.copy(options.actions.POST, this.fields);
+    if($state.params.id) {this.getEntry($state.params.id);}
+    angular.copy(optionsPrepService.actions.POST, this.fields);
   }
 
 
   submit(model) {
     model.user = 'http://localhost:8000/api/users/196/';
-    model.disease = model.disease.map(choice => choice.value);
-    model.assessed_patient_outcomes = model.assessed_patient_outcomes.map(choice => choice.value);
-    model.significant_patient_outcomes = model.significant_patient_outcomes.map(choice => choice.value);
-
-
+    this.$log.debug('pubmed-form.controller this:', this);
     this.Restangular.all('pubmed')
         .post(model)
         .then(response => {
@@ -44,7 +42,17 @@ class PubmedFormController {
         });
   }
 
-
+  getEntry(id) {
+    this.Restangular.one('pubmed', id).get()
+        .then(entry => {
+          this.Restangular.copy(entry, this.entry);
+          return entry;
+        })
+        .catch(error => {
+          this.$log.error('pubmed-form.controller error:', error);
+          return error;
+        });
+  }
 }
 
 export default PubmedFormController;

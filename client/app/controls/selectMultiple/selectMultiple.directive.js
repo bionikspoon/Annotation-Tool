@@ -8,19 +8,18 @@ function selectMultipleDirective($log) {
     controllerAs: 'field',
     bindToController: true,
     scope: {model: '=ngModel'},
-    require: '^appFormMeta',
+    require: ['^appFormMeta', 'ngModel'],
     link: link
   };
   return directive;
 
-  function link(scope, element, attrs, ctrl) {
-
-
+  function link(scope, element, attrs, [ctrl, ngModel]) {
     const field = attrs.ngModel.split('.').slice(-1)[0];
 
     return ctrl.then(data => {
                  scope.field.meta = data.meta[field];
                  scope.field.form = data.form;
+                 scope.field.ngModel = ngModel;
 
                  activate(scope.field.meta);
 
@@ -29,16 +28,13 @@ function selectMultipleDirective($log) {
                .catch(error => $log.error('selectMultiple.directive error:', error));
 
     function activate() {
-
-      scope.field.meta.choices = scope.field.meta.choices.map(choice => {
+      scope.field._choices = new Map();
+      scope.field.meta.choices.forEach(choice => {
         choice._lower_display_name = choice.display_name.toLowerCase();
-        return choice;
+        scope.field._choices.set(choice.value, choice);
       });
     }
-
   }
-
-
 }
 
 
@@ -52,23 +48,42 @@ class selectMultipleController {
     this.searchText = null;
     this.meta = this.meta || {};
     this.form = this.form || {};
-    this.model = this.model || [];
+    this.modelOptions = {};
+
+  }
+
+  appendModel(choice) {
+    return choice.value;
+  }
+
+
+  activate() {
   }
 
 
   querySearch(query) {
-    const results = query ? this.meta.choices.filter(this.createFilterFor(query)) : [];
+    const selected = this.model;
+    const results = query ? [...this._choices.values()]
+      .filter(this.filterFactoryExcludeSelected(selected))
+      .filter(this.filterFactoryLowercase(query)) : [];
+
+    this.$log.debug('selectMultiple.directive results:', results);
     return results;
   }
 
-  createFilterFor(query) {
-    const lowercaseQuery = angular.lowercase(query);
-    return function filterFn(choice) {
-      return (choice._lower_display_name.indexOf(lowercaseQuery));
-    };
-
+  filterFactoryExcludeSelected(selected) {
+    return choice => selected.indexOf(choice.value) === -1;
   }
 
+  filterFactoryLowercase(query) {
+    const lowercaseQuery = angular.lowercase(query);
+    return choice => choice._lower_display_name.indexOf(lowercaseQuery) !== -1;
+  }
+
+
+  getChipDisplayName(chip) {
+    return this._choices.get(chip).display_name;
+  }
 
 }
 
