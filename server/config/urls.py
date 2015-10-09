@@ -28,9 +28,18 @@ router.register('lookup-patient-outcomes', PatientOutcomesViewSet)
 urlpatterns = [url(r'^api/', include(router.urls)), url(r'^api/login/', obtain_jwt_token)]
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-urlpatterns += patterns('django.contrib.staticfiles.views',
-                        url(r'^(?:index.html)?$', 'serve', kwargs={'path': 'index.html'}),
-                        url(r'^(?P<path>(?:assets|css|images|js|scripts|styles)/.*)$', 'serve'))
+# urlpatterns += patterns('django.contrib.staticfiles.views',
+#                         url(r'^(?:index.html)?$', 'serve', kwargs={'path': 'index.html'}),
+#                         url(r'^(?P<path>(?:assets|css|images|js|scripts|styles)/.*)$', 'serve'))
+
+
+# TODO Delete this
+##############################################################################
+
+
+
+
+
 # url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
 # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
 
