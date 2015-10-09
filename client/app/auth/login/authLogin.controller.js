@@ -9,7 +9,7 @@ class AuthLoginController {
 
 
   login(credentials) {
-    AuthService.login(credentials)
+    this.AuthService.login(credentials)
                .then(user => {
                  this.$rootScope.$broadcast(this.AUTH_EVENTS.loginSuccess);
                  this.setCurrentUser(user);
