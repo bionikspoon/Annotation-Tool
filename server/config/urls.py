@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.conf import settings
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.conf.urls.static import static
+from django.contrib.staticfiles import views as staticfiles_views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework import routers
 from rest_framework_jwt.views import obtain_jwt_token
-
 from ..annotation_tool.pubmed.views import (PubmedViewSet, GeneViewSet, PatientOutcomesViewSet, DiseaseViewSet,
-                                            VariantConsequenceViewSet, VariantTypeViewSet, StructureViewSet,
-                                            MutationTypeViewSet, SyntaxViewSet, RuleLevelViewSet)
+    VariantConsequenceViewSet, VariantTypeViewSet, StructureViewSet, MutationTypeViewSet, SyntaxViewSet,
+    RuleLevelViewSet)
 from ..annotation_tool.users.views import UserViewSet
 
 router = routers.DefaultRouter()
@@ -25,13 +25,12 @@ router.register('lookup-variant-consequence', VariantConsequenceViewSet)
 router.register('lookup-disease', DiseaseViewSet)
 router.register('lookup-patient-outcomes', PatientOutcomesViewSet)
 
-urlpatterns = [
+urlpatterns = [url(r'^api/', include(router.urls)), url(r'^api/login/', obtain_jwt_token)]
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-                  url(r'^api/', include(router.urls)),
-
-                  url(r'^api/login/', obtain_jwt_token)
-
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += patterns('django.contrib.staticfiles.views',
+                        url(r'^(?:index.html)?$', 'serve', kwargs={'path': 'index.html'}),
+                        url(r'^(?P<path>(?:assets|css|images|js|scripts|styles)/.*)$', 'serve'))
 # url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
 # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
 

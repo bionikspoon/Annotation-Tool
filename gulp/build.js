@@ -16,7 +16,7 @@ gulp.task('partials', function() {
                quotes: true
              }))
              .pipe($.angularTemplatecache('templateCacheHtml.js', {
-               module: 'annotationTool',
+               module: 'app',
                root: 'app'
              }))
              .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
