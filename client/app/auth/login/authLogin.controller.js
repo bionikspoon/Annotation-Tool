@@ -1,8 +1,11 @@
 class AuthLoginController {
-  constructor($rootScope, AUTH_EVENTS, AuthService) {
+  constructor($rootScope, $scope, $q, $log, AUTH_EVENTS, AuthService) {
     'ngInject';
 
     this.$rootScope = $rootScope;
+    this.$scope = $scope;
+    this.$log = $log;
+    this.$q = $q;
     this.AUTH_EVENTS = AUTH_EVENTS;
     this.AuthService = AuthService;
   }
@@ -10,11 +13,16 @@ class AuthLoginController {
 
   login(credentials) {
     this.AuthService.login(credentials)
-               .then(user => {
-                 this.$rootScope.$broadcast(this.AUTH_EVENTS.loginSuccess);
-                 this.setCurrentUser(user);
-               })
-               .catch(this.$rootScope.$broadcast(this.AUTH_EVENTS.loginFailed));
+        .then(user => {
+          this.$log.debug('authLogin.controller user:', user);
+          this.$rootScope.$broadcast(this.AUTH_EVENTS.loginSuccess);
+          this.$scope.main.setCurrentUser(user);
+        })
+        .catch(error => {
+          this.$log.error('authLogin.controller error:', error);
+          this.$rootScope.$broadcast(this.AUTH_EVENTS.loginFailed);
+          this.$q.reject(error);
+        });
   }
 
 

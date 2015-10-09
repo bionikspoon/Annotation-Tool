@@ -13,6 +13,19 @@ function routerConfig($stateProvider) {
       controllerAs: 'vm',
       templateUrl: 'app/auth/login/authLogin.html'
 
+    })
+    .state('auth.logout', {
+      url: 'logout/',
+      controller: 'AuthLoginController',
+      controllerAs: 'vm',
+      templateUrl: 'app/auth/login/authLogin.html'
+
+    })
+    .state('auth.register', {
+      url: 'register/',
+      controller: 'AuthLoginController',
+      controllerAs: 'vm',
+      templateUrl: 'app/auth/login/authLogin.html'
     });
 }
 
