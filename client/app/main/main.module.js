@@ -5,7 +5,7 @@ import routerConfig from './main.route';
 import NavbarTop from '../components/navbar/navbarTop.directive';
 import NavbarSide from '../components/navbar/navbarSide.directive';
 
-angular.module('app.main', ['ui.router', 'ngMaterial', 'app.auth'])
+angular.module('app.main', ['ui.router', 'ngMaterial'])
        .config(routerConfig)
        .controller('MainController', MainController)
        .factory('exception', exception)

@@ -1,7 +1,7 @@
-class AuthSessionService {
-  constructor(AUTH_ROLES) {
+class SessionService {
+  constructor(USER_ROLES) {
     'ngInject';
-    this.AUTH_ROLES = AUTH_ROLES;
+    this.USER_ROLES = USER_ROLES;
   }
 
 
@@ -11,7 +11,7 @@ class AuthSessionService {
     this.email = user.email;
     this.username = user.username;
     this.exp = user.exp;
-    this.role = this.AUTH_ROLES.admin;
+    this.role = this.USER_ROLES.admin;
 
 
   }
@@ -25,4 +25,4 @@ class AuthSessionService {
   }
 }
 
-export default AuthSessionService;
+export default SessionService;

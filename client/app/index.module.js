@@ -6,18 +6,18 @@ import routerConfig from './index.route';
 import runBlock from './index.run';
 
 
-angular.module('app', [
-         'ngAnimate',
-         'ngCookies',
-         'ngTouch',
-         'ngSanitize',
-         'ui.router',
-         'ngMaterial',
-         'restangular',
-         'app.main',
-         'app.pubmed',
-         'app.auth'
-       ])
+angular.module('app',
+  ['ngAnimate',
+   'ngCookies',
+   'ngTouch',
+   'ngSanitize',
+   'ui.router',
+   'ngMaterial',
+   'restangular',
+   'app.main',
+   'app.pubmed',
+   'app.auth',
+   'app.user'])
        .constant('toastr', toastr)
        .constant('moment', moment)
        .constant('_', _)

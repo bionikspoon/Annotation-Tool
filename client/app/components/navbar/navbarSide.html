@@ -11,13 +11,13 @@
            layout="row"
            layout-align="space-between end"
       >
-         <p
-            ng-if=main.currentUser>
-            Welcome, <b ng-bind=main.currentUser.username></b>!
+         <p class=md-body-1
+            ng-if=user.currentUser>
+            Welcome, <b ng-bind=user.currentUser.username></b>!
          </p>
 
          <p class=md-body-1
-            ng-if=!main.currentUser>
+            ng-if=!user.currentUser>
             Hello. Sign in.
          </p>
          <span flex></span>

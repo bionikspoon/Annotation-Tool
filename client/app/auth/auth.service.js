@@ -1,11 +1,11 @@
 class AuthService {
-  constructor($log, $http, $window, $q, AuthSession) {
+  constructor($log, $http, $window, $q, Session) {
     'ngInject';
     this.$log = $log;
     this.$http = $http;
     this.$window = $window;
     this.$q = $q;
-    this.AuthSession = AuthSession;
+    this.Session = Session;
   }
 
   login(credentials) {
@@ -17,7 +17,7 @@ class AuthService {
                  const base64 = response.data.token.split('.')[1];
                  const user = JSON.parse(this.$window.atob(base64));
 
-                 this.AuthSession.create(user);
+                 this.Session.create(user);
                  return user;
 
                })
@@ -28,12 +28,12 @@ class AuthService {
   }
 
   isAuthenticated() {
-    return !!this.AuthSession.userId;
+    return !!this.Session.userId;
   }
 
   isAuthorized(authorizedRoles) {
     if(!angular.isArray(authorizedRoles)) {authorizedRoles = [authorizedRoles];}
-    return (this.isAuthenticated() && authorizedRoles.indexOf(this.AuthSession.userRole) !== -1);
+    return (this.isAuthenticated() && authorizedRoles.indexOf(this.Session.userRole) !== -1);
   }
 }
 
