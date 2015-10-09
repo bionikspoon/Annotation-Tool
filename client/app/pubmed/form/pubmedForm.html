@@ -1,10 +1,14 @@
 <md-card>
    <md-card-content>
       <h2>Pubmed Entry</h2>
+      <md-progress-linear class=md-accent
+                          ng-if=vm.loading
+                          md-mode="indeterminate"></md-progress-linear>
 
-      <form name=vm.pubmedEntry
+      <form ng-hide=vm.loading
+            name=vm.pubmedEntry
             app-form-meta=vm.fields
-            novalidate ng-cloak>
+            novalidate>
          <app-generic-input ng-model=vm.entry.pubmed_id></app-generic-input>
          <app-generic-input ng-model=vm.entry.gene></app-generic-input>
          <app-radio-group ng-model=vm.entry.structure></app-radio-group>

@@ -1,8 +1,9 @@
 class PubmedFormController {
-  constructor($log, Restangular, toastr, $state, optionsPrepService) {
+  constructor($log, $q, Restangular, toastr, $state, optionsPrepService) {
     'ngInject';
 
     this.$log = $log;
+    this.$q = $q;
     this.Restangular = Restangular;
     this.toastr = toastr;
     this.fields = {};
@@ -10,8 +11,17 @@ class PubmedFormController {
     this.errors = {};
     this.loading = true;
 
-    if($state.params.id) {this.getEntry($state.params.id);} else {this.entry = Restangular.one('pubmed'); }
-    angular.copy(optionsPrepService.actions.POST, this.fields);
+    const entryPromise = $state.params.id ? this.getEntry($state.params.id) : this.newEntry();
+    const optionsPromise = this.setOptions(optionsPrepService);
+
+    this.activate(entryPromise(), optionsPromise());
+
+  }
+
+  activate(entryPromise, optionsPromise) {
+    this.$q.all([entryPromise, optionsPromise])
+        .finally(() => this.loading = false);
+
 
   }
 
@@ -43,15 +53,23 @@ class PubmedFormController {
   }
 
   getEntry(id) {
-    this.Restangular.one('pubmed', id).get()
-        .then(entry => {
-          this.Restangular.copy(entry, this.entry);
-          return entry;
-        })
-        .catch(error => {
-          this.$log.error('pubmed-form.controller error:', error);
-          return error;
-        });
+    return () => this.Restangular.one('pubmed', id).get()
+                     .then(entry => {
+                       this.Restangular.copy(entry, this.entry);
+                       return entry;
+                     })
+                     .catch(error => {
+                       this.$log.error('pubmed-form.controller error:', error);
+                       return error;
+                     });
+  }
+
+  newEntry() {
+    return () => this.$q.when(this.entry = this.Restangular.one('pubmed'));
+  }
+
+  setOptions(optionsPrepService) {
+    return () => this.$q.when(angular.copy(optionsPrepService.actions.POST, this.fields));
   }
 }
 
