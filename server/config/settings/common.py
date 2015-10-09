@@ -19,7 +19,7 @@ DJANGO_APPS = (
     # Default Django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    # 'django.contrib.sessions',
+    'django.contrib.sessions',
     'django.contrib.sites',
     # 'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -37,6 +37,7 @@ THIRD_PARTY_APPS = (
     # 'allauth.account',  # registration
     # 'allauth.socialaccount',  # registration
     'rest_framework',
+    'rest_framework.authtoken'
 )
 
 # Apps specific for this project go here.
@@ -201,10 +202,10 @@ WSGI_APPLICATION = 'server.config.wsgi.application'
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
-# AUTHENTICATION_BACKENDS = (
-#     # 'django.contrib.auth.backends.ModelBackend',
-#     # 'allauth.account.auth_backends.AuthenticationBackend',
-# )
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
@@ -271,5 +272,11 @@ LOGGING = {
 
 REST_FRAMEWORK ={
     # 'PAGINATE_BY': 10
+
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.TokenAuthentication',)
 }
 # Your common stuff: Below this line define 3rd party library settings

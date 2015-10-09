@@ -13,7 +13,8 @@ django-model-utils==2.3.1
 django-redis==4.2.0
 django-secure==1.0.1
 django-test-plus==1.0.9
-django==1.8.4
+django==1.8.5
+djangorestframework-jwt==1.7.2
 djangorestframework==3.2.4
 factory-boy==2.5.2
 first==2.0.1              # via pip-tools
@@ -21,13 +22,14 @@ flake8==2.4.1
 mccabe==0.3.1             # via flake8
 msgpack-python==0.4.6     # via django-redis
 pep8==1.5.7               # via flake8
-pip-tools==1.1.4
+pip-tools==1.1.6
 psycopg2==2.6.1
 pyflakes==0.8.1           # via flake8
+pyjwt==1.4.0              # via djangorestframework-jwt
 pytz==2015.6
 pyyaml==3.11
 redis==2.10.3
-six==1.9.0                # via django-braces, django-environ, pip-tools, unicode-slugify
+six==1.10.0               # via django-braces, django-environ, pip-tools, unicode-slugify
 unicode-slugify==0.1.3
 unidecode==0.4.18         # via unicode-slugify
 whitenoise==2.0.4

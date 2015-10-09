@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from rest_framework import routers
-from rest_framework.viewsets import ViewSet
+from rest_framework_jwt.views import obtain_jwt_token
 
-from ..annotation_tool.users.views import UserViewSet
 from ..annotation_tool.pubmed.views import (PubmedViewSet, GeneViewSet, PatientOutcomesViewSet, DiseaseViewSet,
                                             VariantConsequenceViewSet, VariantTypeViewSet, StructureViewSet,
                                             MutationTypeViewSet, SyntaxViewSet, RuleLevelViewSet)
+from ..annotation_tool.users.views import UserViewSet
 
 router = routers.DefaultRouter()
 router.register('users', UserViewSet)
@@ -26,18 +27,19 @@ router.register('lookup-patient-outcomes', PatientOutcomesViewSet)
 
 urlpatterns = [
 
-                  url(r'^api/', include(router.urls))
-                  # url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
-                  # url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
+                  url(r'^api/', include(router.urls)),
 
-                  # # Django Admin# url(r'^admin/', include(admin.site.urls)),## # User management
-                  # url(r'^users/', include("annotation_tool.users.urls", namespace="users")),
-                  # url(r'^accounts/', include('allauth.urls')),
-
-                  # Your stuff: custom urls includes go here
+                  url(r'^api/login/', obtain_jwt_token)
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name="home"),
+# url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
 
+# # Django Admin# url(r'^admin/', include(admin.site.urls)),## # User management
+# url(r'^users/', include("annotation_tool.users.urls", namespace="users")),
+# url(r'^accounts/', include('allauth.urls')),
+
+# Your stuff: custom urls includes go here
 # if settings.DEBUG:
 #     # This allows the error pages to be debugged during development, just visit
 #     # these url in browser to see how these error pages look like.
