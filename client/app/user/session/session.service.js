@@ -78,7 +78,7 @@ export default class Session {
   }
 
   exists() {
-    return this.exp > new Date().getTime();
+    return angular.isDefined(this.token) && this.exp > new Date().getTime();
   }
 
   isExpired() {
