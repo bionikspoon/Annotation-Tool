@@ -1,25 +1,19 @@
-class AuthService {
-  constructor($log, $http, $window, $q, Session) {
+export default class AuthService {
+  constructor($log, $http, $q, Session, $rootScope) {
     'ngInject';
     this.$log = $log;
     this.$http = $http;
-    this.$window = $window;
     this.$q = $q;
     this.Session = Session;
+    angular.bind(this, _broadcast, $rootScope);
+    _broadcast = angular.bind(null, _broadcast, $rootScope);
   }
 
   login(credentials) {
     return this.$http
                .post('api/auth/login/', credentials)
                .then(response => {
-                 this.$log.debug('auth.service response:', response);
-
-                 const base64 = response.data.token.split('.')[1];
-                 const user = JSON.parse(this.$window.atob(base64));
-
-                 this.Session.create(user);
-                 return user;
-
+                 return this.Session.create(response.data.token);
                })
                .catch(error => {
                  this.$log.error('auth.service error:', error);
@@ -27,8 +21,24 @@ class AuthService {
                });
   }
 
+  loginFromStorage() {
+    return this.$q.resolve(this.Session.create())
+               .then(result => {
+                 if(!!result) {
+                   return result;
+                 } else {
+                   this.$q.reject(result);
+                 }
+               });
+
+  }
+
+  logout() {
+    this.Session.destroy();
+  }
+
   isAuthenticated() {
-    return !!this.Session.userId;
+    return this.Session.exp > new Date().getTime();
   }
 
   isAuthorized(authorizedRoles) {
@@ -37,4 +47,8 @@ class AuthService {
   }
 }
 
-export default AuthService;
+function _broadcast(user, $rootScope) {
+  console.log(this);
+  console.log(user);
+  console.log($rootScope);
+}

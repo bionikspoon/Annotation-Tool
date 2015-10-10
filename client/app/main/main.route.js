@@ -7,7 +7,22 @@ function routerConfig($stateProvider) {
       controller: 'MainController',
       controllerAs: 'main',
       abstract: true
-    });
+    })
+
+    .state('users', {
+      url: 'users/',
+      template: '<ui-view/>',
+      abstract: true,
+      parent: 'main'
+
+    })
+    .state('users.list', {
+      url: '',
+      templateUrl: 'app/main/usersList.html',
+      controller: 'UsersListController',
+      controllerAs: 'vm'
+
+    })
 
 }
 

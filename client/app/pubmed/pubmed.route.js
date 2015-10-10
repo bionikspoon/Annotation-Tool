@@ -11,8 +11,7 @@ function routerConfig($stateProvider, USER_ROLES) {
       url: '',
       templateUrl: 'app/pubmed/list/pubmedList.html',
       controller: 'PubmedListController',
-      controllerAs: 'vm',
-      data: [USER_ROLES.admin]
+      controllerAs: 'vm'
     })
     .state('pubmed.new', {
       url: 'new/',

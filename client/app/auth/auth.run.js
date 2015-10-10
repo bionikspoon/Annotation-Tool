@@ -2,7 +2,6 @@ export default function($log, $rootScope, AUTH_EVENTS, AuthService) {
   'ngInject';
 
   $rootScope.$on('$stateChangeStart', (event, next) => {
-    $log.debug('auth.run event, next:', event, next);
     if(angular.isDefined(next.data)) {
       const authorizedRoles = next.data.authorizedRoles;
       if(!AuthService.isAuthorized(authorizedRoles)) {

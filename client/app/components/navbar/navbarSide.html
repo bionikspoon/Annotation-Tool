@@ -31,7 +31,7 @@
                   <md-button>Logout</md-button>
                </md-menu-item>
                <md-menu-item>
-                  <md-button>Login</md-button>
+                  <md-button ui-sref="auth.login">Login</md-button>
                </md-menu-item>
                <md-menu-item>
                   <md-button>Register</md-button>
@@ -47,6 +47,13 @@
                     class="md-accent">
             <md-icon>crop</md-icon>
             <span>Pubmed</span>
+         </md-button>
+      </md-list-item>
+      <md-list-item>
+         <md-button ui-sref="users.list"
+                    class="md-accent">
+            <md-icon>crop</md-icon>
+            <span>Users</span>
          </md-button>
       </md-list-item>
    </md-list>
