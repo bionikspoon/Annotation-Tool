@@ -4,7 +4,7 @@ import PubmedItemController from './item/pubmedItem.controller';
 
 import routerConfig from './pubmed.route';
 
-angular.module('app.pubmed', ['ngAria', 'ui.router', 'ngMaterial', 'restangular', 'app.controls'])
+angular.module('app.pubmed', ['ngAria', 'ui.router', 'ngMaterial', 'restangular', 'app.controls', 'app.user'])
        .config(routerConfig)
        .constant('toastr', toastr) // jshint ignore:line
 

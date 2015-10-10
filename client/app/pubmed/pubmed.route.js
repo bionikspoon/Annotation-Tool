@@ -1,4 +1,4 @@
-function routerConfig($stateProvider) {
+function routerConfig($stateProvider, USER_ROLES) {
   'ngInject';
   $stateProvider
     .state('pubmed', {
@@ -11,31 +11,22 @@ function routerConfig($stateProvider) {
       url: '',
       templateUrl: 'app/pubmed/list/pubmedList.html',
       controller: 'PubmedListController',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      data: [USER_ROLES.admin]
     })
     .state('pubmed.new', {
       url: 'new/',
       templateUrl: 'app/pubmed/form/pubmedForm.html',
       controller: 'PubmedFormController',
       controllerAs: 'vm',
-      resolve: {
-        optionsPrepService: /*@ngInject*/ Restangular => Restangular
-          .all('pubmed')
-          .options()
-          .then(options => options)
-      }
+      resolve: {optionsPrepService}
     })
     .state('pubmed.edit', {
       url: '{id}/edit/',
       templateUrl: 'app/pubmed/form/pubmedForm.html',
       controller: 'PubmedFormController',
       controllerAs: 'vm',
-      resolve: {
-        optionsPrepService: /*@ngInject*/ Restangular => Restangular
-          .all('pubmed')
-          .options()
-          .then(options => options)
-      }
+      resolve: {optionsPrepService}
     })
     .state('pubmed.item', {
       url: '{id}/',
@@ -43,6 +34,14 @@ function routerConfig($stateProvider) {
       controller: 'PubmedItemController',
       controllerAs: 'vm'
     });
+}
+
+function optionsPrepService(Restangular) {
+  'ngInject';
+  return Restangular
+    .all('pubmed')
+    .options()
+    .then(options => options);
 }
 
 export default routerConfig;

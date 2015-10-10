@@ -9,13 +9,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
-
 from . import env, APPS_DIR, ROOT_DIR
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
 
-DJANGO_APPS = (
+DJANGO_APPS = (  # :off
     # Default Django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -30,29 +29,29 @@ DJANGO_APPS = (
     # Admin
     # 'django.contrib.admin',
     'django.contrib.postgres'
-)
-THIRD_PARTY_APPS = (
+)  # :on
+THIRD_PARTY_APPS = (  # :off
     # 'crispy_forms',  # Form layouts
     # 'allauth',  # registration
     # 'allauth.account',  # registration
     # 'allauth.socialaccount',  # registration
     'rest_framework',
     'rest_framework.authtoken'
-)
+)  # :on
 
 # Apps specific for this project go here.
-LOCAL_APPS = (
+LOCAL_APPS = (  # :off
     'server.annotation_tool.users',  # custom users app
     # Your stuff: custom apps go here
     'server.annotation_tool.pubmed'
-)
+)  # :on
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = (  # :off
     # Make sure djangosecure.middleware.SecurityMiddleware is listed first
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -60,7 +59,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+)  # :on
 
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -76,9 +75,7 @@ DEBUG = env.bool('DJANGO_DEBUG', False)
 # FIXTURE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
-FIXTURE_DIRS = (
-    str(APPS_DIR.path('fixtures')),
-)
+FIXTURE_DIRS = (APPS_DIR('fixtures'),)
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -87,9 +84,7 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.s
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (
-    ("""Manu Phatak""", 'bionikspoon@gmail.com'),
-)
+ADMINS = (("""Manu Phatak""", 'bionikspoon@gmail.com'),)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
@@ -97,12 +92,9 @@ MANAGERS = ADMINS
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL"),
-}
+DATABASES = {  # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
+    'default': env.db("DATABASE_URL"), }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -130,7 +122,7 @@ USE_TZ = True
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#templates
-TEMPLATES = [
+TEMPLATES = [  # :off
     {
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -161,7 +153,7 @@ TEMPLATES = [
             # ],
         },
     },
-]
+]  # :on
 
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
 # CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -169,27 +161,24 @@ TEMPLATES = [
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = str(ROOT_DIR('staticfiles'))
+STATIC_ROOT = ROOT_DIR('staticfiles')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (
-    ROOT_DIR('..', 'dist'),
-    APPS_DIR('static'),
-)
+STATICFILES_DIRS = (ROOT_DIR('..', 'dist'), APPS_DIR('static'),)
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
-STATICFILES_FINDERS = (
+STATICFILES_FINDERS = (  # :off
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+)  # :on
 
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR('media'))
+MEDIA_ROOT = APPS_DIR('media')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
@@ -203,10 +192,9 @@ WSGI_APPLICATION = 'server.config.wsgi.application'
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    # 'allauth.account.auth_backends.AuthenticationBackend',
-)
+AUTHENTICATION_BACKENDS = (  # :off
+    'django.contrib.auth.backends.ModelBackend',  # 'allauth.account.auth_backends.AuthenticationBackend',
+)  # :on
 
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
@@ -221,7 +209,6 @@ AUTH_USER_MODEL = 'users.User'
 
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
-
 
 # LOGGING CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -243,7 +230,7 @@ LOGGING = {
         'verbose': {
             'format': '%(levelname)s %(asctime)s %(module)s '
                       '%(process)d %(thread)d %(message)s'
-        },
+        }
     },
     'handlers': {
         'mail_admins': {
@@ -254,8 +241,8 @@ LOGGING = {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
-        },
+            'formatter': 'verbose'
+        }
     },
     'loggers': {
         'django.request': {
@@ -271,13 +258,10 @@ LOGGING = {
     }
 }
 
-REST_FRAMEWORK ={
-    # 'PAGINATE_BY': 10
+REST_FRAMEWORK = {  # 'PAGINATE_BY': 10
 
     # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
 
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        'rest_framework.authentication.TokenAuthentication',)
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_jwt.authentication.JSONWebTokenAuthentication',)
 }
 # Your common stuff: Below this line define 3rd party library settings
