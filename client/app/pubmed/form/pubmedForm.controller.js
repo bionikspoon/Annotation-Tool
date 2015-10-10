@@ -27,7 +27,7 @@ class PubmedFormController {
 
 
   submit(model) {
-    model.user = 'http://localhost:8000/api/users/196/';
+    model.userCtrl = 'http://localhost:8000/api/users/196/';
 
     model.save()
          .then(response => {

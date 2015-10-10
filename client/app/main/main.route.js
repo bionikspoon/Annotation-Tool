@@ -22,7 +22,7 @@ function routerConfig($stateProvider) {
       controller: 'UsersListController',
       controllerAs: 'vm'
 
-    })
+    });
 
 }
 

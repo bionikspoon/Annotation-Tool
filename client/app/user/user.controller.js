@@ -4,8 +4,8 @@ export default class UserController {
 
     this.currentUser = null;
 
-    this.isAuthenticated = () => AuthService.isAuthenticated;
-    this.isAuthorized = () => AuthService.isAuthorized;
+    this.isAuthenticated = AuthService.isAuthenticated;
+    this.isAuthorized = AuthService.isAuthorized;
 
     $scope.$on(SESSION_EVENTS.destroyed, () => this.setCurrentUser(null));
     $scope.$on(SESSION_EVENTS.created, () => this.setCurrentUser(Session));
@@ -21,5 +21,6 @@ export default class UserController {
     this.currentUser = user;
     return this.currentUser;
   }
+
 }
 

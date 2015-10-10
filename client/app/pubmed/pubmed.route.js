@@ -1,4 +1,4 @@
-function routerConfig($stateProvider, USER_ROLES) {
+function routerConfig($stateProvider) {
   'ngInject';
   $stateProvider
     .state('pubmed', {

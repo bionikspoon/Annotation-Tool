@@ -3,7 +3,7 @@ class AuthLoginController {
     'ngInject';
 
     this.$rootScope = $rootScope;
-    this.user = $scope.user;
+    this.userCtrl = $scope.userCtrl;
     this.$log = $log;
     this.$q = $q;
     this.$state = $state;
@@ -16,7 +16,6 @@ class AuthLoginController {
     this.AuthService.login(credentials)
         .then(user => {
           this.$log.debug('authLogin.controller user:', user);
-          //this.user.setCurrentUser(user);
           this.$state.go('pubmed.list');
         })
         .catch(error => {

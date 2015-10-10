@@ -1,39 +1,38 @@
 <md-sidenav class="md-sidenav-left md-whiteframe-z2"
-            md-component-id="left"
-            md-is-locked-open="$mdMedia('gt-md')"
-            md-theme="sidenav"
-            layout="column">
+            md-component-id=left
+            md-is-locked-open=$mdMedia('gt-md')
+            md-theme=sidenav
+            layout=column>
    <md-toolbar class="md-tall md-hue-2">
 
       <span flex></span>
 
-      <div class="md-toolbar-tools"
-           layout="row"
-           layout-align="space-between end"
-      >
+      <div class=md-toolbar-tools
+           layout=row
+           layout-align="space-between end">
          <p class=md-body-1
-            ng-if=user.currentUser>
-            Welcome, <b ng-bind=user.currentUser.username></b>!
+            ng-if=userCtrl.isAuthenticated()>
+            Welcome, <b ng-bind=userCtrl.currentUser.username></b>!
          </p>
 
          <p class=md-body-1
-            ng-if=!user.currentUser>
-            Hello. Sign in.
+            ng-if=!userCtrl.isAuthenticated()>
+            Hello <b>stranger</b>, sign in.
          </p>
          <span flex></span>
          <md-menu md-position-mode="target-right target">
             <md-button class="md-icon-button md-body-1"
-                       ng-click="vm.openMenu($mdOpenMenu, $event)">
+                       ng-click=navSideCtrl.openMenu($mdOpenMenu,$event)>
                <md-icon md-menu-origin>arrow_drop_down</md-icon>
             </md-button>
             <md-menu-content>
-               <md-menu-item>
-                  <md-button>Logout</md-button>
+               <md-menu-item ng-if=userCtrl.isAuthenticated()>
+                  <md-button app-auth-logout>Logout</md-button>
                </md-menu-item>
-               <md-menu-item>
-                  <md-button ui-sref="auth.login">Login</md-button>
+               <md-menu-item ng-if=!userCtrl.isAuthenticated()>
+                  <md-button ui-sref=auth.login>Login</md-button>
                </md-menu-item>
-               <md-menu-item>
+               <md-menu-item ng-if=!userCtrl.isAuthenticated()>
                   <md-button>Register</md-button>
                </md-menu-item>
             </md-menu-content>
@@ -43,15 +42,15 @@
 
    <md-list>
       <md-list-item>
-         <md-button ui-sref="pubmed.list"
-                    class="md-accent">
+         <md-button ui-sref=pubmed.list
+                    class=md-accent>
             <md-icon>crop</md-icon>
             <span>Pubmed</span>
          </md-button>
       </md-list-item>
       <md-list-item>
-         <md-button ui-sref="users.list"
-                    class="md-accent">
+         <md-button ui-sref=users.list
+                    class=md-accent>
             <md-icon>crop</md-icon>
             <span>Users</span>
          </md-button>

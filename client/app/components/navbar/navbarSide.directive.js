@@ -6,7 +6,8 @@ class NavbarSideDirective {
       restrict: 'E',
       templateUrl: 'app/components/navbar/navbarSide.html',
       controller: NavbarSideController,
-      controllerAs: 'vm'
+      controllerAs: 'navSideCtrl',
+      bindToController: true
     };
 
     return directive;
@@ -16,6 +17,9 @@ class NavbarSideDirective {
 class NavbarSideController {
   constructor() {
     'ngInject';
+
+    this.openMenu = angular.bind(this, this.openMenu);
+    return this;
 
   }
 
