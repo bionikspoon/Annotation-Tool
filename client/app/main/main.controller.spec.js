@@ -3,13 +3,13 @@
 
   describe('controllers', function() {
 
-    beforeEach(module('annotationTool'));
+    beforeEach(module('app'));
 
     it('should define more than 5 awesome things', inject(function($controller) {
-      var vm = $controller('MainController');
+      var main = $controller('MainController');
 
-      expect(angular.isArray(vm.awesomeThings)).toBeTruthy();
-      expect(vm.awesomeThings.length > 5).toBeTruthy();
+      expect(angular.isArray(main.awesomeThings)).toBeTruthy();
+      expect(main.awesomeThings.length > 4).toBeTruthy();
     }));
   });
 })();

@@ -1,4 +1,6 @@
-'use strict';
+/* global require:false, process:false */
+
+'use strict'; // jshint ignore:line
 
 var path = require('path');
 var conf = require('./gulp/conf');
@@ -12,9 +14,10 @@ function listFiles() {
     devDependencies: true
   });
 
-  return wiredep(wiredepOptions).js
+  return wiredep(wiredepOptions)
+    .js
     .concat([
-      path.join(conf.paths.tmp, '/serve/app/index.module.js'),
+      path.join(conf.paths.tmp, '/serve/app/**/*.module.js'),
       path.join(conf.paths.src, '/**/*.spec.js'),
       path.join(conf.paths.src, '/**/*.mock.js'),
       path.join(conf.paths.src, '/**/*.html')
@@ -33,20 +36,18 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     ngHtml2JsPreprocessor: {
-      stripPrefix: 'src/',
+      stripPrefix: 'client/',
       moduleName: 'annotationTool'
     },
 
-    browsers : ['PhantomJS'],
+    browsers: ['PhantomJS'],
 
-    plugins : [
-      'karma-phantomjs-launcher',
-      'karma-jasmine',
-      'karma-ng-html2js-preprocessor'
+    plugins: [
+      'karma-phantomjs-launcher', 'karma-jasmine', 'karma-ng-html2js-preprocessor'
     ],
 
     preprocessors: {
-      'src/**/*.html': ['ng-html2js']
+      'client/**/*.html': ['ng-html2js']
     }
   };
 
