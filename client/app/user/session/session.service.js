@@ -1,16 +1,21 @@
 const _USER_ROLES = new WeakMap();
+const _SESSION_EVENTS = new WeakMap();
 const _$window = new WeakMap();
-
+const _$q = new WeakMap();
+const _$rootScope = new WeakMap();
 export default class Session {
-  constructor(USER_ROLES, $window, $log) {
+  constructor(USER_ROLES, SESSION_EVENTS, $window, $q, $rootScope) {
     'ngInject';
     _USER_ROLES.set(this, USER_ROLES);
+    _SESSION_EVENTS.set(this, SESSION_EVENTS);
     _$window.set(this, $window);
-    this.$log = $log;
+    _$q.set(this, $q);
+    _$rootScope.set(this, $rootScope);
   }
 
   get token() {
-    return _$window.get(this).localStorage.jwtToken;
+    const _token = _$window.get(this).localStorage.jwtToken;
+    return _token === 'undefined' ? undefined : _token;
   }
 
   set token(value) {
@@ -23,20 +28,43 @@ export default class Session {
 
 
   _create(user) {
+    const deferred = _$q.get(this).defer();
 
     this.userId = user.user_id;
     this.email = user.email;
     this.username = user.username;
     this.exp = new Date(user.exp * 1000);
     this.role = _USER_ROLES.get(this).admin;
-    return this;
+    if(this.isExpired()) {
+      deferred.reject(this.destroy());
+    } else {
+      deferred.resolve(this);
+    }
+    return deferred.promise;
   }
 
   create(token = false) {
+    const deferred = _$q.get(this).defer();
     this.token = token || this.token;
-    const user = _parseToken.bind(this)();
+    if(angular.isDefined(this.token)) {
 
-    return this._create(user);
+      this._create(_parseToken.bind(this)())
+          .then(user => deferred.resolve(user))
+          .catch(() => deferred.reject(_SESSION_EVENTS.get(this).destroyed));
+
+    } else {
+      //this.destroy();
+      deferred.reject(_SESSION_EVENTS.get(this).destroyed);
+    }
+    return deferred.promise
+                   .then(() => {
+                     _$rootScope.get(this).$broadcast(_SESSION_EVENTS.get(this).created);
+                     return this;
+                   })
+                   .catch(error => {
+                     _$rootScope.get(this).$broadcast(error);
+                     return _$q.get(this).reject(error);
+                   });
   }
 
   destroy() {
@@ -46,12 +74,22 @@ export default class Session {
     this.username = null;
     this.exp = null;
     this.role = null;
-    return true;
+    return this;
+  }
+
+  exists() {
+    return this.exp > new Date().getTime();
+  }
+
+  isExpired() {
+    return this.exp < new Date().getTime();
   }
 
 }
 
 function _parseToken() {
-  const base64 = this.token.split('.')[1];
-  return JSON.parse(_$window.get(this).atob(base64));
+  return JSON.parse(_$window.get(this).atob(this.token.split('.')[1]));
+
+
 }
+

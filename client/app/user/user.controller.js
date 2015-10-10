@@ -1,17 +1,25 @@
 export default class UserController {
-  constructor($log, USER_ROLES, AuthService) {
+  constructor(AuthService, $scope, Session, SESSION_EVENTS) {
     'ngInject';
 
-    this.$log = $log;
-    this.authRoles = USER_ROLES;
     this.currentUser = null;
 
-    this.isAuthorized = AuthService.isAuthorized;
+    this.isAuthenticated = () => AuthService.isAuthenticated;
+    this.isAuthorized = () => AuthService.isAuthorized;
+
+    $scope.$on(SESSION_EVENTS.destroyed, () => this.setCurrentUser(null));
+    $scope.$on(SESSION_EVENTS.created, () => this.setCurrentUser(Session));
+
+    this.activate(Session);
+  }
+
+  activate(Session) {
+    if(Session.exists()) {this.setCurrentUser(Session);}
   }
 
   setCurrentUser(user) {
-    this.$log.debug('Setting current user.  user.controller user:', user);
     this.currentUser = user;
+    return this.currentUser;
   }
 }
 

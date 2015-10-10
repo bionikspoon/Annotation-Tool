@@ -16,13 +16,11 @@ class AuthLoginController {
     this.AuthService.login(credentials)
         .then(user => {
           this.$log.debug('authLogin.controller user:', user);
-          this.$rootScope.$broadcast(this.AUTH_EVENTS.loginSuccess);
-          this.user.setCurrentUser(user);
+          //this.user.setCurrentUser(user);
           this.$state.go('pubmed.list');
         })
         .catch(error => {
           this.$log.error('authLogin.controller error:', error);
-          this.$rootScope.$broadcast(this.AUTH_EVENTS.loginFailed);
           this.$q.reject(error);
         });
   }

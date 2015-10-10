@@ -4,7 +4,7 @@ export default function($httpProvider) {
   $httpProvider.interceptors.push(injectInterceptor);
 }
 
-function injectInterceptor($rootScope, $q, $log, AUTH_EVENTS, Session) {
+function injectInterceptor($rootScope, $q, AUTH_EVENTS, Session) {
   'ngInject';
   return {
     responseError,
@@ -22,7 +22,6 @@ function injectInterceptor($rootScope, $q, $log, AUTH_EVENTS, Session) {
   function request(config) {
     if(!!Session.token) {
       config.headers.Authorization = 'JWT ' + Session.token;
-      $log.debug('auth.config config, Session:', config, Session);
     }
     return config;
   }
