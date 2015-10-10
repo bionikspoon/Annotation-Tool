@@ -3,54 +3,19 @@
      ng-cloak
      flex
      ng-controller="UserController as userCtrl">
-   <app-navbar-side style="height: 100%;"></app-navbar-side>
+   <app-nav-side style="height: 100%;"></app-nav-side>
 
    <main flex
          layout="column"
          tabindex="-1"
          role="main">
-      <app-navbar-top></app-navbar-top>
+      <app-nav-top></app-nav-top>
 
       <md-content id="content"
                   layout="column"
                   layout-padding
                   flex>
          <ui-view></ui-view>
-
       </md-content>
-
    </main>
-
-
 </div>
-
-<!--
-<div layout="vertical" layout-fill>
-
-  <md-content>
-    <header>
-      <acme-navbar creationDate="main.creationDate" />
-    </header>
-
-    <section class="jumbotron">
-      <h1>'Allo, 'Allo!</h1>
-
-      <p class="lead">
-        <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-        <br> Always a pleasure scaffolding your apps.
-      </p>
-      <md-button class="md-raised animated infinite"
-                 ng-class="main.classAnimation"
-                 ng-click="main.showToastr()">Splendid Toastr
-      </md-button>
-      <p>
-        With ♥ thanks to the contributions of
-        <acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']" />
-      </p>
-    </section>
-
-
-  </md-content>
-
-</div>
--->

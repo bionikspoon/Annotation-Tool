@@ -1,4 +1,4 @@
-class MainController {
+export default class MainController {
   constructor($log) {
     'ngInject';
     this.$log = $log;
@@ -6,5 +6,3 @@ class MainController {
 
 
 }
-
-export default MainController;

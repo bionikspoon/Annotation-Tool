@@ -4,7 +4,7 @@ class NavbarTopDirective {
 
     let directive = {
       restrict: 'E',
-      templateUrl: 'app/components/navbar/navbarTop.html',
+      templateUrl: 'app/main/navTop/mainNavTop.html',
       controller: NavbarTopController,
       controllerAs: 'navTopCtrl'
     };
@@ -22,7 +22,7 @@ class NavbarTopController {
 
   toggleNavbarSide() {
     this.$mdSidenav('left')
-      .toggle();
+        .toggle();
   }
 }
 
