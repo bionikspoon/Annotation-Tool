@@ -6,6 +6,7 @@ export default function($log, $rootScope, AUTH_EVENTS, AuthService) {
       const authorizedRoles = next.data.authorizedRoles;
       if(!AuthService.isAuthorized(authorizedRoles)) {
         event.preventDefault();
+        // TODO handle redirection
 
         if(AuthService.isAuthenticated()) {
           $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);

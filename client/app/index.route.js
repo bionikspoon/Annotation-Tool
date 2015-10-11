@@ -1,13 +1,14 @@
-function routerConfig($urlRouterProvider) {
+function indexRoutes($urlRouterProvider) {
   'ngInject';
 
   $urlRouterProvider.rule(appendTrailingSlash);
   $urlRouterProvider.otherwise('/');
 
-}
 
-function appendTrailingSlash($injector, $location) {
+}
+function appendTrailingSlash($injector) {
   'ngInject';
+  const $location = $injector.get('$location');
   const path = $location.url();
   if(path.endsWith('/') || path.indexOf('/?') > -1) {return;}
 
@@ -15,5 +16,4 @@ function appendTrailingSlash($injector, $location) {
 
   return path + '/';
 }
-
-export default routerConfig;
+export default indexRoutes
