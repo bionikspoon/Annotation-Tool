@@ -1,15 +1,14 @@
-(function() {
+(() => {
   'use strict';
 
-  describe('controllers', function() {
+  describe('controllers', () => {
 
-    beforeEach(module('app'));
+    beforeEach(module('app.main'));
 
-    it('should define more than 5 awesome things', inject(function($controller) {
-      var main = $controller('MainController');
+    it('it should be defined', inject($controller => {
+      let main = $controller('MainController');
 
-      expect(angular.isArray(main.awesomeThings)).toBeTruthy();
-      expect(main.awesomeThings.length > 4).toBeTruthy();
+      expect(angular.isDefined(main)).toBeTruthy();
     }));
   });
 })();

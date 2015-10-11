@@ -17,7 +17,7 @@ function listFiles() {
   return wiredep(wiredepOptions)
     .js
     .concat([
-      path.join(conf.paths.tmp, '/serve/app/**/*.module.js'),
+      path.join(conf.paths.tmp, '/serve/app/index.module.js'),
       path.join(conf.paths.src, '/**/*.spec.js'),
       path.join(conf.paths.src, '/**/*.mock.js'),
       path.join(conf.paths.src, '/**/*.html')
@@ -37,17 +37,22 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       stripPrefix: 'client/',
-      moduleName: 'annotationTool'
+      moduleName: 'app'
+    },
+
+    babelPreprocessor: {
+      options: {}
     },
 
     browsers: ['PhantomJS'],
 
     plugins: [
-      'karma-phantomjs-launcher', 'karma-jasmine', 'karma-ng-html2js-preprocessor'
+      'karma-phantomjs-launcher', 'karma-jasmine', 'karma-ng-html2js-preprocessor', 'karma-babel-preprocessor'
     ],
 
     preprocessors: {
-      'client/**/*.html': ['ng-html2js']
+      'client/**/*.html': ['ng-html2js'],
+      'client/**/*.{mock,spec}.js': ['babel']
     }
   };
 
