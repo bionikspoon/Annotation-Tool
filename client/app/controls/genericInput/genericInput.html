@@ -1,6 +1,6 @@
 <!--suppress HtmlFormInputWithoutLabel, XmlDuplicatedId -->
 <md-input-container>
-   <label for='{{field.meta.name}}_{{$id}}'>{{field.meta.label}}</label>
+   <label for={{field.meta.name}}_{{$id}}>{{field.meta.label}}</label>
    <input
       ng-if="field.meta.type === 'string' && field.meta.max_length"
       type=text
@@ -17,7 +17,7 @@
       ng-model=field.model
       ng-disabled=field.meta.disabled
       ng-required={{field.meta.required}}
-      rows="5"></textarea>
+      rows=5></textarea>
 
    <input
       ng-if="field.meta.type === 'integer'"

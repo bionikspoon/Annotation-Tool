@@ -1,18 +1,18 @@
-<div class="choiceSlider">
-   <div layout-gt-md="row"
+<div class=choiceSlider>
+   <div layout-gt-md=row
         layout-align-gt-md="start end"
-        layout-sm="column">
-      <md-input-container flex-gt-md="20"
+        layout-sm=column>
+      <md-input-container flex-gt-md=20
                           flex-sm>
          <label for={{field.meta.name}}_{{$id}}
-                class="md-body-2">{{field.meta.label}}
+                class=md-body-2>{{field.meta.label}}
          </label>
          <input
             id={{field.meta.name}}_{{$id}}
             name={{field.meta.name}}
             aria-label={{field.meta.label}}
             type=number
-            ng-class="{'gt-md':field.gtMd}"
+            ng-class={'gt-md':field.gtMd}
             flex-gt-md
             ng-model=field.model
             min=0

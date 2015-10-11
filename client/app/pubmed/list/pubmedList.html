@@ -1,19 +1,19 @@
 <md-card>
    <md-card-content>
       <h2>Pubmed Entries</h2>
-      <md-progress-linear class="md-accent"
-                          ng-if="vm.loading"
-                          md-mode="indeterminate"></md-progress-linear>
+      <md-progress-linear class=md-accent
+                          ng-if=vm.loading
+                          md-mode=indeterminate></md-progress-linear>
       <md-list>
-         <md-list-item class="md-3-line" ng-repeat="entry in vm.pubmedEntries">
-            <article class="md-list-item-text" layout="column">
+         <md-list-item class=md-3-line ng-repeat="entry in vm.pubmedEntries">
+            <article class=md-list-item-text layout=column>
                <h3>Pubmed: {{ entry.pubmed_id }} | Gene: {{ entry.gene }}</h3>
 
                <p>{{ entry.user }}</p>
 
                <p>{{ entry.comments|limitTo:100 }}</p>
             </article>
-            <a ui-sref="pubmed.edit({id:entry.id})">
+            <a ui-sref=pubmed.edit({id:entry.id})>
                <md-icon>edit</md-icon>
             </a>
          </md-list-item>
@@ -21,6 +21,6 @@
    </md-card-content>
 </md-card>
 
-<md-button class="add-entry md-accent md-raised" ui-sref="pubmed.new">
+<md-button class="add-entry md-accent md-raised" ui-sref=pubmed.new>
    Add Entry
 </md-button>

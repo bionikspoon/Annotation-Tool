@@ -1,5 +1,5 @@
 <label for={{field.meta.name}}_{{$id}}
-       class="md-body-2">{{ field.meta.label }}
+       class=md-body-2>{{ field.meta.label }}
 </label>
 <md-chips
    ng-model=field.model
@@ -18,7 +18,7 @@
       md-item-text=item.value
       md-select-on-match=true
       md-input-id={{field.meta.name}}_{{$id}}_autocomplete
-      md-menu-class="select-multiple-menu"
+      md-menu-class=select-multiple-menu
       md-no-cache=true;
       ng-disabled=field.meta.read_only>
             <span md-highlight-text=field.searchText>
