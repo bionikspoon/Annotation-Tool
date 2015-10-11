@@ -1,3 +1,4 @@
+/* global MockAuthService:false */
 (() => {
   'use strict';
 
@@ -6,7 +7,7 @@
 
     beforeEach(module('app.auth'));
 
-    beforeEach(module($provide => {$provide.service('AuthService', MockAuthService);}))
+    beforeEach(module($provide => {$provide.service('AuthService', MockAuthService);}));
 
     beforeEach(inject(($compile, $rootScope) => {
       element = $compile('<button app-auth-logout>Button</button>')($rootScope);

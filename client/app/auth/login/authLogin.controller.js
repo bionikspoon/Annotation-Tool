@@ -1,28 +1,20 @@
-class AuthLoginController {
-  constructor($rootScope, $scope, $q, $log, $state, AUTH_EVENTS, AuthService) {
+export default class AuthLoginController {
+  constructor($q, $state, AuthService) {
     'ngInject';
 
-    this.$rootScope = $rootScope;
-    this.userCtrl = $scope.userCtrl;
-    this.$log = $log;
-    this.$q = $q;
-    this.$state = $state;
-    this.AUTH_EVENTS = AUTH_EVENTS;
     this.AuthService = AuthService;
+    this.login = angular.bind(this, this.login, $q, $state);
   }
 
 
-  login(credentials) {
+  login($q, $state, credentials) {
     this.AuthService.login(credentials)
         .then(user => {
-          this.$state.go('pubmed.list');
+          $state.go('pubmed.list');
+          return user;
         })
         .catch(error => {
-          this.$q.reject(error);
+          $q.reject(error);
         });
   }
-
-
 }
-
-export default AuthLoginController;
