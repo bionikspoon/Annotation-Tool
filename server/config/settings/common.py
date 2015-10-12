@@ -43,7 +43,8 @@ THIRD_PARTY_APPS = (  # :off
 LOCAL_APPS = (  # :off
     'server.annotation_tool.users',  # custom users app
     # Your stuff: custom apps go here
-    'server.annotation_tool.pubmed'
+    'server.annotation_tool.pubmed',
+    'server.annotation_tool.gene'
 )  # :on
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -94,10 +95,9 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {  # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
     'default': env.db("DATABASE_URL")
-    # ,'genes': env.db('sql://%s' % ROOT_DIR('db.sqlite'))
+
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
 # Local time zone for this installation. Choices can be found here:

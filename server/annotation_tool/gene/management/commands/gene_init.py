@@ -10,15 +10,17 @@ from pprint import pprint
 from uuid import UUID
 
 import yaml
+from django.core.management import call_command
 from django.core.management.base import BaseCommand
+from django.core.serializers.base import DeserializationError
 
 
 class Config:
     """Config constants."""
     _CWD = Path(__file__, '..').resolve()
-    DATA_DIR = (_CWD / '_gene_data').resolve()
-    FIXTURES_DIR = (_CWD / '../..' / "fixtures").resolve()
-    APP = 'pubmed'
+    DATA_DIR = (_CWD / '_gene_init').resolve()
+    FIXTURES_DIR = (_CWD / '../..' / 'fixtures').resolve()
+    APP = 'gene'
     MODEL = 'Gene'
 
 
@@ -33,7 +35,8 @@ class Command(BaseCommand):
         :param django.core.management.base.CommandParser parser: CommandParser object.
         """
         parser.add_argument('--get', default=False, action='store_true', help='Check db for updates')
-        parser.add_argument('--load', default=False, action='store_true', help='Load Gene fixtures into DB.')
+        parser.add_argument('--skip-build', '-b', default=False, action='store_true', help='Check db for updates')
+        parser.add_argument('--load', '-l', default=False, action='store_true', help='Load Gene fixtures into DB.')
 
     def handle(self, *args, **options):
         """
@@ -43,11 +46,20 @@ class Command(BaseCommand):
         :param dict options: Arguments from Parser object.
         :return:
         """
-        get, load = options.get('get'), options.get('load')
+        get, load, skip_build = options['get'], options['load'], options['skip_build']
         if get:
             # TODO Pull data from API.
             pass
 
+        if not skip_build:
+            print('Building fixtures')
+            self.build_fixtures()
+
+        if load:
+            print('Loading fixtures')
+            self.load_fixtures()
+
+    def build_fixtures(self):
         docs = self.get_docs()
         fixtures = [self.build_fixture(doc) for doc in docs]
         fixture_chunks = self.chunk(fixtures)
@@ -57,8 +69,6 @@ class Command(BaseCommand):
         print('Processing complete! Saving to file.  Be Patient')
         self.dump(fixture_chunks)
         print('%s fixture(s) created! %s records in %s files.' % (Config.MODEL, len(fixtures), len(fixture_chunks)))
-        if load:
-            self.persist_genes()
 
     @staticmethod
     def build_fixture(doc):
@@ -87,7 +97,11 @@ class Command(BaseCommand):
                     """Optional key doesn't exist"""
 
         pk = UUID(doc.pop('uuid')).urn
-        fixture = {'pk': pk, 'model': '%s.%s' % (Config.APP, Config.MODEL), 'fields': doc}
+        fixture = {
+            'pk': pk,
+            'model': '%s.%s' % (Config.APP, Config.MODEL),
+            'fields': doc
+        }
 
         # remove underscores.
         fixture['fields']['version'] = fixture['fields'].pop('_version_')
@@ -186,7 +200,14 @@ class Command(BaseCommand):
         return chunks
 
     @staticmethod
-    def persist_genes():
-        """Save fixtures to db."""
-        # TODO Save fixtures to db.
-        pass
+    def load_fixtures():
+        """Save fixtures into db."""
+
+        for file in Config.FIXTURES_DIR.glob('*.yaml'):
+            try:
+                call_command('loaddata', file.name)
+            except (KeyError, LookupError, DeserializationError) as e:
+
+                print('Model in fixture %s.%s could not be loaded. Import skipped.\n        Error:%s' % (
+                    Config.APP, file.stem, str(e).split(':')[-1]))
+                continue

@@ -3,8 +3,9 @@
 from random import randint, choice
 from factory import DjangoModelFactory, Iterator, LazyAttribute
 from faker import Faker
+from ..gene.models import Gene
 from .models import (StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
-                     PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed, Gene)
+    PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed)
 from ..users.models import User
 from ..utils.factories import make, many_to_many
 

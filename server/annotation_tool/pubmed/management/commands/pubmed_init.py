@@ -15,7 +15,7 @@ from django.core.serializers.base import DeserializationError
 class Config:
     """Command constants."""
     _CWD = Path(__file__, '..').resolve()
-    DATA_DIR = (_CWD / '_pubmed_data').resolve()
+    DATA_DIR = (_CWD / '_pubmed_init').resolve()
     FIXTURES_DIR = (_CWD / '../..' / "fixtures").resolve()
     APP = 'pubmed'
 
@@ -34,7 +34,6 @@ class Command(BaseCommand):
                             help="Only build from source. Skip import.")
         parser.add_argument('--import-only', '-i', default=False, action='store_true',
                             help='Only import existing fixtures.  Skip building from source.')
-        parser.add_argument('--all', '-a', default=False, action='store_true', help='Import gene fixtures too.')
 
     def handle(self, *args, **options):
         """
@@ -43,18 +42,18 @@ class Command(BaseCommand):
         :param args:
         :param options: Argument map from `add_arguments`.
         """
-        build_only, import_only, import_all = options.get('build_onl'), options.get('import_only'), options.get('all')
+        build_only, import_only = options.get('build_only'), options.get('import_only')
 
         if build_only:
             self.build_from_source()
             return
 
         if import_only:
-            self.load_fixtures(import_all)
+            self.load_fixtures()
             return
 
         self.build_from_source()
-        self.load_fixtures(import_all)
+        self.load_fixtures()
 
     @staticmethod
     def parse_choices(file):
@@ -120,14 +119,14 @@ class Command(BaseCommand):
             self.dump(fixtures, file.stem)
 
     @staticmethod
-    def load_fixtures(import_all):
+    def load_fixtures():
         """Save fixtures into db."""
 
         for file in Config.FIXTURES_DIR.glob('*.yaml'):
-            if not import_all and '-' in file.stem:
-                continue
             try:
                 call_command('loaddata', file.name)
-            except (KeyError, LookupError, DeserializationError):
+            except (KeyError, LookupError, DeserializationError) as e:
 
-                print('Model in fixture %s not found. Import skipped' % Config.APP, file.stem)
+                print('Model in fixture %s.%s could not be loaded. Import skipped.\n        Error:%s' % (
+                    Config.APP, file.stem, str(e).split(':')[-1]))
+                continue

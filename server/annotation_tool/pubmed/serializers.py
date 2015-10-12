@@ -2,15 +2,9 @@
 # coding=utf-8
 from rest_framework.serializers import HyperlinkedModelSerializer
 from .models import (Pubmed, PUBMED_ENTRIES, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup,
-    VariantTypeLookup, VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup, Gene)
+    VariantTypeLookup, VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup)
 
 LOOKUP_FIELDS = 'url', 'choice', 'created', 'modified', PUBMED_ENTRIES
-
-
-class GeneSerializer(HyperlinkedModelSerializer):
-    class Meta:
-        model = Gene
-        fields = 'url', 'uuid'
 
 
 class StructureSerializer(HyperlinkedModelSerializer):

@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.conf import settings
+
 from django.conf.urls import include, url, patterns
-from django.conf.urls.static import static
-from django.contrib.staticfiles import views as staticfiles_views
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework import routers
 from rest_framework_jwt.views import obtain_jwt_token
-from ..annotation_tool.pubmed.views import (PubmedViewSet, GeneViewSet, PatientOutcomesViewSet, DiseaseViewSet,
+
+from ..annotation_tool.gene.views import GeneViewSet
+from ..annotation_tool.pubmed.views import (PubmedViewSet, PatientOutcomesViewSet, DiseaseViewSet,
     VariantConsequenceViewSet, VariantTypeViewSet, StructureViewSet, MutationTypeViewSet, SyntaxViewSet,
     RuleLevelViewSet)
 from ..annotation_tool.users.views import UserViewSet
@@ -39,7 +38,7 @@ urlpatterns += patterns(
 
     url(r'^(?:index.html)?$', 'serve', kwargs={
         'path': 'index.html'
-        }),
+    }),
 
 )
 
