@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 # coding=utf-8
 from rest_framework.serializers import HyperlinkedModelSerializer
-
-from .models import Pubmed, PUBMED_ENTRIES, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, \
-    VariantTypeLookup, VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup, Gene
+from .models import (Pubmed, PUBMED_ENTRIES, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup,
+    VariantTypeLookup, VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup, Gene)
 
 LOOKUP_FIELDS = 'url', 'choice', 'created', 'modified', PUBMED_ENTRIES
+
 
 class GeneSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Gene
         fields = 'url', 'uuid'
+
 
 class StructureSerializer(HyperlinkedModelSerializer):
     class Meta:
@@ -62,12 +63,11 @@ class PatientOutcomesSerializer(HyperlinkedModelSerializer):
 
 
 class PubmedSerializer(HyperlinkedModelSerializer):
-
     class Meta:
         model = Pubmed
-        fields = ('url', 'id', 'user', 'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator',
-                  'rule_level', 'chromosome', 'chromosome_range', 'breakend_strand', 'breakend_direction',
-                  'mate_chromosome', 'mate_chromosome_range', 'number_of_copies', 'coordinate_predicate',
-                  'variant_type', 'variant_consequence', 'variant_clinical_grade', 'disease',
-                  'treatment_number_of_arms', 'population_size', 'sex', 'ethnicity', 'assessed_patient_outcomes',
-                  'significant_patient_outcomes', 'study_design', 'reference_claims', 'comments')
+        fields = (
+            'url', 'id', 'user', 'pubmed_id', 'gene', 'structure', 'mutation_type', 'syntax', 'syntax_text', 'operator',
+            'rule_level', 'chromosome', 'chromosome_range', 'breakend_strand', 'breakend_direction', 'mate_chromosome',
+            'mate_chromosome_range', 'number_of_copies', 'coordinate_predicate', 'variant_type', 'variant_consequence',
+            'variant_clinical_grade', 'disease', 'treatment_number_of_arms', 'population_size', 'sex', 'ethnicity',
+            'assessed_patient_outcomes', 'significant_patient_outcomes', 'study_design', 'reference_claims', 'comments')

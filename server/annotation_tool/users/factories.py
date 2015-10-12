@@ -4,7 +4,7 @@ from factory import DjangoModelFactory
 from faker import Faker
 
 from .models import User
-from ..utils import make
+from ..utils.factories import make
 
 faker = Faker()
 

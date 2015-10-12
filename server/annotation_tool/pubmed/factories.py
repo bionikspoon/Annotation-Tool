@@ -6,7 +6,7 @@ from faker import Faker
 from .models import (StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
                      PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed, Gene)
 from ..users.models import User
-from ..utils import make, many_to_many
+from ..utils.factories import make, many_to_many
 
 faker = Faker()
 

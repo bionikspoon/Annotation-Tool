@@ -3,7 +3,7 @@ from django.contrib.postgres import fields as postgres
 from django.core.validators import MaxValueValidator
 from django.db import models
 from model_utils.models import TimeStampedModel
-from ..utils import choices
+from ..utils.models import choices
 
 
 class Choices:
