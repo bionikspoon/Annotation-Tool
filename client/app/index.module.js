@@ -3,7 +3,6 @@ import exceptionHandlerDecorator  from './config/exceptionHandler.decorator';
 import logProviderConfig          from './config/logProvider.config';
 import mdThemingProviderConfig    from './config/mdThemingProvider.config';
 import RestangularProviderConfig  from './config/RestangularProvider.config';
-import toastrConfig               from './config/toastr.config';
 import rootScopeDecorator         from './config/rootScope.decorator';
 
 import indexRoutes from './index.route';
@@ -30,7 +29,6 @@ angular.module('app', [
        .config(logProviderConfig)
        .config(mdThemingProviderConfig)
        .config(RestangularProviderConfig)
-       .config(toastrConfig)
        .config(indexRoutes)
 
        .config(rootScopeDecorator)
