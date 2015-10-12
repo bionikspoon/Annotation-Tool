@@ -1,4 +1,3 @@
-'use strict';
 class ToastService {
   constructor($mdToast, $q, $log) {
     'ngInject';

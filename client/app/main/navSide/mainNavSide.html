@@ -11,18 +11,16 @@
       <header class="md-toolbar-tools app-sidenav__header"
               layout=row
               layout-align="space-between end">
-         <div ng-switch=userCtrl.isAuthenticated()>
-            <p class="md-body-1 app-sidenav__header_text"
-               ng-switch-when=true>
-               Welcome, <b ng-bind=userCtrl.currentUser.username></b>!
-            </p>
+         <p class="md-body-1 app-sidenav__header_text"
+            ng-show=userCtrl.isAuthenticated()>
+            Welcome, <b>{{userCtrl.currentUser.username}}</b>!
+         </p>
 
-            <p class="md-body-1 app-sidenav__header_text"
-               ng-switch-when=false>
-               Hello <b>stranger</b>, sign in.
-            </p>
+         <p class="md-body-1 app-sidenav__header_text"
+            ng-hide=userCtrl.isAuthenticated()>
+            Hello <b>stranger</b>, sign in.
+         </p>
 
-         </div>
          <span flex></span>
          <md-menu md-position-mode="target-right target"
                   class="app-sidenav__dropdown">

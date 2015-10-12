@@ -1,4 +1,4 @@
-/* global _:false, toastr:false, moment:false */
+/* global moment:false */
 import exceptionHandlerDecorator  from './config/exceptionHandler.decorator';
 import logProviderConfig          from './config/logProvider.config';
 import mdThemingProviderConfig    from './config/mdThemingProvider.config';

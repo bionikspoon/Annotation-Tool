@@ -1,5 +1,5 @@
 export default class AuthService {
-  constructor($log, $http, $q, AUTH_EVENTS, Session, $rootScope, Toast) {
+  constructor($log, $http, $q, AUTH_EVENTS, Session, $rootScope, Toast, $state) {
     'ngInject';
 
     this.$log = $log;
@@ -8,7 +8,9 @@ export default class AuthService {
     this.Session = Session;
     this.AUTH_EVENTS = AUTH_EVENTS;
     this.Toast = Toast;
-
+    this.$state = $state;
+    $rootScope.$on(AUTH_EVENTS.notAuthenticated, this.authenticationRequired.bind(this));
+    $rootScope.$on(AUTH_EVENTS.notAuthorized, this.authorizationRequired.bind(this));
     _broadcast = angular.bind(null, _broadcast, $rootScope);
     return {
       logout: this.logout.bind(this),
@@ -16,11 +18,20 @@ export default class AuthService {
       isAuthenticated: this.isAuthenticated.bind(this),
       isAuthorized: this.isAuthorized.bind(this)
     };
-    //this.logout = angular.bind(this, this.logout);
-    //this.login = angular.bind(this, this.login);
-    //this.isAuthenticated = angular.bind(this, this.isAuthenticated);
-    //this.isAuthorized = angular.bind(this, this.isAuthorized);
   }
+
+  authenticationRequired(event, response) {
+    event.preventDefault();
+    this.$state.go('auth.login');
+    this.Toast.warning('Login Required', response.data.detail);
+  }
+
+  authorizationRequired(event, response) {
+    event.preventDefault();
+    this.$state.go('pubmed.list');
+    this.Toast.warning('Insufficient Permissions', response.data.detail);
+  }
+
 
   login(credentials) {
     const deferred = this.$q.defer();
@@ -36,7 +47,14 @@ export default class AuthService {
                      return this.Session;
                    })
                    .catch(error => {
-                     this.Toast.error('Authentication Failed');
+                     let message = '';
+                     if(angular.isDefined(error.data)) {
+                       angular.forEach(error.data, (field, key) => {
+                         message += '<p><b>' + key + '</b>: ' + field[0] + '</p>';
+                       });
+
+                     }
+                     this.Toast.error('Authentication Failed', message);
                      _broadcast(this.AUTH_EVENTS.loginFailed);
                      return this.$q.reject(error);
                    });

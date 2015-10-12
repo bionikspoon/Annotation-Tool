@@ -2,7 +2,7 @@ export default function($httpProvider) {
   'ngInject';
 
   // TODO enable this.
-  //$httpProvider.interceptors.push(injectInterceptor);
+  $httpProvider.interceptors.push(injectInterceptor);
 }
 
 function injectInterceptor($rootScope, $q, AUTH_EVENTS, Session) {

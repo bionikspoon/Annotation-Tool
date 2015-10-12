@@ -8,7 +8,7 @@ export default class UserController {
     this.isAuthorized = AuthService.isAuthorized;
 
     $scope.$on(SESSION_EVENTS.destroyed, () => this.setCurrentUser(null));
-    $scope.$on(SESSION_EVENTS.created, () => this.setCurrentUser(Session));
+    $scope.$on(SESSION_EVENTS.created, () => $scope.$apply(this.setCurrentUser(Session)));
 
     this.activate(Session);
   }
