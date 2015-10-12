@@ -1,14 +1,15 @@
 export default class UserController {
-  constructor(AuthService, $scope, Session, SESSION_EVENTS) {
+  constructor(AuthService, $scope, Session, SESSION_EVENTS, $log) {
     'ngInject';
 
-    this.currentUser = null;
+    this.currentUser = {data: null};
 
     this.isAuthenticated = AuthService.isAuthenticated;
     this.isAuthorized = AuthService.isAuthorized;
 
+
     $scope.$on(SESSION_EVENTS.destroyed, () => this.setCurrentUser(null));
-    $scope.$on(SESSION_EVENTS.created, () => $scope.$apply(this.setCurrentUser(Session)));
+    $scope.$on(SESSION_EVENTS.created, () => this.setCurrentUser(Session));
 
     this.activate(Session);
   }
@@ -18,7 +19,7 @@ export default class UserController {
   }
 
   setCurrentUser(user) {
-    this.currentUser = user;
+    this.currentUser.data = user;
     return this.currentUser;
   }
 

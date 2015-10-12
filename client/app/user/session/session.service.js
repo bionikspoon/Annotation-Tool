@@ -6,6 +6,7 @@ export default class Session {
     this.$window = $window;
     this.$q = $q;
 
+
     _parseToken = angular.bind(this, _parseToken);
     _broadcast = angular.bind(null, _broadcast, $rootScope);
   }
@@ -59,6 +60,7 @@ export default class Session {
     }
     return deferred.promise
                    .then(() => {
+
                      _broadcast(this.SESSION_EVENTS.created);
                      return this;
                    })
@@ -92,6 +94,6 @@ function _parseToken() {
   return JSON.parse(this.$window.atob(this.token.split('.')[1]));
 }
 
-function _broadcast($rootScope, SESSION_EVENTS, event) {
-  $rootScope.$broadcast(SESSION_EVENTS[event]);
+function _broadcast($rootScope, SESSION_EVENTS) {
+  $rootScope.$broadcast(SESSION_EVENTS);
 }
