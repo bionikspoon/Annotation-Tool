@@ -14,6 +14,6 @@ angular.module('app.main', ['ui.router', 'ngMaterial'])
        .constant('toastr', toastr)
        .controller('MainController', MainController)
        .directive('appNavTop', () => new NavTopDirective())
-       .directive('appNavSide', () => new NavSideDirective())
+       .directive('appSidenav', () => new NavSideDirective())
        .factory('exception', exception)
        .service('Toast', ToastService);

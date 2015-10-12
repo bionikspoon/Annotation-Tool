@@ -1,31 +1,37 @@
-<md-sidenav class="md-sidenav-left md-whiteframe-z2"
+<md-sidenav class="md-sidenav-left md-whiteframe-z2 app-sidenav"
             md-component-id=left
             md-is-locked-open=$mdMedia('gt-md')
             md-theme=sidenav
-            layout=column>
-   <md-toolbar class="md-tall md-hue-2">
+            layout=column
+            layout-fill>
+   <md-toolbar class="md-tall md-hue-2 app-sidenav--toolbar">
 
       <span flex></span>
 
-      <div class=md-toolbar-tools
-           layout=row
-           layout-align="space-between end">
-         <p class=md-body-1
-            ng-if=userCtrl.isAuthenticated()>
-            Welcome, <b ng-bind=userCtrl.currentUser.username></b>!
-         </p>
+      <header class="md-toolbar-tools app-sidenav__header"
+              layout=row
+              layout-align="space-between end">
+         <div ng-switch=userCtrl.isAuthenticated()>
+            <p class="md-body-1 app-sidenav__header_text"
+               ng-switch-when=true>
+               Welcome, <b ng-bind=userCtrl.currentUser.username></b>!
+            </p>
 
-         <p class=md-body-1
-            ng-if=!userCtrl.isAuthenticated()>
-            Hello <b>stranger</b>, sign in.
-         </p>
+            <p class="md-body-1 app-sidenav__header_text"
+               ng-switch-when=false>
+               Hello <b>stranger</b>, sign in.
+            </p>
+
+         </div>
          <span flex></span>
-         <md-menu md-position-mode="target-right target">
-            <md-button class="md-icon-button md-body-1"
-                       ng-click=navSideCtrl.openMenu($mdOpenMenu,$event)>
+         <md-menu md-position-mode="target-right target"
+                  class="app-sidenav__dropdown">
+            <md-button class="md-icon-button md-body-1 app-sidenav__dropdown_button"
+                       ng-click=sidenavCtrl.openMenu($mdOpenMenu,$event)>
                <md-icon md-menu-origin>arrow_drop_down</md-icon>
             </md-button>
             <md-menu-content>
+
                <md-menu-item ng-if=userCtrl.isAuthenticated()>
                   <md-button app-auth-logout>Logout</md-button>
                </md-menu-item>
@@ -37,25 +43,22 @@
                </md-menu-item>
             </md-menu-content>
          </md-menu>
-      </div>
+      </header>
    </md-toolbar>
 
-   <md-list>
-      <md-list-item>
-         <md-button ui-sref=pubmed.list
-                    class=md-accent>
-            <md-icon>crop</md-icon>
-            <span>Pubmed</span>
-         </md-button>
-      </md-list-item>
-      <md-list-item>
-         <md-button ui-sref=users.list
-                    class=md-accent>
-            <md-icon>crop</md-icon>
-            <span>Users</span>
+   <md-list class=app-sidenav__list>
+      <md-list-item class=app-sidenav__list_item
+                    ng-repeat="link in sidenavCtrl.navLinks"
+                    ng-if=link.data.condition()>
+         <md-button
+            ui-sref={{::link.data.route}}
+            class="md-body-2 app-sidenav__list_button"
+            md-ink-ripple=#E91E63>
+            <md-icon class="md-icon md-primary md-hue-1 app-sidenav__list_icon">{{::link.data.icon}}</md-icon>
+            <span class=app-sidenav__list_text
+                  ng-bind=::link.data.label></span>
          </md-button>
       </md-list-item>
    </md-list>
-
 
 </md-sidenav>
