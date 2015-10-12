@@ -12,6 +12,9 @@ app-sidenav {
   height: 100%;
   .app-sidenav {
     background: $clr-blue-grey-800;
+    min-width: 240px;
+    max-width: 240px;
+
     &.md-locked-open {
       width:     240px;
       min-width: 240px;
