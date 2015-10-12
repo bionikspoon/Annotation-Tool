@@ -21,7 +21,7 @@
     "DJANGO_SECRET_KEY": {
       "required": true
     },
-    "DJANGO_SETTINGS_MODULE": "config.settings.production",
+    "DJANGO_SETTINGS_MODULE": "server.config.settings.production",
     "NODE_MODULES_CACHE": "true",
     "NPM_CONFIG_PRODUCTION": "false",
     "REDIS_URL": {
