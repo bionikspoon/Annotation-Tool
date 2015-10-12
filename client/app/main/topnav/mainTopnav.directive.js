@@ -1,19 +1,21 @@
-class NavbarTopDirective {
+export default class TopnavDirective {
   constructor() {
     'ngInject';
 
     let directive = {
       restrict: 'E',
-      templateUrl: 'app/main/navTop/mainNavTop.html',
-      controller: NavbarTopController,
-      controllerAs: 'navTopCtrl'
+      templateUrl: 'app/main/topnav/mainTopnav.html',
+      controller: TopnavController,
+      controllerAs: 'topnavCtrl',
+      bindToController: true,
+      scope: {}
     };
 
     return directive;
   }
 }
 
-class NavbarTopController {
+class TopnavController {
   constructor($mdSidenav) {
     'ngInject';
 
@@ -26,4 +28,3 @@ class NavbarTopController {
   }
 }
 
-export default NavbarTopDirective;

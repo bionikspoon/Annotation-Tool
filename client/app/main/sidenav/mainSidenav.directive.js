@@ -1,11 +1,11 @@
-class NavbarSideDirective {
+export default class SidenavDirective {
   constructor() {
     'ngInject';
 
     let directive = {
       restrict: 'E',
-      templateUrl: 'app/main/navSide/mainNavSide.html',
-      controller: NavbarSideController,
+      templateUrl: 'app/main/sidenav/mainSidenav.html',
+      controller: SidenavController,
       controllerAs: 'sidenavCtrl',
       bindToController: true
     };
@@ -14,7 +14,7 @@ class NavbarSideDirective {
   }
 }
 
-class NavbarSideController {
+class SidenavController {
   constructor($scope) {
     'ngInject';
 
@@ -50,5 +50,3 @@ class NavbarSideController {
   }
 
 }
-
-export default NavbarSideDirective;
