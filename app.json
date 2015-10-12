@@ -35,11 +35,22 @@
   "scripts": {
     "postdeploy": "python manage.py migrate --noinput --verbosity 2"
   },
+  "repository": "https://github.com/bionikspoon/Annotation-Tool",
+
   "addons": [
     "mailgun",
     "papertrail",
     "heroku-redis",
     "redismonitor",
     "heroku-postgresql"
+  ],
+
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    }
   ]
 }
