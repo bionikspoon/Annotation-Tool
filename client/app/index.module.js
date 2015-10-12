@@ -23,9 +23,7 @@ angular.module('app', [
          'app.auth',
          'app.user'
        ])
-       .constant('toastr', toastr)
        .constant('moment', moment)
-       .constant('_', _)
 
        .config(exceptionHandlerDecorator)
        .config(logProviderConfig)

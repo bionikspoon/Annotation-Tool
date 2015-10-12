@@ -1,4 +1,4 @@
-export default function exception($log, toastr) {
+export default function exception($log, Toast) {
   'ngInject';
   const service = {catcher};
   return service;
@@ -6,8 +6,7 @@ export default function exception($log, toastr) {
   function catcher(message) {
     return function(reason) {
       $log.error(message, reason);
-      $log.debug('exception.factory toastr:', toastr);
-      toastr.error(reason.status + ' ' + reason.statusText || reason.toString(), message);
+      Toast.error(reason.status + ' ' + reason.statusText || reason.toString(), message);
     };
   }
 }

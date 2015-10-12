@@ -5,7 +5,8 @@ export default function AuthLogoutDirective($log, AuthService) {
     link: link
   };
   return directive;
-  function link(_, element) {
+  //noinspection JSUnusedLocalSymbols
+  function link(scope, element) {
     element.on('click', AuthService.logout);
   }
 }

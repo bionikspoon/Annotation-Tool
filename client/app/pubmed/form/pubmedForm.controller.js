@@ -1,15 +1,16 @@
 class PubmedFormController {
-  constructor($log, $q, Restangular, toastr, $state, optionsPrepService) {
+  constructor($log, $q, Restangular, Toast, $state, optionsPrepService) {
     'ngInject';
 
     this.$log = $log;
     this.$q = $q;
     this.Restangular = Restangular;
-    this.toastr = toastr;
+    this.Toast = Toast;
     this.fields = {};
     this.entry = {};
     this.errors = {};
     this.loading = true;
+    this.$state = $state;
 
     const entryPromise = $state.params.id ? this.getEntry($state.params.id) : this.newEntry();
     const optionsPromise = this.setOptions(optionsPrepService);
@@ -31,14 +32,15 @@ class PubmedFormController {
 
     model.save()
          .then(response => {
-           this.toastr.success('Pubmed entry saved.');
+           this.Toast.success('Pubmed entry saved.');
            this.errors = {};
+           this.$state.go('pubmed.list');
            return response;
          })
          .catch(error => {
 
            const msg = error.status + ' ' + error.statusText;
-           this.toastr.error(msg, error.statusText);
+           this.Toast.error(msg, error.statusText);
            if(error.status !== 400 || !Object.keys(error.data).length) {
              this.$log.error('Request failed, pubmed-form.controller error:', error);
              return error;

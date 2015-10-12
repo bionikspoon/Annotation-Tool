@@ -11,18 +11,13 @@ class ToastService {
                          .controller(ToastController)
                          .controllerAs('toastCtrl')
                          .hideDelay(0);
-
-    /*{
-     templateUrl: 'app/main/toast/toast.html',
-     position: 'bottom right',
-     controller: ToastController,
-     controllerAs: 'toastCtrl',
-     bindToController: true,
-     hideDelay: 0
-     }*/
-    ////this.debug = angular.bind(this, this.debug);
-    //$log.debug('toast.service this:', this);
-    $log.debug('toast.service this:', this);
+    return {
+      debug: this.debug.bind(this),
+      error: this.error.bind(this),
+      info: this.info.bind(this),
+      success: this.success.bind(this),
+      warning: this.warning.bind(this)
+    };
   }
 
   _options(title, message, level, action = 'ok') {
@@ -38,33 +33,31 @@ class ToastService {
       controller: ToastController,
       controllerAs: 'toastCtrl',
       bindToController: true,
-      hideDelay: 0,
+      hideDelay: 3000,
       resolve: {data}
     };
   }
 
-  clear() {}
 
   debug(title, message) {
-    this.$mdToast.show(this._options(title, message, 'debug'));
+    return this.$mdToast.show(this._options(title, message, 'debug'));
   }
 
-  remove() {}
 
   error(title, message) {
-    this.$mdToast.show(this._options(title, message, 'error'));
+    return this.$mdToast.show(this._options(title, message, 'error'));
   }
 
   info(title, message) {
-    this.$mdToast.show(this._options(title, message, 'info'));
+    return this.$mdToast.show(this._options(title, message, 'info'));
   }
 
   success(title, message) {
-    this.$mdToast.show(this._options(title, message, 'success'));
+    return this.$mdToast.show(this._options(title, message, 'success'));
   }
 
   warning(title, message) {
-    this.$mdToast.show(this._options(title, message, 'warning'));
+    return this.$mdToast.show(this._options(title, message, 'warning'));
   }
 
 }
@@ -97,7 +90,7 @@ const meta = {
   }
 };
 class ToastController {
-  constructor($mdToast, $log, data) {
+  constructor($mdToast, data) {
     'ngInject';
     this.$mdToast = $mdToast;
     //this.data = data.then(_data => this.data = _data);

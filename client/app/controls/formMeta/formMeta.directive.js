@@ -26,15 +26,18 @@ class FormMetaController {
           meta: $scope.meta()
         });
       } else {
-        if(!$scope.form) {$log.error('formMeta.directive $scope.form:', $scope.form);}
-        if(!$scope.meta) {$log.error('formMeta.directive $scope.meta:', $scope.meta);}
+        if(!$scope.form) {
+          $log.error('formMeta.directive $scope.form:', $scope.form);
+        }
+        if(!$scope.meta) {
+          $log.error('formMeta.directive $scope.meta:', $scope.meta);
+        }
         deferred.reject('`form` or `meta` are not in current scope.');
       }
 
     });
 
     return deferred.promise;
-    //return {form: this.form, meta: this.meta};
 
   }
 }

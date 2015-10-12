@@ -13,17 +13,18 @@ function genericInputDirective($log) {
   };
   return directive;
 
+  //noinspection JSUnusedLocalSymbols
   function link(scope, element, attrs, ctrl) {
     const field = attrs.ngModel.split('.')
-      .slice(-1)[0];
+                       .slice(-1)[0];
 
 
     ctrl.then(data => {
-        scope.field.meta = data.meta[field];
-        scope.field.form = data.form;
-        return data;
-      })
-      .catch(error=>$log.error('genericInput.directive error:', error));
+          scope.field.meta = data.meta[field];
+          scope.field.form = data.form;
+          return data;
+        })
+        .catch(error=>$log.error('genericInput.directive error:', error));
 
   }
 }

@@ -33,19 +33,19 @@
 
     }
     &debug {
-      @include app-toast-color(#CDDC39);
+      @include app-toast-color($clr-lime);
     }
     &info {
-      @include app-toast-color(#03A9F4);
+      @include app-toast-color($clr-light-blue);
     }
     &success {
-      @include app-toast-color(#8BC34A);
+      @include app-toast-color($clr-light-green);
     }
     &warning {
-      @include app-toast-color(#E91E63);
+      @include app-toast-color($clr-pink);
     }
     &error {
-      @include app-toast-color(#F44336);
+      @include app-toast-color($clr-red);
     }
   }
 

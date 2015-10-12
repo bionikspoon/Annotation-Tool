@@ -1,20 +1,22 @@
 export default class AuthLoginController {
-  constructor($q, $state, AuthService) {
+  constructor($q, $state, AuthService, Toast) {
     'ngInject';
 
     this.AuthService = AuthService;
-    this.login = angular.bind(this, this.login, $q, $state);
+    this.Toast = Toast;
+    this.$q = $q;
+    this.$state = $state;
   }
 
 
-  login($q, $state, credentials) {
+  login(credentials) {
     this.AuthService.login(credentials)
         .then(user => {
-          $state.go('pubmed.list');
+          this.$state.go('pubmed.list');
           return user;
         })
         .catch(error => {
-          $q.reject(error);
+          return this.$q.reject(error);
         });
   }
 }

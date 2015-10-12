@@ -1,5 +1,5 @@
 export default class AuthService {
-  constructor($log, $http, $q, AUTH_EVENTS, Session, $rootScope) {
+  constructor($log, $http, $q, AUTH_EVENTS, Session, $rootScope, Toast) {
     'ngInject';
 
     this.$log = $log;
@@ -7,13 +7,19 @@ export default class AuthService {
     this.$q = $q;
     this.Session = Session;
     this.AUTH_EVENTS = AUTH_EVENTS;
+    this.Toast = Toast;
 
     _broadcast = angular.bind(null, _broadcast, $rootScope);
-
-    this.logout = angular.bind(this, this.logout);
-    this.login = angular.bind(this, this.login);
-    this.isAuthenticated = angular.bind(this, this.isAuthenticated);
-    this.isAuthorized = angular.bind(this, this.isAuthorized);
+    return {
+      logout: this.logout.bind(this),
+      login: this.login.bind(this),
+      isAuthenticated: this.isAuthenticated.bind(this),
+      isAuthorized: this.isAuthorized.bind(this)
+    };
+    //this.logout = angular.bind(this, this.logout);
+    //this.login = angular.bind(this, this.login);
+    //this.isAuthenticated = angular.bind(this, this.isAuthenticated);
+    //this.isAuthorized = angular.bind(this, this.isAuthorized);
   }
 
   login(credentials) {
@@ -25,10 +31,12 @@ export default class AuthService {
 
     return deferred.promise
                    .then(() => {
+                     this.Toast.success('Signed In');
                      _broadcast(this.AUTH_EVENTS.loginSuccess);
                      return this.Session;
                    })
                    .catch(error => {
+                     this.Toast.error('Authentication Failed');
                      _broadcast(this.AUTH_EVENTS.loginFailed);
                      return this.$q.reject(error);
                    });
@@ -36,6 +44,7 @@ export default class AuthService {
 
 
   logout() {
+    this.Toast.info('Signed Out');
     _broadcast(this.AUTH_EVENTS.logoutSuccess);
     this.Session.destroy();
   }
