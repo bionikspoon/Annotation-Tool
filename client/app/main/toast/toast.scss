@@ -1,0 +1,52 @@
+@mixin app-toast-color($color) {
+  .app-toast__ {
+    &icon {
+      color: $color;
+
+    }
+    &action {
+      color: $color;
+    }
+  }
+}
+
+.app-toast {
+  & {
+    max-width: 35%;
+
+  }
+  & &__ {
+    &icon {
+    }
+    &title {
+      margin-left:  10px;
+      margin-right: 10px;
+    }
+    &message {
+    }
+    &action {
+
+    }
+  }
+  &-- {
+    &inner {
+
+    }
+    &debug {
+      @include app-toast-color(#CDDC39);
+    }
+    &info {
+      @include app-toast-color(#03A9F4);
+    }
+    &success {
+      @include app-toast-color(#8BC34A);
+    }
+    &warning {
+      @include app-toast-color(#E91E63);
+    }
+    &error {
+      @include app-toast-color(#F44336);
+    }
+  }
+
+}

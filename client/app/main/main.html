@@ -1,7 +1,7 @@
 <div layout=row
-     class=main--wrapper
      ng-cloak
      flex
+     layout-fill
      ng-controller="UserController as userCtrl">
    <app-nav-side></app-nav-side>
 
@@ -15,6 +15,13 @@
                   layout=column
                   layout-padding
                   flex>
+         <div layout=row layout-align="space-between center">
+            <md-button ng-click=main.debug() flex>debug</md-button>
+            <md-button ng-click=main.info() flex>info</md-button>
+            <md-button ng-click=main.success() flex>success</md-button>
+            <md-button ng-click=main.warning() flex>warning</md-button>
+            <md-button ng-click=main.error() flex>error</md-button>
+         </div>
          <ui-view></ui-view>
       </md-content>
    </main>

@@ -1,4 +1,4 @@
-function indexRoutes($urlRouterProvider) {
+export default function indexRoutes($urlRouterProvider) {
   'ngInject';
 
   $urlRouterProvider.rule(appendTrailingSlash);
@@ -16,4 +16,3 @@ function appendTrailingSlash($injector) {
 
   return path + '/';
 }
-export default indexRoutes
