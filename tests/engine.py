@@ -26,7 +26,7 @@ class ExecutionEngine(hitchtest.ExecutionEngine):
 
         call([
             python_package.pip, "install", "-r",
-            path.join(PROJECT_DIRECTORY, "requirements/local.in")
+            path.join(PROJECT_DIRECTORY, "server/requirements/local.in")
         ])
 
         postgres_package = hitchpostgres.PostgresPackage(

@@ -1,9 +1,0 @@
-{% load static rest_framework %}
-{# :off #}
-<pre class="prettyprint">{% autoescape off %}
-<span class="meta nocode"><b>HTTP {{ response.status_code }} {{ response.status_text }}</b>
-{% for key, val in response_headers.items %}<b>{{ key }}: </b><span class="lit">{{ val|break_long_headers|urlize_quoted_links }}</span>
-{% endfor %}</span>
-{% spaceless %}{{ content|urlize_quoted_links }}{% endspaceless %}
-{% endautoescape %}</pre>
-{# :on #}

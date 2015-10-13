@@ -1,6 +1,3 @@
 [run]
-include = annotation_tool/*, pubmed/*, pubmed_lookup/*
-omit = *migrations*, *tests/*
-
-[html]
-directory = .htmlcov
+include = annotation_tool/*
+omit = *migrations*

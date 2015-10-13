@@ -32,13 +32,14 @@ pip-log.txt
 .coverage
 .tox
 nosetests.xml
+htmlcov
 
 # Translations
 *.mo
 *.pot
 
 # Pycharm
-.idea
+.idea/
 
 # Vim
 
@@ -53,21 +54,21 @@ node_modules/
 .sass-cache
 
 # virtual environments
-!.env.sample
 .env
-.env.production
-.env.test
 
-
-staticfiles/
-
+# User-uploaded media
+annotation_tool/media/
+.old/
 wheelhouse/
-logs/
 
-.tmp
-bower_components
-test/bower_components
-.ipynb_checkpoints/
-shell.ipynb
-.htmlcov/
+!.env.sample
+.env.*
+
+
+bower_components/
+.sass-cache/
+.tmp/
 dist/
+server/staticfiles
+*.sqlite
+*.sqlite-journal

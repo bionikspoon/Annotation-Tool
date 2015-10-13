@@ -1,0 +1,34 @@
+<label for={{field.meta.name}}_{{$id}}
+       class=md-body-2>{{ field.meta.label }}
+</label>
+<md-chips
+   ng-model=field.model
+   ng-model-options=field.modelOptions
+   md-on-append=field.appendModel($chip)
+   md-autocomplete-snap
+   name={{field.meta.name}}
+   id={{field.meta.name}}_{{$id}}
+   md-require-match=true
+   readonly=field.meta.read_only
+   ng-required={{field.meta.required}}>
+   <md-autocomplete
+      md-selected-item=field.selectedItem
+      md-search-text=field.searchText
+      md-items="item in field.querySearch(field.searchText)"
+      md-item-text=item.value
+      md-select-on-match=true
+      md-input-id={{field.meta.name}}_{{$id}}_autocomplete
+      md-menu-class=select-multiple-menu
+      md-no-cache=true;
+      ng-disabled=field.meta.read_only>
+            <span md-highlight-text=field.searchText>
+            {{item.display_name}}
+            </span>
+
+      <div ng-messages=field.form[field.meta.name].$error
+           ng-show=field.form[field.meta.name].$dirty>
+         <div ng-message=required>This is required!</div>
+      </div>
+   </md-autocomplete>
+   <md-chip-template><span>{{ field.getChipDisplayName($chip) }}</span></md-chip-template>
+</md-chips>

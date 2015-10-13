@@ -1,0 +1,21 @@
+<div layout=row
+     ng-cloak
+     flex
+     layout-fill
+     ng-controller="UserController as userCtrl">
+   <app-sidenav></app-sidenav>
+
+   <main flex
+         layout=column
+         tabindex=-1
+         role=main>
+      <app-topnav></app-topnav>
+
+      <md-content id=content
+                  layout=column
+                  layout-padding
+                  flex>
+         <ui-view></ui-view>
+      </md-content>
+   </main>
+</div>

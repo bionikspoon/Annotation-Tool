@@ -1,0 +1,7644 @@
+- fields: {choice: 'RGD:1332834'}
+  model: gene.RgdIdLookup
+  pk: 6639
+- fields: {choice: 'RGD:1307579'}
+  model: gene.RgdIdLookup
+  pk: 2877
+- fields: {choice: 'RGD:3549'}
+  model: gene.RgdIdLookup
+  pk: 13152
+- fields: {choice: 'RGD:628847'}
+  model: gene.RgdIdLookup
+  pk: 16012
+- fields: {choice: 'RGD:620214'}
+  model: gene.RgdIdLookup
+  pk: 14194
+- fields: {choice: 'RGD:1302945'}
+  model: gene.RgdIdLookup
+  pk: 8
+- fields: {choice: 'RGD:1307443'}
+  model: gene.RgdIdLookup
+  pk: 2772
+- fields: {choice: 'RGD:1306730'}
+  model: gene.RgdIdLookup
+  pk: 2176
+- fields: {choice: 'RGD:1559829'}
+  model: gene.RgdIdLookup
+  pk: 7554
+- fields: {choice: 'RGD:2917'}
+  model: gene.RgdIdLookup
+  pk: 12732
+- fields: {choice: 'RGD:1560005'}
+  model: gene.RgdIdLookup
+  pk: 7616
+- fields: {choice: 'RGD:620108'}
+  model: gene.RgdIdLookup
+  pk: 14085
+- fields: {choice: 'RGD:61877'}
+  model: gene.RgdIdLookup
+  pk: 13578
+- fields: {choice: 'RGD:1642420'}
+  model: gene.RgdIdLookup
+  pk: 11525
+- fields: {choice: 'RGD:2325348'}
+  model: gene.RgdIdLookup
+  pk: 12158
+- fields: {choice: 'RGD:620176'}
+  model: gene.RgdIdLookup
+  pk: 14154
+- fields: {choice: 'RGD:1309713'}
+  model: gene.RgdIdLookup
+  pk: 4662
+- fields: {choice: 'RGD:619992'}
+  model: gene.RgdIdLookup
+  pk: 13966
+- fields: {choice: 'RGD:619936'}
+  model: gene.RgdIdLookup
+  pk: 13908
+- fields: {choice: 'RGD:1359118'}
+  model: gene.RgdIdLookup
+  pk: 6915
+- fields: {choice: 'RGD:1308097'}
+  model: gene.RgdIdLookup
+  pk: 3318
+- fields: {choice: 'RGD:1560708'}
+  model: gene.RgdIdLookup
+  pk: 7863
+- fields: {choice: 'RGD:1310807'}
+  model: gene.RgdIdLookup
+  pk: 5563
+- fields: {choice: 'RGD:1587769'}
+  model: gene.RgdIdLookup
+  pk: 10401
+- fields: {choice: 'RGD:1311563'}
+  model: gene.RgdIdLookup
+  pk: 6194
+- fields: {choice: 'RGD:1305189'}
+  model: gene.RgdIdLookup
+  pk: 883
+- fields: {choice: 'RGD:1596020'}
+  model: gene.RgdIdLookup
+  pk: 11268
+- fields: {choice: 'RGD:621709'}
+  model: gene.RgdIdLookup
+  pk: 15611
+- fields: {choice: 'RGD:1304776'}
+  model: gene.RgdIdLookup
+  pk: 527
+- fields: {choice: 'RGD:1561222'}
+  model: gene.RgdIdLookup
+  pk: 8042
+- fields: {choice: 'RGD:1311396'}
+  model: gene.RgdIdLookup
+  pk: 6049
+- fields: {choice: 'RGD:1307816'}
+  model: gene.RgdIdLookup
+  pk: 3081
+- fields: {choice: 'RGD:1304895'}
+  model: gene.RgdIdLookup
+  pk: 626
+- fields: {choice: 'RGD:1559497'}
+  model: gene.RgdIdLookup
+  pk: 7451
+- fields: {choice: 'RGD:1561424'}
+  model: gene.RgdIdLookup
+  pk: 8106
+- fields: {choice: 'RGD:1308176'}
+  model: gene.RgdIdLookup
+  pk: 3386
+- fields: {choice: 'RGD:1565759'}
+  model: gene.RgdIdLookup
+  pk: 9629
+- fields: {choice: 'RGD:1310588'}
+  model: gene.RgdIdLookup
+  pk: 5381
+- fields: {choice: 'RGD:1565877'}
+  model: gene.RgdIdLookup
+  pk: 9669
+- fields: {choice: 'RGD:1309339'}
+  model: gene.RgdIdLookup
+  pk: 4352
+- fields: {choice: 'RGD:3227'}
+  model: gene.RgdIdLookup
+  pk: 12958
+- fields: {choice: 'RGD:620207'}
+  model: gene.RgdIdLookup
+  pk: 14186
+- fields: {choice: 'RGD:1334246'}
+  model: gene.RgdIdLookup
+  pk: 6859
+- fields: {choice: 'RGD:3395'}
+  model: gene.RgdIdLookup
+  pk: 13081
+- fields: {choice: 'RGD:1310372'}
+  model: gene.RgdIdLookup
+  pk: 5202
+- fields: {choice: 'RGD:1306713'}
+  model: gene.RgdIdLookup
+  pk: 2160
+- fields: {choice: 'RGD:621845'}
+  model: gene.RgdIdLookup
+  pk: 15741
+- fields: {choice: 'RGD:1559985'}
+  model: gene.RgdIdLookup
+  pk: 7607
+- fields: {choice: 'RGD:1308511'}
+  model: gene.RgdIdLookup
+  pk: 3663
+- fields: {choice: 'RGD:1307103'}
+  model: gene.RgdIdLookup
+  pk: 2487
+- fields: {choice: 'RGD:620196'}
+  model: gene.RgdIdLookup
+  pk: 14174
+- fields: {choice: 'RGD:1311341'}
+  model: gene.RgdIdLookup
+  pk: 6000
+- fields: {choice: 'RGD:628737'}
+  model: gene.RgdIdLookup
+  pk: 15916
+- fields: {choice: 'RGD:1309309'}
+  model: gene.RgdIdLookup
+  pk: 4327
+- fields: {choice: 'RGD:1305960'}
+  model: gene.RgdIdLookup
+  pk: 1529
+- fields: {choice: 'RGD:1596359'}
+  model: gene.RgdIdLookup
+  pk: 11304
+- fields: {choice: 'RGD:621608'}
+  model: gene.RgdIdLookup
+  pk: 15520
+- fields: {choice: 'RGD:1359603'}
+  model: gene.RgdIdLookup
+  pk: 7273
+- fields: {choice: 'RGD:1305165'}
+  model: gene.RgdIdLookup
+  pk: 862
+- fields: {choice: 'RGD:1304779'}
+  model: gene.RgdIdLookup
+  pk: 530
+- fields: {choice: 'RGD:1311688'}
+  model: gene.RgdIdLookup
+  pk: 6303
+- fields: {choice: 'RGD:621346'}
+  model: gene.RgdIdLookup
+  pk: 15288
+- fields: {choice: 'RGD:1308159'}
+  model: gene.RgdIdLookup
+  pk: 3371
+- fields: {choice: 'RGD:1564615'}
+  model: gene.RgdIdLookup
+  pk: 9194
+- fields: {choice: 'RGD:620864'}
+  model: gene.RgdIdLookup
+  pk: 14848
+- fields: {choice: 'RGD:1598187'}
+  model: gene.RgdIdLookup
+  pk: 11479
+- fields: {choice: 'RGD:71044'}
+  model: gene.RgdIdLookup
+  pk: 17046
+- fields: {choice: 'RGD:2321463'}
+  model: gene.RgdIdLookup
+  pk: 11986
+- fields: {choice: 'RGD:1306722'}
+  model: gene.RgdIdLookup
+  pk: 2169
+- fields: {choice: 'RGD:1311838'}
+  model: gene.RgdIdLookup
+  pk: 6424
+- fields: {choice: 'RGD:2684'}
+  model: gene.RgdIdLookup
+  pk: 12562
+- fields: {choice: 'RGD:1566385'}
+  model: gene.RgdIdLookup
+  pk: 9838
+- fields: {choice: 'RGD:1305637'}
+  model: gene.RgdIdLookup
+  pk: 1259
+- fields: {choice: 'RGD:2844'}
+  model: gene.RgdIdLookup
+  pk: 12674
+- fields: {choice: 'RGD:1310587'}
+  model: gene.RgdIdLookup
+  pk: 5380
+- fields: {choice: 'RGD:727852'}
+  model: gene.RgdIdLookup
+  pk: 17162
+- fields: {choice: 'RGD:3797'}
+  model: gene.RgdIdLookup
+  pk: 13335
+- fields: {choice: 'RGD:620651'}
+  model: gene.RgdIdLookup
+  pk: 14625
+- fields: {choice: 'RGD:727890'}
+  model: gene.RgdIdLookup
+  pk: 17193
+- fields: {choice: 'RGD:1311344'}
+  model: gene.RgdIdLookup
+  pk: 6003
+- fields: {choice: 'RGD:1561057'}
+  model: gene.RgdIdLookup
+  pk: 7982
+- fields: {choice: 'RGD:1310694'}
+  model: gene.RgdIdLookup
+  pk: 5468
+- fields: {choice: 'RGD:1311092'}
+  model: gene.RgdIdLookup
+  pk: 5804
+- fields: {choice: 'RGD:1305054'}
+  model: gene.RgdIdLookup
+  pk: 764
+- fields: {choice: 'RGD:1563593'}
+  model: gene.RgdIdLookup
+  pk: 8863
+- fields: {choice: 'RGD:1561227'}
+  model: gene.RgdIdLookup
+  pk: 8044
+- fields: {choice: 'RGD:1303216'}
+  model: gene.RgdIdLookup
+  pk: 229
+- fields: {choice: 'RGD:1305793'}
+  model: gene.RgdIdLookup
+  pk: 1384
+- fields: {choice: 'RGD:1307206'}
+  model: gene.RgdIdLookup
+  pk: 2574
+- fields: {choice: 'RGD:620838'}
+  model: gene.RgdIdLookup
+  pk: 14820
+- fields: {choice: 'RGD:621548'}
+  model: gene.RgdIdLookup
+  pk: 15467
+- fields: {choice: 'RGD:727844'}
+  model: gene.RgdIdLookup
+  pk: 17156
+- fields: {choice: 'RGD:2325568'}
+  model: gene.RgdIdLookup
+  pk: 12267
+- fields: {choice: 'RGD:620449'}
+  model: gene.RgdIdLookup
+  pk: 14420
+- fields: {choice: 'RGD:1310655'}
+  model: gene.RgdIdLookup
+  pk: 5435
+- fields: {choice: 'RGD:2323360'}
+  model: gene.RgdIdLookup
+  pk: 12058
+- fields: {choice: 'RGD:1597382'}
+  model: gene.RgdIdLookup
+  pk: 11408
+- fields: {choice: 'RGD:1309478'}
+  model: gene.RgdIdLookup
+  pk: 4466
+- fields: {choice: 'RGD:1564190'}
+  model: gene.RgdIdLookup
+  pk: 9063
+- fields: {choice: 'RGD:1311728'}
+  model: gene.RgdIdLookup
+  pk: 6340
+- fields: {choice: 'RGD:1560924'}
+  model: gene.RgdIdLookup
+  pk: 7939
+- fields: {choice: 'RGD:1306404'}
+  model: gene.RgdIdLookup
+  pk: 1901
+- fields: {choice: 'RGD:620421'}
+  model: gene.RgdIdLookup
+  pk: 14392
+- fields: {choice: 'RGD:1311959'}
+  model: gene.RgdIdLookup
+  pk: 6527
+- fields: {choice: 'RGD:1591349'}
+  model: gene.RgdIdLookup
+  pk: 10787
+- fields: {choice: 'RGD:2944'}
+  model: gene.RgdIdLookup
+  pk: 12752
+- fields: {choice: 'RGD:1587426'}
+  model: gene.RgdIdLookup
+  pk: 10362
+- fields: {choice: 'RGD:628693'}
+  model: gene.RgdIdLookup
+  pk: 15875
+- fields: {choice: 'RGD:2787'}
+  model: gene.RgdIdLookup
+  pk: 12638
+- fields: {choice: 'RGD:1332672'}
+  model: gene.RgdIdLookup
+  pk: 6614
+- fields: {choice: 'RGD:1306731'}
+  model: gene.RgdIdLookup
+  pk: 2177
+- fields: {choice: 'RGD:621375'}
+  model: gene.RgdIdLookup
+  pk: 15314
+- fields: {choice: 'RGD:3434'}
+  model: gene.RgdIdLookup
+  pk: 13108
+- fields: {choice: 'RGD:708439'}
+  model: gene.RgdIdLookup
+  pk: 16768
+- fields: {choice: 'RGD:1311011'}
+  model: gene.RgdIdLookup
+  pk: 5736
+- fields: {choice: 'RGD:1304653'}
+  model: gene.RgdIdLookup
+  pk: 429
+- fields: {choice: 'RGD:621388'}
+  model: gene.RgdIdLookup
+  pk: 15324
+- fields: {choice: 'RGD:1309594'}
+  model: gene.RgdIdLookup
+  pk: 4563
+- fields: {choice: 'RGD:1305621'}
+  model: gene.RgdIdLookup
+  pk: 1243
+- fields: {choice: 'RGD:2055'}
+  model: gene.RgdIdLookup
+  pk: 11580
+- fields: {choice: 'RGD:1306717'}
+  model: gene.RgdIdLookup
+  pk: 2164
+- fields: {choice: 'RGD:1309861'}
+  model: gene.RgdIdLookup
+  pk: 4783
+- fields: {choice: 'RGD:1309759'}
+  model: gene.RgdIdLookup
+  pk: 4702
+- fields: {choice: 'RGD:1311989'}
+  model: gene.RgdIdLookup
+  pk: 6552
+- fields: {choice: 'RGD:3535'}
+  model: gene.RgdIdLookup
+  pk: 13140
+- fields: {choice: 'RGD:4888593'}
+  model: gene.RgdIdLookup
+  pk: 13480
+- fields: {choice: 'RGD:1359418'}
+  model: gene.RgdIdLookup
+  pk: 7138
+- fields: {choice: 'RGD:62006'}
+  model: gene.RgdIdLookup
+  pk: 14036
+- fields: {choice: 'RGD:620346'}
+  model: gene.RgdIdLookup
+  pk: 14324
+- fields: {choice: 'RGD:1310566'}
+  model: gene.RgdIdLookup
+  pk: 5361
+- fields: {choice: 'RGD:708505'}
+  model: gene.RgdIdLookup
+  pk: 16822
+- fields: {choice: 'RGD:1307921'}
+  model: gene.RgdIdLookup
+  pk: 3173
+- fields: {choice: 'RGD:1310012'}
+  model: gene.RgdIdLookup
+  pk: 4904
+- fields: {choice: 'RGD:2810'}
+  model: gene.RgdIdLookup
+  pk: 12656
+- fields: {choice: 'RGD:2776'}
+  model: gene.RgdIdLookup
+  pk: 12630
+- fields: {choice: 'RGD:61937'}
+  model: gene.RgdIdLookup
+  pk: 13637
+- fields: {choice: 'RGD:62048'}
+  model: gene.RgdIdLookup
+  pk: 14452
+- fields: {choice: 'RGD:2325387'}
+  model: gene.RgdIdLookup
+  pk: 12180
+- fields: {choice: 'RGD:1311205'}
+  model: gene.RgdIdLookup
+  pk: 5893
+- fields: {choice: 'RGD:708557'}
+  model: gene.RgdIdLookup
+  pk: 16862
+- fields: {choice: 'RGD:621300'}
+  model: gene.RgdIdLookup
+  pk: 15244
+- fields: {choice: 'RGD:2277'}
+  model: gene.RgdIdLookup
+  pk: 11762
+- fields: {choice: 'RGD:1306980'}
+  model: gene.RgdIdLookup
+  pk: 2387
+- fields: {choice: 'RGD:628732'}
+  model: gene.RgdIdLookup
+  pk: 15911
+- fields: {choice: 'RGD:1305441'}
+  model: gene.RgdIdLookup
+  pk: 1096
+- fields: {choice: 'RGD:1307504'}
+  model: gene.RgdIdLookup
+  pk: 2823
+- fields: {choice: 'RGD:1309891'}
+  model: gene.RgdIdLookup
+  pk: 4808
+- fields: {choice: 'RGD:2270'}
+  model: gene.RgdIdLookup
+  pk: 11755
+- fields: {choice: 'RGD:620965'}
+  model: gene.RgdIdLookup
+  pk: 14940
+- fields: {choice: 'RGD:631362'}
+  model: gene.RgdIdLookup
+  pk: 16106
+- fields: {choice: 'RGD:1303059'}
+  model: gene.RgdIdLookup
+  pk: 101
+- fields: {choice: 'RGD:620183'}
+  model: gene.RgdIdLookup
+  pk: 14162
+- fields: {choice: 'RGD:1559896'}
+  model: gene.RgdIdLookup
+  pk: 7577
+- fields: {choice: 'RGD:1303312'}
+  model: gene.RgdIdLookup
+  pk: 312
+- fields: {choice: 'RGD:1310636'}
+  model: gene.RgdIdLookup
+  pk: 5420
+- fields: {choice: 'RGD:1310425'}
+  model: gene.RgdIdLookup
+  pk: 5246
+- fields: {choice: 'RGD:1309592'}
+  model: gene.RgdIdLookup
+  pk: 4561
+- fields: {choice: 'RGD:621070'}
+  model: gene.RgdIdLookup
+  pk: 15036
+- fields: {choice: 'RGD:1588733'}
+  model: gene.RgdIdLookup
+  pk: 10496
+- fields: {choice: 'RGD:3649'}
+  model: gene.RgdIdLookup
+  pk: 13217
+- fields: {choice: 'RGD:1563706'}
+  model: gene.RgdIdLookup
+  pk: 8902
+- fields: {choice: 'RGD:71033'}
+  model: gene.RgdIdLookup
+  pk: 17035
+- fields: {choice: 'RGD:1305103'}
+  model: gene.RgdIdLookup
+  pk: 807
+- fields: {choice: 'RGD:620210'}
+  model: gene.RgdIdLookup
+  pk: 14190
+- fields: {choice: 'RGD:1311075'}
+  model: gene.RgdIdLookup
+  pk: 5789
+- fields: {choice: 'RGD:1564622'}
+  model: gene.RgdIdLookup
+  pk: 9199
+- fields: {choice: 'RGD:1584849'}
+  model: gene.RgdIdLookup
+  pk: 10095
+- fields: {choice: 'RGD:1560065'}
+  model: gene.RgdIdLookup
+  pk: 7644
+- fields: {choice: 'RGD:1309235'}
+  model: gene.RgdIdLookup
+  pk: 4267
+- fields: {choice: 'RGD:1305638'}
+  model: gene.RgdIdLookup
+  pk: 1260
+- fields: {choice: 'RGD:1311351'}
+  model: gene.RgdIdLookup
+  pk: 6010
+- fields: {choice: 'RGD:1563255'}
+  model: gene.RgdIdLookup
+  pk: 8741
+- fields: {choice: 'RGD:2262'}
+  model: gene.RgdIdLookup
+  pk: 11748
+- fields: {choice: 'RGD:2897'}
+  model: gene.RgdIdLookup
+  pk: 12714
+- fields: {choice: 'RGD:1565501'}
+  model: gene.RgdIdLookup
+  pk: 9535
+- fields: {choice: 'RGD:1563438'}
+  model: gene.RgdIdLookup
+  pk: 8809
+- fields: {choice: 'RGD:1593252'}
+  model: gene.RgdIdLookup
+  pk: 10984
+- fields: {choice: 'RGD:3722'}
+  model: gene.RgdIdLookup
+  pk: 13283
+- fields: {choice: 'RGD:1587677'}
+  model: gene.RgdIdLookup
+  pk: 10398
+- fields: {choice: 'RGD:1561692'}
+  model: gene.RgdIdLookup
+  pk: 8198
+- fields: {choice: 'RGD:1309942'}
+  model: gene.RgdIdLookup
+  pk: 4851
+- fields: {choice: 'RGD:1305440'}
+  model: gene.RgdIdLookup
+  pk: 1095
+- fields: {choice: 'RGD:2325377'}
+  model: gene.RgdIdLookup
+  pk: 12173
+- fields: {choice: 'RGD:62020'}
+  model: gene.RgdIdLookup
+  pk: 14178
+- fields: {choice: 'RGD:2840'}
+  model: gene.RgdIdLookup
+  pk: 12672
+- fields: {choice: 'RGD:1305975'}
+  model: gene.RgdIdLookup
+  pk: 1543
+- fields: {choice: 'RGD:1561255'}
+  model: gene.RgdIdLookup
+  pk: 8050
+- fields: {choice: 'RGD:1564948'}
+  model: gene.RgdIdLookup
+  pk: 9331
+- fields: {choice: 'RGD:1590296'}
+  model: gene.RgdIdLookup
+  pk: 10678
+- fields: {choice: 'RGD:1563924'}
+  model: gene.RgdIdLookup
+  pk: 8958
+- fields: {choice: 'RGD:1306101'}
+  model: gene.RgdIdLookup
+  pk: 1649
+- fields: {choice: 'RGD:1307573'}
+  model: gene.RgdIdLookup
+  pk: 2873
+- fields: {choice: 'RGD:1305846'}
+  model: gene.RgdIdLookup
+  pk: 1432
+- fields: {choice: 'RGD:3228'}
+  model: gene.RgdIdLookup
+  pk: 12959
+- fields: {choice: 'RGD:1564145'}
+  model: gene.RgdIdLookup
+  pk: 9040
+- fields: {choice: 'RGD:619911'}
+  model: gene.RgdIdLookup
+  pk: 13883
+- fields: {choice: 'RGD:1585595'}
+  model: gene.RgdIdLookup
+  pk: 10177
+- fields: {choice: 'RGD:1309292'}
+  model: gene.RgdIdLookup
+  pk: 4314
+- fields: {choice: 'RGD:62046'}
+  model: gene.RgdIdLookup
+  pk: 14431
+- fields: {choice: 'RGD:1305346'}
+  model: gene.RgdIdLookup
+  pk: 1018
+- fields: {choice: 'RGD:620957'}
+  model: gene.RgdIdLookup
+  pk: 14932
+- fields: {choice: 'RGD:735191'}
+  model: gene.RgdIdLookup
+  pk: 17422
+- fields: {choice: 'RGD:1561466'}
+  model: gene.RgdIdLookup
+  pk: 8121
+- fields: {choice: 'RGD:2323257'}
+  model: gene.RgdIdLookup
+  pk: 12051
+- fields: {choice: 'RGD:1307619'}
+  model: gene.RgdIdLookup
+  pk: 2911
+- fields: {choice: 'RGD:1564075'}
+  model: gene.RgdIdLookup
+  pk: 9015
+- fields: {choice: 'RGD:628688'}
+  model: gene.RgdIdLookup
+  pk: 15870
+- fields: {choice: 'RGD:1309811'}
+  model: gene.RgdIdLookup
+  pk: 4743
+- fields: {choice: 'RGD:1309773'}
+  model: gene.RgdIdLookup
+  pk: 4715
+- fields: {choice: 'RGD:1585185'}
+  model: gene.RgdIdLookup
+  pk: 10144
+- fields: {choice: 'RGD:1310865'}
+  model: gene.RgdIdLookup
+  pk: 5612
+- fields: {choice: 'RGD:1306456'}
+  model: gene.RgdIdLookup
+  pk: 1943
+- fields: {choice: 'RGD:620917'}
+  model: gene.RgdIdLookup
+  pk: 14896
+- fields: {choice: 'RGD:1565289'}
+  model: gene.RgdIdLookup
+  pk: 9456
+- fields: {choice: 'RGD:1582973'}
+  model: gene.RgdIdLookup
+  pk: 9893
+- fields: {choice: 'RGD:1589470'}
+  model: gene.RgdIdLookup
+  pk: 10571
+- fields: {choice: 'RGD:1310872'}
+  model: gene.RgdIdLookup
+  pk: 5618
+- fields: {choice: 'RGD:1307551'}
+  model: gene.RgdIdLookup
+  pk: 2859
+- fields: {choice: 'RGD:3765'}
+  model: gene.RgdIdLookup
+  pk: 13312
+- fields: {choice: 'RGD:1308792'}
+  model: gene.RgdIdLookup
+  pk: 3892
+- fields: {choice: 'RGD:1308701'}
+  model: gene.RgdIdLookup
+  pk: 3816
+- fields: {choice: 'RGD:1306320'}
+  model: gene.RgdIdLookup
+  pk: 1834
+- fields: {choice: 'RGD:1305886'}
+  model: gene.RgdIdLookup
+  pk: 1468
+- fields: {choice: 'RGD:1311400'}
+  model: gene.RgdIdLookup
+  pk: 6053
+- fields: {choice: 'RGD:1309512'}
+  model: gene.RgdIdLookup
+  pk: 4493
+- fields: {choice: 'RGD:2320121'}
+  model: gene.RgdIdLookup
+  pk: 11938
+- fields: {choice: 'RGD:2598'}
+  model: gene.RgdIdLookup
+  pk: 12491
+- fields: {choice: 'RGD:1307056'}
+  model: gene.RgdIdLookup
+  pk: 2449
+- fields: {choice: 'RGD:1306450'}
+  model: gene.RgdIdLookup
+  pk: 1937
+- fields: {choice: 'RGD:2805'}
+  model: gene.RgdIdLookup
+  pk: 12651
+- fields: {choice: 'RGD:69346'}
+  model: gene.RgdIdLookup
+  pk: 16601
+- fields: {choice: 'RGD:1562434'}
+  model: gene.RgdIdLookup
+  pk: 8458
+- fields: {choice: 'RGD:1305410'}
+  model: gene.RgdIdLookup
+  pk: 1073
+- fields: {choice: 'RGD:1565536'}
+  model: gene.RgdIdLookup
+  pk: 9547
+- fields: {choice: 'RGD:1310069'}
+  model: gene.RgdIdLookup
+  pk: 4954
+- fields: {choice: 'RGD:2187'}
+  model: gene.RgdIdLookup
+  pk: 11690
+- fields: {choice: 'RGD:1310049'}
+  model: gene.RgdIdLookup
+  pk: 4935
+- fields: {choice: 'RGD:2674'}
+  model: gene.RgdIdLookup
+  pk: 12554
+- fields: {choice: 'RGD:1591318'}
+  model: gene.RgdIdLookup
+  pk: 10780
+- fields: {choice: 'RGD:1561559'}
+  model: gene.RgdIdLookup
+  pk: 8155
+- fields: {choice: 'RGD:67394'}
+  model: gene.RgdIdLookup
+  pk: 16317
+- fields: {choice: 'RGD:1549784'}
+  model: gene.RgdIdLookup
+  pk: 7423
+- fields: {choice: 'RGD:1590138'}
+  model: gene.RgdIdLookup
+  pk: 10663
+- fields: {choice: 'RGD:1308561'}
+  model: gene.RgdIdLookup
+  pk: 3707
+- fields: {choice: 'RGD:1303247'}
+  model: gene.RgdIdLookup
+  pk: 255
+- fields: {choice: 'RGD:3046'}
+  model: gene.RgdIdLookup
+  pk: 12829
+- fields: {choice: 'RGD:1560459'}
+  model: gene.RgdIdLookup
+  pk: 7785
+- fields: {choice: 'RGD:1586677'}
+  model: gene.RgdIdLookup
+  pk: 10290
+- fields: {choice: 'RGD:1560537'}
+  model: gene.RgdIdLookup
+  pk: 7803
+- fields: {choice: 'RGD:2325429'}
+  model: gene.RgdIdLookup
+  pk: 12205
+- fields: {choice: 'RGD:621405'}
+  model: gene.RgdIdLookup
+  pk: 15339
+- fields: {choice: 'RGD:1562344'}
+  model: gene.RgdIdLookup
+  pk: 8430
+- fields: {choice: 'RGD:621591'}
+  model: gene.RgdIdLookup
+  pk: 15507
+- fields: {choice: 'RGD:1565712'}
+  model: gene.RgdIdLookup
+  pk: 9610
+- fields: {choice: 'RGD:1305283'}
+  model: gene.RgdIdLookup
+  pk: 964
+- fields: {choice: 'RGD:1308061'}
+  model: gene.RgdIdLookup
+  pk: 3287
+- fields: {choice: 'RGD:1304657'}
+  model: gene.RgdIdLookup
+  pk: 431
+- fields: {choice: 'RGD:619773'}
+  model: gene.RgdIdLookup
+  pk: 13743
+- fields: {choice: 'RGD:1309088'}
+  model: gene.RgdIdLookup
+  pk: 4142
+- fields: {choice: 'RGD:620031'}
+  model: gene.RgdIdLookup
+  pk: 14007
+- fields: {choice: 'RGD:1359332'}
+  model: gene.RgdIdLookup
+  pk: 7077
+- fields: {choice: 'RGD:1311672'}
+  model: gene.RgdIdLookup
+  pk: 6290
+- fields: {choice: 'RGD:1311032'}
+  model: gene.RgdIdLookup
+  pk: 5754
+- fields: {choice: 'RGD:1306511'}
+  model: gene.RgdIdLookup
+  pk: 1985
+- fields: {choice: 'RGD:1311311'}
+  model: gene.RgdIdLookup
+  pk: 5977
+- fields: {choice: 'RGD:2658'}
+  model: gene.RgdIdLookup
+  pk: 12539
+- fields: {choice: 'RGD:1561762'}
+  model: gene.RgdIdLookup
+  pk: 8223
+- fields: {choice: 'RGD:727731'}
+  model: gene.RgdIdLookup
+  pk: 17103
+- fields: {choice: 'RGD:1309537'}
+  model: gene.RgdIdLookup
+  pk: 4514
+- fields: {choice: 'RGD:6488464'}
+  model: gene.RgdIdLookup
+  pk: 16208
+- fields: {choice: 'RGD:1310221'}
+  model: gene.RgdIdLookup
+  pk: 5081
+- fields: {choice: 'RGD:1309357'}
+  model: gene.RgdIdLookup
+  pk: 4363
+- fields: {choice: 'RGD:2325435'}
+  model: gene.RgdIdLookup
+  pk: 12211
+- fields: {choice: 'RGD:631366'}
+  model: gene.RgdIdLookup
+  pk: 16109
+- fields: {choice: 'RGD:621574'}
+  model: gene.RgdIdLookup
+  pk: 15490
+- fields: {choice: 'RGD:1359451'}
+  model: gene.RgdIdLookup
+  pk: 7162
+- fields: {choice: 'RGD:1309023'}
+  model: gene.RgdIdLookup
+  pk: 4090
+- fields: {choice: 'RGD:2240'}
+  model: gene.RgdIdLookup
+  pk: 11731
+- fields: {choice: 'RGD:620829'}
+  model: gene.RgdIdLookup
+  pk: 14810
+- fields: {choice: 'RGD:628654'}
+  model: gene.RgdIdLookup
+  pk: 15840
+- fields: {choice: 'RGD:1302972'}
+  model: gene.RgdIdLookup
+  pk: 30
+- fields: {choice: 'RGD:1562284'}
+  model: gene.RgdIdLookup
+  pk: 8409
+- fields: {choice: 'RGD:620499'}
+  model: gene.RgdIdLookup
+  pk: 14469
+- fields: {choice: 'RGD:1561818'}
+  model: gene.RgdIdLookup
+  pk: 8244
+- fields: {choice: 'RGD:1310960'}
+  model: gene.RgdIdLookup
+  pk: 5692
+- fields: {choice: 'RGD:628767'}
+  model: gene.RgdIdLookup
+  pk: 15945
+- fields: {choice: 'RGD:1586322'}
+  model: gene.RgdIdLookup
+  pk: 10250
+- fields: {choice: 'RGD:2503'}
+  model: gene.RgdIdLookup
+  pk: 12429
+- fields: {choice: 'RGD:1562548'}
+  model: gene.RgdIdLookup
+  pk: 8496
+- fields: {choice: 'RGD:1562071'}
+  model: gene.RgdIdLookup
+  pk: 8339
+- fields: {choice: 'RGD:1563163'}
+  model: gene.RgdIdLookup
+  pk: 8704
+- fields: {choice: 'RGD:3086'}
+  model: gene.RgdIdLookup
+  pk: 12859
+- fields: {choice: 'RGD:621148'}
+  model: gene.RgdIdLookup
+  pk: 15108
+- fields: {choice: 'RGD:1565378'}
+  model: gene.RgdIdLookup
+  pk: 9485
+- fields: {choice: 'RGD:620001'}
+  model: gene.RgdIdLookup
+  pk: 13976
+- fields: {choice: 'RGD:620072'}
+  model: gene.RgdIdLookup
+  pk: 14049
+- fields: {choice: 'RGD:628855'}
+  model: gene.RgdIdLookup
+  pk: 16020
+- fields: {choice: 'RGD:1307147'}
+  model: gene.RgdIdLookup
+  pk: 2522
+- fields: {choice: 'RGD:1308263'}
+  model: gene.RgdIdLookup
+  pk: 3454
+- fields: {choice: 'RGD:2982'}
+  model: gene.RgdIdLookup
+  pk: 12782
+- fields: {choice: 'RGD:1310514'}
+  model: gene.RgdIdLookup
+  pk: 5317
+- fields: {choice: 'RGD:727917'}
+  model: gene.RgdIdLookup
+  pk: 17215
+- fields: {choice: 'RGD:1308979'}
+  model: gene.RgdIdLookup
+  pk: 4053
+- fields: {choice: 'RGD:727964'}
+  model: gene.RgdIdLookup
+  pk: 17253
+- fields: {choice: 'RGD:1305513'}
+  model: gene.RgdIdLookup
+  pk: 1154
+- fields: {choice: 'RGD:621703'}
+  model: gene.RgdIdLookup
+  pk: 15606
+- fields: {choice: 'RGD:1308155'}
+  model: gene.RgdIdLookup
+  pk: 3368
+- fields: {choice: 'RGD:1564007'}
+  model: gene.RgdIdLookup
+  pk: 8988
+- fields: {choice: 'RGD:2624'}
+  model: gene.RgdIdLookup
+  pk: 12512
+- fields: {choice: 'RGD:735213'}
+  model: gene.RgdIdLookup
+  pk: 17442
+- fields: {choice: 'RGD:631339'}
+  model: gene.RgdIdLookup
+  pk: 16086
+- fields: {choice: 'RGD:3272'}
+  model: gene.RgdIdLookup
+  pk: 12994
+- fields: {choice: 'RGD:621227'}
+  model: gene.RgdIdLookup
+  pk: 15179
+- fields: {choice: 'RGD:621146'}
+  model: gene.RgdIdLookup
+  pk: 15106
+- fields: {choice: 'RGD:1333264'}
+  model: gene.RgdIdLookup
+  pk: 6706
+- fields: {choice: 'RGD:1311272'}
+  model: gene.RgdIdLookup
+  pk: 5949
+- fields: {choice: 'RGD:621588'}
+  model: gene.RgdIdLookup
+  pk: 15504
+- fields: {choice: 'RGD:1563236'}
+  model: gene.RgdIdLookup
+  pk: 8731
+- fields: {choice: 'RGD:1594161'}
+  model: gene.RgdIdLookup
+  pk: 11071
+- fields: {choice: 'RGD:1562563'}
+  model: gene.RgdIdLookup
+  pk: 8504
+- fields: {choice: 'RGD:1591855'}
+  model: gene.RgdIdLookup
+  pk: 10832
+- fields: {choice: 'RGD:1309273'}
+  model: gene.RgdIdLookup
+  pk: 4299
+- fields: {choice: 'RGD:1310783'}
+  model: gene.RgdIdLookup
+  pk: 5541
+- fields: {choice: 'RGD:1561747'}
+  model: gene.RgdIdLookup
+  pk: 8219
+- fields: {choice: 'RGD:1307364'}
+  model: gene.RgdIdLookup
+  pk: 2700
+- fields: {choice: 'RGD:71072'}
+  model: gene.RgdIdLookup
+  pk: 17072
+- fields: {choice: 'RGD:1563377'}
+  model: gene.RgdIdLookup
+  pk: 8787
+- fields: {choice: 'RGD:2536'}
+  model: gene.RgdIdLookup
+  pk: 12455
+- fields: {choice: 'RGD:1566191'}
+  model: gene.RgdIdLookup
+  pk: 9781
+- fields: {choice: 'RGD:708366'}
+  model: gene.RgdIdLookup
+  pk: 16716
+- fields: {choice: 'RGD:1597407'}
+  model: gene.RgdIdLookup
+  pk: 11414
+- fields: {choice: 'RGD:1560552'}
+  model: gene.RgdIdLookup
+  pk: 7810
+- fields: {choice: 'RGD:1302952'}
+  model: gene.RgdIdLookup
+  pk: 13
+- fields: {choice: 'RGD:1303142'}
+  model: gene.RgdIdLookup
+  pk: 168
+- fields: {choice: 'RGD:2325528'}
+  model: gene.RgdIdLookup
+  pk: 12246
+- fields: {choice: 'RGD:1564189'}
+  model: gene.RgdIdLookup
+  pk: 9062
+- fields: {choice: 'RGD:1305945'}
+  model: gene.RgdIdLookup
+  pk: 1515
+- fields: {choice: 'RGD:2533'}
+  model: gene.RgdIdLookup
+  pk: 12452
+- fields: {choice: 'RGD:1561203'}
+  model: gene.RgdIdLookup
+  pk: 8039
+- fields: {choice: 'RGD:1334431'}
+  model: gene.RgdIdLookup
+  pk: 6890
+- fields: {choice: 'RGD:70919'}
+  model: gene.RgdIdLookup
+  pk: 16922
+- fields: {choice: 'RGD:1304706'}
+  model: gene.RgdIdLookup
+  pk: 474
+- fields: {choice: 'RGD:1562983'}
+  model: gene.RgdIdLookup
+  pk: 8643
+- fields: {choice: 'RGD:1309068'}
+  model: gene.RgdIdLookup
+  pk: 4126
+- fields: {choice: 'RGD:68344'}
+  model: gene.RgdIdLookup
+  pk: 16348
+- fields: {choice: 'RGD:1309599'}
+  model: gene.RgdIdLookup
+  pk: 4567
+- fields: {choice: 'RGD:621866'}
+  model: gene.RgdIdLookup
+  pk: 15757
+- fields: {choice: 'RGD:621237'}
+  model: gene.RgdIdLookup
+  pk: 15189
+- fields: {choice: 'RGD:1565847'}
+  model: gene.RgdIdLookup
+  pk: 9664
+- fields: {choice: 'RGD:1309132'}
+  model: gene.RgdIdLookup
+  pk: 4182
+- fields: {choice: 'RGD:1306038'}
+  model: gene.RgdIdLookup
+  pk: 1596
+- fields: {choice: 'RGD:1308196'}
+  model: gene.RgdIdLookup
+  pk: 3402
+- fields: {choice: 'RGD:1561883'}
+  model: gene.RgdIdLookup
+  pk: 8264
+- fields: {choice: 'RGD:1307517'}
+  model: gene.RgdIdLookup
+  pk: 2833
+- fields: {choice: 'RGD:1305180'}
+  model: gene.RgdIdLookup
+  pk: 876
+- fields: {choice: 'RGD:1305010'}
+  model: gene.RgdIdLookup
+  pk: 723
+- fields: {choice: 'RGD:2592'}
+  model: gene.RgdIdLookup
+  pk: 12486
+- fields: {choice: 'RGD:621103'}
+  model: gene.RgdIdLookup
+  pk: 15066
+- fields: {choice: 'RGD:1597300'}
+  model: gene.RgdIdLookup
+  pk: 11390
+- fields: {choice: 'RGD:2960'}
+  model: gene.RgdIdLookup
+  pk: 12766
+- fields: {choice: 'RGD:62083'}
+  model: gene.RgdIdLookup
+  pk: 14811
+- fields: {choice: 'RGD:1306590'}
+  model: gene.RgdIdLookup
+  pk: 2055
+- fields: {choice: 'RGD:2302323'}
+  model: gene.RgdIdLookup
+  pk: 11805
+- fields: {choice: 'RGD:1587778'}
+  model: gene.RgdIdLookup
+  pk: 10403
+- fields: {choice: 'RGD:620484'}
+  model: gene.RgdIdLookup
+  pk: 14456
+- fields: {choice: 'RGD:1308327'}
+  model: gene.RgdIdLookup
+  pk: 3509
+- fields: {choice: 'RGD:1308836'}
+  model: gene.RgdIdLookup
+  pk: 3928
+- fields: {choice: 'RGD:1311857'}
+  model: gene.RgdIdLookup
+  pk: 6439
+- fields: {choice: 'RGD:1560576'}
+  model: gene.RgdIdLookup
+  pk: 7817
+- fields: {choice: 'RGD:6487565'}
+  model: gene.RgdIdLookup
+  pk: 16198
+- fields: {choice: 'RGD:2806'}
+  model: gene.RgdIdLookup
+  pk: 12652
+- fields: {choice: 'RGD:621380'}
+  model: gene.RgdIdLookup
+  pk: 15318
+- fields: {choice: 'RGD:735186'}
+  model: gene.RgdIdLookup
+  pk: 17418
+- fields: {choice: 'RGD:1305760'}
+  model: gene.RgdIdLookup
+  pk: 1356
+- fields: {choice: 'RGD:1310033'}
+  model: gene.RgdIdLookup
+  pk: 4921
+- fields: {choice: 'RGD:1311633'}
+  model: gene.RgdIdLookup
+  pk: 6256
+- fields: {choice: 'RGD:1306344'}
+  model: gene.RgdIdLookup
+  pk: 1852
+- fields: {choice: 'RGD:1563912'}
+  model: gene.RgdIdLookup
+  pk: 8956
+- fields: {choice: 'RGD:1589353'}
+  model: gene.RgdIdLookup
+  pk: 10553
+- fields: {choice: 'RGD:2321140'}
+  model: gene.RgdIdLookup
+  pk: 11980
+- fields: {choice: 'RGD:1306614'}
+  model: gene.RgdIdLookup
+  pk: 2072
+- fields: {choice: 'RGD:1307089'}
+  model: gene.RgdIdLookup
+  pk: 2475
+- fields: {choice: 'RGD:1308139'}
+  model: gene.RgdIdLookup
+  pk: 3355
+- fields: {choice: 'RGD:1311256'}
+  model: gene.RgdIdLookup
+  pk: 5934
+- fields: {choice: 'RGD:1593831'}
+  model: gene.RgdIdLookup
+  pk: 11053
+- fields: {choice: 'RGD:1309363'}
+  model: gene.RgdIdLookup
+  pk: 4368
+- fields: {choice: 'RGD:1304647'}
+  model: gene.RgdIdLookup
+  pk: 425
+- fields: {choice: 'RGD:1308986'}
+  model: gene.RgdIdLookup
+  pk: 4060
+- fields: {choice: 'RGD:1306399'}
+  model: gene.RgdIdLookup
+  pk: 1897
+- fields: {choice: 'RGD:1303020'}
+  model: gene.RgdIdLookup
+  pk: 68
+- fields: {choice: 'RGD:3799'}
+  model: gene.RgdIdLookup
+  pk: 13337
+- fields: {choice: 'RGD:1560960'}
+  model: gene.RgdIdLookup
+  pk: 7950
+- fields: {choice: 'RGD:1306184'}
+  model: gene.RgdIdLookup
+  pk: 1720
+- fields: {choice: 'RGD:1305783'}
+  model: gene.RgdIdLookup
+  pk: 1374
+- fields: {choice: 'RGD:1564722'}
+  model: gene.RgdIdLookup
+  pk: 9238
+- fields: {choice: 'RGD:1305398'}
+  model: gene.RgdIdLookup
+  pk: 1063
+- fields: {choice: 'RGD:1306567'}
+  model: gene.RgdIdLookup
+  pk: 2034
+- fields: {choice: 'RGD:1359656'}
+  model: gene.RgdIdLookup
+  pk: 7310
+- fields: {choice: 'RGD:1560915'}
+  model: gene.RgdIdLookup
+  pk: 7936
+- fields: {choice: 'RGD:1304670'}
+  model: gene.RgdIdLookup
+  pk: 442
+- fields: {choice: 'RGD:620366'}
+  model: gene.RgdIdLookup
+  pk: 14344
+- fields: {choice: 'RGD:1561649'}
+  model: gene.RgdIdLookup
+  pk: 8182
+- fields: {choice: 'RGD:1587639'}
+  model: gene.RgdIdLookup
+  pk: 10393
+- fields: {choice: 'RGD:1309890'}
+  model: gene.RgdIdLookup
+  pk: 4807
+- fields: {choice: 'RGD:2323778'}
+  model: gene.RgdIdLookup
+  pk: 12083
+- fields: {choice: 'RGD:1311631'}
+  model: gene.RgdIdLookup
+  pk: 6254
+- fields: {choice: 'RGD:1595855'}
+  model: gene.RgdIdLookup
+  pk: 11241
+- fields: {choice: 'RGD:70976'}
+  model: gene.RgdIdLookup
+  pk: 16979
+- fields: {choice: 'RGD:1564983'}
+  model: gene.RgdIdLookup
+  pk: 9342
+- fields: {choice: 'RGD:1582758'}
+  model: gene.RgdIdLookup
+  pk: 9860
+- fields: {choice: 'RGD:1307456'}
+  model: gene.RgdIdLookup
+  pk: 2783
+- fields: {choice: 'RGD:1566295'}
+  model: gene.RgdIdLookup
+  pk: 9809
+- fields: {choice: 'RGD:1304762'}
+  model: gene.RgdIdLookup
+  pk: 516
+- fields: {choice: 'RGD:621164'}
+  model: gene.RgdIdLookup
+  pk: 15122
+- fields: {choice: 'RGD:1589285'}
+  model: gene.RgdIdLookup
+  pk: 10548
+- fields: {choice: 'RGD:1562767'}
+  model: gene.RgdIdLookup
+  pk: 8576
+- fields: {choice: 'RGD:2321875'}
+  model: gene.RgdIdLookup
+  pk: 12001
+- fields: {choice: 'RGD:1565783'}
+  model: gene.RgdIdLookup
+  pk: 9638
+- fields: {choice: 'RGD:621064'}
+  model: gene.RgdIdLookup
+  pk: 15030
+- fields: {choice: 'RGD:1564195'}
+  model: gene.RgdIdLookup
+  pk: 9064
+- fields: {choice: 'RGD:2325605'}
+  model: gene.RgdIdLookup
+  pk: 12292
+- fields: {choice: 'RGD:1309178'}
+  model: gene.RgdIdLookup
+  pk: 4220
+- fields: {choice: 'RGD:1566400'}
+  model: gene.RgdIdLookup
+  pk: 9844
+- fields: {choice: 'RGD:1589864'}
+  model: gene.RgdIdLookup
+  pk: 10634
+- fields: {choice: 'RGD:1564019'}
+  model: gene.RgdIdLookup
+  pk: 8993
+- fields: {choice: 'RGD:2318773'}
+  model: gene.RgdIdLookup
+  pk: 11881
+- fields: {choice: 'RGD:1304831'}
+  model: gene.RgdIdLookup
+  pk: 575
+- fields: {choice: 'RGD:2611'}
+  model: gene.RgdIdLookup
+  pk: 12501
+- fields: {choice: 'RGD:6498801'}
+  model: gene.RgdIdLookup
+  pk: 16266
+- fields: {choice: 'RGD:3527'}
+  model: gene.RgdIdLookup
+  pk: 13133
+- fields: {choice: 'RGD:70938'}
+  model: gene.RgdIdLookup
+  pk: 16941
+- fields: {choice: 'RGD:69312'}
+  model: gene.RgdIdLookup
+  pk: 16572
+- fields: {choice: 'RGD:1310784'}
+  model: gene.RgdIdLookup
+  pk: 5542
+- fields: {choice: 'RGD:1307531'}
+  model: gene.RgdIdLookup
+  pk: 2841
+- fields: {choice: 'RGD:621763'}
+  model: gene.RgdIdLookup
+  pk: 15664
+- fields: {choice: 'RGD:1562594'}
+  model: gene.RgdIdLookup
+  pk: 8518
+- fields: {choice: 'RGD:3180'}
+  model: gene.RgdIdLookup
+  pk: 12924
+- fields: {choice: 'RGD:1309882'}
+  model: gene.RgdIdLookup
+  pk: 4800
+- fields: {choice: 'RGD:3895'}
+  model: gene.RgdIdLookup
+  pk: 13403
+- fields: {choice: 'RGD:7634115'}
+  model: gene.RgdIdLookup
+  pk: 17507
+- fields: {choice: 'RGD:2554'}
+  model: gene.RgdIdLookup
+  pk: 12470
+- fields: {choice: 'RGD:2586'}
+  model: gene.RgdIdLookup
+  pk: 12481
+- fields: {choice: 'RGD:1563448'}
+  model: gene.RgdIdLookup
+  pk: 8815
+- fields: {choice: 'RGD:1306422'}
+  model: gene.RgdIdLookup
+  pk: 1917
+- fields: {choice: 'RGD:2936'}
+  model: gene.RgdIdLookup
+  pk: 12745
+- fields: {choice: 'RGD:1589817'}
+  model: gene.RgdIdLookup
+  pk: 10627
+- fields: {choice: 'RGD:708441'}
+  model: gene.RgdIdLookup
+  pk: 16769
+- fields: {choice: 'RGD:70986'}
+  model: gene.RgdIdLookup
+  pk: 16988
+- fields: {choice: 'RGD:3593'}
+  model: gene.RgdIdLookup
+  pk: 13179
+- fields: {choice: 'RGD:2158'}
+  model: gene.RgdIdLookup
+  pk: 11665
+- fields: {choice: 'RGD:1310174'}
+  model: gene.RgdIdLookup
+  pk: 5040
+- fields: {choice: 'RGD:1309094'}
+  model: gene.RgdIdLookup
+  pk: 4148
+- fields: {choice: 'RGD:1596039'}
+  model: gene.RgdIdLookup
+  pk: 11270
+- fields: {choice: 'RGD:1304996'}
+  model: gene.RgdIdLookup
+  pk: 710
+- fields: {choice: 'RGD:1310337'}
+  model: gene.RgdIdLookup
+  pk: 5174
+- fields: {choice: 'RGD:1311310'}
+  model: gene.RgdIdLookup
+  pk: 5976
+- fields: {choice: 'RGD:3617'}
+  model: gene.RgdIdLookup
+  pk: 13190
+- fields: {choice: 'RGD:1586478'}
+  model: gene.RgdIdLookup
+  pk: 10273
+- fields: {choice: 'RGD:1306578'}
+  model: gene.RgdIdLookup
+  pk: 2045
+- fields: {choice: 'RGD:1311162'}
+  model: gene.RgdIdLookup
+  pk: 5860
+- fields: {choice: 'RGD:1308607'}
+  model: gene.RgdIdLookup
+  pk: 3740
+- fields: {choice: 'RGD:620803'}
+  model: gene.RgdIdLookup
+  pk: 14782
+- fields: {choice: 'RGD:1311711'}
+  model: gene.RgdIdLookup
+  pk: 6326
+- fields: {choice: 'RGD:1596869'}
+  model: gene.RgdIdLookup
+  pk: 11356
+- fields: {choice: 'RGD:1310150'}
+  model: gene.RgdIdLookup
+  pk: 5019
+- fields: {choice: 'RGD:1359465'}
+  model: gene.RgdIdLookup
+  pk: 7174
+- fields: {choice: 'RGD:1560014'}
+  model: gene.RgdIdLookup
+  pk: 7622
+- fields: {choice: 'RGD:619896'}
+  model: gene.RgdIdLookup
+  pk: 13868
+- fields: {choice: 'RGD:2321863'}
+  model: gene.RgdIdLookup
+  pk: 12000
+- fields: {choice: 'RGD:1592829'}
+  model: gene.RgdIdLookup
+  pk: 10937
+- fields: {choice: 'RGD:735203'}
+  model: gene.RgdIdLookup
+  pk: 17433
+- fields: {choice: 'RGD:1307712'}
+  model: gene.RgdIdLookup
+  pk: 2989
+- fields: {choice: 'RGD:1584914'}
+  model: gene.RgdIdLookup
+  pk: 10099
+- fields: {choice: 'RGD:620614'}
+  model: gene.RgdIdLookup
+  pk: 14585
+- fields: {choice: 'RGD:1305089'}
+  model: gene.RgdIdLookup
+  pk: 795
+- fields: {choice: 'RGD:1306114'}
+  model: gene.RgdIdLookup
+  pk: 1662
+- fields: {choice: 'RGD:69324'}
+  model: gene.RgdIdLookup
+  pk: 16582
+- fields: {choice: 'RGD:620342'}
+  model: gene.RgdIdLookup
+  pk: 14322
+- fields: {choice: 'RGD:3017'}
+  model: gene.RgdIdLookup
+  pk: 12808
+- fields: {choice: 'RGD:2325373'}
+  model: gene.RgdIdLookup
+  pk: 12170
+- fields: {choice: 'RGD:3940'}
+  model: gene.RgdIdLookup
+  pk: 13435
+- fields: {choice: 'RGD:1311858'}
+  model: gene.RgdIdLookup
+  pk: 6440
+- fields: {choice: 'RGD:1305381'}
+  model: gene.RgdIdLookup
+  pk: 1049
+- fields: {choice: 'RGD:7718701'}
+  model: gene.RgdIdLookup
+  pk: 17529
+- fields: {choice: 'RGD:1307613'}
+  model: gene.RgdIdLookup
+  pk: 2905
+- fields: {choice: 'RGD:2651'}
+  model: gene.RgdIdLookup
+  pk: 12533
+- fields: {choice: 'RGD:1309629'}
+  model: gene.RgdIdLookup
+  pk: 4593
+- fields: {choice: 'RGD:1593785'}
+  model: gene.RgdIdLookup
+  pk: 11046
+- fields: {choice: 'RGD:1596290'}
+  model: gene.RgdIdLookup
+  pk: 11299
+- fields: {choice: 'RGD:1306360'}
+  model: gene.RgdIdLookup
+  pk: 1865
+- fields: {choice: 'RGD:2283'}
+  model: gene.RgdIdLookup
+  pk: 11768
+- fields: {choice: 'RGD:69257'}
+  model: gene.RgdIdLookup
+  pk: 16518
+- fields: {choice: 'RGD:1564799'}
+  model: gene.RgdIdLookup
+  pk: 9270
+- fields: {choice: 'RGD:1561298'}
+  model: gene.RgdIdLookup
+  pk: 8067
+- fields: {choice: 'RGD:1593360'}
+  model: gene.RgdIdLookup
+  pk: 11013
+- fields: {choice: 'RGD:1307307'}
+  model: gene.RgdIdLookup
+  pk: 2654
+- fields: {choice: 'RGD:1306226'}
+  model: gene.RgdIdLookup
+  pk: 1754
+- fields: {choice: 'RGD:1308187'}
+  model: gene.RgdIdLookup
+  pk: 3395
+- fields: {choice: 'RGD:3679'}
+  model: gene.RgdIdLookup
+  pk: 13242
+- fields: {choice: 'RGD:621632'}
+  model: gene.RgdIdLookup
+  pk: 15540
+- fields: {choice: 'RGD:1561256'}
+  model: gene.RgdIdLookup
+  pk: 8051
+- fields: {choice: 'RGD:2755'}
+  model: gene.RgdIdLookup
+  pk: 12620
+- fields: {choice: 'RGD:3089'}
+  model: gene.RgdIdLookup
+  pk: 12862
+- fields: {choice: 'RGD:61870'}
+  model: gene.RgdIdLookup
+  pk: 13571
+- fields: {choice: 'RGD:70940'}
+  model: gene.RgdIdLookup
+  pk: 16943
+- fields: {choice: 'RGD:1560430'}
+  model: gene.RgdIdLookup
+  pk: 7775
+- fields: {choice: 'RGD:1310901'}
+  model: gene.RgdIdLookup
+  pk: 5644
+- fields: {choice: 'RGD:1306531'}
+  model: gene.RgdIdLookup
+  pk: 2002
+- fields: {choice: 'RGD:727803'}
+  model: gene.RgdIdLookup
+  pk: 17128
+- fields: {choice: 'RGD:1310007'}
+  model: gene.RgdIdLookup
+  pk: 4900
+- fields: {choice: 'RGD:1304602'}
+  model: gene.RgdIdLookup
+  pk: 384
+- fields: {choice: 'RGD:1303325'}
+  model: gene.RgdIdLookup
+  pk: 325
+- fields: {choice: 'RGD:628894'}
+  model: gene.RgdIdLookup
+  pk: 16058
+- fields: {choice: 'RGD:1563321'}
+  model: gene.RgdIdLookup
+  pk: 8765
+- fields: {choice: 'RGD:1305755'}
+  model: gene.RgdIdLookup
+  pk: 1352
+- fields: {choice: 'RGD:628830'}
+  model: gene.RgdIdLookup
+  pk: 15997
+- fields: {choice: 'RGD:1583004'}
+  model: gene.RgdIdLookup
+  pk: 9898
+- fields: {choice: 'RGD:1582813'}
+  model: gene.RgdIdLookup
+  pk: 9869
+- fields: {choice: 'RGD:1565181'}
+  model: gene.RgdIdLookup
+  pk: 9421
+- fields: {choice: 'RGD:1559678'}
+  model: gene.RgdIdLookup
+  pk: 7505
+- fields: {choice: 'RGD:1306279'}
+  model: gene.RgdIdLookup
+  pk: 1801
+- fields: {choice: 'RGD:1560504'}
+  model: gene.RgdIdLookup
+  pk: 7797
+- fields: {choice: 'RGD:1561719'}
+  model: gene.RgdIdLookup
+  pk: 8206
+- fields: {choice: 'RGD:621426'}
+  model: gene.RgdIdLookup
+  pk: 15360
+- fields: {choice: 'RGD:1306494'}
+  model: gene.RgdIdLookup
+  pk: 1969
+- fields: {choice: 'RGD:1565879'}
+  model: gene.RgdIdLookup
+  pk: 9670
+- fields: {choice: 'RGD:1309218'}
+  model: gene.RgdIdLookup
+  pk: 4253
+- fields: {choice: 'RGD:2319726'}
+  model: gene.RgdIdLookup
+  pk: 11919
+- fields: {choice: 'RGD:619984'}
+  model: gene.RgdIdLookup
+  pk: 13958
+- fields: {choice: 'RGD:2318580'}
+  model: gene.RgdIdLookup
+  pk: 11870
+- fields: {choice: 'RGD:1560401'}
+  model: gene.RgdIdLookup
+  pk: 7768
+- fields: {choice: 'RGD:1559756'}
+  model: gene.RgdIdLookup
+  pk: 7532
+- fields: {choice: 'RGD:3373'}
+  model: gene.RgdIdLookup
+  pk: 13064
+- fields: {choice: 'RGD:1562411'}
+  model: gene.RgdIdLookup
+  pk: 8449
+- fields: {choice: 'RGD:1310954'}
+  model: gene.RgdIdLookup
+  pk: 5687
+- fields: {choice: 'RGD:1359553'}
+  model: gene.RgdIdLookup
+  pk: 7237
+- fields: {choice: 'RGD:620007'}
+  model: gene.RgdIdLookup
+  pk: 13982
+- fields: {choice: 'RGD:2006'}
+  model: gene.RgdIdLookup
+  pk: 11537
+- fields: {choice: 'RGD:1333783'}
+  model: gene.RgdIdLookup
+  pk: 6788
+- fields: {choice: 'RGD:1565169'}
+  model: gene.RgdIdLookup
+  pk: 9415
+- fields: {choice: 'RGD:620145'}
+  model: gene.RgdIdLookup
+  pk: 14121
+- fields: {choice: 'RGD:70984'}
+  model: gene.RgdIdLookup
+  pk: 16987
+- fields: {choice: 'RGD:1588573'}
+  model: gene.RgdIdLookup
+  pk: 10461
+- fields: {choice: 'RGD:1307725'}
+  model: gene.RgdIdLookup
+  pk: 3001
+- fields: {choice: 'RGD:1564982'}
+  model: gene.RgdIdLookup
+  pk: 9341
+- fields: {choice: 'RGD:70961'}
+  model: gene.RgdIdLookup
+  pk: 16964
+- fields: {choice: 'RGD:6489991'}
+  model: gene.RgdIdLookup
+  pk: 16216
+- fields: {choice: 'RGD:1307854'}
+  model: gene.RgdIdLookup
+  pk: 3113
+- fields: {choice: 'RGD:1311229'}
+  model: gene.RgdIdLookup
+  pk: 5913
+- fields: {choice: 'RGD:1592278'}
+  model: gene.RgdIdLookup
+  pk: 10891
+- fields: {choice: 'RGD:1303009'}
+  model: gene.RgdIdLookup
+  pk: 62
+- fields: {choice: 'RGD:1561131'}
+  model: gene.RgdIdLookup
+  pk: 8016
+- fields: {choice: 'RGD:1311382'}
+  model: gene.RgdIdLookup
+  pk: 6037
+- fields: {choice: 'RGD:621118'}
+  model: gene.RgdIdLookup
+  pk: 15081
+- fields: {choice: 'RGD:1306202'}
+  model: gene.RgdIdLookup
+  pk: 1731
+- fields: {choice: 'RGD:1596132'}
+  model: gene.RgdIdLookup
+  pk: 11286
+- fields: {choice: 'RGD:1308429'}
+  model: gene.RgdIdLookup
+  pk: 3593
+- fields: {choice: 'RGD:1306361'}
+  model: gene.RgdIdLookup
+  pk: 1866
+- fields: {choice: 'RGD:628620'}
+  model: gene.RgdIdLookup
+  pk: 15812
+- fields: {choice: 'RGD:68415'}
+  model: gene.RgdIdLookup
+  pk: 16417
+- fields: {choice: 'RGD:1310185'}
+  model: gene.RgdIdLookup
+  pk: 5050
+- fields: {choice: 'RGD:1560102'}
+  model: gene.RgdIdLookup
+  pk: 7653
+- fields: {choice: 'RGD:1596128'}
+  model: gene.RgdIdLookup
+  pk: 11284
+- fields: {choice: 'RGD:1307106'}
+  model: gene.RgdIdLookup
+  pk: 2489
+- fields: {choice: 'RGD:1563990'}
+  model: gene.RgdIdLookup
+  pk: 8981
+- fields: {choice: 'RGD:1598071'}
+  model: gene.RgdIdLookup
+  pk: 11465
+- fields: {choice: 'RGD:1308154'}
+  model: gene.RgdIdLookup
+  pk: 3367
+- fields: {choice: 'RGD:1308038'}
+  model: gene.RgdIdLookup
+  pk: 3268
+- fields: {choice: 'RGD:1549776'}
+  model: gene.RgdIdLookup
+  pk: 7416
+- fields: {choice: 'RGD:1311964'}
+  model: gene.RgdIdLookup
+  pk: 6531
+- fields: {choice: 'RGD:3864'}
+  model: gene.RgdIdLookup
+  pk: 13384
+- fields: {choice: 'RGD:621257'}
+  model: gene.RgdIdLookup
+  pk: 15209
+- fields: {choice: 'RGD:1305151'}
+  model: gene.RgdIdLookup
+  pk: 848
+- fields: {choice: 'RGD:1596808'}
+  model: gene.RgdIdLookup
+  pk: 11345
+- fields: {choice: 'RGD:1561167'}
+  model: gene.RgdIdLookup
+  pk: 8026
+- fields: {choice: 'RGD:2031'}
+  model: gene.RgdIdLookup
+  pk: 11559
+- fields: {choice: 'RGD:61880'}
+  model: gene.RgdIdLookup
+  pk: 13580
+- fields: {choice: 'RGD:1561059'}
+  model: gene.RgdIdLookup
+  pk: 7984
+- fields: {choice: 'RGD:1333102'}
+  model: gene.RgdIdLookup
+  pk: 6680
+- fields: {choice: 'RGD:2976'}
+  model: gene.RgdIdLookup
+  pk: 12777
+- fields: {choice: 'RGD:1591981'}
+  model: gene.RgdIdLookup
+  pk: 10862
+- fields: {choice: 'RGD:620745'}
+  model: gene.RgdIdLookup
+  pk: 14720
+- fields: {choice: 'RGD:61864'}
+  model: gene.RgdIdLookup
+  pk: 13565
+- fields: {choice: 'RGD:620308'}
+  model: gene.RgdIdLookup
+  pk: 14287
+- fields: {choice: 'RGD:1303235'}
+  model: gene.RgdIdLookup
+  pk: 243
+- fields: {choice: 'RGD:3566'}
+  model: gene.RgdIdLookup
+  pk: 13163
+- fields: {choice: 'RGD:1564952'}
+  model: gene.RgdIdLookup
+  pk: 9333
+- fields: {choice: 'RGD:1588243'}
+  model: gene.RgdIdLookup
+  pk: 10432
+- fields: {choice: 'RGD:62028'}
+  model: gene.RgdIdLookup
+  pk: 14259
+- fields: {choice: 'RGD:1359720'}
+  model: gene.RgdIdLookup
+  pk: 7358
+- fields: {choice: 'RGD:1559672'}
+  model: gene.RgdIdLookup
+  pk: 7503
+- fields: {choice: 'RGD:1304575'}
+  model: gene.RgdIdLookup
+  pk: 361
+- fields: {choice: 'RGD:1308455'}
+  model: gene.RgdIdLookup
+  pk: 3615
+- fields: {choice: 'RGD:1310131'}
+  model: gene.RgdIdLookup
+  pk: 5002
+- fields: {choice: 'RGD:1564689'}
+  model: gene.RgdIdLookup
+  pk: 9226
+- fields: {choice: 'RGD:1565449'}
+  model: gene.RgdIdLookup
+  pk: 9512
+- fields: {choice: 'RGD:628637'}
+  model: gene.RgdIdLookup
+  pk: 15826
+- fields: {choice: 'RGD:2442'}
+  model: gene.RgdIdLookup
+  pk: 12390
+- fields: {choice: 'RGD:620438'}
+  model: gene.RgdIdLookup
+  pk: 14408
+- fields: {choice: 'RGD:1359536'}
+  model: gene.RgdIdLookup
+  pk: 7224
+- fields: {choice: 'RGD:1304737'}
+  model: gene.RgdIdLookup
+  pk: 498
+- fields: {choice: 'RGD:1562309'}
+  model: gene.RgdIdLookup
+  pk: 8415
+- fields: {choice: 'RGD:1305963'}
+  model: gene.RgdIdLookup
+  pk: 1532
+- fields: {choice: 'RGD:1359693'}
+  model: gene.RgdIdLookup
+  pk: 7337
+- fields: {choice: 'RGD:1359618'}
+  model: gene.RgdIdLookup
+  pk: 7284
+- fields: {choice: 'RGD:1310032'}
+  model: gene.RgdIdLookup
+  pk: 4920
+- fields: {choice: 'RGD:1592713'}
+  model: gene.RgdIdLookup
+  pk: 10926
+- fields: {choice: 'RGD:1306254'}
+  model: gene.RgdIdLookup
+  pk: 1778
+- fields: {choice: 'RGD:1359607'}
+  model: gene.RgdIdLookup
+  pk: 7277
+- fields: {choice: 'RGD:7515741'}
+  model: gene.RgdIdLookup
+  pk: 17475
+- fields: {choice: 'RGD:621778'}
+  model: gene.RgdIdLookup
+  pk: 15677
+- fields: {choice: 'RGD:1306276'}
+  model: gene.RgdIdLookup
+  pk: 1798
+- fields: {choice: 'RGD:1333798'}
+  model: gene.RgdIdLookup
+  pk: 6791
+- fields: {choice: 'RGD:3810'}
+  model: gene.RgdIdLookup
+  pk: 13346
+- fields: {choice: 'RGD:6504353'}
+  model: gene.RgdIdLookup
+  pk: 16305
+- fields: {choice: 'RGD:1309879'}
+  model: gene.RgdIdLookup
+  pk: 4798
+- fields: {choice: 'RGD:1561800'}
+  model: gene.RgdIdLookup
+  pk: 8237
+- fields: {choice: 'RGD:1561985'}
+  model: gene.RgdIdLookup
+  pk: 8298
+- fields: {choice: 'RGD:621167'}
+  model: gene.RgdIdLookup
+  pk: 15124
+- fields: {choice: 'RGD:1562689'}
+  model: gene.RgdIdLookup
+  pk: 8551
+- fields: {choice: 'RGD:1311530'}
+  model: gene.RgdIdLookup
+  pk: 6164
+- fields: {choice: 'RGD:1311381'}
+  model: gene.RgdIdLookup
+  pk: 6036
+- fields: {choice: 'RGD:621595'}
+  model: gene.RgdIdLookup
+  pk: 15511
+- fields: {choice: 'RGD:1309642'}
+  model: gene.RgdIdLookup
+  pk: 4603
+- fields: {choice: 'RGD:1563782'}
+  model: gene.RgdIdLookup
+  pk: 8919
+- fields: {choice: 'RGD:1306686'}
+  model: gene.RgdIdLookup
+  pk: 2136
+- fields: {choice: 'RGD:1308588'}
+  model: gene.RgdIdLookup
+  pk: 3726
+- fields: {choice: 'RGD:1359542'}
+  model: gene.RgdIdLookup
+  pk: 7228
+- fields: {choice: 'RGD:1561191'}
+  model: gene.RgdIdLookup
+  pk: 8035
+- fields: {choice: 'RGD:2393'}
+  model: gene.RgdIdLookup
+  pk: 12357
+- fields: {choice: 'RGD:3061'}
+  model: gene.RgdIdLookup
+  pk: 12843
+- fields: {choice: 'RGD:62035'}
+  model: gene.RgdIdLookup
+  pk: 14327
+- fields: {choice: 'RGD:1310854'}
+  model: gene.RgdIdLookup
+  pk: 5602
+- fields: {choice: 'RGD:1310130'}
+  model: gene.RgdIdLookup
+  pk: 5001
+- fields: {choice: 'RGD:1560118'}
+  model: gene.RgdIdLookup
+  pk: 7660
+- fields: {choice: 'RGD:1592397'}
+  model: gene.RgdIdLookup
+  pk: 10901
+- fields: {choice: 'RGD:1563347'}
+  model: gene.RgdIdLookup
+  pk: 8774
+- fields: {choice: 'RGD:9294101'}
+  model: gene.RgdIdLookup
+  pk: 17542
+- fields: {choice: 'RGD:1305529'}
+  model: gene.RgdIdLookup
+  pk: 1167
+- fields: {choice: 'RGD:61822'}
+  model: gene.RgdIdLookup
+  pk: 13523
+- fields: {choice: 'RGD:1311635'}
+  model: gene.RgdIdLookup
+  pk: 6258
+- fields: {choice: 'RGD:1311314'}
+  model: gene.RgdIdLookup
+  pk: 5980
+- fields: {choice: 'RGD:1312001'}
+  model: gene.RgdIdLookup
+  pk: 6562
+- fields: {choice: 'RGD:1307491'}
+  model: gene.RgdIdLookup
+  pk: 2811
+- fields: {choice: 'RGD:1565341'}
+  model: gene.RgdIdLookup
+  pk: 9468
+- fields: {choice: 'RGD:1304638'}
+  model: gene.RgdIdLookup
+  pk: 417
+- fields: {choice: 'RGD:1309778'}
+  model: gene.RgdIdLookup
+  pk: 4720
+- fields: {choice: 'RGD:1591928'}
+  model: gene.RgdIdLookup
+  pk: 10847
+- fields: {choice: 'RGD:3078'}
+  model: gene.RgdIdLookup
+  pk: 12852
+- fields: {choice: 'RGD:1562837'}
+  model: gene.RgdIdLookup
+  pk: 8597
+- fields: {choice: 'RGD:2319165'}
+  model: gene.RgdIdLookup
+  pk: 11898
+- fields: {choice: 'RGD:1310904'}
+  model: gene.RgdIdLookup
+  pk: 5647
+- fields: {choice: 'RGD:1309905'}
+  model: gene.RgdIdLookup
+  pk: 4819
+- fields: {choice: 'RGD:2925'}
+  model: gene.RgdIdLookup
+  pk: 12736
+- fields: {choice: 'RGD:1304661'}
+  model: gene.RgdIdLookup
+  pk: 435
+- fields: {choice: 'RGD:1566351'}
+  model: gene.RgdIdLookup
+  pk: 9831
+- fields: {choice: 'RGD:62064'}
+  model: gene.RgdIdLookup
+  pk: 14612
+- fields: {choice: 'RGD:1589169'}
+  model: gene.RgdIdLookup
+  pk: 10546
+- fields: {choice: 'RGD:1560519'}
+  model: gene.RgdIdLookup
+  pk: 7800
+- fields: {choice: 'RGD:62003'}
+  model: gene.RgdIdLookup
+  pk: 14005
+- fields: {choice: 'RGD:1311438'}
+  model: gene.RgdIdLookup
+  pk: 6083
+- fields: {choice: 'RGD:1305705'}
+  model: gene.RgdIdLookup
+  pk: 1314
+- fields: {choice: 'RGD:620507'}
+  model: gene.RgdIdLookup
+  pk: 14478
+- fields: {choice: 'RGD:1565810'}
+  model: gene.RgdIdLookup
+  pk: 9650
+- fields: {choice: 'RGD:1565488'}
+  model: gene.RgdIdLookup
+  pk: 9528
+- fields: {choice: 'RGD:1594778'}
+  model: gene.RgdIdLookup
+  pk: 11147
+- fields: {choice: 'RGD:621578'}
+  model: gene.RgdIdLookup
+  pk: 15494
+- fields: {choice: 'RGD:1311988'}
+  model: gene.RgdIdLookup
+  pk: 6551
+- fields: {choice: 'RGD:3025'}
+  model: gene.RgdIdLookup
+  pk: 12810
+- fields: {choice: 'RGD:1566421'}
+  model: gene.RgdIdLookup
+  pk: 9855
+- fields: {choice: 'RGD:1586036'}
+  model: gene.RgdIdLookup
+  pk: 10211
+- fields: {choice: 'RGD:1305679'}
+  model: gene.RgdIdLookup
+  pk: 1296
+- fields: {choice: 'RGD:1563250'}
+  model: gene.RgdIdLookup
+  pk: 8739
+- fields: {choice: 'RGD:1307960'}
+  model: gene.RgdIdLookup
+  pk: 3206
+- fields: {choice: 'RGD:1583848'}
+  model: gene.RgdIdLookup
+  pk: 9977
+- fields: {choice: 'RGD:1310542'}
+  model: gene.RgdIdLookup
+  pk: 5340
+- fields: {choice: 'RGD:1310061'}
+  model: gene.RgdIdLookup
+  pk: 4946
+- fields: {choice: 'RGD:3695'}
+  model: gene.RgdIdLookup
+  pk: 13256
+- fields: {choice: 'RGD:1309790'}
+  model: gene.RgdIdLookup
+  pk: 4729
+- fields: {choice: 'RGD:1333196'}
+  model: gene.RgdIdLookup
+  pk: 6695
+- fields: {choice: 'RGD:62021'}
+  model: gene.RgdIdLookup
+  pk: 14189
+- fields: {choice: 'RGD:1589798'}
+  model: gene.RgdIdLookup
+  pk: 10625
+- fields: {choice: 'RGD:1308995'}
+  model: gene.RgdIdLookup
+  pk: 4065
+- fields: {choice: 'RGD:2325335'}
+  model: gene.RgdIdLookup
+  pk: 12149
+- fields: {choice: 'RGD:1310633'}
+  model: gene.RgdIdLookup
+  pk: 5419
+- fields: {choice: 'RGD:1306682'}
+  model: gene.RgdIdLookup
+  pk: 2132
+- fields: {choice: 'RGD:1311281'}
+  model: gene.RgdIdLookup
+  pk: 5954
+- fields: {choice: 'RGD:9474199'}
+  model: gene.RgdIdLookup
+  pk: 17548
+- fields: {choice: 'RGD:1333565'}
+  model: gene.RgdIdLookup
+  pk: 6753
+- fields: {choice: 'RGD:1311142'}
+  model: gene.RgdIdLookup
+  pk: 5844
+- fields: {choice: 'RGD:1309204'}
+  model: gene.RgdIdLookup
+  pk: 4241
+- fields: {choice: 'RGD:69434'}
+  model: gene.RgdIdLookup
+  pk: 16659
+- fields: {choice: 'RGD:735024'}
+  model: gene.RgdIdLookup
+  pk: 17281
+- fields: {choice: 'RGD:3896'}
+  model: gene.RgdIdLookup
+  pk: 13404
+- fields: {choice: 'RGD:1562857'}
+  model: gene.RgdIdLookup
+  pk: 8601
+- fields: {choice: 'RGD:1359246'}
+  model: gene.RgdIdLookup
+  pk: 7011
+- fields: {choice: 'RGD:1307954'}
+  model: gene.RgdIdLookup
+  pk: 3201
+- fields: {choice: 'RGD:1309775'}
+  model: gene.RgdIdLookup
+  pk: 4717
+- fields: {choice: 'RGD:1359345'}
+  model: gene.RgdIdLookup
+  pk: 7086
+- fields: {choice: 'RGD:621625'}
+  model: gene.RgdIdLookup
+  pk: 15533
+- fields: {choice: 'RGD:1305020'}
+  model: gene.RgdIdLookup
+  pk: 733
+- fields: {choice: 'RGD:727870'}
+  model: gene.RgdIdLookup
+  pk: 17178
+- fields: {choice: 'RGD:1563520'}
+  model: gene.RgdIdLookup
+  pk: 8838
+- fields: {choice: 'RGD:1311012'}
+  model: gene.RgdIdLookup
+  pk: 5737
+- fields: {choice: 'RGD:61866'}
+  model: gene.RgdIdLookup
+  pk: 13567
+- fields: {choice: 'RGD:620020'}
+  model: gene.RgdIdLookup
+  pk: 13995
+- fields: {choice: 'RGD:1564174'}
+  model: gene.RgdIdLookup
+  pk: 9057
+- fields: {choice: 'RGD:1306672'}
+  model: gene.RgdIdLookup
+  pk: 2122
+- fields: {choice: 'RGD:1583832'}
+  model: gene.RgdIdLookup
+  pk: 9973
+- fields: {choice: 'RGD:1588668'}
+  model: gene.RgdIdLookup
+  pk: 10487
+- fields: {choice: 'RGD:1563467'}
+  model: gene.RgdIdLookup
+  pk: 8821
+- fields: {choice: 'RGD:621157'}
+  model: gene.RgdIdLookup
+  pk: 15115
+- fields: {choice: 'RGD:1562668'}
+  model: gene.RgdIdLookup
+  pk: 8544
+- fields: {choice: 'RGD:1562997'}
+  model: gene.RgdIdLookup
+  pk: 8649
+- fields: {choice: 'RGD:1306127'}
+  model: gene.RgdIdLookup
+  pk: 1672
+- fields: {choice: 'RGD:1307680'}
+  model: gene.RgdIdLookup
+  pk: 2960
+- fields: {choice: 'RGD:1310645'}
+  model: gene.RgdIdLookup
+  pk: 5427
+- fields: {choice: 'RGD:1584525'}
+  model: gene.RgdIdLookup
+  pk: 10061
+- fields: {choice: 'RGD:2322870'}
+  model: gene.RgdIdLookup
+  pk: 12028
+- fields: {choice: 'RGD:69227'}
+  model: gene.RgdIdLookup
+  pk: 16489
+- fields: {choice: 'RGD:2475'}
+  model: gene.RgdIdLookup
+  pk: 12411
+- fields: {choice: 'RGD:1563002'}
+  model: gene.RgdIdLookup
+  pk: 8652
+- fields: {choice: 'RGD:621267'}
+  model: gene.RgdIdLookup
+  pk: 15217
+- fields: {choice: 'RGD:3907'}
+  model: gene.RgdIdLookup
+  pk: 13410
+- fields: {choice: 'RGD:619805'}
+  model: gene.RgdIdLookup
+  pk: 13775
+- fields: {choice: 'RGD:1562004'}
+  model: gene.RgdIdLookup
+  pk: 8306
+- fields: {choice: 'RGD:2737'}
+  model: gene.RgdIdLookup
+  pk: 12605
+- fields: {choice: 'RGD:1307427'}
+  model: gene.RgdIdLookup
+  pk: 2758
+- fields: {choice: 'RGD:1564835'}
+  model: gene.RgdIdLookup
+  pk: 9288
+- fields: {choice: 'RGD:1565451'}
+  model: gene.RgdIdLookup
+  pk: 9514
+- fields: {choice: 'RGD:621874'}
+  model: gene.RgdIdLookup
+  pk: 15765
+- fields: {choice: 'RGD:1594062'}
+  model: gene.RgdIdLookup
+  pk: 11068
+- fields: {choice: 'RGD:1596719'}
+  model: gene.RgdIdLookup
+  pk: 11333
+- fields: {choice: 'RGD:1305908'}
+  model: gene.RgdIdLookup
+  pk: 1489
+- fields: {choice: 'RGD:1307597'}
+  model: gene.RgdIdLookup
+  pk: 2893
+- fields: {choice: 'RGD:1307903'}
+  model: gene.RgdIdLookup
+  pk: 3157
+- fields: {choice: 'RGD:1306957'}
+  model: gene.RgdIdLookup
+  pk: 2368
+- fields: {choice: 'RGD:621083'}
+  model: gene.RgdIdLookup
+  pk: 15048
+- fields: {choice: 'RGD:2708'}
+  model: gene.RgdIdLookup
+  pk: 12579
+- fields: {choice: 'RGD:1561965'}
+  model: gene.RgdIdLookup
+  pk: 8291
+- fields: {choice: 'RGD:1307810'}
+  model: gene.RgdIdLookup
+  pk: 3076
+- fields: {choice: 'RGD:621420'}
+  model: gene.RgdIdLookup
+  pk: 15354
+- fields: {choice: 'RGD:621036'}
+  model: gene.RgdIdLookup
+  pk: 15006
+- fields: {choice: 'RGD:1560838'}
+  model: gene.RgdIdLookup
+  pk: 7902
+- fields: {choice: 'RGD:1307753'}
+  model: gene.RgdIdLookup
+  pk: 3026
+- fields: {choice: 'RGD:1359177'}
+  model: gene.RgdIdLookup
+  pk: 6960
+- fields: {choice: 'RGD:2731'}
+  model: gene.RgdIdLookup
+  pk: 12599
+- fields: {choice: 'RGD:3658'}
+  model: gene.RgdIdLookup
+  pk: 13225
+- fields: {choice: 'RGD:1566185'}
+  model: gene.RgdIdLookup
+  pk: 9779
+- fields: {choice: 'RGD:1311459'}
+  model: gene.RgdIdLookup
+  pk: 6102
+- fields: {choice: 'RGD:3813'}
+  model: gene.RgdIdLookup
+  pk: 13349
+- fields: {choice: 'RGD:2441'}
+  model: gene.RgdIdLookup
+  pk: 12389
+- fields: {choice: 'RGD:727976'}
+  model: gene.RgdIdLookup
+  pk: 17264
+- fields: {choice: 'RGD:1306936'}
+  model: gene.RgdIdLookup
+  pk: 2347
+- fields: {choice: 'RGD:1310885'}
+  model: gene.RgdIdLookup
+  pk: 5628
+- fields: {choice: 'RGD:1309776'}
+  model: gene.RgdIdLookup
+  pk: 4718
+- fields: {choice: 'RGD:3106'}
+  model: gene.RgdIdLookup
+  pk: 12875
+- fields: {choice: 'RGD:620485'}
+  model: gene.RgdIdLookup
+  pk: 14457
+- fields: {choice: 'RGD:708423'}
+  model: gene.RgdIdLookup
+  pk: 16757
+- fields: {choice: 'RGD:620153'}
+  model: gene.RgdIdLookup
+  pk: 14129
+- fields: {choice: 'RGD:1306943'}
+  model: gene.RgdIdLookup
+  pk: 2354
+- fields: {choice: 'RGD:1308195'}
+  model: gene.RgdIdLookup
+  pk: 3401
+- fields: {choice: 'RGD:1588366'}
+  model: gene.RgdIdLookup
+  pk: 10439
+- fields: {choice: 'RGD:1309477'}
+  model: gene.RgdIdLookup
+  pk: 4465
+- fields: {choice: 'RGD:621659'}
+  model: gene.RgdIdLookup
+  pk: 15565
+- fields: {choice: 'RGD:1590711'}
+  model: gene.RgdIdLookup
+  pk: 10701
+- fields: {choice: 'RGD:1306102'}
+  model: gene.RgdIdLookup
+  pk: 1650
+- fields: {choice: 'RGD:2306719'}
+  model: gene.RgdIdLookup
+  pk: 11816
+- fields: {choice: 'RGD:1589577'}
+  model: gene.RgdIdLookup
+  pk: 10583
+- fields: {choice: 'RGD:2323278'}
+  model: gene.RgdIdLookup
+  pk: 12053
+- fields: {choice: 'RGD:3045'}
+  model: gene.RgdIdLookup
+  pk: 12828
+- fields: {choice: 'RGD:68406'}
+  model: gene.RgdIdLookup
+  pk: 16408
+- fields: {choice: 'RGD:1303229'}
+  model: gene.RgdIdLookup
+  pk: 238
+- fields: {choice: 'RGD:1310376'}
+  model: gene.RgdIdLookup
+  pk: 5205
+- fields: {choice: 'RGD:1565196'}
+  model: gene.RgdIdLookup
+  pk: 9427
+- fields: {choice: 'RGD:1310502'}
+  model: gene.RgdIdLookup
+  pk: 5306
+- fields: {choice: 'RGD:2319564'}
+  model: gene.RgdIdLookup
+  pk: 11910
+- fields: {choice: 'RGD:1562046'}
+  model: gene.RgdIdLookup
+  pk: 8327
+- fields: {choice: 'RGD:69357'}
+  model: gene.RgdIdLookup
+  pk: 16611
+- fields: {choice: 'RGD:1311690'}
+  model: gene.RgdIdLookup
+  pk: 6305
+- fields: {choice: 'RGD:1562230'}
+  model: gene.RgdIdLookup
+  pk: 8388
+- fields: {choice: 'RGD:2318067'}
+  model: gene.RgdIdLookup
+  pk: 11850
+- fields: {choice: 'RGD:1310919'}
+  model: gene.RgdIdLookup
+  pk: 5659
+- fields: {choice: 'RGD:1307770'}
+  model: gene.RgdIdLookup
+  pk: 3040
+- fields: {choice: 'RGD:1308628'}
+  model: gene.RgdIdLookup
+  pk: 3759
+- fields: {choice: 'RGD:1308801'}
+  model: gene.RgdIdLookup
+  pk: 3897
+- fields: {choice: 'RGD:1309453'}
+  model: gene.RgdIdLookup
+  pk: 4445
+- fields: {choice: 'RGD:619924'}
+  model: gene.RgdIdLookup
+  pk: 13896
+- fields: {choice: 'RGD:1311278'}
+  model: gene.RgdIdLookup
+  pk: 5953
+- fields: {choice: 'RGD:1562447'}
+  model: gene.RgdIdLookup
+  pk: 8465
+- fields: {choice: 'RGD:1566098'}
+  model: gene.RgdIdLookup
+  pk: 9747
+- fields: {choice: 'RGD:1596822'}
+  model: gene.RgdIdLookup
+  pk: 11349
+- fields: {choice: 'RGD:1309992'}
+  model: gene.RgdIdLookup
+  pk: 4889
+- fields: {choice: 'RGD:1585555'}
+  model: gene.RgdIdLookup
+  pk: 10172
+- fields: {choice: 'RGD:1592197'}
+  model: gene.RgdIdLookup
+  pk: 10882
+- fields: {choice: 'RGD:1359241'}
+  model: gene.RgdIdLookup
+  pk: 7007
+- fields: {choice: 'RGD:708434'}
+  model: gene.RgdIdLookup
+  pk: 16764
+- fields: {choice: 'RGD:1334088'}
+  model: gene.RgdIdLookup
+  pk: 6839
+- fields: {choice: 'RGD:1549775'}
+  model: gene.RgdIdLookup
+  pk: 7415
+- fields: {choice: 'RGD:3270'}
+  model: gene.RgdIdLookup
+  pk: 12992
+- fields: {choice: 'RGD:1359318'}
+  model: gene.RgdIdLookup
+  pk: 7066
+- fields: {choice: 'RGD:621232'}
+  model: gene.RgdIdLookup
+  pk: 15184
+- fields: {choice: 'RGD:620900'}
+  model: gene.RgdIdLookup
+  pk: 14879
+- fields: {choice: 'RGD:1308324'}
+  model: gene.RgdIdLookup
+  pk: 3507
+- fields: {choice: 'RGD:1309385'}
+  model: gene.RgdIdLookup
+  pk: 4385
+- fields: {choice: 'RGD:1311855'}
+  model: gene.RgdIdLookup
+  pk: 6438
+- fields: {choice: 'RGD:1309683'}
+  model: gene.RgdIdLookup
+  pk: 4641
+- fields: {choice: 'RGD:628760'}
+  model: gene.RgdIdLookup
+  pk: 15938
+- fields: {choice: 'RGD:620071'}
+  model: gene.RgdIdLookup
+  pk: 14048
+- fields: {choice: 'RGD:1311852'}
+  model: gene.RgdIdLookup
+  pk: 6435
+- fields: {choice: 'RGD:628741'}
+  model: gene.RgdIdLookup
+  pk: 15920
+- fields: {choice: 'RGD:1306541'}
+  model: gene.RgdIdLookup
+  pk: 2012
+- fields: {choice: 'RGD:1564130'}
+  model: gene.RgdIdLookup
+  pk: 9037
+- fields: {choice: 'RGD:62001'}
+  model: gene.RgdIdLookup
+  pk: 13984
+- fields: {choice: 'RGD:1564767'}
+  model: gene.RgdIdLookup
+  pk: 9254
+- fields: {choice: 'RGD:71089'}
+  model: gene.RgdIdLookup
+  pk: 17087
+- fields: {choice: 'RGD:1310046'}
+  model: gene.RgdIdLookup
+  pk: 4932
+- fields: {choice: 'RGD:628777'}
+  model: gene.RgdIdLookup
+  pk: 15954
+- fields: {choice: 'RGD:1305009'}
+  model: gene.RgdIdLookup
+  pk: 722
+- fields: {choice: 'RGD:1307711'}
+  model: gene.RgdIdLookup
+  pk: 2988
+- fields: {choice: 'RGD:727817'}
+  model: gene.RgdIdLookup
+  pk: 17139
+- fields: {choice: 'RGD:1563531'}
+  model: gene.RgdIdLookup
+  pk: 8843
+- fields: {choice: 'RGD:708543'}
+  model: gene.RgdIdLookup
+  pk: 16851
+- fields: {choice: 'RGD:1359547'}
+  model: gene.RgdIdLookup
+  pk: 7232
+- fields: {choice: 'RGD:1309634'}
+  model: gene.RgdIdLookup
+  pk: 4598
+- fields: {choice: 'RGD:1311436'}
+  model: gene.RgdIdLookup
+  pk: 6081
+- fields: {choice: 'RGD:1359262'}
+  model: gene.RgdIdLookup
+  pk: 7025
+- fields: {choice: 'RGD:1308820'}
+  model: gene.RgdIdLookup
+  pk: 3914
+- fields: {choice: 'RGD:620954'}
+  model: gene.RgdIdLookup
+  pk: 14929
+- fields: {choice: 'RGD:1307675'}
+  model: gene.RgdIdLookup
+  pk: 2956
+- fields: {choice: 'RGD:1564614'}
+  model: gene.RgdIdLookup
+  pk: 9193
+- fields: {choice: 'RGD:1311623'}
+  model: gene.RgdIdLookup
+  pk: 6246
+- fields: {choice: 'RGD:1310013'}
+  model: gene.RgdIdLookup
+  pk: 4905
+- fields: {choice: 'RGD:1310980'}
+  model: gene.RgdIdLookup
+  pk: 5710
+- fields: {choice: 'RGD:1596799'}
+  model: gene.RgdIdLookup
+  pk: 11344
+- fields: {choice: 'RGD:631352'}
+  model: gene.RgdIdLookup
+  pk: 16098
+- fields: {choice: 'RGD:620823'}
+  model: gene.RgdIdLookup
+  pk: 14804
+- fields: {choice: 'RGD:1303261'}
+  model: gene.RgdIdLookup
+  pk: 269
+- fields: {choice: 'RGD:1560600'}
+  model: gene.RgdIdLookup
+  pk: 7826
+- fields: {choice: 'RGD:1311529'}
+  model: gene.RgdIdLookup
+  pk: 6163
+- fields: {choice: 'RGD:1308992'}
+  model: gene.RgdIdLookup
+  pk: 4063
+- fields: {choice: 'RGD:1311831'}
+  model: gene.RgdIdLookup
+  pk: 6419
+- fields: {choice: 'RGD:3615'}
+  model: gene.RgdIdLookup
+  pk: 13189
+- fields: {choice: 'RGD:1307194'}
+  model: gene.RgdIdLookup
+  pk: 2562
+- fields: {choice: 'RGD:1583530'}
+  model: gene.RgdIdLookup
+  pk: 9936
+- fields: {choice: 'RGD:1596695'}
+  model: gene.RgdIdLookup
+  pk: 11327
+- fields: {choice: 'RGD:2325404'}
+  model: gene.RgdIdLookup
+  pk: 12190
+- fields: {choice: 'RGD:1310397'}
+  model: gene.RgdIdLookup
+  pk: 5222
+- fields: {choice: 'RGD:1307483'}
+  model: gene.RgdIdLookup
+  pk: 2806
+- fields: {choice: 'RGD:1304786'}
+  model: gene.RgdIdLookup
+  pk: 536
+- fields: {choice: 'RGD:735163'}
+  model: gene.RgdIdLookup
+  pk: 17398
+- fields: {choice: 'RGD:7612453'}
+  model: gene.RgdIdLookup
+  pk: 17502
+- fields: {choice: 'RGD:67366'}
+  model: gene.RgdIdLookup
+  pk: 16307
+- fields: {choice: 'RGD:619882'}
+  model: gene.RgdIdLookup
+  pk: 13853
+- fields: {choice: 'RGD:621400'}
+  model: gene.RgdIdLookup
+  pk: 15335
+- fields: {choice: 'RGD:1309703'}
+  model: gene.RgdIdLookup
+  pk: 4655
+- fields: {choice: 'RGD:1563470'}
+  model: gene.RgdIdLookup
+  pk: 8823
+- fields: {choice: 'RGD:1305327'}
+  model: gene.RgdIdLookup
+  pk: 1002
+- fields: {choice: 'RGD:619974'}
+  model: gene.RgdIdLookup
+  pk: 13948
+- fields: {choice: 'RGD:1562103'}
+  model: gene.RgdIdLookup
+  pk: 8351
+- fields: {choice: 'RGD:1332737'}
+  model: gene.RgdIdLookup
+  pk: 6624
+- fields: {choice: 'RGD:7707229'}
+  model: gene.RgdIdLookup
+  pk: 17525
+- fields: {choice: 'RGD:1591937'}
+  model: gene.RgdIdLookup
+  pk: 10851
+- fields: {choice: 'RGD:1334326'}
+  model: gene.RgdIdLookup
+  pk: 6871
+- fields: {choice: 'RGD:1305986'}
+  model: gene.RgdIdLookup
+  pk: 1552
+- fields: {choice: 'RGD:1310572'}
+  model: gene.RgdIdLookup
+  pk: 5367
+- fields: {choice: 'RGD:1591977'}
+  model: gene.RgdIdLookup
+  pk: 10859
+- fields: {choice: 'RGD:1307556'}
+  model: gene.RgdIdLookup
+  pk: 2861
+- fields: {choice: 'RGD:1310737'}
+  model: gene.RgdIdLookup
+  pk: 5502
+- fields: {choice: 'RGD:61825'}
+  model: gene.RgdIdLookup
+  pk: 13526
+- fields: {choice: 'RGD:1565315'}
+  model: gene.RgdIdLookup
+  pk: 9463
+- fields: {choice: 'RGD:1559874'}
+  model: gene.RgdIdLookup
+  pk: 7568
+- fields: {choice: 'RGD:2325625'}
+  model: gene.RgdIdLookup
+  pk: 12300
+- fields: {choice: 'RGD:1564209'}
+  model: gene.RgdIdLookup
+  pk: 9069
+- fields: {choice: 'RGD:1308959'}
+  model: gene.RgdIdLookup
+  pk: 4036
+- fields: {choice: 'RGD:1359296'}
+  model: gene.RgdIdLookup
+  pk: 7049
+- fields: {choice: 'RGD:1311751'}
+  model: gene.RgdIdLookup
+  pk: 6358
+- fields: {choice: 'RGD:1302946'}
+  model: gene.RgdIdLookup
+  pk: 9
+- fields: {choice: 'RGD:1310590'}
+  model: gene.RgdIdLookup
+  pk: 5383
+- fields: {choice: 'RGD:1310230'}
+  model: gene.RgdIdLookup
+  pk: 5089
+- fields: {choice: 'RGD:1310755'}
+  model: gene.RgdIdLookup
+  pk: 5518
+- fields: {choice: 'RGD:1309072'}
+  model: gene.RgdIdLookup
+  pk: 4129
+- fields: {choice: 'RGD:1359355'}
+  model: gene.RgdIdLookup
+  pk: 7091
+- fields: {choice: 'RGD:1308336'}
+  model: gene.RgdIdLookup
+  pk: 3516
+- fields: {choice: 'RGD:1310346'}
+  model: gene.RgdIdLookup
+  pk: 5182
+- fields: {choice: 'RGD:2620'}
+  model: gene.RgdIdLookup
+  pk: 12508
+- fields: {choice: 'RGD:1304701'}
+  model: gene.RgdIdLookup
+  pk: 470
+- fields: {choice: 'RGD:3254'}
+  model: gene.RgdIdLookup
+  pk: 12982
+- fields: {choice: 'RGD:1586338'}
+  model: gene.RgdIdLookup
+  pk: 10252
+- fields: {choice: 'RGD:1564950'}
+  model: gene.RgdIdLookup
+  pk: 9332
+- fields: {choice: 'RGD:620935'}
+  model: gene.RgdIdLookup
+  pk: 14914
+- fields: {choice: 'RGD:628649'}
+  model: gene.RgdIdLookup
+  pk: 15836
+- fields: {choice: 'RGD:1310984'}
+  model: gene.RgdIdLookup
+  pk: 5713
+- fields: {choice: 'RGD:1598095'}
+  model: gene.RgdIdLookup
+  pk: 11468
+- fields: {choice: 'RGD:631358'}
+  model: gene.RgdIdLookup
+  pk: 16102
+- fields: {choice: 'RGD:619876'}
+  model: gene.RgdIdLookup
+  pk: 13846
+- fields: {choice: 'RGD:1584652'}
+  model: gene.RgdIdLookup
+  pk: 10069
+- fields: {choice: 'RGD:1589456'}
+  model: gene.RgdIdLookup
+  pk: 10566
+- fields: {choice: 'RGD:1310977'}
+  model: gene.RgdIdLookup
+  pk: 5707
+- fields: {choice: 'RGD:2668'}
+  model: gene.RgdIdLookup
+  pk: 12549
+- fields: {choice: 'RGD:2090'}
+  model: gene.RgdIdLookup
+  pk: 11611
+- fields: {choice: 'RGD:1593768'}
+  model: gene.RgdIdLookup
+  pk: 11042
+- fields: {choice: 'RGD:2325345'}
+  model: gene.RgdIdLookup
+  pk: 12155
+- fields: {choice: 'RGD:1560108'}
+  model: gene.RgdIdLookup
+  pk: 7656
+- fields: {choice: 'RGD:1304614'}
+  model: gene.RgdIdLookup
+  pk: 396
+- fields: {choice: 'RGD:1310460'}
+  model: gene.RgdIdLookup
+  pk: 5273
+- fields: {choice: 'RGD:1585866'}
+  model: gene.RgdIdLookup
+  pk: 10193
+- fields: {choice: 'RGD:1562095'}
+  model: gene.RgdIdLookup
+  pk: 8348
+- fields: {choice: 'RGD:1306496'}
+  model: gene.RgdIdLookup
+  pk: 1971
+- fields: {choice: 'RGD:727894'}
+  model: gene.RgdIdLookup
+  pk: 17197
+- fields: {choice: 'RGD:1310146'}
+  model: gene.RgdIdLookup
+  pk: 5016
+- fields: {choice: 'RGD:1303228'}
+  model: gene.RgdIdLookup
+  pk: 237
+- fields: {choice: 'RGD:631328'}
+  model: gene.RgdIdLookup
+  pk: 16075
+- fields: {choice: 'RGD:1305787'}
+  model: gene.RgdIdLookup
+  pk: 1378
+- fields: {choice: 'RGD:1308406'}
+  model: gene.RgdIdLookup
+  pk: 3575
+- fields: {choice: 'RGD:2746'}
+  model: gene.RgdIdLookup
+  pk: 12614
+- fields: {choice: 'RGD:735098'}
+  model: gene.RgdIdLookup
+  pk: 17341
+- fields: {choice: 'RGD:1308892'}
+  model: gene.RgdIdLookup
+  pk: 3977
+- fields: {choice: 'RGD:1311027'}
+  model: gene.RgdIdLookup
+  pk: 5750
+- fields: {choice: 'RGD:1305470'}
+  model: gene.RgdIdLookup
+  pk: 1121
+- fields: {choice: 'RGD:1593279'}
+  model: gene.RgdIdLookup
+  pk: 10989
+- fields: {choice: 'RGD:1306631'}
+  model: gene.RgdIdLookup
+  pk: 2087
+- fields: {choice: 'RGD:620330'}
+  model: gene.RgdIdLookup
+  pk: 14310
+- fields: {choice: 'RGD:1303125'}
+  model: gene.RgdIdLookup
+  pk: 153
+- fields: {choice: 'RGD:1560747'}
+  model: gene.RgdIdLookup
+  pk: 7874
+- fields: {choice: 'RGD:1564272'}
+  model: gene.RgdIdLookup
+  pk: 9089
+- fields: {choice: 'RGD:69286'}
+  model: gene.RgdIdLookup
+  pk: 16547
+- fields: {choice: 'RGD:1334361'}
+  model: gene.RgdIdLookup
+  pk: 6879
+- fields: {choice: 'RGD:1311186'}
+  model: gene.RgdIdLookup
+  pk: 5879
+- fields: {choice: 'RGD:1305591'}
+  model: gene.RgdIdLookup
+  pk: 1220
+- fields: {choice: 'RGD:1303314'}
+  model: gene.RgdIdLookup
+  pk: 314
+- fields: {choice: 'RGD:1305531'}
+  model: gene.RgdIdLookup
+  pk: 1169
+- fields: {choice: 'RGD:1311928'}
+  model: gene.RgdIdLookup
+  pk: 6496
+- fields: {choice: 'RGD:621039'}
+  model: gene.RgdIdLookup
+  pk: 15009
+- fields: {choice: 'RGD:1308966'}
+  model: gene.RgdIdLookup
+  pk: 4042
+- fields: {choice: 'RGD:1563290'}
+  model: gene.RgdIdLookup
+  pk: 8758
+- fields: {choice: 'RGD:2107'}
+  model: gene.RgdIdLookup
+  pk: 11621
+- fields: {choice: 'RGD:620674'}
+  model: gene.RgdIdLookup
+  pk: 14649
+- fields: {choice: 'RGD:3370'}
+  model: gene.RgdIdLookup
+  pk: 13061
+- fields: {choice: 'RGD:1559779'}
+  model: gene.RgdIdLookup
+  pk: 7539
+- fields: {choice: 'RGD:1308964'}
+  model: gene.RgdIdLookup
+  pk: 4040
+- fields: {choice: 'RGD:1311215'}
+  model: gene.RgdIdLookup
+  pk: 5901
+- fields: {choice: 'RGD:2314'}
+  model: gene.RgdIdLookup
+  pk: 11832
+- fields: {choice: 'RGD:619892'}
+  model: gene.RgdIdLookup
+  pk: 13864
+- fields: {choice: 'RGD:620200'}
+  model: gene.RgdIdLookup
+  pk: 14179
+- fields: {choice: 'RGD:1307426'}
+  model: gene.RgdIdLookup
+  pk: 2757
+- fields: {choice: 'RGD:620429'}
+  model: gene.RgdIdLookup
+  pk: 14398
+- fields: {choice: 'RGD:1304973'}
+  model: gene.RgdIdLookup
+  pk: 691
+- fields: {choice: 'RGD:1305480'}
+  model: gene.RgdIdLookup
+  pk: 1128
+- fields: {choice: 'RGD:1590629'}
+  model: gene.RgdIdLookup
+  pk: 10696
+- fields: {choice: 'RGD:3781'}
+  model: gene.RgdIdLookup
+  pk: 13324
+- fields: {choice: 'RGD:3117'}
+  model: gene.RgdIdLookup
+  pk: 12884
+- fields: {choice: 'RGD:1310126'}
+  model: gene.RgdIdLookup
+  pk: 4998
+- fields: {choice: 'RGD:1305642'}
+  model: gene.RgdIdLookup
+  pk: 1263
+- fields: {choice: 'RGD:1306128'}
+  model: gene.RgdIdLookup
+  pk: 1673
+- fields: {choice: 'RGD:1310896'}
+  model: gene.RgdIdLookup
+  pk: 5639
+- fields: {choice: 'RGD:1311626'}
+  model: gene.RgdIdLookup
+  pk: 6249
+- fields: {choice: 'RGD:1303172'}
+  model: gene.RgdIdLookup
+  pk: 194
+- fields: {choice: 'RGD:2319721'}
+  model: gene.RgdIdLookup
+  pk: 11918
+- fields: {choice: 'RGD:1587433'}
+  model: gene.RgdIdLookup
+  pk: 10365
+- fields: {choice: 'RGD:2809'}
+  model: gene.RgdIdLookup
+  pk: 12655
+- fields: {choice: 'RGD:621207'}
+  model: gene.RgdIdLookup
+  pk: 15161
+- fields: {choice: 'RGD:1306245'}
+  model: gene.RgdIdLookup
+  pk: 1771
+- fields: {choice: 'RGD:708399'}
+  model: gene.RgdIdLookup
+  pk: 16739
+- fields: {choice: 'RGD:3389'}
+  model: gene.RgdIdLookup
+  pk: 13076
+- fields: {choice: 'RGD:1307380'}
+  model: gene.RgdIdLookup
+  pk: 2716
+- fields: {choice: 'RGD:620597'}
+  model: gene.RgdIdLookup
+  pk: 14567
+- fields: {choice: 'RGD:1563452'}
+  model: gene.RgdIdLookup
+  pk: 8816
+- fields: {choice: 'RGD:735148'}
+  model: gene.RgdIdLookup
+  pk: 17384
+- fields: {choice: 'RGD:1306625'}
+  model: gene.RgdIdLookup
+  pk: 2082
+- fields: {choice: 'RGD:621593'}
+  model: gene.RgdIdLookup
+  pk: 15509
+- fields: {choice: 'RGD:1592176'}
+  model: gene.RgdIdLookup
+  pk: 10878
+- fields: {choice: 'RGD:1562908'}
+  model: gene.RgdIdLookup
+  pk: 8616
+- fields: {choice: 'RGD:1565973'}
+  model: gene.RgdIdLookup
+  pk: 9699
+- fields: {choice: 'RGD:1306247'}
+  model: gene.RgdIdLookup
+  pk: 1773
+- fields: {choice: 'RGD:1566416'}
+  model: gene.RgdIdLookup
+  pk: 9852
+- fields: {choice: 'RGD:3772'}
+  model: gene.RgdIdLookup
+  pk: 13317
+- fields: {choice: 'RGD:621390'}
+  model: gene.RgdIdLookup
+  pk: 15325
+- fields: {choice: 'RGD:620833'}
+  model: gene.RgdIdLookup
+  pk: 14815
+- fields: {choice: 'RGD:1308788'}
+  model: gene.RgdIdLookup
+  pk: 3889
+- fields: {choice: 'RGD:1304579'}
+  model: gene.RgdIdLookup
+  pk: 364
+- fields: {choice: 'RGD:1305805'}
+  model: gene.RgdIdLookup
+  pk: 1395
+- fields: {choice: 'RGD:1334050'}
+  model: gene.RgdIdLookup
+  pk: 6827
+- fields: {choice: 'RGD:1560959'}
+  model: gene.RgdIdLookup
+  pk: 7949
+- fields: {choice: 'RGD:1306814'}
+  model: gene.RgdIdLookup
+  pk: 2246
+- fields: {choice: 'RGD:6503602'}
+  model: gene.RgdIdLookup
+  pk: 16301
+- fields: {choice: 'RGD:1308632'}
+  model: gene.RgdIdLookup
+  pk: 3762
+- fields: {choice: 'RGD:621263'}
+  model: gene.RgdIdLookup
+  pk: 15215
+- fields: {choice: 'RGD:3637'}
+  model: gene.RgdIdLookup
+  pk: 13205
+- fields: {choice: 'RGD:1306515'}
+  model: gene.RgdIdLookup
+  pk: 1989
+- fields: {choice: 'RGD:621137'}
+  model: gene.RgdIdLookup
+  pk: 15097
+- fields: {choice: 'RGD:735118'}
+  model: gene.RgdIdLookup
+  pk: 17360
+- fields: {choice: 'RGD:1309993'}
+  model: gene.RgdIdLookup
+  pk: 4890
+- fields: {choice: 'RGD:631331'}
+  model: gene.RgdIdLookup
+  pk: 16078
+- fields: {choice: 'RGD:2318321'}
+  model: gene.RgdIdLookup
+  pk: 11857
+- fields: {choice: 'RGD:619836'}
+  model: gene.RgdIdLookup
+  pk: 13806
+- fields: {choice: 'RGD:1310682'}
+  model: gene.RgdIdLookup
+  pk: 5457
+- fields: {choice: 'RGD:1564842'}
+  model: gene.RgdIdLookup
+  pk: 9290
+- fields: {choice: 'RGD:3451'}
+  model: gene.RgdIdLookup
+  pk: 13123
+- fields: {choice: 'RGD:1311296'}
+  model: gene.RgdIdLookup
+  pk: 5966
+- fields: {choice: 'RGD:2324324'}
+  model: gene.RgdIdLookup
+  pk: 12114
+- fields: {choice: 'RGD:1597791'}
+  model: gene.RgdIdLookup
+  pk: 11453
+- fields: {choice: 'RGD:620551'}
+  model: gene.RgdIdLookup
+  pk: 14521
+- fields: {choice: 'RGD:1312002'}
+  model: gene.RgdIdLookup
+  pk: 6563
+- fields: {choice: 'RGD:70966'}
+  model: gene.RgdIdLookup
+  pk: 16969
+- fields: {choice: 'RGD:1562438'}
+  model: gene.RgdIdLookup
+  pk: 8461
+- fields: {choice: 'RGD:621129'}
+  model: gene.RgdIdLookup
+  pk: 15090
+- fields: {choice: 'RGD:2319950'}
+  model: gene.RgdIdLookup
+  pk: 11930
+- fields: {choice: 'RGD:1310686'}
+  model: gene.RgdIdLookup
+  pk: 5461
+- fields: {choice: 'RGD:7630023'}
+  model: gene.RgdIdLookup
+  pk: 17505
+- fields: {choice: 'RGD:620337'}
+  model: gene.RgdIdLookup
+  pk: 14317
+- fields: {choice: 'RGD:1310672'}
+  model: gene.RgdIdLookup
+  pk: 5448
+- fields: {choice: 'RGD:1305146'}
+  model: gene.RgdIdLookup
+  pk: 845
+- fields: {choice: 'RGD:619722'}
+  model: gene.RgdIdLookup
+  pk: 13688
+- fields: {choice: 'RGD:620137'}
+  model: gene.RgdIdLookup
+  pk: 14112
+- fields: {choice: 'RGD:1560183'}
+  model: gene.RgdIdLookup
+  pk: 7688
+- fields: {choice: 'RGD:620188'}
+  model: gene.RgdIdLookup
+  pk: 14166
+- fields: {choice: 'RGD:1559623'}
+  model: gene.RgdIdLookup
+  pk: 7490
+- fields: {choice: 'RGD:1305922'}
+  model: gene.RgdIdLookup
+  pk: 1501
+- fields: {choice: 'RGD:631371'}
+  model: gene.RgdIdLookup
+  pk: 16113
+- fields: {choice: 'RGD:1561931'}
+  model: gene.RgdIdLookup
+  pk: 8277
+- fields: {choice: 'RGD:1304744'}
+  model: gene.RgdIdLookup
+  pk: 503
+- fields: {choice: 'RGD:708413'}
+  model: gene.RgdIdLookup
+  pk: 16749
+- fields: {choice: 'RGD:1310258'}
+  model: gene.RgdIdLookup
+  pk: 5111
+- fields: {choice: 'RGD:1303331'}
+  model: gene.RgdIdLookup
+  pk: 331
+- fields: {choice: 'RGD:708490'}
+  model: gene.RgdIdLookup
+  pk: 16810
+- fields: {choice: 'RGD:2278'}
+  model: gene.RgdIdLookup
+  pk: 11763
+- fields: {choice: 'RGD:1589413'}
+  model: gene.RgdIdLookup
+  pk: 10562
+- fields: {choice: 'RGD:2402'}
+  model: gene.RgdIdLookup
+  pk: 12366
+- fields: {choice: 'RGD:1566209'}
+  model: gene.RgdIdLookup
+  pk: 9785
+- fields: {choice: 'RGD:1305358'}
+  model: gene.RgdIdLookup
+  pk: 1030
+- fields: {choice: 'RGD:1309237'}
+  model: gene.RgdIdLookup
+  pk: 4269
+- fields: {choice: 'RGD:1310582'}
+  model: gene.RgdIdLookup
+  pk: 5375
+- fields: {choice: 'RGD:3256'}
+  model: gene.RgdIdLookup
+  pk: 12983
+- fields: {choice: 'RGD:1304780'}
+  model: gene.RgdIdLookup
+  pk: 531
+- fields: {choice: 'RGD:1310803'}
+  model: gene.RgdIdLookup
+  pk: 5559
+- fields: {choice: 'RGD:1597343'}
+  model: gene.RgdIdLookup
+  pk: 11400
+- fields: {choice: 'RGD:1307967'}
+  model: gene.RgdIdLookup
+  pk: 3212
+- fields: {choice: 'RGD:1305029'}
+  model: gene.RgdIdLookup
+  pk: 741
+- fields: {choice: 'RGD:2323412'}
+  model: gene.RgdIdLookup
+  pk: 12065
+- fields: {choice: 'RGD:1563329'}
+  model: gene.RgdIdLookup
+  pk: 8769
+- fields: {choice: 'RGD:1308201'}
+  model: gene.RgdIdLookup
+  pk: 3407
+- fields: {choice: 'RGD:1561854'}
+  model: gene.RgdIdLookup
+  pk: 8256
+- fields: {choice: 'RGD:1589941'}
+  model: gene.RgdIdLookup
+  pk: 10640
+- fields: {choice: 'RGD:620809'}
+  model: gene.RgdIdLookup
+  pk: 14788
+- fields: {choice: 'RGD:3450'}
+  model: gene.RgdIdLookup
+  pk: 13122
+- fields: {choice: 'RGD:1303198'}
+  model: gene.RgdIdLookup
+  pk: 217
+- fields: {choice: 'RGD:1309115'}
+  model: gene.RgdIdLookup
+  pk: 4168
+- fields: {choice: 'RGD:1566005'}
+  model: gene.RgdIdLookup
+  pk: 9710
+- fields: {choice: 'RGD:1310215'}
+  model: gene.RgdIdLookup
+  pk: 5076
+- fields: {choice: 'RGD:1566170'}
+  model: gene.RgdIdLookup
+  pk: 9772
+- fields: {choice: 'RGD:1306808'}
+  model: gene.RgdIdLookup
+  pk: 2241
+- fields: {choice: 'RGD:621240'}
+  model: gene.RgdIdLookup
+  pk: 15192
+- fields: {choice: 'RGD:1598325'}
+  model: gene.RgdIdLookup
+  pk: 11498
+- fields: {choice: 'RGD:1306049'}
+  model: gene.RgdIdLookup
+  pk: 1606
+- fields: {choice: 'RGD:1589722'}
+  model: gene.RgdIdLookup
+  pk: 10599
+- fields: {choice: 'RGD:1306144'}
+  model: gene.RgdIdLookup
+  pk: 1685
+- fields: {choice: 'RGD:3375'}
+  model: gene.RgdIdLookup
+  pk: 13066
+- fields: {choice: 'RGD:620921'}
+  model: gene.RgdIdLookup
+  pk: 14900
+- fields: {choice: 'RGD:2636'}
+  model: gene.RgdIdLookup
+  pk: 12522
+- fields: {choice: 'RGD:1593368'}
+  model: gene.RgdIdLookup
+  pk: 11014
+- fields: {choice: 'RGD:1590869'}
+  model: gene.RgdIdLookup
+  pk: 10721
+- fields: {choice: 'RGD:1311538'}
+  model: gene.RgdIdLookup
+  pk: 6171
+- fields: {choice: 'RGD:1562331'}
+  model: gene.RgdIdLookup
+  pk: 8423
+- fields: {choice: 'RGD:620364'}
+  model: gene.RgdIdLookup
+  pk: 14342
+- fields: {choice: 'RGD:2322545'}
+  model: gene.RgdIdLookup
+  pk: 12021
+- fields: {choice: 'RGD:1592387'}
+  model: gene.RgdIdLookup
+  pk: 10900
+- fields: {choice: 'RGD:620982'}
+  model: gene.RgdIdLookup
+  pk: 14956
+- fields: {choice: 'RGD:2318093'}
+  model: gene.RgdIdLookup
+  pk: 11851
+- fields: {choice: 'RGD:1565003'}
+  model: gene.RgdIdLookup
+  pk: 9354
+- fields: {choice: 'RGD:1309488'}
+  model: gene.RgdIdLookup
+  pk: 4473
+- fields: {choice: 'RGD:1303018'}
+  model: gene.RgdIdLookup
+  pk: 66
+- fields: {choice: 'RGD:3202'}
+  model: gene.RgdIdLookup
+  pk: 12943
+- fields: {choice: 'RGD:621689'}
+  model: gene.RgdIdLookup
+  pk: 15594
+- fields: {choice: 'RGD:620839'}
+  model: gene.RgdIdLookup
+  pk: 14821
+- fields: {choice: 'RGD:621374'}
+  model: gene.RgdIdLookup
+  pk: 15313
+- fields: {choice: 'RGD:1560398'}
+  model: gene.RgdIdLookup
+  pk: 7766
+- fields: {choice: 'RGD:2394'}
+  model: gene.RgdIdLookup
+  pk: 12358
+- fields: {choice: 'RGD:1596067'}
+  model: gene.RgdIdLookup
+  pk: 11275
+- fields: {choice: 'RGD:3717'}
+  model: gene.RgdIdLookup
+  pk: 13278
+- fields: {choice: 'RGD:727831'}
+  model: gene.RgdIdLookup
+  pk: 17148
+- fields: {choice: 'RGD:620821'}
+  model: gene.RgdIdLookup
+  pk: 14802
+- fields: {choice: 'RGD:1564891'}
+  model: gene.RgdIdLookup
+  pk: 9308
+- fields: {choice: 'RGD:1563670'}
+  model: gene.RgdIdLookup
+  pk: 8889
+- fields: {choice: 'RGD:1564360'}
+  model: gene.RgdIdLookup
+  pk: 9112
+- fields: {choice: 'RGD:1310945'}
+  model: gene.RgdIdLookup
+  pk: 5678
+- fields: {choice: 'RGD:1359664'}
+  model: gene.RgdIdLookup
+  pk: 7316
+- fields: {choice: 'RGD:621765'}
+  model: gene.RgdIdLookup
+  pk: 15666
+- fields: {choice: 'RGD:1305220'}
+  model: gene.RgdIdLookup
+  pk: 909
+- fields: {choice: 'RGD:1310962'}
+  model: gene.RgdIdLookup
+  pk: 5694
+- fields: {choice: 'RGD:69653'}
+  model: gene.RgdIdLookup
+  pk: 16667
+- fields: {choice: 'RGD:2913'}
+  model: gene.RgdIdLookup
+  pk: 12728
+- fields: {choice: 'RGD:1311575'}
+  model: gene.RgdIdLookup
+  pk: 6204
+- fields: {choice: 'RGD:1597573'}
+  model: gene.RgdIdLookup
+  pk: 11435
+- fields: {choice: 'RGD:2813'}
+  model: gene.RgdIdLookup
+  pk: 12659
+- fields: {choice: 'RGD:1307566'}
+  model: gene.RgdIdLookup
+  pk: 2869
+- fields: {choice: 'RGD:1304764'}
+  model: gene.RgdIdLookup
+  pk: 518
+- fields: {choice: 'RGD:1562861'}
+  model: gene.RgdIdLookup
+  pk: 8603
+- fields: {choice: 'RGD:620434'}
+  model: gene.RgdIdLookup
+  pk: 14404
+- fields: {choice: 'RGD:1311882'}
+  model: gene.RgdIdLookup
+  pk: 6460
+- fields: {choice: 'RGD:1311950'}
+  model: gene.RgdIdLookup
+  pk: 6518
+- fields: {choice: 'RGD:3215'}
+  model: gene.RgdIdLookup
+  pk: 12952
+- fields: {choice: 'RGD:1306560'}
+  model: gene.RgdIdLookup
+  pk: 2027
+- fields: {choice: 'RGD:1359190'}
+  model: gene.RgdIdLookup
+  pk: 6968
+- fields: {choice: 'RGD:1310575'}
+  model: gene.RgdIdLookup
+  pk: 5370
+- fields: {choice: 'RGD:619743'}
+  model: gene.RgdIdLookup
+  pk: 13711
+- fields: {choice: 'RGD:1588572'}
+  model: gene.RgdIdLookup
+  pk: 10460
+- fields: {choice: 'RGD:61804'}
+  model: gene.RgdIdLookup
+  pk: 13505
+- fields: {choice: 'RGD:1311350'}
+  model: gene.RgdIdLookup
+  pk: 6009
+- fields: {choice: 'RGD:1589807'}
+  model: gene.RgdIdLookup
+  pk: 10626
+- fields: {choice: 'RGD:620401'}
+  model: gene.RgdIdLookup
+  pk: 14375
+- fields: {choice: 'RGD:1305252'}
+  model: gene.RgdIdLookup
+  pk: 938
+- fields: {choice: 'RGD:1596413'}
+  model: gene.RgdIdLookup
+  pk: 11307
+- fields: {choice: 'RGD:69404'}
+  model: gene.RgdIdLookup
+  pk: 16629
+- fields: {choice: 'RGD:1593180'}
+  model: gene.RgdIdLookup
+  pk: 10970
+- fields: {choice: 'RGD:628651'}
+  model: gene.RgdIdLookup
+  pk: 15838
+- fields: {choice: 'RGD:1308692'}
+  model: gene.RgdIdLookup
+  pk: 3808
+- fields: {choice: 'RGD:2860'}
+  model: gene.RgdIdLookup
+  pk: 12686
+- fields: {choice: 'RGD:1309386'}
+  model: gene.RgdIdLookup
+  pk: 4386
+- fields: {choice: 'RGD:621252'}
+  model: gene.RgdIdLookup
+  pk: 15204
+- fields: {choice: 'RGD:1307650'}
+  model: gene.RgdIdLookup
+  pk: 2937
+- fields: {choice: 'RGD:1304931'}
+  model: gene.RgdIdLookup
+  pk: 658
+- fields: {choice: 'RGD:621306'}
+  model: gene.RgdIdLookup
+  pk: 15250
+- fields: {choice: 'RGD:1588184'}
+  model: gene.RgdIdLookup
+  pk: 10422
+- fields: {choice: 'RGD:1311329'}
+  model: gene.RgdIdLookup
+  pk: 5989
+- fields: {choice: 'RGD:6500805'}
+  model: gene.RgdIdLookup
+  pk: 16282
+- fields: {choice: 'RGD:1304861'}
+  model: gene.RgdIdLookup
+  pk: 599
+- fields: {choice: 'RGD:1311952'}
+  model: gene.RgdIdLookup
+  pk: 6520
+- fields: {choice: 'RGD:1303256'}
+  model: gene.RgdIdLookup
+  pk: 264
+- fields: {choice: 'RGD:1309042'}
+  model: gene.RgdIdLookup
+  pk: 4103
+- fields: {choice: 'RGD:1597089'}
+  model: gene.RgdIdLookup
+  pk: 11373
+- fields: {choice: 'RGD:1592508'}
+  model: gene.RgdIdLookup
+  pk: 10908
+- fields: {choice: 'RGD:61981'}
+  model: gene.RgdIdLookup
+  pk: 13780
+- fields: {choice: 'RGD:3601'}
+  model: gene.RgdIdLookup
+  pk: 13183
+- fields: {choice: 'RGD:619891'}
+  model: gene.RgdIdLookup
+  pk: 13863
+- fields: {choice: 'RGD:1307308'}
+  model: gene.RgdIdLookup
+  pk: 2655
+- fields: {choice: 'RGD:1311136'}
+  model: gene.RgdIdLookup
+  pk: 5840
+- fields: {choice: 'RGD:620106'}
+  model: gene.RgdIdLookup
+  pk: 14083
+- fields: {choice: 'RGD:1566149'}
+  model: gene.RgdIdLookup
+  pk: 9764
+- fields: {choice: 'RGD:1559565'}
+  model: gene.RgdIdLookup
+  pk: 7475
+- fields: {choice: 'RGD:1310921'}
+  model: gene.RgdIdLookup
+  pk: 5661
+- fields: {choice: 'RGD:1304893'}
+  model: gene.RgdIdLookup
+  pk: 624
+- fields: {choice: 'RGD:621094'}
+  model: gene.RgdIdLookup
+  pk: 15058
+- fields: {choice: 'RGD:1305645'}
+  model: gene.RgdIdLookup
+  pk: 1266
+- fields: {choice: 'RGD:1306455'}
+  model: gene.RgdIdLookup
+  pk: 1942
+- fields: {choice: 'RGD:70971'}
+  model: gene.RgdIdLookup
+  pk: 16974
+- fields: {choice: 'RGD:1590898'}
+  model: gene.RgdIdLookup
+  pk: 10729
+- fields: {choice: 'RGD:1307564'}
+  model: gene.RgdIdLookup
+  pk: 2868
+- fields: {choice: 'RGD:1305655'}
+  model: gene.RgdIdLookup
+  pk: 1276
+- fields: {choice: 'RGD:1311528'}
+  model: gene.RgdIdLookup
+  pk: 6162
+- fields: {choice: 'RGD:621144'}
+  model: gene.RgdIdLookup
+  pk: 15104
+- fields: {choice: 'RGD:620529'}
+  model: gene.RgdIdLookup
+  pk: 14500
+- fields: {choice: 'RGD:1584648'}
+  model: gene.RgdIdLookup
+  pk: 10068
+- fields: {choice: 'RGD:621818'}
+  model: gene.RgdIdLookup
+  pk: 15715
+- fields: {choice: 'RGD:1565784'}
+  model: gene.RgdIdLookup
+  pk: 9639
+- fields: {choice: 'RGD:620099'}
+  model: gene.RgdIdLookup
+  pk: 14075
+- fields: {choice: 'RGD:1310387'}
+  model: gene.RgdIdLookup
+  pk: 5214
+- fields: {choice: 'RGD:1566180'}
+  model: gene.RgdIdLookup
+  pk: 9777
+- fields: {choice: 'RGD:1308272'}
+  model: gene.RgdIdLookup
+  pk: 3461
+- fields: {choice: 'RGD:1332843'}
+  model: gene.RgdIdLookup
+  pk: 6640
+- fields: {choice: 'RGD:1309143'}
+  model: gene.RgdIdLookup
+  pk: 4191
+- fields: {choice: 'RGD:1333242'}
+  model: gene.RgdIdLookup
+  pk: 6701
+- fields: {choice: 'RGD:631440'}
+  model: gene.RgdIdLookup
+  pk: 16169
+- fields: {choice: 'RGD:1594804'}
+  model: gene.RgdIdLookup
+  pk: 11152
+- fields: {choice: 'RGD:1359446'}
+  model: gene.RgdIdLookup
+  pk: 7158
+- fields: {choice: 'RGD:1307853'}
+  model: gene.RgdIdLookup
+  pk: 3112
+- fields: {choice: 'RGD:1304722'}
+  model: gene.RgdIdLookup
+  pk: 485
+- fields: {choice: 'RGD:1359211'}
+  model: gene.RgdIdLookup
+  pk: 6984
+- fields: {choice: 'RGD:620523'}
+  model: gene.RgdIdLookup
+  pk: 14494
+- fields: {choice: 'RGD:1305568'}
+  model: gene.RgdIdLookup
+  pk: 1200
+- fields: {choice: 'RGD:1310652'}
+  model: gene.RgdIdLookup
+  pk: 5433
+- fields: {choice: 'RGD:1309772'}
+  model: gene.RgdIdLookup
+  pk: 4714
+- fields: {choice: 'RGD:3624'}
+  model: gene.RgdIdLookup
+  pk: 13193
+- fields: {choice: 'RGD:1594620'}
+  model: gene.RgdIdLookup
+  pk: 11127
+- fields: {choice: 'RGD:1304899'}
+  model: gene.RgdIdLookup
+  pk: 630
+- fields: {choice: 'RGD:727962'}
+  model: gene.RgdIdLookup
+  pk: 17251
+- fields: {choice: 'RGD:1594597'}
+  model: gene.RgdIdLookup
+  pk: 11125
+- fields: {choice: 'RGD:1307343'}
+  model: gene.RgdIdLookup
+  pk: 2683
+- fields: {choice: 'RGD:1306623'}
+  model: gene.RgdIdLookup
+  pk: 2080
+- fields: {choice: 'RGD:3942'}
+  model: gene.RgdIdLookup
+  pk: 13436
+- fields: {choice: 'RGD:735214'}
+  model: gene.RgdIdLookup
+  pk: 17443
+- fields: {choice: 'RGD:620301'}
+  model: gene.RgdIdLookup
+  pk: 14281
+- fields: {choice: 'RGD:1359629'}
+  model: gene.RgdIdLookup
+  pk: 7293
+- fields: {choice: 'RGD:708532'}
+  model: gene.RgdIdLookup
+  pk: 16843
+- fields: {choice: 'RGD:61872'}
+  model: gene.RgdIdLookup
+  pk: 13573
+- fields: {choice: 'RGD:69300'}
+  model: gene.RgdIdLookup
+  pk: 16561
+- fields: {choice: 'RGD:1589724'}
+  model: gene.RgdIdLookup
+  pk: 10601
+- fields: {choice: 'RGD:1564717'}
+  model: gene.RgdIdLookup
+  pk: 9236
+- fields: {choice: 'RGD:1311675'}
+  model: gene.RgdIdLookup
+  pk: 6292
+- fields: {choice: 'RGD:1585179'}
+  model: gene.RgdIdLookup
+  pk: 10142
+- fields: {choice: 'RGD:1566283'}
+  model: gene.RgdIdLookup
+  pk: 9807
+- fields: {choice: 'RGD:1601463'}
+  model: gene.RgdIdLookup
+  pk: 11514
+- fields: {choice: 'RGD:1583978'}
+  model: gene.RgdIdLookup
+  pk: 10004
+- fields: {choice: 'RGD:1588240'}
+  model: gene.RgdIdLookup
+  pk: 10431
+- fields: {choice: 'RGD:3263'}
+  model: gene.RgdIdLookup
+  pk: 12986
+- fields: {choice: 'RGD:1310738'}
+  model: gene.RgdIdLookup
+  pk: 5503
+- fields: {choice: 'RGD:708497'}
+  model: gene.RgdIdLookup
+  pk: 16817
+- fields: {choice: 'RGD:1560491'}
+  model: gene.RgdIdLookup
+  pk: 7794
+- fields: {choice: 'RGD:620456'}
+  model: gene.RgdIdLookup
+  pk: 14428
+- fields: {choice: 'RGD:621354'}
+  model: gene.RgdIdLookup
+  pk: 15296
+- fields: {choice: 'RGD:1310758'}
+  model: gene.RgdIdLookup
+  pk: 5521
+- fields: {choice: 'RGD:1565557'}
+  model: gene.RgdIdLookup
+  pk: 9555
+- fields: {choice: 'RGD:1307987'}
+  model: gene.RgdIdLookup
+  pk: 3227
+- fields: {choice: 'RGD:1594557'}
+  model: gene.RgdIdLookup
+  pk: 11116
+- fields: {choice: 'RGD:620091'}
+  model: gene.RgdIdLookup
+  pk: 14067
+- fields: {choice: 'RGD:708428'}
+  model: gene.RgdIdLookup
+  pk: 16759
+- fields: {choice: 'RGD:1305068'}
+  model: gene.RgdIdLookup
+  pk: 777
+- fields: {choice: 'RGD:1309588'}
+  model: gene.RgdIdLookup
+  pk: 4557
+- fields: {choice: 'RGD:3819'}
+  model: gene.RgdIdLookup
+  pk: 13352
+- fields: {choice: 'RGD:1311667'}
+  model: gene.RgdIdLookup
+  pk: 6285
+- fields: {choice: 'RGD:1311066'}
+  model: gene.RgdIdLookup
+  pk: 5781
+- fields: {choice: 'RGD:628858'}
+  model: gene.RgdIdLookup
+  pk: 16023
+- fields: {choice: 'RGD:3546'}
+  model: gene.RgdIdLookup
+  pk: 13150
+- fields: {choice: 'RGD:620995'}
+  model: gene.RgdIdLookup
+  pk: 14968
+- fields: {choice: 'RGD:2963'}
+  model: gene.RgdIdLookup
+  pk: 12769
+- fields: {choice: 'RGD:1583689'}
+  model: gene.RgdIdLookup
+  pk: 9956
+- fields: {choice: 'RGD:1306250'}
+  model: gene.RgdIdLookup
+  pk: 1775
+- fields: {choice: 'RGD:1565760'}
+  model: gene.RgdIdLookup
+  pk: 9630
+- fields: {choice: 'RGD:1305719'}
+  model: gene.RgdIdLookup
+  pk: 1324
+- fields: {choice: 'RGD:2609'}
+  model: gene.RgdIdLookup
+  pk: 12499
+- fields: {choice: 'RGD:1591841'}
+  model: gene.RgdIdLookup
+  pk: 10830
+- fields: {choice: 'RGD:1359364'}
+  model: gene.RgdIdLookup
+  pk: 7099
+- fields: {choice: 'RGD:1334039'}
+  model: gene.RgdIdLookup
+  pk: 6826
+- fields: {choice: 'RGD:708420'}
+  model: gene.RgdIdLookup
+  pk: 16755
+- fields: {choice: 'RGD:68372'}
+  model: gene.RgdIdLookup
+  pk: 16374
+- fields: {choice: 'RGD:1309696'}
+  model: gene.RgdIdLookup
+  pk: 4650
+- fields: {choice: 'RGD:1308467'}
+  model: gene.RgdIdLookup
+  pk: 3625
+- fields: {choice: 'RGD:620550'}
+  model: gene.RgdIdLookup
+  pk: 14520
+- fields: {choice: 'RGD:3974'}
+  model: gene.RgdIdLookup
+  pk: 13455
+- fields: {choice: 'RGD:69351'}
+  model: gene.RgdIdLookup
+  pk: 16605
+- fields: {choice: 'RGD:69405'}
+  model: gene.RgdIdLookup
+  pk: 16630
+- fields: {choice: 'RGD:1359329'}
+  model: gene.RgdIdLookup
+  pk: 7075
+- fields: {choice: 'RGD:1561009'}
+  model: gene.RgdIdLookup
+  pk: 7961
+- fields: {choice: 'RGD:3385'}
+  model: gene.RgdIdLookup
+  pk: 13073
+- fields: {choice: 'RGD:1566090'}
+  model: gene.RgdIdLookup
+  pk: 9745
+- fields: {choice: 'RGD:1305114'}
+  model: gene.RgdIdLookup
+  pk: 818
+- fields: {choice: 'RGD:1306880'}
+  model: gene.RgdIdLookup
+  pk: 2302
+- fields: {choice: 'RGD:1563060'}
+  model: gene.RgdIdLookup
+  pk: 8668
+- fields: {choice: 'RGD:68426'}
+  model: gene.RgdIdLookup
+  pk: 16427
+- fields: {choice: 'RGD:1592020'}
+  model: gene.RgdIdLookup
+  pk: 10864
+- fields: {choice: 'RGD:1308352'}
+  model: gene.RgdIdLookup
+  pk: 3527
+- fields: {choice: 'RGD:1311132'}
+  model: gene.RgdIdLookup
+  pk: 5836
+- fields: {choice: 'RGD:1590844'}
+  model: gene.RgdIdLookup
+  pk: 10716
+- fields: {choice: 'RGD:1311213'}
+  model: gene.RgdIdLookup
+  pk: 5899
+- fields: {choice: 'RGD:71079'}
+  model: gene.RgdIdLookup
+  pk: 17079
+- fields: {choice: 'RGD:62012'}
+  model: gene.RgdIdLookup
+  pk: 14095
+- fields: {choice: 'RGD:1306646'}
+  model: gene.RgdIdLookup
+  pk: 2100
+- fields: {choice: 'RGD:3636'}
+  model: gene.RgdIdLookup
+  pk: 13204
+- fields: {choice: 'RGD:1359645'}
+  model: gene.RgdIdLookup
+  pk: 7302
+- fields: {choice: 'RGD:1564746'}
+  model: gene.RgdIdLookup
+  pk: 9246
+- fields: {choice: 'RGD:1305278'}
+  model: gene.RgdIdLookup
+  pk: 960
+- fields: {choice: 'RGD:1307610'}
+  model: gene.RgdIdLookup
+  pk: 2902
+- fields: {choice: 'RGD:2325559'}
+  model: gene.RgdIdLookup
+  pk: 12260
+- fields: {choice: 'RGD:620143'}
+  model: gene.RgdIdLookup
+  pk: 14119
+- fields: {choice: 'RGD:1308972'}
+  model: gene.RgdIdLookup
+  pk: 4047
+- fields: {choice: 'RGD:2321939'}
+  model: gene.RgdIdLookup
+  pk: 12003
+- fields: {choice: 'RGD:1565589'}
+  model: gene.RgdIdLookup
+  pk: 9567
+- fields: {choice: 'RGD:1582859'}
+  model: gene.RgdIdLookup
+  pk: 9881
+- fields: {choice: 'RGD:61974'}
+  model: gene.RgdIdLookup
+  pk: 13707
+- fields: {choice: 'RGD:1563669'}
+  model: gene.RgdIdLookup
+  pk: 8888
+- fields: {choice: 'RGD:1311826'}
+  model: gene.RgdIdLookup
+  pk: 6414
+- fields: {choice: 'RGD:1308142'}
+  model: gene.RgdIdLookup
+  pk: 3357
+- fields: {choice: 'RGD:2350'}
+  model: gene.RgdIdLookup
+  pk: 12320
+- fields: {choice: 'RGD:1588214'}
+  model: gene.RgdIdLookup
+  pk: 10425
+- fields: {choice: 'RGD:2923'}
+  model: gene.RgdIdLookup
+  pk: 12735
+- fields: {choice: 'RGD:1597035'}
+  model: gene.RgdIdLookup
+  pk: 11366
+- fields: {choice: 'RGD:3437'}
+  model: gene.RgdIdLookup
+  pk: 13111
+- fields: {choice: 'RGD:619979'}
+  model: gene.RgdIdLookup
+  pk: 13952
+- fields: {choice: 'RGD:1304992'}
+  model: gene.RgdIdLookup
+  pk: 706
+- fields: {choice: 'RGD:1306032'}
+  model: gene.RgdIdLookup
+  pk: 1590
+- fields: {choice: 'RGD:1308127'}
+  model: gene.RgdIdLookup
+  pk: 3344
+- fields: {choice: 'RGD:1583872'}
+  model: gene.RgdIdLookup
+  pk: 9983
+- fields: {choice: 'RGD:619958'}
+  model: gene.RgdIdLookup
+  pk: 13930
+- fields: {choice: 'RGD:1310692'}
+  model: gene.RgdIdLookup
+  pk: 5466
+- fields: {choice: 'RGD:1310925'}
+  model: gene.RgdIdLookup
+  pk: 5665
+- fields: {choice: 'RGD:620960'}
+  model: gene.RgdIdLookup
+  pk: 14935
+- fields: {choice: 'RGD:628826'}
+  model: gene.RgdIdLookup
+  pk: 15993
+- fields: {choice: 'RGD:1562968'}
+  model: gene.RgdIdLookup
+  pk: 8638
+- fields: {choice: 'RGD:620963'}
+  model: gene.RgdIdLookup
+  pk: 14938
+- fields: {choice: 'RGD:1359135'}
+  model: gene.RgdIdLookup
+  pk: 6927
+- fields: {choice: 'RGD:1304965'}
+  model: gene.RgdIdLookup
+  pk: 685
+- fields: {choice: 'RGD:67396'}
+  model: gene.RgdIdLookup
+  pk: 16318
+- fields: {choice: 'RGD:1307480'}
+  model: gene.RgdIdLookup
+  pk: 2804
+- fields: {choice: 'RGD:1310392'}
+  model: gene.RgdIdLookup
+  pk: 5219
+- fields: {choice: 'RGD:1306512'}
+  model: gene.RgdIdLookup
+  pk: 1986
+- fields: {choice: 'RGD:1311771'}
+  model: gene.RgdIdLookup
+  pk: 6373
+- fields: {choice: 'RGD:1311257'}
+  model: gene.RgdIdLookup
+  pk: 5935
+- fields: {choice: 'RGD:3433'}
+  model: gene.RgdIdLookup
+  pk: 13107
+- fields: {choice: 'RGD:1359550'}
+  model: gene.RgdIdLookup
+  pk: 7235
+- fields: {choice: 'RGD:1305004'}
+  model: gene.RgdIdLookup
+  pk: 717
+- fields: {choice: 'RGD:1311070'}
+  model: gene.RgdIdLookup
+  pk: 5785
+- fields: {choice: 'RGD:1564695'}
+  model: gene.RgdIdLookup
+  pk: 9228
+- fields: {choice: 'RGD:620165'}
+  model: gene.RgdIdLookup
+  pk: 14142
+- fields: {choice: 'RGD:1307011'}
+  model: gene.RgdIdLookup
+  pk: 2413
+- fields: {choice: 'RGD:1595836'}
+  model: gene.RgdIdLookup
+  pk: 11232
+- fields: {choice: 'RGD:619828'}
+  model: gene.RgdIdLookup
+  pk: 13798
+- fields: {choice: 'RGD:3210'}
+  model: gene.RgdIdLookup
+  pk: 12947
+- fields: {choice: 'RGD:1311881'}
+  model: gene.RgdIdLookup
+  pk: 6459
+- fields: {choice: 'RGD:2319111'}
+  model: gene.RgdIdLookup
+  pk: 11891
+- fields: {choice: 'RGD:1359148'}
+  model: gene.RgdIdLookup
+  pk: 6940
+- fields: {choice: 'RGD:69260'}
+  model: gene.RgdIdLookup
+  pk: 16521
+- fields: {choice: 'RGD:1334091'}
+  model: gene.RgdIdLookup
+  pk: 6840
+- fields: {choice: 'RGD:1303267'}
+  model: gene.RgdIdLookup
+  pk: 272
+- fields: {choice: 'RGD:3123'}
+  model: gene.RgdIdLookup
+  pk: 12886
+- fields: {choice: 'RGD:1564024'}
+  model: gene.RgdIdLookup
+  pk: 8994
+- fields: {choice: 'RGD:1309242'}
+  model: gene.RgdIdLookup
+  pk: 4273
+- fields: {choice: 'RGD:619847'}
+  model: gene.RgdIdLookup
+  pk: 13818
+- fields: {choice: 'RGD:1309922'}
+  model: gene.RgdIdLookup
+  pk: 4833
+- fields: {choice: 'RGD:1310503'}
+  model: gene.RgdIdLookup
+  pk: 5307
+- fields: {choice: 'RGD:1305429'}
+  model: gene.RgdIdLookup
+  pk: 1084
+- fields: {choice: 'RGD:1563085'}
+  model: gene.RgdIdLookup
+  pk: 8678
+- fields: {choice: 'RGD:619884'}
+  model: gene.RgdIdLookup
+  pk: 13855
+- fields: {choice: 'RGD:7489038'}
+  model: gene.RgdIdLookup
+  pk: 17465
+- fields: {choice: 'RGD:1564300'}
+  model: gene.RgdIdLookup
+  pk: 9096
+- fields: {choice: 'RGD:1307631'}
+  model: gene.RgdIdLookup
+  pk: 2921
+- fields: {choice: 'RGD:1308540'}
+  model: gene.RgdIdLookup
+  pk: 3690
+- fields: {choice: 'RGD:620971'}
+  model: gene.RgdIdLookup
+  pk: 14946
+- fields: {choice: 'RGD:1588734'}
+  model: gene.RgdIdLookup
+  pk: 10497
+- fields: {choice: 'RGD:1308581'}
+  model: gene.RgdIdLookup
+  pk: 3720
+- fields: {choice: 'RGD:620490'}
+  model: gene.RgdIdLookup
+  pk: 14462
+- fields: {choice: 'RGD:2319500'}
+  model: gene.RgdIdLookup
+  pk: 11907
+- fields: {choice: 'RGD:1594571'}
+  model: gene.RgdIdLookup
+  pk: 11119
+- fields: {choice: 'RGD:1563567'}
+  model: gene.RgdIdLookup
+  pk: 8854
+- fields: {choice: 'RGD:1310947'}
+  model: gene.RgdIdLookup
+  pk: 5680
+- fields: {choice: 'RGD:1597451'}
+  model: gene.RgdIdLookup
+  pk: 11425
+- fields: {choice: 'RGD:1306271'}
+  model: gene.RgdIdLookup
+  pk: 1793
+- fields: {choice: 'RGD:69065'}
+  model: gene.RgdIdLookup
+  pk: 16469
+- fields: {choice: 'RGD:2320679'}
+  model: gene.RgdIdLookup
+  pk: 11958
+- fields: {choice: 'RGD:1303244'}
+  model: gene.RgdIdLookup
+  pk: 252
+- fields: {choice: 'RGD:1563271'}
+  model: gene.RgdIdLookup
+  pk: 8749
+- fields: {choice: 'RGD:1333957'}
+  model: gene.RgdIdLookup
+  pk: 6813
+- fields: {choice: 'RGD:1310274'}
+  model: gene.RgdIdLookup
+  pk: 5123
+- fields: {choice: 'RGD:1562608'}
+  model: gene.RgdIdLookup
+  pk: 8522
+- fields: {choice: 'RGD:2323182'}
+  model: gene.RgdIdLookup
+  pk: 12045
+- fields: {choice: 'RGD:1310477'}
+  model: gene.RgdIdLookup
+  pk: 5287
+- fields: {choice: 'RGD:708531'}
+  model: gene.RgdIdLookup
+  pk: 16842
+- fields: {choice: 'RGD:2656'}
+  model: gene.RgdIdLookup
+  pk: 12537
+- fields: {choice: 'RGD:1565211'}
+  model: gene.RgdIdLookup
+  pk: 9431
+- fields: {choice: 'RGD:628832'}
+  model: gene.RgdIdLookup
+  pk: 15999
+- fields: {choice: 'RGD:1309412'}
+  model: gene.RgdIdLookup
+  pk: 4411
+- fields: {choice: 'RGD:619968'}
+  model: gene.RgdIdLookup
+  pk: 13941
+- fields: {choice: 'RGD:1597152'}
+  model: gene.RgdIdLookup
+  pk: 11379
+- fields: {choice: 'RGD:1564531'}
+  model: gene.RgdIdLookup
+  pk: 9168
+- fields: {choice: 'RGD:1562025'}
+  model: gene.RgdIdLookup
+  pk: 8315
+- fields: {choice: 'RGD:1309620'}
+  model: gene.RgdIdLookup
+  pk: 4584
+- fields: {choice: 'RGD:70893'}
+  model: gene.RgdIdLookup
+  pk: 16899
+- fields: {choice: 'RGD:1593897'}
+  model: gene.RgdIdLookup
+  pk: 11061
+- fields: {choice: 'RGD:1310459'}
+  model: gene.RgdIdLookup
+  pk: 5272
+- fields: {choice: 'RGD:628633'}
+  model: gene.RgdIdLookup
+  pk: 15822
+- fields: {choice: 'RGD:62058'}
+  model: gene.RgdIdLookup
+  pk: 14550
+- fields: {choice: 'RGD:2324507'}
+  model: gene.RgdIdLookup
+  pk: 12127
+- fields: {choice: 'RGD:1310399'}
+  model: gene.RgdIdLookup
+  pk: 5224
+- fields: {choice: 'RGD:1307644'}
+  model: gene.RgdIdLookup
+  pk: 2931
+- fields: {choice: 'RGD:1310494'}
+  model: gene.RgdIdLookup
+  pk: 5300
+- fields: {choice: 'RGD:1308257'}
+  model: gene.RgdIdLookup
+  pk: 3448
+- fields: {choice: 'RGD:1309579'}
+  model: gene.RgdIdLookup
+  pk: 4548
+- fields: {choice: 'RGD:1588587'}
+  model: gene.RgdIdLookup
+  pk: 10473
+- fields: {choice: 'RGD:1308170'}
+  model: gene.RgdIdLookup
+  pk: 3381
+- fields: {choice: 'RGD:1563319'}
+  model: gene.RgdIdLookup
+  pk: 8764
+- fields: {choice: 'RGD:1310060'}
+  model: gene.RgdIdLookup
+  pk: 4945
+- fields: {choice: 'RGD:1562251'}
+  model: gene.RgdIdLookup
+  pk: 8398
+- fields: {choice: 'RGD:4888547'}
+  model: gene.RgdIdLookup
+  pk: 13471
+- fields: {choice: 'RGD:3297'}
+  model: gene.RgdIdLookup
+  pk: 13014
+- fields: {choice: 'RGD:1312020'}
+  model: gene.RgdIdLookup
+  pk: 6577
+- fields: {choice: 'RGD:1564874'}
+  model: gene.RgdIdLookup
+  pk: 9299
+- fields: {choice: 'RGD:1588687'}
+  model: gene.RgdIdLookup
+  pk: 10491
+- fields: {choice: 'RGD:1305276'}
+  model: gene.RgdIdLookup
+  pk: 959
+- fields: {choice: 'RGD:1582771'}
+  model: gene.RgdIdLookup
+  pk: 9861
+- fields: {choice: 'RGD:6484896'}
+  model: gene.RgdIdLookup
+  pk: 16177
+- fields: {choice: 'RGD:1565494'}
+  model: gene.RgdIdLookup
+  pk: 9530
+- fields: {choice: 'RGD:620400'}
+  model: gene.RgdIdLookup
+  pk: 14374
+- fields: {choice: 'RGD:1307175'}
+  model: gene.RgdIdLookup
+  pk: 2546
+- fields: {choice: 'RGD:1311096'}
+  model: gene.RgdIdLookup
+  pk: 5806
+- fields: {choice: 'RGD:619943'}
+  model: gene.RgdIdLookup
+  pk: 13916
+- fields: {choice: 'RGD:1308338'}
+  model: gene.RgdIdLookup
+  pk: 3518
+- fields: {choice: 'RGD:1597986'}
+  model: gene.RgdIdLookup
+  pk: 11455
+- fields: {choice: 'RGD:1307734'}
+  model: gene.RgdIdLookup
+  pk: 3009
+- fields: {choice: 'RGD:6502238'}
+  model: gene.RgdIdLookup
+  pk: 16288
+- fields: {choice: 'RGD:1309403'}
+  model: gene.RgdIdLookup
+  pk: 4402
+- fields: {choice: 'RGD:1560168'}
+  model: gene.RgdIdLookup
+  pk: 7681
+- fields: {choice: 'RGD:1359653'}
+  model: gene.RgdIdLookup
+  pk: 7307
+- fields: {choice: 'RGD:1305834'}
+  model: gene.RgdIdLookup
+  pk: 1421
+- fields: {choice: 'RGD:1565425'}
+  model: gene.RgdIdLookup
+  pk: 9505
+- fields: {choice: 'RGD:735126'}
+  model: gene.RgdIdLookup
+  pk: 17367
+- fields: {choice: 'RGD:1310497'}
+  model: gene.RgdIdLookup
+  pk: 5302
+- fields: {choice: 'RGD:1309910'}
+  model: gene.RgdIdLookup
+  pk: 4823
+- fields: {choice: 'RGD:3258'}
+  model: gene.RgdIdLookup
+  pk: 12984
+- fields: {choice: 'RGD:1585290'}
+  model: gene.RgdIdLookup
+  pk: 10159
+- fields: {choice: 'RGD:1585218'}
+  model: gene.RgdIdLookup
+  pk: 10147
+- fields: {choice: 'RGD:1311618'}
+  model: gene.RgdIdLookup
+  pk: 6243
+- fields: {choice: 'RGD:1565124'}
+  model: gene.RgdIdLookup
+  pk: 9399
+- fields: {choice: 'RGD:1560170'}
+  model: gene.RgdIdLookup
+  pk: 7683
+- fields: {choice: 'RGD:1359675'}
+  model: gene.RgdIdLookup
+  pk: 7323
+- fields: {choice: 'RGD:1307318'}
+  model: gene.RgdIdLookup
+  pk: 2663
+- fields: {choice: 'RGD:620904'}
+  model: gene.RgdIdLookup
+  pk: 14883
+- fields: {choice: 'RGD:1586539'}
+  model: gene.RgdIdLookup
+  pk: 10280
+- fields: {choice: 'RGD:708389'}
+  model: gene.RgdIdLookup
+  pk: 16735
+- fields: {choice: 'RGD:1582896'}
+  model: gene.RgdIdLookup
+  pk: 9885
+- fields: {choice: 'RGD:621436'}
+  model: gene.RgdIdLookup
+  pk: 15369
+- fields: {choice: 'RGD:621277'}
+  model: gene.RgdIdLookup
+  pk: 15225
+- fields: {choice: 'RGD:1308280'}
+  model: gene.RgdIdLookup
+  pk: 3468
+- fields: {choice: 'RGD:1311871'}
+  model: gene.RgdIdLookup
+  pk: 6451
+- fields: {choice: 'RGD:2719'}
+  model: gene.RgdIdLookup
+  pk: 12589
+- fields: {choice: 'RGD:2325349'}
+  model: gene.RgdIdLookup
+  pk: 12159
+- fields: {choice: 'RGD:61862'}
+  model: gene.RgdIdLookup
+  pk: 13563
+- fields: {choice: 'RGD:3387'}
+  model: gene.RgdIdLookup
+  pk: 13074
+- fields: {choice: 'RGD:1642882'}
+  model: gene.RgdIdLookup
+  pk: 11533
+- fields: {choice: 'RGD:2152'}
+  model: gene.RgdIdLookup
+  pk: 11659
+- fields: {choice: 'RGD:1562868'}
+  model: gene.RgdIdLookup
+  pk: 8607
+- fields: {choice: 'RGD:620102'}
+  model: gene.RgdIdLookup
+  pk: 14079
+- fields: {choice: 'RGD:3274'}
+  model: gene.RgdIdLookup
+  pk: 12996
+- fields: {choice: 'RGD:2324094'}
+  model: gene.RgdIdLookup
+  pk: 12104
+- fields: {choice: 'RGD:1563491'}
+  model: gene.RgdIdLookup
+  pk: 8827
+- fields: {choice: 'RGD:3802'}
+  model: gene.RgdIdLookup
+  pk: 13339
+- fields: {choice: 'RGD:71043'}
+  model: gene.RgdIdLookup
+  pk: 17045
+- fields: {choice: 'RGD:1308733'}
+  model: gene.RgdIdLookup
+  pk: 3844
+- fields: {choice: 'RGD:1306733'}
+  model: gene.RgdIdLookup
+  pk: 2179
+- fields: {choice: 'RGD:1308022'}
+  model: gene.RgdIdLookup
+  pk: 3255
+- fields: {choice: 'RGD:620053'}
+  model: gene.RgdIdLookup
+  pk: 14029
+- fields: {choice: 'RGD:620436'}
+  model: gene.RgdIdLookup
+  pk: 14406
+- fields: {choice: 'RGD:1308190'}
+  model: gene.RgdIdLookup
+  pk: 3397
+- fields: {choice: 'RGD:1307814'}
+  model: gene.RgdIdLookup
+  pk: 3080
+- fields: {choice: 'RGD:2159'}
+  model: gene.RgdIdLookup
+  pk: 11666
+- fields: {choice: 'RGD:2302582'}
+  model: gene.RgdIdLookup
+  pk: 11806
+- fields: {choice: 'RGD:62027'}
+  model: gene.RgdIdLookup
+  pk: 14249
+- fields: {choice: 'RGD:1565236'}
+  model: gene.RgdIdLookup
+  pk: 9440
+- fields: {choice: 'RGD:1593864'}
+  model: gene.RgdIdLookup
+  pk: 11056
+- fields: {choice: 'RGD:1585042'}
+  model: gene.RgdIdLookup
+  pk: 10124
+- fields: {choice: 'RGD:1305443'}
+  model: gene.RgdIdLookup
+  pk: 1098
+- fields: {choice: 'RGD:620623'}
+  model: gene.RgdIdLookup
+  pk: 14595
+- fields: {choice: 'RGD:1311714'}
+  model: gene.RgdIdLookup
+  pk: 6329
+- fields: {choice: 'RGD:70492'}
+  model: gene.RgdIdLookup
+  pk: 16678
+- fields: {choice: 'RGD:1306179'}
+  model: gene.RgdIdLookup
+  pk: 1715
+- fields: {choice: 'RGD:1309768'}
+  model: gene.RgdIdLookup
+  pk: 4710
+- fields: {choice: 'RGD:727856'}
+  model: gene.RgdIdLookup
+  pk: 17165
+- fields: {choice: 'RGD:6490949'}
+  model: gene.RgdIdLookup
+  pk: 16221
+- fields: {choice: 'RGD:3167'}
+  model: gene.RgdIdLookup
+  pk: 12914
+- fields: {choice: 'RGD:1310196'}
+  model: gene.RgdIdLookup
+  pk: 5059
+- fields: {choice: 'RGD:2325398'}
+  model: gene.RgdIdLookup
+  pk: 12187
+- fields: {choice: 'RGD:2325423'}
+  model: gene.RgdIdLookup
+  pk: 12201
+- fields: {choice: 'RGD:1311450'}
+  model: gene.RgdIdLookup
+  pk: 6093
+- fields: {choice: 'RGD:2561'}
+  model: gene.RgdIdLookup
+  pk: 12477
+- fields: {choice: 'RGD:1564670'}
+  model: gene.RgdIdLookup
+  pk: 9219
+- fields: {choice: 'RGD:1311434'}
+  model: gene.RgdIdLookup
+  pk: 6079
+- fields: {choice: 'RGD:3704'}
+  model: gene.RgdIdLookup
+  pk: 13265
+- fields: {choice: 'RGD:621216'}
+  model: gene.RgdIdLookup
+  pk: 15168
+- fields: {choice: 'RGD:1308024'}
+  model: gene.RgdIdLookup
+  pk: 3257
+- fields: {choice: 'RGD:1561046'}
+  model: gene.RgdIdLookup
+  pk: 7978
+- fields: {choice: 'RGD:1587241'}
+  model: gene.RgdIdLookup
+  pk: 10334
+- fields: {choice: 'RGD:1565556'}
+  model: gene.RgdIdLookup
+  pk: 9554
+- fields: {choice: 'RGD:1303000'}
+  model: gene.RgdIdLookup
+  pk: 53
+- fields: {choice: 'RGD:1593455'}
+  model: gene.RgdIdLookup
+  pk: 11025
+- fields: {choice: 'RGD:1305546'}
+  model: gene.RgdIdLookup
+  pk: 1180
+- fields: {choice: 'RGD:1359303'}
+  model: gene.RgdIdLookup
+  pk: 7053
+- fields: {choice: 'RGD:1565731'}
+  model: gene.RgdIdLookup
+  pk: 9618
+- fields: {choice: 'RGD:2020'}
+  model: gene.RgdIdLookup
+  pk: 11548
+- fields: {choice: 'RGD:1334055'}
+  model: gene.RgdIdLookup
+  pk: 6828
+- fields: {choice: 'RGD:70878'}
+  model: gene.RgdIdLookup
+  pk: 16884
+- fields: {choice: 'RGD:628751'}
+  model: gene.RgdIdLookup
+  pk: 15930
+- fields: {choice: 'RGD:1308860'}
+  model: gene.RgdIdLookup
+  pk: 3949
+- fields: {choice: 'RGD:1310369'}
+  model: gene.RgdIdLookup
+  pk: 5199
+- fields: {choice: 'RGD:1310132'}
+  model: gene.RgdIdLookup
+  pk: 5003
+- fields: {choice: 'RGD:708567'}
+  model: gene.RgdIdLookup
+  pk: 16870
+- fields: {choice: 'RGD:2322150'}
+  model: gene.RgdIdLookup
+  pk: 12012
+- fields: {choice: 'RGD:1303311'}
+  model: gene.RgdIdLookup
+  pk: 311
+- fields: {choice: 'RGD:1306612'}
+  model: gene.RgdIdLookup
+  pk: 2070
+- fields: {choice: 'RGD:1593188'}
+  model: gene.RgdIdLookup
+  pk: 10972
+- fields: {choice: 'RGD:62073'}
+  model: gene.RgdIdLookup
+  pk: 14706
+- fields: {choice: 'RGD:1309283'}
+  model: gene.RgdIdLookup
+  pk: 4308
+- fields: {choice: 'RGD:1359564'}
+  model: gene.RgdIdLookup
+  pk: 7244
+- fields: {choice: 'RGD:2325591'}
+  model: gene.RgdIdLookup
+  pk: 12282
+- fields: {choice: 'RGD:621528'}
+  model: gene.RgdIdLookup
+  pk: 15448
+- fields: {choice: 'RGD:1560778'}
+  model: gene.RgdIdLookup
+  pk: 7885
+- fields: {choice: 'RGD:1563170'}
+  model: gene.RgdIdLookup
+  pk: 8709
+- fields: {choice: 'RGD:1303326'}
+  model: gene.RgdIdLookup
+  pk: 326
+- fields: {choice: 'RGD:628646'}
+  model: gene.RgdIdLookup
+  pk: 15834
+- fields: {choice: 'RGD:71002'}
+  model: gene.RgdIdLookup
+  pk: 17004
+- fields: {choice: 'RGD:1596107'}
+  model: gene.RgdIdLookup
+  pk: 11283
+- fields: {choice: 'RGD:3734'}
+  model: gene.RgdIdLookup
+  pk: 13292
+- fields: {choice: 'RGD:1303260'}
+  model: gene.RgdIdLookup
+  pk: 268
+- fields: {choice: 'RGD:6486791'}
+  model: gene.RgdIdLookup
+  pk: 16188
+- fields: {choice: 'RGD:1598332'}
+  model: gene.RgdIdLookup
+  pk: 11502
+- fields: {choice: 'RGD:1308446'}
+  model: gene.RgdIdLookup
+  pk: 3607
+- fields: {choice: 'RGD:1311740'}
+  model: gene.RgdIdLookup
+  pk: 6349
+- fields: {choice: 'RGD:1565692'}
+  model: gene.RgdIdLookup
+  pk: 9603
+- fields: {choice: 'RGD:1311805'}
+  model: gene.RgdIdLookup
+  pk: 6398
+- fields: {choice: 'RGD:1311239'}
+  model: gene.RgdIdLookup
+  pk: 5921
+- fields: {choice: 'RGD:1566404'}
+  model: gene.RgdIdLookup
+  pk: 9846
+- fields: {choice: 'RGD:1562371'}
+  model: gene.RgdIdLookup
+  pk: 8439
+- fields: {choice: 'RGD:1310189'}
+  model: gene.RgdIdLookup
+  pk: 5053
+- fields: {choice: 'RGD:1564147'}
+  model: gene.RgdIdLookup
+  pk: 9042
+- fields: {choice: 'RGD:1306182'}
+  model: gene.RgdIdLookup
+  pk: 1718
+- fields: {choice: 'RGD:1559864'}
+  model: gene.RgdIdLookup
+  pk: 7565
+- fields: {choice: 'RGD:1560732'}
+  model: gene.RgdIdLookup
+  pk: 7869
+- fields: {choice: 'RGD:1306391'}
+  model: gene.RgdIdLookup
+  pk: 1890
+- fields: {choice: 'RGD:1359092'}
+  model: gene.RgdIdLookup
+  pk: 6895
+- fields: {choice: 'RGD:1565821'}
+  model: gene.RgdIdLookup
+  pk: 9656
+- fields: {choice: 'RGD:1304675'}
+  model: gene.RgdIdLookup
+  pk: 444
+- fields: {choice: 'RGD:1562358'}
+  model: gene.RgdIdLookup
+  pk: 8435
+- fields: {choice: 'RGD:1560030'}
+  model: gene.RgdIdLookup
+  pk: 7630
+- fields: {choice: 'RGD:619760'}
+  model: gene.RgdIdLookup
+  pk: 13730
+- fields: {choice: 'RGD:1305868'}
+  model: gene.RgdIdLookup
+  pk: 1452
+- fields: {choice: 'RGD:1564991'}
+  model: gene.RgdIdLookup
+  pk: 9347
+- fields: {choice: 'RGD:1560696'}
+  model: gene.RgdIdLookup
+  pk: 7861
+- fields: {choice: 'RGD:621250'}
+  model: gene.RgdIdLookup
+  pk: 15202
+- fields: {choice: 'RGD:1306815'}
+  model: gene.RgdIdLookup
+  pk: 2247
+- fields: {choice: 'RGD:1309340'}
+  model: gene.RgdIdLookup
+  pk: 4353
+- fields: {choice: 'RGD:1333008'}
+  model: gene.RgdIdLookup
+  pk: 6663
+- fields: {choice: 'RGD:1309649'}
+  model: gene.RgdIdLookup
+  pk: 4609
+- fields: {choice: 'RGD:1305042'}
+  model: gene.RgdIdLookup
+  pk: 753
+- fields: {choice: 'RGD:2224'}
+  model: gene.RgdIdLookup
+  pk: 11718
+- fields: {choice: 'RGD:3222'}
+  model: gene.RgdIdLookup
+  pk: 12956
+- fields: {choice: 'RGD:1309766'}
+  model: gene.RgdIdLookup
+  pk: 4708
+- fields: {choice: 'RGD:1307331'}
+  model: gene.RgdIdLookup
+  pk: 2673
+- fields: {choice: 'RGD:1359697'}
+  model: gene.RgdIdLookup
+  pk: 7340
+- fields: {choice: 'RGD:1305715'}
+  model: gene.RgdIdLookup
+  pk: 1321
+- fields: {choice: 'RGD:1306015'}
+  model: gene.RgdIdLookup
+  pk: 1576
+- fields: {choice: 'RGD:735069'}
+  model: gene.RgdIdLookup
+  pk: 17318
+- fields: {choice: 'RGD:1584380'}
+  model: gene.RgdIdLookup
+  pk: 10049
+- fields: {choice: 'RGD:1565350'}
+  model: gene.RgdIdLookup
+  pk: 9472
+- fields: {choice: 'RGD:1597447'}
+  model: gene.RgdIdLookup
+  pk: 11423
+- fields: {choice: 'RGD:1308739'}
+  model: gene.RgdIdLookup
+  pk: 3849
+- fields: {choice: 'RGD:1308487'}
+  model: gene.RgdIdLookup
+  pk: 3642
+- fields: {choice: 'RGD:70906'}
+  model: gene.RgdIdLookup
+  pk: 16910
+- fields: {choice: 'RGD:1309595'}
+  model: gene.RgdIdLookup
+  pk: 4564
+- fields: {choice: 'RGD:1566020'}
+  model: gene.RgdIdLookup
+  pk: 9717
+- fields: {choice: 'RGD:2909'}
+  model: gene.RgdIdLookup
+  pk: 12725
+- fields: {choice: 'RGD:68378'}
+  model: gene.RgdIdLookup
+  pk: 16380
+- fields: {choice: 'RGD:1563164'}
+  model: gene.RgdIdLookup
+  pk: 8705
+- fields: {choice: 'RGD:1308896'}
+  model: gene.RgdIdLookup
+  pk: 3981
+- fields: {choice: 'RGD:1302971'}
+  model: gene.RgdIdLookup
+  pk: 29
+- fields: {choice: 'RGD:1598031'}
+  model: gene.RgdIdLookup
+  pk: 11459
+- fields: {choice: 'RGD:1560370'}
+  model: gene.RgdIdLookup
+  pk: 7754
+- fields: {choice: 'RGD:69267'}
+  model: gene.RgdIdLookup
+  pk: 16528
+- fields: {choice: 'RGD:708444'}
+  model: gene.RgdIdLookup
+  pk: 16771
+- fields: {choice: 'RGD:1559597'}
+  model: gene.RgdIdLookup
+  pk: 7481
+- fields: {choice: 'RGD:1597457'}
+  model: gene.RgdIdLookup
+  pk: 11427
+- fields: {choice: 'RGD:1590079'}
+  model: gene.RgdIdLookup
+  pk: 10660
+- fields: {choice: 'RGD:2612'}
+  model: gene.RgdIdLookup
+  pk: 12502
+- fields: {choice: 'RGD:1309047'}
+  model: gene.RgdIdLookup
+  pk: 4108
+- fields: {choice: 'RGD:1565778'}
+  model: gene.RgdIdLookup
+  pk: 9637
+- fields: {choice: 'RGD:1561666'}
+  model: gene.RgdIdLookup
+  pk: 8190
+- fields: {choice: 'RGD:1564887'}
+  model: gene.RgdIdLookup
+  pk: 9305
+- fields: {choice: 'RGD:1563269'}
+  model: gene.RgdIdLookup
+  pk: 8748
+- fields: {choice: 'RGD:1310611'}
+  model: gene.RgdIdLookup
+  pk: 5400
+- fields: {choice: 'RGD:1559986'}
+  model: gene.RgdIdLookup
+  pk: 7608
+- fields: {choice: 'RGD:3643'}
+  model: gene.RgdIdLookup
+  pk: 13211
+- fields: {choice: 'RGD:1305026'}
+  model: gene.RgdIdLookup
+  pk: 738
+- fields: {choice: 'RGD:1302979'}
+  model: gene.RgdIdLookup
+  pk: 35
+- fields: {choice: 'RGD:1306364'}
+  model: gene.RgdIdLookup
+  pk: 1869
+- fields: {choice: 'RGD:1359131'}
+  model: gene.RgdIdLookup
+  pk: 6925
+- fields: {choice: 'RGD:2161'}
+  model: gene.RgdIdLookup
+  pk: 11668
+- fields: {choice: 'RGD:1305060'}
+  model: gene.RgdIdLookup
+  pk: 770
+- fields: {choice: 'RGD:2325620'}
+  model: gene.RgdIdLookup
+  pk: 12298
+- fields: {choice: 'RGD:61946'}
+  model: gene.RgdIdLookup
+  pk: 13646
+- fields: {choice: 'RGD:1561605'}
+  model: gene.RgdIdLookup
+  pk: 8169
+- fields: {choice: 'RGD:1308562'}
+  model: gene.RgdIdLookup
+  pk: 3708
+- fields: {choice: 'RGD:1565967'}
+  model: gene.RgdIdLookup
+  pk: 9695
+- fields: {choice: 'RGD:1562249'}
+  model: gene.RgdIdLookup
+  pk: 8397
+- fields: {choice: 'RGD:1310936'}
+  model: gene.RgdIdLookup
+  pk: 5672
+- fields: {choice: 'RGD:3918'}
+  model: gene.RgdIdLookup
+  pk: 13419
+- fields: {choice: 'RGD:1308920'}
+  model: gene.RgdIdLookup
+  pk: 4001
+- fields: {choice: 'RGD:1305170'}
+  model: gene.RgdIdLookup
+  pk: 867
+- fields: {choice: 'RGD:1595447'}
+  model: gene.RgdIdLookup
+  pk: 11195
+- fields: {choice: 'RGD:1560146'}
+  model: gene.RgdIdLookup
+  pk: 7671
+- fields: {choice: 'RGD:1310239'}
+  model: gene.RgdIdLookup
+  pk: 5096
+- fields: {choice: 'RGD:1359717'}
+  model: gene.RgdIdLookup
+  pk: 7355
+- fields: {choice: 'RGD:67387'}
+  model: gene.RgdIdLookup
+  pk: 16315
+- fields: {choice: 'RGD:1303090'}
+  model: gene.RgdIdLookup
+  pk: 126
+- fields: {choice: 'RGD:620961'}
+  model: gene.RgdIdLookup
+  pk: 14936
+- fields: {choice: 'RGD:1566099'}
+  model: gene.RgdIdLookup
+  pk: 9748
+- fields: {choice: 'RGD:1308200'}
+  model: gene.RgdIdLookup
+  pk: 3406
+- fields: {choice: 'RGD:3351'}
+  model: gene.RgdIdLookup
+  pk: 13048
+- fields: {choice: 'RGD:1549712'}
+  model: gene.RgdIdLookup
+  pk: 7381
+- fields: {choice: 'RGD:1311249'}
+  model: gene.RgdIdLookup
+  pk: 5928
+- fields: {choice: 'RGD:631345'}
+  model: gene.RgdIdLookup
+  pk: 16091
+- fields: {choice: 'RGD:1583423'}
+  model: gene.RgdIdLookup
+  pk: 9926
+- fields: {choice: 'RGD:2752'}
+  model: gene.RgdIdLookup
+  pk: 12618
+- fields: {choice: 'RGD:1307572'}
+  model: gene.RgdIdLookup
+  pk: 2872
+- fields: {choice: 'RGD:620726'}
+  model: gene.RgdIdLookup
+  pk: 14702
+- fields: {choice: 'RGD:621668'}
+  model: gene.RgdIdLookup
+  pk: 15574
+- fields: {choice: 'RGD:1583737'}
+  model: gene.RgdIdLookup
+  pk: 9964
+- fields: {choice: 'RGD:1593164'}
+  model: gene.RgdIdLookup
+  pk: 10967
+- fields: {choice: 'RGD:1565950'}
+  model: gene.RgdIdLookup
+  pk: 9690
+- fields: {choice: 'RGD:1359173'}
+  model: gene.RgdIdLookup
+  pk: 6957
+- fields: {choice: 'RGD:1305001'}
+  model: gene.RgdIdLookup
+  pk: 714
+- fields: {choice: 'RGD:3006'}
+  model: gene.RgdIdLookup
+  pk: 12800
+- fields: {choice: 'RGD:3889'}
+  model: gene.RgdIdLookup
+  pk: 13402
+- fields: {choice: 'RGD:1311342'}
+  model: gene.RgdIdLookup
+  pk: 6001
+- fields: {choice: 'RGD:1590602'}
+  model: gene.RgdIdLookup
+  pk: 10693
+- fields: {choice: 'RGD:1562620'}
+  model: gene.RgdIdLookup
+  pk: 8528
+- fields: {choice: 'RGD:1565883'}
+  model: gene.RgdIdLookup
+  pk: 9673
+- fields: {choice: 'RGD:1306716'}
+  model: gene.RgdIdLookup
+  pk: 2163
+- fields: {choice: 'RGD:620026'}
+  model: gene.RgdIdLookup
+  pk: 14001
+- fields: {choice: 'RGD:620125'}
+  model: gene.RgdIdLookup
+  pk: 14099
+- fields: {choice: 'RGD:1586463'}
+  model: gene.RgdIdLookup
+  pk: 10272
+- fields: {choice: 'RGD:708513'}
+  model: gene.RgdIdLookup
+  pk: 16827
+- fields: {choice: 'RGD:1587536'}
+  model: gene.RgdIdLookup
+  pk: 10384
+- fields: {choice: 'RGD:1305313'}
+  model: gene.RgdIdLookup
+  pk: 989
+- fields: {choice: 'RGD:3083'}
+  model: gene.RgdIdLookup
+  pk: 12857
+- fields: {choice: 'RGD:1304833'}
+  model: gene.RgdIdLookup
+  pk: 577
+- fields: {choice: 'RGD:2141'}
+  model: gene.RgdIdLookup
+  pk: 11648
+- fields: {choice: 'RGD:1584164'}
+  model: gene.RgdIdLookup
+  pk: 10032
+- fields: {choice: 'RGD:1559851'}
+  model: gene.RgdIdLookup
+  pk: 7559
+- fields: {choice: 'RGD:1564990'}
+  model: gene.RgdIdLookup
+  pk: 9346
+- fields: {choice: 'RGD:621273'}
+  model: gene.RgdIdLookup
+  pk: 15221
+- fields: {choice: 'RGD:1309615'}
+  model: gene.RgdIdLookup
+  pk: 4580
+- fields: {choice: 'RGD:1582808'}
+  model: gene.RgdIdLookup
+  pk: 9867
+- fields: {choice: 'RGD:1311040'}
+  model: gene.RgdIdLookup
+  pk: 5760
+- fields: {choice: 'RGD:1308862'}
+  model: gene.RgdIdLookup
+  pk: 3951
+- fields: {choice: 'RGD:1566171'}
+  model: gene.RgdIdLookup
+  pk: 9773
+- fields: {choice: 'RGD:620572'}
+  model: gene.RgdIdLookup
+  pk: 14542
+- fields: {choice: 'RGD:1308503'}
+  model: gene.RgdIdLookup
+  pk: 3657
+- fields: {choice: 'RGD:1308160'}
+  model: gene.RgdIdLookup
+  pk: 3372
+- fields: {choice: 'RGD:621362'}
+  model: gene.RgdIdLookup
+  pk: 15304
+- fields: {choice: 'RGD:1589960'}
+  model: gene.RgdIdLookup
+  pk: 10645
+- fields: {choice: 'RGD:1307867'}
+  model: gene.RgdIdLookup
+  pk: 3123
+- fields: {choice: 'RGD:1596467'}
+  model: gene.RgdIdLookup
+  pk: 11316
+- fields: {choice: 'RGD:1305168'}
+  model: gene.RgdIdLookup
+  pk: 865
+- fields: {choice: 'RGD:70934'}
+  model: gene.RgdIdLookup
+  pk: 16937
+- fields: {choice: 'RGD:1587016'}
+  model: gene.RgdIdLookup
+  pk: 10310
+- fields: {choice: 'RGD:2638'}
+  model: gene.RgdIdLookup
+  pk: 12523
+- fields: {choice: 'RGD:1309752'}
+  model: gene.RgdIdLookup
+  pk: 4696
+- fields: {choice: 'RGD:71036'}
+  model: gene.RgdIdLookup
+  pk: 17038
+- fields: {choice: 'RGD:1559567'}
+  model: gene.RgdIdLookup
+  pk: 7476
+- fields: {choice: 'RGD:1312014'}
+  model: gene.RgdIdLookup
+  pk: 6573
+- fields: {choice: 'RGD:61947'}
+  model: gene.RgdIdLookup
+  pk: 13647
+- fields: {choice: 'RGD:1306599'}
+  model: gene.RgdIdLookup
+  pk: 2062
+- fields: {choice: 'RGD:3311'}
+  model: gene.RgdIdLookup
+  pk: 13019
+- fields: {choice: 'RGD:1308552'}
+  model: gene.RgdIdLookup
+  pk: 3699
+- fields: {choice: 'RGD:1311746'}
+  model: gene.RgdIdLookup
+  pk: 6353
+- fields: {choice: 'RGD:1359674'}
+  model: gene.RgdIdLookup
+  pk: 7322
+- fields: {choice: 'RGD:619944'}
+  model: gene.RgdIdLookup
+  pk: 13917
+- fields: {choice: 'RGD:1590540'}
+  model: gene.RgdIdLookup
+  pk: 10687
+- fields: {choice: 'RGD:1310684'}
+  model: gene.RgdIdLookup
+  pk: 5459
+- fields: {choice: 'RGD:1306037'}
+  model: gene.RgdIdLookup
+  pk: 1595
+- fields: {choice: 'RGD:1306588'}
+  model: gene.RgdIdLookup
+  pk: 2053
+- fields: {choice: 'RGD:1333269'}
+  model: gene.RgdIdLookup
+  pk: 6707
+- fields: {choice: 'RGD:1560812'}
+  model: gene.RgdIdLookup
+  pk: 7894
+- fields: {choice: 'RGD:1562199'}
+  model: gene.RgdIdLookup
+  pk: 8376
+- fields: {choice: 'RGD:2319209'}
+  model: gene.RgdIdLookup
+  pk: 11901
+- fields: {choice: 'RGD:71101'}
+  model: gene.RgdIdLookup
+  pk: 17099
+- fields: {choice: 'RGD:620525'}
+  model: gene.RgdIdLookup
+  pk: 14496
+- fields: {choice: 'RGD:1306602'}
+  model: gene.RgdIdLookup
+  pk: 2064
+- fields: {choice: 'RGD:1560601'}
+  model: gene.RgdIdLookup
+  pk: 7827
+- fields: {choice: 'RGD:1308625'}
+  model: gene.RgdIdLookup
+  pk: 3756
+- fields: {choice: 'RGD:628595'}
+  model: gene.RgdIdLookup
+  pk: 15789
+- fields: {choice: 'RGD:1564664'}
+  model: gene.RgdIdLookup
+  pk: 9216
+- fields: {choice: 'RGD:621700'}
+  model: gene.RgdIdLookup
+  pk: 15604
+- fields: {choice: 'RGD:70952'}
+  model: gene.RgdIdLookup
+  pk: 16955
+- fields: {choice: 'RGD:1596494'}
+  model: gene.RgdIdLookup
+  pk: 11320
+- fields: {choice: 'RGD:621396'}
+  model: gene.RgdIdLookup
+  pk: 15331
+- fields: {choice: 'RGD:628708'}
+  model: gene.RgdIdLookup
+  pk: 15890
+- fields: {choice: 'RGD:1311940'}
+  model: gene.RgdIdLookup
+  pk: 6508
+- fields: {choice: 'RGD:69403'}
+  model: gene.RgdIdLookup
+  pk: 16628
+- fields: {choice: 'RGD:1561880'}
+  model: gene.RgdIdLookup
+  pk: 8263
+- fields: {choice: 'RGD:2028'}
+  model: gene.RgdIdLookup
+  pk: 11556
+- fields: {choice: 'RGD:1307679'}
+  model: gene.RgdIdLookup
+  pk: 2959
+- fields: {choice: 'RGD:1308858'}
+  model: gene.RgdIdLookup
+  pk: 3947
+- fields: {choice: 'RGD:1564356'}
+  model: gene.RgdIdLookup
+  pk: 9109
+- fields: {choice: 'RGD:70977'}
+  model: gene.RgdIdLookup
+  pk: 16980
+- fields: {choice: 'RGD:1561243'}
+  model: gene.RgdIdLookup
+  pk: 8048
+- fields: {choice: 'RGD:1561739'}
+  model: gene.RgdIdLookup
+  pk: 8215
+- fields: {choice: 'RGD:1306968'}
+  model: gene.RgdIdLookup
+  pk: 2378
+- fields: {choice: 'RGD:71013'}
+  model: gene.RgdIdLookup
+  pk: 17015
+- fields: {choice: 'RGD:1303038'}
+  model: gene.RgdIdLookup
+  pk: 83
+- fields: {choice: 'RGD:1590818'}
+  model: gene.RgdIdLookup
+  pk: 10713
+- fields: {choice: 'RGD:1596071'}
+  model: gene.RgdIdLookup
+  pk: 11276
+- fields: {choice: 'RGD:1304594'}
+  model: gene.RgdIdLookup
+  pk: 378
+- fields: {choice: 'RGD:1565991'}
+  model: gene.RgdIdLookup
+  pk: 9704
+- fields: {choice: 'RGD:1310663'}
+  model: gene.RgdIdLookup
+  pk: 5441
+- fields: {choice: 'RGD:1594185'}
+  model: gene.RgdIdLookup
+  pk: 11078
+- fields: {choice: 'RGD:621333'}
+  model: gene.RgdIdLookup
+  pk: 15276
+- fields: {choice: 'RGD:1561482'}
+  model: gene.RgdIdLookup
+  pk: 8124
+- fields: {choice: 'RGD:3731'}
+  model: gene.RgdIdLookup
+  pk: 13289
+- fields: {choice: 'RGD:1311996'}
+  model: gene.RgdIdLookup
+  pk: 6558
+- fields: {choice: 'RGD:735153'}
+  model: gene.RgdIdLookup
+  pk: 17389
+- fields: {choice: 'RGD:620664'}
+  model: gene.RgdIdLookup
+  pk: 14638
+- fields: {choice: 'RGD:1305254'}
+  model: gene.RgdIdLookup
+  pk: 940
+- fields: {choice: 'RGD:1304628'}
+  model: gene.RgdIdLookup
+  pk: 408
+- fields: {choice: 'RGD:621671'}
+  model: gene.RgdIdLookup
+  pk: 15577
+- fields: {choice: 'RGD:2322889'}
+  model: gene.RgdIdLookup
+  pk: 12030
+- fields: {choice: 'RGD:1311340'}
+  model: gene.RgdIdLookup
+  pk: 5999
+- fields: {choice: 'RGD:2320529'}
+  model: gene.RgdIdLookup
+  pk: 11954
+- fields: {choice: 'RGD:1304890'}
+  model: gene.RgdIdLookup
+  pk: 622
+- fields: {choice: 'RGD:68402'}
+  model: gene.RgdIdLookup
+  pk: 16404
+- fields: {choice: 'RGD:2211'}
+  model: gene.RgdIdLookup
+  pk: 11710
+- fields: {choice: 'RGD:1583270'}
+  model: gene.RgdIdLookup
+  pk: 9915
+- fields: {choice: 'RGD:1309207'}
+  model: gene.RgdIdLookup
+  pk: 4244
+- fields: {choice: 'RGD:1589147'}
+  model: gene.RgdIdLookup
+  pk: 10542
+- fields: {choice: 'RGD:1587462'}
+  model: gene.RgdIdLookup
+  pk: 10371
+- fields: {choice: 'RGD:621743'}
+  model: gene.RgdIdLookup
+  pk: 15644
+- fields: {choice: 'RGD:68423'}
+  model: gene.RgdIdLookup
+  pk: 16424
+- fields: {choice: 'RGD:1306710'}
+  model: gene.RgdIdLookup
+  pk: 2157
+- fields: {choice: 'RGD:3703'}
+  model: gene.RgdIdLookup
+  pk: 13264
+- fields: {choice: 'RGD:1310679'}
+  model: gene.RgdIdLookup
+  pk: 5454
+- fields: {choice: 'RGD:1307925'}
+  model: gene.RgdIdLookup
+  pk: 3176
+- fields: {choice: 'RGD:69313'}
+  model: gene.RgdIdLookup
+  pk: 16573
+- fields: {choice: 'RGD:1306099'}
+  model: gene.RgdIdLookup
+  pk: 1647
+- fields: {choice: 'RGD:735049'}
+  model: gene.RgdIdLookup
+  pk: 17302
+- fields: {choice: 'RGD:1308740'}
+  model: gene.RgdIdLookup
+  pk: 3850
+- fields: {choice: 'RGD:1564820'}
+  model: gene.RgdIdLookup
+  pk: 9281
+- fields: {choice: 'RGD:1306574'}
+  model: gene.RgdIdLookup
+  pk: 2041
+- fields: {choice: 'RGD:2927'}
+  model: gene.RgdIdLookup
+  pk: 12738
+- fields: {choice: 'RGD:1309796'}
+  model: gene.RgdIdLookup
+  pk: 4734
+- fields: {choice: 'RGD:1305415'}
+  model: gene.RgdIdLookup
+  pk: 1077
+- fields: {choice: 'RGD:1310563'}
+  model: gene.RgdIdLookup
+  pk: 5358
+- fields: {choice: 'RGD:1333584'}
+  model: gene.RgdIdLookup
+  pk: 6756
+- fields: {choice: 'RGD:2691'}
+  model: gene.RgdIdLookup
+  pk: 12568
+- fields: {choice: 'RGD:1303050'}
+  model: gene.RgdIdLookup
+  pk: 93
+- fields: {choice: 'RGD:621150'}
+  model: gene.RgdIdLookup
+  pk: 15110
+- fields: {choice: 'RGD:1308761'}
+  model: gene.RgdIdLookup
+  pk: 3867
+- fields: {choice: 'RGD:1565302'}
+  model: gene.RgdIdLookup
+  pk: 9459
+- fields: {choice: 'RGD:1306620'}
+  model: gene.RgdIdLookup
+  pk: 2077
+- fields: {choice: 'RGD:1307599'}
+  model: gene.RgdIdLookup
+  pk: 2895
+- fields: {choice: 'RGD:1588686'}
+  model: gene.RgdIdLookup
+  pk: 10490
+- fields: {choice: 'RGD:1566405'}
+  model: gene.RgdIdLookup
+  pk: 9847
+- fields: {choice: 'RGD:735230'}
+  model: gene.RgdIdLookup
+  pk: 17456
+- fields: {choice: 'RGD:3963'}
+  model: gene.RgdIdLookup
+  pk: 13449
+- fields: {choice: 'RGD:61817'}
+  model: gene.RgdIdLookup
+  pk: 13518
+- fields: {choice: 'RGD:1304659'}
+  model: gene.RgdIdLookup
+  pk: 433
+- fields: {choice: 'RGD:1359113'}
+  model: gene.RgdIdLookup
+  pk: 6911
+- fields: {choice: 'RGD:1587794'}
+  model: gene.RgdIdLookup
+  pk: 10404
+- fields: {choice: 'RGD:1593461'}
+  model: gene.RgdIdLookup
+  pk: 11027
+- fields: {choice: 'RGD:619930'}
+  model: gene.RgdIdLookup
+  pk: 13902
+- fields: {choice: 'RGD:3779'}
+  model: gene.RgdIdLookup
+  pk: 13322
+- fields: {choice: 'RGD:1309580'}
+  model: gene.RgdIdLookup
+  pk: 4549
+- fields: {choice: 'RGD:1562746'}
+  model: gene.RgdIdLookup
+  pk: 8571
+- fields: {choice: 'RGD:2320868'}
+  model: gene.RgdIdLookup
+  pk: 11969
+- fields: {choice: 'RGD:1307511'}
+  model: gene.RgdIdLookup
+  pk: 2827
+- fields: {choice: 'RGD:1592069'}
+  model: gene.RgdIdLookup
+  pk: 10867
+- fields: {choice: 'RGD:1304687'}
+  model: gene.RgdIdLookup
+  pk: 456
+- fields: {choice: 'RGD:1311588'}
+  model: gene.RgdIdLookup
+  pk: 6216
+- fields: {choice: 'RGD:619777'}
+  model: gene.RgdIdLookup
+  pk: 13746
+- fields: {choice: 'RGD:619897'}
+  model: gene.RgdIdLookup
+  pk: 13869
+- fields: {choice: 'RGD:1565253'}
+  model: gene.RgdIdLookup
+  pk: 9445
+- fields: {choice: 'RGD:628805'}
+  model: gene.RgdIdLookup
+  pk: 15974
+- fields: {choice: 'RGD:1308944'}
+  model: gene.RgdIdLookup
+  pk: 4022
+- fields: {choice: 'RGD:1305899'}
+  model: gene.RgdIdLookup
+  pk: 1480
+- fields: {choice: 'RGD:1560635'}
+  model: gene.RgdIdLookup
+  pk: 7840
+- fields: {choice: 'RGD:1311862'}
+  model: gene.RgdIdLookup
+  pk: 6444
+- fields: {choice: 'RGD:68428'}
+  model: gene.RgdIdLookup
+  pk: 16429
+- fields: {choice: 'RGD:1593851'}
+  model: gene.RgdIdLookup
+  pk: 11054
+- fields: {choice: 'RGD:1311336'}
+  model: gene.RgdIdLookup
+  pk: 5996
+- fields: {choice: 'RGD:1311131'}
+  model: gene.RgdIdLookup
+  pk: 5835
+- fields: {choice: 'RGD:1310272'}
+  model: gene.RgdIdLookup
+  pk: 5122
+- fields: {choice: 'RGD:1304922'}
+  model: gene.RgdIdLookup
+  pk: 649
+- fields: {choice: 'RGD:1562258'}
+  model: gene.RgdIdLookup
+  pk: 8403
+- fields: {choice: 'RGD:1593779'}
+  model: gene.RgdIdLookup
+  pk: 11044
+- fields: {choice: 'RGD:1563609'}
+  model: gene.RgdIdLookup
+  pk: 8871
+- fields: {choice: 'RGD:620675'}
+  model: gene.RgdIdLookup
+  pk: 14650
+- fields: {choice: 'RGD:621599'}
+  model: gene.RgdIdLookup
+  pk: 15514
+- fields: {choice: 'RGD:1311160'}
+  model: gene.RgdIdLookup
+  pk: 5858
+- fields: {choice: 'RGD:1309888'}
+  model: gene.RgdIdLookup
+  pk: 4806
+- fields: {choice: 'RGD:1307232'}
+  model: gene.RgdIdLookup
+  pk: 2593
+- fields: {choice: 'RGD:1566124'}
+  model: gene.RgdIdLookup
+  pk: 9759
+- fields: {choice: 'RGD:1307363'}
+  model: gene.RgdIdLookup
+  pk: 2699
+- fields: {choice: 'RGD:2170'}
+  model: gene.RgdIdLookup
+  pk: 11675
+- fields: {choice: 'RGD:1303251'}
+  model: gene.RgdIdLookup
+  pk: 259
+- fields: {choice: 'RGD:1589640'}
+  model: gene.RgdIdLookup
+  pk: 10590
+- fields: {choice: 'RGD:6489870'}
+  model: gene.RgdIdLookup
+  pk: 16214
+- fields: {choice: 'RGD:1312043'}
+  model: gene.RgdIdLookup
+  pk: 6598
+- fields: {choice: 'RGD:1584731'}
+  model: gene.RgdIdLookup
+  pk: 10085
+- fields: {choice: 'RGD:1310143'}
+  model: gene.RgdIdLookup
+  pk: 5013
+- fields: {choice: 'RGD:1311985'}
+  model: gene.RgdIdLookup
+  pk: 6548
+- fields: {choice: 'RGD:628734'}
+  model: gene.RgdIdLookup
+  pk: 15913
+- fields: {choice: 'RGD:1589429'}
+  model: gene.RgdIdLookup
+  pk: 10564
+- fields: {choice: 'RGD:1309758'}
+  model: gene.RgdIdLookup
+  pk: 4701
+- fields: {choice: 'RGD:619748'}
+  model: gene.RgdIdLookup
+  pk: 13716
+- fields: {choice: 'RGD:1566058'}
+  model: gene.RgdIdLookup
+  pk: 9732
+- fields: {choice: 'RGD:621500'}
+  model: gene.RgdIdLookup
+  pk: 15422
+- fields: {choice: 'RGD:1561651'}
+  model: gene.RgdIdLookup
+  pk: 8184
+- fields: {choice: 'RGD:3689'}
+  model: gene.RgdIdLookup
+  pk: 13251
+- fields: {choice: 'RGD:631410'}
+  model: gene.RgdIdLookup
+  pk: 16142
+- fields: {choice: 'RGD:1562092'}
+  model: gene.RgdIdLookup
+  pk: 8347
+- fields: {choice: 'RGD:71055'}
+  model: gene.RgdIdLookup
+  pk: 17056
+- fields: {choice: 'RGD:1303037'}
+  model: gene.RgdIdLookup
+  pk: 82
+- fields: {choice: 'RGD:1304668'}
+  model: gene.RgdIdLookup
+  pk: 440
+- fields: {choice: 'RGD:620336'}
+  model: gene.RgdIdLookup
+  pk: 14316
+- fields: {choice: 'RGD:1311820'}
+  model: gene.RgdIdLookup
+  pk: 6409
+- fields: {choice: 'RGD:1307989'}
+  model: gene.RgdIdLookup
+  pk: 3229
+- fields: {choice: 'RGD:1359157'}
+  model: gene.RgdIdLookup
+  pk: 6948
+- fields: {choice: 'RGD:1586364'}
+  model: gene.RgdIdLookup
+  pk: 10257
+- fields: {choice: 'RGD:621710'}
+  model: gene.RgdIdLookup
+  pk: 15612
+- fields: {choice: 'RGD:1587197'}
+  model: gene.RgdIdLookup
+  pk: 10332
+- fields: {choice: 'RGD:1549726'}
+  model: gene.RgdIdLookup
+  pk: 7388
+- fields: {choice: 'RGD:1304805'}
+  model: gene.RgdIdLookup
+  pk: 554
+- fields: {choice: 'RGD:61847'}
+  model: gene.RgdIdLookup
+  pk: 13548
+- fields: {choice: 'RGD:1562841'}
+  model: gene.RgdIdLookup
+  pk: 8598
+- fields: {choice: 'RGD:1560271'}
+  model: gene.RgdIdLookup
+  pk: 7719
+- fields: {choice: 'RGD:1561510'}
+  model: gene.RgdIdLookup
+  pk: 8138
+- fields: {choice: 'RGD:1593854'}
+  model: gene.RgdIdLookup
+  pk: 11055
+- fields: {choice: 'RGD:621328'}
+  model: gene.RgdIdLookup
+  pk: 15271
+- fields: {choice: 'RGD:619791'}
+  model: gene.RgdIdLookup
+  pk: 13761
+- fields: {choice: 'RGD:1624210'}
+  model: gene.RgdIdLookup
+  pk: 11517
+- fields: {choice: 'RGD:1563803'}
+  model: gene.RgdIdLookup
+  pk: 8922
+- fields: {choice: 'RGD:1311738'}
+  model: gene.RgdIdLookup
+  pk: 6347
+- fields: {choice: 'RGD:2325477'}
+  model: gene.RgdIdLookup
+  pk: 12225
+- fields: {choice: 'RGD:2384'}
+  model: gene.RgdIdLookup
+  pk: 12351
+- fields: {choice: 'RGD:1305198'}
+  model: gene.RgdIdLookup
+  pk: 891
+- fields: {choice: 'RGD:2543'}
+  model: gene.RgdIdLookup
+  pk: 12460
+- fields: {choice: 'RGD:1304887'}
+  model: gene.RgdIdLookup
+  pk: 619
+- fields: {choice: 'RGD:1305597'}
+  model: gene.RgdIdLookup
+  pk: 1224
+- fields: {choice: 'RGD:1311161'}
+  model: gene.RgdIdLookup
+  pk: 5859
+- fields: {choice: 'RGD:1306348'}
+  model: gene.RgdIdLookup
+  pk: 1855
+- fields: {choice: 'RGD:1310739'}
+  model: gene.RgdIdLookup
+  pk: 5504
+- fields: {choice: 'RGD:1624207'}
+  model: gene.RgdIdLookup
+  pk: 11516
+- fields: {choice: 'RGD:1309978'}
+  model: gene.RgdIdLookup
+  pk: 4879
+- fields: {choice: 'RGD:1309764'}
+  model: gene.RgdIdLookup
+  pk: 4706
+- fields: {choice: 'RGD:1561038'}
+  model: gene.RgdIdLookup
+  pk: 7971
+- fields: {choice: 'RGD:1592346'}
+  model: gene.RgdIdLookup
+  pk: 10897
+- fields: {choice: 'RGD:2323814'}
+  model: gene.RgdIdLookup
+  pk: 12090
+- fields: {choice: 'RGD:1307261'}
+  model: gene.RgdIdLookup
+  pk: 2614
+- fields: {choice: 'RGD:1311090'}
+  model: gene.RgdIdLookup
+  pk: 5803
+- fields: {choice: 'RGD:1306732'}
+  model: gene.RgdIdLookup
+  pk: 2178
+- fields: {choice: 'RGD:7744876'}
+  model: gene.RgdIdLookup
+  pk: 17536
+- fields: {choice: 'RGD:1308466'}
+  model: gene.RgdIdLookup
+  pk: 3624
+- fields: {choice: 'RGD:7606541'}
+  model: gene.RgdIdLookup
+  pk: 17498
+- fields: {choice: 'RGD:708560'}
+  model: gene.RgdIdLookup
+  pk: 16865
+- fields: {choice: 'RGD:1591334'}
+  model: gene.RgdIdLookup
+  pk: 10784
+- fields: {choice: 'RGD:1562365'}
+  model: gene.RgdIdLookup
+  pk: 8436
+- fields: {choice: 'RGD:628673'}
+  model: gene.RgdIdLookup
+  pk: 15858
+- fields: {choice: 'RGD:1333626'}
+  model: gene.RgdIdLookup
+  pk: 6764
+- fields: {choice: 'RGD:1359270'}
+  model: gene.RgdIdLookup
+  pk: 7032
+- fields: {choice: 'RGD:1303284'}
+  model: gene.RgdIdLookup
+  pk: 289
+- fields: {choice: 'RGD:1311508'}
+  model: gene.RgdIdLookup
+  pk: 6144
+- fields: {choice: 'RGD:1308789'}
+  model: gene.RgdIdLookup
+  pk: 3890
+- fields: {choice: 'RGD:1595953'}
+  model: gene.RgdIdLookup
+  pk: 11262
+- fields: {choice: 'RGD:1564967'}
+  model: gene.RgdIdLookup
+  pk: 9337
+- fields: {choice: 'RGD:69423'}
+  model: gene.RgdIdLookup
+  pk: 16648
+- fields: {choice: 'RGD:1595475'}
+  model: gene.RgdIdLookup
+  pk: 11200
+- fields: {choice: 'RGD:1306111'}
+  model: gene.RgdIdLookup
+  pk: 1659
+- fields: {choice: 'RGD:621648'}
+  model: gene.RgdIdLookup
+  pk: 15555
+- fields: {choice: 'RGD:1305660'}
+  model: gene.RgdIdLookup
+  pk: 1280
+- fields: {choice: 'RGD:1310986'}
+  model: gene.RgdIdLookup
+  pk: 5715
+- fields: {choice: 'RGD:735196'}
+  model: gene.RgdIdLookup
+  pk: 17427
+- fields: {choice: 'RGD:69330'}
+  model: gene.RgdIdLookup
+  pk: 16588
+- fields: {choice: 'RGD:1333074'}
+  model: gene.RgdIdLookup
+  pk: 6676
+- fields: {choice: 'RGD:1563684'}
+  model: gene.RgdIdLookup
+  pk: 8893
+- fields: {choice: 'RGD:1305206'}
+  model: gene.RgdIdLookup
+  pk: 899
+- fields: {choice: 'RGD:2375'}
+  model: gene.RgdIdLookup
+  pk: 12343
+- fields: {choice: 'RGD:1598335'}
+  model: gene.RgdIdLookup
+  pk: 11503
+- fields: {choice: 'RGD:1334073'}
+  model: gene.RgdIdLookup
+  pk: 6835
+- fields: {choice: 'RGD:3015'}
+  model: gene.RgdIdLookup
+  pk: 12807
+- fields: {choice: 'RGD:1305132'}
+  model: gene.RgdIdLookup
+  pk: 833
+- fields: {choice: 'RGD:1586306'}
+  model: gene.RgdIdLookup
+  pk: 10246
+- fields: {choice: 'RGD:1311106'}
+  model: gene.RgdIdLookup
+  pk: 5816
+- fields: {choice: 'RGD:1307361'}
+  model: gene.RgdIdLookup
+  pk: 2697
+- fields: {choice: 'RGD:61943'}
+  model: gene.RgdIdLookup
+  pk: 13643
+- fields: {choice: 'RGD:1311483'}
+  model: gene.RgdIdLookup
+  pk: 6124
+- fields: {choice: 'RGD:3909'}
+  model: gene.RgdIdLookup
+  pk: 13412
+- fields: {choice: 'RGD:1305587'}
+  model: gene.RgdIdLookup
+  pk: 1216
+- fields: {choice: 'RGD:1309189'}
+  model: gene.RgdIdLookup
+  pk: 4229
+- fields: {choice: 'RGD:1565643'}
+  model: gene.RgdIdLookup
+  pk: 9589
+- fields: {choice: 'RGD:1309601'}
+  model: gene.RgdIdLookup
+  pk: 4569
+- fields: {choice: 'RGD:1309576'}
+  model: gene.RgdIdLookup
+  pk: 4545
+- fields: {choice: 'RGD:708583'}
+  model: gene.RgdIdLookup
+  pk: 16882
+- fields: {choice: 'RGD:1562221'}
+  model: gene.RgdIdLookup
+  pk: 8385
+- fields: {choice: 'RGD:1359460'}
+  model: gene.RgdIdLookup
+  pk: 7170
+- fields: {choice: 'RGD:621879'}
+  model: gene.RgdIdLookup
+  pk: 15769
+- fields: {choice: 'RGD:1593016'}
+  model: gene.RgdIdLookup
+  pk: 10952
+- fields: {choice: 'RGD:1586621'}
+  model: gene.RgdIdLookup
+  pk: 10285
+- fields: {choice: 'RGD:69253'}
+  model: gene.RgdIdLookup
+  pk: 16514
+- fields: {choice: 'RGD:621462'}
+  model: gene.RgdIdLookup
+  pk: 15392
+- fields: {choice: 'RGD:1311473'}
+  model: gene.RgdIdLookup
+  pk: 6116
+- fields: {choice: 'RGD:621110'}
+  model: gene.RgdIdLookup
+  pk: 15073
+- fields: {choice: 'RGD:1560819'}
+  model: gene.RgdIdLookup
+  pk: 7898
+- fields: {choice: 'RGD:1564538'}
+  model: gene.RgdIdLookup
+  pk: 9170
+- fields: {choice: 'RGD:1307184'}
+  model: gene.RgdIdLookup
+  pk: 2553
+- fields: {choice: 'RGD:1305636'}
+  model: gene.RgdIdLookup
+  pk: 1258
+- fields: {choice: 'RGD:1597725'}
+  model: gene.RgdIdLookup
+  pk: 11444
+- fields: {choice: 'RGD:1562339'}
+  model: gene.RgdIdLookup
+  pk: 8428
+- fields: {choice: 'RGD:1590245'}
+  model: gene.RgdIdLookup
+  pk: 10671
+- fields: {choice: 'RGD:1587643'}
+  model: gene.RgdIdLookup
+  pk: 10394
+- fields: {choice: 'RGD:1309640'}
+  model: gene.RgdIdLookup
+  pk: 4601
+- fields: {choice: 'RGD:620919'}
+  model: gene.RgdIdLookup
+  pk: 14898
+- fields: {choice: 'RGD:1593370'}
+  model: gene.RgdIdLookup
+  pk: 11015
+- fields: {choice: 'RGD:1585907'}
+  model: gene.RgdIdLookup
+  pk: 10200
+- fields: {choice: 'RGD:1305419'}
+  model: gene.RgdIdLookup
+  pk: 1079
+- fields: {choice: 'RGD:3354'}
+  model: gene.RgdIdLookup
+  pk: 13051
+- fields: {choice: 'RGD:1306945'}
+  model: gene.RgdIdLookup
+  pk: 2356
+- fields: {choice: 'RGD:1564797'}
+  model: gene.RgdIdLookup
+  pk: 9269
+- fields: {choice: 'RGD:1306241'}
+  model: gene.RgdIdLookup
+  pk: 1767
+- fields: {choice: 'RGD:1592448'}
+  model: gene.RgdIdLookup
+  pk: 10905
+- fields: {choice: 'RGD:1597409'}
+  model: gene.RgdIdLookup
+  pk: 11415
+- fields: {choice: 'RGD:1305236'}
+  model: gene.RgdIdLookup
+  pk: 925
+- fields: {choice: 'RGD:1311960'}
+  model: gene.RgdIdLookup
+  pk: 6528
+- fields: {choice: 'RGD:2520'}
+  model: gene.RgdIdLookup
+  pk: 12443
+- fields: {choice: 'RGD:620656'}
+  model: gene.RgdIdLookup
+  pk: 14630
+- fields: {choice: 'RGD:1588455'}
+  model: gene.RgdIdLookup
+  pk: 10444
+- fields: {choice: 'RGD:3691'}
+  model: gene.RgdIdLookup
+  pk: 13253
+- fields: {choice: 'RGD:1560545'}
+  model: gene.RgdIdLookup
+  pk: 7808
+- fields: {choice: 'RGD:1307869'}
+  model: gene.RgdIdLookup
+  pk: 3125
+- fields: {choice: 'RGD:1309659'}
+  model: gene.RgdIdLookup
+  pk: 4619
+- fields: {choice: 'RGD:1309516'}
+  model: gene.RgdIdLookup
+  pk: 4496
+- fields: {choice: 'RGD:1307024'}
+  model: gene.RgdIdLookup
+  pk: 2423
+- fields: {choice: 'RGD:1590072'}
+  model: gene.RgdIdLookup
+  pk: 10659
+- fields: {choice: 'RGD:1303163'}
+  model: gene.RgdIdLookup
+  pk: 188
+- fields: {choice: 'RGD:1333950'}
+  model: gene.RgdIdLookup
+  pk: 6812
+- fields: {choice: 'RGD:1306561'}
+  model: gene.RgdIdLookup
+  pk: 2028
+- fields: {choice: 'RGD:620225'}
+  model: gene.RgdIdLookup
+  pk: 14205
+- fields: {choice: 'RGD:1310138'}
+  model: gene.RgdIdLookup
+  pk: 5009
+- fields: {choice: 'RGD:621433'}
+  model: gene.RgdIdLookup
+  pk: 15367
+- fields: {choice: 'RGD:1590062'}
+  model: gene.RgdIdLookup
+  pk: 10658
+- fields: {choice: 'RGD:735221'}
+  model: gene.RgdIdLookup
+  pk: 17448
+- fields: {choice: 'RGD:1308535'}
+  model: gene.RgdIdLookup
+  pk: 3686
+- fields: {choice: 'RGD:1593784'}
+  model: gene.RgdIdLookup
+  pk: 11045
+- fields: {choice: 'RGD:620910'}
+  model: gene.RgdIdLookup
+  pk: 14889
+- fields: {choice: 'RGD:2225'}
+  model: gene.RgdIdLookup
+  pk: 11719
+- fields: {choice: 'RGD:62047'}
+  model: gene.RgdIdLookup
+  pk: 14441
+- fields: {choice: 'RGD:1359551'}
+  model: gene.RgdIdLookup
+  pk: 7236
+- fields: {choice: 'RGD:70987'}
+  model: gene.RgdIdLookup
+  pk: 16989
+- fields: {choice: 'RGD:1307606'}
+  model: gene.RgdIdLookup
+  pk: 2898
+- fields: {choice: 'RGD:1359111'}
+  model: gene.RgdIdLookup
+  pk: 6909
+- fields: {choice: 'RGD:708547'}
+  model: gene.RgdIdLookup
+  pk: 16853
+- fields: {choice: 'RGD:708572'}
+  model: gene.RgdIdLookup
+  pk: 16873
+- fields: {choice: 'RGD:3768'}
+  model: gene.RgdIdLookup
+  pk: 13314
+- fields: {choice: 'RGD:1310219'}
+  model: gene.RgdIdLookup
+  pk: 5080
+- fields: {choice: 'RGD:1307403'}
+  model: gene.RgdIdLookup
+  pk: 2736
+- fields: {choice: 'RGD:1559928'}
+  model: gene.RgdIdLookup
+  pk: 7589
+- fields: {choice: 'RGD:619949'}
+  model: gene.RgdIdLookup
+  pk: 13921
+- fields: {choice: 'RGD:3966'}
+  model: gene.RgdIdLookup
+  pk: 13451
+- fields: {choice: 'RGD:1307272'}
+  model: gene.RgdIdLookup
+  pk: 2624
+- fields: {choice: 'RGD:1311379'}
+  model: gene.RgdIdLookup
+  pk: 6034
+- fields: {choice: 'RGD:1334432'}
+  model: gene.RgdIdLookup
+  pk: 6891
+- fields: {choice: 'RGD:1561983'}
+  model: gene.RgdIdLookup
+  pk: 8297
+- fields: {choice: 'RGD:621649'}
+  model: gene.RgdIdLookup
+  pk: 15556
+- fields: {choice: 'RGD:1562933'}
+  model: gene.RgdIdLookup
+  pk: 8624
+- fields: {choice: 'RGD:1566384'}
+  model: gene.RgdIdLookup
+  pk: 9837
+- fields: {choice: 'RGD:738048'}
+  model: gene.RgdIdLookup
+  pk: 17461
+- fields: {choice: 'RGD:1561783'}
+  model: gene.RgdIdLookup
+  pk: 8229
+- fields: {choice: 'RGD:1309918'}
+  model: gene.RgdIdLookup
+  pk: 4829
+- fields: {choice: 'RGD:1308081'}
+  model: gene.RgdIdLookup
+  pk: 3303
+- fields: {choice: 'RGD:621347'}
+  model: gene.RgdIdLookup
+  pk: 15289
+- fields: {choice: 'RGD:619902'}
+  model: gene.RgdIdLookup
+  pk: 13873
+- fields: {choice: 'RGD:1305152'}
+  model: gene.RgdIdLookup
+  pk: 849
+- fields: {choice: 'RGD:1565318'}
+  model: gene.RgdIdLookup
+  pk: 9465
+- fields: {choice: 'RGD:1309122'}
+  model: gene.RgdIdLookup
+  pk: 4174
+- fields: {choice: 'RGD:1304664'}
+  model: gene.RgdIdLookup
+  pk: 437
+- fields: {choice: 'RGD:3329'}
+  model: gene.RgdIdLookup
+  pk: 13029
+- fields: {choice: 'RGD:1308302'}
+  model: gene.RgdIdLookup
+  pk: 3488
+- fields: {choice: 'RGD:1562539'}
+  model: gene.RgdIdLookup
+  pk: 8495
+- fields: {choice: 'RGD:1564365'}
+  model: gene.RgdIdLookup
+  pk: 9115
+- fields: {choice: 'RGD:1584589'}
+  model: gene.RgdIdLookup
+  pk: 10065
+- fields: {choice: 'RGD:70964'}
+  model: gene.RgdIdLookup
+  pk: 16967
+- fields: {choice: 'RGD:727939'}
+  model: gene.RgdIdLookup
+  pk: 17232
+- fields: {choice: 'RGD:1307109'}
+  model: gene.RgdIdLookup
+  pk: 2492
+- fields: {choice: 'RGD:1333381'}
+  model: gene.RgdIdLookup
+  pk: 6726
+- fields: {choice: 'RGD:1302994'}
+  model: gene.RgdIdLookup
+  pk: 49
+- fields: {choice: 'RGD:1560916'}
+  model: gene.RgdIdLookup
+  pk: 7937
+- fields: {choice: 'RGD:1586346'}
+  model: gene.RgdIdLookup
+  pk: 10254
+- fields: {choice: 'RGD:1642426'}
+  model: gene.RgdIdLookup
+  pk: 11530
+- fields: {choice: 'RGD:3241'}
+  model: gene.RgdIdLookup
+  pk: 12969
+- fields: {choice: 'RGD:708436'}
+  model: gene.RgdIdLookup
+  pk: 16766
+- fields: {choice: 'RGD:1563971'}
+  model: gene.RgdIdLookup
+  pk: 8971
+- fields: {choice: 'RGD:2319149'}
+  model: gene.RgdIdLookup
+  pk: 11895
+- fields: {choice: 'RGD:1560244'}
+  model: gene.RgdIdLookup
+  pk: 7708
+- fields: {choice: 'RGD:62066'}
+  model: gene.RgdIdLookup
+  pk: 14634
+- fields: {choice: 'RGD:1592780'}
+  model: gene.RgdIdLookup
+  pk: 10933
+- fields: {choice: 'RGD:620589'}
+  model: gene.RgdIdLookup
+  pk: 14558
+- fields: {choice: 'RGD:1311243'}
+  model: gene.RgdIdLookup
+  pk: 5925
+- fields: {choice: 'RGD:1566236'}
+  model: gene.RgdIdLookup
+  pk: 9795
+- fields: {choice: 'RGD:1563106'}
+  model: gene.RgdIdLookup
+  pk: 8685
+- fields: {choice: 'RGD:620690'}
+  model: gene.RgdIdLookup
+  pk: 14666
+- fields: {choice: 'RGD:1559144'}
+  model: gene.RgdIdLookup
+  pk: 7424
+- fields: {choice: 'RGD:70904'}
+  model: gene.RgdIdLookup
+  pk: 16908
+- fields: {choice: 'RGD:1306769'}
+  model: gene.RgdIdLookup
+  pk: 2209
+- fields: {choice: 'RGD:1308829'}
+  model: gene.RgdIdLookup
+  pk: 3921
+- fields: {choice: 'RGD:1561733'}
+  model: gene.RgdIdLookup
+  pk: 8212
+- fields: {choice: 'RGD:1308149'}
+  model: gene.RgdIdLookup
+  pk: 3362
+- fields: {choice: 'RGD:1307668'}
+  model: gene.RgdIdLookup
+  pk: 2949
+- fields: {choice: 'RGD:2325597'}
+  model: gene.RgdIdLookup
+  pk: 12286
+- fields: {choice: 'RGD:1334327'}
+  model: gene.RgdIdLookup
+  pk: 6872
+- fields: {choice: 'RGD:1559509'}
+  model: gene.RgdIdLookup
+  pk: 7457
+- fields: {choice: 'RGD:1563481'}
+  model: gene.RgdIdLookup
+  pk: 8824
+- fields: {choice: 'RGD:1565271'}
+  model: gene.RgdIdLookup
+  pk: 9451
+- fields: {choice: 'RGD:3775'}
+  model: gene.RgdIdLookup
+  pk: 13320
+- fields: {choice: 'RGD:621403'}
+  model: gene.RgdIdLookup
+  pk: 15337
+- fields: {choice: 'RGD:1306415'}
+  model: gene.RgdIdLookup
+  pk: 1911
+- fields: {choice: 'RGD:1308443'}
+  model: gene.RgdIdLookup
+  pk: 3604
+- fields: {choice: 'RGD:61842'}
+  model: gene.RgdIdLookup
+  pk: 13543
+- fields: {choice: 'RGD:1310643'}
+  model: gene.RgdIdLookup
+  pk: 5425
+- fields: {choice: 'RGD:3113'}
+  model: gene.RgdIdLookup
+  pk: 12880
+- fields: {choice: 'RGD:3238'}
+  model: gene.RgdIdLookup
+  pk: 12966
+- fields: {choice: 'RGD:1591051'}
+  model: gene.RgdIdLookup
+  pk: 10759
+- fields: {choice: 'RGD:1564105'}
+  model: gene.RgdIdLookup
+  pk: 9028
+- fields: {choice: 'RGD:1359399'}
+  model: gene.RgdIdLookup
+  pk: 7124
+- fields: {choice: 'RGD:1359726'}
+  model: gene.RgdIdLookup
+  pk: 7363
+- fields: {choice: 'RGD:2325446'}
+  model: gene.RgdIdLookup
+  pk: 12214
+- fields: {choice: 'RGD:1584759'}
+  model: gene.RgdIdLookup
+  pk: 10091
+- fields: {choice: 'RGD:1304680'}
+  model: gene.RgdIdLookup
+  pk: 449
+- fields: {choice: 'RGD:1598218'}
+  model: gene.RgdIdLookup
+  pk: 11485
+- fields: {choice: 'RGD:2312'}
+  model: gene.RgdIdLookup
+  pk: 11828
+- fields: {choice: 'RGD:1595701'}
+  model: gene.RgdIdLookup
+  pk: 11221
+- fields: {choice: 'RGD:632286'}
+  model: gene.RgdIdLookup
+  pk: 16176
+- fields: {choice: 'RGD:1307375'}
+  model: gene.RgdIdLookup
+  pk: 2711
+- fields: {choice: 'RGD:3935'}
+  model: gene.RgdIdLookup
+  pk: 13432
+- fields: {choice: 'RGD:1306020'}
+  model: gene.RgdIdLookup
+  pk: 1579
+- fields: {choice: 'RGD:1565739'}
+  model: gene.RgdIdLookup
+  pk: 9621
+- fields: {choice: 'RGD:1306908'}
+  model: gene.RgdIdLookup
+  pk: 2324
+- fields: {choice: 'RGD:1560486'}
+  model: gene.RgdIdLookup
+  pk: 7792
+- fields: {choice: 'RGD:621729'}
+  model: gene.RgdIdLookup
+  pk: 15630
+- fields: {choice: 'RGD:3003'}
+  model: gene.RgdIdLookup
+  pk: 12798
+- fields: {choice: 'RGD:1306573'}
+  model: gene.RgdIdLookup
+  pk: 2040
+- fields: {choice: 'RGD:1309370'}
+  model: gene.RgdIdLookup
+  pk: 4374
+- fields: {choice: 'RGD:1305468'}
+  model: gene.RgdIdLookup
+  pk: 1119
+- fields: {choice: 'RGD:1308384'}
+  model: gene.RgdIdLookup
+  pk: 3556
+- fields: {choice: 'RGD:621727'}
+  model: gene.RgdIdLookup
+  pk: 15628
+- fields: {choice: 'RGD:1308315'}
+  model: gene.RgdIdLookup
+  pk: 3498
+- fields: {choice: 'RGD:1304570'}
+  model: gene.RgdIdLookup
+  pk: 356
+- fields: {choice: 'RGD:9087771'}
+  model: gene.RgdIdLookup
+  pk: 17539
+- fields: {choice: 'RGD:6496360'}
+  model: gene.RgdIdLookup
+  pk: 16249
+- fields: {choice: 'RGD:1305058'}
+  model: gene.RgdIdLookup
+  pk: 768
+- fields: {choice: 'RGD:2322345'}
+  model: gene.RgdIdLookup
+  pk: 12018
+- fields: {choice: 'RGD:1561623'}
+  model: gene.RgdIdLookup
+  pk: 8173
+- fields: {choice: 'RGD:6486589'}
+  model: gene.RgdIdLookup
+  pk: 16186
+- fields: {choice: 'RGD:1562128'}
+  model: gene.RgdIdLookup
+  pk: 8360
+- fields: {choice: 'RGD:1311496'}
+  model: gene.RgdIdLookup
+  pk: 6134
+- fields: {choice: 'RGD:1306835'}
+  model: gene.RgdIdLookup
+  pk: 2265
+- fields: {choice: 'RGD:1561793'}
+  model: gene.RgdIdLookup
+  pk: 8233
+- fields: {choice: 'RGD:1311946'}
+  model: gene.RgdIdLookup
+  pk: 6514
+- fields: {choice: 'RGD:620650'}
+  model: gene.RgdIdLookup
+  pk: 14624
+- fields: {choice: 'RGD:620075'}
+  model: gene.RgdIdLookup
+  pk: 14052
+- fields: {choice: 'RGD:70925'}
+  model: gene.RgdIdLookup
+  pk: 16928
+- fields: {choice: 'RGD:1561953'}
+  model: gene.RgdIdLookup
+  pk: 8285
+- fields: {choice: 'RGD:1559727'}
+  model: gene.RgdIdLookup
+  pk: 7524
+- fields: {choice: 'RGD:1359271'}
+  model: gene.RgdIdLookup
+  pk: 7033
+- fields: {choice: 'RGD:1310501'}
+  model: gene.RgdIdLookup
+  pk: 5305
+- fields: {choice: 'RGD:1306792'}
+  model: gene.RgdIdLookup
+  pk: 2228
+- fields: {choice: 'RGD:628634'}
+  model: gene.RgdIdLookup
+  pk: 15823
+- fields: {choice: 'RGD:1311520'}
+  model: gene.RgdIdLookup
+  pk: 6155
+- fields: {choice: 'RGD:1309673'}
+  model: gene.RgdIdLookup
+  pk: 4631
+- fields: {choice: 'RGD:1566215'}
+  model: gene.RgdIdLookup
+  pk: 9788
+- fields: {choice: 'RGD:1305980'}
+  model: gene.RgdIdLookup
+  pk: 1547
+- fields: {choice: 'RGD:1307906'}
+  model: gene.RgdIdLookup
+  pk: 3160
+- fields: {choice: 'RGD:1305770'}
+  model: gene.RgdIdLookup
+  pk: 1364
+- fields: {choice: 'RGD:1592078'}
+  model: gene.RgdIdLookup
+  pk: 10869
+- fields: {choice: 'RGD:2361'}
+  model: gene.RgdIdLookup
+  pk: 12329
+- fields: {choice: 'RGD:1563073'}
+  model: gene.RgdIdLookup
+  pk: 8674
+- fields: {choice: 'RGD:2704'}
+  model: gene.RgdIdLookup
+  pk: 12575
+- fields: {choice: 'RGD:3231'}
+  model: gene.RgdIdLookup
+  pk: 12961
+- fields: {choice: 'RGD:1565311'}
+  model: gene.RgdIdLookup
+  pk: 9462
+- fields: {choice: 'RGD:1309728'}
+  model: gene.RgdIdLookup
+  pk: 4675
+- fields: {choice: 'RGD:1308730'}
+  model: gene.RgdIdLookup
+  pk: 3841
+- fields: {choice: 'RGD:1311388'}
+  model: gene.RgdIdLookup
+  pk: 6042
+- fields: {choice: 'RGD:1563891'}
+  model: gene.RgdIdLookup
+  pk: 8951
+- fields: {choice: 'RGD:2268'}
+  model: gene.RgdIdLookup
+  pk: 11753
+- fields: {choice: 'RGD:1308318'}
+  model: gene.RgdIdLookup
+  pk: 3501
+- fields: {choice: 'RGD:1565126'}
+  model: gene.RgdIdLookup
+  pk: 9400
+- fields: {choice: 'RGD:61818'}
+  model: gene.RgdIdLookup
+  pk: 13519
+- fields: {choice: 'RGD:4888611'}
+  model: gene.RgdIdLookup
+  pk: 13487
+- fields: {choice: 'RGD:1589557'}
+  model: gene.RgdIdLookup
+  pk: 10577
+- fields: {choice: 'RGD:1563869'}
+  model: gene.RgdIdLookup
+  pk: 8942
+- fields: {choice: 'RGD:1590969'}
+  model: gene.RgdIdLookup
+  pk: 10743
+- fields: {choice: 'RGD:1559696'}
+  model: gene.RgdIdLookup
+  pk: 7512
+- fields: {choice: 'RGD:70974'}
+  model: gene.RgdIdLookup
+  pk: 16977
+- fields: {choice: 'RGD:1304697'}
+  model: gene.RgdIdLookup
+  pk: 466
+- fields: {choice: 'RGD:1304671'}
+  model: gene.RgdIdLookup
+  pk: 443
+- fields: {choice: 'RGD:620645'}
+  model: gene.RgdIdLookup
+  pk: 14618
+- fields: {choice: 'RGD:1305178'}
+  model: gene.RgdIdLookup
+  pk: 874
+- fields: {choice: 'RGD:1310441'}
+  model: gene.RgdIdLookup
+  pk: 5260
+- fields: {choice: 'RGD:70899'}
+  model: gene.RgdIdLookup
+  pk: 16903
+- fields: {choice: 'RGD:1595501'}
+  model: gene.RgdIdLookup
+  pk: 11203
+- fields: {choice: 'RGD:1562464'}
+  model: gene.RgdIdLookup
+  pk: 8472
+- fields: {choice: 'RGD:2313'}
+  model: gene.RgdIdLookup
+  pk: 11830
+- fields: {choice: 'RGD:631333'}
+  model: gene.RgdIdLookup
+  pk: 16080
+- fields: {choice: 'RGD:1306006'}
+  model: gene.RgdIdLookup
+  pk: 1568
+- fields: {choice: 'RGD:1565099'}
+  model: gene.RgdIdLookup
+  pk: 9390
+- fields: {choice: 'RGD:1307990'}
+  model: gene.RgdIdLookup
+  pk: 3230
+- fields: {choice: 'RGD:6490353'}
+  model: gene.RgdIdLookup
+  pk: 16217
+- fields: {choice: 'RGD:1308980'}
+  model: gene.RgdIdLookup
+  pk: 4054
+- fields: {choice: 'RGD:1560814'}
+  model: gene.RgdIdLookup
+  pk: 7895
+- fields: {choice: 'RGD:1309335'}
+  model: gene.RgdIdLookup
+  pk: 4349
+- fields: {choice: 'RGD:1307879'}
+  model: gene.RgdIdLookup
+  pk: 3134
+- fields: {choice: 'RGD:1561262'}
+  model: gene.RgdIdLookup
+  pk: 8055
+- fields: {choice: 'RGD:727851'}
+  model: gene.RgdIdLookup
+  pk: 17161
+- fields: {choice: 'RGD:1565607'}
+  model: gene.RgdIdLookup
+  pk: 9575
+- fields: {choice: 'RGD:2727'}
+  model: gene.RgdIdLookup
+  pk: 12596
+- fields: {choice: 'RGD:1311790'}
+  model: gene.RgdIdLookup
+  pk: 6388
+- fields: {choice: 'RGD:1307522'}
+  model: gene.RgdIdLookup
+  pk: 2835
+- fields: {choice: 'RGD:1588574'}
+  model: gene.RgdIdLookup
+  pk: 10462
+- fields: {choice: 'RGD:1592810'}
+  model: gene.RgdIdLookup
+  pk: 10935
+- fields: {choice: 'RGD:1307934'}
+  model: gene.RgdIdLookup
+  pk: 3184
+- fields: {choice: 'RGD:1589460'}
+  model: gene.RgdIdLookup
+  pk: 10567
+- fields: {choice: 'RGD:1307027'}
+  model: gene.RgdIdLookup
+  pk: 2426
+- fields: {choice: 'RGD:620064'}
+  model: gene.RgdIdLookup
+  pk: 14041
+- fields: {choice: 'RGD:1596197'}
+  model: gene.RgdIdLookup
+  pk: 11294
+- fields: {choice: 'RGD:1591333'}
+  model: gene.RgdIdLookup
+  pk: 10783
+- fields: {choice: 'RGD:1560717'}
+  model: gene.RgdIdLookup
+  pk: 7865
+- fields: {choice: 'RGD:1564994'}
+  model: gene.RgdIdLookup
+  pk: 9349
+- fields: {choice: 'RGD:61925'}
+  model: gene.RgdIdLookup
+  pk: 13625
+- fields: {choice: 'RGD:70947'}
+  model: gene.RgdIdLookup
+  pk: 16950
+- fields: {choice: 'RGD:1562214'}
+  model: gene.RgdIdLookup
+  pk: 8382
+- fields: {choice: 'RGD:1308299'}
+  model: gene.RgdIdLookup
+  pk: 3486
+- fields: {choice: 'RGD:621546'}
+  model: gene.RgdIdLookup
+  pk: 15465
+- fields: {choice: 'RGD:1564914'}
+  model: gene.RgdIdLookup
+  pk: 9317
+- fields: {choice: 'RGD:621554'}
+  model: gene.RgdIdLookup
+  pk: 15472
+- fields: {choice: 'RGD:3010'}
+  model: gene.RgdIdLookup
+  pk: 12804
+- fields: {choice: 'RGD:1306489'}
+  model: gene.RgdIdLookup
+  pk: 1964
+- fields: {choice: 'RGD:1584688'}
+  model: gene.RgdIdLookup
+  pk: 10076
+- fields: {choice: 'RGD:2142'}
+  model: gene.RgdIdLookup
+  pk: 11649
+- fields: {choice: 'RGD:620518'}
+  model: gene.RgdIdLookup
+  pk: 14488
+- fields: {choice: 'RGD:1309621'}
+  model: gene.RgdIdLookup
+  pk: 4585
+- fields: {choice: 'RGD:1596873'}
+  model: gene.RgdIdLookup
+  pk: 11357
+- fields: {choice: 'RGD:3158'}
+  model: gene.RgdIdLookup
+  pk: 12906
+- fields: {choice: 'RGD:1562860'}
+  model: gene.RgdIdLookup
+  pk: 8602
+- fields: {choice: 'RGD:1592330'}
+  model: gene.RgdIdLookup
+  pk: 10893
+- fields: {choice: 'RGD:3642'}
+  model: gene.RgdIdLookup
+  pk: 13210
+- fields: {choice: 'RGD:1303246'}
+  model: gene.RgdIdLookup
+  pk: 254
+- fields: {choice: 'RGD:3410'}
+  model: gene.RgdIdLookup
+  pk: 13090
+- fields: {choice: 'RGD:2325467'}
+  model: gene.RgdIdLookup
+  pk: 12224
+- fields: {choice: 'RGD:1308635'}
+  model: gene.RgdIdLookup
+  pk: 3765
+- fields: {choice: 'RGD:1311099'}
+  model: gene.RgdIdLookup
+  pk: 5809
+- fields: {choice: 'RGD:1306029'}
+  model: gene.RgdIdLookup
+  pk: 1587
+- fields: {choice: 'RGD:1596195'}
+  model: gene.RgdIdLookup
+  pk: 11293
+- fields: {choice: 'RGD:1583309'}
+  model: gene.RgdIdLookup
+  pk: 9920
+- fields: {choice: 'RGD:621247'}
+  model: gene.RgdIdLookup
+  pk: 15199
+- fields: {choice: 'RGD:61905'}
+  model: gene.RgdIdLookup
+  pk: 13605
+- fields: {choice: 'RGD:1311050'}
+  model: gene.RgdIdLookup
+  pk: 5769
+- fields: {choice: 'RGD:1561629'}
+  model: gene.RgdIdLookup
+  pk: 8175
+- fields: {choice: 'RGD:61899'}
+  model: gene.RgdIdLookup
+  pk: 13599
+- fields: {choice: 'RGD:1307191'}
+  model: gene.RgdIdLookup
+  pk: 2559
+- fields: {choice: 'RGD:69648'}
+  model: gene.RgdIdLookup
+  pk: 16664
+- fields: {choice: 'RGD:620046'}
+  model: gene.RgdIdLookup
+  pk: 14021
+- fields: {choice: 'RGD:3718'}
+  model: gene.RgdIdLookup
+  pk: 13279
+- fields: {choice: 'RGD:1311386'}
+  model: gene.RgdIdLookup
+  pk: 6040
+- fields: {choice: 'RGD:1310589'}
+  model: gene.RgdIdLookup
+  pk: 5382
+- fields: {choice: 'RGD:1310883'}
+  model: gene.RgdIdLookup
+  pk: 5626
+- fields: {choice: 'RGD:628671'}
+  model: gene.RgdIdLookup
+  pk: 15856
+- fields: {choice: 'RGD:6488256'}
+  model: gene.RgdIdLookup
+  pk: 16205
+- fields: {choice: 'RGD:70994'}
+  model: gene.RgdIdLookup
+  pk: 16996
+- fields: {choice: 'RGD:1333496'}
+  model: gene.RgdIdLookup
+  pk: 6744
+- fields: {choice: 'RGD:1311392'}
+  model: gene.RgdIdLookup
+  pk: 6046
+- fields: {choice: 'RGD:1309651'}
+  model: gene.RgdIdLookup
+  pk: 4611
+- fields: {choice: 'RGD:1560583'}
+  model: gene.RgdIdLookup
+  pk: 7820
+- fields: {choice: 'RGD:1596541'}
+  model: gene.RgdIdLookup
+  pk: 11323
+- fields: {choice: 'RGD:1310614'}
+  model: gene.RgdIdLookup
+  pk: 5403
+- fields: {choice: 'RGD:1564049'}
+  model: gene.RgdIdLookup
+  pk: 9004
+- fields: {choice: 'RGD:1311586'}
+  model: gene.RgdIdLookup
+  pk: 6214
+- fields: {choice: 'RGD:1307933'}
+  model: gene.RgdIdLookup
+  pk: 3183
+- fields: {choice: 'RGD:1309163'}
+  model: gene.RgdIdLookup
+  pk: 4208
+- fields: {choice: 'RGD:1305794'}
+  model: gene.RgdIdLookup
+  pk: 1385
+- fields: {choice: 'RGD:1305667'}
+  model: gene.RgdIdLookup
+  pk: 1287
+- fields: {choice: 'RGD:70926'}
+  model: gene.RgdIdLookup
+  pk: 16929
+- fields: {choice: 'RGD:619916'}
+  model: gene.RgdIdLookup
+  pk: 13888
+- fields: {choice: 'RGD:1305532'}
+  model: gene.RgdIdLookup
+  pk: 1170
+- fields: {choice: 'RGD:1564488'}
+  model: gene.RgdIdLookup
+  pk: 9152
+- fields: {choice: 'RGD:1305516'}
+  model: gene.RgdIdLookup
+  pk: 1157
+- fields: {choice: 'RGD:69276'}
+  model: gene.RgdIdLookup
+  pk: 16537
+- fields: {choice: 'RGD:1333300'}
+  model: gene.RgdIdLookup
+  pk: 6713
+- fields: {choice: 'RGD:620805'}
+  model: gene.RgdIdLookup
+  pk: 14784
+- fields: {choice: 'RGD:3359'}
+  model: gene.RgdIdLookup
+  pk: 13053
+- fields: {choice: 'RGD:1590267'}
+  model: gene.RgdIdLookup
+  pk: 10676
+- fields: {choice: 'RGD:1586393'}
+  model: gene.RgdIdLookup
+  pk: 10266
+- fields: {choice: 'RGD:1559518'}
+  model: gene.RgdIdLookup
+  pk: 7460
+- fields: {choice: 'RGD:1310134'}
+  model: gene.RgdIdLookup
+  pk: 5005
+- fields: {choice: 'RGD:621292'}
+  model: gene.RgdIdLookup
+  pk: 15237
+- fields: {choice: 'RGD:1311745'}
+  model: gene.RgdIdLookup
+  pk: 6352
+- fields: {choice: 'RGD:1561324'}
+  model: gene.RgdIdLookup
+  pk: 8074
+- fields: {choice: 'RGD:1308153'}
+  model: gene.RgdIdLookup
+  pk: 3366
+- fields: {choice: 'RGD:1311587'}
+  model: gene.RgdIdLookup
+  pk: 6215
+- fields: {choice: 'RGD:3201'}
+  model: gene.RgdIdLookup
+  pk: 12942
+- fields: {choice: 'RGD:1306695'}
+  model: gene.RgdIdLookup
+  pk: 2145
+- fields: {choice: 'RGD:2401'}
+  model: gene.RgdIdLookup
+  pk: 12365
+- fields: {choice: 'RGD:1588793'}
+  model: gene.RgdIdLookup
+  pk: 10504
+- fields: {choice: 'RGD:2480'}
+  model: gene.RgdIdLookup
+  pk: 12413
+- fields: {choice: 'RGD:1307969'}
+  model: gene.RgdIdLookup
+  pk: 3214
+- fields: {choice: 'RGD:1307799'}
+  model: gene.RgdIdLookup
+  pk: 3065
+- fields: {choice: 'RGD:1308016'}
+  model: gene.RgdIdLookup
+  pk: 3250
+- fields: {choice: 'RGD:727928'}
+  model: gene.RgdIdLookup
+  pk: 17224
+- fields: {choice: 'RGD:61861'}
+  model: gene.RgdIdLookup
+  pk: 13562
+- fields: {choice: 'RGD:1564128'}
+  model: gene.RgdIdLookup
+  pk: 9036
+- fields: {choice: 'RGD:1306830'}
+  model: gene.RgdIdLookup
+  pk: 2261
+- fields: {choice: 'RGD:1359513'}
+  model: gene.RgdIdLookup
+  pk: 7209
+- fields: {choice: 'RGD:621522'}
+  model: gene.RgdIdLookup
+  pk: 15442
+- fields: {choice: 'RGD:1311994'}
+  model: gene.RgdIdLookup
+  pk: 6557
+- fields: {choice: 'RGD:1309582'}
+  model: gene.RgdIdLookup
+  pk: 4551
+- fields: {choice: 'RGD:1307149'}
+  model: gene.RgdIdLookup
+  pk: 2524
+- fields: {choice: 'RGD:71001'}
+  model: gene.RgdIdLookup
+  pk: 17003
+- fields: {choice: 'RGD:1332760'}
+  model: gene.RgdIdLookup
+  pk: 6628
+- fields: {choice: 'RGD:1563596'}
+  model: gene.RgdIdLookup
+  pk: 8865
+- fields: {choice: 'RGD:1333299'}
+  model: gene.RgdIdLookup
+  pk: 6712
+- fields: {choice: 'RGD:620841'}
+  model: gene.RgdIdLookup
+  pk: 14824
+- fields: {choice: 'RGD:1593806'}
+  model: gene.RgdIdLookup
+  pk: 11049
+- fields: {choice: 'RGD:621826'}
+  model: gene.RgdIdLookup
+  pk: 15722
+- fields: {choice: 'RGD:628852'}
+  model: gene.RgdIdLookup
+  pk: 16017
+- fields: {choice: 'RGD:735072'}
+  model: gene.RgdIdLookup
+  pk: 17320
+- fields: {choice: 'RGD:70888'}
+  model: gene.RgdIdLookup
+  pk: 16894
+- fields: {choice: 'RGD:1309644'}
+  model: gene.RgdIdLookup
+  pk: 4605
+- fields: {choice: 'RGD:1560562'}
+  model: gene.RgdIdLookup
+  pk: 7814
+- fields: {choice: 'RGD:1306702'}
+  model: gene.RgdIdLookup
+  pk: 2150
+- fields: {choice: 'RGD:1311121'}
+  model: gene.RgdIdLookup
+  pk: 5825
+- fields: {choice: 'RGD:1305473'}
+  model: gene.RgdIdLookup
+  pk: 1123
+- fields: {choice: 'RGD:3107'}
+  model: gene.RgdIdLookup
+  pk: 12876
+- fields: {choice: 'RGD:1333455'}
+  model: gene.RgdIdLookup
+  pk: 6737
+- fields: {choice: 'RGD:708459'}
+  model: gene.RgdIdLookup
+  pk: 16784
+- fields: {choice: 'RGD:1560392'}
+  model: gene.RgdIdLookup
+  pk: 7761
+- fields: {choice: 'RGD:1559423'}
+  model: gene.RgdIdLookup
+  pk: 7426
+- fields: {choice: 'RGD:3209'}
+  model: gene.RgdIdLookup
+  pk: 12946
+- fields: {choice: 'RGD:62042'}
+  model: gene.RgdIdLookup
+  pk: 14390
+- fields: {choice: 'RGD:628747'}
+  model: gene.RgdIdLookup
+  pk: 15926
+- fields: {choice: 'RGD:1565261'}
+  model: gene.RgdIdLookup
+  pk: 9448
+- fields: {choice: 'RGD:1312042'}
+  model: gene.RgdIdLookup
+  pk: 6597
+- fields: {choice: 'RGD:1589576'}
+  model: gene.RgdIdLookup
+  pk: 10582
+- fields: {choice: 'RGD:1305892'}
+  model: gene.RgdIdLookup
+  pk: 1474
+- fields: {choice: 'RGD:1588516'}
+  model: gene.RgdIdLookup
+  pk: 10448
+- fields: {choice: 'RGD:727801'}
+  model: gene.RgdIdLookup
+  pk: 17126
+- fields: {choice: 'RGD:3928'}
+  model: gene.RgdIdLookup
+  pk: 13425
+- fields: {choice: 'RGD:1586615'}
+  model: gene.RgdIdLookup
+  pk: 10284
+- fields: {choice: 'RGD:3334'}
+  model: gene.RgdIdLookup
+  pk: 13034
+- fields: {choice: 'RGD:727959'}
+  model: gene.RgdIdLookup
+  pk: 17248
+- fields: {choice: 'RGD:1586040'}
+  model: gene.RgdIdLookup
+  pk: 10214
+- fields: {choice: 'RGD:1308353'}
+  model: gene.RgdIdLookup
+  pk: 3528
+- fields: {choice: 'RGD:1311339'}
+  model: gene.RgdIdLookup
+  pk: 5998
+- fields: {choice: 'RGD:1310043'}
+  model: gene.RgdIdLookup
+  pk: 4929
+- fields: {choice: 'RGD:1562830'}
+  model: gene.RgdIdLookup
+  pk: 8595
+- fields: {choice: 'RGD:1585467'}
+  model: gene.RgdIdLookup
+  pk: 10167
+- fields: {choice: 'RGD:1308634'}
+  model: gene.RgdIdLookup
+  pk: 3764
+- fields: {choice: 'RGD:1308614'}
+  model: gene.RgdIdLookup
+  pk: 3745
+- fields: {choice: 'RGD:621418'}
+  model: gene.RgdIdLookup
+  pk: 15352
+- fields: {choice: 'RGD:1564751'}
+  model: gene.RgdIdLookup
+  pk: 9248
+- fields: {choice: 'RGD:1565064'}
+  model: gene.RgdIdLookup
+  pk: 9377
+- fields: {choice: 'RGD:1563721'}
+  model: gene.RgdIdLookup
+  pk: 8907
+- fields: {choice: 'RGD:620611'}
+  model: gene.RgdIdLookup
+  pk: 14582
+- fields: {choice: 'RGD:1333964'}
+  model: gene.RgdIdLookup
+  pk: 6815
+- fields: {choice: 'RGD:1307239'}
+  model: gene.RgdIdLookup
+  pk: 2600
+- fields: {choice: 'RGD:1305493'}
+  model: gene.RgdIdLookup
+  pk: 1138
+- fields: {choice: 'RGD:1359244'}
+  model: gene.RgdIdLookup
+  pk: 7010
+- fields: {choice: 'RGD:1308838'}
+  model: gene.RgdIdLookup
+  pk: 3930
+- fields: {choice: 'RGD:1562693'}
+  model: gene.RgdIdLookup
+  pk: 8554
+- fields: {choice: 'RGD:621855'}
+  model: gene.RgdIdLookup
+  pk: 15748
+- fields: {choice: 'RGD:1562231'}
+  model: gene.RgdIdLookup
+  pk: 8389
+- fields: {choice: 'RGD:2320667'}
+  model: gene.RgdIdLookup
+  pk: 11956
+- fields: {choice: 'RGD:619728'}
+  model: gene.RgdIdLookup
+  pk: 13694
+- fields: {choice: 'RGD:2053'}
+  model: gene.RgdIdLookup
+  pk: 11578
+- fields: {choice: 'RGD:621441'}
+  model: gene.RgdIdLookup
+  pk: 15373
+- fields: {choice: 'RGD:621507'}
+  model: gene.RgdIdLookup
+  pk: 15429
+- fields: {choice: 'RGD:1565906'}
+  model: gene.RgdIdLookup
+  pk: 9679
+- fields: {choice: 'RGD:1560757'}
+  model: gene.RgdIdLookup
+  pk: 7879
+- fields: {choice: 'RGD:1303014'}
+  model: gene.RgdIdLookup
+  pk: 64
+- fields: {choice: 'RGD:1306481'}
+  model: gene.RgdIdLookup
+  pk: 1957
+- fields: {choice: 'RGD:1359459'}
+  model: gene.RgdIdLookup
+  pk: 7169
+- fields: {choice: 'RGD:621353'}
+  model: gene.RgdIdLookup
+  pk: 15295
+- fields: {choice: 'RGD:1310523'}
+  model: gene.RgdIdLookup
+  pk: 5323
+- fields: {choice: 'RGD:1565062'}
+  model: gene.RgdIdLookup
+  pk: 9376
+- fields: {choice: 'RGD:735184'}
+  model: gene.RgdIdLookup
+  pk: 17416
+- fields: {choice: 'RGD:69063'}
+  model: gene.RgdIdLookup
+  pk: 16468
+- fields: {choice: 'RGD:628625'}
+  model: gene.RgdIdLookup
+  pk: 15817
+- fields: {choice: 'RGD:1310381'}
+  model: gene.RgdIdLookup
+  pk: 5208
+- fields: {choice: 'RGD:1310473'}
+  model: gene.RgdIdLookup
+  pk: 5284
+- fields: {choice: 'RGD:2325589'}
+  model: gene.RgdIdLookup
+  pk: 12281
+- fields: {choice: 'RGD:619758'}
+  model: gene.RgdIdLookup
+  pk: 13727
+- fields: {choice: 'RGD:1307962'}
+  model: gene.RgdIdLookup
+  pk: 3208
+- fields: {choice: 'RGD:69399'}
+  model: gene.RgdIdLookup
+  pk: 16624
+- fields: {choice: 'RGD:2110'}
+  model: gene.RgdIdLookup
+  pk: 11624
+- fields: {choice: 'RGD:1310996'}
+  model: gene.RgdIdLookup
+  pk: 5725
+- fields: {choice: 'RGD:1312026'}
+  model: gene.RgdIdLookup
+  pk: 6583
+- fields: {choice: 'RGD:1304584'}
+  model: gene.RgdIdLookup
+  pk: 368
+- fields: {choice: 'RGD:1562673'}
+  model: gene.RgdIdLookup
+  pk: 8546
+- fields: {choice: 'RGD:621876'}
+  model: gene.RgdIdLookup
+  pk: 15766
+- fields: {choice: 'RGD:1311553'}
+  model: gene.RgdIdLookup
+  pk: 6185
+- fields: {choice: 'RGD:1588196'}
+  model: gene.RgdIdLookup
+  pk: 10424
+- fields: {choice: 'RGD:3912'}
+  model: gene.RgdIdLookup
+  pk: 13415
+- fields: {choice: 'RGD:1560499'}
+  model: gene.RgdIdLookup
+  pk: 7796
+- fields: {choice: 'RGD:621636'}
+  model: gene.RgdIdLookup
+  pk: 15544
+- fields: {choice: 'RGD:1562559'}
+  model: gene.RgdIdLookup
+  pk: 8501
+- fields: {choice: 'RGD:1560158'}
+  model: gene.RgdIdLookup
+  pk: 7676
+- fields: {choice: 'RGD:2857'}
+  model: gene.RgdIdLookup
+  pk: 12683
+- fields: {choice: 'RGD:1560268'}
+  model: gene.RgdIdLookup
+  pk: 7718
+- fields: {choice: 'RGD:1308297'}
+  model: gene.RgdIdLookup
+  pk: 3485
+- fields: {choice: 'RGD:1308278'}
+  model: gene.RgdIdLookup
+  pk: 3466
+- fields: {choice: 'RGD:69413'}
+  model: gene.RgdIdLookup
+  pk: 16638
+- fields: {choice: 'RGD:620486'}
+  model: gene.RgdIdLookup
+  pk: 14458
+- fields: {choice: 'RGD:621121'}
+  model: gene.RgdIdLookup
+  pk: 15084
+- fields: {choice: 'RGD:3432'}
+  model: gene.RgdIdLookup
+  pk: 13106
+- fields: {choice: 'RGD:2872'}
+  model: gene.RgdIdLookup
+  pk: 12697
+- fields: {choice: 'RGD:1562880'}
+  model: gene.RgdIdLookup
+  pk: 8609
+- fields: {choice: 'RGD:620351'}
+  model: gene.RgdIdLookup
+  pk: 14329
+- fields: {choice: 'RGD:620231'}
+  model: gene.RgdIdLookup
+  pk: 14212
+- fields: {choice: 'RGD:1595050'}
+  model: gene.RgdIdLookup
+  pk: 11164
+- fields: {choice: 'RGD:1332986'}
+  model: gene.RgdIdLookup
+  pk: 6658
+- fields: {choice: 'RGD:1306829'}
+  model: gene.RgdIdLookup
+  pk: 2260
+- fields: {choice: 'RGD:735143'}
+  model: gene.RgdIdLookup
+  pk: 17379
+- fields: {choice: 'RGD:1591867'}
+  model: gene.RgdIdLookup
+  pk: 10834
+- fields: {choice: 'RGD:1305078'}
+  model: gene.RgdIdLookup
+  pk: 785
+- fields: {choice: 'RGD:1584200'}
+  model: gene.RgdIdLookup
+  pk: 10035
+- fields: {choice: 'RGD:727790'}
+  model: gene.RgdIdLookup
+  pk: 17117
+- fields: {choice: 'RGD:1306807'}
+  model: gene.RgdIdLookup
+  pk: 2240
+- fields: {choice: 'RGD:1562232'}
+  model: gene.RgdIdLookup
+  pk: 8390
+- fields: {choice: 'RGD:1359567'}
+  model: gene.RgdIdLookup
+  pk: 7247
+- fields: {choice: 'RGD:1308351'}
+  model: gene.RgdIdLookup
+  pk: 3526
+- fields: {choice: 'RGD:1310828'}
+  model: gene.RgdIdLookup
+  pk: 5582
+- fields: {choice: 'RGD:1309655'}
+  model: gene.RgdIdLookup
+  pk: 4615
+- fields: {choice: 'RGD:1561779'}
+  model: gene.RgdIdLookup
+  pk: 8227
+- fields: {choice: 'RGD:628619'}
+  model: gene.RgdIdLookup
+  pk: 15811
+- fields: {choice: 'RGD:735074'}
+  model: gene.RgdIdLookup
+  pk: 17322
+- fields: {choice: 'RGD:1359692'}
+  model: gene.RgdIdLookup
+  pk: 7336
+- fields: {choice: 'RGD:1309029'}
+  model: gene.RgdIdLookup
+  pk: 4092
+- fields: {choice: 'RGD:727966'}
+  model: gene.RgdIdLookup
+  pk: 17255
+- fields: {choice: 'RGD:1564256'}
+  model: gene.RgdIdLookup
+  pk: 9083
+- fields: {choice: 'RGD:68343'}
+  model: gene.RgdIdLookup
+  pk: 16347
+- fields: {choice: 'RGD:1308482'}
+  model: gene.RgdIdLookup
+  pk: 3639
+- fields: {choice: 'RGD:1589398'}
+  model: gene.RgdIdLookup
+  pk: 10559
+- fields: {choice: 'RGD:1588484'}
+  model: gene.RgdIdLookup
+  pk: 10446
+- fields: {choice: 'RGD:1305576'}
+  model: gene.RgdIdLookup
+  pk: 1207
+- fields: {choice: 'RGD:6499950'}
+  model: gene.RgdIdLookup
+  pk: 16273
+- fields: {choice: 'RGD:1594333'}
+  model: gene.RgdIdLookup
+  pk: 11089
+- fields: {choice: 'RGD:1311552'}
+  model: gene.RgdIdLookup
+  pk: 6184
+- fields: {choice: 'RGD:1565947'}
+  model: gene.RgdIdLookup
+  pk: 9688
+- fields: {choice: 'RGD:62007'}
+  model: gene.RgdIdLookup
+  pk: 14046
+- fields: {choice: 'RGD:620958'}
+  model: gene.RgdIdLookup
+  pk: 14933
+- fields: {choice: 'RGD:3134'}
+  model: gene.RgdIdLookup
+  pk: 12889
+- fields: {choice: 'RGD:735175'}
+  model: gene.RgdIdLookup
+  pk: 17409
+- fields: {choice: 'RGD:727936'}
+  model: gene.RgdIdLookup
+  pk: 17229
+- fields: {choice: 'RGD:1310022'}
+  model: gene.RgdIdLookup
+  pk: 4912
+- fields: {choice: 'RGD:1596812'}
+  model: gene.RgdIdLookup
+  pk: 11346
+- fields: {choice: 'RGD:1594328'}
+  model: gene.RgdIdLookup
+  pk: 11086
+- fields: {choice: 'RGD:1565145'}
+  model: gene.RgdIdLookup
+  pk: 9404
+- fields: {choice: 'RGD:2323487'}
+  model: gene.RgdIdLookup
+  pk: 12066
+- fields: {choice: 'RGD:1588255'}
+  model: gene.RgdIdLookup
+  pk: 10435
+- fields: {choice: 'RGD:1306721'}
+  model: gene.RgdIdLookup
+  pk: 2168
+- fields: {choice: 'RGD:1359477'}
+  model: gene.RgdIdLookup
+  pk: 7186
+- fields: {choice: 'RGD:1563309'}
+  model: gene.RgdIdLookup
+  pk: 8762
+- fields: {choice: 'RGD:1303079'}
+  model: gene.RgdIdLookup
+  pk: 118
+- fields: {choice: 'RGD:1565646'}
+  model: gene.RgdIdLookup
+  pk: 9591
+- fields: {choice: 'RGD:1309736'}
+  model: gene.RgdIdLookup
+  pk: 4682
+- fields: {choice: 'RGD:6491099'}
+  model: gene.RgdIdLookup
+  pk: 16223
+- fields: {choice: 'RGD:1307037'}
+  model: gene.RgdIdLookup
+  pk: 2434
+- fields: {choice: 'RGD:1305944'}
+  model: gene.RgdIdLookup
+  pk: 1514
+- fields: {choice: 'RGD:1305966'}
+  model: gene.RgdIdLookup
+  pk: 1535
+- fields: {choice: 'RGD:61914'}
+  model: gene.RgdIdLookup
+  pk: 13614
+- fields: {choice: 'RGD:1306528'}
+  model: gene.RgdIdLookup
+  pk: 2000
+- fields: {choice: 'RGD:621742'}
+  model: gene.RgdIdLookup
+  pk: 15643
+- fields: {choice: 'RGD:1309260'}
+  model: gene.RgdIdLookup
+  pk: 4287
+- fields: {choice: 'RGD:69406'}
+  model: gene.RgdIdLookup
+  pk: 16631
+- fields: {choice: 'RGD:1549730'}
+  model: gene.RgdIdLookup
+  pk: 7390
+- fields: {choice: 'RGD:1306350'}
+  model: gene.RgdIdLookup
+  pk: 1857
+- fields: {choice: 'RGD:1304715'}
+  model: gene.RgdIdLookup
+  pk: 481
+- fields: {choice: 'RGD:1307347'}
+  model: gene.RgdIdLookup
+  pk: 2686
+- fields: {choice: 'RGD:2319087'}
+  model: gene.RgdIdLookup
+  pk: 11890
+- fields: {choice: 'RGD:1307748'}
+  model: gene.RgdIdLookup
+  pk: 3021
+- fields: {choice: 'RGD:1359319'}
+  model: gene.RgdIdLookup
+  pk: 7067
+- fields: {choice: 'RGD:1359237'}
+  model: gene.RgdIdLookup
+  pk: 7004
+- fields: {choice: 'RGD:621677'}
+  model: gene.RgdIdLookup
+  pk: 15583
+- fields: {choice: 'RGD:2145'}
+  model: gene.RgdIdLookup
+  pk: 11652
+- fields: {choice: 'RGD:3948'}
+  model: gene.RgdIdLookup
+  pk: 13440
+- fields: {choice: 'RGD:1305566'}
+  model: gene.RgdIdLookup
+  pk: 1198
+- fields: {choice: 'RGD:1311435'}
+  model: gene.RgdIdLookup
+  pk: 6080
+- fields: {choice: 'RGD:621793'}
+  model: gene.RgdIdLookup
+  pk: 15692
+- fields: {choice: 'RGD:1561603'}
+  model: gene.RgdIdLookup
+  pk: 8168
+- fields: {choice: 'RGD:1305467'}
+  model: gene.RgdIdLookup
+  pk: 1118
+- fields: {choice: 'RGD:1308711'}
+  model: gene.RgdIdLookup
+  pk: 3826
+- fields: {choice: 'RGD:1310948'}
+  model: gene.RgdIdLookup
+  pk: 5681
+- fields: {choice: 'RGD:1564322'}
+  model: gene.RgdIdLookup
+  pk: 9101
+- fields: {choice: 'RGD:1307578'}
+  model: gene.RgdIdLookup
+  pk: 2876
+- fields: {choice: 'RGD:620032'}
+  model: gene.RgdIdLookup
+  pk: 14008
+- fields: {choice: 'RGD:621372'}
+  model: gene.RgdIdLookup
+  pk: 15311
+- fields: {choice: 'RGD:1359475'}
+  model: gene.RgdIdLookup
+  pk: 7184
+- fields: {choice: 'RGD:2267'}
+  model: gene.RgdIdLookup
+  pk: 11752
+- fields: {choice: 'RGD:1308576'}
+  model: gene.RgdIdLookup
+  pk: 3716
+- fields: {choice: 'RGD:3931'}
+  model: gene.RgdIdLookup
+  pk: 13428
+- fields: {choice: 'RGD:620203'}
+  model: gene.RgdIdLookup
+  pk: 14182
+- fields: {choice: 'RGD:708352'}
+  model: gene.RgdIdLookup
+  pk: 16707
+- fields: {choice: 'RGD:1309551'}
+  model: gene.RgdIdLookup
+  pk: 4527
+- fields: {choice: 'RGD:1308958'}
+  model: gene.RgdIdLookup
+  pk: 4035
+- fields: {choice: 'RGD:1310897'}
+  model: gene.RgdIdLookup
+  pk: 5640
+- fields: {choice: 'RGD:3755'}
+  model: gene.RgdIdLookup
+  pk: 13304
+- fields: {choice: 'RGD:3631'}
+  model: gene.RgdIdLookup
+  pk: 13200
+- fields: {choice: 'RGD:1310383'}
+  model: gene.RgdIdLookup
+  pk: 5210
+- fields: {choice: 'RGD:2321501'}
+  model: gene.RgdIdLookup
+  pk: 11988
+- fields: {choice: 'RGD:1310348'}
+  model: gene.RgdIdLookup
+  pk: 5184
+- fields: {choice: 'RGD:1306728'}
+  model: gene.RgdIdLookup
+  pk: 2174
+- fields: {choice: 'RGD:1565601'}
+  model: gene.RgdIdLookup
+  pk: 9572
+- fields: {choice: 'RGD:1305525'}
+  model: gene.RgdIdLookup
+  pk: 1163
+- fields: {choice: 'RGD:1308502'}
+  model: gene.RgdIdLookup
+  pk: 3656
+- fields: {choice: 'RGD:620616'}
+  model: gene.RgdIdLookup
+  pk: 14587
+- fields: {choice: 'RGD:1309670'}
+  model: gene.RgdIdLookup
+  pk: 4629
+- fields: {choice: 'RGD:1307696'}
+  model: gene.RgdIdLookup
+  pk: 2974
+- fields: {choice: 'RGD:1311720'}
+  model: gene.RgdIdLookup
+  pk: 6334
+- fields: {choice: 'RGD:621323'}
+  model: gene.RgdIdLookup
+  pk: 15266
+- fields: {choice: 'RGD:1564165'}
+  model: gene.RgdIdLookup
+  pk: 9052
+- fields: {choice: 'RGD:1564762'}
+  model: gene.RgdIdLookup
+  pk: 9252
+- fields: {choice: 'RGD:71015'}
+  model: gene.RgdIdLookup
+  pk: 17017
+- fields: {choice: 'RGD:2336'}
+  model: gene.RgdIdLookup
+  pk: 12308
+- fields: {choice: 'RGD:1359304'}
+  model: gene.RgdIdLookup
+  pk: 7054
+- fields: {choice: 'RGD:1588732'}
+  model: gene.RgdIdLookup
+  pk: 10495
+- fields: {choice: 'RGD:3367'}
+  model: gene.RgdIdLookup
+  pk: 13059
+- fields: {choice: 'RGD:1308731'}
+  model: gene.RgdIdLookup
+  pk: 3842
+- fields: {choice: 'RGD:7496421'}
+  model: gene.RgdIdLookup
+  pk: 17467
+- fields: {choice: 'RGD:1311454'}
+  model: gene.RgdIdLookup
+  pk: 6097
+- fields: {choice: 'RGD:621605'}
+  model: gene.RgdIdLookup
+  pk: 15519
+- fields: {choice: 'RGD:69340'}
+  model: gene.RgdIdLookup
+  pk: 16598
+- fields: {choice: 'RGD:1307404'}
+  model: gene.RgdIdLookup
+  pk: 2737
+- fields: {choice: 'RGD:1303310'}
+  model: gene.RgdIdLookup
+  pk: 310
+- fields: {choice: 'RGD:1304678'}
+  model: gene.RgdIdLookup
+  pk: 447
+- fields: {choice: 'RGD:2059'}
+  model: gene.RgdIdLookup
+  pk: 11584
+- fields: {choice: 'RGD:1585423'}
+  model: gene.RgdIdLookup
+  pk: 10164
+- fields: {choice: 'RGD:620204'}
+  model: gene.RgdIdLookup
+  pk: 14183
+- fields: {choice: 'RGD:1564560'}
+  model: gene.RgdIdLookup
+  pk: 9179
+- fields: {choice: 'RGD:620365'}
+  model: gene.RgdIdLookup
+  pk: 14343
+- fields: {choice: 'RGD:1306966'}
+  model: gene.RgdIdLookup
+  pk: 2376
+- fields: {choice: 'RGD:1561486'}
+  model: gene.RgdIdLookup
+  pk: 8125
+- fields: {choice: 'RGD:735061'}
+  model: gene.RgdIdLookup
+  pk: 17312
+- fields: {choice: 'RGD:1310404'}
+  model: gene.RgdIdLookup
+  pk: 5228
+- fields: {choice: 'RGD:68399'}
+  model: gene.RgdIdLookup
+  pk: 16401
+- fields: {choice: 'RGD:1359725'}
+  model: gene.RgdIdLookup
+  pk: 7362
+- fields: {choice: 'RGD:1583902'}
+  model: gene.RgdIdLookup
+  pk: 9992
+- fields: {choice: 'RGD:1311359'}
+  model: gene.RgdIdLookup
+  pk: 6015
+- fields: {choice: 'RGD:70516'}
+  model: gene.RgdIdLookup
+  pk: 16690
+- fields: {choice: 'RGD:1564361'}
+  model: gene.RgdIdLookup
+  pk: 9113
+- fields: {choice: 'RGD:620458'}
+  model: gene.RgdIdLookup
+  pk: 14430
+- fields: {choice: 'RGD:1308861'}
+  model: gene.RgdIdLookup
+  pk: 3950
+- fields: {choice: 'RGD:1564162'}
+  model: gene.RgdIdLookup
+  pk: 9049
+- fields: {choice: 'RGD:621775'}
+  model: gene.RgdIdLookup
+  pk: 15674
+- fields: {choice: 'RGD:1586533'}
+  model: gene.RgdIdLookup
+  pk: 10279
+- fields: {choice: 'RGD:1307478'}
+  model: gene.RgdIdLookup
+  pk: 2802
+- fields: {choice: 'RGD:727780'}
+  model: gene.RgdIdLookup
+  pk: 17107
+- fields: {choice: 'RGD:1559931'}
+  model: gene.RgdIdLookup
+  pk: 7591
+- fields: {choice: 'RGD:1585896'}
+  model: gene.RgdIdLookup
+  pk: 10198
+- fields: {choice: 'RGD:1592386'}
+  model: gene.RgdIdLookup
+  pk: 10899
+- fields: {choice: 'RGD:69325'}
+  model: gene.RgdIdLookup
+  pk: 16583
+- fields: {choice: 'RGD:1308629'}
+  model: gene.RgdIdLookup
+  pk: 3760
+- fields: {choice: 'RGD:1593006'}
+  model: gene.RgdIdLookup
+  pk: 10948
+- fields: {choice: 'RGD:1307286'}
+  model: gene.RgdIdLookup
+  pk: 2637
+- fields: {choice: 'RGD:1307072'}
+  model: gene.RgdIdLookup
+  pk: 2463
+- fields: {choice: 'RGD:708378'}
+  model: gene.RgdIdLookup
+  pk: 16727
+- fields: {choice: 'RGD:1562602'}
+  model: gene.RgdIdLookup
+  pk: 8521
+- fields: {choice: 'RGD:1564113'}
+  model: gene.RgdIdLookup
+  pk: 9031
+- fields: {choice: 'RGD:1586495'}
+  model: gene.RgdIdLookup
+  pk: 10276
+- fields: {choice: 'RGD:3908'}
+  model: gene.RgdIdLookup
+  pk: 13411
+- fields: {choice: 'RGD:3647'}
+  model: gene.RgdIdLookup
+  pk: 13215
+- fields: {choice: 'RGD:1333398'}
+  model: gene.RgdIdLookup
+  pk: 6732
+- fields: {choice: 'RGD:1310760'}
+  model: gene.RgdIdLookup
+  pk: 5522
+- fields: {choice: 'RGD:61995'}
+  model: gene.RgdIdLookup
+  pk: 13922
+- fields: {choice: 'RGD:1561363'}
+  model: gene.RgdIdLookup
+  pk: 8087
+- fields: {choice: 'RGD:620856'}
+  model: gene.RgdIdLookup
+  pk: 14839
+- fields: {choice: 'RGD:619751'}
+  model: gene.RgdIdLookup
+  pk: 13720
+- fields: {choice: 'RGD:1563753'}
+  model: gene.RgdIdLookup
+  pk: 8913
+- fields: {choice: 'RGD:708464'}
+  model: gene.RgdIdLookup
+  pk: 16789
+- fields: {choice: 'RGD:1565632'}
+  model: gene.RgdIdLookup
+  pk: 9585
+- fields: {choice: 'RGD:1306851'}
+  model: gene.RgdIdLookup
+  pk: 2278
+- fields: {choice: 'RGD:1306615'}
+  model: gene.RgdIdLookup
+  pk: 2073
+- fields: {choice: 'RGD:2446'}
+  model: gene.RgdIdLookup
+  pk: 12394
+- fields: {choice: 'RGD:628739'}
+  model: gene.RgdIdLookup
+  pk: 15918
+- fields: {choice: 'RGD:1590881'}
+  model: gene.RgdIdLookup
+  pk: 10723
+- fields: {choice: 'RGD:68371'}
+  model: gene.RgdIdLookup
+  pk: 16373
+- fields: {choice: 'RGD:1559882'}
+  model: gene.RgdIdLookup
+  pk: 7572
+- fields: {choice: 'RGD:708450'}
+  model: gene.RgdIdLookup
+  pk: 16776
+- fields: {choice: 'RGD:1311865'}
+  model: gene.RgdIdLookup
+  pk: 6446
+- fields: {choice: 'RGD:1594820'}
+  model: gene.RgdIdLookup
+  pk: 11154
+- fields: {choice: 'RGD:1310356'}
+  model: gene.RgdIdLookup
+  pk: 5190
+- fields: {choice: 'RGD:620101'}
+  model: gene.RgdIdLookup
+  pk: 14078
+- fields: {choice: 'RGD:1590980'}
+  model: gene.RgdIdLookup
+  pk: 10745
+- fields: {choice: 'RGD:1593883'}
+  model: gene.RgdIdLookup
+  pk: 11059
+- fields: {choice: 'RGD:1309361'}
+  model: gene.RgdIdLookup
+  pk: 4367
+- fields: {choice: 'RGD:1565611'}
+  model: gene.RgdIdLookup
+  pk: 9578
+- fields: {choice: 'RGD:1311773'}
+  model: gene.RgdIdLookup
+  pk: 6375
+- fields: {choice: 'RGD:1590579'}
+  model: gene.RgdIdLookup
+  pk: 10690
+- fields: {choice: 'RGD:1560456'}
+  model: gene.RgdIdLookup
+  pk: 7783
+- fields: {choice: 'RGD:2741'}
+  model: gene.RgdIdLookup
+  pk: 12609
+- fields: {choice: 'RGD:1307683'}
+  model: gene.RgdIdLookup
+  pk: 2963
+- fields: {choice: 'RGD:2061'}
+  model: gene.RgdIdLookup
+  pk: 11586
+- fields: {choice: 'RGD:2845'}
+  model: gene.RgdIdLookup
+  pk: 12675
+- fields: {choice: 'RGD:61884'}
+  model: gene.RgdIdLookup
+  pk: 13584
+- fields: {choice: 'RGD:1308577'}
+  model: gene.RgdIdLookup
+  pk: 3717
+- fields: {choice: 'RGD:1311993'}
+  model: gene.RgdIdLookup
+  pk: 6556
+- fields: {choice: 'RGD:1593809'}
+  model: gene.RgdIdLookup
+  pk: 11050
+- fields: {choice: 'RGD:1563775'}
+  model: gene.RgdIdLookup
+  pk: 8917
+- fields: {choice: 'RGD:1333047'}
+  model: gene.RgdIdLookup
+  pk: 6670
+- fields: {choice: 'RGD:1597443'}
+  model: gene.RgdIdLookup
+  pk: 11422
+- fields: {choice: 'RGD:1566050'}
+  model: gene.RgdIdLookup
+  pk: 9727
+- fields: {choice: 'RGD:1563191'}
+  model: gene.RgdIdLookup
+  pk: 8715
+- fields: {choice: 'RGD:1563804'}
+  model: gene.RgdIdLookup
+  pk: 8923
+- fields: {choice: 'RGD:2319895'}
+  model: gene.RgdIdLookup
+  pk: 11925
+- fields: {choice: 'RGD:1585024'}
+  model: gene.RgdIdLookup
+  pk: 10120
+- fields: {choice: 'RGD:1310345'}
+  model: gene.RgdIdLookup
+  pk: 5181
+- fields: {choice: 'RGD:1309096'}
+  model: gene.RgdIdLookup
+  pk: 4150
+- fields: {choice: 'RGD:1306675'}
+  model: gene.RgdIdLookup
+  pk: 2125
+- fields: {choice: 'RGD:620875'}
+  model: gene.RgdIdLookup
+  pk: 14858
+- fields: {choice: 'RGD:628735'}
+  model: gene.RgdIdLookup
+  pk: 15914
+- fields: {choice: 'RGD:1564505'}
+  model: gene.RgdIdLookup
+  pk: 9160
+- fields: {choice: 'RGD:1560002'}
+  model: gene.RgdIdLookup
+  pk: 7615
+- fields: {choice: 'RGD:1561088'}
+  model: gene.RgdIdLookup
+  pk: 7997
+- fields: {choice: 'RGD:735063'}
+  model: gene.RgdIdLookup
+  pk: 17314
+- fields: {choice: 'RGD:621882'}
+  model: gene.RgdIdLookup
+  pk: 15772
+- fields: {choice: 'RGD:1309622'}
+  model: gene.RgdIdLookup
+  pk: 4586
+- fields: {choice: 'RGD:1589922'}
+  model: gene.RgdIdLookup
+  pk: 10639
+- fields: {choice: 'RGD:1560439'}
+  model: gene.RgdIdLookup
+  pk: 7780
+- fields: {choice: 'RGD:3657'}
+  model: gene.RgdIdLookup
+  pk: 13224
+- fields: {choice: 'RGD:70932'}
+  model: gene.RgdIdLookup
+  pk: 16935
+- fields: {choice: 'RGD:3457'}
+  model: gene.RgdIdLookup
+  pk: 13128
+- fields: {choice: 'RGD:1311651'}
+  model: gene.RgdIdLookup
+  pk: 6271
+- fields: {choice: 'RGD:1560982'}
+  model: gene.RgdIdLookup
+  pk: 7956
+- fields: {choice: 'RGD:1306086'}
+  model: gene.RgdIdLookup
+  pk: 1635
+- fields: {choice: 'RGD:1303095'}
+  model: gene.RgdIdLookup
+  pk: 130
+- fields: {choice: 'RGD:1310075'}
+  model: gene.RgdIdLookup
+  pk: 4959
+- fields: {choice: 'RGD:1585960'}
+  model: gene.RgdIdLookup
+  pk: 10204
+- fields: {choice: 'RGD:70956'}
+  model: gene.RgdIdLookup
+  pk: 16959
+- fields: {choice: 'RGD:620159'}
+  model: gene.RgdIdLookup
+  pk: 14135
+- fields: {choice: 'RGD:1564081'}
+  model: gene.RgdIdLookup
+  pk: 9019
+- fields: {choice: 'RGD:629475'}
+  model: gene.RgdIdLookup
+  pk: 16072
+- fields: {choice: 'RGD:621505'}
+  model: gene.RgdIdLookup
+  pk: 15427
+- fields: {choice: 'RGD:1310747'}
+  model: gene.RgdIdLookup
+  pk: 5512
+- fields: {choice: 'RGD:2323888'}
+  model: gene.RgdIdLookup
+  pk: 12094
+- fields: {choice: 'RGD:1599277'}
+  model: gene.RgdIdLookup
+  pk: 11510
+- fields: {choice: 'RGD:1308171'}
+  model: gene.RgdIdLookup
+  pk: 3382
+- fields: {choice: 'RGD:1590047'}
+  model: gene.RgdIdLookup
+  pk: 10652
+- fields: {choice: 'RGD:1559546'}
+  model: gene.RgdIdLookup
+  pk: 7470
+- fields: {choice: 'RGD:2938'}
+  model: gene.RgdIdLookup
+  pk: 12747
+- fields: {choice: 'RGD:1560320'}
+  model: gene.RgdIdLookup
+  pk: 7734
+- fields: {choice: 'RGD:1564749'}
+  model: gene.RgdIdLookup
+  pk: 9247
+- fields: {choice: 'RGD:1308046'}
+  model: gene.RgdIdLookup
+  pk: 3275
+- fields: {choice: 'RGD:1592689'}
+  model: gene.RgdIdLookup
+  pk: 10925
+- fields: {choice: 'RGD:1561464'}
+  model: gene.RgdIdLookup
+  pk: 8120
+- fields: {choice: 'RGD:1560239'}
+  model: gene.RgdIdLookup
+  pk: 7706
+- fields: {choice: 'RGD:1306784'}
+  model: gene.RgdIdLookup
+  pk: 2220
+- fields: {choice: 'RGD:621124'}
+  model: gene.RgdIdLookup
+  pk: 15086
+- fields: {choice: 'RGD:1583965'}
+  model: gene.RgdIdLookup
+  pk: 10003
+- fields: {choice: 'RGD:1305812'}
+  model: gene.RgdIdLookup
+  pk: 1401
+- fields: {choice: 'RGD:1565716'}
+  model: gene.RgdIdLookup
+  pk: 9612
+- fields: {choice: 'RGD:1582810'}
+  model: gene.RgdIdLookup
+  pk: 9868
+- fields: {choice: 'RGD:1306607'}
+  model: gene.RgdIdLookup
+  pk: 2067
+- fields: {choice: 'RGD:2893'}
+  model: gene.RgdIdLookup
+  pk: 12710
+- fields: {choice: 'RGD:1594527'}
+  model: gene.RgdIdLookup
+  pk: 11105
+- fields: {choice: 'RGD:1309933'}
+  model: gene.RgdIdLookup
+  pk: 4843
+- fields: {choice: 'RGD:1306065'}
+  model: gene.RgdIdLookup
+  pk: 1618
+- fields: {choice: 'RGD:1308389'}
+  model: gene.RgdIdLookup
+  pk: 3561
+- fields: {choice: 'RGD:1565582'}
+  model: gene.RgdIdLookup
+  pk: 9563
+- fields: {choice: 'RGD:1305654'}
+  model: gene.RgdIdLookup
+  pk: 1275
+- fields: {choice: 'RGD:1562115'}
+  model: gene.RgdIdLookup
+  pk: 8356
+- fields: {choice: 'RGD:1593441'}
+  model: gene.RgdIdLookup
+  pk: 11023
+- fields: {choice: 'RGD:1306645'}
+  model: gene.RgdIdLookup
+  pk: 2099
+- fields: {choice: 'RGD:1311487'}
+  model: gene.RgdIdLookup
+  pk: 6127
+- fields: {choice: 'RGD:620596'}
+  model: gene.RgdIdLookup
+  pk: 14566
+- fields: {choice: 'RGD:1306836'}
+  model: gene.RgdIdLookup
+  pk: 2266
+- fields: {choice: 'RGD:1303055'}
+  model: gene.RgdIdLookup
+  pk: 98
+- fields: {choice: 'RGD:1583895'}
+  model: gene.RgdIdLookup
+  pk: 9991
+- fields: {choice: 'RGD:1308754'}
+  model: gene.RgdIdLookup
+  pk: 3860
+- fields: {choice: 'RGD:1307199'}
+  model: gene.RgdIdLookup
+  pk: 2567
+- fields: {choice: 'RGD:1566108'}
+  model: gene.RgdIdLookup
+  pk: 9751
+- fields: {choice: 'RGD:1565889'}
+  model: gene.RgdIdLookup
+  pk: 9675
+- fields: {choice: 'RGD:1305321'}
+  model: gene.RgdIdLookup
+  pk: 996
+- fields: {choice: 'RGD:1306121'}
+  model: gene.RgdIdLookup
+  pk: 1669
+- fields: {choice: 'RGD:1306346'}
+  model: gene.RgdIdLookup
+  pk: 1854
+- fields: {choice: 'RGD:70907'}
+  model: gene.RgdIdLookup
+  pk: 16911
+- fields: {choice: 'RGD:621847'}
+  model: gene.RgdIdLookup
+  pk: 15743
+- fields: {choice: 'RGD:1305790'}
+  model: gene.RgdIdLookup
+  pk: 1381
+- fields: {choice: 'RGD:1307542'}
+  model: gene.RgdIdLookup
+  pk: 2852

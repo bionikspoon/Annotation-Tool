@@ -1,53 +1,33 @@
 # http://editorconfig.org
-
 root = true
 
 [*]
-
-# change these settings to your own preference
 indent_style = space
 indent_size = 2
-
-# we recommend you to keep these unchanged
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{py,rst,ini,js}]
+[*.{py,rst,ini,yml,yaml}]
 indent_style = space
 indent_size = 4
 
 [*.py]
-quote_type = single
 # https://github.com/timothycrosley/isort/wiki/isort-Settings
-line_length = 100
-multi_line_output = 5
-not_skip = __init__.py
+line_length = 120
+known_first_party = annotation_tool
+multi_line_output = 3
 default_section = THIRDPARTY
-import_heading_future = Compatibility
-import_heading_stdlib = Python Libraries
-import_heading_django = Django Packages
-known_django = django
-import_heading_thirdparty = Third Party Packages
-import_heading_firstparty = Annotation Tool Project
-known_first_party = annotation_tool,pubmed,config,core
-import_heading_localfolder = Local Application
-sections = FUTURE,STDLIB,DJANGO,THIRDPARTY,FIRSTPARTY,LOCALFOLDER
 
-[*.yml]
-indent_style = space
+[*.{css,scss,json}]
 indent_size = 2
-
-[*.md]
-trim_trailing_whitespace = false
 
 [*.html]
 indent_size = 3
 
-[.*rc]
-indent_size = 4
+[*.md]
+trim_trailing_whitespace = false
 
-[{package,bower}.json]
-indent_style = space
-indent_size = 2
+[Makefile]
+indent_style = tab

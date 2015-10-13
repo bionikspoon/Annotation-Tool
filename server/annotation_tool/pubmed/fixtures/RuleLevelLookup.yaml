@@ -1,0 +1,9 @@
+- fields: {choice: Cdna}
+  model: pubmed.RuleLevelLookup
+  pk: 1
+- fields: {choice: Genomic}
+  model: pubmed.RuleLevelLookup
+  pk: 2
+- fields: {choice: Protein}
+  model: pubmed.RuleLevelLookup
+  pk: 3
