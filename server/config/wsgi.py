@@ -14,7 +14,6 @@ framework.
 
 """
 import os
-
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 # if os.environ.get("DJANGO_SETTINGS_MODULE") == "server.config.settings.production":
@@ -25,6 +24,8 @@ from whitenoise.django import DjangoWhiteNoise
 # if running multiple sites in the same mod_wsgi process. To fix this, use
 # mod_wsgi daemon mode with each site in its own daemon process, or use
 # os.environ["DJANGO_SETTINGS_MODULE"] = "server.config.settings.production"
+from server.config.settings import ROOT_DIR
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "server.config.settings.production")
 
 # This application object is used by any WSGI server configured to use this
@@ -35,6 +36,7 @@ application = get_wsgi_application()
 # Use Whitenoise to serve static files
 # See: https://whitenoise.readthedocs.org/
 application = DjangoWhiteNoise(application)
+application.add_files(ROOT_DIR('staticfiles'), prefix='/')
 # if os.environ.get("DJANGO_SETTINGS_MODULE") == "server.config.settings.production":
 #     application = Sentry(application)
 

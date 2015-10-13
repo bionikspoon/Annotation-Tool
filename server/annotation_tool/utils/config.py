@@ -2,6 +2,9 @@
 # coding=utf-8
 from pprint import pprint
 
+from whitenoise.django import HelpfulExceptionMixin, GzipStaticFilesMixin
+from whitenoise.storage_backport import ManifestStaticFilesStorage
+
 
 class GeneDatabaseRouter(object):
     def db_for_read(self, model, **hints):
@@ -42,3 +45,7 @@ class GeneDatabaseRouter(object):
             return False
 
         return None
+
+
+class AnnotationToolStaticFilesStorage(HelpfulExceptionMixin, ManifestStaticFilesStorage):
+    pass

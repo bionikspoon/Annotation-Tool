@@ -14,7 +14,6 @@ from __future__ import absolute_import, unicode_literals
 # noinspection PyUnresolvedReferences
 from boto.s3.connection import OrdinaryCallingFormat
 from django.utils import six
-import logging
 from .common import *  # noqa
 
 # SECRET CONFIGURATION
@@ -45,7 +44,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool("DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS
 SECURE_FRAME_DENY = env.bool("DJANGO_SECURE_FRAME_DENY", default=True)
 SECURE_CONTENT_TYPE_NOSNIFF = env.bool("DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", default=True)
 SECURE_BROWSER_XSS_FILTER = True
-SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False  # TODO fixme
 SESSION_COOKIE_HTTPONLY = True
 SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
 
@@ -53,7 +52,7 @@ SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
 # ------------------------------------------------------------------------------
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['annotation-tool.herokuapp.com', '.herokuapp.com'])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['annotation-tool.herokuapp.com'])
 # END SITE CONFIGURATION
 
 INSTALLED_APPS += ("gunicorn",)
@@ -90,8 +89,7 @@ MEDIA_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 # Static Assets
 # ------------------------
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
-
+STATICFILES_STORAGE = 'server.annotation_tool.utils.config.AnnotationToolStaticFilesStorage'
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL', default='annotation_tool <noreply@annotation-tool.herokuapp.com>')

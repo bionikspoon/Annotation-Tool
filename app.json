@@ -2,7 +2,7 @@
   "name": "annotation_tool",
   "description": "Bioinformatics annotation tool.",
   "env": {
-    "DEBUG": "TRUE",
+    "DJANGO_DEBUG": "False",
     "DJANGO_AWS_ACCESS_KEY_ID": {
       "required": true
     },

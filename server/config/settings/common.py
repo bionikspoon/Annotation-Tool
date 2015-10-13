@@ -133,7 +133,7 @@ TEMPLATES = [  # :off
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         'DIRS': [
-            # str(APPS_DIR.path('templates')),
+            ROOT_DIR('staticfiles'),
         ],
         'OPTIONS': {
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
