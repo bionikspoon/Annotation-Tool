@@ -6,7 +6,7 @@
 #
 click==5.1                # via pip-tools
 coverage==4.0
-django-autoslug==1.8.0
+django-autoslug==1.9.2
 django-braces==1.8.1
 django-environ==0.4.0
 django-model-utils==2.3.1

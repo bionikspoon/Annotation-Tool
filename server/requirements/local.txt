@@ -8,9 +8,9 @@ alabaster==0.7.6          # via sphinx
 argh==0.26.1              # via watchdog
 babel==2.1.1              # via sphinx
 click==5.1                # via pip-tools
-coverage==4.0
+coverage==4.0.1
 decorator==4.0.4          # via ipython, traitlets
-django-autoslug==1.8.0
+django-autoslug==1.9.2
 django-braces==1.8.1
 django-debug-toolbar==1.4
 django-environ==0.4.0
@@ -61,7 +61,7 @@ pyyaml==3.11
 pyzmq==14.7.0             # via jupyter-client
 qtconsole==4.0.1          # via jupyter
 redis==2.10.3
-requests==2.8.0           # via httpie
+requests==2.8.1           # via httpie
 simplegeneric==0.8.1      # via ipython
 six==1.10.0               # via django-braces, django-environ, django-extensions, pip-tools, sphinx, unicode-slugify
 snowballstemmer==1.2.0    # via sphinx
