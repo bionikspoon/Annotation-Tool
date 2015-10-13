@@ -71,3 +71,4 @@ bower_components/
 dist/
 server/staticfiles
 *.sqlite
+*.sqlite-journal

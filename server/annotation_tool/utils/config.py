@@ -1,29 +1,44 @@
 #!/usr/bin/env python
 # coding=utf-8
+from pprint import pprint
+
 
 class GeneDatabaseRouter(object):
     def db_for_read(self, model, **hints):
-        if model and model.__qualname__ is 'Gene':
+        # print('read::%r' % model._meta.app_label)
+        if model._meta.app_label == 'gene':
+            # print('read::%r' % model._meta.app_label)
             return 'genes'
         return None
 
     def db_for_write(self, model, **hints):
-        if model and model.__qualname__ is 'Gene':
+        # print('write::%r' % model._meta.app_label)
+
+        if model._meta.app_label == 'gene':
+            # print('write::%r' % model._meta.app_label)
             return 'genes'
+
         return None
 
     def allow_relation(self, obj1, obj2, **hints):
-        if 'Gene' in [obj1.__qualname__, obj2.__qualname__]:
-            return False
+
+        # print('%s <> %s' % (obj1._meta.app_label, obj2._meta.app_label))
+        if obj1._meta.app_label == 'gene' and obj2._meta.app_label == 'gene':
+            return True
 
         return None
+        #
 
     # noinspection PyUnusedLocal
     def allow_migrate(self, db, app_label, model=None, **hints):
-        if db is 'genes':
-            return model and model.__qualname__ is 'Gene'
+        # print('migrate::%r:%r' % (db, app_label))
 
-        if model and model.__qualname__ is 'Gene':
+        if app_label == 'gene':
+            if db == 'genes':
+                # print('migrate::%r:%r:%r' % (db, app_label, model))
+                return True
+
+        if db == 'genes':
             return False
 
         return None

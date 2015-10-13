@@ -4,9 +4,10 @@
 
 import json
 import re
-from functools import reduce
+from functools import reduce, wraps
 from pathlib import Path
 from pprint import pprint
+from queue import Queue
 from threading import Thread
 from uuid import UUID
 import yaml
@@ -49,6 +50,7 @@ class Command(BaseCommand):
     """Get gene data."""
     help = __doc__
     references_built = False
+    q = NotImplemented
     LOOKUP_FIELDS = {
         'ccds_id': {},
         'alias_name': {},
@@ -92,11 +94,13 @@ class Command(BaseCommand):
         if get:
             # TODO Pull data from API.
             pass
+
         docs = [self.clean_doc(doc) for doc in self.get_docs()]
+
         if not skip_lookup:
             print('Building lookups  ' + '#' * 20)
-
             self.dump_lookup_fixture(docs)
+
         if not skip_build:
             print('Building fixtures ' + '#' * 20)
             self.build_gene_fixtures(docs)
@@ -110,9 +114,10 @@ class Command(BaseCommand):
 
         :param docs:
         """
-        self.LOOKUP_FIELDS = self.load_references()
+        if not self.references_built:
+            self.LOOKUP_FIELDS = self.load_references()
 
-        fixtures = [self.build_gene_fixture(doc) for doc in docs]
+        fixtures = [self.format_gene_fixture(doc) for doc in docs]
 
         # self._print_max_lengths(fixtures)
         # self._get_fixture('b2d38ea3-65b2-478c-89d3-0f4c1c2559db', fixtures)
@@ -125,15 +130,26 @@ class Command(BaseCommand):
 
         :param [dict] docs: Source.
         """
+
         if not self.references_built:
             self.build_references(docs)
 
+        def async_dump(q, fixtures, model):
+            q.put(self.dump(fixtures, model=model))
+
+        q = Queue()
         for field, choices in self.LOOKUP_FIELDS.items():
             model = LOOKUP_MODEL[field]
-            fixtures = [self.build_lookup_fixture(pk, choice, model) for choice, pk in choices.items()]
-            t = Thread(target=self.dump, args=(fixtures,), kwargs=dict(model=model))
+            fixtures = [self.format_lookup_fixture(pk, choice, model) for choice, pk in choices.items()]
+            t = Thread(target=async_dump, args=(q, fixtures, model))
+            t.daemon = True
             t.start()
-            # self.dump(fixtures, model=model)
+            # q.put(lambda: self.dump(fixtures, model=model))
+
+        while not q.empty():
+            q.get()
+            q.task_done()
+        q.join()
 
     def build_references(self, docs):
         """
@@ -145,8 +161,11 @@ class Command(BaseCommand):
             data = {item for doc in docs if doc.get(field) for item in doc.get(field)}
             self.LOOKUP_FIELDS[field] = {item: pk for pk, item in enumerate(sorted(data), start=1)}
 
-        self.dump_references(self.LOOKUP_FIELDS)
-        print('Processing complete! Saving to file.  Be Patient')
+        t = Thread(target=self.dump_references, args=(self.LOOKUP_FIELDS,))
+        t.daemon = True
+        t.start()
+        self.dump_references = True
+        # self.dump_references(self.LOOKUP_FIELDS)
 
     @staticmethod
     def clean_doc(doc):
@@ -179,7 +198,7 @@ class Command(BaseCommand):
         return doc
 
     @staticmethod
-    def build_lookup_fixture(pk, choice, model):
+    def format_lookup_fixture(pk, choice, model):
         """
         Format lookup doc into fixture.
 
@@ -196,7 +215,7 @@ class Command(BaseCommand):
             }
         }
 
-    def build_gene_fixture(self, doc):
+    def format_gene_fixture(self, doc):
         """
         Build fixture from raw data.
 
@@ -292,7 +311,6 @@ class Command(BaseCommand):
         for i, fixtures in fixture_chunks:
             file_name = '%s-%s.yaml' % (model, i)
             print('Writing %s records to %s' % (len(fixtures), file_name))
-
             with filepath.joinpath(file_name).open('w') as f:
                 yaml.dump(fixtures, f)
         print('### %s fixture(s) created! %s records in %s files.\n' % (model, len(fixtures), len(fixture_chunks)))
@@ -323,11 +341,46 @@ class Command(BaseCommand):
     def init_fixtures(self):
         """Save fixtures into db."""
 
-        for file in Config.FIXTURES_DIR.glob('*Lookup-*.yaml'):
-            self.loaddata(file)
+        for field, choices in self.LOOKUP_FIELDS.items():
+            model = LOOKUP_MODEL[field]
+            fixtures = [self.format_lookup_fixture(pk, choice, model) for choice, pk in choices.items()]
 
-        for file in Config.FIXTURES_DIR.glob('Gene-*.yaml'):
-            self.loaddata(file)
+            # def worker():
+            #     while True:
+            #         file = q.get()
+            #         if file is None:
+            #             break
+            #         self.loaddata(file)
+            #         q.task_done()
+            #
+            # q = Queue()
+            # threads = []
+            # number_of_worker_threads = 10
+            # for i in range(number_of_worker_threads):
+            #     t = Thread(target=worker)
+            #     t.start()
+            #     threads.append(t)
+
+
+
+            # q.put(lambda: self.dump(fixtures, model=model))
+
+        for file in Config.FIXTURES_DIR.glob('*Lookup-*.yaml'):
+            # q.put(file)
+            # self.loaddata(file)
+            pass
+
+            # q.join()
+            for file in Config.FIXTURES_DIR.glob('Gene-*.yaml'):
+                # q.put(file)
+                self.loaddata(file)
+
+                #
+                # q.join()
+                # for i in range(number_of_worker_threads):
+                #     q.put(None)
+                # for t in threads:
+                #     t.join()
 
     # noinspection PyMethodMayBeStatic
     def loaddata(self, file):
@@ -339,12 +392,11 @@ class Command(BaseCommand):
         """
         try:
             print('Loading %s' % file)
-            call_command('loaddata', file.name)
+            call_command('loaddata', file.name, database='genes')
         except (KeyError, LookupError, DeserializationError) as e:
 
             print('Model in fixture %s.%s could not be loaded. Import skipped.\n        Error:%s' % (
                 Config.APP, file.stem, str(e).split(':')[-1]))
-            return
 
     # noinspection PyMethodMayBeStatic
     def dump_references(self, data):
@@ -353,8 +405,11 @@ class Command(BaseCommand):
 
         :param dict data: Data to serialize.
         """
+
+        print('Serializing references...')
         with Config.DATA_DIR.joinpath('reference.yaml').open('w') as f:
             yaml.dump(data, f)
+        print('Processing complete! Saving to file.  Be Patient')
 
     # noinspection PyMethodMayBeStatic
     def load_references(self):
@@ -363,5 +418,7 @@ class Command(BaseCommand):
 
         :return: Dictionary of enumerated choices for lookup tables.
         """
+
+        print('Deserializing references...')
         with Config.DATA_DIR.joinpath('reference.yaml').open() as f:
             return yaml.load(f)
