@@ -6,7 +6,7 @@
   },
   "scripts": {
     "test": "gulp test",
-    "postinstall": "bower install && gulp build"
+    "postinstall": "bower install && gulp clean && gulp build"
   },
   "cacheDirectories": [
     "node_modules",
