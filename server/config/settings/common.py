@@ -100,6 +100,7 @@ DATABASES = {  # Raises ImproperlyConfigured exception if DATABASE_URL not in os
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 DATABASES['genes']['ATOMIC_REQUESTS'] = True
+DATABASE_ROUTERS = ['server.annotation_tool.utils.config.GeneDatabaseRouter']
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
 # Local time zone for this installation. Choices can be found here:

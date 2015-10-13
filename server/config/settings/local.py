@@ -70,4 +70,3 @@ SHELL_PLUS_POST_IMPORTS = (
 )
 
 
-DATABASE_ROUTERS = ['server.annotation_tool.utils.config.GeneDatabaseRouter']
