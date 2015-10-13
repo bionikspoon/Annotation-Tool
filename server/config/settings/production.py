@@ -15,9 +15,6 @@ from __future__ import absolute_import, unicode_literals
 from boto.s3.connection import OrdinaryCallingFormat
 from django.utils import six
 import logging
-
-
-
 from .common import *  # noqa
 
 # SECRET CONFIGURATION
@@ -37,10 +34,10 @@ INSTALLED_APPS += ("djangosecure",)
 # See https://docs.getsentry.com/hosted/clients/python/integrations/django/
 # INSTALLED_APPS += ('raven.contrib.django.raven_compat',)
 SECURITY_MIDDLEWARE = ('djangosecure.middleware.SecurityMiddleware',)
-RAVEN_MIDDLEWARE = ('raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
-                    'raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware',)
+# RAVEN_MIDDLEWARE = ('raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
+#                     'raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware',)
 # MIDDLEWARE_CLASSES = SECURITY_MIDDLEWARE + RAVEN_MIDDLEWARE + MIDDLEWARE_CLASSES
-MIDDLEWARE_CLASSES = SECURITY_MIDDLEWARE  + MIDDLEWARE_CLASSES
+MIDDLEWARE_CLASSES = SECURITY_MIDDLEWARE + MIDDLEWARE_CLASSES
 
 # set this to 60 seconds and then to 518400 when you can prove it works
 SECURE_HSTS_SECONDS = 60
@@ -56,7 +53,7 @@ SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
 # ------------------------------------------------------------------------------
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['annotation-tool.herokuapp.com'])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['annotation-tool.herokuapp.com', '.herokuapp.com'])
 # END SITE CONFIGURATION
 
 INSTALLED_APPS += ("gunicorn",)
@@ -93,6 +90,7 @@ MEDIA_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 # Static Assets
 # ------------------------
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 # EMAIL
 # ------------------------------------------------------------------------------
