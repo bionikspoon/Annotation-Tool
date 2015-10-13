@@ -1,0 +1,2368 @@
+- fields: {choice: family 14}
+  model: gene.GeneFamilyLookup
+  pk: 724
+- fields: {choice: Alkylation repair homologs}
+  model: gene.GeneFamilyLookup
+  pk: 52
+- fields: {choice: H/ACA box}
+  model: gene.GeneFamilyLookup
+  pk: 310
+- fields: {choice: Complement system}
+  model: gene.GeneFamilyLookup
+  pk: 174
+- fields: {choice: Cyclophilin peptidylprolyl isomerases}
+  model: gene.GeneFamilyLookup
+  pk: 183
+- fields: {choice: Ribosomal RNAs}
+  model: gene.GeneFamilyLookup
+  pk: 558
+- fields: {choice: Glucosaminyl (N-acetyl) transferases/xylosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 291
+- fields: {choice: GINS complex}
+  model: gene.GeneFamilyLookup
+  pk: 278
+- fields: {choice: Histocompatibility complex}
+  model: gene.GeneFamilyLookup
+  pk: 327
+- fields: {choice: 6-phosphofructo-2-kinases/fructose-2}
+  model: gene.GeneFamilyLookup
+  pk: 14
+- fields: {choice: Cytochrome P450 family 8}
+  model: gene.GeneFamilyLookup
+  pk: 202
+- fields: {choice: Formyl peptide receptors}
+  model: gene.GeneFamilyLookup
+  pk: 266
+- fields: {choice: subfamily G}
+  model: gene.GeneFamilyLookup
+  pk: 774
+- fields: {choice: EF-hand domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 226
+- fields: {choice: cytoplasmic}
+  model: gene.GeneFamilyLookup
+  pk: 717
+- fields: {choice: Integrins}
+  model: gene.GeneFamilyLookup
+  pk: 349
+- fields: {choice: Ragulator complex}
+  model: gene.GeneFamilyLookup
+  pk: 545
+- fields: {choice: Y box binding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 690
+- fields: {choice: Phospholipid scramblases}
+  model: gene.GeneFamilyLookup
+  pk: 496
+- fields: {choice: DDB1 and CUL4 associated factors}
+  model: gene.GeneFamilyLookup
+  pk: 207
+- fields: {choice: Chloride channel accessory}
+  model: gene.GeneFamilyLookup
+  pk: 153
+- fields: {choice: Lysine (K)-specific demethylases}
+  model: gene.GeneFamilyLookup
+  pk: 385
+- fields: {choice: Fatty acid hydroxylase domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 258
+- fields: {choice: axonemal}
+  model: gene.GeneFamilyLookup
+  pk: 699
+- fields: {choice: Cytochrome P450 family 3}
+  model: gene.GeneFamilyLookup
+  pk: 195
+- fields: {choice: CXXC-type}
+  model: gene.GeneFamilyLookup
+  pk: 128
+- fields: {choice: 3-glucuronyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 5
+- fields: {choice: family 52}
+  model: gene.GeneFamilyLookup
+  pk: 730
+- fields: {choice: Secretory carrier membrane proteins}
+  model: gene.GeneFamilyLookup
+  pk: 582
+- fields: {choice: Laminins}
+  model: gene.GeneFamilyLookup
+  pk: 373
+- fields: {choice: Cyclins}
+  model: gene.GeneFamilyLookup
+  pk: 182
+- fields: {choice: Charged multivesicular body proteins}
+  model: gene.GeneFamilyLookup
+  pk: 146
+- fields: {choice: Chemerin receptor}
+  model: gene.GeneFamilyLookup
+  pk: 147
+- fields: {choice: Parvins}
+  model: gene.GeneFamilyLookup
+  pk: 480
+- fields: {choice: Type I receptor serine/threonine kinases}
+  model: gene.GeneFamilyLookup
+  pk: 659
+- fields: {choice: T cell receptor gamma locus at 7p14}
+  model: gene.GeneFamilyLookup
+  pk: 627
+- fields: {choice: Adenylate kinases}
+  model: gene.GeneFamilyLookup
+  pk: 43
+- fields: {choice: Chitinases}
+  model: gene.GeneFamilyLookup
+  pk: 152
+- fields: {choice: WAP four-disulfide core domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 684
+- fields: {choice: Coiled-coil-helix-coiled-coil-helix domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 169
+- fields: {choice: Bardet-Biedl syndrome associated}
+  model: gene.GeneFamilyLookup
+  pk: 85
+- fields: {choice: N(alpha)-acetyltransferase subunits}
+  model: gene.GeneFamilyLookup
+  pk: 435
+- fields: {choice: Calpains}
+  model: gene.GeneFamilyLookup
+  pk: 134
+- fields: {choice: HOXL subclass homeoboxes}
+  model: gene.GeneFamilyLookup
+  pk: 316
+- fields: {choice: Tectonic proteins}
+  model: gene.GeneFamilyLookup
+  pk: 635
+- fields: {choice: Arylacetamide deacetylase family}
+  model: gene.GeneFamilyLookup
+  pk: 71
+- fields: {choice: Collectins}
+  model: gene.GeneFamilyLookup
+  pk: 172
+- fields: {choice: Patatin-like phospholipase domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 482
+- fields: {choice: CYR61/CTGF/NOV matricellular proteins}
+  model: gene.GeneFamilyLookup
+  pk: 129
+- fields: {choice: Acyl-CoA synthetase family}
+  model: gene.GeneFamilyLookup
+  pk: 39
+- fields: {choice: DENN/MADD domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 210
+- fields: {choice: Matrix metallopeptidases}
+  model: gene.GeneFamilyLookup
+  pk: 401
+- fields: {choice: C2 and RasGAP domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 105
+- fields: {choice: G protein-coupled receptors}
+  model: gene.GeneFamilyLookup
+  pk: 275
+- fields: {choice: PRAME family}
+  model: gene.GeneFamilyLookup
+  pk: 469
+- fields: {choice: family 10}
+  model: gene.GeneFamilyLookup
+  pk: 720
+- fields: {choice: Arginine vasopressin and oxytocin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 68
+- fields: {choice: ESCRT-I}
+  model: gene.GeneFamilyLookup
+  pk: 230
+- fields: {choice: Atypical chemokine receptors}
+  model: gene.GeneFamilyLookup
+  pk: 74
+- fields: {choice: Sideroflexins}
+  model: gene.GeneFamilyLookup
+  pk: 593
+- fields: {choice: THO complex}
+  model: gene.GeneFamilyLookup
+  pk: 631
+- fields: {choice: Opioid receptors}
+  model: gene.GeneFamilyLookup
+  pk: 459
+- fields: {choice: SINE class homeoboxes}
+  model: gene.GeneFamilyLookup
+  pk: 570
+- fields: {choice: ArfGAPs}
+  model: gene.GeneFamilyLookup
+  pk: 67
+- fields: {choice: Lipocalins}
+  model: gene.GeneFamilyLookup
+  pk: 382
+- fields: {choice: Acid sensing (proton gated) ion channels}
+  model: gene.GeneFamilyLookup
+  pk: 34
+- fields: {choice: Protein tyrosine phosphatases type IVA}
+  model: gene.GeneFamilyLookup
+  pk: 528
+- fields: {choice: nucleotide-sensitive}
+  model: gene.GeneFamilyLookup
+  pk: 755
+- fields: {choice: Bestrophins}
+  model: gene.GeneFamilyLookup
+  pk: 89
+- fields: {choice: Dishevelled segment polarity proteins}
+  model: gene.GeneFamilyLookup
+  pk: 219
+- fields: {choice: Histamine receptors}
+  model: gene.GeneFamilyLookup
+  pk: 325
+- fields: {choice: Fatty acid binding protein family}
+  model: gene.GeneFamilyLookup
+  pk: 256
+- fields: {choice: Functional pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 270
+- fields: {choice: FKBP prolyl isomerases}
+  model: gene.GeneFamilyLookup
+  pk: 252
+- fields: {choice: Miro-like atypical Rho GTPases}
+  model: gene.GeneFamilyLookup
+  pk: 414
+- fields: {choice: Trafficking protein particle complex}
+  model: gene.GeneFamilyLookup
+  pk: 643
+- fields: {choice: Sialic acid binding Ig-like lectins}
+  model: gene.GeneFamilyLookup
+  pk: 591
+- fields: {choice: Pseudoautosomal region 2}
+  model: gene.GeneFamilyLookup
+  pk: 531
+- fields: {choice: Oligosaccharyltransferase complex}
+  model: gene.GeneFamilyLookup
+  pk: 458
+- fields: {choice: Serine/threonine phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 587
+- fields: {choice: MicroRNAs}
+  model: gene.GeneFamilyLookup
+  pk: 412
+- fields: {choice: Zinc fingers}
+  model: gene.GeneFamilyLookup
+  pk: 696
+- fields: {choice: Ryanodine receptors}
+  model: gene.GeneFamilyLookup
+  pk: 561
+- fields: {choice: Ribonucleases}
+  model: gene.GeneFamilyLookup
+  pk: 557
+- fields: {choice: Histones}
+  model: gene.GeneFamilyLookup
+  pk: 329
+- fields: {choice: Guanylate cyclase receptors}
+  model: gene.GeneFamilyLookup
+  pk: 307
+- fields: {choice: Fermitins}
+  model: gene.GeneFamilyLookup
+  pk: 260
+- fields: {choice: T-boxes}
+  model: gene.GeneFamilyLookup
+  pk: 628
+- fields: {choice: K(lysine) acetyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 358
+- fields: {choice: Caspase recruitment domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 141
+- fields: {choice: SNAP complex}
+  model: gene.GeneFamilyLookup
+  pk: 574
+- fields: {choice: CCCH-type}
+  model: gene.GeneFamilyLookup
+  pk: 114
+- fields: {choice: Origin recognition complex}
+  model: gene.GeneFamilyLookup
+  pk: 461
+- fields: {choice: 5'-nucleotidases}
+  model: gene.GeneFamilyLookup
+  pk: 9
+- fields: {choice: voltage-dependent}
+  model: gene.GeneFamilyLookup
+  pk: 787
+- fields: {choice: Small leucine-rich repeat proteoglycans}
+  model: gene.GeneFamilyLookup
+  pk: 600
+- fields: {choice: ATAC complex}
+  model: gene.GeneFamilyLookup
+  pk: 27
+- fields: {choice: Wiskott-Aldrich Syndrome protein family}
+  model: gene.GeneFamilyLookup
+  pk: 687
+- fields: {choice: Helix-turn-helix CENPB type domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 319
+- fields: {choice: Immunoglobulin kappa (IGK) orphons}
+  model: gene.GeneFamilyLookup
+  pk: 341
+- fields: {choice: non-receptor type}
+  model: gene.GeneFamilyLookup
+  pk: 754
+- fields: {choice: glycogen}
+  model: gene.GeneFamilyLookup
+  pk: 740
+- fields: {choice: ADAM metallopeptidases with thrombospondin type 1 motif}
+  model: gene.GeneFamilyLookup
+  pk: 20
+- fields: {choice: class VI}
+  model: gene.GeneFamilyLookup
+  pk: 712
+- fields: {choice: TNF receptor associated factors}
+  model: gene.GeneFamilyLookup
+  pk: 632
+- fields: {choice: Cytochrome P450 family 11}
+  model: gene.GeneFamilyLookup
+  pk: 186
+- fields: {choice: Aminoacyl tRNA synthetases}
+  model: gene.GeneFamilyLookup
+  pk: 55
+- fields: {choice: IZUMO family}
+  model: gene.GeneFamilyLookup
+  pk: 338
+- fields: {choice: High mobility group HMG box pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 323
+- fields: {choice: Polypeptide N-acetylgalactosaminyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 505
+- fields: {choice: Exonucleases}
+  model: gene.GeneFamilyLookup
+  pk: 244
+- fields: {choice: CW-type}
+  model: gene.GeneFamilyLookup
+  pk: 127
+- fields: {choice: DHHC-type}
+  model: gene.GeneFamilyLookup
+  pk: 211
+- fields: {choice: RAN binding-type}
+  model: gene.GeneFamilyLookup
+  pk: 537
+- fields: {choice: Nuclear factors of activated T-cells}
+  model: gene.GeneFamilyLookup
+  pk: 449
+- fields: {choice: Histone deacetylases}
+  model: gene.GeneFamilyLookup
+  pk: 328
+- fields: {choice: Ro-associated Y}
+  model: gene.GeneFamilyLookup
+  pk: 560
+- fields: {choice: Cathepsins}
+  model: gene.GeneFamilyLookup
+  pk: 143
+- fields: {choice: SKI transcriptional corepressors}
+  model: gene.GeneFamilyLookup
+  pk: 571
+- fields: {choice: class V}
+  model: gene.GeneFamilyLookup
+  pk: 711
+- fields: {choice: EMI domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 227
+- fields: {choice: subfamily A}
+  model: gene.GeneFamilyLookup
+  pk: 768
+- fields: {choice: Class A orphans}
+  model: gene.GeneFamilyLookup
+  pk: 159
+- fields: {choice: Proline-rich proteins}
+  model: gene.GeneFamilyLookup
+  pk: 513
+- fields: {choice: Cytochrome b561}
+  model: gene.GeneFamilyLookup
+  pk: 203
+- fields: {choice: GOLD domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 279
+- fields: {choice: T cell receptor alpha locus at 14q11.2}
+  model: gene.GeneFamilyLookup
+  pk: 623
+- fields: {choice: C2-set domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 111
+- fields: {choice: Glutamate receptors}
+  model: gene.GeneFamilyLookup
+  pk: 293
+- fields: {choice: Dynein regulatory complex}
+  model: gene.GeneFamilyLookup
+  pk: 223
+- fields: {choice: subfamily D}
+  model: gene.GeneFamilyLookup
+  pk: 770
+- fields: {choice: Multiple C2 domains}
+  model: gene.GeneFamilyLookup
+  pk: 428
+- fields: {choice: Components of oligomeric golgi complex}
+  model: gene.GeneFamilyLookup
+  pk: 175
+- fields: {choice: Extended synaptotagmin-like proteins}
+  model: gene.GeneFamilyLookup
+  pk: 248
+- fields: {choice: Angiotensin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 59
+- fields: {choice: Oxoglutarate receptor}
+  model: gene.GeneFamilyLookup
+  pk: 462
+- fields: {choice: Desumoylating isopeptidases}
+  model: gene.GeneFamilyLookup
+  pk: 218
+- fields: {choice: metabotropic}
+  model: gene.GeneFamilyLookup
+  pk: 748
+- fields: {choice: Taste receptors}
+  model: gene.GeneFamilyLookup
+  pk: 634
+- fields: {choice: I-set domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 335
+- fields: {choice: Membrane bound O-acyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 406
+- fields: {choice: La ribonucleoprotein domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 372
+- fields: {choice: Immunoglobulin-like domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 345
+- fields: {choice: Receptor Tyrosine Kinases}
+  model: gene.GeneFamilyLookup
+  pk: 548
+- fields: {choice: 7TM orphan receptors}
+  model: gene.GeneFamilyLookup
+  pk: 16
+- fields: {choice: UNC13 homologs}
+  model: gene.GeneFamilyLookup
+  pk: 667
+- fields: {choice: MADS box family}
+  model: gene.GeneFamilyLookup
+  pk: 388
+- fields: {choice: Vesicle-associated membrane proteins}
+  model: gene.GeneFamilyLookup
+  pk: 680
+- fields: {choice: class IIA}
+  model: gene.GeneFamilyLookup
+  pk: 706
+- fields: {choice: Neuromedin U receptors}
+  model: gene.GeneFamilyLookup
+  pk: 444
+- fields: {choice: two pore domain subfamily K}
+  model: gene.GeneFamilyLookup
+  pk: 779
+- fields: {choice: Beta 4-glycosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 91
+- fields: {choice: CTD family phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 125
+- fields: {choice: Acyl-CoA thioesterases}
+  model: gene.GeneFamilyLookup
+  pk: 40
+- fields: {choice: CKLF-like MARVEL transmembrane domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 122
+- fields: {choice: subfamily B}
+  model: gene.GeneFamilyLookup
+  pk: 769
+- fields: {choice: Carbonic anhydrases}
+  model: gene.GeneFamilyLookup
+  pk: 137
+- fields: {choice: Alkaline phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 51
+- fields: {choice: C1-set domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 104
+- fields: {choice: family 13}
+  model: gene.GeneFamilyLookup
+  pk: 723
+- fields: {choice: Ephrins}
+  model: gene.GeneFamilyLookup
+  pk: 239
+- fields: {choice: Myocyte enhancer factor 2 proteins}
+  model: gene.GeneFamilyLookup
+  pk: 431
+- fields: {choice: sub-family D (ALD)}
+  model: gene.GeneFamilyLookup
+  pk: 765
+- fields: {choice: Hemoglobin subunits}
+  model: gene.GeneFamilyLookup
+  pk: 321
+- fields: {choice: Chromobox homologs}
+  model: gene.GeneFamilyLookup
+  pk: 158
+- fields: {choice: THAP domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 630
+- fields: {choice: 6-biphosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 12
+- fields: {choice: methyl-CpG binding domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 749
+- fields: {choice: L ribosomal proteins}
+  model: gene.GeneFamilyLookup
+  pk: 368
+- fields: {choice: Glycine receptors}
+  model: gene.GeneFamilyLookup
+  pk: 296
+- fields: {choice: receptor type}
+  model: gene.GeneFamilyLookup
+  pk: 757
+- fields: {choice: MAX dimerization proteins}
+  model: gene.GeneFamilyLookup
+  pk: 391
+- fields: {choice: Maestro heat-like repeat containing}
+  model: gene.GeneFamilyLookup
+  pk: 398
+- fields: {choice: Actins}
+  model: gene.GeneFamilyLookup
+  pk: 37
+- fields: {choice: Tetratricopeptide repeat domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 638
+- fields: {choice: Late cornified envelope proteins}
+  model: gene.GeneFamilyLookup
+  pk: 375
+- fields: {choice: Protein phosphatase 3 regulatory subunits}
+  model: gene.GeneFamilyLookup
+  pk: 523
+- fields: {choice: High mobility group nucleosomal-binding pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 324
+- fields: {choice: class XVIII}
+  model: gene.GeneFamilyLookup
+  pk: 716
+- fields: {choice: Autophagy related}
+  model: gene.GeneFamilyLookup
+  pk: 76
+- fields: {choice: Adenosine receptors}
+  model: gene.GeneFamilyLookup
+  pk: 41
+- fields: {choice: Transient receptor potential cation channels}
+  model: gene.GeneFamilyLookup
+  pk: 647
+- fields: {choice: Fibrinogen C domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 261
+- fields: {choice: Beta 3-glycosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 90
+- fields: {choice: Cytochrome P450 family 7}
+  model: gene.GeneFamilyLookup
+  pk: 201
+- fields: {choice: GRF-type}
+  model: gene.GeneFamilyLookup
+  pk: 281
+- fields: {choice: RAN family GTPases}
+  model: gene.GeneFamilyLookup
+  pk: 538
+- fields: {choice: Phosphatidylinositol glycan anchor biosynthesis}
+  model: gene.GeneFamilyLookup
+  pk: 492
+- fields: {choice: Inositol 1}
+  model: gene.GeneFamilyLookup
+  pk: 347
+- fields: {choice: Annexins}
+  model: gene.GeneFamilyLookup
+  pk: 61
+- fields: {choice: class I}
+  model: gene.GeneFamilyLookup
+  pk: 705
+- fields: {choice: Cytochrome P450 family 17}
+  model: gene.GeneFamilyLookup
+  pk: 187
+- fields: {choice: Sphingosine-1-phosphate phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 611
+- fields: {choice: 'Mitochondrial complex V: ATP synthase subunits'}
+  model: gene.GeneFamilyLookup
+  pk: 419
+- fields: {choice: Voltage-dependent anion channels}
+  model: gene.GeneFamilyLookup
+  pk: 682
+- fields: {choice: ESCRT-II}
+  model: gene.GeneFamilyLookup
+  pk: 231
+- fields: {choice: Kinesins}
+  model: gene.GeneFamilyLookup
+  pk: 367
+- fields: {choice: Gap junction proteins}
+  model: gene.GeneFamilyLookup
+  pk: 287
+- fields: {choice: Fibronectin type III domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 262
+- fields: {choice: AN1-type}
+  model: gene.GeneFamilyLookup
+  pk: 23
+- fields: {choice: UDP-glucose ceramide glucosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 665
+- fields: {choice: sperm associated}
+  model: gene.GeneFamilyLookup
+  pk: 761
+- fields: {choice: UDP glucuronosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 663
+- fields: {choice: Phosphatase and actin regulators}
+  model: gene.GeneFamilyLookup
+  pk: 489
+- fields: {choice: Peroxiredoxins}
+  model: gene.GeneFamilyLookup
+  pk: 488
+- fields: {choice: Tubulin tyrosine ligase-like family}
+  model: gene.GeneFamilyLookup
+  pk: 653
+- fields: {choice: Basic leucine zipper proteins}
+  model: gene.GeneFamilyLookup
+  pk: 87
+- fields: {choice: Protein tyrosine phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 527
+- fields: {choice: Insulin-like growth factor binding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 348
+- fields: {choice: '4'}
+  model: gene.GeneFamilyLookup
+  pk: 7
+- fields: {choice: PRD class homeoboxes and pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 470
+- fields: {choice: Transmembrane p24 trafficking proteins}
+  model: gene.GeneFamilyLookup
+  pk: 649
+- fields: {choice: Cytochrome P450 family 4}
+  model: gene.GeneFamilyLookup
+  pk: 197
+- fields: {choice: Bombesin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 98
+- fields: {choice: voltage-gated}
+  model: gene.GeneFamilyLookup
+  pk: 788
+- fields: {choice: muscarinic}
+  model: gene.GeneFamilyLookup
+  pk: 750
+- fields: {choice: family 11}
+  model: gene.GeneFamilyLookup
+  pk: 721
+- fields: {choice: HAD Asp-based non-protein phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 311
+- fields: {choice: Oxysterol binding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 463
+- fields: {choice: gamma adaptin ear containing}
+  model: gene.GeneFamilyLookup
+  pk: 738
+- fields: {choice: HAUS augmin-like complex}
+  model: gene.GeneFamilyLookup
+  pk: 313
+- fields: {choice: Proteoglycans}
+  model: gene.GeneFamilyLookup
+  pk: 529
+- fields: {choice: Proprotein convertase subtilisin/kexin}
+  model: gene.GeneFamilyLookup
+  pk: 515
+- fields: {choice: Ubiquitin-conjugating enzymes E2}
+  model: gene.GeneFamilyLookup
+  pk: 671
+- fields: {choice: Chemokine (X-C motif) receptor}
+  model: gene.GeneFamilyLookup
+  pk: 150
+- fields: {choice: Cation channels}
+  model: gene.GeneFamilyLookup
+  pk: 144
+- fields: {choice: SCY1-like}
+  model: gene.GeneFamilyLookup
+  pk: 567
+- fields: {choice: PROS class homeoboxes}
+  model: gene.GeneFamilyLookup
+  pk: 471
+- fields: {choice: Mucins}
+  model: gene.GeneFamilyLookup
+  pk: 427
+- fields: {choice: Chemokine (C-C motif) receptors}
+  model: gene.GeneFamilyLookup
+  pk: 148
+- fields: {choice: Potassium channel}
+  model: gene.GeneFamilyLookup
+  pk: 506
+- fields: {choice: Tissue inhibitor of metallopeptidases}
+  model: gene.GeneFamilyLookup
+  pk: 639
+- fields: {choice: Vestigial-like family}
+  model: gene.GeneFamilyLookup
+  pk: 681
+- fields: {choice: Cytochrome P450 family 24}
+  model: gene.GeneFamilyLookup
+  pk: 192
+- fields: {choice: Immunoglobulin heavy (IGH) orphons}
+  model: gene.GeneFamilyLookup
+  pk: 339
+- fields: {choice: DNA-directed}
+  model: gene.GeneFamilyLookup
+  pk: 213
+- fields: {choice: MutL homologs}
+  model: gene.GeneFamilyLookup
+  pk: 429
+- fields: {choice: CUT class homeoboxes and pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 126
+- fields: {choice: cytosolic}
+  model: gene.GeneFamilyLookup
+  pk: 718
+- fields: {choice: ADAM metallopeptidase domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 19
+- fields: {choice: Copines}
+  model: gene.GeneFamilyLookup
+  pk: 176
+- fields: {choice: Sulfotransferases}
+  model: gene.GeneFamilyLookup
+  pk: 618
+- fields: {choice: Biogenesis of lysosomal organelles complex-1}
+  model: gene.GeneFamilyLookup
+  pk: 93
+- fields: {choice: Caspases}
+  model: gene.GeneFamilyLookup
+  pk: 142
+- fields: {choice: Abhydrolase domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 32
+- fields: {choice: Helix-turn-helix ETS type domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 320
+- fields: {choice: 6-bisphosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 13
+- fields: {choice: Class F frizzled}
+  model: gene.GeneFamilyLookup
+  pk: 161
+- fields: {choice: purinergic receptors}
+  model: gene.GeneFamilyLookup
+  pk: 756
+- fields: {choice: Arachidonate lipoxygenases}
+  model: gene.GeneFamilyLookup
+  pk: 66
+- fields: {choice: Neuroblastoma breakpoint family}
+  model: gene.GeneFamilyLookup
+  pk: 443
+- fields: {choice: G protein-coupled}
+  model: gene.GeneFamilyLookup
+  pk: 272
+- fields: {choice: Regulators of G-protein signaling}
+  model: gene.GeneFamilyLookup
+  pk: 551
+- fields: {choice: Biogenesis of lysosomal organelles complex-2}
+  model: gene.GeneFamilyLookup
+  pk: 94
+- fields: {choice: family 9}
+  model: gene.GeneFamilyLookup
+  pk: 736
+- fields: {choice: class IV}
+  model: gene.GeneFamilyLookup
+  pk: 709
+- fields: {choice: Pellino E3 ubiquitin protein ligases}
+  model: gene.GeneFamilyLookup
+  pk: 483
+- fields: {choice: ATP-gated CFTR}
+  model: gene.GeneFamilyLookup
+  pk: 30
+- fields: {choice: CDGSH iron sulfur domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 120
+- fields: {choice: Low density lipoprotein receptors}
+  model: gene.GeneFamilyLookup
+  pk: 384
+- fields: {choice: Lipases}
+  model: gene.GeneFamilyLookup
+  pk: 379
+- fields: {choice: Melanocortin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 404
+- fields: {choice: Succinate receptor}
+  model: gene.GeneFamilyLookup
+  pk: 615
+- fields: {choice: ESCRT-IV}
+  model: gene.GeneFamilyLookup
+  pk: 233
+- fields: {choice: Glycosyltransferase family 2}
+  model: gene.GeneFamilyLookup
+  pk: 299
+- fields: {choice: Actin related protein 2/3 complex}
+  model: gene.GeneFamilyLookup
+  pk: 35
+- fields: {choice: glycerol-3-phosphate acyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 739
+- fields: {choice: Dopamine receptors}
+  model: gene.GeneFamilyLookup
+  pk: 221
+- fields: {choice: Dyneins}
+  model: gene.GeneFamilyLookup
+  pk: 224
+- fields: {choice: Exosome complex}
+  model: gene.GeneFamilyLookup
+  pk: 245
+- fields: {choice: ANP32 acidic nuclear phosphoproteins}
+  model: gene.GeneFamilyLookup
+  pk: 24
+- fields: {choice: Homer scaffolding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 330
+- fields: {choice: Dolichyl D-mannosyl phosphate dependent mannosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 220
+- fields: {choice: Alpha-1}
+  model: gene.GeneFamilyLookup
+  pk: 54
+- fields: {choice: sub-family B (MDR/TAP)}
+  model: gene.GeneFamilyLookup
+  pk: 763
+- fields: {choice: Non-canonical high mobility group}
+  model: gene.GeneFamilyLookup
+  pk: 447
+- fields: {choice: Kelch-like}
+  model: gene.GeneFamilyLookup
+  pk: 361
+- fields: {choice: class VII}
+  model: gene.GeneFamilyLookup
+  pk: 713
+- fields: {choice: Hydrogen voltage gated channels}
+  model: gene.GeneFamilyLookup
+  pk: 332
+- fields: {choice: Glycosyltransferase family 8}
+  model: gene.GeneFamilyLookup
+  pk: 301
+- fields: {choice: HIT-type}
+  model: gene.GeneFamilyLookup
+  pk: 314
+- fields: {choice: Kallikreins}
+  model: gene.GeneFamilyLookup
+  pk: 359
+- fields: {choice: Minor histocompatibility antigens}
+  model: gene.GeneFamilyLookup
+  pk: 413
+- fields: {choice: family 51}
+  model: gene.GeneFamilyLookup
+  pk: 729
+- fields: {choice: Protein phosphatase 2 regulatory subunits}
+  model: gene.GeneFamilyLookup
+  pk: 522
+- fields: {choice: CDC-like kinases}
+  model: gene.GeneFamilyLookup
+  pk: 118
+- fields: {choice: RecQ helicases}
+  model: gene.GeneFamilyLookup
+  pk: 546
+- fields: {choice: RNA pseudouridylate synthase domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 542
+- fields: {choice: Eukaryotic translation initiation factor 3}
+  model: gene.GeneFamilyLookup
+  pk: 242
+- fields: {choice: 1-acylglycerol-3-phosphate O-acyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 1
+- fields: {choice: TALE class homeboxes and pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 629
+- fields: {choice: Serine/arginine-rich splicing factors}
+  model: gene.GeneFamilyLookup
+  pk: 586
+- fields: {choice: Mitogen-activated protein kinases}
+  model: gene.GeneFamilyLookup
+  pk: 426
+- fields: {choice: Small nucleolar RNAs}
+  model: gene.GeneFamilyLookup
+  pk: 602
+- fields: {choice: Pappalysins}
+  model: gene.GeneFamilyLookup
+  pk: 475
+- fields: {choice: SMC5-6 protein complex}
+  model: gene.GeneFamilyLookup
+  pk: 573
+- fields: {choice: RAB}
+  model: gene.GeneFamilyLookup
+  pk: 535
+- fields: {choice: Lysine (K)-specific methyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 386
+- fields: {choice: DBF-type}
+  model: gene.GeneFamilyLookup
+  pk: 206
+- fields: {choice: Calcium-sensing receptors}
+  model: gene.GeneFamilyLookup
+  pk: 133
+- fields: {choice: Complement component  receptors}
+  model: gene.GeneFamilyLookup
+  pk: 173
+- fields: {choice: S ribosomal proteins}
+  model: gene.GeneFamilyLookup
+  pk: 562
+- fields: {choice: Anaphase promoting complex}
+  model: gene.GeneFamilyLookup
+  pk: 57
+- fields: {choice: tRNA-splicing endonuclease subunits}
+  model: gene.GeneFamilyLookup
+  pk: 777
+- fields: {choice: Sialyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 592
+- fields: {choice: 2-glucosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 3
+- fields: {choice: LIM class homeoboxes}
+  model: gene.GeneFamilyLookup
+  pk: 370
+- fields: {choice: Prokineticin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 512
+- fields: {choice: DNAJ (HSP40) heat shock proteins}
+  model: gene.GeneFamilyLookup
+  pk: 214
+- fields: {choice: Ferlin family}
+  model: gene.GeneFamilyLookup
+  pk: 259
+- fields: {choice: Proline-rich transmembrane proteins}
+  model: gene.GeneFamilyLookup
+  pk: 514
+- fields: {choice: Proteasome}
+  model: gene.GeneFamilyLookup
+  pk: 518
+- fields: {choice: Paired boxes}
+  model: gene.GeneFamilyLookup
+  pk: 473
+- fields: {choice: Polymerases}
+  model: gene.GeneFamilyLookup
+  pk: 504
+- fields: {choice: Phosphodiesterases}
+  model: gene.GeneFamilyLookup
+  pk: 493
+- fields: {choice: Receptor accessory proteins}
+  model: gene.GeneFamilyLookup
+  pk: 549
+- fields: {choice: Keratin associated proteins}
+  model: gene.GeneFamilyLookup
+  pk: 363
+- fields: {choice: ORAI calcium release-activated calcium modulators}
+  model: gene.GeneFamilyLookup
+  pk: 455
+- fields: {choice: member RAS oncogene GTPases}
+  model: gene.GeneFamilyLookup
+  pk: 746
+- fields: {choice: Glycoprotein hormone receptors}
+  model: gene.GeneFamilyLookup
+  pk: 297
+- fields: {choice: Phosphoinositide phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 494
+- fields: {choice: Intraflagellar transport proteins}
+  model: gene.GeneFamilyLookup
+  pk: 357
+- fields: {choice: Mitochondrial respiratory chain complex assembly factors}
+  model: gene.GeneFamilyLookup
+  pk: 420
+- fields: {choice: Cytochrome P450 family 27}
+  model: gene.GeneFamilyLookup
+  pk: 194
+- fields: {choice: Adhesion G protein-coupled receptors}
+  model: gene.GeneFamilyLookup
+  pk: 44
+- fields: {choice: Cytochrome P450 family 21}
+  model: gene.GeneFamilyLookup
+  pk: 191
+- fields: {choice: serine}
+  model: gene.GeneFamilyLookup
+  pk: 758
+- fields: {choice: Coagulation factor II (thrombin) receptors}
+  model: gene.GeneFamilyLookup
+  pk: 168
+- fields: {choice: Myosin light chains}
+  model: gene.GeneFamilyLookup
+  pk: 432
+- fields: {choice: Flotillins}
+  model: gene.GeneFamilyLookup
+  pk: 264
+- fields: {choice: SAGA complex}
+  model: gene.GeneFamilyLookup
+  pk: 564
+- fields: {choice: Cytochrome P450 family 1}
+  model: gene.GeneFamilyLookup
+  pk: 185
+- fields: {choice: Tudor domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 655
+- fields: {choice: Carcinoembryonic antigen family}
+  model: gene.GeneFamilyLookup
+  pk: 139
+- fields: {choice: Ankyrin repeat domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 60
+- fields: {choice: Chemokine (C-X-3-C motif) receptor}
+  model: gene.GeneFamilyLookup
+  pk: 149
+- fields: {choice: Ubiquitin-like activating enzymes}
+  model: gene.GeneFamilyLookup
+  pk: 672
+- fields: {choice: C2 domain containing phospholipases}
+  model: gene.GeneFamilyLookup
+  pk: 108
+- fields: {choice: PATE family}
+  model: gene.GeneFamilyLookup
+  pk: 465
+- fields: {choice: Toll-like receptors}
+  model: gene.GeneFamilyLookup
+  pk: 640
+- fields: {choice: BTB (POZ) domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 83
+- fields: {choice: Heat shock 90kDa proteins}
+  model: gene.GeneFamilyLookup
+  pk: 318
+- fields: {choice: Plexins}
+  model: gene.GeneFamilyLookup
+  pk: 502
+- fields: {choice: High mobility group AT-hook pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 322
+- fields: {choice: Mannosyl-glycoprotein N-acetylglucosaminyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 400
+- fields: {choice: Ring finger proteins}
+  model: gene.GeneFamilyLookup
+  pk: 559
+- fields: {choice: Neurotensin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 446
+- fields: {choice: Glutathione S-transferases}
+  model: gene.GeneFamilyLookup
+  pk: 294
+- fields: {choice: Gonadotropin-releasing hormone receptors}
+  model: gene.GeneFamilyLookup
+  pk: 305
+- fields: {choice: CCR4-NOT transcription complex}
+  model: gene.GeneFamilyLookup
+  pk: 116
+- fields: {choice: kinase-like proteins}
+  model: gene.GeneFamilyLookup
+  pk: 744
+- fields: {choice: Bisphosphoglycerate phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 96
+- fields: {choice: AT rich interactive domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 26
+- fields: {choice: RNA binding motif containing}
+  model: gene.GeneFamilyLookup
+  pk: 540
+- fields: {choice: family 2}
+  model: gene.GeneFamilyLookup
+  pk: 725
+- fields: {choice: PHD finger proteins}
+  model: gene.GeneFamilyLookup
+  pk: 466
+- fields: {choice: VPS9 domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 675
+- fields: {choice: Transferrins}
+  model: gene.GeneFamilyLookup
+  pk: 645
+- fields: {choice: Cyclic nucleotide gated channels}
+  model: gene.GeneFamilyLookup
+  pk: 180
+- fields: {choice: Perilipins}
+  model: gene.GeneFamilyLookup
+  pk: 486
+- fields: {choice: Tubulins}
+  model: gene.GeneFamilyLookup
+  pk: 654
+- fields: {choice: Slingshot protein phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 596
+- fields: {choice: SMAD family}
+  model: gene.GeneFamilyLookup
+  pk: 572
+- fields: {choice: Armadillo repeat containing}
+  model: gene.GeneFamilyLookup
+  pk: 70
+- fields: {choice: inwardly rectifying subfamily J}
+  model: gene.GeneFamilyLookup
+  pk: 742
+- fields: {choice: voltage gated}
+  model: gene.GeneFamilyLookup
+  pk: 785
+- fields: {choice: Sphingosine 1-phosphate receptors}
+  model: gene.GeneFamilyLookup
+  pk: 610
+- fields: {choice: 'Mitochondrial complex IV: cytochrome c oxidase subunits'}
+  model: gene.GeneFamilyLookup
+  pk: 418
+- fields: {choice: subfamily V}
+  model: gene.GeneFamilyLookup
+  pk: 776
+- fields: {choice: Peptide receptors}
+  model: gene.GeneFamilyLookup
+  pk: 484
+- fields: {choice: catalytic}
+  model: gene.GeneFamilyLookup
+  pk: 702
+- fields: {choice: COP9 signalosome}
+  model: gene.GeneFamilyLookup
+  pk: 124
+- fields: {choice: Lectins}
+  model: gene.GeneFamilyLookup
+  pk: 377
+- fields: {choice: Alkaline ceramidases}
+  model: gene.GeneFamilyLookup
+  pk: 50
+- fields: {choice: Mitogen-activated protein kinase kinase kinases}
+  model: gene.GeneFamilyLookup
+  pk: 424
+- fields: {choice: MYM-type}
+  model: gene.GeneFamilyLookup
+  pk: 396
+- fields: {choice: subfamily F}
+  model: gene.GeneFamilyLookup
+  pk: 773
+- fields: {choice: Phosphatidate phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 490
+- fields: {choice: Forkhead boxes}
+  model: gene.GeneFamilyLookup
+  pk: 265
+- fields: {choice: MCM family}
+  model: gene.GeneFamilyLookup
+  pk: 392
+- fields: {choice: Sugar phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 616
+- fields: {choice: C2HC-type}
+  model: gene.GeneFamilyLookup
+  pk: 113
+- fields: {choice: SH2 domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 569
+- fields: {choice: class XIX}
+  model: gene.GeneFamilyLookup
+  pk: 714
+- fields: {choice: SUMO specific peptidases}
+  model: gene.GeneFamilyLookup
+  pk: 577
+- fields: {choice: Sodium channels}
+  model: gene.GeneFamilyLookup
+  pk: 603
+- fields: {choice: Ubiquilin family}
+  model: gene.GeneFamilyLookup
+  pk: 668
+- fields: {choice: BEN domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 79
+- fields: {choice: Ataxins}
+  model: gene.GeneFamilyLookup
+  pk: 73
+- fields: {choice: C2H2-type}
+  model: gene.GeneFamilyLookup
+  pk: 112
+- fields: {choice: Erythrocyte membrane protein band 4.1}
+  model: gene.GeneFamilyLookup
+  pk: 241
+- fields: {choice: Apolipoprotein B mRNA editing enzyme}
+  model: gene.GeneFamilyLookup
+  pk: 63
+- fields: {choice: Long non-coding RNAs (published)}
+  model: gene.GeneFamilyLookup
+  pk: 383
+- fields: {choice: family 56}
+  model: gene.GeneFamilyLookup
+  pk: 732
+- fields: {choice: Collagen beta(1-O)galactosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 170
+- fields: {choice: NME/NM23 family}
+  model: gene.GeneFamilyLookup
+  pk: 439
+- fields: {choice: SWIM-type}
+  model: gene.GeneFamilyLookup
+  pk: 578
+- fields: {choice: Pyrin and HIN domain family}
+  model: gene.GeneFamilyLookup
+  pk: 533
+- fields: {choice: ARF binding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 25
+- fields: {choice: Importins}
+  model: gene.GeneFamilyLookup
+  pk: 346
+- fields: {choice: MutS homologs}
+  model: gene.GeneFamilyLookup
+  pk: 430
+- fields: {choice: Class I}
+  model: gene.GeneFamilyLookup
+  pk: 162
+- fields: {choice: Glucagon receptor family}
+  model: gene.GeneFamilyLookup
+  pk: 290
+- fields: {choice: RAB-like GTPases}
+  model: gene.GeneFamilyLookup
+  pk: 536
+- fields: {choice: ATP-binding cassette}
+  model: gene.GeneFamilyLookup
+  pk: 28
+- fields: {choice: Intermediate filaments Type III}
+  model: gene.GeneFamilyLookup
+  pk: 355
+- fields: {choice: Biogenesis of lysosomal organelles complex-3}
+  model: gene.GeneFamilyLookup
+  pk: 95
+- fields: {choice: Poly (ADP-ribose) polymerases}
+  model: gene.GeneFamilyLookup
+  pk: 503
+- fields: {choice: Regulating synaptic membrane exocytosis family}
+  model: gene.GeneFamilyLookup
+  pk: 550
+- fields: {choice: galactoside-binding}
+  model: gene.GeneFamilyLookup
+  pk: 737
+- fields: {choice: Na+/K+ transporting ATPase interacting}
+  model: gene.GeneFamilyLookup
+  pk: 441
+- fields: {choice: Major cadherins}
+  model: gene.GeneFamilyLookup
+  pk: 399
+- fields: {choice: T cell receptor beta locus at 7q34}
+  model: gene.GeneFamilyLookup
+  pk: 625
+- fields: {choice: Astacins}
+  model: gene.GeneFamilyLookup
+  pk: 72
+- fields: {choice: sub-family F (GCN20)}
+  model: gene.GeneFamilyLookup
+  pk: 766
+- fields: {choice: ZF class homeoboxes and pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 692
+- fields: {choice: Zinc activated channels}
+  model: gene.GeneFamilyLookup
+  pk: 695
+- fields: {choice: NKL subclass homeoboxes and pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 437
+- fields: {choice: Alpha 1}
+  model: gene.GeneFamilyLookup
+  pk: 53
+- fields: {choice: STT3 oligosaccharyltransferase catalytic subunits}
+  model: gene.GeneFamilyLookup
+  pk: 576
+- fields: {choice: subfamily E}
+  model: gene.GeneFamilyLookup
+  pk: 771
+- fields: {choice: Two pore segment channels}
+  model: gene.GeneFamilyLookup
+  pk: 658
+- fields: {choice: Cyclin-dependent kinases}
+  model: gene.GeneFamilyLookup
+  pk: 181
+- fields: {choice: Shisa family members}
+  model: gene.GeneFamilyLookup
+  pk: 589
+- fields: {choice: Butyrophilins}
+  model: gene.GeneFamilyLookup
+  pk: 101
+- fields: {choice: 4-glycosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 8
+- fields: {choice: type 4}
+  model: gene.GeneFamilyLookup
+  pk: 782
+- fields: {choice: Sodium leak channels}
+  model: gene.GeneFamilyLookup
+  pk: 604
+- fields: {choice: non voltage gated}
+  model: gene.GeneFamilyLookup
+  pk: 753
+- fields: {choice: Olfactory receptors}
+  model: gene.GeneFamilyLookup
+  pk: 457
+- fields: {choice: Leukotriene receptors}
+  model: gene.GeneFamilyLookup
+  pk: 378
+- fields: {choice: Rhomboid family}
+  model: gene.GeneFamilyLookup
+  pk: 556
+- fields: {choice: Cutaneous T-cell-lymphoma-associated antigen family}
+  model: gene.GeneFamilyLookup
+  pk: 179
+- fields: {choice: type II}
+  model: gene.GeneFamilyLookup
+  pk: 784
+- fields: {choice: Peroxins}
+  model: gene.GeneFamilyLookup
+  pk: 487
+- fields: {choice: Corticotropin-releasing factor receptors}
+  model: gene.GeneFamilyLookup
+  pk: 177
+- fields: {choice: T cell receptor delta locus at 14q11.2}
+  model: gene.GeneFamilyLookup
+  pk: 626
+- fields: {choice: C/D box}
+  model: gene.GeneFamilyLookup
+  pk: 103
+- fields: {choice: Cytosolic iron-sulfur assembly components}
+  model: gene.GeneFamilyLookup
+  pk: 205
+- fields: {choice: C2 domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 107
+- fields: {choice: family 6}
+  model: gene.GeneFamilyLookup
+  pk: 733
+- fields: {choice: POU class homeoboxes and pseudogenes}
+  model: gene.GeneFamilyLookup
+  pk: 468
+- fields: {choice: DEAH box polypeptides}
+  model: gene.GeneFamilyLookup
+  pk: 209
+- fields: {choice: Endothelin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 237
+- fields: {choice: ZYG11 cell cycle regulator family}
+  model: gene.GeneFamilyLookup
+  pk: 693
+- fields: {choice: MJD deubiquinating enzymes}
+  model: gene.GeneFamilyLookup
+  pk: 394
+- fields: {choice: Rho guanine nucleotide exchange factors}
+  model: gene.GeneFamilyLookup
+  pk: 555
+- fields: {choice: Vault RNAs}
+  model: gene.GeneFamilyLookup
+  pk: 679
+- fields: {choice: Metallothioneins}
+  model: gene.GeneFamilyLookup
+  pk: 409
+- fields: {choice: Sirtuins}
+  model: gene.GeneFamilyLookup
+  pk: 595
+- fields: {choice: Chaperonins}
+  model: gene.GeneFamilyLookup
+  pk: 145
+- fields: {choice: voltage gated regulatory beta subunits}
+  model: gene.GeneFamilyLookup
+  pk: 786
+- fields: {choice: Protein phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 526
+- fields: {choice: Apolipoproteins}
+  model: gene.GeneFamilyLookup
+  pk: 64
+- fields: {choice: Proteases}
+  model: gene.GeneFamilyLookup
+  pk: 517
+- fields: {choice: Opsin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 460
+- fields: {choice: Calcium channels}
+  model: gene.GeneFamilyLookup
+  pk: 132
+- fields: {choice: Serine peptidase inhibitors}
+  model: gene.GeneFamilyLookup
+  pk: 585
+- fields: {choice: Keratins}
+  model: gene.GeneFamilyLookup
+  pk: 364
+- fields: {choice: type I}
+  model: gene.GeneFamilyLookup
+  pk: 783
+- fields: {choice: Beta-1}
+  model: gene.GeneFamilyLookup
+  pk: 92
+- fields: {choice: Angiopoietin-like}
+  model: gene.GeneFamilyLookup
+  pk: 58
+- fields: {choice: BPI fold containing}
+  model: gene.GeneFamilyLookup
+  pk: 81
+- fields: {choice: Pyrin domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 534
+- fields: {choice: Exportins}
+  model: gene.GeneFamilyLookup
+  pk: 247
+- fields: {choice: Immunoglobulin lambda locus at 22q11.2}
+  model: gene.GeneFamilyLookup
+  pk: 344
+- fields: {choice: Protein phosphatase 1 regulatory subunits}
+  model: gene.GeneFamilyLookup
+  pk: 521
+- fields: {choice: heavy chain}
+  model: gene.GeneFamilyLookup
+  pk: 741
+- fields: {choice: class IX}
+  model: gene.GeneFamilyLookup
+  pk: 710
+- fields: {choice: Erb-b2 receptor tyrosine kinases}
+  model: gene.GeneFamilyLookup
+  pk: 240
+- fields: {choice: Protein phosphatase 4 regulatory subunits}
+  model: gene.GeneFamilyLookup
+  pk: 524
+- fields: {choice: Killer cell lectin-like receptors}
+  model: gene.GeneFamilyLookup
+  pk: 366
+- fields: {choice: 'Mitochondrial complex II: succinate dehydrogenase subunits'}
+  model: gene.GeneFamilyLookup
+  pk: 416
+- fields: {choice: Paraneoplastic Ma antigens}
+  model: gene.GeneFamilyLookup
+  pk: 476
+- fields: {choice: Type II receptor serine/threonine kinases}
+  model: gene.GeneFamilyLookup
+  pk: 660
+- fields: {choice: Lipid phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 380
+- fields: {choice: UDP-glucose glycoprotein glucosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 666
+- fields: {choice: catalytic polypeptides}
+  model: gene.GeneFamilyLookup
+  pk: 703
+- fields: {choice: F-box and leucine-rich repeat proteins}
+  model: gene.GeneFamilyLookup
+  pk: 249
+- fields: {choice: Cytochrome P450 family 2}
+  model: gene.GeneFamilyLookup
+  pk: 189
+- fields: {choice: Class III Cys-based CDC25 phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 165
+- fields: {choice: Endogenous ligands}
+  model: gene.GeneFamilyLookup
+  pk: 236
+- fields: {choice: Interleukins}
+  model: gene.GeneFamilyLookup
+  pk: 353
+- fields: {choice: Calcitonin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 131
+- fields: {choice: Aminopeptidases}
+  model: gene.GeneFamilyLookup
+  pk: 56
+- fields: {choice: family 4}
+  model: gene.GeneFamilyLookup
+  pk: 727
+- fields: {choice: Vasoactive intestinal peptide receptor family}
+  model: gene.GeneFamilyLookup
+  pk: 678
+- fields: {choice: Myotubularins}
+  model: gene.GeneFamilyLookup
+  pk: 434
+- fields: {choice: Small G protein signaling modulators}
+  model: gene.GeneFamilyLookup
+  pk: 598
+- fields: {choice: MATRIN-type}
+  model: gene.GeneFamilyLookup
+  pk: 390
+- fields: {choice: Speedy/RINGO cell cycle regulator family}
+  model: gene.GeneFamilyLookup
+  pk: 609
+- fields: {choice: Gamma-aminobutyric acid (GABA) B receptors}
+  model: gene.GeneFamilyLookup
+  pk: 285
+- fields: {choice: 3-glucosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 4
+- fields: {choice: Lamins}
+  model: gene.GeneFamilyLookup
+  pk: 374
+- fields: {choice: Lysophosphatidic acid receptors}
+  model: gene.GeneFamilyLookup
+  pk: 387
+- fields: {choice: Cas scaffolding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 140
+- fields: {choice: Aldo-keto reductases}
+  model: gene.GeneFamilyLookup
+  pk: 49
+- fields: {choice: Death effector domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 215
+- fields: {choice: Peptidyl arginine deiminases}
+  model: gene.GeneFamilyLookup
+  pk: 485
+- fields: {choice: Nucleoporins}
+  model: gene.GeneFamilyLookup
+  pk: 452
+- fields: {choice: non selective}
+  model: gene.GeneFamilyLookup
+  pk: 752
+- fields: {choice: UDP-N-acetylglucosaminyltransferase subunits}
+  model: gene.GeneFamilyLookup
+  pk: 664
+- fields: {choice: Sterile alpha motif (SAM) domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 613
+- fields: {choice: Argonaute/PIWI family}
+  model: gene.GeneFamilyLookup
+  pk: 69
+- fields: {choice: Topoisomerases}
+  model: gene.GeneFamilyLookup
+  pk: 641
+- fields: {choice: beta}
+  model: gene.GeneFamilyLookup
+  pk: 700
+- fields: {choice: Septins}
+  model: gene.GeneFamilyLookup
+  pk: 584
+- fields: {choice: H+ transporting subunits}
+  model: gene.GeneFamilyLookup
+  pk: 309
+- fields: {choice: voltage-sensitive}
+  model: gene.GeneFamilyLookup
+  pk: 789
+- fields: {choice: Mitochondrial ribosomal proteins}
+  model: gene.GeneFamilyLookup
+  pk: 421
+- fields: {choice: sodium activated subfamily T}
+  model: gene.GeneFamilyLookup
+  pk: 759
+- fields: {choice: Cholecystokinin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 156
+- fields: {choice: Parathyroid hormone receptors}
+  model: gene.GeneFamilyLookup
+  pk: 478
+- fields: {choice: Free fatty acid receptors}
+  model: gene.GeneFamilyLookup
+  pk: 267
+- fields: {choice: Paraoxonases}
+  model: gene.GeneFamilyLookup
+  pk: 477
+- fields: {choice: Tektins}
+  model: gene.GeneFamilyLookup
+  pk: 636
+- fields: {choice: Nuclear hormone receptors}
+  model: gene.GeneFamilyLookup
+  pk: 450
+- fields: {choice: 5-hydroxytryptamine (serotonin) receptors}
+  model: gene.GeneFamilyLookup
+  pk: 10
+- fields: {choice: RNA polymerase subunits}
+  model: gene.GeneFamilyLookup
+  pk: 541
+- fields: {choice: CCHC-type}
+  model: gene.GeneFamilyLookup
+  pk: 115
+- fields: {choice: Tripartite motif-containing}
+  model: gene.GeneFamilyLookup
+  pk: 651
+- fields: {choice: Mitogen-activated protein kinase kinase kinase kinases}
+  model: gene.GeneFamilyLookup
+  pk: 423
+- fields: {choice: Gamma-glutamyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 286
+- fields: {choice: U-box domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 661
+- fields: {choice: Ubiquitin C-terminal hydrolases}
+  model: gene.GeneFamilyLookup
+  pk: 669
+- fields: {choice: catalytic subunits}
+  model: gene.GeneFamilyLookup
+  pk: 704
+- fields: {choice: BLOC-1 related complex}
+  model: gene.GeneFamilyLookup
+  pk: 80
+- fields: {choice: Rho family GTPases}
+  model: gene.GeneFamilyLookup
+  pk: 554
+- fields: {choice: Cystatins}
+  model: gene.GeneFamilyLookup
+  pk: 184
+- fields: {choice: Cytochrome P450 family 5}
+  model: gene.GeneFamilyLookup
+  pk: 199
+- fields: {choice: GTPases}
+  model: gene.GeneFamilyLookup
+  pk: 282
+- fields: {choice: ADP-ribosylation factor (ARF) family GTPases}
+  model: gene.GeneFamilyLookup
+  pk: 22
+- fields: {choice: UBX domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 662
+- fields: {choice: Synaptotagmin-like tandem C2 proteins}
+  model: gene.GeneFamilyLookup
+  pk: 619
+- fields: {choice: Carboxylesterases}
+  model: gene.GeneFamilyLookup
+  pk: 138
+- fields: {choice: Melanin-concentrating hormone receptors}
+  model: gene.GeneFamilyLookup
+  pk: 403
+- fields: {choice: Syntaxins}
+  model: gene.GeneFamilyLookup
+  pk: 622
+- fields: {choice: Lipins}
+  model: gene.GeneFamilyLookup
+  pk: 381
+- fields: {choice: Semaphorins}
+  model: gene.GeneFamilyLookup
+  pk: 583
+- fields: {choice: Hypocretin (orexin) receptors}
+  model: gene.GeneFamilyLookup
+  pk: 334
+- fields: {choice: EYA transcriptional coactivator and phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 234
+- fields: {choice: GATA zinc finger domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 277
+- fields: {choice: Tumor necrosis factor (ligand) superfamily}
+  model: gene.GeneFamilyLookup
+  pk: 656
+- fields: {choice: CDC14 phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 119
+- fields: {choice: Pleckstrin homology domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 501
+- fields: {choice: Schlafen family}
+  model: gene.GeneFamilyLookup
+  pk: 579
+- fields: {choice: HAD Asp-based protein phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 312
+- fields: {choice: type 1}
+  model: gene.GeneFamilyLookup
+  pk: 780
+- fields: {choice: Chloride channels}
+  model: gene.GeneFamilyLookup
+  pk: 154
+- fields: {choice: Prefoldin subunits}
+  model: gene.GeneFamilyLookup
+  pk: 509
+- fields: {choice: Hyalectan proteoglycans}
+  model: gene.GeneFamilyLookup
+  pk: 331
+- fields: {choice: Collagens}
+  model: gene.GeneFamilyLookup
+  pk: 171
+- fields: {choice: sub-family G (WHITE)}
+  model: gene.GeneFamilyLookup
+  pk: 767
+- fields: {choice: Exostosin glycosyltransferase family}
+  model: gene.GeneFamilyLookup
+  pk: 246
+- fields: {choice: Interleukin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 352
+- fields: {choice: Wingless-type MMTV integration site family}
+  model: gene.GeneFamilyLookup
+  pk: 686
+- fields: {choice: COMM domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 123
+- fields: {choice: 'Mitochondrial complex I: NADH dehydrogenase (ubiquinone) subunits'}
+  model: gene.GeneFamilyLookup
+  pk: 415
+- fields: {choice: G patch domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 271
+- fields: {choice: Gamma-aminobutyric acid (GABA) A receptors}
+  model: gene.GeneFamilyLookup
+  pk: 284
+- fields: {choice: class XV}
+  model: gene.GeneFamilyLookup
+  pk: 715
+- fields: {choice: sub-family C (CFTR/MRP)}
+  model: gene.GeneFamilyLookup
+  pk: 764
+- fields: {choice: Rho GTPase activating proteins}
+  model: gene.GeneFamilyLookup
+  pk: 553
+- fields: {choice: Cytochrome P450 family 26}
+  model: gene.GeneFamilyLookup
+  pk: 193
+- fields: {choice: Parkinson disease associated genes}
+  model: gene.GeneFamilyLookup
+  pk: 479
+- fields: {choice: Anoctamins}
+  model: gene.GeneFamilyLookup
+  pk: 62
+- fields: {choice: Prenyltransferase alpha subunit repeat containing}
+  model: gene.GeneFamilyLookup
+  pk: 510
+- fields: {choice: Bone morphogenetic proteins}
+  model: gene.GeneFamilyLookup
+  pk: 99
+- fields: {choice: NOP2/Sun domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 440
+- fields: {choice: Solute carriers}
+  model: gene.GeneFamilyLookup
+  pk: 605
+- fields: {choice: Immunoglobulin kappa locus at 2p11.2}
+  model: gene.GeneFamilyLookup
+  pk: 342
+- fields: {choice: Actinins}
+  model: gene.GeneFamilyLookup
+  pk: 36
+- fields: {choice: Pannexins}
+  model: gene.GeneFamilyLookup
+  pk: 474
+- fields: {choice: alpha}
+  model: gene.GeneFamilyLookup
+  pk: 698
+- fields: {choice: family 55}
+  model: gene.GeneFamilyLookup
+  pk: 731
+- fields: {choice: ZZ-type}
+  model: gene.GeneFamilyLookup
+  pk: 694
+- fields: {choice: MOB kinase activators}
+  model: gene.GeneFamilyLookup
+  pk: 395
+- fields: {choice: E2F transcription factors}
+  model: gene.GeneFamilyLookup
+  pk: 225
+- fields: {choice: 14-3-3 phospho-serine/phospho-threonine binding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 2
+- fields: {choice: Mediator complex}
+  model: gene.GeneFamilyLookup
+  pk: 402
+- fields: {choice: A-kinase anchor proteins}
+  model: gene.GeneFamilyLookup
+  pk: 17
+- fields: {choice: Class C orphans}
+  model: gene.GeneFamilyLookup
+  pk: 160
+- fields: {choice: Golgi-associated}
+  model: gene.GeneFamilyLookup
+  pk: 304
+- fields: {choice: family 3}
+  model: gene.GeneFamilyLookup
+  pk: 726
+- fields: {choice: family 1}
+  model: gene.GeneFamilyLookup
+  pk: 719
+- fields: {choice: ENAH/VASPs}
+  model: gene.GeneFamilyLookup
+  pk: 228
+- fields: {choice: Canonical high mobility group}
+  model: gene.GeneFamilyLookup
+  pk: 136
+- fields: {choice: class IIB}
+  model: gene.GeneFamilyLookup
+  pk: 707
+- fields: {choice: SANT/Myb domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 566
+- fields: {choice: Synaptotagmins}
+  model: gene.GeneFamilyLookup
+  pk: 620
+- fields: {choice: Purinergic receptor P2X}
+  model: gene.GeneFamilyLookup
+  pk: 532
+- fields: {choice: P-type ATPases}
+  model: gene.GeneFamilyLookup
+  pk: 464
+- fields: {choice: Beaded filament structural proteins}
+  model: gene.GeneFamilyLookup
+  pk: 88
+- fields: {choice: Piwi-interacting RNA clusters}
+  model: gene.GeneFamilyLookup
+  pk: 498
+- fields: {choice: Fanconi anemia complementation groups}
+  model: gene.GeneFamilyLookup
+  pk: 254
+- fields: {choice: subfamily L}
+  model: gene.GeneFamilyLookup
+  pk: 775
+- fields: {choice: nicotinic}
+  model: gene.GeneFamilyLookup
+  pk: 751
+- fields: {choice: Basic helix-loop-helix proteins}
+  model: gene.GeneFamilyLookup
+  pk: 86
+- fields: {choice: Cytoplasmic transfer RNAs}
+  model: gene.GeneFamilyLookup
+  pk: 204
+- fields: {choice: Guanylate cyclases}
+  model: gene.GeneFamilyLookup
+  pk: 308
+- fields: {choice: MAP kinase phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 389
+- fields: {choice: 5-triphosphate receptors}
+  model: gene.GeneFamilyLookup
+  pk: 11
+- fields: {choice: Cytochrome P450 family 20}
+  model: gene.GeneFamilyLookup
+  pk: 190
+- fields: {choice: RNAs}
+  model: gene.GeneFamilyLookup
+  pk: 543
+- fields: {choice: WD repeat domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 685
+- fields: {choice: Adrenoceptors}
+  model: gene.GeneFamilyLookup
+  pk: 46
+- fields: {choice: Glycosyltransferase family 90}
+  model: gene.GeneFamilyLookup
+  pk: 302
+- fields: {choice: Mg2+/Mn2+ dependent}
+  model: gene.GeneFamilyLookup
+  pk: 411
+- fields: {choice: Ubiquitin-specific peptidases}
+  model: gene.GeneFamilyLookup
+  pk: 673
+- fields: {choice: Somatostatin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 606
+- fields: {choice: Cytochrome P450 family 51}
+  model: gene.GeneFamilyLookup
+  pk: 200
+- fields: {choice: Hydroxy-carboxylic acid receptors}
+  model: gene.GeneFamilyLookup
+  pk: 333
+- fields: {choice: Clustered protocadherins}
+  model: gene.GeneFamilyLookup
+  pk: 167
+- fields: {choice: Adenylate cyclases}
+  model: gene.GeneFamilyLookup
+  pk: 42
+- fields: {choice: Elongator acetyltransferase complex}
+  model: gene.GeneFamilyLookup
+  pk: 235
+- fields: {choice: Phosphatidylinositol 3-kinase subunits}
+  model: gene.GeneFamilyLookup
+  pk: 491
+- fields: {choice: General transcription factors}
+  model: gene.GeneFamilyLookup
+  pk: 289
+- fields: {choice: X-linked mental retardation}
+  model: gene.GeneFamilyLookup
+  pk: 688
+- fields: {choice: N-terminal EF-hand calcium binding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 436
+- fields: {choice: family 8}
+  model: gene.GeneFamilyLookup
+  pk: 735
+- fields: {choice: Phosphorylases}
+  model: gene.GeneFamilyLookup
+  pk: 497
+- fields: {choice: Relaxin family peptide receptors}
+  model: gene.GeneFamilyLookup
+  pk: 552
+- fields: {choice: Cytochrome P450 family 39}
+  model: gene.GeneFamilyLookup
+  pk: 196
+- fields: {choice: Alcohol dehydrogenases}
+  model: gene.GeneFamilyLookup
+  pk: 47
+- fields: {choice: BRICHOS domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 82
+- fields: {choice: Adiponectin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 45
+- fields: {choice: Granins}
+  model: gene.GeneFamilyLookup
+  pk: 306
+- fields: {choice: Pseudoautosomal region 1}
+  model: gene.GeneFamilyLookup
+  pk: 530
+- fields: {choice: ligand gated ion channels}
+  model: gene.GeneFamilyLookup
+  pk: 745
+- fields: {choice: Small heat shock proteins}
+  model: gene.GeneFamilyLookup
+  pk: 599
+- fields: {choice: family 5}
+  model: gene.GeneFamilyLookup
+  pk: 728
+- fields: {choice: subfamily E (OABP)}
+  model: gene.GeneFamilyLookup
+  pk: 772
+- fields: {choice: T cell receptor beta (TRB) orphons}
+  model: gene.GeneFamilyLookup
+  pk: 624
+- fields: {choice: Fibulins}
+  model: gene.GeneFamilyLookup
+  pk: 263
+- fields: {choice: Engulfment and cell motility proteins}
+  model: gene.GeneFamilyLookup
+  pk: 238
+- fields: {choice: FYVE-type}
+  model: gene.GeneFamilyLookup
+  pk: 253
+- fields: {choice: G-protein coupled}
+  model: gene.GeneFamilyLookup
+  pk: 276
+- fields: {choice: Chloride intracellular channels}
+  model: gene.GeneFamilyLookup
+  pk: 155
+- fields: {choice: membrane-bound}
+  model: gene.GeneFamilyLookup
+  pk: 747
+- fields: {choice: MIZ-type}
+  model: gene.GeneFamilyLookup
+  pk: 393
+- fields: {choice: MYND-type}
+  model: gene.GeneFamilyLookup
+  pk: 397
+- fields: {choice: ionotropic}
+  model: gene.GeneFamilyLookup
+  pk: 743
+- fields: {choice: class III}
+  model: gene.GeneFamilyLookup
+  pk: 708
+- fields: {choice: Serpin peptidase inhibitors}
+  model: gene.GeneFamilyLookup
+  pk: 588
+- fields: {choice: F-type ATPase (ATP synthase subunits)}
+  model: gene.GeneFamilyLookup
+  pk: 251
+- fields: {choice: Fascins}
+  model: gene.GeneFamilyLookup
+  pk: 255
+- fields: {choice: Melatonin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 405
+- fields: {choice: Intermediate filament family orphans}
+  model: gene.GeneFamilyLookup
+  pk: 354
+- fields: {choice: Histatins and statherin}
+  model: gene.GeneFamilyLookup
+  pk: 326
+- fields: {choice: Intermediate filaments Type IV}
+  model: gene.GeneFamilyLookup
+  pk: 356
+- fields: {choice: Cannabinoid receptors}
+  model: gene.GeneFamilyLookup
+  pk: 135
+- fields: {choice: ESCRT-III associated factors}
+  model: gene.GeneFamilyLookup
+  pk: 232
+- fields: {choice: Cytochrome P450 family 19}
+  model: gene.GeneFamilyLookup
+  pk: 188
+- fields: {choice: Cullins}
+  model: gene.GeneFamilyLookup
+  pk: 178
+- fields: {choice: Potassium channels}
+  model: gene.GeneFamilyLookup
+  pk: 508
+- fields: {choice: Cholinergic receptors}
+  model: gene.GeneFamilyLookup
+  pk: 157
+- fields: {choice: Gelsolin/villins}
+  model: gene.GeneFamilyLookup
+  pk: 288
+- fields: {choice: ATPase}
+  model: gene.GeneFamilyLookup
+  pk: 31
+- fields: {choice: S100 calcium binding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 563
+- fields: {choice: Membrane-spanning 4-domains}
+  model: gene.GeneFamilyLookup
+  pk: 408
+- fields: {choice: 7SL}
+  model: gene.GeneFamilyLookup
+  pk: 15
+- fields: {choice: Transmembrane and coiled-coil domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 648
+- fields: {choice: Kazal type}
+  model: gene.GeneFamilyLookup
+  pk: 360
+- fields: {choice: Dynactin}
+  model: gene.GeneFamilyLookup
+  pk: 222
+- fields: {choice: G protein-coupled estrogen receptor}
+  model: gene.GeneFamilyLookup
+  pk: 274
+- fields: {choice: Progestin and adipoQ receptor family}
+  model: gene.GeneFamilyLookup
+  pk: 511
+- fields: {choice: F-boxes other}
+  model: gene.GeneFamilyLookup
+  pk: 250
+- fields: {choice: CERS class homeoboxes}
+  model: gene.GeneFamilyLookup
+  pk: 121
+- fields: {choice: C2 and WW domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 106
+- fields: {choice: Acyl-CoA dehydrogenase family}
+  model: gene.GeneFamilyLookup
+  pk: 38
+- fields: {choice: Small nuclear RNAs}
+  model: gene.GeneFamilyLookup
+  pk: 601
+- fields: {choice: Cadherin-related}
+  model: gene.GeneFamilyLookup
+  pk: 130
+- fields: {choice: BCL2 family}
+  model: gene.GeneFamilyLookup
+  pk: 77
+- fields: {choice: 3CxxC-type}
+  model: gene.GeneFamilyLookup
+  pk: 6
+- fields: {choice: RAS type family GTPases}
+  model: gene.GeneFamilyLookup
+  pk: 539
+- fields: {choice: XK}
+  model: gene.GeneFamilyLookup
+  pk: 689
+- fields: {choice: Bradykinin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 100
+- fields: {choice: Signal-regulatory proteins}
+  model: gene.GeneFamilyLookup
+  pk: 594
+- fields: {choice: Secretoglobins}
+  model: gene.GeneFamilyLookup
+  pk: 581
+- fields: {choice: Latent transforming growth factor beta binding proteins}
+  model: gene.GeneFamilyLookup
+  pk: 376
+- fields: {choice: SAM and SH3 domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 565
+- fields: {choice: Class II Cys-based phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 164
+- fields: {choice: IMAP}
+  model: gene.GeneFamilyLookup
+  pk: 336
+- fields: {choice: NLR family}
+  model: gene.GeneFamilyLookup
+  pk: 438
+- fields: {choice: Mitochondrially encoded tRNAs}
+  model: gene.GeneFamilyLookup
+  pk: 422
+- fields: {choice: Atypical dual specificity phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 75
+- fields: {choice: Protein arginine methyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 519
+- fields: {choice: V-set domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 674
+- fields: {choice: Vomeronasal receptors}
+  model: gene.GeneFamilyLookup
+  pk: 683
+- fields: {choice: Plakins}
+  model: gene.GeneFamilyLookup
+  pk: 499
+- fields: {choice: Paf1/RNA polymerase II complex}
+  model: gene.GeneFamilyLookup
+  pk: 472
+- fields: {choice: Netrins}
+  model: gene.GeneFamilyLookup
+  pk: 442
+- fields: {choice: Nudix type motif-containing}
+  model: gene.GeneFamilyLookup
+  pk: 453
+- fields: {choice: RNase A}
+  model: gene.GeneFamilyLookup
+  pk: 544
+- fields: {choice: CD molecules}
+  model: gene.GeneFamilyLookup
+  pk: 117
+- fields: {choice: Blood group antigens}
+  model: gene.GeneFamilyLookup
+  pk: 97
+- fields: {choice: POTE ankyrin domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 467
+- fields: {choice: Fucosyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 269
+- fields: {choice: Defensins}
+  model: gene.GeneFamilyLookup
+  pk: 217
+- fields: {choice: 'Mitochondrial complex III: ubiquinol-cytochrome c reductase complex
+      subunits'}
+  model: gene.GeneFamilyLookup
+  pk: 417
+- fields: {choice: soluble}
+  model: gene.GeneFamilyLookup
+  pk: 760
+- fields: {choice: OTU domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 456
+- fields: {choice: Aldehyde dehydrogenases}
+  model: gene.GeneFamilyLookup
+  pk: 48
+- fields: {choice: Galanin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 283
+- fields: {choice: Tetraspanins}
+  model: gene.GeneFamilyLookup
+  pk: 637
+- fields: {choice: LEM domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 369
+- fields: {choice: Protein phosphatase 6 regulatory subunits}
+  model: gene.GeneFamilyLookup
+  pk: 525
+- fields: {choice: Fatty acid desaturases}
+  model: gene.GeneFamilyLookup
+  pk: 257
+- fields: {choice: LYR motif containing}
+  model: gene.GeneFamilyLookup
+  pk: 371
+- fields: {choice: Killer cell immunoglobulin-like receptors}
+  model: gene.GeneFamilyLookup
+  pk: 365
+- fields: {choice: O-linked N-acetylglucosaminyltransferases}
+  model: gene.GeneFamilyLookup
+  pk: 454
+- fields: {choice: Tropomyosins}
+  model: gene.GeneFamilyLookup
+  pk: 652
+- fields: {choice: Yip1 domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 691
+- fields: {choice: Receptor (G protein-coupled) activity modifying proteins}
+  model: gene.GeneFamilyLookup
+  pk: 547
+- fields: {choice: SEC14 family}
+  model: gene.GeneFamilyLookup
+  pk: 568
+- fields: {choice: DNA glycosylases}
+  model: gene.GeneFamilyLookup
+  pk: 212
+- fields: {choice: ATP-binding cassette transporters}
+  model: gene.GeneFamilyLookup
+  pk: 29
+- fields: {choice: Transglutaminases}
+  model: gene.GeneFamilyLookup
+  pk: 646
+- fields: {choice: Glucose 6-phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 292
+- fields: {choice: G protein-coupled bile acid receptor}
+  model: gene.GeneFamilyLookup
+  pk: 273
+- fields: {choice: Immunoglobulin lambda (IGL) orphons}
+  model: gene.GeneFamilyLookup
+  pk: 343
+- fields: {choice: transmembrane}
+  model: gene.GeneFamilyLookup
+  pk: 778
+- fields: {choice: Variable charge X/Y family}
+  model: gene.GeneFamilyLookup
+  pk: 677
+- fields: {choice: C2 tensin-type domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 110
+- fields: {choice: Myosins}
+  model: gene.GeneFamilyLookup
+  pk: 433
+- fields: {choice: Platelet-activating factor receptor}
+  model: gene.GeneFamilyLookup
+  pk: 500
+- fields: {choice: Chemokine ligands}
+  model: gene.GeneFamilyLookup
+  pk: 151
+- fields: {choice: Secreted frizzled-related proteins}
+  model: gene.GeneFamilyLookup
+  pk: 580
+- fields: {choice: Zona pellucida glycoproteins}
+  model: gene.GeneFamilyLookup
+  pk: 697
+- fields: {choice: StAR-related lipid transfer (START) domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 612
+- fields: {choice: BED-type}
+  model: gene.GeneFamilyLookup
+  pk: 78
+- fields: {choice: Trinucleotide repeat containing}
+  model: gene.GeneFamilyLookup
+  pk: 650
+- fields: {choice: Class II}
+  model: gene.GeneFamilyLookup
+  pk: 163
+- fields: {choice: Claudins}
+  model: gene.GeneFamilyLookup
+  pk: 166
+- fields: {choice: Vanins}
+  model: gene.GeneFamilyLookup
+  pk: 676
+- fields: {choice: Interferons}
+  model: gene.GeneFamilyLookup
+  pk: 351
+- fields: {choice: family 12}
+  model: gene.GeneFamilyLookup
+  pk: 722
+- fields: {choice: Baculoviral IAP repeat containing}
+  model: gene.GeneFamilyLookup
+  pk: 84
+- fields: {choice: Interferon receptors}
+  model: gene.GeneFamilyLookup
+  pk: 350
+- fields: {choice: C-type lectin domain family}
+  model: gene.GeneFamilyLookup
+  pk: 102
+- fields: {choice: Small Cajal body-specific RNAs}
+  model: gene.GeneFamilyLookup
+  pk: 597
+- fields: {choice: C2 domain containing protein kinases}
+  model: gene.GeneFamilyLookup
+  pk: 109
+- fields: {choice: Heat shock 70kDa proteins}
+  model: gene.GeneFamilyLookup
+  pk: 317
+- fields: {choice: Mitogen-activated protein kinase kinases}
+  model: gene.GeneFamilyLookup
+  pk: 425
+- fields: {choice: sub-family A (ABC1)}
+  model: gene.GeneFamilyLookup
+  pk: 762
+- fields: {choice: Kell blood group complex subunit-related family}
+  model: gene.GeneFamilyLookup
+  pk: 362
+- fields: {choice: Parvulins}
+  model: gene.GeneFamilyLookup
+  pk: 481
+- fields: {choice: Transcription factor Dp family}
+  model: gene.GeneFamilyLookup
+  pk: 644
+- fields: {choice: Nuclear-encoded mitochondrial transfer RNAs}
+  model: gene.GeneFamilyLookup
+  pk: 451
+- fields: {choice: Sulfatases}
+  model: gene.GeneFamilyLookup
+  pk: 617
+- fields: {choice: HNF class homeoboxes}
+  model: gene.GeneFamilyLookup
+  pk: 315
+- fields: {choice: INO80 complex}
+  model: gene.GeneFamilyLookup
+  pk: 337
+- fields: {choice: Syndecans}
+  model: gene.GeneFamilyLookup
+  pk: 621
+- fields: {choice: type 2}
+  model: gene.GeneFamilyLookup
+  pk: 781
+- fields: {choice: Neuropeptide receptors}
+  model: gene.GeneFamilyLookup
+  pk: 445
+- fields: {choice: Membrane-associated guanylate kinases}
+  model: gene.GeneFamilyLookup
+  pk: 407
+- fields: {choice: Cytochrome P450 family 46}
+  model: gene.GeneFamilyLookup
+  pk: 198
+- fields: {choice: ADAMTS-like}
+  model: gene.GeneFamilyLookup
+  pk: 21
+- fields: {choice: Protein disulfide isomerases}
+  model: gene.GeneFamilyLookup
+  pk: 520
+- fields: {choice: Acid phosphatases}
+  model: gene.GeneFamilyLookup
+  pk: 33
+- fields: {choice: Glycosyl transferases group 1 domain containing}
+  model: gene.GeneFamilyLookup
+  pk: 298
+- fields: {choice: SRY (sex determining region Y)-boxes}
+  model: gene.GeneFamilyLookup
+  pk: 575
+- fields: {choice: DEAD box polypeptides}
+  model: gene.GeneFamilyLookup
+  pk: 208
+- fields: {choice: Tachykinin receptors}
+  model: gene.GeneFamilyLookup
+  pk: 633
+- fields: {choice: Tumor necrosis factor receptor superfamily}
+  model: gene.GeneFamilyLookup
+  pk: 657
+- fields: {choice: Death-associated protein kinases}
+  model: gene.GeneFamilyLookup
+  pk: 216
+- fields: {choice: Fructose-1}
+  model: gene.GeneFamilyLookup
+  pk: 268
+- fields: {choice: Prostaglandin (prostanoid) receptors}
+  model: gene.GeneFamilyLookup
+  pk: 516
+- fields: {choice: ESCRT-0}
+  model: gene.GeneFamilyLookup
+  pk: 229
+- fields: {choice: Spectrins}
+  model: gene.GeneFamilyLookup
+  pk: 608
+- fields: {choice: Glycerol kinases}
+  model: gene.GeneFamilyLookup
+  pk: 295
+- fields: {choice: Phospholipases}
+  model: gene.GeneFamilyLookup
+  pk: 495
+- fields: {choice: Non-clustered protocadherins}
+  model: gene.GeneFamilyLookup
+  pk: 448
+- fields: {choice: Potassium channel subfamily M regulatory beta subunits}
+  model: gene.GeneFamilyLookup
+  pk: 507
+- fields: {choice: Sorting nexins}
+  model: gene.GeneFamilyLookup
+  pk: 607
+- fields: {choice: Short chain dehydrogenase/reductase superfamily}
+  model: gene.GeneFamilyLookup
+  pk: 590
+- fields: {choice: Aquaporins}
+  model: gene.GeneFamilyLookup
+  pk: 65
+- fields: {choice: Methyltransferase like}
+  model: gene.GeneFamilyLookup
+  pk: 410
+- fields: {choice: Structural maintenance of chromosomes proteins}
+  model: gene.GeneFamilyLookup
+  pk: 614
+- fields: {choice: Exocyst complex}
+  model: gene.GeneFamilyLookup
+  pk: 243
+- fields: {choice: calcium activated}
+  model: gene.GeneFamilyLookup
+  pk: 701
+- fields: {choice: family 7}
+  model: gene.GeneFamilyLookup
+  pk: 734
+- fields: {choice: Glycosyltransferase family 6}
+  model: gene.GeneFamilyLookup
+  pk: 300
+- fields: {choice: Ubiquitin protein ligase E3 component n-recognins}
+  model: gene.GeneFamilyLookup
+  pk: 670
+- fields: {choice: Immunoglobulin heavy locus at 14q32.33}
+  model: gene.GeneFamilyLookup
+  pk: 340
+- fields: {choice: GPN-loop GTPases}
+  model: gene.GeneFamilyLookup
+  pk: 280
+- fields: {choice: Glypicans}
+  model: gene.GeneFamilyLookup
+  pk: 303
+- fields: {choice: Trace amine receptors}
+  model: gene.GeneFamilyLookup
+  pk: 642
+- fields: {choice: AAA ATPases (ATPases associated with diverse cellular activities)}
+  model: gene.GeneFamilyLookup
+  pk: 18

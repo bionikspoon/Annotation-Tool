@@ -1,0 +1,2191 @@
+- fields: {choice: UBA6-specific enzyme E2}
+  model: gene.AliasNameLookup
+  pk: 1514
+- fields: {choice: cystinyl aminopeptidase}
+  model: gene.AliasNameLookup
+  pk: 2530
+- fields: {choice: variable region V10}
+  model: gene.AliasNameLookup
+  pk: 5639
+- fields: {choice: vang}
+  model: gene.AliasNameLookup
+  pk: 5637
+- fields: {choice: breast cancer antigen NY-BR-1}
+  model: gene.AliasNameLookup
+  pk: 2007
+- fields: {choice: netrin-G3 ligand}
+  model: gene.AliasNameLookup
+  pk: 3975
+- fields: {choice: collagenase 3}
+  model: gene.AliasNameLookup
+  pk: 2381
+- fields: {choice: gene W}
+  model: gene.AliasNameLookup
+  pk: 2973
+- fields: {choice: Human Islet Long Non Coding RNA 12}
+  model: gene.AliasNameLookup
+  pk: 768
+- fields: {choice: deafness}
+  model: gene.AliasNameLookup
+  pk: 2570
+- fields: {choice: nucleostemin-2}
+  model: gene.AliasNameLookup
+  pk: 4214
+- fields: {choice: melanopsin}
+  model: gene.AliasNameLookup
+  pk: 3704
+- fields: {choice: metastasis-related methyltransferase 1}
+  model: gene.AliasNameLookup
+  pk: 3775
+- fields: {choice: brain lipid binding protein}
+  model: gene.AliasNameLookup
+  pk: 1997
+- fields: {choice: myosin 5C}
+  model: gene.AliasNameLookup
+  pk: 3917
+- fields: {choice: SWIM domain containing Srs2 interacting protein 1}
+  model: gene.AliasNameLookup
+  pk: 1345
+- fields: {choice: member C}
+  model: gene.AliasNameLookup
+  pk: 3741
+- fields: {choice: trihydroxycoprostanoyl-CoA oxidase}
+  model: gene.AliasNameLookup
+  pk: 5526
+- fields: {choice: hypothetical protein HSPC111}
+  model: gene.AliasNameLookup
+  pk: 3278
+- fields: {choice: mastermind homolog}
+  model: gene.AliasNameLookup
+  pk: 3672
+- fields: {choice: rai-like protein}
+  model: gene.AliasNameLookup
+  pk: 4764
+- fields: {choice: Hepatocellular carcinoma-associated antigen 557b}
+  model: gene.AliasNameLookup
+  pk: 754
+- fields: {choice: lipasin}
+  model: gene.AliasNameLookup
+  pk: 3533
+- fields: {choice: membrane-type frizzled-related protein}
+  model: gene.AliasNameLookup
+  pk: 3758
+- fields: {choice: histone-fold protein CHRAC15}
+  model: gene.AliasNameLookup
+  pk: 3187
+- fields: {choice: KIAA0345-like 11}
+  model: gene.AliasNameLookup
+  pk: 837
+- fields: {choice: exoribonuclease 1}
+  model: gene.AliasNameLookup
+  pk: 2805
+- fields: {choice: caMLCK like}
+  model: gene.AliasNameLookup
+  pk: 2033
+- fields: {choice: IGF1R antisense RNA}
+  model: gene.AliasNameLookup
+  pk: 789
+- fields: {choice: prepro-PACAP}
+  model: gene.AliasNameLookup
+  pk: 4555
+- fields: {choice: all-trans retinoic acid inducible RING finger}
+  model: gene.AliasNameLookup
+  pk: 1701
+- fields: {choice: glutaminyl cyclase}
+  model: gene.AliasNameLookup
+  pk: 3023
+- fields: {choice: albatross}
+  model: gene.AliasNameLookup
+  pk: 1691
+- fields: {choice: antithrombin III}
+  model: gene.AliasNameLookup
+  pk: 1815
+- fields: {choice: oculodentodigital dysplasia (syndactyly type III)}
+  model: gene.AliasNameLookup
+  pk: 4225
+- fields: {choice: T-cell activation kelch repeat protein}
+  model: gene.AliasNameLookup
+  pk: 1396
+- fields: {choice: meiosis 1 arresting protein}
+  model: gene.AliasNameLookup
+  pk: 3690
+- fields: {choice: 116 kD}
+  model: gene.AliasNameLookup
+  pk: 9
+- fields: {choice: tongue cancer chemotherapy resistance-associated protein 1}
+  model: gene.AliasNameLookup
+  pk: 5444
+- fields: {choice: follicle-stimulating hormone alpha subunit}
+  model: gene.AliasNameLookup
+  pk: 2893
+- fields: {choice: cancer/testis antigen 56}
+  model: gene.AliasNameLookup
+  pk: 2149
+- fields: {choice: genetic suppressor element 1}
+  model: gene.AliasNameLookup
+  pk: 2980
+- fields: {choice: copine 8}
+  model: gene.AliasNameLookup
+  pk: 2484
+- fields: {choice: complex III subunit 10}
+  model: gene.AliasNameLookup
+  pk: 2440
+- fields: {choice: Pfeiffer syndrome}
+  model: gene.AliasNameLookup
+  pk: 1142
+- fields: {choice: kelch-like protein KLHL6}
+  model: gene.AliasNameLookup
+  pk: 3420
+- fields: {choice: cancer/testis antigen family 7}
+  model: gene.AliasNameLookup
+  pk: 2191
+- fields: {choice: Hartnup disease}
+  model: gene.AliasNameLookup
+  pk: 751
+- fields: {choice: tektin 4 pseudogene 4}
+  model: gene.AliasNameLookup
+  pk: 5375
+- fields: {choice: TGF beta induced apotosis protein 2}
+  model: gene.AliasNameLookup
+  pk: 1432
+- fields: {choice: protocadherin gamma subfamily B}
+  model: gene.AliasNameLookup
+  pk: 4714
+- fields: {choice: sodium/potassium-transporting ATPase subunit alpha-1}
+  model: gene.AliasNameLookup
+  pk: 5182
+- fields: {choice: immune-associated nucleotide-binding protein 4 pseudogene}
+  model: gene.AliasNameLookup
+  pk: 3303
+- fields: {choice: nephrocystin 2}
+  model: gene.AliasNameLookup
+  pk: 3963
+- fields: {choice: transitional epithelia response protein}
+  model: gene.AliasNameLookup
+  pk: 5491
+- fields: {choice: sphingomyelin synthase related}
+  model: gene.AliasNameLookup
+  pk: 5242
+- fields: {choice: DNAX-activation protein 10}
+  model: gene.AliasNameLookup
+  pk: 463
+- fields: {choice: DVS27-related protein}
+  model: gene.AliasNameLookup
+  pk: 478
+- fields: {choice: heart of glass}
+  model: gene.AliasNameLookup
+  pk: 3121
+- fields: {choice: proline rich synapse associated protein 2}
+  model: gene.AliasNameLookup
+  pk: 4619
+- fields: {choice: hypothetical protein LOC54976}
+  model: gene.AliasNameLookup
+  pk: 3287
+- fields: {choice: APG12 autophagy 12-like}
+  model: gene.AliasNameLookup
+  pk: 186
+- fields: {choice: 51C protein}
+  model: gene.AliasNameLookup
+  pk: 111
+- fields: {choice: Hus1 interacting nuclear orphan}
+  model: gene.AliasNameLookup
+  pk: 776
+- fields: {choice: Mannosyl-glycoprotein endo-beta-N-acetylglucosaminidase}
+  model: gene.AliasNameLookup
+  pk: 968
+- fields: {choice: interleukin-six}
+  model: gene.AliasNameLookup
+  pk: 3365
+- fields: {choice: hepatocellular carcinoma complicating hemochromatosis}
+  model: gene.AliasNameLookup
+  pk: 3149
+- fields: {choice: testis-specific kinase-1}
+  model: gene.AliasNameLookup
+  pk: 5406
+- fields: {choice: exosome component Rrp41}
+  model: gene.AliasNameLookup
+  pk: 2808
+- fields: {choice: non-protein coding RNA 31}
+  model: gene.AliasNameLookup
+  pk: 4115
+- fields: {choice: skin-specific protein 32}
+  model: gene.AliasNameLookup
+  pk: 5137
+- fields: {choice: intramembrane protease 4}
+  model: gene.AliasNameLookup
+  pk: 3375
+- fields: {choice: B' beta isoform}
+  model: gene.AliasNameLookup
+  pk: 236
+- fields: {choice: leucine rich repeat and pyrin domain containing 8}
+  model: gene.AliasNameLookup
+  pk: 3498
+- fields: {choice: hard keratin type I 4}
+  model: gene.AliasNameLookup
+  pk: 3112
+- fields: {choice: subunit 8}
+  model: gene.AliasNameLookup
+  pk: 5296
+- fields: {choice: 35 kD subunit}
+  model: gene.AliasNameLookup
+  pk: 65
+- fields: {choice: dimethyladenosine transferase 1}
+  model: gene.AliasNameLookup
+  pk: 2637
+- fields: {choice: non-protein coding RNA 48}
+  model: gene.AliasNameLookup
+  pk: 4131
+- fields: {choice: inositol-requiring enzyme 1}
+  model: gene.AliasNameLookup
+  pk: 3335
+- fields: {choice: progranulin}
+  model: gene.AliasNameLookup
+  pk: 4605
+- fields: {choice: yeast}
+  model: gene.AliasNameLookup
+  pk: 5693
+- fields: {choice: cancer/testis antigen 9}
+  model: gene.AliasNameLookup
+  pk: 2166
+- fields: {choice: paired-like homeodomain trancription factor DRG11}
+  model: gene.AliasNameLookup
+  pk: 4321
+- fields: {choice: megalin}
+  model: gene.AliasNameLookup
+  pk: 3687
+- fields: {choice: Nef (lentivirus myristoylated factor) associated protein 1}
+  model: gene.AliasNameLookup
+  pk: 1043
+- fields: {choice: family with sequence similarity 191}
+  model: gene.AliasNameLookup
+  pk: 2835
+- fields: {choice: alpha-2a interferon}
+  model: gene.AliasNameLookup
+  pk: 1740
+- fields: {choice: Pterin-4a-carbinolamine dehydratase (dimerization cofactor of hepatic
+      nuclear factor 1-alpha)}
+  model: gene.AliasNameLookup
+  pk: 1159
+- fields: {choice: junctional Rab13-binding protein}
+  model: gene.AliasNameLookup
+  pk: 3407
+- fields: {choice: mitogen-activated}
+  model: gene.AliasNameLookup
+  pk: 3836
+- fields: {choice: leucine rich repeat and pyrin domain containing 4}
+  model: gene.AliasNameLookup
+  pk: 3494
+- fields: {choice: ribosomal protein L40}
+  model: gene.AliasNameLookup
+  pk: 4952
+- fields: {choice: Best disease}
+  model: gene.AliasNameLookup
+  pk: 303
+- fields: {choice: oligosaccharyltransferase 3 homolog A (S. cerevisiae)}
+  model: gene.AliasNameLookup
+  pk: 4235
+- fields: {choice: antigen SK1}
+  model: gene.AliasNameLookup
+  pk: 1806
+- fields: {choice: homolog (yeast)}
+  model: gene.AliasNameLookup
+  pk: 3195
+- fields: {choice: mitochondrial 28S ribosomal protein S25}
+  model: gene.AliasNameLookup
+  pk: 3808
+- fields: {choice: mitotin}
+  model: gene.AliasNameLookup
+  pk: 3847
+- fields: {choice: transactivated by recombinant transforming growth factor beta}
+  model: gene.AliasNameLookup
+  pk: 5452
+- fields: {choice: OB-Cadherin}
+  model: gene.AliasNameLookup
+  pk: 1057
+- fields: {choice: Notchless gene homolog}
+  model: gene.AliasNameLookup
+  pk: 1051
+- fields: {choice: 145 kDa}
+  model: gene.AliasNameLookup
+  pk: 18
+- fields: {choice: twelve-thirteen translocation leukemia transcript (non-protein
+      coding)}
+  model: gene.AliasNameLookup
+  pk: 5574
+- fields: {choice: fibroblast growth factor homologous factor 2}
+  model: gene.AliasNameLookup
+  pk: 2871
+- fields: {choice: keratin 6-like}
+  model: gene.AliasNameLookup
+  pk: 3424
+- fields: {choice: myo-inositol 1-phosphate synthase}
+  model: gene.AliasNameLookup
+  pk: 3903
+- fields: {choice: nuclear receptor subfamily 2 group B member 2}
+  model: gene.AliasNameLookup
+  pk: 4203
+- fields: {choice: cytoplasmic antiproteinase 2}
+  model: gene.AliasNameLookup
+  pk: 2550
+- fields: {choice: nectin-like 2}
+  model: gene.AliasNameLookup
+  pk: 3948
+- fields: {choice: leucine rich repeat containing 64}
+  model: gene.AliasNameLookup
+  pk: 3500
+- fields: {choice: brain protein 16}
+  model: gene.AliasNameLookup
+  pk: 1998
+- fields: {choice: hyaluronidase 4}
+  model: gene.AliasNameLookup
+  pk: 3251
+- fields: {choice: synaptotagmin 5}
+  model: gene.AliasNameLookup
+  pk: 5329
+- fields: {choice: expressed in prostate and testis}
+  model: gene.AliasNameLookup
+  pk: 2814
+- fields: {choice: epiglycanin}
+  model: gene.AliasNameLookup
+  pk: 2764
+- fields: {choice: thiol-specific antioxidant 2}
+  model: gene.AliasNameLookup
+  pk: 5413
+- fields: {choice: cancer/testis antigen family 2}
+  model: gene.AliasNameLookup
+  pk: 2185
+- fields: {choice: death protein 5}
+  model: gene.AliasNameLookup
+  pk: 2573
+- fields: {choice: pancreatic elastase IIB}
+  model: gene.AliasNameLookup
+  pk: 4328
+- fields: {choice: calcineurin A beta}
+  model: gene.AliasNameLookup
+  pk: 2056
+- fields: {choice: nuclear division cycle 1 homolog (S. cerevisiae)}
+  model: gene.AliasNameLookup
+  pk: 4182
+- fields: {choice: lysophosphatidylinositol acyltransferase}
+  model: gene.AliasNameLookup
+  pk: 3625
+- fields: {choice: eye lens structural protein}
+  model: gene.AliasNameLookup
+  pk: 2819
+- fields: {choice: coactivator independent of AF-2}
+  model: gene.AliasNameLookup
+  pk: 2355
+- fields: {choice: splicing factor 45kDa}
+  model: gene.AliasNameLookup
+  pk: 5258
+- fields: {choice: sialic acid binding Ig-like lectin 2}
+  model: gene.AliasNameLookup
+  pk: 5086
+- fields: {choice: color blindness}
+  model: gene.AliasNameLookup
+  pk: 2388
+- fields: {choice: insulysin}
+  model: gene.AliasNameLookup
+  pk: 3339
+- fields: {choice: LISCH-like}
+  model: gene.AliasNameLookup
+  pk: 884
+- fields: {choice: extracellular signal regulated kinase 8}
+  model: gene.AliasNameLookup
+  pk: 2816
+- fields: {choice: GID complex subunit 2 homolog B}
+  model: gene.AliasNameLookup
+  pk: 623
+- fields: {choice: adrenodoxin}
+  model: gene.AliasNameLookup
+  pk: 1676
+- fields: {choice: xeroderma pigmentosum}
+  model: gene.AliasNameLookup
+  pk: 5689
+- fields: {choice: naked cuticle-2}
+  model: gene.AliasNameLookup
+  pk: 3934
+- fields: {choice: cardiac transcription factor 1}
+  model: gene.AliasNameLookup
+  pk: 2217
+- fields: {choice: gibbon ape leukemia virus receptor 1}
+  model: gene.AliasNameLookup
+  pk: 2987
+- fields: {choice: non-protein coding RNA 23}
+  model: gene.AliasNameLookup
+  pk: 4107
+- fields: {choice: bHLH factor Hes7}
+  model: gene.AliasNameLookup
+  pk: 1906
+- fields: {choice: acyl-CoA synthetase family member 1}
+  model: gene.AliasNameLookup
+  pk: 1648
+- fields: {choice: dendritic cell nuclear protein 1}
+  model: gene.AliasNameLookup
+  pk: 2601
+- fields: {choice: myomaxin}
+  model: gene.AliasNameLookup
+  pk: 3913
+- fields: {choice: marapsin 2}
+  model: gene.AliasNameLookup
+  pk: 3666
+- fields: {choice: sodium/potassium-transporting ATPase subunit alpha-4}
+  model: gene.AliasNameLookup
+  pk: 5185
+- fields: {choice: zinc finger protein AF020591}
+  model: gene.AliasNameLookup
+  pk: 5718
+- fields: {choice: amyotrophic lateral sclerosis 2 (juvenile) chromosome region}
+  model: gene.AliasNameLookup
+  pk: 1774
+- fields: {choice: hepatopoietin A}
+  model: gene.AliasNameLookup
+  pk: 3155
+- fields: {choice: prepro-NMS}
+  model: gene.AliasNameLookup
+  pk: 4552
+- fields: {choice: short chain dehydrogenase/reductase 10}
+  model: gene.AliasNameLookup
+  pk: 5044
+- fields: {choice: MIR4529 host gene}
+  model: gene.AliasNameLookup
+  pk: 943
+- fields: {choice: non-protein coding RNA 142}
+  model: gene.AliasNameLookup
+  pk: 4076
+- fields: {choice: lysyl hydroxlase 3}
+  model: gene.AliasNameLookup
+  pk: 3633
+- fields: {choice: FGAR amidotransferase}
+  model: gene.AliasNameLookup
+  pk: 550
+- fields: {choice: BRICHOS domain containing 2A}
+  model: gene.AliasNameLookup
+  pk: 282
+- fields: {choice: sister chromatid cohesion 1}
+  model: gene.AliasNameLookup
+  pk: 5126
+- fields: {choice: sensitive to apoptosis}
+  model: gene.AliasNameLookup
+  pk: 5017
+- fields: {choice: lung resistance-related protein}
+  model: gene.AliasNameLookup
+  pk: 3608
+- fields: {choice: Perforin}
+  model: gene.AliasNameLookup
+  pk: 1141
+- fields: {choice: benign adult familial myoclonic epilepsy 2}
+  model: gene.AliasNameLookup
+  pk: 1917
+- fields: {choice: B-cell lineage specific activator}
+  model: gene.AliasNameLookup
+  pk: 239
+- fields: {choice: centrosomal leucine-rich repeat and coiled-coil containing protein}
+  model: gene.AliasNameLookup
+  pk: 2269
+- fields: {choice: terminal ADP-ribose protein glycohydrolase 1}
+  model: gene.AliasNameLookup
+  pk: 5382
+- fields: {choice: GYF domain containing 1}
+  model: gene.AliasNameLookup
+  pk: 654
+- fields: {choice: tumor antigen gene}
+  model: gene.AliasNameLookup
+  pk: 5565
+- fields: {choice: Cayman ataxia}
+  model: gene.AliasNameLookup
+  pk: 399
+- fields: {choice: cancer/testis antigen CT45-6}
+  model: gene.AliasNameLookup
+  pk: 2179
+- fields: {choice: PTEN-related tyrosine phosphatase}
+  model: gene.AliasNameLookup
+  pk: 1132
+- fields: {choice: prointerleukin 16}
+  model: gene.AliasNameLookup
+  pk: 4609
+- fields: {choice: coated vesicle-associated kinase of 104 kDa}
+  model: gene.AliasNameLookup
+  pk: 2360
+- fields: {choice: Golgi vesicular membrane trafficking protein p18}
+  model: gene.AliasNameLookup
+  pk: 666
+- fields: {choice: CLOCK-interacting protein}
+  model: gene.AliasNameLookup
+  pk: 365
+- fields: {choice: glutaminyl cyclase-like}
+  model: gene.AliasNameLookup
+  pk: 3024
+- fields: {choice: immortalization-upregulated protein}
+  model: gene.AliasNameLookup
+  pk: 3299
+- fields: {choice: DPM synthase complex subunit}
+  model: gene.AliasNameLookup
+  pk: 474
+- fields: {choice: AT-like disease}
+  model: gene.AliasNameLookup
+  pk: 195
+- fields: {choice: heparin binding growth factor 8}
+  model: gene.AliasNameLookup
+  pk: 3141
+- fields: {choice: kidney lysosomal membrane protein}
+  model: gene.AliasNameLookup
+  pk: 3432
+- fields: {choice: inverted formin 2}
+  model: gene.AliasNameLookup
+  pk: 3378
+- fields: {choice: peptide P518 receptor}
+  model: gene.AliasNameLookup
+  pk: 4370
+- fields: {choice: 3-N-acetyl-beta-D-glucosaminyltransferase}
+  model: gene.AliasNameLookup
+  pk: 53
+- fields: {choice: endothelial precursor protein B9}
+  model: gene.AliasNameLookup
+  pk: 2735
+- fields: {choice: retinoic acid induced gene E}
+  model: gene.AliasNameLookup
+  pk: 4932
+- fields: {choice: complex I 51kDa subunit}
+  model: gene.AliasNameLookup
+  pk: 2413
+- fields: {choice: metargidin}
+  model: gene.AliasNameLookup
+  pk: 3773
+- fields: {choice: HBV X-transactivated protein 12}
+  model: gene.AliasNameLookup
+  pk: 683
+- fields: {choice: trypsinogen C}
+  model: gene.AliasNameLookup
+  pk: 5544
+- fields: {choice: paraneoplastic cancer-testis-brain antigen}
+  model: gene.AliasNameLookup
+  pk: 4343
+- fields: {choice: maleylacetoacetate isomerase}
+  model: gene.AliasNameLookup
+  pk: 3652
+- fields: {choice: calcineurin A gamma}
+  model: gene.AliasNameLookup
+  pk: 2057
+- fields: {choice: erasin}
+  model: gene.AliasNameLookup
+  pk: 2775
+- fields: {choice: NSP-like protein 1}
+  model: gene.AliasNameLookup
+  pk: 1033
+- fields: {choice: tudor domain containing 19C}
+  model: gene.AliasNameLookup
+  pk: 5560
+- fields: {choice: gryzun homolog (Drosophila)}
+  model: gene.AliasNameLookup
+  pk: 3091
+- fields: {choice: GABA transporter 3}
+  model: gene.AliasNameLookup
+  pk: 602
+- fields: {choice: prefoldin 6-like}
+  model: gene.AliasNameLookup
+  pk: 4540
+- fields: {choice: listerin}
+  model: gene.AliasNameLookup
+  pk: 3541
+- fields: {choice: subfamily P}
+  model: gene.AliasNameLookup
+  pk: 5287
+- fields: {choice: putative ABC transporter}
+  model: gene.AliasNameLookup
+  pk: 4729
+- fields: {choice: Skin ASpartic Protease}
+  model: gene.AliasNameLookup
+  pk: 1369
+- fields: {choice: GPI inositol-deacylase}
+  model: gene.AliasNameLookup
+  pk: 633
+- fields: {choice: farnesyl diphosphate synthase (farnesyl pyrophosphate synthetase}
+  model: gene.AliasNameLookup
+  pk: 2840
+- fields: {choice: sermorelin}
+  model: gene.AliasNameLookup
+  pk: 5037
+- fields: {choice: partner of Y14 and Mago}
+  model: gene.AliasNameLookup
+  pk: 4356
+- fields: {choice: nuclear interactor of ARF and MDM2}
+  model: gene.AliasNameLookup
+  pk: 4190
+- fields: {choice: ubiquitin-binding protein homolog}
+  model: gene.AliasNameLookup
+  pk: 5611
+- fields: {choice: postacrosomal sheath WW domain-binding protein}
+  model: gene.AliasNameLookup
+  pk: 4528
+- fields: {choice: member 10}
+  model: gene.AliasNameLookup
+  pk: 3712
+- fields: {choice: preprogastrin}
+  model: gene.AliasNameLookup
+  pk: 4586
+- fields: {choice: 2) fucosyltransferase}
+  model: gene.AliasNameLookup
+  pk: 29
+- fields: {choice: Ornithine aminotransferase}
+  model: gene.AliasNameLookup
+  pk: 1070
+- fields: {choice: centriole and spindle-associated protein}
+  model: gene.AliasNameLookup
+  pk: 2255
+- fields: {choice: cancer/testis antigen 57}
+  model: gene.AliasNameLookup
+  pk: 2150
+- fields: {choice: harmonin}
+  model: gene.AliasNameLookup
+  pk: 3119
+- fields: {choice: golgi integral membrane protein 3}
+  model: gene.AliasNameLookup
+  pk: 3063
+- fields: {choice: embryonic poly(A) binding protein 2}
+  model: gene.AliasNameLookup
+  pk: 2714
+- fields: {choice: regulatory subunit 168}
+  model: gene.AliasNameLookup
+  pk: 4846
+- fields: {choice: panbronchiolitis related mucin-like 1}
+  model: gene.AliasNameLookup
+  pk: 4322
+- fields: {choice: ceroid-lipofuscinosis}
+  model: gene.AliasNameLookup
+  pk: 2278
+- fields: {choice: thyroid-1}
+  model: gene.AliasNameLookup
+  pk: 5432
+- fields: {choice: dynein regulatory complex subunit 11}
+  model: gene.AliasNameLookup
+  pk: 2684
+- fields: {choice: cancer/testis antigen 15}
+  model: gene.AliasNameLookup
+  pk: 2121
+- fields: {choice: BEN domain containing 9}
+  model: gene.AliasNameLookup
+  pk: 261
+- fields: {choice: ortholog of mouse CNR6}
+  model: gene.AliasNameLookup
+  pk: 4270
+- fields: {choice: 40S ribosomal protein S6}
+  model: gene.AliasNameLookup
+  pk: 95
+- fields: {choice: resolvin E1 receptor}
+  model: gene.AliasNameLookup
+  pk: 4918
+- fields: {choice: islet cell antibody 12}
+  model: gene.AliasNameLookup
+  pk: 3386
+- fields: {choice: neublastin}
+  model: gene.AliasNameLookup
+  pk: 3976
+- fields: {choice: nuclear encoded mitochondrial protein}
+  model: gene.AliasNameLookup
+  pk: 4183
+- fields: {choice: arginine tRNA ligase 1}
+  model: gene.AliasNameLookup
+  pk: 1844
+- fields: {choice: cytosolic nonspecific dipeptidase}
+  model: gene.AliasNameLookup
+  pk: 2562
+- fields: {choice: subunit 6}
+  model: gene.AliasNameLookup
+  pk: 5294
+- fields: {choice: small nuclear U7.1}
+  model: gene.AliasNameLookup
+  pk: 5157
+- fields: {choice: nuclear receptor subfamily 2 group B member 3}
+  model: gene.AliasNameLookup
+  pk: 4204
+- fields: {choice: leucine rich alpha 2 glycoprotein}
+  model: gene.AliasNameLookup
+  pk: 3479
+- fields: {choice: 4-N-acteylhexosaminyltransferase}
+  model: gene.AliasNameLookup
+  pk: 79
+- fields: {choice: pancreatic carboxypeptidase B}
+  model: gene.AliasNameLookup
+  pk: 4327
+- fields: {choice: SAM and SH3 domain containing 1}
+  model: gene.AliasNameLookup
+  pk: 1271
+- fields: {choice: MORF-related gene on chromosome 15}
+  model: gene.AliasNameLookup
+  pk: 959
+- fields: {choice: Liprin-alpha4}
+  model: gene.AliasNameLookup
+  pk: 899
+- fields: {choice: apical-basolateral polarity regulator}
+  model: gene.AliasNameLookup
+  pk: 1821
+- fields: {choice: non-protein coding RNA 70}
+  model: gene.AliasNameLookup
+  pk: 4147
+- fields: {choice: scavenger receptor class A}
+  model: gene.AliasNameLookup
+  pk: 4983
+- fields: {choice: receptor for; beta polypeptide}
+  model: gene.AliasNameLookup
+  pk: 4777
+- fields: {choice: orthodenticle homeobox 3}
+  model: gene.AliasNameLookup
+  pk: 4268
+- fields: {choice: tyrosine-protein kinase JAK3}
+  model: gene.AliasNameLookup
+  pk: 5600
+- fields: {choice: CDK-activating kinase complex subunit}
+  model: gene.AliasNameLookup
+  pk: 352
+- fields: {choice: regulatory subunit 71}
+  model: gene.AliasNameLookup
+  pk: 4880
+- fields: {choice: S100A-like protein}
+  model: gene.AliasNameLookup
+  pk: 1267
+- fields: {choice: TBP-1 interacting protein}
+  model: gene.AliasNameLookup
+  pk: 1424
+- fields: {choice: protein associated with SMAD1}
+  model: gene.AliasNameLookup
+  pk: 4663
+- fields: {choice: cisplatin resistance associated}
+  model: gene.AliasNameLookup
+  pk: 2330
+- fields: {choice: epsilon}
+  model: gene.AliasNameLookup
+  pk: 2772
+- fields: {choice: receptor transporting protein 2}
+  model: gene.AliasNameLookup
+  pk: 4781
+- fields: {choice: dipeptidyl peptidase 1}
+  model: gene.AliasNameLookup
+  pk: 2639
+- fields: {choice: acetolactate synthase homolog}
+  model: gene.AliasNameLookup
+  pk: 1608
+- fields: {choice: endoplasmic reticulum-golgi intermediate compartment protein 53}
+  model: gene.AliasNameLookup
+  pk: 2728
+- fields: {choice: small CTD phosphatase 3}
+  model: gene.AliasNameLookup
+  pk: 5140
+- fields: {choice: protein kinase C-associated kinase}
+  model: gene.AliasNameLookup
+  pk: 4674
+- fields: {choice: short chain dehydrogenase/reductase family 20C}
+  model: gene.AliasNameLookup
+  pk: 5056
+- fields: {choice: short chain dehydrogenase/reductase family 26C}
+  model: gene.AliasNameLookup
+  pk: 5062
+- fields: {choice: tripartite motif containing 26 pseudogene 1}
+  model: gene.AliasNameLookup
+  pk: 5529
+- fields: {choice: maple syrup urine disease}
+  model: gene.AliasNameLookup
+  pk: 3665
+- fields: {choice: golgi-resident nucleotide phosphatase}
+  model: gene.AliasNameLookup
+  pk: 3069
+- fields: {choice: member S}
+  model: gene.AliasNameLookup
+  pk: 3744
+- fields: {choice: cancer/testis antigen 19}
+  model: gene.AliasNameLookup
+  pk: 2122
+- fields: {choice: SR splicing factor 4}
+  model: gene.AliasNameLookup
+  pk: 1307
+- fields: {choice: Rho-related protein HP1}
+  model: gene.AliasNameLookup
+  pk: 1254
+- fields: {choice: parathyroid adenomatosis 1}
+  model: gene.AliasNameLookup
+  pk: 4347
+- fields: {choice: member 8}
+  model: gene.AliasNameLookup
+  pk: 3737
+- fields: {choice: motility related protein-1}
+  model: gene.AliasNameLookup
+  pk: 3865
+- fields: {choice: regulator of G protein signalling 9}
+  model: gene.AliasNameLookup
+  pk: 4796
+- fields: {choice: lithostathine 1 beta}
+  model: gene.AliasNameLookup
+  pk: 3542
+- fields: {choice: nuclear factor related to kappa B binding protein}
+  model: gene.AliasNameLookup
+  pk: 4188
+- fields: {choice: hard keratin type II 6}
+  model: gene.AliasNameLookup
+  pk: 3118
+- fields: {choice: mutated in multiple advanced cancers 1}
+  model: gene.AliasNameLookup
+  pk: 3893
+- fields: {choice: glycine cleavage system protein T}
+  model: gene.AliasNameLookup
+  pk: 3033
+- fields: {choice: expressed in T cells and eosinophils in atopic dermatitis}
+  model: gene.AliasNameLookup
+  pk: 2812
+- fields: {choice: alpha-tubulin N-acetyltransferase}
+  model: gene.AliasNameLookup
+  pk: 1751
+- fields: {choice: moesin-ezrin-radixin like}
+  model: gene.AliasNameLookup
+  pk: 3853
+- fields: {choice: 19 kDa sarcomeric protein}
+  model: gene.AliasNameLookup
+  pk: 24
+- fields: {choice: similar to transketolase}
+  model: gene.AliasNameLookup
+  pk: 5117
+- fields: {choice: glycogen branching enzyme}
+  model: gene.AliasNameLookup
+  pk: 3037
+- fields: {choice: TEL1}
+  model: gene.AliasNameLookup
+  pk: 1428
+- fields: {choice: Refsum disease}
+  model: gene.AliasNameLookup
+  pk: 1244
+- fields: {choice: LRR-repeat protein 1}
+  model: gene.AliasNameLookup
+  pk: 887
+- fields: {choice: nogo-66 receptor homolog 2}
+  model: gene.AliasNameLookup
+  pk: 4056
+- fields: {choice: somatostatin receptor-interacting protein}
+  model: gene.AliasNameLookup
+  pk: 5198
+- fields: {choice: lysophosphatidic acid phosphatase}
+  model: gene.AliasNameLookup
+  pk: 3622
+- fields: {choice: kelch-like family member 27}
+  model: gene.AliasNameLookup
+  pk: 3417
+- fields: {choice: beta 1 (muscle)}
+  model: gene.AliasNameLookup
+  pk: 1920
+- fields: {choice: epididymal sperm binding protein 2}
+  model: gene.AliasNameLookup
+  pk: 2763
+- fields: {choice: homolog of mouse growth stimulation-expressed}
+  model: gene.AliasNameLookup
+  pk: 3202
+- fields: {choice: polypeptide GalNAc transferase 9}
+  model: gene.AliasNameLookup
+  pk: 4507
+- fields: {choice: 'UDP-glucose:glycoprotein glucosyltransferase 2'}
+  model: gene.AliasNameLookup
+  pk: 1523
+- fields: {choice: polaris homolog}
+  model: gene.AliasNameLookup
+  pk: 4472
+- fields: {choice: collagen prolyl 4-hydroxylase alpha(I)}
+  model: gene.AliasNameLookup
+  pk: 2376
+- fields: {choice: nasopharyngeal carcinoma metastasis-related 1}
+  model: gene.AliasNameLookup
+  pk: 3941
+- fields: {choice: gp130}
+  model: gene.AliasNameLookup
+  pk: 3075
+- fields: {choice: genethonin 1}
+  model: gene.AliasNameLookup
+  pk: 2978
+- fields: {choice: Fanconi anemia-associated protein}
+  model: gene.AliasNameLookup
+  pk: 568
+- fields: {choice: INO80 complex subunit M}
+  model: gene.AliasNameLookup
+  pk: 796
+- fields: {choice: Clabp TACO}
+  model: gene.AliasNameLookup
+  pk: 409
+- fields: {choice: voltage sensor domain-only protein}
+  model: gene.AliasNameLookup
+  pk: 5675
+- fields: {choice: TREM-like transcript 1}
+  model: gene.AliasNameLookup
+  pk: 1460
+- fields: {choice: dolichol kinase 1}
+  model: gene.AliasNameLookup
+  pk: 2647
+- fields: {choice: immunoglobulin and leucine rich repeat domains 2}
+  model: gene.AliasNameLookup
+  pk: 3310
+- fields: {choice: tolerance associated gene-1}
+  model: gene.AliasNameLookup
+  pk: 5442
+- fields: {choice: neuropsin}
+  model: gene.AliasNameLookup
+  pk: 4033
+- fields: {choice: hypothetical protein MGC48625}
+  model: gene.AliasNameLookup
+  pk: 3291
+- fields: {choice: zinc finger protein 590}
+  model: gene.AliasNameLookup
+  pk: 5712
+- fields: {choice: ST3Gal III}
+  model: gene.AliasNameLookup
+  pk: 1320
+- fields: {choice: nuclear cytoplasmic O-GlcNAcase and acetyltransferase}
+  model: gene.AliasNameLookup
+  pk: 4181
+- fields: {choice: Akt substrate of 160 kDa}
+  model: gene.AliasNameLookup
+  pk: 221
+- fields: {choice: hypothetical protein LOC339778}
+  model: gene.AliasNameLookup
+  pk: 3286
+- fields: {choice: CGI-74 protein}
+  model: gene.AliasNameLookup
+  pk: 359
+- fields: {choice: aldehyde dehydrogenase}
+  model: gene.AliasNameLookup
+  pk: 1692
+- fields: {choice: 3-ketoacyl-CoA reductase}
+  model: gene.AliasNameLookup
+  pk: 59
+- fields: {choice: peptidoglycan recognition protein I beta precursor}
+  model: gene.AliasNameLookup
+  pk: 4374
+- fields: {choice: ATP-binding cassette sub-family C}
+  model: gene.AliasNameLookup
+  pk: 204
+- fields: {choice: Na}
+  model: gene.AliasNameLookup
+  pk: 1038
+- fields: {choice: cancer/testis antigen 61}
+  model: gene.AliasNameLookup
+  pk: 2151
+- fields: {choice: 53kDa}
+  model: gene.AliasNameLookup
+  pk: 113
+- fields: {choice: NY REN 24 antigen}
+  model: gene.AliasNameLookup
+  pk: 1036
+- fields: {choice: ischemia/reperfusion inducible protein}
+  model: gene.AliasNameLookup
+  pk: 3384
+- fields: {choice: amphiphysin II}
+  model: gene.AliasNameLookup
+  pk: 1765
+- fields: {choice: leukemia-associated protein with a CXXC domain}
+  model: gene.AliasNameLookup
+  pk: 3508
+- fields: {choice: regulatory subunit 59}
+  model: gene.AliasNameLookup
+  pk: 4871
+- fields: {choice: TIN2 interacting protein 1}
+  model: gene.AliasNameLookup
+  pk: 1436
+- fields: {choice: NEDD4 binding protein 4}
+  model: gene.AliasNameLookup
+  pk: 1013
+- fields: {choice: retinaldehyde dehydrogenase 2}
+  model: gene.AliasNameLookup
+  pk: 4928
+- fields: {choice: resolvin D1 receptor}
+  model: gene.AliasNameLookup
+  pk: 4917
+- fields: {choice: non-protein coding RNA 170}
+  model: gene.AliasNameLookup
+  pk: 4087
+- fields: {choice: coat protein gamma-cop}
+  model: gene.AliasNameLookup
+  pk: 2359
+- fields: {choice: cancer/testis antigen 130}
+  model: gene.AliasNameLookup
+  pk: 2114
+- fields: {choice: oxidative 3-alpha-hydroxysteroid-dehydrogenase}
+  model: gene.AliasNameLookup
+  pk: 4297
+- fields: {choice: mimecan proteoglycan}
+  model: gene.AliasNameLookup
+  pk: 3794
+- fields: {choice: variable region 4}
+  model: gene.AliasNameLookup
+  pk: 5638
+- fields: {choice: gravin}
+  model: gene.AliasNameLookup
+  pk: 3082
+- fields: {choice: hairy cell leukemia protein 1}
+  model: gene.AliasNameLookup
+  pk: 3105
+- fields: {choice: membrane type 1 metalloprotease}
+  model: gene.AliasNameLookup
+  pk: 3753
+- fields: {choice: 4-PH alpha 2}
+  model: gene.AliasNameLookup
+  pk: 80
+- fields: {choice: ring zinc finger protein NY-REN-43antigen}
+  model: gene.AliasNameLookup
+  pk: 4962
+- fields: {choice: paraplegin}
+  model: gene.AliasNameLookup
+  pk: 4345
+- fields: {choice: PMP22 claudin domain containing}
+  model: gene.AliasNameLookup
+  pk: 1100
+- fields: {choice: TBC/LysM-associated domain containing 5}
+  model: gene.AliasNameLookup
+  pk: 1421
+- fields: {choice: mannose-6-phosphate isomerase}
+  model: gene.AliasNameLookup
+  pk: 3662
+- fields: {choice: multicilin}
+  model: gene.AliasNameLookup
+  pk: 3869
+- fields: {choice: regulatory subunit 157}
+  model: gene.AliasNameLookup
+  pk: 4837
+- fields: {choice: allergic rhinitis}
+  model: gene.AliasNameLookup
+  pk: 1702
+- fields: {choice: annexin II}
+  model: gene.AliasNameLookup
+  pk: 1799
+- fields: {choice: aldehyde dehydrogenase 7}
+  model: gene.AliasNameLookup
+  pk: 1693
+- fields: {choice: multifunctional O-acyltransferase}
+  model: gene.AliasNameLookup
+  pk: 3874
+- fields: {choice: tudor domain containing 20A}
+  model: gene.AliasNameLookup
+  pk: 5561
+- fields: {choice: Zinc finger protein of the cerebellum 2}
+  model: gene.AliasNameLookup
+  pk: 1600
+- fields: {choice: sucrose nonfermenting}
+  model: gene.AliasNameLookup
+  pk: 5299
+- fields: {choice: immunoglobulin delta}
+  model: gene.AliasNameLookup
+  pk: 3317
+- fields: {choice: BRICHOS domain containing 4}
+  model: gene.AliasNameLookup
+  pk: 286
+- fields: {choice: MIZ-type containing 6}
+  model: gene.AliasNameLookup
+  pk: 949
+- fields: {choice: KH homology domain containing 2}
+  model: gene.AliasNameLookup
+  pk: 833
+- fields: {choice: homolog of Drosophila Sunday driver 2}
+  model: gene.AliasNameLookup
+  pk: 3199
+- fields: {choice: functional spliceosome-associated protein 121}
+  model: gene.AliasNameLookup
+  pk: 2913
+- fields: {choice: exchange protein directly activated by cAMP 1}
+  model: gene.AliasNameLookup
+  pk: 2799
+- fields: {choice: GABA-B receptor}
+  model: gene.AliasNameLookup
+  pk: 605
+- fields: {choice: spatacsin}
+  model: gene.AliasNameLookup
+  pk: 5206
+- fields: {choice: two hybrid associated protein No. 1 with RanBPM}
+  model: gene.AliasNameLookup
+  pk: 5576
+- fields: {choice: DNA segment}
+  model: gene.AliasNameLookup
+  pk: 456
+- fields: {choice: neuronal CDK5 activator isoform}
+  model: gene.AliasNameLookup
+  pk: 4019
+- fields: {choice: short chain dehydrogenase/reductase family 10E}
+  model: gene.AliasNameLookup
+  pk: 5045
+- fields: {choice: short chain dehydrogenase/reductase family 14E}
+  model: gene.AliasNameLookup
+  pk: 5049
+- fields: {choice: gamma-2-cop}
+  model: gene.AliasNameLookup
+  pk: 2954
+- fields: {choice: arfophilin-1}
+  model: gene.AliasNameLookup
+  pk: 1843
+- fields: {choice: INO80 complex subunit Q}
+  model: gene.AliasNameLookup
+  pk: 798
+- fields: {choice: 6-like 8}
+  model: gene.AliasNameLookup
+  pk: 127
+- fields: {choice: tubulin}
+  model: gene.AliasNameLookup
+  pk: 5553
+- fields: {choice: small protein rich in arginine and glycine}
+  model: gene.AliasNameLookup
+  pk: 5162
+- fields: {choice: osteoblast differentiation promoting factor}
+  model: gene.AliasNameLookup
+  pk: 4275
+- fields: {choice: polycystin-1L1}
+  model: gene.AliasNameLookup
+  pk: 4481
+- fields: {choice: cancer/testis antigen 53}
+  model: gene.AliasNameLookup
+  pk: 2147
+- fields: {choice: single-stranded DNA-binding protein 2}
+  model: gene.AliasNameLookup
+  pk: 5125
+- fields: {choice: similar to RIKEN cDNA 2510027D20}
+  model: gene.AliasNameLookup
+  pk: 5104
+- fields: {choice: functional spliceosome-associated protein 164}
+  model: gene.AliasNameLookup
+  pk: 2915
+- fields: {choice: p50-associated COX-2 extragenic RNA}
+  model: gene.AliasNameLookup
+  pk: 4312
+- fields: {choice: heavy chain 11}
+  model: gene.AliasNameLookup
+  pk: 3127
+- fields: {choice: arylesterase 3}
+  model: gene.AliasNameLookup
+  pk: 1861
+- fields: {choice: aflatoxin aldehyde reductase}
+  model: gene.AliasNameLookup
+  pk: 1682
+- fields: {choice: myosin phosphatase-targeting subunit 1}
+  model: gene.AliasNameLookup
+  pk: 3922
+- fields: {choice: oocyte binding/fusion factor}
+  model: gene.AliasNameLookup
+  pk: 4251
+- fields: {choice: DNase gamma}
+  model: gene.AliasNameLookup
+  pk: 467
+- fields: {choice: GID complex subunit 3}
+  model: gene.AliasNameLookup
+  pk: 624
+- fields: {choice: amida}
+  model: gene.AliasNameLookup
+  pk: 1756
+- fields: {choice: mitochondria associated protein involved in granulocyte macrophage
+      colony stimulating factor signal transduction}
+  model: gene.AliasNameLookup
+  pk: 3802
+- fields: {choice: nephrocystin-1}
+  model: gene.AliasNameLookup
+  pk: 3964
+- fields: {choice: noelin 2}
+  model: gene.AliasNameLookup
+  pk: 4055
+- fields: {choice: nephroretinin}
+  model: gene.AliasNameLookup
+  pk: 3969
+- fields: {choice: alpha 9 (neuronal)}
+  model: gene.AliasNameLookup
+  pk: 1723
+- fields: {choice: ring finger protein 22}
+  model: gene.AliasNameLookup
+  pk: 4960
+- fields: {choice: gamma-aminobutyric acid(A) receptor-interacting factor}
+  model: gene.AliasNameLookup
+  pk: 2957
+- fields: {choice: regulatory subunit 123}
+  model: gene.AliasNameLookup
+  pk: 4817
+- fields: {choice: DM domain expressed in testis 1}
+  model: gene.AliasNameLookup
+  pk: 440
+- fields: {choice: eotaxin-1}
+  model: gene.AliasNameLookup
+  pk: 2750
+- fields: {choice: GID complex subunit 7 homolog (S. cerevisiae)}
+  model: gene.AliasNameLookup
+  pk: 626
+- fields: {choice: calcineurin homologous protein}
+  model: gene.AliasNameLookup
+  pk: 2059
+- fields: {choice: immunoglobulin and leucine rich repeat domains 5}
+  model: gene.AliasNameLookup
+  pk: 3313
+- fields: {choice: Ok blood group}
+  model: gene.AliasNameLookup
+  pk: 1063
+- fields: {choice: cadherin-related family member 6}
+  model: gene.AliasNameLookup
+  pk: 2048
+- fields: {choice: source of immunodominant MHC associated peptides}
+  model: gene.AliasNameLookup
+  pk: 5202
+- fields: {choice: glucuronosyltransferase S}
+  model: gene.AliasNameLookup
+  pk: 3007
+- fields: {choice: papillomavirus L2 interacting nuclear protein 1}
+  model: gene.AliasNameLookup
+  pk: 4334
+- fields: {choice: Ras like GTPase}
+  model: gene.AliasNameLookup
+  pk: 1237
+- fields: {choice: pathologic myopia}
+  model: gene.AliasNameLookup
+  pk: 4361
+- fields: {choice: cholinesterase-related cell division controller}
+  model: gene.AliasNameLookup
+  pk: 2294
+- fields: {choice: prostate cancer-associated noncoding RNA 2}
+  model: gene.AliasNameLookup
+  pk: 4638
+- fields: {choice: proteinase-activated receptor-2}
+  model: gene.AliasNameLookup
+  pk: 4706
+- fields: {choice: regulatory subunit 80}
+  model: gene.AliasNameLookup
+  pk: 4885
+- fields: {choice: peptidyl-dipeptidase A}
+  model: gene.AliasNameLookup
+  pk: 4377
+- fields: {choice: kinase 6 (MAP kinase kinase 6)}
+  model: gene.AliasNameLookup
+  pk: 3440
+- fields: {choice: asporin proteoglycan}
+  model: gene.AliasNameLookup
+  pk: 1872
+- fields: {choice: suppressor of glucose by autophagy}
+  model: gene.AliasNameLookup
+  pk: 5312
+- fields: {choice: pre mRNA branch site protein p14}
+  model: gene.AliasNameLookup
+  pk: 4533
+- fields: {choice: aniridia}
+  model: gene.AliasNameLookup
+  pk: 1794
+- fields: {choice: IgG Fc binding protein}
+  model: gene.AliasNameLookup
+  pk: 806
+- fields: {choice: neurodegeneration with brain iron accumulation 4}
+  model: gene.AliasNameLookup
+  pk: 4002
+- fields: {choice: prion-like protein doppel}
+  model: gene.AliasNameLookup
+  pk: 4591
+- fields: {choice: peroxisomal 3-oxoacyl-Coenzyme A thiolase}
+  model: gene.AliasNameLookup
+  pk: 4388
+- fields: {choice: histidine tRNA ligase 1}
+  model: gene.AliasNameLookup
+  pk: 3178
+- fields: {choice: UCH37 interacting protein 1}
+  model: gene.AliasNameLookup
+  pk: 1518
+- fields: {choice: fibrousheathin 2}
+  model: gene.AliasNameLookup
+  pk: 2876
+- fields: {choice: small breast epithelial mucin}
+  model: gene.AliasNameLookup
+  pk: 5148
+- fields: {choice: prepro-cholecystokinin}
+  model: gene.AliasNameLookup
+  pk: 4564
+- fields: {choice: Rad1}
+  model: gene.AliasNameLookup
+  pk: 1227
+- fields: {choice: K12 protein}
+  model: gene.AliasNameLookup
+  pk: 829
+- fields: {choice: limkain b1}
+  model: gene.AliasNameLookup
+  pk: 3528
+- fields: {choice: polycythemia rubra vera 1}
+  model: gene.AliasNameLookup
+  pk: 4482
+- fields: {choice: NOP2/Sun domain family}
+  model: gene.AliasNameLookup
+  pk: 1028
+- fields: {choice: enamelysin}
+  model: gene.AliasNameLookup
+  pk: 2717
+- fields: {choice: allergy inhibitory receptor 1}
+  model: gene.AliasNameLookup
+  pk: 1703
+- fields: {choice: Cyclophilin J}
+  model: gene.AliasNameLookup
+  pk: 426
+- fields: {choice: heme-oxidized IRP2 ubiquitin ligase 1}
+  model: gene.AliasNameLookup
+  pk: 3139
+- fields: {choice: REG receptor}
+  model: gene.AliasNameLookup
+  pk: 1179
+- fields: {choice: KTI11 homolog A (S. cerevisiae)}
+  model: gene.AliasNameLookup
+  pk: 858
+- fields: {choice: Marfan syndrome}
+  model: gene.AliasNameLookup
+  pk: 969
+- fields: {choice: syndecan proteoglycan 4}
+  model: gene.AliasNameLookup
+  pk: 5339
+- fields: {choice: DENN/MADD domain containing 2B}
+  model: gene.AliasNameLookup
+  pk: 436
+- fields: {choice: protein tyrosine phosphatase PTP9Q22}
+  model: gene.AliasNameLookup
+  pk: 4699
+- fields: {choice: recombination activating protein 1}
+  model: gene.AliasNameLookup
+  pk: 4786
+- fields: {choice: phosphodiesterase E3 dunce homolog (Drosophila)}
+  model: gene.AliasNameLookup
+  pk: 4415
+- fields: {choice: tRNA Z (short form)}
+  model: gene.AliasNameLookup
+  pk: 5351
+- fields: {choice: protein phosphatase 1}
+  model: gene.AliasNameLookup
+  pk: 4679
+- fields: {choice: intraflagellar transport 25 homolog (Chlamydomonas)}
+  model: gene.AliasNameLookup
+  pk: 3372
+- fields: {choice: Arp2/3 protein complex subunit p16}
+  model: gene.AliasNameLookup
+  pk: 230
+- fields: {choice: KIAA2025 protein}
+  model: gene.AliasNameLookup
+  pk: 855
+- fields: {choice: SWAP-70-like adaptor protein of T cells}
+  model: gene.AliasNameLookup
+  pk: 1341
+- fields: {choice: cattle cerebrum and skeletal muscle-specific protein 1 family member}
+  model: gene.AliasNameLookup
+  pk: 2238
+- fields: {choice: esterase A}
+  model: gene.AliasNameLookup
+  pk: 2789
+- fields: {choice: myelin proteolipid protein-like protein}
+  model: gene.AliasNameLookup
+  pk: 3897
+- fields: {choice: latexin-like}
+  model: gene.AliasNameLookup
+  pk: 3471
+- fields: {choice: pilar cyst}
+  model: gene.AliasNameLookup
+  pk: 4436
+- fields: {choice: non-protein coding RNA 80}
+  model: gene.AliasNameLookup
+  pk: 4155
+- fields: {choice: telencephalin}
+  model: gene.AliasNameLookup
+  pk: 5376
+- fields: {choice: HP1 gamma homolog (Drosophila)}
+  model: gene.AliasNameLookup
+  pk: 742
+- fields: {choice: kynurenine aminotransferase II}
+  model: gene.AliasNameLookup
+  pk: 3457
+- fields: {choice: small membrane protein 1}
+  model: gene.AliasNameLookup
+  pk: 5156
+- fields: {choice: KIAA0345-like 2}
+  model: gene.AliasNameLookup
+  pk: 840
+- fields: {choice: ABC member 16}
+  model: gene.AliasNameLookup
+  pk: 164
+- fields: {choice: desmoyokin}
+  model: gene.AliasNameLookup
+  pk: 2607
+- fields: {choice: neurite extension-related protein phosphatase related to PP2C}
+  model: gene.AliasNameLookup
+  pk: 3991
+- fields: {choice: functional spliceosome-associated protein 47}
+  model: gene.AliasNameLookup
+  pk: 2921
+- fields: {choice: CDK4-binding protein p34SEI}
+  model: gene.AliasNameLookup
+  pk: 353
+- fields: {choice: MAPK phosphatase-7}
+  model: gene.AliasNameLookup
+  pk: 926
+- fields: {choice: human epidermal growth factor receptor 4}
+  model: gene.AliasNameLookup
+  pk: 3226
+- fields: {choice: membrane-type 5 matrix metalloproteinase}
+  model: gene.AliasNameLookup
+  pk: 3757
+- fields: {choice: rapsyn}
+  model: gene.AliasNameLookup
+  pk: 4766
+- fields: {choice: GPI mannosyltransferase 1}
+  model: gene.AliasNameLookup
+  pk: 634
+- fields: {choice: K562 cells-derived leucine zipper-like protein 1}
+  model: gene.AliasNameLookup
+  pk: 830
+- fields: {choice: prepro-PYY}
+  model: gene.AliasNameLookup
+  pk: 4556
+- fields: {choice: neuropoietin}
+  model: gene.AliasNameLookup
+  pk: 4032
+- fields: {choice: hairy/enhancer-of-split related with YRPW motif 3}
+  model: gene.AliasNameLookup
+  pk: 3106
+- fields: {choice: C2 calcium-dependent domain containing 1}
+  model: gene.AliasNameLookup
+  pk: 322
+- fields: {choice: hepatocellular carcinoma related protein 1}
+  model: gene.AliasNameLookup
+  pk: 3151
+- fields: {choice: Gi1 protein alpha subunit}
+  model: gene.AliasNameLookup
+  pk: 658
+- fields: {choice: RNMT-activating mini protein}
+  model: gene.AliasNameLookup
+  pk: 1210
+- fields: {choice: avian erythroblastic leukemia viral (v-erb-a) oncogene homolog
+      2}
+  model: gene.AliasNameLookup
+  pk: 1900
+- fields: {choice: regulatory subunit 94}
+  model: gene.AliasNameLookup
+  pk: 4897
+- fields: {choice: NADPH oxidase organizer 2}
+  model: gene.AliasNameLookup
+  pk: 1010
+- fields: {choice: HMG domain containing}
+  model: gene.AliasNameLookup
+  pk: 734
+- fields: {choice: RLL motif containing 1}
+  model: gene.AliasNameLookup
+  pk: 1191
+- fields: {choice: matrix metalloprotease 27}
+  model: gene.AliasNameLookup
+  pk: 3676
+- fields: {choice: K-ATPase alpha subunit}
+  model: gene.AliasNameLookup
+  pk: 826
+- fields: {choice: mitochondrial inner membrane organizing system 3}
+  model: gene.AliasNameLookup
+  pk: 3824
+- fields: {choice: glutamic-oxaloacetic transaminase 2}
+  model: gene.AliasNameLookup
+  pk: 3018
+- fields: {choice: neuronal integral membrane protein 1}
+  model: gene.AliasNameLookup
+  pk: 4022
+- fields: {choice: N-acetylaspartylglutamate synthetase II}
+  model: gene.AliasNameLookup
+  pk: 991
+- fields: {choice: neurofilament}
+  model: gene.AliasNameLookup
+  pk: 4009
+- fields: {choice: tyrosine tRNA ligase 2}
+  model: gene.AliasNameLookup
+  pk: 5598
+- fields: {choice: apolipoprotein B48 receptor}
+  model: gene.AliasNameLookup
+  pk: 1824
+- fields: {choice: keratin}
+  model: gene.AliasNameLookup
+  pk: 3423
+- fields: {choice: acylglycerol kinase Y-linked pseudogene 1}
+  model: gene.AliasNameLookup
+  pk: 1653
+- fields: {choice: constitutive androstane receptor}
+  model: gene.AliasNameLookup
+  pk: 2479
+- fields: {choice: epididymal protein 6}
+  model: gene.AliasNameLookup
+  pk: 2762
+- fields: {choice: p18 splicing regulatory protein}
+  model: gene.AliasNameLookup
+  pk: 4303
+- fields: {choice: Pancreatic endocrine tumor suppressor}
+  model: gene.AliasNameLookup
+  pk: 1135
+- fields: {choice: non-protein coding RNA 225}
+  model: gene.AliasNameLookup
+  pk: 4106
+- fields: {choice: nuclear apoptosis-inducing factor 1}
+  model: gene.AliasNameLookup
+  pk: 4179
+- fields: {choice: human RNA-binding ubiquitin ligase of 138 kDa}
+  model: gene.AliasNameLookup
+  pk: 3220
+- fields: {choice: short chain dehydrogenase/reductase family 28C}
+  model: gene.AliasNameLookup
+  pk: 5064
+- fields: {choice: polycomb 3}
+  model: gene.AliasNameLookup
+  pk: 4477
+- fields: {choice: preprotachykinin-B}
+  model: gene.AliasNameLookup
+  pk: 4588
+- fields: {choice: HCV NS3 transactivated protein 2}
+  model: gene.AliasNameLookup
+  pk: 701
+- fields: {choice: alpha 2(I)-collagen}
+  model: gene.AliasNameLookup
+  pk: 1712
+- fields: {choice: actin-bundling protein with BAIAP2 homology}
+  model: gene.AliasNameLookup
+  pk: 1631
+- fields: {choice: Regan isozyme}
+  model: gene.AliasNameLookup
+  pk: 1245
+- fields: {choice: constant region C1}
+  model: gene.AliasNameLookup
+  pk: 2477
+- fields: {choice: non-protein coding RNA 74}
+  model: gene.AliasNameLookup
+  pk: 4149
+- fields: {choice: ubiquinol-cytochrome c reductase}
+  model: gene.AliasNameLookup
+  pk: 5601
+- fields: {choice: complex III subunit VI}
+  model: gene.AliasNameLookup
+  pk: 2441
+- fields: {choice: 4-benzoquinol methylase}
+  model: gene.AliasNameLookup
+  pk: 82
+- fields: {choice: diphosphoinositol polyphosphate phosphohydrolase type 2}
+  model: gene.AliasNameLookup
+  pk: 2641
+- fields: {choice: tocopherol-associated protein 3}
+  model: gene.AliasNameLookup
+  pk: 5441
+- fields: {choice: Human Islet Long Non Coding RNA 77}
+  model: gene.AliasNameLookup
+  pk: 771
+- fields: {choice: breast cancer cell 3}
+  model: gene.AliasNameLookup
+  pk: 2010
+- fields: {choice: subunit 7}
+  model: gene.AliasNameLookup
+  pk: 5295
+- fields: {choice: short chain dehydrogenase/reductase family 6E}
+  model: gene.AliasNameLookup
+  pk: 5080
+- fields: {choice: endosulfine alpha-like}
+  model: gene.AliasNameLookup
+  pk: 2731
+- fields: {choice: 3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase}
+  model: gene.AliasNameLookup
+  pk: 60
+- fields: {choice: phospholipid hydroperoxidase}
+  model: gene.AliasNameLookup
+  pk: 4424
+- fields: {choice: nuclear matrix protein NMP200 related to splicing factor PRP19}
+  model: gene.AliasNameLookup
+  pk: 4195
+- fields: {choice: CTD phosphatase-like with ubiquitin domain 1}
+  model: gene.AliasNameLookup
+  pk: 379
+- fields: {choice: evolutionarily conserved G patch domain containing}
+  model: gene.AliasNameLookup
+  pk: 2797
+- fields: {choice: Chimerin 1 (GTPase-activating protein}
+  model: gene.AliasNameLookup
+  pk: 406
+- fields: {choice: coilin interacting nuclear ATPase protein}
+  model: gene.AliasNameLookup
+  pk: 2367
+- fields: {choice: sperm surface protein}
+  model: gene.AliasNameLookup
+  pk: 5220
+- fields: {choice: translocase of inner mitochondrial membrane 15 homolog (yeast)}
+  model: gene.AliasNameLookup
+  pk: 5495
+- fields: {choice: apolipoprotein L-II}
+  model: gene.AliasNameLookup
+  pk: 1825
+- fields: {choice: long intergenic non-protein coding RNA 180}
+  model: gene.AliasNameLookup
+  pk: 3579
+- fields: {choice: myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog}
+  model: gene.AliasNameLookup
+  pk: 3902
+- fields: {choice: 4-aminobutyrate transaminase}
+  model: gene.AliasNameLookup
+  pk: 81
+- fields: {choice: cancer/testis antigen 46}
+  model: gene.AliasNameLookup
+  pk: 2142
+- fields: {choice: hepatocellular carcinoma associated antigen 66}
+  model: gene.AliasNameLookup
+  pk: 3147
+- fields: {choice: hematopoietic cell E- and L-selectin ligand}
+  model: gene.AliasNameLookup
+  pk: 3132
+- fields: {choice: T-cell-specific surface glycoprotein}
+  model: gene.AliasNameLookup
+  pk: 1412
+- fields: {choice: tuberin-like protein 1}
+  model: gene.AliasNameLookup
+  pk: 5551
+- fields: {choice: elastase 4}
+  model: gene.AliasNameLookup
+  pk: 2706
+- fields: {choice: neurokinin beta receptor}
+  model: gene.AliasNameLookup
+  pk: 4011
+- fields: {choice: proline-rich cyclin A1-interacting protein}
+  model: gene.AliasNameLookup
+  pk: 4623
+- fields: {choice: nuclear localized factor 1}
+  model: gene.AliasNameLookup
+  pk: 4192
+- fields: {choice: farnesoid X receptor}
+  model: gene.AliasNameLookup
+  pk: 2839
+- fields: {choice: D-type cyclin-interacting protein 1}
+  model: gene.AliasNameLookup
+  pk: 429
+- fields: {choice: eosinophil granule ontogeny}
+  model: gene.AliasNameLookup
+  pk: 2748
+- fields: {choice: non-protein coding RNA 27}
+  model: gene.AliasNameLookup
+  pk: 4112
+- fields: {choice: cancer/testis antigen 93}
+  model: gene.AliasNameLookup
+  pk: 2170
+- fields: {choice: frizzled family member 11}
+  model: gene.AliasNameLookup
+  pk: 2906
+- fields: {choice: rab6 GTPase activating protein (GAP and centrosome-associated)}
+  model: gene.AliasNameLookup
+  pk: 4750
+- fields: {choice: AMPK}
+  model: gene.AliasNameLookup
+  pk: 177
+- fields: {choice: chromosome 7 open reading frame 18}
+  model: gene.AliasNameLookup
+  pk: 2311
+- fields: {choice: transcription initiation factor IA}
+  model: gene.AliasNameLookup
+  pk: 5467
+- fields: {choice: MAP/ERK kinase kinase 3}
+  model: gene.AliasNameLookup
+  pk: 924
+- fields: {choice: oligosaccharyltransferase subunit 48}
+  model: gene.AliasNameLookup
+  pk: 4238
+- fields: {choice: zinc finger protein 896}
+  model: gene.AliasNameLookup
+  pk: 5715
+- fields: {choice: radical S-adenosyl methionine and flavodoxin domains 1}
+  model: gene.AliasNameLookup
+  pk: 4762
+- fields: {choice: p21 associated ncRNA DNA damage activated}
+  model: gene.AliasNameLookup
+  pk: 4305
+- fields: {choice: VDDR I}
+  model: gene.AliasNameLookup
+  pk: 1534
+- fields: {choice: putative membrane protein HE9}
+  model: gene.AliasNameLookup
+  pk: 4735
+- fields: {choice: basic helix loop helix transcription factor 6}
+  model: gene.AliasNameLookup
+  pk: 1910
+- fields: {choice: microtubule interacting protein that associates with TRAF3}
+  model: gene.AliasNameLookup
+  pk: 3789
+- fields: {choice: mitochondrial (aspartate aminotransferase 2) (GOT2) pseudogene}
+  model: gene.AliasNameLookup
+  pk: 3804
+- fields: {choice: AP20 region protein}
+  model: gene.AliasNameLookup
+  pk: 183
+- fields: {choice: myosin regulatory light chain 3}
+  model: gene.AliasNameLookup
+  pk: 3924
+- fields: {choice: activated Cdc42-associated kinase 1}
+  model: gene.AliasNameLookup
+  pk: 1636
+- fields: {choice: interleukin 1}
+  model: gene.AliasNameLookup
+  pk: 3360
+- fields: {choice: ring finger protein with leucine zipper}
+  model: gene.AliasNameLookup
+  pk: 4961
+- fields: {choice: mitostatin}
+  model: gene.AliasNameLookup
+  pk: 3840
+- fields: {choice: F-box protein FBL11}
+  model: gene.AliasNameLookup
+  pk: 544
+- fields: {choice: kielin}
+  model: gene.AliasNameLookup
+  pk: 3437
+- fields: {choice: transfer RNA initiator methionine (CAT) 1-2}
+  model: gene.AliasNameLookup
+  pk: 5475
+- fields: {choice: glutamate tRNA ligase 2}
+  model: gene.AliasNameLookup
+  pk: 3013
+- fields: {choice: skeletal muscle}
+  model: gene.AliasNameLookup
+  pk: 5132
+- fields: {choice: ZEB2 natural antisense transcript}
+  model: gene.AliasNameLookup
+  pk: 1592
+- fields: {choice: matrix metalloproteinase 22}
+  model: gene.AliasNameLookup
+  pk: 3677
+- fields: {choice: senescence marker protein-30}
+  model: gene.AliasNameLookup
+  pk: 5015
+- fields: {choice: radial spoke 16 homolog B (Chlamydomonas)}
+  model: gene.AliasNameLookup
+  pk: 4758
+- fields: {choice: mesenteric estrogen-dependent adipose 4}
+  model: gene.AliasNameLookup
+  pk: 3764
+- fields: {choice: cancer/testis antigen 113}
+  model: gene.AliasNameLookup
+  pk: 2100
+- fields: {choice: matrilysin}
+  model: gene.AliasNameLookup
+  pk: 3673
+- fields: {choice: KARP 1 binding protein}
+  model: gene.AliasNameLookup
+  pk: 831
+- fields: {choice: nucleotide-binding oligomerization domain}
+  model: gene.AliasNameLookup
+  pk: 4215
+- fields: {choice: TBS 19}
+  model: gene.AliasNameLookup
+  pk: 1425
+- fields: {choice: KRAB box domain containing 2}
+  model: gene.AliasNameLookup
+  pk: 857
+- fields: {choice: X-ray repair}
+  model: gene.AliasNameLookup
+  pk: 1574
+- fields: {choice: poly(ADP-ribose) synthetase-3}
+  model: gene.AliasNameLookup
+  pk: 4476
+- fields: {choice: specifically androgen-regulated gene}
+  model: gene.AliasNameLookup
+  pk: 5208
+- fields: {choice: regulatory subunit 172}
+  model: gene.AliasNameLookup
+  pk: 4849
+- fields: {choice: Y-linked}
+  model: gene.AliasNameLookup
+  pk: 1585
+- fields: {choice: fertilization-promoting peptide receptor}
+  model: gene.AliasNameLookup
+  pk: 2866
+- fields: {choice: regulatory subunit 92}
+  model: gene.AliasNameLookup
+  pk: 4895
+- fields: {choice: gallbladder disease 4}
+  model: gene.AliasNameLookup
+  pk: 2945
+- fields: {choice: SNAP25 interacting protein of 30 kDa}
+  model: gene.AliasNameLookup
+  pk: 1295
+- fields: {choice: unconventional prefoldin RPB5 interactor}
+  model: gene.AliasNameLookup
+  pk: 5616
+- fields: {choice: cytokeratin 10}
+  model: gene.AliasNameLookup
+  pk: 2541
+- fields: {choice: ASC 1 complex subunit P100}
+  model: gene.AliasNameLookup
+  pk: 194
+- fields: {choice: binding factor for early enhancer}
+  model: gene.AliasNameLookup
+  pk: 1973
+- fields: {choice: acetoacetyl Coenzyme A thiolase}
+  model: gene.AliasNameLookup
+  pk: 1607
+- fields: {choice: adseverin}
+  model: gene.AliasNameLookup
+  pk: 1680
+- fields: {choice: tyrosine-ester sulfotransferase}
+  model: gene.AliasNameLookup
+  pk: 5599
+- fields: {choice: cooperator of PRMT5}
+  model: gene.AliasNameLookup
+  pk: 2482
+- fields: {choice: interferon lambda receptor 1}
+  model: gene.AliasNameLookup
+  pk: 3352
+- fields: {choice: regulatory subunit 62}
+  model: gene.AliasNameLookup
+  pk: 4874
+- fields: {choice: macrocytic anemia}
+  model: gene.AliasNameLookup
+  pk: 3637
+- fields: {choice: lymphoepithelial Kazal-type-related inhibitor}
+  model: gene.AliasNameLookup
+  pk: 3619
+- fields: {choice: suppression of tumorigenicity 4}
+  model: gene.AliasNameLookup
+  pk: 5307
+- fields: {choice: ring finger protein 206}
+  model: gene.AliasNameLookup
+  pk: 4958
+- fields: {choice: non-protein coding RNA 265-1}
+  model: gene.AliasNameLookup
+  pk: 4111
+- fields: {choice: 70kDa}
+  model: gene.AliasNameLookup
+  pk: 148
+- fields: {choice: antizyme 1}
+  model: gene.AliasNameLookup
+  pk: 1817
+- fields: {choice: GAP-associated tyrosine phosphoprotein p62 (Sam68)}
+  model: gene.AliasNameLookup
+  pk: 609
+- fields: {choice: TR4 orphan receptor associated protein TRA16}
+  model: gene.AliasNameLookup
+  pk: 1451
+- fields: {choice: galectin 4}
+  model: gene.AliasNameLookup
+  pk: 2939
+- fields: {choice: similar to hypothetical protein FLJ35782}
+  model: gene.AliasNameLookup
+  pk: 5110
+- fields: {choice: PLB homolog 1 (Dictyostelium)}
+  model: gene.AliasNameLookup
+  pk: 1097
+- fields: {choice: tryptase gamma II}
+  model: gene.AliasNameLookup
+  pk: 5547
+- fields: {choice: mesenchyme forkhead 1}
+  model: gene.AliasNameLookup
+  pk: 3763
+- fields: {choice: limitrin}
+  model: gene.AliasNameLookup
+  pk: 3527
+- fields: {choice: cancer/testis antigen family 3}
+  model: gene.AliasNameLookup
+  pk: 2188
+- fields: {choice: spermatogenesis associated 38}
+  model: gene.AliasNameLookup
+  pk: 5234
+- fields: {choice: MOB1}
+  model: gene.AliasNameLookup
+  pk: 955
+- fields: {choice: non-protein coding RNA 34}
+  model: gene.AliasNameLookup
+  pk: 4118
+- fields: {choice: 39S ribosomal protein L19}
+  model: gene.AliasNameLookup
+  pk: 68
+- fields: {choice: HSP70 binding protein 21}
+  model: gene.AliasNameLookup
+  pk: 746
+- fields: {choice: metavinculin}
+  model: gene.AliasNameLookup
+  pk: 3776
+- fields: {choice: epithelial stromal interaction protein 1}
+  model: gene.AliasNameLookup
+  pk: 2769
+- fields: {choice: endozepine-like peptide 2 pseudogene}
+  model: gene.AliasNameLookup
+  pk: 2739
+- fields: {choice: mitochontrial peptide chain release factor 1}
+  model: gene.AliasNameLookup
+  pk: 3831
+- fields: {choice: regulatory subunit 158}
+  model: gene.AliasNameLookup
+  pk: 4838
+- fields: {choice: ankyrin repeat-containing regulatory factor X-associated protein}
+  model: gene.AliasNameLookup
+  pk: 1796
+- fields: {choice: Prader Willi/Angelman region 1}
+  model: gene.AliasNameLookup
+  pk: 1152
+- fields: {choice: sperm surface protein hP47}
+  model: gene.AliasNameLookup
+  pk: 5221
+- fields: {choice: CGI-20 protein}
+  model: gene.AliasNameLookup
+  pk: 358
+- fields: {choice: diabetes and obesity regulated}
+  model: gene.AliasNameLookup
+  pk: 2614
+- fields: {choice: cleavage signal-1 protein}
+  model: gene.AliasNameLookup
+  pk: 2346
+- fields: {choice: R3H domain containing 3}
+  model: gene.AliasNameLookup
+  pk: 1164
+- fields: {choice: HCGIV-09 pseudogene}
+  model: gene.AliasNameLookup
+  pk: 695
+- fields: {choice: GPI transamidase subunit}
+  model: gene.AliasNameLookup
+  pk: 638
+- fields: {choice: lambda h23}
+  model: gene.AliasNameLookup
+  pk: 3464
+- fields: {choice: lysophosphatidylethanolamine acyltransferase 2}
+  model: gene.AliasNameLookup
+  pk: 3624
+- fields: {choice: 2'-phosphodiesterase}
+  model: gene.AliasNameLookup
+  pk: 27
+- fields: {choice: snapin}
+  model: gene.AliasNameLookup
+  pk: 5177
+- fields: {choice: serine-threonine protein kinase NKIAMRE}
+  model: gene.AliasNameLookup
+  pk: 5027
+- fields: {choice: regulatory subunit 174}
+  model: gene.AliasNameLookup
+  pk: 4851
+- fields: {choice: polypyrimidine tract binding protein associated}
+  model: gene.AliasNameLookup
+  pk: 4514
+- fields: {choice: calcineurin B}
+  model: gene.AliasNameLookup
+  pk: 2058
+- fields: {choice: ZFP69 zinc finger protein A}
+  model: gene.AliasNameLookup
+  pk: 1594
+- fields: {choice: nepmucin}
+  model: gene.AliasNameLookup
+  pk: 3971
+- fields: {choice: ciliary}
+  model: gene.AliasNameLookup
+  pk: 2325
+- fields: {choice: megane bHLH factor}
+  model: gene.AliasNameLookup
+  pk: 3688
+- fields: {choice: Bcl-2 inhibitor of transcription}
+  model: gene.AliasNameLookup
+  pk: 299
+- fields: {choice: beta 6}
+  model: gene.AliasNameLookup
+  pk: 1933
+- fields: {choice: translocase of inner mitochondrial membrane 40 homolog (S. cerevisiae)}
+  model: gene.AliasNameLookup
+  pk: 5496
+- fields: {choice: high affinity I}
+  model: gene.AliasNameLookup
+  pk: 3169
+- fields: {choice: cancer-associated Sm protein}
+  model: gene.AliasNameLookup
+  pk: 2085
+- fields: {choice: dynein regulatory complex subunit 8}
+  model: gene.AliasNameLookup
+  pk: 2685
+- fields: {choice: sema VIa}
+  model: gene.AliasNameLookup
+  pk: 5011
+- fields: {choice: interferon induced transmembrane protein domain containing 5}
+  model: gene.AliasNameLookup
+  pk: 3349
+- fields: {choice: oncoprotein 18}
+  model: gene.AliasNameLookup
+  pk: 4248
+- fields: {choice: FYVE domain containing 29}
+  model: gene.AliasNameLookup
+  pk: 564
+- fields: {choice: PP1 subunit R4}
+  model: gene.AliasNameLookup
+  pk: 1109
+- fields: {choice: BPI fold containing family D}
+  model: gene.AliasNameLookup
+  pk: 270
+- fields: {choice: ribosomal processing factor 2 homolog (S. cerevisiae)}
+  model: gene.AliasNameLookup
+  pk: 4951
+- fields: {choice: alpha SNAP}
+  model: gene.AliasNameLookup
+  pk: 1724
+- fields: {choice: testis-specific adriamycin sensitivity protein}
+  model: gene.AliasNameLookup
+  pk: 5404
+- fields: {choice: BRO1 domain containing protein}
+  model: gene.AliasNameLookup
+  pk: 288
+- fields: {choice: DNA endonuclease eight-like glycosylase 1}
+  model: gene.AliasNameLookup
+  pk: 444
+- fields: {choice: Kita-kyushu lung cancer antigen 1}
+  model: gene.AliasNameLookup
+  pk: 860
+- fields: {choice: glycoprotein}
+  model: gene.AliasNameLookup
+  pk: 3044
+- fields: {choice: spinocerebellar ataxia 36}
+  model: gene.AliasNameLookup
+  pk: 5252
+- fields: {choice: cytosolic carboxypeptidase 4}
+  model: gene.AliasNameLookup
+  pk: 2558
+- fields: {choice: mitochondrial dynamin-like GTPase}
+  model: gene.AliasNameLookup
+  pk: 3821
+- fields: {choice: strumpellin}
+  model: gene.AliasNameLookup
+  pk: 5282
+- fields: {choice: neural adhesion molecule}
+  model: gene.AliasNameLookup
+  pk: 3978
+- fields: {choice: Phosphoglycerate mutase A}
+  model: gene.AliasNameLookup
+  pk: 1145
+- fields: {choice: protein xylosyltransferase 1}
+  model: gene.AliasNameLookup
+  pk: 4700
+- fields: {choice: long intergenic non-protein coding RNA associated with HELLP syndrome}
+  model: gene.AliasNameLookup
+  pk: 3596
+- fields: {choice: RA regulated nuclear matrix associated protein}
+  model: gene.AliasNameLookup
+  pk: 1165
+- fields: {choice: inhibitor of growth 1}
+  model: gene.AliasNameLookup
+  pk: 3331
+- fields: {choice: nuclear LIM interactor-interacting factor}
+  model: gene.AliasNameLookup
+  pk: 4177
+- fields: {choice: B-cell adapter containing a SH2 domain protein}
+  model: gene.AliasNameLookup
+  pk: 237
+- fields: {choice: LEM domain containing 7}
+  model: gene.AliasNameLookup
+  pk: 881
+- fields: {choice: ciliary rootlet protein}
+  model: gene.AliasNameLookup
+  pk: 2326
+- fields: {choice: non-protein coding RNA 17}
+  model: gene.AliasNameLookup
+  pk: 4086
+- fields: {choice: puromycin-sensitive aminopeptidase}
+  model: gene.AliasNameLookup
+  pk: 4728
+- fields: {choice: DSS/AHC critical interval MAGE superfamily 10}
+  model: gene.AliasNameLookup
+  pk: 476
+- fields: {choice: DCC subclass}
+  model: gene.AliasNameLookup
+  pk: 432
+- fields: {choice: meltrin beta}
+  model: gene.AliasNameLookup
+  pk: 3708
+- fields: {choice: prepro-cortistatin}
+  model: gene.AliasNameLookup
+  pk: 4566
+- fields: {choice: androgen receptor trapped clone 27}
+  model: gene.AliasNameLookup
+  pk: 1785
+- fields: {choice: dimeric NADP-preferring}
+  model: gene.AliasNameLookup
+  pk: 2636
+- fields: {choice: PABP1 dependent poly A specific ribonuclease subunit (S. cerevisiae)}
+  model: gene.AliasNameLookup
+  pk: 1077
+- fields: {choice: RhoGDI gamma}
+  model: gene.AliasNameLookup
+  pk: 1258
+- fields: {choice: long intergenic non-protein coding RNA 1}
+  model: gene.AliasNameLookup
+  pk: 3557
+- fields: {choice: factor for adipocyte differentiation 24}
+  model: gene.AliasNameLookup
+  pk: 2825
+- fields: {choice: DiGeorge critical region gene 1}
+  model: gene.AliasNameLookup
+  pk: 483
+- fields: {choice: macrogolgin}
+  model: gene.AliasNameLookup
+  pk: 3638
+- fields: {choice: GTPase regulator associated with the focal adhesion kinase pp125}
+  model: gene.AliasNameLookup
+  pk: 653
+- fields: {choice: MAGE-10 antigen}
+  model: gene.AliasNameLookup
+  pk: 913
+- fields: {choice: matrix glycoprotein SC1/ECM2}
+  model: gene.AliasNameLookup
+  pk: 3675
+- fields: {choice: F-actin capping protein alpha-2 subunit}
+  model: gene.AliasNameLookup
+  pk: 539
+- fields: {choice: hypothetical gene CG018}
+  model: gene.AliasNameLookup
+  pk: 3259
+- fields: {choice: ras homolog gene family}
+  model: gene.AliasNameLookup
+  pk: 4767
+- fields: {choice: cancer/testis antigen 77}
+  model: gene.AliasNameLookup
+  pk: 2160
+- fields: {choice: MEC1}
+  model: gene.AliasNameLookup
+  pk: 936
+- fields: {choice: B-cell translocation gene 2}
+  model: gene.AliasNameLookup
+  pk: 244
+- fields: {choice: Krox-20 homolog}
+  model: gene.AliasNameLookup
+  pk: 864
+- fields: {choice: leucine rich repeat and pyrin domain containing 7}
+  model: gene.AliasNameLookup
+  pk: 3497
+- fields: {choice: SSTK-interacting protein}
+  model: gene.AliasNameLookup
+  pk: 1318
+- fields: {choice: niacin receptor 1}
+  model: gene.AliasNameLookup
+  pk: 4044
+- fields: {choice: nucleus accumbens associated 1}
+  model: gene.AliasNameLookup
+  pk: 4216
+- fields: {choice: copper pump 1}
+  model: gene.AliasNameLookup
+  pk: 2486
+- fields: {choice: cleavage factor Im complex 68 kDa subunit}
+  model: gene.AliasNameLookup
+  pk: 2345
+- fields: {choice: hard keratin type II 1}
+  model: gene.AliasNameLookup
+  pk: 3115
+- fields: {choice: regulatory subunit 46}
+  model: gene.AliasNameLookup
+  pk: 4861
+- fields: {choice: A4 differentiation-dependent protein}
+  model: gene.AliasNameLookup
+  pk: 162
+- fields: {choice: member 1c}
+  model: gene.AliasNameLookup
+  pk: 3722
+- fields: {choice: long intergenic non-protein coding RNA 123}
+  model: gene.AliasNameLookup
+  pk: 3568
+- fields: {choice: receptor associated protein 80}
+  model: gene.AliasNameLookup
+  pk: 4775
+- fields: {choice: peregrin}
+  model: gene.AliasNameLookup
+  pk: 4382
+- fields: {choice: MAGUK p55 subfamily member 2}
+  model: gene.AliasNameLookup
+  pk: 919
+- fields: {choice: osmosensitive transient receptor potential channel 4}
+  model: gene.AliasNameLookup
+  pk: 4272
+- fields: {choice: kelch-like family member 19}
+  model: gene.AliasNameLookup
+  pk: 3416
+- fields: {choice: common beta-chain-associated protein}
+  model: gene.AliasNameLookup
+  pk: 2389
+- fields: {choice: hypothetical LOC129881}
+  model: gene.AliasNameLookup
+  pk: 3258
+- fields: {choice: PHD finger protein 7B}
+  model: gene.AliasNameLookup
+  pk: 1093

@@ -1,0 +1,651 @@
+- fields: {choice: P52rIPK}
+  model: gene.AliasSymbolLookup
+  pk: 12934
+- fields: {choice: SYN4}
+  model: gene.AliasSymbolLookup
+  pk: 15073
+- fields: {choice: PSS2}
+  model: gene.AliasSymbolLookup
+  pk: 13687
+- fields: {choice: POTE8}
+  model: gene.AliasSymbolLookup
+  pk: 13476
+- fields: {choice: LINC00981}
+  model: gene.AliasSymbolLookup
+  pk: 10105
+- fields: {choice: hsa-mir-184}
+  model: gene.AliasSymbolLookup
+  pk: 18164
+- fields: {choice: FLJ30657}
+  model: gene.AliasSymbolLookup
+  pk: 5431
+- fields: {choice: FLJ00014}
+  model: gene.AliasSymbolLookup
+  pk: 3953
+- fields: {choice: ZO-2}
+  model: gene.AliasSymbolLookup
+  pk: 16868
+- fields: {choice: ADH}
+  model: gene.AliasSymbolLookup
+  pk: 354
+- fields: {choice: AHCP}
+  model: gene.AliasSymbolLookup
+  pk: 424
+- fields: {choice: SHIP}
+  model: gene.AliasSymbolLookup
+  pk: 14650
+- fields: {choice: HKR4}
+  model: gene.AliasSymbolLookup
+  pk: 7467
+- fields: {choice: KIAA0285}
+  model: gene.AliasSymbolLookup
+  pk: 8896
+- fields: {choice: KIAA0230}
+  model: gene.AliasSymbolLookup
+  pk: 8864
+- fields: {choice: FLJ23251}
+  model: gene.AliasSymbolLookup
+  pk: 5206
+- fields: {choice: bA80K6.3}
+  model: gene.AliasSymbolLookup
+  pk: 17214
+- fields: {choice: dJ543J19.5}
+  model: gene.AliasSymbolLookup
+  pk: 17583
+- fields: {choice: Hb-2}
+  model: gene.AliasSymbolLookup
+  pk: 7943
+- fields: {choice: JEM-1}
+  model: gene.AliasSymbolLookup
+  pk: 8532
+- fields: {choice: KIAA0591}
+  model: gene.AliasSymbolLookup
+  pk: 9045
+- fields: {choice: FLJ14639}
+  model: gene.AliasSymbolLookup
+  pk: 4626
+- fields: {choice: CFC}
+  model: gene.AliasSymbolLookup
+  pk: 1623
+- fields: {choice: U3-55K}
+  model: gene.AliasSymbolLookup
+  pk: 16058
+- fields: {choice: LOC441054}
+  model: gene.AliasSymbolLookup
+  pk: 10220
+- fields: {choice: ZAKI-4}
+  model: gene.AliasSymbolLookup
+  pk: 16709
+- fields: {choice: KIAA0168}
+  model: gene.AliasSymbolLookup
+  pk: 8828
+- fields: {choice: KRTAP5.2}
+  model: gene.AliasSymbolLookup
+  pk: 9806
+- fields: {choice: hsa-mir-6815}
+  model: gene.AliasSymbolLookup
+  pk: 19559
+- fields: {choice: EDM5}
+  model: gene.AliasSymbolLookup
+  pk: 3443
+- fields: {choice: ATG1}
+  model: gene.AliasSymbolLookup
+  pk: 718
+- fields: {choice: TUSP}
+  model: gene.AliasSymbolLookup
+  pk: 15953
+- fields: {choice: ATG8F}
+  model: gene.AliasSymbolLookup
+  pk: 724
+- fields: {choice: MGC16353}
+  model: gene.AliasSymbolLookup
+  pk: 10832
+- fields: {choice: flj32422}
+  model: gene.AliasSymbolLookup
+  pk: 17744
+- fields: {choice: FLJ25785}
+  model: gene.AliasSymbolLookup
+  pk: 5360
+- fields: {choice: KIAA1185}
+  model: gene.AliasSymbolLookup
+  pk: 9353
+- fields: {choice: HTTAS}
+  model: gene.AliasSymbolLookup
+  pk: 7863
+- fields: {choice: PP591}
+  model: gene.AliasSymbolLookup
+  pk: 13510
+- fields: {choice: DPRP3}
+  model: gene.AliasSymbolLookup
+  pk: 3248
+- fields: {choice: KRTAP5.6}
+  model: gene.AliasSymbolLookup
+  pk: 9810
+- fields: {choice: CDC47}
+  model: gene.AliasSymbolLookup
+  pk: 1529
+- fields: {choice: RPC8}
+  model: gene.AliasSymbolLookup
+  pk: 14227
+- fields: {choice: BZAP45}
+  model: gene.AliasSymbolLookup
+  pk: 1170
+- fields: {choice: FRP1}
+  model: gene.AliasSymbolLookup
+  pk: 6424
+- fields: {choice: FALDH}
+  model: gene.AliasSymbolLookup
+  pk: 3755
+- fields: {choice: ECEL2}
+  model: gene.AliasSymbolLookup
+  pk: 3422
+- fields: {choice: MGC61598}
+  model: gene.AliasSymbolLookup
+  pk: 11498
+- fields: {choice: WNT14B}
+  model: gene.AliasSymbolLookup
+  pk: 16581
+- fields: {choice: FLJ10782}
+  model: gene.AliasSymbolLookup
+  pk: 4162
+- fields: {choice: DD96}
+  model: gene.AliasSymbolLookup
+  pk: 2546
+- fields: {choice: KIAA0236}
+  model: gene.AliasSymbolLookup
+  pk: 8867
+- fields: {choice: HE12}
+  model: gene.AliasSymbolLookup
+  pk: 7327
+- fields: {choice: S8}
+  model: gene.AliasSymbolLookup
+  pk: 14388
+- fields: {choice: ELK2.2}
+  model: gene.AliasSymbolLookup
+  pk: 3503
+- fields: {choice: bA142J11.1}
+  model: gene.AliasSymbolLookup
+  pk: 16943
+- fields: {choice: SAT-1}
+  model: gene.AliasSymbolLookup
+  pk: 14445
+- fields: {choice: dJ34B20.16}
+  model: gene.AliasSymbolLookup
+  pk: 17515
+- fields: {choice: GIDRP86}
+  model: gene.AliasSymbolLookup
+  pk: 6628
+- fields: {choice: FLJ10961}
+  model: gene.AliasSymbolLookup
+  pk: 4211
+- fields: {choice: Flattop}
+  model: gene.AliasSymbolLookup
+  pk: 6472
+- fields: {choice: TC10}
+  model: gene.AliasSymbolLookup
+  pk: 15279
+- fields: {choice: PPD}
+  model: gene.AliasSymbolLookup
+  pk: 13517
+- fields: {choice: KIAA0227}
+  model: gene.AliasSymbolLookup
+  pk: 8861
+- fields: {choice: KIAA1674}
+  model: gene.AliasSymbolLookup
+  pk: 9553
+- fields: {choice: PRO0132}
+  model: gene.AliasSymbolLookup
+  pk: 13608
+- fields: {choice: KIAA0309}
+  model: gene.AliasSymbolLookup
+  pk: 8913
+- fields: {choice: hsa-mir-622}
+  model: gene.AliasSymbolLookup
+  pk: 19381
+- fields: {choice: CP1B}
+  model: gene.AliasSymbolLookup
+  pk: 1979
+- fields: {choice: REIC}
+  model: gene.AliasSymbolLookup
+  pk: 13957
+- fields: {choice: MGC12982}
+  model: gene.AliasSymbolLookup
+  pk: 10718
+- fields: {choice: hsa-mir-572}
+  model: gene.AliasSymbolLookup
+  pk: 19295
+- fields: {choice: XLOC_010588}
+  model: gene.AliasSymbolLookup
+  pk: 16630
+- fields: {choice: bA174C7.4}
+  model: gene.AliasSymbolLookup
+  pk: 16969
+- fields: {choice: hsa-mir-6769b}
+  model: gene.AliasSymbolLookup
+  pk: 19510
+- fields: {choice: N27C7-4}
+  model: gene.AliasSymbolLookup
+  pk: 11942
+- fields: {choice: CFIM}
+  model: gene.AliasSymbolLookup
+  pk: 1625
+- fields: {choice: LW-1}
+  model: gene.AliasSymbolLookup
+  pk: 10317
+- fields: {choice: KIAA0450}
+  model: gene.AliasSymbolLookup
+  pk: 8990
+- fields: {choice: bHLHc8}
+  model: gene.AliasSymbolLookup
+  pk: 17251
+- fields: {choice: HSPD1-17P}
+  model: gene.AliasSymbolLookup
+  pk: 7777
+- fields: {choice: minK}
+  model: gene.AliasSymbolLookup
+  pk: 19877
+- fields: {choice: RhoB}
+  model: gene.AliasSymbolLookup
+  pk: 14331
+- fields: {choice: GEF}
+  model: gene.AliasSymbolLookup
+  pk: 6605
+- fields: {choice: HsT18206}
+  model: gene.AliasSymbolLookup
+  pk: 7993
+- fields: {choice: bA537H15.5}
+  model: gene.AliasSymbolLookup
+  pk: 17169
+- fields: {choice: SMN}
+  model: gene.AliasSymbolLookup
+  pk: 14762
+- fields: {choice: LAP1}
+  model: gene.AliasSymbolLookup
+  pk: 9956
+- fields: {choice: OTTHUMG00000067149}
+  model: gene.AliasSymbolLookup
+  pk: 12832
+- fields: {choice: DKFZP434A1315}
+  model: gene.AliasSymbolLookup
+  pk: 2692
+- fields: {choice: KIAA1883}
+  model: gene.AliasSymbolLookup
+  pk: 9638
+- fields: {choice: FLJ12899}
+  model: gene.AliasSymbolLookup
+  pk: 4434
+- fields: {choice: p40phox}
+  model: gene.AliasSymbolLookup
+  pk: 20004
+- fields: {choice: TB4Y}
+  model: gene.AliasSymbolLookup
+  pk: 15263
+- fields: {choice: MET1}
+  model: gene.AliasSymbolLookup
+  pk: 10588
+- fields: {choice: OST034}
+  model: gene.AliasSymbolLookup
+  pk: 12725
+- fields: {choice: SCAD-SRL}
+  model: gene.AliasSymbolLookup
+  pk: 14473
+- fields: {choice: KIAA0162}
+  model: gene.AliasSymbolLookup
+  pk: 8823
+- fields: {choice: FLJ35936}
+  model: gene.AliasSymbolLookup
+  pk: 5818
+- fields: {choice: Arip2}
+  model: gene.AliasSymbolLookup
+  pk: 797
+- fields: {choice: Ly-GDI}
+  model: gene.AliasSymbolLookup
+  pk: 10359
+- fields: {choice: FLJ14440}
+  model: gene.AliasSymbolLookup
+  pk: 4599
+- fields: {choice: DKFZp451J1719}
+  model: gene.AliasSymbolLookup
+  pk: 2960
+- fields: {choice: HsT18872}
+  model: gene.AliasSymbolLookup
+  pk: 7996
+- fields: {choice: DKFZP586C1622}
+  model: gene.AliasSymbolLookup
+  pk: 2825
+- fields: {choice: KIAA0733}
+  model: gene.AliasSymbolLookup
+  pk: 9127
+- fields: {choice: CLL-1}
+  model: gene.AliasSymbolLookup
+  pk: 1861
+- fields: {choice: TAJ-alpha}
+  model: gene.AliasSymbolLookup
+  pk: 15230
+- fields: {choice: MGC3178}
+  model: gene.AliasSymbolLookup
+  pk: 11103
+- fields: {choice: TRF2}
+  model: gene.AliasSymbolLookup
+  pk: 15812
+- fields: {choice: WBSCR20B}
+  model: gene.AliasSymbolLookup
+  pk: 16558
+- fields: {choice: NPFF2}
+  model: gene.AliasSymbolLookup
+  pk: 12297
+- fields: {choice: NF-66}
+  model: gene.AliasSymbolLookup
+  pk: 12125
+- fields: {choice: FLJ10895}
+  model: gene.AliasSymbolLookup
+  pk: 4197
+- fields: {choice: eIF3-p48}
+  model: gene.AliasSymbolLookup
+  pk: 17718
+- fields: {choice: IFN-alphaI}
+  model: gene.AliasSymbolLookup
+  pk: 8125
+- fields: {choice: bA256G5.1}
+  model: gene.AliasSymbolLookup
+  pk: 17008
+- fields: {choice: OR2T4Q}
+  model: gene.AliasSymbolLookup
+  pk: 12651
+- fields: {choice: MGC13138}
+  model: gene.AliasSymbolLookup
+  pk: 10737
+- fields: {choice: TENRL}
+  model: gene.AliasSymbolLookup
+  pk: 15473
+- fields: {choice: IPCA-6}
+  model: gene.AliasSymbolLookup
+  pk: 8444
+- fields: {choice: MOR1}
+  model: gene.AliasSymbolLookup
+  pk: 11676
+- fields: {choice: IMP2}
+  model: gene.AliasSymbolLookup
+  pk: 8410
+- fields: {choice: psiHSP40}
+  model: gene.AliasSymbolLookup
+  pk: 20075
+- fields: {choice: FLJ35821}
+  model: gene.AliasSymbolLookup
+  pk: 5803
+- fields: {choice: PRSC}
+  model: gene.AliasSymbolLookup
+  pk: 13648
+- fields: {choice: EFG2}
+  model: gene.AliasSymbolLookup
+  pk: 3458
+- fields: {choice: CD119}
+  model: gene.AliasSymbolLookup
+  pk: 1415
+- fields: {choice: SLC25A8}
+  model: gene.AliasSymbolLookup
+  pk: 14715
+- fields: {choice: CD223}
+  model: gene.AliasSymbolLookup
+  pk: 1453
+- fields: {choice: FLJ23414}
+  model: gene.AliasSymbolLookup
+  pk: 5225
+- fields: {choice: PKD2}
+  model: gene.AliasSymbolLookup
+  pk: 13364
+- fields: {choice: PABP2}
+  model: gene.AliasSymbolLookup
+  pk: 12971
+- fields: {choice: V1S1P}
+  model: gene.AliasSymbolLookup
+  pk: 16434
+- fields: {choice: FIG1}
+  model: gene.AliasSymbolLookup
+  pk: 3891
+- fields: {choice: TAP2}
+  model: gene.AliasSymbolLookup
+  pk: 15241
+- fields: {choice: KIAA0642}
+  model: gene.AliasSymbolLookup
+  pk: 9076
+- fields: {choice: FLJ22374}
+  model: gene.AliasSymbolLookup
+  pk: 5107
+- fields: {choice: MGC39900}
+  model: gene.AliasSymbolLookup
+  pk: 11283
+- fields: {choice: IGHV(III)-25-1}
+  model: gene.AliasSymbolLookup
+  pk: 8215
+- fields: {choice: hsa-mir-490}
+  model: gene.AliasSymbolLookup
+  pk: 19028
+- fields: {choice: HBII-52-22}
+  model: gene.AliasSymbolLookup
+  pk: 7114
+- fields: {choice: 'Em:AC019205.2'}
+  model: gene.AliasSymbolLookup
+  pk: 3690
+- fields: {choice: hsa-mir-181d}
+  model: gene.AliasSymbolLookup
+  pk: 18159
+- fields: {choice: H3/k}
+  model: gene.AliasSymbolLookup
+  pk: 6980
+- fields: {choice: U7.22}
+  model: gene.AliasSymbolLookup
+  pk: 16143
+- fields: {choice: LEMP-1}
+  model: gene.AliasSymbolLookup
+  pk: 10009
+- fields: {choice: EPB41L4O}
+  model: gene.AliasSymbolLookup
+  pk: 3548
+- fields: {choice: DC3}
+  model: gene.AliasSymbolLookup
+  pk: 2518
+- fields: {choice: PHT2}
+  model: gene.AliasSymbolLookup
+  pk: 13303
+- fields: {choice: KE-2}
+  model: gene.AliasSymbolLookup
+  pk: 8736
+- fields: {choice: SCGB4A4}
+  model: gene.AliasSymbolLookup
+  pk: 14500
+- fields: {choice: PRO1557}
+  model: gene.AliasSymbolLookup
+  pk: 13615
+- fields: {choice: dJ447F3.6}
+  model: gene.AliasSymbolLookup
+  pk: 17552
+- fields: {choice: PRF-1}
+  model: gene.AliasSymbolLookup
+  pk: 13593
+- fields: {choice: LOC339778}
+  model: gene.AliasSymbolLookup
+  pk: 10186
+- fields: {choice: DRM}
+  model: gene.AliasSymbolLookup
+  pk: 3275
+- fields: {choice: hsa-mir-5006}
+  model: gene.AliasSymbolLookup
+  pk: 19046
+- fields: {choice: MEG2}
+  model: gene.AliasSymbolLookup
+  pk: 10563
+- fields: {choice: FLJ20212}
+  model: gene.AliasSymbolLookup
+  pk: 4771
+- fields: {choice: FLJ39802}
+  model: gene.AliasSymbolLookup
+  pk: 6054
+- fields: {choice: LXR-a}
+  model: gene.AliasSymbolLookup
+  pk: 10319
+- fields: {choice: hsa-mir-1183}
+  model: gene.AliasSymbolLookup
+  pk: 17967
+- fields: {choice: FLJ42392}
+  model: gene.AliasSymbolLookup
+  pk: 6166
+- fields: {choice: LQT10}
+  model: gene.AliasSymbolLookup
+  pk: 10271
+- fields: {choice: bA504H3.4}
+  model: gene.AliasSymbolLookup
+  pk: 17151
+- fields: {choice: ZF6}
+  model: gene.AliasSymbolLookup
+  pk: 16737
+- fields: {choice: HLA-30}
+  model: gene.AliasSymbolLookup
+  pk: 7472
+- fields: {choice: hsa-mir-1233-2}
+  model: gene.AliasSymbolLookup
+  pk: 17994
+- fields: {choice: NESCA}
+  model: gene.AliasSymbolLookup
+  pk: 12111
+- fields: {choice: PI3K}
+  model: gene.AliasSymbolLookup
+  pk: 13306
+- fields: {choice: LRRC37F}
+  model: gene.AliasSymbolLookup
+  pk: 10291
+- fields: {choice: RNF109}
+  model: gene.AliasSymbolLookup
+  pk: 14076
+- fields: {choice: TRIM60P7}
+  model: gene.AliasSymbolLookup
+  pk: 15834
+- fields: {choice: 'CYP4F-se13[6:8]'}
+  model: gene.AliasSymbolLookup
+  pk: 2299
+- fields: {choice: U7.3}
+  model: gene.AliasSymbolLookup
+  pk: 16151
+- fields: {choice: NLC1-A}
+  model: gene.AliasSymbolLookup
+  pk: 12218
+- fields: {choice: KIAA1453}
+  model: gene.AliasSymbolLookup
+  pk: 9474
+- fields: {choice: KCa5.1}
+  model: gene.AliasSymbolLookup
+  pk: 8733
+- fields: {choice: AITR}
+  model: gene.AliasSymbolLookup
+  pk: 446
+- fields: {choice: FLJ20291}
+  model: gene.AliasSymbolLookup
+  pk: 4800
+- fields: {choice: MGC40195}
+  model: gene.AliasSymbolLookup
+  pk: 11294
+- fields: {choice: AurBps1}
+  model: gene.AliasSymbolLookup
+  pk: 809
+- fields: {choice: HsT41398}
+  model: gene.AliasSymbolLookup
+  pk: 8035
+- fields: {choice: MGC149453}
+  model: gene.AliasSymbolLookup
+  pk: 10790
+- fields: {choice: CT32}
+  model: gene.AliasSymbolLookup
+  pk: 2150
+- fields: {choice: CGI-57}
+  model: gene.AliasSymbolLookup
+  pk: 1710
+- fields: {choice: KIAA0609}
+  model: gene.AliasSymbolLookup
+  pk: 9057
+- fields: {choice: CILD9}
+  model: gene.AliasSymbolLookup
+  pk: 1788
+- fields: {choice: SPRK}
+  model: gene.AliasSymbolLookup
+  pk: 14894
+- fields: {choice: TRBV112}
+  model: gene.AliasSymbolLookup
+  pk: 15751
+- fields: {choice: DKFZp761A0620}
+  model: gene.AliasSymbolLookup
+  pk: 3087
+- fields: {choice: DKFZP564B167}
+  model: gene.AliasSymbolLookup
+  pk: 2771
+- fields: {choice: PISSLRE}
+  model: gene.AliasSymbolLookup
+  pk: 13344
+- fields: {choice: FLJ12701}
+  model: gene.AliasSymbolLookup
+  pk: 4402
+- fields: {choice: MGC2731}
+  model: gene.AliasSymbolLookup
+  pk: 11047
+- fields: {choice: IGHV(II)-49-1}
+  model: gene.AliasSymbolLookup
+  pk: 8201
+- fields: {choice: bA255A11.1}
+  model: gene.AliasSymbolLookup
+  pk: 17006
+- fields: {choice: FLJ90165}
+  model: gene.AliasSymbolLookup
+  pk: 6324
+- fields: {choice: NaSi-1}
+  model: gene.AliasSymbolLookup
+  pk: 12455
+- fields: {choice: tRNA(Sec)}
+  model: gene.AliasSymbolLookup
+  pk: 20154
+- fields: {choice: FLJ14153}
+  model: gene.AliasSymbolLookup
+  pk: 4572
+- fields: {choice: NY-CO-43}
+  model: gene.AliasSymbolLookup
+  pk: 12415
+- fields: {choice: PUM}
+  model: gene.AliasSymbolLookup
+  pk: 13739
+- fields: {choice: FLJ45338}
+  model: gene.AliasSymbolLookup
+  pk: 6252
+- fields: {choice: OR6S1Q}
+  model: gene.AliasSymbolLookup
+  pk: 12676
+- fields: {choice: Ssc1}
+  model: gene.AliasSymbolLookup
+  pk: 15134
+- fields: {choice: IGKV127}
+  model: gene.AliasSymbolLookup
+  pk: 8286
+- fields: {choice: ACCA}
+  model: gene.AliasSymbolLookup
+  pk: 300
+- fields: {choice: PP32R2}
+  model: gene.AliasSymbolLookup
+  pk: 13501
+- fields: {choice: NPH4}
+  model: gene.AliasSymbolLookup
+  pk: 12300
+- fields: {choice: MUC-24}
+  model: gene.AliasSymbolLookup
+  pk: 11847
+- fields: {choice: KIAA1061}
+  model: gene.AliasSymbolLookup
+  pk: 9292
+- fields: {choice: HSTF1}
+  model: gene.AliasSymbolLookup
+  pk: 7804
+- fields: {choice: GHBP}
+  model: gene.AliasSymbolLookup
+  pk: 6626
+- fields: {choice: E4TF1A}
+  model: gene.AliasSymbolLookup
+  pk: 3392
+- fields: {choice: TA4}
+  model: gene.AliasSymbolLookup
+  pk: 15197

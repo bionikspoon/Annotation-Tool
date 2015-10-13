@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding=utf-8
-from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework.serializers import ModelSerializer
 
 from .models import Gene
 
 
-class GeneSerializer(HyperlinkedModelSerializer):
+class GeneSerializer(ModelSerializer):
     class Meta:
         model = Gene
         fields = 'url', 'uuid'

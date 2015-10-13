@@ -1,0 +1,2538 @@
+- fields: {choice: ARHE}
+  model: gene.PrevSymbolLookup
+  pk: 318
+- fields: {choice: C5orf50}
+  model: gene.PrevSymbolLookup
+  pk: 1872
+- fields: {choice: H2AFC}
+  model: gene.PrevSymbolLookup
+  pk: 4241
+- fields: {choice: DFNB77}
+  model: gene.PrevSymbolLookup
+  pk: 3111
+- fields: {choice: C21orf11}
+  model: gene.PrevSymbolLookup
+  pk: 1580
+- fields: {choice: GPR57}
+  model: gene.PrevSymbolLookup
+  pk: 4141
+- fields: {choice: CRAMP1L}
+  model: gene.PrevSymbolLookup
+  pk: 2741
+- fields: {choice: HPE2}
+  model: gene.PrevSymbolLookup
+  pk: 4525
+- fields: {choice: FOXD4L2}
+  model: gene.PrevSymbolLookup
+  pk: 3810
+- fields: {choice: RN5S293}
+  model: gene.PrevSymbolLookup
+  pk: 7956
+- fields: {choice: ZNF13}
+  model: gene.PrevSymbolLookup
+  pk: 10628
+- fields: {choice: C8orf57}
+  model: gene.PrevSymbolLookup
+  pk: 2131
+- fields: {choice: OR4C1}
+  model: gene.PrevSymbolLookup
+  pk: 6882
+- fields: {choice: TMEM118}
+  model: gene.PrevSymbolLookup
+  pk: 9457
+- fields: {choice: RN5S78}
+  model: gene.PrevSymbolLookup
+  pk: 8235
+- fields: {choice: MIRN1247}
+  model: gene.PrevSymbolLookup
+  pk: 5581
+- fields: {choice: TRNAV10}
+  model: gene.PrevSymbolLookup
+  pk: 10153
+- fields: {choice: C8orf8}
+  model: gene.PrevSymbolLookup
+  pk: 2144
+- fields: {choice: C22orf41}
+  model: gene.PrevSymbolLookup
+  pk: 1691
+- fields: {choice: RN5S356}
+  model: gene.PrevSymbolLookup
+  pk: 8023
+- fields: {choice: THRAP2}
+  model: gene.PrevSymbolLookup
+  pk: 9402
+- fields: {choice: POM121L1}
+  model: gene.PrevSymbolLookup
+  pk: 7350
+- fields: {choice: FAM11B}
+  model: gene.PrevSymbolLookup
+  pk: 3524
+- fields: {choice: AIH2}
+  model: gene.PrevSymbolLookup
+  pk: 146
+- fields: {choice: MIRN20}
+  model: gene.PrevSymbolLookup
+  pk: 5757
+- fields: {choice: MIRN106A}
+  model: gene.PrevSymbolLookup
+  pk: 5542
+- fields: {choice: FAM7B1}
+  model: gene.PrevSymbolLookup
+  pk: 3661
+- fields: {choice: DDX33}
+  model: gene.PrevSymbolLookup
+  pk: 3027
+- fields: {choice: BCP}
+  model: gene.PrevSymbolLookup
+  pk: 532
+- fields: {choice: TRNAL30}
+  model: gene.PrevSymbolLookup
+  pk: 9919
+- fields: {choice: SLC23A1}
+  model: gene.PrevSymbolLookup
+  pk: 8986
+- fields: {choice: TRNAK15}
+  model: gene.PrevSymbolLookup
+  pk: 9864
+- fields: {choice: HNF3G}
+  model: gene.PrevSymbolLookup
+  pk: 4450
+- fields: {choice: TRY1}
+  model: gene.PrevSymbolLookup
+  pk: 10239
+- fields: {choice: MIRN1468}
+  model: gene.PrevSymbolLookup
+  pk: 5688
+- fields: {choice: ST4}
+  model: gene.PrevSymbolLookup
+  pk: 9156
+- fields: {choice: C5orf54}
+  model: gene.PrevSymbolLookup
+  pk: 1874
+- fields: {choice: RPL13AP4}
+  model: gene.PrevSymbolLookup
+  pk: 8559
+- fields: {choice: PQBP5}
+  model: gene.PrevSymbolLookup
+  pk: 7406
+- fields: {choice: C1orf57}
+  model: gene.PrevSymbolLookup
+  pk: 1357
+- fields: {choice: WIBG}
+  model: gene.PrevSymbolLookup
+  pk: 10537
+- fields: {choice: MIRN617}
+  model: gene.PrevSymbolLookup
+  pk: 6086
+- fields: {choice: SCYAR1}
+  model: gene.PrevSymbolLookup
+  pk: 8767
+- fields: {choice: CTNNAP1}
+  model: gene.PrevSymbolLookup
+  pk: 2823
+- fields: {choice: CCDC128}
+  model: gene.PrevSymbolLookup
+  pk: 2340
+- fields: {choice: KIAA0090}
+  model: gene.PrevSymbolLookup
+  pk: 4829
+- fields: {choice: PLXN6}
+  model: gene.PrevSymbolLookup
+  pk: 7318
+- fields: {choice: C1orf92}
+  model: gene.PrevSymbolLookup
+  pk: 1391
+- fields: {choice: FBS1}
+  model: gene.PrevSymbolLookup
+  pk: 3706
+- fields: {choice: TRM1}
+  model: gene.PrevSymbolLookup
+  pk: 9636
+- fields: {choice: LCN7}
+  model: gene.PrevSymbolLookup
+  pk: 5164
+- fields: {choice: LASS2}
+  model: gene.PrevSymbolLookup
+  pk: 5150
+- fields: {choice: API2}
+  model: gene.PrevSymbolLookup
+  pk: 278
+- fields: {choice: FAM28CP}
+  model: gene.PrevSymbolLookup
+  pk: 3589
+- fields: {choice: C9orf21}
+  model: gene.PrevSymbolLookup
+  pk: 2203
+- fields: {choice: C10orf106}
+  model: gene.PrevSymbolLookup
+  pk: 633
+- fields: {choice: MIRN1281}
+  model: gene.PrevSymbolLookup
+  pk: 5622
+- fields: {choice: ENSAP}
+  model: gene.PrevSymbolLookup
+  pk: 3396
+- fields: {choice: OR4G8P}
+  model: gene.PrevSymbolLookup
+  pk: 6900
+- fields: {choice: HMGN2L6}
+  model: gene.PrevSymbolLookup
+  pk: 4442
+- fields: {choice: GLUD}
+  model: gene.PrevSymbolLookup
+  pk: 4005
+- fields: {choice: PGL3}
+  model: gene.PrevSymbolLookup
+  pk: 7217
+- fields: {choice: RN5S464}
+  model: gene.PrevSymbolLookup
+  pk: 8142
+- fields: {choice: DNM1DN4@}
+  model: gene.PrevSymbolLookup
+  pk: 3200
+- fields: {choice: RN5S408}
+  model: gene.PrevSymbolLookup
+  pk: 8080
+- fields: {choice: MIRN516-4}
+  model: gene.PrevSymbolLookup
+  pk: 5948
+- fields: {choice: MIRN509-3}
+  model: gene.PrevSymbolLookup
+  pk: 5931
+- fields: {choice: KIAA1305}
+  model: gene.PrevSymbolLookup
+  pk: 4942
+- fields: {choice: TCEB1P25}
+  model: gene.PrevSymbolLookup
+  pk: 9300
+- fields: {choice: TSSC6}
+  model: gene.PrevSymbolLookup
+  pk: 10261
+- fields: {choice: AWAL}
+  model: gene.PrevSymbolLookup
+  pk: 476
+- fields: {choice: S100A7L4}
+  model: gene.PrevSymbolLookup
+  pk: 8669
+- fields: {choice: DO}
+  model: gene.PrevSymbolLookup
+  pk: 3208
+- fields: {choice: C7orf23}
+  model: gene.PrevSymbolLookup
+  pk: 2065
+- fields: {choice: TRNAR10}
+  model: gene.PrevSymbolLookup
+  pk: 10070
+- fields: {choice: OR4C17P}
+  model: gene.PrevSymbolLookup
+  pk: 6884
+- fields: {choice: MIRN1255B2}
+  model: gene.PrevSymbolLookup
+  pk: 5594
+- fields: {choice: C6orf29}
+  model: gene.PrevSymbolLookup
+  pk: 1996
+- fields: {choice: CGM15}
+  model: gene.PrevSymbolLookup
+  pk: 2533
+- fields: {choice: BCDIN3}
+  model: gene.PrevSymbolLookup
+  pk: 517
+- fields: {choice: C11orf90}
+  model: gene.PrevSymbolLookup
+  pk: 778
+- fields: {choice: BPAG2}
+  model: gene.PrevSymbolLookup
+  pk: 582
+- fields: {choice: PHLL1}
+  model: gene.PrevSymbolLookup
+  pk: 7235
+- fields: {choice: PRHOXNB}
+  model: gene.PrevSymbolLookup
+  pk: 7416
+- fields: {choice: MSX2P}
+  model: gene.PrevSymbolLookup
+  pk: 6350
+- fields: {choice: ITM2BP}
+  model: gene.PrevSymbolLookup
+  pk: 4778
+- fields: {choice: EGFL9}
+  model: gene.PrevSymbolLookup
+  pk: 3331
+- fields: {choice: ARL10A}
+  model: gene.PrevSymbolLookup
+  pk: 332
+- fields: {choice: CYBASC3}
+  model: gene.PrevSymbolLookup
+  pk: 2907
+- fields: {choice: ANUBL1}
+  model: gene.PrevSymbolLookup
+  pk: 246
+- fields: {choice: C10orf28}
+  model: gene.PrevSymbolLookup
+  pk: 667
+- fields: {choice: GCFC1-AS1}
+  model: gene.PrevSymbolLookup
+  pk: 3939
+- fields: {choice: AXLLG}
+  model: gene.PrevSymbolLookup
+  pk: 478
+- fields: {choice: ZNF694}
+  model: gene.PrevSymbolLookup
+  pk: 10790
+- fields: {choice: GUC2C}
+  model: gene.PrevSymbolLookup
+  pk: 4220
+- fields: {choice: PMS2L12}
+  model: gene.PrevSymbolLookup
+  pk: 7322
+- fields: {choice: TMEM142C}
+  model: gene.PrevSymbolLookup
+  pk: 9462
+- fields: {choice: LYPLA3}
+  model: gene.PrevSymbolLookup
+  pk: 5338
+- fields: {choice: RNH}
+  model: gene.PrevSymbolLookup
+  pk: 8305
+- fields: {choice: NOLA3}
+  model: gene.PrevSymbolLookup
+  pk: 6659
+- fields: {choice: THRAP3L}
+  model: gene.PrevSymbolLookup
+  pk: 9403
+- fields: {choice: MIRNLET7B}
+  model: gene.PrevSymbolLookup
+  pk: 6201
+- fields: {choice: HNRPUL1}
+  model: gene.PrevSymbolLookup
+  pk: 4480
+- fields: {choice: MIRN941-1}
+  model: gene.PrevSymbolLookup
+  pk: 6186
+- fields: {choice: JPHL1}
+  model: gene.PrevSymbolLookup
+  pk: 4796
+- fields: {choice: HYKPP}
+  model: gene.PrevSymbolLookup
+  pk: 4606
+- fields: {choice: SLC9A11}
+  model: gene.PrevSymbolLookup
+  pk: 9000
+- fields: {choice: OR5T1P}
+  model: gene.PrevSymbolLookup
+  pk: 6967
+- fields: {choice: ZNF176}
+  model: gene.PrevSymbolLookup
+  pk: 10644
+- fields: {choice: C9orf126}
+  model: gene.PrevSymbolLookup
+  pk: 2174
+- fields: {choice: FUSIP1P}
+  model: gene.PrevSymbolLookup
+  pk: 3864
+- fields: {choice: C5orf65}
+  model: gene.PrevSymbolLookup
+  pk: 1879
+- fields: {choice: TRV8}
+  model: gene.PrevSymbolLookup
+  pk: 10236
+- fields: {choice: PDZK1IP1-AS1}
+  model: gene.PrevSymbolLookup
+  pk: 7182
+- fields: {choice: GATSL1}
+  model: gene.PrevSymbolLookup
+  pk: 3934
+- fields: {choice: HS3ST5}
+  model: gene.PrevSymbolLookup
+  pk: 4546
+- fields: {choice: CRFB4}
+  model: gene.PrevSymbolLookup
+  pk: 2747
+- fields: {choice: MIC2L1}
+  model: gene.PrevSymbolLookup
+  pk: 5484
+- fields: {choice: C6orf41}
+  model: gene.PrevSymbolLookup
+  pk: 2007
+- fields: {choice: D12S2489E}
+  model: gene.PrevSymbolLookup
+  pk: 2965
+- fields: {choice: C6orf33}
+  model: gene.PrevSymbolLookup
+  pk: 2000
+- fields: {choice: B3GALT7}
+  model: gene.PrevSymbolLookup
+  pk: 489
+- fields: {choice: C19orf27}
+  model: gene.PrevSymbolLookup
+  pk: 1203
+- fields: {choice: ANPRA}
+  model: gene.PrevSymbolLookup
+  pk: 237
+- fields: {choice: SH3MD3}
+  model: gene.PrevSymbolLookup
+  pk: 8911
+- fields: {choice: MIRN581}
+  model: gene.PrevSymbolLookup
+  pk: 6051
+- fields: {choice: HNRPH3}
+  model: gene.PrevSymbolLookup
+  pk: 4474
+- fields: {choice: CSX}
+  model: gene.PrevSymbolLookup
+  pk: 2803
+- fields: {choice: MUL}
+  model: gene.PrevSymbolLookup
+  pk: 6414
+- fields: {choice: ZNF312B}
+  model: gene.PrevSymbolLookup
+  pk: 10701
+- fields: {choice: RN5S498}
+  model: gene.PrevSymbolLookup
+  pk: 8179
+- fields: {choice: FAM42B}
+  model: gene.PrevSymbolLookup
+  pk: 3615
+- fields: {choice: TRNAQ9}
+  model: gene.PrevSymbolLookup
+  pk: 10069
+- fields: {choice: C14orf120}
+  model: gene.PrevSymbolLookup
+  pk: 892
+- fields: {choice: KIAA0776}
+  model: gene.PrevSymbolLookup
+  pk: 4899
+- fields: {choice: MIRN610}
+  model: gene.PrevSymbolLookup
+  pk: 6079
+- fields: {choice: MAP3K7IP3}
+  model: gene.PrevSymbolLookup
+  pk: 5393
+- fields: {choice: PTPRL1}
+  model: gene.PrevSymbolLookup
+  pk: 7557
+- fields: {choice: SAA3}
+  model: gene.PrevSymbolLookup
+  pk: 8675
+- fields: {choice: LKP}
+  model: gene.PrevSymbolLookup
+  pk: 5253
+- fields: {choice: C6orf40}
+  model: gene.PrevSymbolLookup
+  pk: 2006
+- fields: {choice: RPEL1}
+  model: gene.PrevSymbolLookup
+  pk: 8554
+- fields: {choice: TRQ2}
+  model: gene.PrevSymbolLookup
+  pk: 10216
+- fields: {choice: C8orf13}
+  model: gene.PrevSymbolLookup
+  pk: 2105
+- fields: {choice: TRNAR30P}
+  model: gene.PrevSymbolLookup
+  pk: 10089
+- fields: {choice: MS4A4}
+  model: gene.PrevSymbolLookup
+  pk: 6332
+- fields: {choice: MIRN96}
+  model: gene.PrevSymbolLookup
+  pk: 6194
+- fields: {choice: C8orf14}
+  model: gene.PrevSymbolLookup
+  pk: 2106
+- fields: {choice: RP31}
+  model: gene.PrevSymbolLookup
+  pk: 8547
+- fields: {choice: RAB2}
+  model: gene.PrevSymbolLookup
+  pk: 7583
+- fields: {choice: BCR4}
+  model: gene.PrevSymbolLookup
+  pk: 536
+- fields: {choice: MIRN649}
+  model: gene.PrevSymbolLookup
+  pk: 6118
+- fields: {choice: DNM1DN17}
+  model: gene.PrevSymbolLookup
+  pk: 3196
+- fields: {choice: LMN1}
+  model: gene.PrevSymbolLookup
+  pk: 5258
+- fields: {choice: MIRN302E}
+  model: gene.PrevSymbolLookup
+  pk: 5814
+- fields: {choice: RN5S190}
+  model: gene.PrevSymbolLookup
+  pk: 7842
+- fields: {choice: ABCB10P}
+  model: gene.PrevSymbolLookup
+  pk: 25
+- fields: {choice: RBM22P10}
+  model: gene.PrevSymbolLookup
+  pk: 7649
+- fields: {choice: CPO}
+  model: gene.PrevSymbolLookup
+  pk: 2732
+- fields: {choice: TRNAN5}
+  model: gene.PrevSymbolLookup
+  pk: 9990
+- fields: {choice: DFNB22}
+  model: gene.PrevSymbolLookup
+  pk: 3094
+- fields: {choice: OR4G7P}
+  model: gene.PrevSymbolLookup
+  pk: 6899
+- fields: {choice: NPS1}
+  model: gene.PrevSymbolLookup
+  pk: 6694
+- fields: {choice: EL1}
+  model: gene.PrevSymbolLookup
+  pk: 3372
+- fields: {choice: TRNAP12}
+  model: gene.PrevSymbolLookup
+  pk: 9996
+- fields: {choice: SCYA13}
+  model: gene.PrevSymbolLookup
+  pk: 8746
+- fields: {choice: OR2AP1P}
+  model: gene.PrevSymbolLookup
+  pk: 6842
+- fields: {choice: EGFL4}
+  model: gene.PrevSymbolLookup
+  pk: 3329
+- fields: {choice: KRN1}
+  model: gene.PrevSymbolLookup
+  pk: 5040
+- fields: {choice: IL2R}
+  model: gene.PrevSymbolLookup
+  pk: 4717
+- fields: {choice: UNC13}
+  model: gene.PrevSymbolLookup
+  pk: 10376
+- fields: {choice: PTPRL2}
+  model: gene.PrevSymbolLookup
+  pk: 7558
+- fields: {choice: TRNAC4}
+  model: gene.PrevSymbolLookup
+  pk: 9711
+- fields: {choice: CES7}
+  model: gene.PrevSymbolLookup
+  pk: 2512
+- fields: {choice: ZNF278}
+  model: gene.PrevSymbolLookup
+  pk: 10678
+- fields: {choice: FGF12B}
+  model: gene.PrevSymbolLookup
+  pk: 3745
+- fields: {choice: GPR5}
+  model: gene.PrevSymbolLookup
+  pk: 4137
+- fields: {choice: PRKM8}
+  model: gene.PrevSymbolLookup
+  pk: 7446
+- fields: {choice: ZC3HDC7}
+  model: gene.PrevSymbolLookup
+  pk: 10588
+- fields: {choice: ERVK6}
+  model: gene.PrevSymbolLookup
+  pk: 3432
+- fields: {choice: FAM10A5}
+  model: gene.PrevSymbolLookup
+  pk: 3513
+- fields: {choice: ADTB1L1}
+  model: gene.PrevSymbolLookup
+  pk: 117
+- fields: {choice: FNDC6}
+  model: gene.PrevSymbolLookup
+  pk: 3799
+- fields: {choice: NACGT1}
+  model: gene.PrevSymbolLookup
+  pk: 6453
+- fields: {choice: ALTE}
+  model: gene.PrevSymbolLookup
+  pk: 192
+- fields: {choice: C20orf7}
+  model: gene.PrevSymbolLookup
+  pk: 1543
+- fields: {choice: OR13C7P}
+  model: gene.PrevSymbolLookup
+  pk: 6807
+- fields: {choice: C20orf9}
+  model: gene.PrevSymbolLookup
+  pk: 1561
+- fields: {choice: TRNAG37}
+  model: gene.PrevSymbolLookup
+  pk: 9820
+- fields: {choice: KIAA0892}
+  model: gene.PrevSymbolLookup
+  pk: 4908
+- fields: {choice: C9orf30}
+  model: gene.PrevSymbolLookup
+  pk: 2210
+- fields: {choice: MLT}
+  model: gene.PrevSymbolLookup
+  pk: 6243
+- fields: {choice: MIRN9-3}
+  model: gene.PrevSymbolLookup
+  pk: 6169
+- fields: {choice: TRNAE33P}
+  model: gene.PrevSymbolLookup
+  pk: 9760
+- fields: {choice: PNUTL1}
+  model: gene.PrevSymbolLookup
+  pk: 7341
+- fields: {choice: GPR145}
+  model: gene.PrevSymbolLookup
+  pk: 4114
+- fields: {choice: C9orf113}
+  model: gene.PrevSymbolLookup
+  pk: 2166
+- fields: {choice: NALP2}
+  model: gene.PrevSymbolLookup
+  pk: 6463
+- fields: {choice: RN5S407}
+  model: gene.PrevSymbolLookup
+  pk: 8079
+- fields: {choice: SCAP1}
+  model: gene.PrevSymbolLookup
+  pk: 8718
+- fields: {choice: RNU37}
+  model: gene.PrevSymbolLookup
+  pk: 8378
+- fields: {choice: ADPRTL3}
+  model: gene.PrevSymbolLookup
+  pk: 107
+- fields: {choice: ZA20D1}
+  model: gene.PrevSymbolLookup
+  pk: 10573
+- fields: {choice: C12orf59}
+  model: gene.PrevSymbolLookup
+  pk: 814
+- fields: {choice: C14orf106}
+  model: gene.PrevSymbolLookup
+  pk: 880
+- fields: {choice: C9orf70}
+  model: gene.PrevSymbolLookup
+  pk: 2241
+- fields: {choice: MATP}
+  model: gene.PrevSymbolLookup
+  pk: 5399
+- fields: {choice: TRNAQ42P}
+  model: gene.PrevSymbolLookup
+  pk: 10052
+- fields: {choice: C10orf130}
+  model: gene.PrevSymbolLookup
+  pk: 651
+- fields: {choice: CDRT15P}
+  model: gene.PrevSymbolLookup
+  pk: 2476
+- fields: {choice: KIAA0649P5}
+  model: gene.PrevSymbolLookup
+  pk: 4885
+- fields: {choice: COLL6}
+  model: gene.PrevSymbolLookup
+  pk: 2683
+- fields: {choice: TRIM53}
+  model: gene.PrevSymbolLookup
+  pk: 9611
+- fields: {choice: GST2}
+  model: gene.PrevSymbolLookup
+  pk: 4202
+- fields: {choice: FAM31C}
+  model: gene.PrevSymbolLookup
+  pk: 3595
+- fields: {choice: RAB2L}
+  model: gene.PrevSymbolLookup
+  pk: 7584
+- fields: {choice: MKRNP2}
+  model: gene.PrevSymbolLookup
+  pk: 6223
+- fields: {choice: MIRN548I3}
+  model: gene.PrevSymbolLookup
+  pk: 6010
+- fields: {choice: OR1N3}
+  model: gene.PrevSymbolLookup
+  pk: 6823
+- fields: {choice: CALN}
+  model: gene.PrevSymbolLookup
+  pk: 2293
+- fields: {choice: EPT}
+  model: gene.PrevSymbolLookup
+  pk: 3417
+- fields: {choice: TRNAS12}
+  model: gene.PrevSymbolLookup
+  pk: 10101
+- fields: {choice: RN5S390}
+  model: gene.PrevSymbolLookup
+  pk: 8060
+- fields: {choice: TRNAA2}
+  model: gene.PrevSymbolLookup
+  pk: 9651
+- fields: {choice: TKC}
+  model: gene.PrevSymbolLookup
+  pk: 9425
+- fields: {choice: UBE2WP}
+  model: gene.PrevSymbolLookup
+  pk: 10346
+- fields: {choice: TRNAD9}
+  model: gene.PrevSymbolLookup
+  pk: 9735
+- fields: {choice: TMEM148}
+  model: gene.PrevSymbolLookup
+  pk: 9464
+- fields: {choice: FAM30A}
+  model: gene.PrevSymbolLookup
+  pk: 3591
+- fields: {choice: FAM154B}
+  model: gene.PrevSymbolLookup
+  pk: 3548
+- fields: {choice: TRNAL7}
+  model: gene.PrevSymbolLookup
+  pk: 9941
+- fields: {choice: C15orf2}
+  model: gene.PrevSymbolLookup
+  pk: 1016
+- fields: {choice: NEDD2}
+  model: gene.PrevSymbolLookup
+  pk: 6583
+- fields: {choice: C15orf28}
+  model: gene.PrevSymbolLookup
+  pk: 1023
+- fields: {choice: TRNAL38}
+  model: gene.PrevSymbolLookup
+  pk: 9927
+- fields: {choice: ZNF650}
+  model: gene.PrevSymbolLookup
+  pk: 10781
+- fields: {choice: TMEM93}
+  model: gene.PrevSymbolLookup
+  pk: 9511
+- fields: {choice: MTND2}
+  model: gene.PrevSymbolLookup
+  pk: 6376
+- fields: {choice: GOLGA2LY2}
+  model: gene.PrevSymbolLookup
+  pk: 4051
+- fields: {choice: RNF15}
+  model: gene.PrevSymbolLookup
+  pk: 8283
+- fields: {choice: OOEP-AS}
+  model: gene.PrevSymbolLookup
+  pk: 6777
+- fields: {choice: TRNAV34P}
+  model: gene.PrevSymbolLookup
+  pk: 10176
+- fields: {choice: HNRPDL}
+  model: gene.PrevSymbolLookup
+  pk: 4468
+- fields: {choice: PSBG1}
+  model: gene.PrevSymbolLookup
+  pk: 7500
+- fields: {choice: H2AFA}
+  model: gene.PrevSymbolLookup
+  pk: 4239
+- fields: {choice: STX2B}
+  model: gene.PrevSymbolLookup
+  pk: 9206
+- fields: {choice: MIRN339}
+  model: gene.PrevSymbolLookup
+  pk: 5844
+- fields: {choice: MIRN664}
+  model: gene.PrevSymbolLookup
+  pk: 6134
+- fields: {choice: ZEB2AS}
+  model: gene.PrevSymbolLookup
+  pk: 10600
+- fields: {choice: TRNAK3}
+  model: gene.PrevSymbolLookup
+  pk: 9878
+- fields: {choice: C14orf84}
+  model: gene.PrevSymbolLookup
+  pk: 997
+- fields: {choice: PSME2P}
+  model: gene.PrevSymbolLookup
+  pk: 7519
+- fields: {choice: ATPGD1}
+  model: gene.PrevSymbolLookup
+  pk: 455
+- fields: {choice: HOX1E}
+  model: gene.PrevSymbolLookup
+  pk: 4495
+- fields: {choice: RNU73}
+  model: gene.PrevSymbolLookup
+  pk: 8519
+- fields: {choice: SHMT}
+  model: gene.PrevSymbolLookup
+  pk: 8920
+- fields: {choice: IDO}
+  model: gene.PrevSymbolLookup
+  pk: 4624
+- fields: {choice: ZNF42}
+  model: gene.PrevSymbolLookup
+  pk: 10740
+- fields: {choice: TRNAE26}
+  model: gene.PrevSymbolLookup
+  pk: 9752
+- fields: {choice: EIF3S5P}
+  model: gene.PrevSymbolLookup
+  pk: 3350
+- fields: {choice: PTDSR}
+  model: gene.PrevSymbolLookup
+  pk: 7528
+- fields: {choice: MYPT2}
+  model: gene.PrevSymbolLookup
+  pk: 6444
+- fields: {choice: SLC21A12}
+  model: gene.PrevSymbolLookup
+  pk: 8978
+- fields: {choice: FAM90A8}
+  model: gene.PrevSymbolLookup
+  pk: 3691
+- fields: {choice: C9orf97}
+  model: gene.PrevSymbolLookup
+  pk: 2262
+- fields: {choice: WIT1}
+  model: gene.PrevSymbolLookup
+  pk: 10539
+- fields: {choice: C19orf50}
+  model: gene.PrevSymbolLookup
+  pk: 1220
+- fields: {choice: MIRN542}
+  model: gene.PrevSymbolLookup
+  pk: 5986
+- fields: {choice: RNU4C}
+  model: gene.PrevSymbolLookup
+  pk: 8395
+- fields: {choice: PTP1B}
+  model: gene.PrevSymbolLookup
+  pk: 7538
+- fields: {choice: RSMD1}
+  model: gene.PrevSymbolLookup
+  pk: 8646
+- fields: {choice: MIRN556}
+  model: gene.PrevSymbolLookup
+  pk: 6028
+- fields: {choice: C9orf28}
+  model: gene.PrevSymbolLookup
+  pk: 2208
+- fields: {choice: GPR70}
+  model: gene.PrevSymbolLookup
+  pk: 4151
+- fields: {choice: MIRN383}
+  model: gene.PrevSymbolLookup
+  pk: 5877
+- fields: {choice: KIAA1914}
+  model: gene.PrevSymbolLookup
+  pk: 5000
+- fields: {choice: ST7OT4}
+  model: gene.PrevSymbolLookup
+  pk: 9161
+- fields: {choice: C10orf110}
+  model: gene.PrevSymbolLookup
+  pk: 636
+- fields: {choice: FAM30B}
+  model: gene.PrevSymbolLookup
+  pk: 3592
+- fields: {choice: RNU6-48}
+  model: gene.PrevSymbolLookup
+  pk: 8459
+- fields: {choice: MIRN302}
+  model: gene.PrevSymbolLookup
+  pk: 5810
+- fields: {choice: RNU6B}
+  model: gene.PrevSymbolLookup
+  pk: 8505
+- fields: {choice: AK3}
+  model: gene.PrevSymbolLookup
+  pk: 147
+- fields: {choice: EPS15L2}
+  model: gene.PrevSymbolLookup
+  pk: 3416
+- fields: {choice: TCD}
+  model: gene.PrevSymbolLookup
+  pk: 9298
+- fields: {choice: UTX}
+  model: gene.PrevSymbolLookup
+  pk: 10410
+- fields: {choice: TRNAM12}
+  model: gene.PrevSymbolLookup
+  pk: 9946
+- fields: {choice: LGALS2}
+  model: gene.PrevSymbolLookup
+  pk: 5193
+- fields: {choice: ZC3HDC11A}
+  model: gene.PrevSymbolLookup
+  pk: 10583
+- fields: {choice: NUPL1}
+  model: gene.PrevSymbolLookup
+  pk: 6728
+- fields: {choice: C22orf27}
+  model: gene.PrevSymbolLookup
+  pk: 1680
+- fields: {choice: XPF}
+  model: gene.PrevSymbolLookup
+  pk: 10555
+- fields: {choice: C5orf36}
+  model: gene.PrevSymbolLookup
+  pk: 1862
+- fields: {choice: NCRNA00284}
+  model: gene.PrevSymbolLookup
+  pk: 6550
+- fields: {choice: OSR1}
+  model: gene.PrevSymbolLookup
+  pk: 7059
+- fields: {choice: OR2W5P}
+  model: gene.PrevSymbolLookup
+  pk: 6871
+- fields: {choice: GSL}
+  model: gene.PrevSymbolLookup
+  pk: 4198
+- fields: {choice: TRNAH5}
+  model: gene.PrevSymbolLookup
+  pk: 9831
+- fields: {choice: SCYB9B}
+  model: gene.PrevSymbolLookup
+  pk: 8773
+- fields: {choice: C12orf69}
+  model: gene.PrevSymbolLookup
+  pk: 822
+- fields: {choice: C2orf60}
+  model: gene.PrevSymbolLookup
+  pk: 1738
+- fields: {choice: DNM1DN18}
+  model: gene.PrevSymbolLookup
+  pk: 3197
+- fields: {choice: CTNNG}
+  model: gene.PrevSymbolLookup
+  pk: 2826
+- fields: {choice: MOSC2}
+  model: gene.PrevSymbolLookup
+  pk: 6276
+- fields: {choice: FAM25B}
+  model: gene.PrevSymbolLookup
+  pk: 3580
+- fields: {choice: RNU69}
+  model: gene.PrevSymbolLookup
+  pk: 8503
+- fields: {choice: C11orf23}
+  model: gene.PrevSymbolLookup
+  pk: 738
+- fields: {choice: TRNAD3}
+  model: gene.PrevSymbolLookup
+  pk: 9729
+- fields: {choice: HMGB1L12}
+  model: gene.PrevSymbolLookup
+  pk: 4430
+- fields: {choice: C10orf89}
+  model: gene.PrevSymbolLookup
+  pk: 723
+- fields: {choice: PGY1}
+  model: gene.PrevSymbolLookup
+  pk: 7218
+- fields: {choice: C20orf82}
+  model: gene.PrevSymbolLookup
+  pk: 1555
+- fields: {choice: SDBCAG84}
+  model: gene.PrevSymbolLookup
+  pk: 8781
+- fields: {choice: C10orf8}
+  model: gene.PrevSymbolLookup
+  pk: 715
+- fields: {choice: C1orf33}
+  model: gene.PrevSymbolLookup
+  pk: 1340
+- fields: {choice: TRNAK32}
+  model: gene.PrevSymbolLookup
+  pk: 9881
+- fields: {choice: MIRN651}
+  model: gene.PrevSymbolLookup
+  pk: 6120
+- fields: {choice: MIRN520B}
+  model: gene.PrevSymbolLookup
+  pk: 5966
+- fields: {choice: RN5S477}
+  model: gene.PrevSymbolLookup
+  pk: 8156
+- fields: {choice: TSTA1}
+  model: gene.PrevSymbolLookup
+  pk: 10264
+- fields: {choice: FAM75D1}
+  model: gene.PrevSymbolLookup
+  pk: 3647
+- fields: {choice: MGST1L1}
+  model: gene.PrevSymbolLookup
+  pk: 5477
+- fields: {choice: VSIG7}
+  model: gene.PrevSymbolLookup
+  pk: 10470
+- fields: {choice: C12orf58}
+  model: gene.PrevSymbolLookup
+  pk: 813
+- fields: {choice: CDH29}
+  model: gene.PrevSymbolLookup
+  pk: 2465
+- fields: {choice: CUTL1}
+  model: gene.PrevSymbolLookup
+  pk: 2844
+- fields: {choice: EMID2}
+  model: gene.PrevSymbolLookup
+  pk: 3387
+- fields: {choice: C20orf184}
+  model: gene.PrevSymbolLookup
+  pk: 1481
+- fields: {choice: ARSEP}
+  model: gene.PrevSymbolLookup
+  pk: 358
+- fields: {choice: FAM90A13}
+  model: gene.PrevSymbolLookup
+  pk: 3675
+- fields: {choice: C20orf128}
+  model: gene.PrevSymbolLookup
+  pk: 1425
+- fields: {choice: EEF1B}
+  model: gene.PrevSymbolLookup
+  pk: 3313
+- fields: {choice: RANBP20}
+  model: gene.PrevSymbolLookup
+  pk: 7625
+- fields: {choice: SLC21A11}
+  model: gene.PrevSymbolLookup
+  pk: 8977
+- fields: {choice: HIGD1D}
+  model: gene.PrevSymbolLookup
+  pk: 4356
+- fields: {choice: MIRN30B}
+  model: gene.PrevSymbolLookup
+  pk: 5817
+- fields: {choice: RPL12L2}
+  model: gene.PrevSymbolLookup
+  pk: 8557
+- fields: {choice: OR1F4}
+  model: gene.PrevSymbolLookup
+  pk: 6816
+- fields: {choice: WDR68}
+  model: gene.PrevSymbolLookup
+  pk: 10519
+- fields: {choice: HNRPDP}
+  model: gene.PrevSymbolLookup
+  pk: 4469
+- fields: {choice: RN5S503}
+  model: gene.PrevSymbolLookup
+  pk: 8186
+- fields: {choice: STM}
+  model: gene.PrevSymbolLookup
+  pk: 9191
+- fields: {choice: C19orf46}
+  model: gene.PrevSymbolLookup
+  pk: 1218
+- fields: {choice: DHRS6}
+  model: gene.PrevSymbolLookup
+  pk: 3129
+- fields: {choice: PRKMK5}
+  model: gene.PrevSymbolLookup
+  pk: 7454
+- fields: {choice: OR2AJ1P}
+  model: gene.PrevSymbolLookup
+  pk: 6840
+- fields: {choice: ESRRAP}
+  model: gene.PrevSymbolLookup
+  pk: 3440
+- fields: {choice: OR5AV1}
+  model: gene.PrevSymbolLookup
+  pk: 6942
+- fields: {choice: MIRN548H4}
+  model: gene.PrevSymbolLookup
+  pk: 6007
+- fields: {choice: C18orf45}
+  model: gene.PrevSymbolLookup
+  pk: 1181
+- fields: {choice: WDR32}
+  model: gene.PrevSymbolLookup
+  pk: 10500
+- fields: {choice: C13orf36}
+  model: gene.PrevSymbolLookup
+  pk: 857
+- fields: {choice: KRML}
+  model: gene.PrevSymbolLookup
+  pk: 5039
+- fields: {choice: FY}
+  model: gene.PrevSymbolLookup
+  pk: 3870
+- fields: {choice: FAM22A}
+  model: gene.PrevSymbolLookup
+  pk: 3571
+- fields: {choice: OR5BG1P}
+  model: gene.PrevSymbolLookup
+  pk: 6951
+- fields: {choice: THEDC1}
+  model: gene.PrevSymbolLookup
+  pk: 9394
+- fields: {choice: PSCD1}
+  model: gene.PrevSymbolLookup
+  pk: 7502
+- fields: {choice: OR7E49P}
+  model: gene.PrevSymbolLookup
+  pk: 7004
+- fields: {choice: MLLT10L}
+  model: gene.PrevSymbolLookup
+  pk: 6235
+- fields: {choice: TRNAQ13}
+  model: gene.PrevSymbolLookup
+  pk: 10022
+- fields: {choice: C7orf36}
+  model: gene.PrevSymbolLookup
+  pk: 2075
+- fields: {choice: C9orf154}
+  model: gene.PrevSymbolLookup
+  pk: 2192
+- fields: {choice: OTF1}
+  model: gene.PrevSymbolLookup
+  pk: 7065
+- fields: {choice: C6orf102}
+  model: gene.PrevSymbolLookup
+  pk: 1884
+- fields: {choice: C2orf86}
+  model: gene.PrevSymbolLookup
+  pk: 1750
+- fields: {choice: CCDC52}
+  model: gene.PrevSymbolLookup
+  pk: 2361
+- fields: {choice: C6orf137}
+  model: gene.PrevSymbolLookup
+  pk: 1914
+- fields: {choice: PXMP3}
+  model: gene.PrevSymbolLookup
+  pk: 7576
+- fields: {choice: TRNAC33}
+  model: gene.PrevSymbolLookup
+  pk: 9710
+- fields: {choice: MDONA}
+  model: gene.PrevSymbolLookup
+  pk: 5428
+- fields: {choice: C20orf103}
+  model: gene.PrevSymbolLookup
+  pk: 1401
+- fields: {choice: TAX1BP2}
+  model: gene.PrevSymbolLookup
+  pk: 9286
+- fields: {choice: RN5S309}
+  model: gene.PrevSymbolLookup
+  pk: 7974
+- fields: {choice: CYP2G1}
+  model: gene.PrevSymbolLookup
+  pk: 2939
+- fields: {choice: C1orf67}
+  model: gene.PrevSymbolLookup
+  pk: 1366
+- fields: {choice: RN5S3}
+  model: gene.PrevSymbolLookup
+  pk: 7963
+- fields: {choice: APS}
+  model: gene.PrevSymbolLookup
+  pk: 291
+- fields: {choice: MIRN10B}
+  model: gene.PrevSymbolLookup
+  pk: 5546
+- fields: {choice: OR7C4}
+  model: gene.PrevSymbolLookup
+  pk: 6984
+- fields: {choice: LCRISP1}
+  model: gene.PrevSymbolLookup
+  pk: 5165
+- fields: {choice: TRNAL28}
+  model: gene.PrevSymbolLookup
+  pk: 9916
+- fields: {choice: TRNAC26}
+  model: gene.PrevSymbolLookup
+  pk: 9702
+- fields: {choice: HOS}
+  model: gene.PrevSymbolLookup
+  pk: 4486
+- fields: {choice: TRNAE24}
+  model: gene.PrevSymbolLookup
+  pk: 9750
+- fields: {choice: ARL12}
+  model: gene.PrevSymbolLookup
+  pk: 335
+- fields: {choice: PRKA2}
+  model: gene.PrevSymbolLookup
+  pk: 7421
+- fields: {choice: HLA-DQA}
+  model: gene.PrevSymbolLookup
+  pk: 4379
+- fields: {choice: C8orf39}
+  model: gene.PrevSymbolLookup
+  pk: 2117
+- fields: {choice: C20orf39}
+  model: gene.PrevSymbolLookup
+  pk: 1512
+- fields: {choice: NACAL}
+  model: gene.PrevSymbolLookup
+  pk: 6451
+- fields: {choice: CALNB}
+  model: gene.PrevSymbolLookup
+  pk: 2294
+- fields: {choice: CLECSF6}
+  model: gene.PrevSymbolLookup
+  pk: 2599
+- fields: {choice: HLR2}
+  model: gene.PrevSymbolLookup
+  pk: 4396
+- fields: {choice: SDHAL2}
+  model: gene.PrevSymbolLookup
+  pk: 8799
+- fields: {choice: CFLL2}
+  model: gene.PrevSymbolLookup
+  pk: 2521
+- fields: {choice: LEPREL4}
+  model: gene.PrevSymbolLookup
+  pk: 5190
+- fields: {choice: RN5S90}
+  model: gene.PrevSymbolLookup
+  pk: 8248
+- fields: {choice: C20orf190}
+  model: gene.PrevSymbolLookup
+  pk: 1486
+- fields: {choice: MIRN147B}
+  model: gene.PrevSymbolLookup
+  pk: 5694
+- fields: {choice: RN5S358}
+  model: gene.PrevSymbolLookup
+  pk: 8025
+- fields: {choice: MIRN562}
+  model: gene.PrevSymbolLookup
+  pk: 6033
+- fields: {choice: LDHAL3}
+  model: gene.PrevSymbolLookup
+  pk: 5171
+- fields: {choice: CSEN}
+  model: gene.PrevSymbolLookup
+  pk: 2782
+- fields: {choice: MTND6}
+  model: gene.PrevSymbolLookup
+  pk: 6381
+- fields: {choice: RUNDC2C}
+  model: gene.PrevSymbolLookup
+  pk: 8657
+- fields: {choice: THEM2}
+  model: gene.PrevSymbolLookup
+  pk: 9395
+- fields: {choice: IMD2}
+  model: gene.PrevSymbolLookup
+  pk: 4730
+- fields: {choice: COX7A}
+  model: gene.PrevSymbolLookup
+  pk: 2722
+- fields: {choice: TRAR1}
+  model: gene.PrevSymbolLookup
+  pk: 9586
+- fields: {choice: C22orf4}
+  model: gene.PrevSymbolLookup
+  pk: 1689
+- fields: {choice: ADTB2}
+  model: gene.PrevSymbolLookup
+  pk: 119
+- fields: {choice: DYT1}
+  model: gene.PrevSymbolLookup
+  pk: 3260
+- fields: {choice: FAM13C1}
+  model: gene.PrevSymbolLookup
+  pk: 3542
+- fields: {choice: AUNA1}
+  model: gene.PrevSymbolLookup
+  pk: 468
+- fields: {choice: HOX3C}
+  model: gene.PrevSymbolLookup
+  pk: 4507
+- fields: {choice: TRNAD6}
+  model: gene.PrevSymbolLookup
+  pk: 9732
+- fields: {choice: C6orf12}
+  model: gene.PrevSymbolLookup
+  pk: 1901
+- fields: {choice: COCA1}
+  model: gene.PrevSymbolLookup
+  pk: 2676
+- fields: {choice: ALS2CR8}
+  model: gene.PrevSymbolLookup
+  pk: 188
+- fields: {choice: TRIM60PY5}
+  model: gene.PrevSymbolLookup
+  pk: 9621
+- fields: {choice: IGSF4D}
+  model: gene.PrevSymbolLookup
+  pk: 4688
+- fields: {choice: C3orf24}
+  model: gene.PrevSymbolLookup
+  pk: 1760
+- fields: {choice: C6orf103}
+  model: gene.PrevSymbolLookup
+  pk: 1885
+- fields: {choice: ATP5AP1}
+  model: gene.PrevSymbolLookup
+  pk: 419
+- fields: {choice: FACL6}
+  model: gene.PrevSymbolLookup
+  pk: 3490
+- fields: {choice: FTHP3}
+  model: gene.PrevSymbolLookup
+  pk: 3853
+- fields: {choice: C10orf24}
+  model: gene.PrevSymbolLookup
+  pk: 664
+- fields: {choice: RPL31P}
+  model: gene.PrevSymbolLookup
+  pk: 8573
+- fields: {choice: GOLGA6L5}
+  model: gene.PrevSymbolLookup
+  pk: 4057
+- fields: {choice: RNU102}
+  model: gene.PrevSymbolLookup
+  pk: 8329
+- fields: {choice: KNO}
+  model: gene.PrevSymbolLookup
+  pk: 5017
+- fields: {choice: TRNAI22}
+  model: gene.PrevSymbolLookup
+  pk: 9845
+- fields: {choice: C6orf173}
+  model: gene.PrevSymbolLookup
+  pk: 1947
+- fields: {choice: MIRN495}
+  model: gene.PrevSymbolLookup
+  pk: 5915
+- fields: {choice: FAM51A2P}
+  model: gene.PrevSymbolLookup
+  pk: 3623
+- fields: {choice: C9orf17}
+  model: gene.PrevSymbolLookup
+  pk: 2199
+- fields: {choice: C12orf32}
+  model: gene.PrevSymbolLookup
+  pk: 796
+- fields: {choice: RN5S482}
+  model: gene.PrevSymbolLookup
+  pk: 8162
+- fields: {choice: ADAM21P}
+  model: gene.PrevSymbolLookup
+  pk: 86
+- fields: {choice: MIRN338}
+  model: gene.PrevSymbolLookup
+  pk: 5843
+- fields: {choice: CMT4B2}
+  model: gene.PrevSymbolLookup
+  pk: 2647
+- fields: {choice: GPR32P}
+  model: gene.PrevSymbolLookup
+  pk: 4129
+- fields: {choice: TRNAV30}
+  model: gene.PrevSymbolLookup
+  pk: 10172
+- fields: {choice: C10orf33}
+  model: gene.PrevSymbolLookup
+  pk: 674
+- fields: {choice: TRNAL8}
+  model: gene.PrevSymbolLookup
+  pk: 9942
+- fields: {choice: LLH}
+  model: gene.PrevSymbolLookup
+  pk: 5257
+- fields: {choice: MIRN31}
+  model: gene.PrevSymbolLookup
+  pk: 5822
+- fields: {choice: C20orf119}
+  model: gene.PrevSymbolLookup
+  pk: 1416
+- fields: {choice: MIRN548D2}
+  model: gene.PrevSymbolLookup
+  pk: 5996
+- fields: {choice: MIRN302C}
+  model: gene.PrevSymbolLookup
+  pk: 5812
+- fields: {choice: DAGK3}
+  model: gene.PrevSymbolLookup
+  pk: 2987
+- fields: {choice: ASSP13}
+  model: gene.PrevSymbolLookup
+  pk: 384
+- fields: {choice: RN5S402}
+  model: gene.PrevSymbolLookup
+  pk: 8074
+- fields: {choice: CDY24P}
+  model: gene.PrevSymbolLookup
+  pk: 2483
+- fields: {choice: UGCGL2}
+  model: gene.PrevSymbolLookup
+  pk: 10369
+- fields: {choice: PABPCP3}
+  model: gene.PrevSymbolLookup
+  pk: 7087
+- fields: {choice: C20orf115}
+  model: gene.PrevSymbolLookup
+  pk: 1412
+- fields: {choice: GOLGA6L7}
+  model: gene.PrevSymbolLookup
+  pk: 4058
+- fields: {choice: ATP2B2}
+  model: gene.PrevSymbolLookup
+  pk: 414
+- fields: {choice: SURF5}
+  model: gene.PrevSymbolLookup
+  pk: 9228
+- fields: {choice: UVO}
+  model: gene.PrevSymbolLookup
+  pk: 10411
+- fields: {choice: FCRLM1}
+  model: gene.PrevSymbolLookup
+  pk: 3729
+- fields: {choice: RGSL2}
+  model: gene.PrevSymbolLookup
+  pk: 7708
+- fields: {choice: IRGQ1}
+  model: gene.PrevSymbolLookup
+  pk: 4766
+- fields: {choice: BCMSUNL}
+  model: gene.PrevSymbolLookup
+  pk: 528
+- fields: {choice: H2AFP}
+  model: gene.PrevSymbolLookup
+  pk: 4252
+- fields: {choice: MSL3L2}
+  model: gene.PrevSymbolLookup
+  pk: 6342
+- fields: {choice: MIRN630}
+  model: gene.PrevSymbolLookup
+  pk: 6099
+- fields: {choice: TRNAQ21}
+  model: gene.PrevSymbolLookup
+  pk: 10030
+- fields: {choice: GLYT2L}
+  model: gene.PrevSymbolLookup
+  pk: 4034
+- fields: {choice: ODDD}
+  model: gene.PrevSymbolLookup
+  pk: 6749
+- fields: {choice: SCYB6}
+  model: gene.PrevSymbolLookup
+  pk: 8772
+- fields: {choice: SSA1}
+  model: gene.PrevSymbolLookup
+  pk: 9145
+- fields: {choice: RN5S252}
+  model: gene.PrevSymbolLookup
+  pk: 7911
+- fields: {choice: PCHC1}
+  model: gene.PrevSymbolLookup
+  pk: 7144
+- fields: {choice: C7orf39}
+  model: gene.PrevSymbolLookup
+  pk: 2077
+- fields: {choice: C20orf65}
+  model: gene.PrevSymbolLookup
+  pk: 1539
+- fields: {choice: TRNAL45P}
+  model: gene.PrevSymbolLookup
+  pk: 9935
+- fields: {choice: ADCY3}
+  model: gene.PrevSymbolLookup
+  pk: 91
+- fields: {choice: SETP18}
+  model: gene.PrevSymbolLookup
+  pk: 8857
+- fields: {choice: FAM90A19}
+  model: gene.PrevSymbolLookup
+  pk: 3681
+- fields: {choice: PMS2L4}
+  model: gene.PrevSymbolLookup
+  pk: 7326
+- fields: {choice: IL8RB}
+  model: gene.PrevSymbolLookup
+  pk: 4725
+- fields: {choice: RPS4P13}
+  model: gene.PrevSymbolLookup
+  pk: 8615
+- fields: {choice: P18}
+  model: gene.PrevSymbolLookup
+  pk: 7078
+- fields: {choice: CXorf9}
+  model: gene.PrevSymbolLookup
+  pk: 2901
+- fields: {choice: BPIL2}
+  model: gene.PrevSymbolLookup
+  pk: 584
+- fields: {choice: CHAC}
+  model: gene.PrevSymbolLookup
+  pk: 2544
+- fields: {choice: RN5S509}
+  model: gene.PrevSymbolLookup
+  pk: 8192
+- fields: {choice: OR7E6P}
+  model: gene.PrevSymbolLookup
+  pk: 7015
+- fields: {choice: MIRN578}
+  model: gene.PrevSymbolLookup
+  pk: 6048
+- fields: {choice: OR4D3}
+  model: gene.PrevSymbolLookup
+  pk: 6889
+- fields: {choice: NEM2}
+  model: gene.PrevSymbolLookup
+  pk: 6595
+- fields: {choice: ATPBD4}
+  model: gene.PrevSymbolLookup
+  pk: 453
+- fields: {choice: MIRN619}
+  model: gene.PrevSymbolLookup
+  pk: 6088
+- fields: {choice: C16orf65}
+  model: gene.PrevSymbolLookup
+  pk: 1086
+- fields: {choice: C7orf67}
+  model: gene.PrevSymbolLookup
+  pk: 2097
+- fields: {choice: MMSDH}
+  model: gene.PrevSymbolLookup
+  pk: 6253
+- fields: {choice: RNU6-3}
+  model: gene.PrevSymbolLookup
+  pk: 8439
+- fields: {choice: GALNR1}
+  model: gene.PrevSymbolLookup
+  pk: 3898
+- fields: {choice: RN5S238}
+  model: gene.PrevSymbolLookup
+  pk: 7895
+- fields: {choice: C6orf80}
+  model: gene.PrevSymbolLookup
+  pk: 2035
+- fields: {choice: C17orf83}
+  model: gene.PrevSymbolLookup
+  pk: 1153
+- fields: {choice: TRS4}
+  model: gene.PrevSymbolLookup
+  pk: 10224
+- fields: {choice: RN5S65}
+  model: gene.PrevSymbolLookup
+  pk: 8221
+- fields: {choice: VR1}
+  model: gene.PrevSymbolLookup
+  pk: 10465
+- fields: {choice: GPR41}
+  model: gene.PrevSymbolLookup
+  pk: 4132
+- fields: {choice: RFPL1-AS1}
+  model: gene.PrevSymbolLookup
+  pk: 7698
+- fields: {choice: HOX1A}
+  model: gene.PrevSymbolLookup
+  pk: 4491
+- fields: {choice: FTHL1}
+  model: gene.PrevSymbolLookup
+  pk: 3832
+- fields: {choice: IL1R}
+  model: gene.PrevSymbolLookup
+  pk: 4707
+- fields: {choice: CXorf44}
+  model: gene.PrevSymbolLookup
+  pk: 2882
+- fields: {choice: C1orf85}
+  model: gene.PrevSymbolLookup
+  pk: 1384
+- fields: {choice: RN5S185}
+  model: gene.PrevSymbolLookup
+  pk: 7836
+- fields: {choice: IAN4L1}
+  model: gene.PrevSymbolLookup
+  pk: 4609
+- fields: {choice: HNRPR}
+  model: gene.PrevSymbolLookup
+  pk: 4478
+- fields: {choice: RN5S344}
+  model: gene.PrevSymbolLookup
+  pk: 8010
+- fields: {choice: IHPK1}
+  model: gene.PrevSymbolLookup
+  pk: 4690
+- fields: {choice: SDFR2}
+  model: gene.PrevSymbolLookup
+  pk: 8793
+- fields: {choice: TRNAA28}
+  model: gene.PrevSymbolLookup
+  pk: 9660
+- fields: {choice: C7orf10}
+  model: gene.PrevSymbolLookup
+  pk: 2054
+- fields: {choice: C9orf138}
+  model: gene.PrevSymbolLookup
+  pk: 2182
+- fields: {choice: ZNF736P1}
+  model: gene.PrevSymbolLookup
+  pk: 10802
+- fields: {choice: MIRN205}
+  model: gene.PrevSymbolLookup
+  pk: 5764
+- fields: {choice: TM4SF11}
+  model: gene.PrevSymbolLookup
+  pk: 9432
+- fields: {choice: LEPREL1-AS1}
+  model: gene.PrevSymbolLookup
+  pk: 5188
+- fields: {choice: FTS}
+  model: gene.PrevSymbolLookup
+  pk: 3858
+- fields: {choice: ZBTB12B}
+  model: gene.PrevSymbolLookup
+  pk: 10576
+- fields: {choice: C16orf56}
+  model: gene.PrevSymbolLookup
+  pk: 1080
+- fields: {choice: C20orf170}
+  model: gene.PrevSymbolLookup
+  pk: 1469
+- fields: {choice: TUBA4}
+  model: gene.PrevSymbolLookup
+  pk: 10284
+- fields: {choice: ADORA2BP}
+  model: gene.PrevSymbolLookup
+  pk: 103
+- fields: {choice: KRT1B}
+  model: gene.PrevSymbolLookup
+  pk: 5049
+- fields: {choice: C21orf134}
+  model: gene.PrevSymbolLookup
+  pk: 1600
+- fields: {choice: RN5S50}
+  model: gene.PrevSymbolLookup
+  pk: 8182
+- fields: {choice: C20orf68}
+  model: gene.PrevSymbolLookup
+  pk: 1541
+- fields: {choice: C15orf50}
+  model: gene.PrevSymbolLookup
+  pk: 1036
+- fields: {choice: DYT12}
+  model: gene.PrevSymbolLookup
+  pk: 3262
+- fields: {choice: ZNF397OS}
+  model: gene.PrevSymbolLookup
+  pk: 10730
+- fields: {choice: OACT2}
+  model: gene.PrevSymbolLookup
+  pk: 6735
+- fields: {choice: TRNAQ25}
+  model: gene.PrevSymbolLookup
+  pk: 10034
+- fields: {choice: MAK3}
+  model: gene.PrevSymbolLookup
+  pk: 5384
+- fields: {choice: PVS}
+  model: gene.PrevSymbolLookup
+  pk: 7567
+- fields: {choice: MIR499A}
+  model: gene.PrevSymbolLookup
+  pk: 5523
+- fields: {choice: PHTF}
+  model: gene.PrevSymbolLookup
+  pk: 7239
+- fields: {choice: BKLHD2}
+  model: gene.PrevSymbolLookup
+  pk: 556
+- fields: {choice: CGM10}
+  model: gene.PrevSymbolLookup
+  pk: 2528
+- fields: {choice: CHH}
+  model: gene.PrevSymbolLookup
+  pk: 2553
+- fields: {choice: TIGD1L2}
+  model: gene.PrevSymbolLookup
+  pk: 9418
+- fields: {choice: ARHI}
+  model: gene.PrevSymbolLookup
+  pk: 324
+- fields: {choice: HMGN2L7}
+  model: gene.PrevSymbolLookup
+  pk: 4443
+- fields: {choice: CD11A}
+  model: gene.PrevSymbolLookup
+  pk: 2396
+- fields: {choice: DFNA22}
+  model: gene.PrevSymbolLookup
+  pk: 3075
+- fields: {choice: RN5S71}
+  model: gene.PrevSymbolLookup
+  pk: 8228
+- fields: {choice: CFLL1}
+  model: gene.PrevSymbolLookup
+  pk: 2520
+- fields: {choice: RN5S135}
+  model: gene.PrevSymbolLookup
+  pk: 7781
+- fields: {choice: AMG}
+  model: gene.PrevSymbolLookup
+  pk: 201
+- fields: {choice: TCP1L3}
+  model: gene.PrevSymbolLookup
+  pk: 9323
+- fields: {choice: CYB5P4}
+  model: gene.PrevSymbolLookup
+  pk: 2905
+- fields: {choice: ZNF297B}
+  model: gene.PrevSymbolLookup
+  pk: 10691
+- fields: {choice: WBSCR14}
+  model: gene.PrevSymbolLookup
+  pk: 10480
+- fields: {choice: H2BFG}
+  model: gene.PrevSymbolLookup
+  pk: 4266
+- fields: {choice: CALB3}
+  model: gene.PrevSymbolLookup
+  pk: 2288
+- fields: {choice: DNM1DN12@}
+  model: gene.PrevSymbolLookup
+  pk: 3192
+- fields: {choice: ODC2}
+  model: gene.PrevSymbolLookup
+  pk: 6747
+- fields: {choice: TCF13L1}
+  model: gene.PrevSymbolLookup
+  pk: 9304
+- fields: {choice: C20orf189}
+  model: gene.PrevSymbolLookup
+  pk: 1485
+- fields: {choice: DMDL}
+  model: gene.PrevSymbolLookup
+  pk: 3161
+- fields: {choice: C4orf42}
+  model: gene.PrevSymbolLookup
+  pk: 1831
+- fields: {choice: PEG3AS}
+  model: gene.PrevSymbolLookup
+  pk: 7194
+- fields: {choice: ROBLD3}
+  model: gene.PrevSymbolLookup
+  pk: 8534
+- fields: {choice: RNU29}
+  model: gene.PrevSymbolLookup
+  pk: 8363
+- fields: {choice: OR7E119P}
+  model: gene.PrevSymbolLookup
+  pk: 6989
+- fields: {choice: C13orf35}
+  model: gene.PrevSymbolLookup
+  pk: 856
+- fields: {choice: HYRC}
+  model: gene.PrevSymbolLookup
+  pk: 4608
+- fields: {choice: TRSPAP1}
+  model: gene.PrevSymbolLookup
+  pk: 10226
+- fields: {choice: D6S230E}
+  model: gene.PrevSymbolLookup
+  pk: 2980
+- fields: {choice: KRTHA5}
+  model: gene.PrevSymbolLookup
+  pk: 5100
+- fields: {choice: TRNAC2}
+  model: gene.PrevSymbolLookup
+  pk: 9695
+- fields: {choice: NCRNA00094}
+  model: gene.PrevSymbolLookup
+  pk: 6505
+- fields: {choice: TRNAK26}
+  model: gene.PrevSymbolLookup
+  pk: 9874
+- fields: {choice: P4HA}
+  model: gene.PrevSymbolLookup
+  pk: 7082
+- fields: {choice: ERBAL3}
+  model: gene.PrevSymbolLookup
+  pk: 3422
+- fields: {choice: C2orf62}
+  model: gene.PrevSymbolLookup
+  pk: 1739
+- fields: {choice: C21orf126}
+  model: gene.PrevSymbolLookup
+  pk: 1593
+- fields: {choice: C21orf131}
+  model: gene.PrevSymbolLookup
+  pk: 1599
+- fields: {choice: C2orf21}
+  model: gene.PrevSymbolLookup
+  pk: 1709
+- fields: {choice: NOLA2P1}
+  model: gene.PrevSymbolLookup
+  pk: 6658
+- fields: {choice: C20orf2}
+  model: gene.PrevSymbolLookup
+  pk: 1492
+- fields: {choice: ZNF166}
+  model: gene.PrevSymbolLookup
+  pk: 10641
+- fields: {choice: WHDC1P1}
+  model: gene.PrevSymbolLookup
+  pk: 10533
+- fields: {choice: UBE2HP}
+  model: gene.PrevSymbolLookup
+  pk: 10337
+- fields: {choice: C10orf68}
+  model: gene.PrevSymbolLookup
+  pk: 704
+- fields: {choice: C14orf164}
+  model: gene.PrevSymbolLookup
+  pk: 927
+- fields: {choice: NPIPL1}
+  model: gene.PrevSymbolLookup
+  pk: 6681
+- fields: {choice: C20orf8}
+  model: gene.PrevSymbolLookup
+  pk: 1552
+- fields: {choice: CD3Z}
+  model: gene.PrevSymbolLookup
+  pk: 2428
+- fields: {choice: RANBP8}
+  model: gene.PrevSymbolLookup
+  pk: 7628
+- fields: {choice: OR4K10P}
+  model: gene.PrevSymbolLookup
+  pk: 6903
+- fields: {choice: DPH2L}
+  model: gene.PrevSymbolLookup
+  pk: 3217
+- fields: {choice: EF1A}
+  model: gene.PrevSymbolLookup
+  pk: 3317
+- fields: {choice: C3orf57}
+  model: gene.PrevSymbolLookup
+  pk: 1785
+- fields: {choice: KIAA1018}
+  model: gene.PrevSymbolLookup
+  pk: 4920
+- fields: {choice: TCRGVA}
+  model: gene.PrevSymbolLookup
+  pk: 9353
+- fields: {choice: RN5-8S3}
+  model: gene.PrevSymbolLookup
+  pk: 7735
+- fields: {choice: IL1F9}
+  model: gene.PrevSymbolLookup
+  pk: 4706
+- fields: {choice: FNRBL}
+  model: gene.PrevSymbolLookup
+  pk: 3802
+- fields: {choice: MKI67IPP3}
+  model: gene.PrevSymbolLookup
+  pk: 6213
+- fields: {choice: PRR10}
+  model: gene.PrevSymbolLookup
+  pk: 7475
+- fields: {choice: TRNAK4}
+  model: gene.PrevSymbolLookup
+  pk: 9889
+- fields: {choice: ST16}
+  model: gene.PrevSymbolLookup
+  pk: 9155
+- fields: {choice: CXorf26}
+  model: gene.PrevSymbolLookup
+  pk: 2865
+- fields: {choice: KRTHA8}
+  model: gene.PrevSymbolLookup
+  pk: 5103
+- fields: {choice: C9orf148}
+  model: gene.PrevSymbolLookup
+  pk: 2188
+- fields: {choice: CASP16}
+  model: gene.PrevSymbolLookup
+  pk: 2314
+- fields: {choice: UBXDC1}
+  model: gene.PrevSymbolLookup
+  pk: 10361
+- fields: {choice: PERQ1}
+  model: gene.PrevSymbolLookup
+  pk: 7201
+- fields: {choice: TMEM194B}
+  model: gene.PrevSymbolLookup
+  pk: 9484
+- fields: {choice: RPS4P19}
+  model: gene.PrevSymbolLookup
+  pk: 8621
+- fields: {choice: TCRGV2}
+  model: gene.PrevSymbolLookup
+  pk: 9344
+- fields: {choice: OR7E67P}
+  model: gene.PrevSymbolLookup
+  pk: 7013
+- fields: {choice: ARMD1}
+  model: gene.PrevSymbolLookup
+  pk: 348
+- fields: {choice: PTPNS1L}
+  model: gene.PrevSymbolLookup
+  pk: 7555
+- fields: {choice: RNU6-18}
+  model: gene.PrevSymbolLookup
+  pk: 8427
+- fields: {choice: FAM38B2}
+  model: gene.PrevSymbolLookup
+  pk: 3606
+- fields: {choice: MIRN632}
+  model: gene.PrevSymbolLookup
+  pk: 6101
+- fields: {choice: NACGT2}
+  model: gene.PrevSymbolLookup
+  pk: 6454
+- fields: {choice: TNRC5}
+  model: gene.PrevSymbolLookup
+  pk: 9556
+- fields: {choice: C10orf56}
+  model: gene.PrevSymbolLookup
+  pk: 694
+- fields: {choice: LAMR1P3}
+  model: gene.PrevSymbolLookup
+  pk: 5135
+- fields: {choice: C16orf36}
+  model: gene.PrevSymbolLookup
+  pk: 1064
+- fields: {choice: PBT}
+  model: gene.PrevSymbolLookup
+  pk: 7127
+- fields: {choice: TRNAR7}
+  model: gene.PrevSymbolLookup
+  pk: 10096
+- fields: {choice: TRNAH1}
+  model: gene.PrevSymbolLookup
+  pk: 9825
+- fields: {choice: LASS1}
+  model: gene.PrevSymbolLookup
+  pk: 5149
+- fields: {choice: C14orf32}
+  model: gene.PrevSymbolLookup
+  pk: 953
+- fields: {choice: THH}
+  model: gene.PrevSymbolLookup
+  pk: 9397
+- fields: {choice: GLCLR}
+  model: gene.PrevSymbolLookup
+  pk: 3988
+- fields: {choice: MIRN1282}
+  model: gene.PrevSymbolLookup
+  pk: 5623
+- fields: {choice: HMGB1P}
+  model: gene.PrevSymbolLookup
+  pk: 4432
+- fields: {choice: SFRS9P1}
+  model: gene.PrevSymbolLookup
+  pk: 8883
+- fields: {choice: RN5S21}
+  model: gene.PrevSymbolLookup
+  pk: 7864
+- fields: {choice: CPHL1}
+  model: gene.PrevSymbolLookup
+  pk: 2731
+- fields: {choice: GOLPH2}
+  model: gene.PrevSymbolLookup
+  pk: 4064
+- fields: {choice: ATQL2}
+  model: gene.PrevSymbolLookup
+  pk: 461
+- fields: {choice: C20orf157}
+  model: gene.PrevSymbolLookup
+  pk: 1454
+- fields: {choice: MIRN191}
+  model: gene.PrevSymbolLookup
+  pk: 5733
+- fields: {choice: RASA}
+  model: gene.PrevSymbolLookup
+  pk: 7633
+- fields: {choice: KIAA0664}
+  model: gene.PrevSymbolLookup
+  pk: 4887
+- fields: {choice: TCRGJ1}
+  model: gene.PrevSymbolLookup
+  pk: 9336
+- fields: {choice: ARSDP}
+  model: gene.PrevSymbolLookup
+  pk: 357
+- fields: {choice: TRNAS31P}
+  model: gene.PrevSymbolLookup
+  pk: 10120
+- fields: {choice: SIASD}
+  model: gene.PrevSymbolLookup
+  pk: 8923
+- fields: {choice: NKX3A}
+  model: gene.PrevSymbolLookup
+  pk: 6636
+- fields: {choice: TMEM23}
+  model: gene.PrevSymbolLookup
+  pk: 9491
+- fields: {choice: CTNND}
+  model: gene.PrevSymbolLookup
+  pk: 2825
+- fields: {choice: GSH1}
+  model: gene.PrevSymbolLookup
+  pk: 4197
+- fields: {choice: C9orf13}
+  model: gene.PrevSymbolLookup
+  pk: 2177
+- fields: {choice: KIAA0853}
+  model: gene.PrevSymbolLookup
+  pk: 4906
+- fields: {choice: ALDR1}
+  model: gene.PrevSymbolLookup
+  pk: 166
+- fields: {choice: KLHL22-IT1}
+  model: gene.PrevSymbolLookup
+  pk: 5013
+- fields: {choice: BAT3}
+  model: gene.PrevSymbolLookup
+  pk: 508
+- fields: {choice: RN5S490}
+  model: gene.PrevSymbolLookup
+  pk: 8171
+- fields: {choice: C10orf18}
+  model: gene.PrevSymbolLookup
+  pk: 661
+- fields: {choice: C6orf142}
+  model: gene.PrevSymbolLookup
+  pk: 1918
+- fields: {choice: C2orf11}
+  model: gene.PrevSymbolLookup
+  pk: 1701
+- fields: {choice: KIAA1458}
+  model: gene.PrevSymbolLookup
+  pk: 4956
+- fields: {choice: FABP5L3}
+  model: gene.PrevSymbolLookup
+  pk: 3474
+- fields: {choice: TRIM77P}
+  model: gene.PrevSymbolLookup
+  pk: 9627
+- fields: {choice: C6orf122}
+  model: gene.PrevSymbolLookup
+  pk: 1902
+- fields: {choice: ARHG}
+  model: gene.PrevSymbolLookup
+  pk: 320
+- fields: {choice: HDAC7A}
+  model: gene.PrevSymbolLookup
+  pk: 4331
+- fields: {choice: FBXO20}
+  model: gene.PrevSymbolLookup
+  pk: 3713
+- fields: {choice: C6orf19}
+  model: gene.PrevSymbolLookup
+  pk: 1961
+- fields: {choice: MRX30}
+  model: gene.PrevSymbolLookup
+  pk: 6316
+- fields: {choice: CD18}
+  model: gene.PrevSymbolLookup
+  pk: 2402
+- fields: {choice: SLIL2}
+  model: gene.PrevSymbolLookup
+  pk: 9004
+- fields: {choice: RN5S48}
+  model: gene.PrevSymbolLookup
+  pk: 8159
+- fields: {choice: CYorf17}
+  model: gene.PrevSymbolLookup
+  pk: 2959
+- fields: {choice: H4FFP}
+  model: gene.PrevSymbolLookup
+  pk: 4296
+- fields: {choice: MEAX}
+  model: gene.PrevSymbolLookup
+  pk: 5432
+- fields: {choice: RN5S279}
+  model: gene.PrevSymbolLookup
+  pk: 7940
+- fields: {choice: FUSIP2}
+  model: gene.PrevSymbolLookup
+  pk: 3866
+- fields: {choice: C5orf33}
+  model: gene.PrevSymbolLookup
+  pk: 1860
+- fields: {choice: C19orf36}
+  model: gene.PrevSymbolLookup
+  pk: 1211
+- fields: {choice: TRNAP6}
+  model: gene.PrevSymbolLookup
+  pk: 10015
+- fields: {choice: NCRNA00092}
+  model: gene.PrevSymbolLookup
+  pk: 6503
+- fields: {choice: PDZK3}
+  model: gene.PrevSymbolLookup
+  pk: 7185
+- fields: {choice: TRIM60PY12}
+  model: gene.PrevSymbolLookup
+  pk: 9617
+- fields: {choice: STC}
+  model: gene.PrevSymbolLookup
+  pk: 9166
+- fields: {choice: RN5S491}
+  model: gene.PrevSymbolLookup
+  pk: 8172
+- fields: {choice: TRNAP28P}
+  model: gene.PrevSymbolLookup
+  pk: 10012
+- fields: {choice: TUSC2P}
+  model: gene.PrevSymbolLookup
+  pk: 10296
+- fields: {choice: C8orf35}
+  model: gene.PrevSymbolLookup
+  pk: 2114
+- fields: {choice: BZRP}
+  model: gene.PrevSymbolLookup
+  pk: 625
+- fields: {choice: SNF2L4}
+  model: gene.PrevSymbolLookup
+  pk: 9052
+- fields: {choice: C21orf105}
+  model: gene.PrevSymbolLookup
+  pk: 1575
+- fields: {choice: PPD}
+  model: gene.PrevSymbolLookup
+  pk: 7364
+- fields: {choice: MIRN526A-1}
+  model: gene.PrevSymbolLookup
+  pk: 5979
+- fields: {choice: METT5D2}
+  model: gene.PrevSymbolLookup
+  pk: 5460
+- fields: {choice: RNF3}
+  model: gene.PrevSymbolLookup
+  pk: 8300
+- fields: {choice: MIRN1234}
+  model: gene.PrevSymbolLookup
+  pk: 5573
+- fields: {choice: CCNU}
+  model: gene.PrevSymbolLookup
+  pk: 2386
+- fields: {choice: RN5S465}
+  model: gene.PrevSymbolLookup
+  pk: 8143
+- fields: {choice: GOLGA6L21P}
+  model: gene.PrevSymbolLookup
+  pk: 4056
+- fields: {choice: PRKM10}
+  model: gene.PrevSymbolLookup
+  pk: 7438
+- fields: {choice: C1orf30}
+  model: gene.PrevSymbolLookup
+  pk: 1337
+- fields: {choice: C20orf175}
+  model: gene.PrevSymbolLookup
+  pk: 1473
+- fields: {choice: C16orf57}
+  model: gene.PrevSymbolLookup
+  pk: 1081
+- fields: {choice: CTPS}
+  model: gene.PrevSymbolLookup
+  pk: 2827
+- fields: {choice: C19orf13}
+  model: gene.PrevSymbolLookup
+  pk: 1191
+- fields: {choice: CCDC76}
+  model: gene.PrevSymbolLookup
+  pk: 2368
+- fields: {choice: MIRN1276}
+  model: gene.PrevSymbolLookup
+  pk: 5618
+- fields: {choice: RFPL4}
+  model: gene.PrevSymbolLookup
+  pk: 7700
+- fields: {choice: LPGP1}
+  model: gene.PrevSymbolLookup
+  pk: 5272
+- fields: {choice: OR13E2}
+  model: gene.PrevSymbolLookup
+  pk: 6808
+- fields: {choice: CACNL1A5}
+  model: gene.PrevSymbolLookup
+  pk: 2272
+- fields: {choice: WDR16}
+  model: gene.PrevSymbolLookup
+  pk: 10494
+- fields: {choice: C14orf78}
+  model: gene.PrevSymbolLookup
+  pk: 993
+- fields: {choice: TRNAK41P}
+  model: gene.PrevSymbolLookup
+  pk: 9891
+- fields: {choice: HISPPD2B}
+  model: gene.PrevSymbolLookup
+  pk: 4364
+- fields: {choice: MIRN365-1}
+  model: gene.PrevSymbolLookup
+  pk: 5856
+- fields: {choice: PAB1}
+  model: gene.PrevSymbolLookup
+  pk: 7085
+- fields: {choice: CCT6}
+  model: gene.PrevSymbolLookup
+  pk: 2391
+- fields: {choice: DLG6}
+  model: gene.PrevSymbolLookup
+  pk: 3151
+- fields: {choice: B3GALT3}
+  model: gene.PrevSymbolLookup
+  pk: 488
+- fields: {choice: FRMD4}
+  model: gene.PrevSymbolLookup
+  pk: 3824
+- fields: {choice: RN5S337}
+  model: gene.PrevSymbolLookup
+  pk: 8002
+- fields: {choice: DNA2L}
+  model: gene.PrevSymbolLookup
+  pk: 3166
+- fields: {choice: MIRN1284}
+  model: gene.PrevSymbolLookup
+  pk: 5626
+- fields: {choice: IRGC1}
+  model: gene.PrevSymbolLookup
+  pk: 4764
+- fields: {choice: C6orf93}
+  model: gene.PrevSymbolLookup
+  pk: 2048
+- fields: {choice: PLGL}
+  model: gene.PrevSymbolLookup
+  pk: 7301
+- fields: {choice: POV1}
+  model: gene.PrevSymbolLookup
+  pk: 7356
+- fields: {choice: CRKRS}
+  model: gene.PrevSymbolLookup
+  pk: 2752
+- fields: {choice: KIAA1117}
+  model: gene.PrevSymbolLookup
+  pk: 4925
+- fields: {choice: CMTX1}
+  model: gene.PrevSymbolLookup
+  pk: 2648
+- fields: {choice: GDH}
+  model: gene.PrevSymbolLookup
+  pk: 3952
+- fields: {choice: TCP1L2}
+  model: gene.PrevSymbolLookup
+  pk: 9322
+- fields: {choice: OR51J2}
+  model: gene.PrevSymbolLookup
+  pk: 6919
+- fields: {choice: FTHL26}
+  model: gene.PrevSymbolLookup
+  pk: 3845
+- fields: {choice: SCA7}
+  model: gene.PrevSymbolLookup
+  pk: 8715
+- fields: {choice: C20orf108}
+  model: gene.PrevSymbolLookup
+  pk: 1406
+- fields: {choice: TRNAA13}
+  model: gene.PrevSymbolLookup
+  pk: 9644
+- fields: {choice: MIRN520H}
+  model: gene.PrevSymbolLookup
+  pk: 5972
+- fields: {choice: CD45}
+  model: gene.PrevSymbolLookup
+  pk: 2429
+- fields: {choice: CNRS8}
+  model: gene.PrevSymbolLookup
+  pk: 2672
+- fields: {choice: ARFD1}
+  model: gene.PrevSymbolLookup
+  pk: 310
+- fields: {choice: SNX26}
+  model: gene.PrevSymbolLookup
+  pk: 9076
+- fields: {choice: CDCA6}
+  model: gene.PrevSymbolLookup
+  pk: 2459
+- fields: {choice: IFNAP22}
+  model: gene.PrevSymbolLookup
+  pk: 4637
+- fields: {choice: RNU6-68}
+  model: gene.PrevSymbolLookup
+  pk: 8478
+- fields: {choice: MIR3670}
+  model: gene.PrevSymbolLookup
+  pk: 5506
+- fields: {choice: NRBP}
+  model: gene.PrevSymbolLookup
+  pk: 6700
+- fields: {choice: MIRN888}
+  model: gene.PrevSymbolLookup
+  pk: 6160
+- fields: {choice: OR5W2P}
+  model: gene.PrevSymbolLookup
+  pk: 6969
+- fields: {choice: CYP2C10}
+  model: gene.PrevSymbolLookup
+  pk: 2930
+- fields: {choice: PCANAP1}
+  model: gene.PrevSymbolLookup
+  pk: 7130
+- fields: {choice: UFS}
+  model: gene.PrevSymbolLookup
+  pk: 10365
+- fields: {choice: CCDC100}
+  model: gene.PrevSymbolLookup
+  pk: 2334
+- fields: {choice: MIRN153-2}
+  model: gene.PrevSymbolLookup
+  pk: 5702
+- fields: {choice: RAD53}
+  model: gene.PrevSymbolLookup
+  pk: 7613
+- fields: {choice: ATP6H}
+  model: gene.PrevSymbolLookup
+  pk: 442
+- fields: {choice: SPG6}
+  model: gene.PrevSymbolLookup
+  pk: 9111
+- fields: {choice: VIMP1}
+  model: gene.PrevSymbolLookup
+  pk: 10442
+- fields: {choice: TRNAD19}
+  model: gene.PrevSymbolLookup
+  pk: 9726
+- fields: {choice: U2AF1L4}
+  model: gene.PrevSymbolLookup
+  pk: 10326
+- fields: {choice: RSAFD1}
+  model: gene.PrevSymbolLookup
+  pk: 8639
+- fields: {choice: PDCD8}
+  model: gene.PrevSymbolLookup
+  pk: 7162
+- fields: {choice: GLUR3}
+  model: gene.PrevSymbolLookup
+  pk: 4021
+- fields: {choice: MHC2TA}
+  model: gene.PrevSymbolLookup
+  pk: 5478
+- fields: {choice: CHDR}
+  model: gene.PrevSymbolLookup
+  pk: 2549
+- fields: {choice: C6orf166}
+  model: gene.PrevSymbolLookup
+  pk: 1940
+- fields: {choice: AGPHD1}
+  model: gene.PrevSymbolLookup
+  pk: 134
+- fields: {choice: H3FJ}
+  model: gene.PrevSymbolLookup
+  pk: 4286
+- fields: {choice: LINC00414}
+  model: gene.PrevSymbolLookup
+  pk: 5214
+- fields: {choice: OR6Y2}
+  model: gene.PrevSymbolLookup
+  pk: 6976
+- fields: {choice: FAM28A}
+  model: gene.PrevSymbolLookup
+  pk: 3587
+- fields: {choice: ETK}
+  model: gene.PrevSymbolLookup
+  pk: 3444
+- fields: {choice: C6orf164}
+  model: gene.PrevSymbolLookup
+  pk: 1939
+- fields: {choice: GCN1L1}
+  model: gene.PrevSymbolLookup
+  pk: 3943
+- fields: {choice: C1orf181}
+  model: gene.PrevSymbolLookup
+  pk: 1306
+- fields: {choice: RNF134P1}
+  model: gene.PrevSymbolLookup
+  pk: 8280
+- fields: {choice: TRNAC31P}
+  model: gene.PrevSymbolLookup
+  pk: 9708
+- fields: {choice: TRNAG23}
+  model: gene.PrevSymbolLookup
+  pk: 9807
+- fields: {choice: NPT2}
+  model: gene.PrevSymbolLookup
+  pk: 6696
+- fields: {choice: C1orf130}
+  model: gene.PrevSymbolLookup
+  pk: 1268
+- fields: {choice: C1orf32}
+  model: gene.PrevSymbolLookup
+  pk: 1339
+- fields: {choice: ZNF204}
+  model: gene.PrevSymbolLookup
+  pk: 10655
+- fields: {choice: ATP6E}
+  model: gene.PrevSymbolLookup
+  pk: 435
+- fields: {choice: RNPC2}
+  model: gene.PrevSymbolLookup
+  pk: 8308
+- fields: {choice: MIRN548I1}
+  model: gene.PrevSymbolLookup
+  pk: 6008
+- fields: {choice: GPR40}
+  model: gene.PrevSymbolLookup
+  pk: 4131
+- fields: {choice: MRX48}
+  model: gene.PrevSymbolLookup
+  pk: 6319
+- fields: {choice: ALKBH}
+  model: gene.PrevSymbolLookup
+  pk: 172
+- fields: {choice: OR51H1P}
+  model: gene.PrevSymbolLookup
+  pk: 6918
+- fields: {choice: FAM30C}
+  model: gene.PrevSymbolLookup
+  pk: 3593
+- fields: {choice: FAM10A6}
+  model: gene.PrevSymbolLookup
+  pk: 3514
+- fields: {choice: FAM39B}
+  model: gene.PrevSymbolLookup
+  pk: 3608
+- fields: {choice: CDY2}
+  model: gene.PrevSymbolLookup
+  pk: 2482
+- fields: {choice: RN5S179}
+  model: gene.PrevSymbolLookup
+  pk: 7829
+- fields: {choice: OR2T6P}
+  model: gene.PrevSymbolLookup
+  pk: 6866
+- fields: {choice: DDX34}
+  model: gene.PrevSymbolLookup
+  pk: 3028
+- fields: {choice: TRNAS8}
+  model: gene.PrevSymbolLookup
+  pk: 10125
+- fields: {choice: PCANAP5}
+  model: gene.PrevSymbolLookup
+  pk: 7131
+- fields: {choice: C16orf3}
+  model: gene.PrevSymbolLookup
+  pk: 1057
+- fields: {choice: RNS2}
+  model: gene.PrevSymbolLookup
+  pk: 8314
+- fields: {choice: MIRN26B}
+  model: gene.PrevSymbolLookup
+  pk: 5795
+- fields: {choice: ATP6EL2}
+  model: gene.PrevSymbolLookup
+  pk: 437
+- fields: {choice: MYBAS}
+  model: gene.PrevSymbolLookup
+  pk: 6424
+- fields: {choice: NKNB}
+  model: gene.PrevSymbolLookup
+  pk: 6627
+- fields: {choice: DUSP24}
+  model: gene.PrevSymbolLookup
+  pk: 3241
+- fields: {choice: VGR}
+  model: gene.PrevSymbolLookup
+  pk: 10436
+- fields: {choice: C14orf30}
+  model: gene.PrevSymbolLookup
+  pk: 951
+- fields: {choice: C20orf49}
+  model: gene.PrevSymbolLookup
+  pk: 1522
+- fields: {choice: GPR64}
+  model: gene.PrevSymbolLookup
+  pk: 4145
+- fields: {choice: C21orf52}
+  model: gene.PrevSymbolLookup
+  pk: 1628
+- fields: {choice: MIRN448}
+  model: gene.PrevSymbolLookup
+  pk: 5892
+- fields: {choice: RN5S158}
+  model: gene.PrevSymbolLookup
+  pk: 7806
+- fields: {choice: SCGF}
+  model: gene.PrevSymbolLookup
+  pk: 8732
+- fields: {choice: LENG3}
+  model: gene.PrevSymbolLookup
+  pk: 5183
+- fields: {choice: TRNAS29P}
+  model: gene.PrevSymbolLookup
+  pk: 10118
+- fields: {choice: C2orf14}
+  model: gene.PrevSymbolLookup
+  pk: 1704
+- fields: {choice: ITGB1BP3}
+  model: gene.PrevSymbolLookup
+  pk: 4773
+- fields: {choice: TEGT}
+  model: gene.PrevSymbolLookup
+  pk: 9374
+- fields: {choice: MRE11}
+  model: gene.PrevSymbolLookup
+  pk: 6287
+- fields: {choice: OCP2}
+  model: gene.PrevSymbolLookup
+  pk: 6746
+- fields: {choice: MAS1LP}
+  model: gene.PrevSymbolLookup
+  pk: 5397
+- fields: {choice: PUM}
+  model: gene.PrevSymbolLookup
+  pk: 7564
+- fields: {choice: MIRN449}
+  model: gene.PrevSymbolLookup
+  pk: 5893
+- fields: {choice: PQWD}
+  model: gene.PrevSymbolLookup
+  pk: 7407
+- fields: {choice: PDEG}
+  model: gene.PrevSymbolLookup
+  pk: 7166
+- fields: {choice: SCYA11}
+  model: gene.PrevSymbolLookup
+  pk: 8745
+- fields: {choice: TALDO}
+  model: gene.PrevSymbolLookup
+  pk: 9270
+- fields: {choice: RN5S451}
+  model: gene.PrevSymbolLookup
+  pk: 8128
+- fields: {choice: GTBP}
+  model: gene.PrevSymbolLookup
+  pk: 4208
+- fields: {choice: KIAA0266}
+  model: gene.PrevSymbolLookup
+  pk: 4848
+- fields: {choice: PLCB3N}
+  model: gene.PrevSymbolLookup
+  pk: 7289
+- fields: {choice: OR4A8P}
+  model: gene.PrevSymbolLookup
+  pk: 6881
+- fields: {choice: ZNFN1A4}
+  model: gene.PrevSymbolLookup
+  pk: 10829
+- fields: {choice: NCRNA00116}
+  model: gene.PrevSymbolLookup
+  pk: 6510
+- fields: {choice: ASCC3L1}
+  model: gene.PrevSymbolLookup
+  pk: 372
+- fields: {choice: TMEM111}
+  model: gene.PrevSymbolLookup
+  pk: 9455
+- fields: {choice: C1orf24}
+  model: gene.PrevSymbolLookup
+  pk: 1331
+- fields: {choice: C16orf9}
+  model: gene.PrevSymbolLookup
+  pk: 1102
