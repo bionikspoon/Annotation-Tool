@@ -1,7 +1,4 @@
-import ipdb
-from django.contrib.postgres import fields as postgres
 from django.db import models
-from django.db.models import Lookup
 
 from ..utils.models import LookupTable, LookupMixin
 
@@ -123,10 +120,6 @@ class Gene(models.Model):
     orphanet = models.CharField(max_length=128, null=True)
     prev_name = models.ManyToManyField(PrevNameLookup, blank=True)
     prev_symbol = models.ManyToManyField(PrevSymbolLookup, blank=True)
-
-    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        ipdb.set_trace()
-        super().save(force_insert, force_update, using, update_fields)
 
     def __repr__(self):
         return '<Gene: %s>' % self.symbol

@@ -371,9 +371,9 @@ class Command(BaseCommand):
             pass
 
             # q.join()
-            for file in Config.FIXTURES_DIR.glob('Gene-*.yaml'):
-                # q.put(file)
-                self.loaddata(file)
+        for file in Config.FIXTURES_DIR.glob('Gene-*.yaml'):
+            # q.put(file)
+            self.loaddata(file)
 
                 #
                 # q.join()
