@@ -69,7 +69,5 @@ SHELL_PLUS_POST_IMPORTS = (
 
 )
 
-DATABASES['genes'] = env.db('DATABASE_URL_GENE', default='sqlite:///%s' % ROOT_DIR('db.sqlite'))
 
-DATABASES['genes']['ATOMIC_REQUESTS'] = True
 DATABASE_ROUTERS = ['server.annotation_tool.utils.config.GeneDatabaseRouter']
