@@ -21,13 +21,13 @@
     "REDIS_URL": {
       "required": true
     },
-    "DJANGO_LOG_LEVEL": "DEBUG"
+    "DJANGO_LOG_LEVEL": "DEBUG",
+    "DJANGO_ALLOWED_HOSTS": ".herokuapp.com"
   },
   "scripts": {
-    "postdeploy": "python manage.py migrate --noinput --verbosity 2"
+    "postdeploy": "python manage.py migrate --noinput --verbosity 2 && python manage.py pubmed_init && python manage.py fake_data"
   },
   "repository": "https://github.com/bionikspoon/Annotation-Tool",
-
   "addons": [
     "mailgun",
     "papertrail",
@@ -35,7 +35,6 @@
     "redismonitor",
     "heroku-postgresql"
   ],
-
   "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-nodejs"
