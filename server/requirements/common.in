@@ -13,6 +13,7 @@ django-braces
 # Models
 django-model-utils
 factory_boy
+fake-factory
 
 # Images
 
