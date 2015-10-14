@@ -5,7 +5,6 @@ Sphinx
 django-extensions
 Werkzeug
 django-test-plus
-factory_boy
 
 # django-debug-toolbar that works with Django 1.5+
 django-debug-toolbar
