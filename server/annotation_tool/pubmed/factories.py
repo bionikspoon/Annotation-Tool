@@ -24,7 +24,7 @@ def gene_pool():
         gene_offset = randint(0, gene_count // 100)
         return [gene.symbol for gene in Gene.objects.all()[gene_offset:gene_offset + 100]]
     except OperationalError:
-        with Config.DATA_DIR.joinpath('_gene_sample.yaml').open as f:
+        with Config.DATA_DIR.joinpath('_gene_sample.yaml').open() as f:
             return yaml.load(f)
 
 
