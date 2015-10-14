@@ -2,8 +2,10 @@
 # coding=utf-8
 from pathlib import Path
 from random import randint, choice
+from webbrowser import Opera
 
 import yaml
+from django.db import OperationalError
 from factory import DjangoModelFactory, Iterator, LazyAttribute
 from faker import Faker
 
@@ -17,11 +19,11 @@ faker = Faker()
 
 
 def gene_pool():
-    gene_count = Gene.objects.count()
-    if gene_count > 100:
+    try:
+        gene_count = Gene.objects.count()
         gene_offset = randint(0, gene_count // 100)
         return [gene.symbol for gene in Gene.objects.all()[gene_offset:gene_offset + 100]]
-    else:
+    except OperationalError:
         with Config.DATA_DIR.joinpath('_gene_sample.yaml').open as f:
             return yaml.load(f)
 
