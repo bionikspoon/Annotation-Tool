@@ -1,17 +1,35 @@
 #!/usr/bin/env python
 # coding=utf-8
+from pathlib import Path
 from random import randint, choice
+
+import yaml
 from factory import DjangoModelFactory, Iterator, LazyAttribute
 from faker import Faker
-from ..gene.models import Gene
+
 from .models import (StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
     PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed)
+from ..gene.models import Gene
 from ..users.models import User
 from ..utils.factories import make, many_to_many
 
 faker = Faker()
 
-gene_offset = randint(0, Gene.objects.count() // 100)
+
+def gene_pool():
+    gene_count = Gene.objects.count()
+    if gene_count > 100:
+        gene_offset = randint(0, gene_count // 100)
+        return [gene.symbol for gene in Gene.objects.all()[gene_offset:gene_offset + 100]]
+    else:
+        with Config.DATA_DIR.joinpath('_gene_sample.yaml').open as f:
+            return yaml.load(f)
+
+
+class Config:
+    """Command constants."""
+    _CWD = Path(__file__, '..').resolve()
+    DATA_DIR = (_CWD / '../utils/_gene_sample').resolve()
 
 
 class PubmedFactory(DjangoModelFactory):
@@ -24,7 +42,7 @@ class PubmedFactory(DjangoModelFactory):
     pubmed_id = make(faker.random_int)
     user = LazyAttribute(lambda _: choice(User.objects.all()))
 
-    gene = Iterator(Gene.objects.all()[gene_offset:gene_offset + 100], getter=lambda obj: obj.symbol)
+    gene = Iterator(gene_pool())
     structure = Iterator(StructureLookup.objects.all())
     mutation_type = Iterator(MutationTypeLookup.objects.all())
     syntax = Iterator(SyntaxLookup.objects.all())

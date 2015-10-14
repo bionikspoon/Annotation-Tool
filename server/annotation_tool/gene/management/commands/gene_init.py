@@ -345,42 +345,14 @@ class Command(BaseCommand):
             model = LOOKUP_MODEL[field]
             fixtures = [self.format_lookup_fixture(pk, choice, model) for choice, pk in choices.items()]
 
-            # def worker():
-            #     while True:
-            #         file = q.get()
-            #         if file is None:
-            #             break
-            #         self.loaddata(file)
-            #         q.task_done()
-            #
-            # q = Queue()
-            # threads = []
-            # number_of_worker_threads = 10
-            # for i in range(number_of_worker_threads):
-            #     t = Thread(target=worker)
-            #     t.start()
-            #     threads.append(t)
-
-
-
-            # q.put(lambda: self.dump(fixtures, model=model))
-
         for file in Config.FIXTURES_DIR.glob('*Lookup-*.yaml'):
             # q.put(file)
-            # self.loaddata(file)
-            pass
+            self.loaddata(file)
 
             # q.join()
         for file in Config.FIXTURES_DIR.glob('Gene-*.yaml'):
             # q.put(file)
             self.loaddata(file)
-
-                #
-                # q.join()
-                # for i in range(number_of_worker_threads):
-                #     q.put(None)
-                # for t in threads:
-                #     t.join()
 
     # noinspection PyMethodMayBeStatic
     def loaddata(self, file):
