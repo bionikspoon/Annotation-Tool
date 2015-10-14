@@ -4,18 +4,18 @@
 
 # WSGI Handler
 # ------------------------------------------------
-gevent==1.0.2
-gunicorn==19.3.0
+gevent
+gunicorn
 
 # Static and Media Storage
 # ------------------------------------------------
-boto==2.38.0
-django-storages-redux==1.3
+boto
+django-storages-redux
 
 
 # Mailgun Support
 # ---------------
-django-mailgun==0.7.2
+django-mailgun
 
 # Raven is the Sentry client
 # --------------------------

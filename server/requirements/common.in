@@ -40,3 +40,4 @@ redis
 pip-tools
 djangorestframework
 djangorestframework-jwt
+

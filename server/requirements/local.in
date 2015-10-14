@@ -19,3 +19,5 @@ httpie-jwt-auth
 isort
 pyinotify
 watchdog
+
+wheel
