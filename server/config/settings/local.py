@@ -68,5 +68,3 @@ SHELL_PLUS_POST_IMPORTS = (
     ('server.annotation_tool.users.factories', 'UserFactory')
 
 )
-
-

@@ -35,11 +35,12 @@ class GeneDatabaseRouter(object):
     # noinspection PyUnusedLocal
     def allow_migrate(self, db, app_label, model=None, **hints):
         # print('migrate::%r:%r' % (db, app_label))
-
         if app_label == 'gene':
             if db == 'genes':
                 # print('migrate::%r:%r:%r' % (db, app_label, model))
                 return True
+            else:
+                return False
 
         if db == 'genes':
             return False
