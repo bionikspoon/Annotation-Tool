@@ -33,4 +33,5 @@ redis==2.10.3
 six==1.10.0               # via django-braces, django-environ, pip-tools, unicode-slugify
 unicode-slugify==0.1.3
 unidecode==0.4.18         # via unicode-slugify
+wheel==0.26.0
 whitenoise==2.0.4

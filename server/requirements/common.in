@@ -41,3 +41,5 @@ pip-tools
 djangorestframework
 djangorestframework-jwt
 
+
+wheel

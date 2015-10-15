@@ -20,4 +20,3 @@ isort
 pyinotify
 watchdog
 
-wheel
