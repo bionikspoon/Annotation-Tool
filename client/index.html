@@ -60,7 +60,11 @@
    to improve your experience.
 </p><![endif]-->
 
-<ui-view layout-fill></ui-view>
+<ui-view
+   layout-fill
+   layout=row
+   flex
+   ng-controller="UserController as userCtrl"></ui-view>
 
 <!-- build:js(client) scripts/vendor.js -->
 <!-- bower:js -->

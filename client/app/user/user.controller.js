@@ -1,5 +1,5 @@
 export default class UserController {
-  constructor(AuthService, $scope, Session, SESSION_EVENTS, $log) {
+  constructor(AuthService, $scope, Session, SESSION_EVENTS) {
     'ngInject';
 
     this.currentUser = {data: null};
