@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.conf import settings
-from django.conf.urls import include, url, patterns
+from django.conf.urls import include, url
 from django.views.generic import TemplateView
 from rest_framework import routers
 from rest_framework_jwt.views import obtain_jwt_token
-from server.config.settings import ROOT_DIR
+
 from ..annotation_tool.gene.views import GeneViewSet
 from ..annotation_tool.pubmed.views import (PubmedViewSet, PatientOutcomesViewSet, DiseaseViewSet,
     VariantConsequenceViewSet, VariantTypeViewSet, StructureViewSet, MutationTypeViewSet, SyntaxViewSet,
@@ -29,20 +28,9 @@ router.register('lookup-patient-outcomes', PatientOutcomesViewSet)
 urlpatterns = [  # :off
     url(r'^api/', include(router.urls)),
     url(r'^api/auth/login/', obtain_jwt_token),
-
-
+    url('^.*$', TemplateView.as_view(template_name='index.html')),
 ]  # :on
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# urlpatterns += patterns(
-#
-#     'django.views.static',
-#
-#     url(r'^(?P<path>styles|scripts|assets/.*)$', 'serve'),
-#
-# )
-
-urlpatterns += [url('^.*$', TemplateView.as_view(template_name='index.html')), ]
 
 # TODO Delete this
 ##############################################################################
