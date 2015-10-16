@@ -72,3 +72,4 @@ dist/
 server/staticfiles
 *.sqlite
 *.sqlite-journal
+scratch/
