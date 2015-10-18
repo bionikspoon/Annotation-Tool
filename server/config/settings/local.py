@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
-"""
+'''
 Local settings
 
 - Run in Debug mode
 - Use console backend for emails
 - Add Django Debug Toolbar
 - Add django-extensions as app
-"""
-
-from . import env
-
-env.read_env('.env.local')
+'''
 
 from .common import *  # noqa
 
@@ -23,13 +19,13 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default='secret')
+SECRET_KEY = env("DJANGO_SECRET_KEY", default='CHANGEME!!!jtw0ug+d6v3p)8l7m%75n&5(ga62we$a0h1+$ad_27^!(ph%om')
 
 # Mail settings
 # ------------------------------------------------------------------------------
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+
 
 # CACHING
 # ------------------------------------------------------------------------------
@@ -43,28 +39,23 @@ CACHES = {
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
 MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-INSTALLED_APPS += ('debug_toolbar',)
+INSTALLED_APPS += ('debug_toolbar', )
 
 INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
 
 DEBUG_TOOLBAR_CONFIG = {
-    'DISABLE_PANELS': ['debug_toolbar.panels.redirects.RedirectsPanel', ],
-    'SHOW_TEMPLATE_CONTEXT': True, }
+    'DISABLE_PANELS': [
+        'debug_toolbar.panels.redirects.RedirectsPanel',
+    ],
+    'SHOW_TEMPLATE_CONTEXT': True,
+}
 
 # django-extensions
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += ('django_extensions',)
+INSTALLED_APPS += ('django_extensions', )
 
 # TESTING
 # ------------------------------------------------------------------------------
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
-
-SHELL_PLUS_POST_IMPORTS = (
-
-    ('server.annotation_tool.pubmed.factories', 'PubmedFactory'),
-
-    ('server.annotation_tool.users.factories', 'UserFactory')
-
-)

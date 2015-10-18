@@ -1,6 +1,0 @@
-- fields: {choice: Rule}
-  model: pubmed.MutationTypeLookup
-  pk: 1
-- fields: {choice: Variant}
-  model: pubmed.MutationTypeLookup
-  pk: 2

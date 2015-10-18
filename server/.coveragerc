@@ -1,0 +1,3 @@
+[run]
+include = annotation_tool/*
+omit = *migrations*

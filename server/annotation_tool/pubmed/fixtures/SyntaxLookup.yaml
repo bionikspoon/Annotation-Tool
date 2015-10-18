@@ -1,9 +1,0 @@
-- fields: {choice: Cdna}
-  model: pubmed.SyntaxLookup
-  pk: 1
-- fields: {choice: Genomic}
-  model: pubmed.SyntaxLookup
-  pk: 2
-- fields: {choice: Protein}
-  model: pubmed.SyntaxLookup
-  pk: 3

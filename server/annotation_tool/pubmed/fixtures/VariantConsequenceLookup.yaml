@@ -1,6 +1,0 @@
-- fields: {choice: Non Synonymous Missense}
-  model: pubmed.VariantConsequenceLookup
-  pk: 1
-- fields: {choice: Non Synonymous Nonsense}
-  model: pubmed.VariantConsequenceLookup
-  pk: 2
