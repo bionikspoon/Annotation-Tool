@@ -1,0 +1,51 @@
+# Bleeding edge Django
+django
+
+# Configuration
+django-environ
+django-secure
+whitenoise
+
+
+# Forms
+django-braces
+django-crispy-forms
+django-floppyforms
+
+# Models
+django-model-utils
+
+# Images
+Pillow
+
+# For user registration, either via email or social
+# Well-built with regular release cycles!
+django-allauth
+
+# For the persistence stores
+psycopg2
+PyYAML
+
+# Unicode slugification
+unicode-slugify
+django-autoslug
+
+# Time zones support
+pytz
+
+# Redis support
+django-redis
+redis
+
+
+# pip-sync, requirements management
+pip-tools
+djangorestframework
+djangorestframework-jwt
+
+
+wheel
+
+
+factory_boy
+fake-factory

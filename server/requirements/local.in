@@ -1,19 +1,27 @@
 # Local development dependencies go here
--r base.txt
-coverage==4.0
+-r common.in
+coverage
 Sphinx
-django-extensions==1.5.7
-Werkzeug==0.10.4
-django-test-plus==1.0.9
-factory_boy==2.5.2
+django-extensions
+Werkzeug
+django-test-plus
+factory_boy
+fake-factory
 
 # django-debug-toolbar that works with Django 1.5+
-django-debug-toolbar==1.4
+django-debug-toolbar
 
 # improved REPL
-ipdb==0.8.1
+jupyter
+ipdb
 
 # Required by maildump. Need to pin dependency to gevent beta to be Python 3-compatible.
 gevent==1.0.2
 # Enables better email testing
-maildump==0.5.1
+maildump
+
+httpie
+httpie-jwt-auth
+isort
+pyinotify
+watchdog
