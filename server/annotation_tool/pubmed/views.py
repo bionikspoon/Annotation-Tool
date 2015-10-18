@@ -1,6 +1,7 @@
 # Create your views here.
 from rest_framework import viewsets
-from rest_framework.response import Response
+from rest_framework.permissions import DjangoModelPermissions
+
 from .models import (Pubmed, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
     VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup)
 from .serializers import (PubmedSerializer, DiseaseSerializer, VariantConsequenceSerializer, VariantTypeSerializer,
@@ -51,3 +52,4 @@ class PubmedViewSet(viewsets.ModelViewSet):
     queryset = Pubmed.objects.prefetch_related('disease', 'assessed_patient_outcomes',
                                                'significant_patient_outcomes').all()
     serializer_class = PubmedSerializer
+    permission_classes = (DjangoModelPermissions,)
