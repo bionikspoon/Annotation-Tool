@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Local settings
 
 - Run in Debug mode
 - Use console backend for emails
 - Add Django Debug Toolbar
 - Add django-extensions as app
-'''
+"""
+
+from . import env
+
+env.read_env('.env.local')
 
 from .common import *  # noqa
 
@@ -19,7 +23,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default='CHANGEME!!!jtw0ug+d6v3p)8l7m%75n&5(ga62we$a0h1+$ad_27^!(ph%om')
+SECRET_KEY = env("DJANGO_SECRET_KEY", default='secret')
 
 # Mail settings
 # ------------------------------------------------------------------------------
@@ -59,3 +63,11 @@ INSTALLED_APPS += ('django_extensions', )
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
+
+SHELL_PLUS_POST_IMPORTS = (
+
+    ('server.annotation_tool.pubmed.factories', 'PubmedFactory'),
+
+    ('server.annotation_tool.users.factories', 'UserFactory')
+
+)

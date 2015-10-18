@@ -33,6 +33,7 @@ application = get_wsgi_application()
 # Use Whitenoise to serve static files
 # See: https://whitenoise.readthedocs.org/
 application = DjangoWhiteNoise(application)
+application.add_files(ROOT_DIR('staticfiles'), prefix='/')
 
 
 # Apply WSGI middleware here.

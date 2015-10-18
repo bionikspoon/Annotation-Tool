@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Production Configurations
 
 - Use djangosecure
@@ -7,7 +7,7 @@ Production Configurations
 - Use mailgun to send emails
 - Use Redis on Heroku
 
-'''
+"""
 from __future__ import absolute_import, unicode_literals
 
 from boto.s3.connection import OrdinaryCallingFormat
@@ -101,8 +101,8 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
                          default='annotation_tool <noreply@annotation-tool.herokuapp.com>')
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-MAILGUN_ACCESS_KEY = env('DJANGO_MAILGUN_API_KEY')
-MAILGUN_SERVER_NAME = env('DJANGO_MAILGUN_SERVER_NAME')
+MAILGUN_ACCESS_KEY = env('MAILGUN_API_KEY')
+MAILGUN_SERVER_NAME = env('MAILGUN_DOMAIN')
 EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default='[annotation_tool] ')
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 
