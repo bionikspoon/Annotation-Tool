@@ -2,15 +2,16 @@
   'use strict';
 
   angular
-    .module('app',
-      [
-        'ngAnimate',
-        'ngCookies',
-        'ngTouch',
-        'ngSanitize',
-        'restangular',
-        'ui.router',
-        'ngMaterial'
-      ]);
+    .module('app', [
+      //'ngAnimate',
+      //'ngCookies',
+      //'ngTouch',
+      //'ngSanitize',
+      //'restangular',
+      'ui.router',
+      //'ngMaterial',
+      //'app.layout',
+      'app.main'
+    ]);
 
 })();
