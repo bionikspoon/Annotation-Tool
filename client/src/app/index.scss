@@ -4,7 +4,9 @@
  */
 // bower:scss
 // endbower
+//noinspection CssUnknownTarget
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
+//noinspection CssUnknownTarget
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import "bower_components/material-color/material-color";
 
@@ -29,45 +31,6 @@ html, body {
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
-}
-
-.thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
-  }
-}
-
-md-toolbar.md-default-theme {
-  background-color: black;
-}
-
-section.jumbotron {
-  margin-bottom:    30px;
-  padding:          1px 30px;
-  background-color: #5aadbb;
-  text-align:       center;
-
-  color:            white;
-
-  h1 {
-    font-size: 3em;
-  }
-}
-
-.techs {
-  display:   flex;
-  flex-flow: row wrap;
-
-  md-card {
-    width: 30%;
-
-    img.pull-right {
-      float: right;
-      width: 50px;
-    }
-  }
 }
 
 /**

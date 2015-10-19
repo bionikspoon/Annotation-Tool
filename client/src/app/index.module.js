@@ -8,11 +8,11 @@
       //'ngTouch',
       //'ngSanitize',
       //'restangular',
-      'ui.router',
+      //'ui.router',
       //'ngMaterial',
       //'app.layout',
-      'app.core',
-      'app.main'
+      'app.main',
+      'app.core'
     ]);
 
 })();

@@ -1,5 +1,8 @@
 (function() {
   'use strict';
-  angular.module('app.main', ['app.layout']);
+  angular.module('app.main', [
+    'ui.router',
+    'app.layout'
+  ]);
 
 })();
