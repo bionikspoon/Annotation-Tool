@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-      .module('client')
+      .module('app')
       .service('webDevTec', webDevTec);
 
   /** @ngInject */
