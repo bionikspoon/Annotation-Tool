@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
+from braces.views import LoginRequiredMixin
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
-
-from braces.views import LoginRequiredMixin
 
 from .models import User
 
@@ -20,12 +19,10 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
     permanent = False
 
     def get_redirect_url(self):
-        return reverse("users:detail",
-                       kwargs={"username": self.request.user.username})
+        return reverse("users:detail", kwargs=dict(username=self.request.user.username))
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
-
     fields = ['name', ]
 
     # we already imported User in the view code above, remember?
@@ -33,10 +30,16 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
 
     # send the user back to their own page after a successful update
     def get_success_url(self):
-        return reverse("users:detail",
-                       kwargs={"username": self.request.user.username})
+        return reverse("users:detail", kwargs={
+            "username": self.request.user.username
+        })
 
+    # noinspection PyMethodOverriding
     def get_object(self):
+        """
+        :param django.views.generic.UpdateView self)
+        :return:
+        """
         # Only get the User record for the user making the request
         return User.objects.get(username=self.request.user.username)
 
