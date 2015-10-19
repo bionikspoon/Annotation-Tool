@@ -12,7 +12,7 @@ var util = require('util');
 var proxyMiddleware = require('http-proxy-middleware');
 
 function browserSyncInit(baseDir, browser) {
-  browser = browser === undefined ? 'default' : browser;
+  browser = browser === undefined ? 'google-chrome' : browser;
 
   var routes = null;
   if(baseDir === conf.paths.src || (util.isArray(baseDir) && baseDir.indexOf(conf.paths.src) !== -1)) {
@@ -33,7 +33,7 @@ function browserSyncInit(baseDir, browser) {
    *
    * For more details and option, https://github.com/chimurai/http-proxy-middleware/blob/v0.0.5/README.md
    */
-  // server.middleware = proxyMiddleware('/users', {target: 'http://jsonplaceholder.typicode.com', proxyHost: 'jsonplaceholder.typicode.com'});
+  server.middleware = proxyMiddleware('http://localhost:8000/api');
 
   browserSync.instance = browserSync.init({
     startPath: '/',
