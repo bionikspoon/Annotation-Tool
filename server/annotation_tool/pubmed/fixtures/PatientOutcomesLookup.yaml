@@ -1,0 +1,48 @@
+- fields: {choice: Disease Progression}
+  model: pubmed.PatientOutcomesLookup
+  pk: 1
+- fields: {choice: Disease-Control Rate}
+  model: pubmed.PatientOutcomesLookup
+  pk: 2
+- fields: {choice: Disease-Free Survival}
+  model: pubmed.PatientOutcomesLookup
+  pk: 3
+- fields: {choice: Event-Free Survival}
+  model: pubmed.PatientOutcomesLookup
+  pk: 4
+- fields: {choice: Median Survival}
+  model: pubmed.PatientOutcomesLookup
+  pk: 5
+- fields: {choice: Objective Response}
+  model: pubmed.PatientOutcomesLookup
+  pk: 6
+- fields: {choice: Overall Response Rate}
+  model: pubmed.PatientOutcomesLookup
+  pk: 7
+- fields: {choice: Overall Survival}
+  model: pubmed.PatientOutcomesLookup
+  pk: 8
+- fields: {choice: Post-Recurrence Survival}
+  model: pubmed.PatientOutcomesLookup
+  pk: 9
+- fields: {choice: Prognosis}
+  model: pubmed.PatientOutcomesLookup
+  pk: 10
+- fields: {choice: Progression-Free Survival}
+  model: pubmed.PatientOutcomesLookup
+  pk: 11
+- fields: {choice: Remission}
+  model: pubmed.PatientOutcomesLookup
+  pk: 12
+- fields: {choice: Response Rate}
+  model: pubmed.PatientOutcomesLookup
+  pk: 13
+- fields: {choice: Time To Progression}
+  model: pubmed.PatientOutcomesLookup
+  pk: 14
+- fields: {choice: Time To Relapse}
+  model: pubmed.PatientOutcomesLookup
+  pk: 15
+- fields: {choice: Toxicity}
+  model: pubmed.PatientOutcomesLookup
+  pk: 16

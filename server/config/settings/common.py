@@ -39,8 +39,9 @@ THIRD_PARTY_APPS = (  # :off
 
 # Apps specific for this project go here.
 LOCAL_APPS = (  # :off
+    'annotation_tool.core',  # custom users app
     'annotation_tool.users',  # custom users app
-    # Your stuff: custom apps go here
+    'annotation_tool.pubmed',  # custom users app
 )  # :on
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -81,9 +82,7 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.s
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (
-    ("""Manu Phatak""", 'bionikspoon@gmail.com'),
-)
+ADMINS = (("""Manu Phatak""", 'bionikspoon@gmail.com'),)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
@@ -92,11 +91,9 @@ MANAGERS = ADMINS
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL"),
+    'default': env.db("DATABASE_URL")
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -124,25 +121,21 @@ USE_TZ = True
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#templates
-TEMPLATES = [
-    {
-        # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-        'DIRS': [
-            APPS_DIR('templates'),
-        ],
-        'OPTIONS': {
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
-            'debug': DEBUG,
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
-            # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader',
-            ],
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
-            'context_processors': [  # :off
+TEMPLATES = [{
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+    'DIRS': [APPS_DIR('templates')],
+    'OPTIONS': {
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
+        'debug': DEBUG,  # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
+        # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
+        'loaders': [  # :off
+            'django.template.loaders.filesystem.Loader',
+            'django.template.loaders.app_directories.Loader',
+        ],  # :on
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+        'context_processors': [  # :off
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -152,10 +145,9 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 # Your stuff: custom template context processors go here
-            ],  # :on
-        },
-    },
-]
+            ]  # :on
+    }
+}]
 
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -169,9 +161,7 @@ STATIC_ROOT = ROOT_DIR('staticfiles')
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (
-    APPS_DIR('static'),
-)
+STATICFILES_DIRS = (APPS_DIR('static'),)
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (  # :off
@@ -215,7 +205,6 @@ LOGIN_URL = 'account_login'
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 
-
 # LOGGING CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#logging
@@ -236,7 +225,7 @@ LOGGING = {
         'verbose': {
             'format': '%(levelname)s %(asctime)s %(module)s '
                       '%(process)d %(thread)d %(message)s'
-        },
+        }
     },
     'handlers': {
         'mail_admins': {
@@ -247,8 +236,8 @@ LOGGING = {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
-        },
+            'formatter': 'verbose'
+        }
     },
     'loggers': {
         'django.request': {
@@ -263,7 +252,6 @@ LOGGING = {
         }
     }
 }
-
 
 # Location of root django.contrib.admin URL, use {% url 'admin:index' %}
 ADMIN_URL = r'^admin/'
