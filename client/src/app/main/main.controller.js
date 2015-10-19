@@ -7,7 +7,7 @@
 
   /** @ngInject */
   function MainController() {
-    var vm = this;
+    var vm = this; // jshint ignore:line
 
     activate();
 
@@ -15,6 +15,5 @@
     }
 
   }
-
 
 })();

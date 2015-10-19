@@ -11,6 +11,7 @@
       'ui.router',
       //'ngMaterial',
       //'app.layout',
+      'app.core',
       'app.main'
     ]);
 
