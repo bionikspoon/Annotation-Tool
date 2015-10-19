@@ -1,29 +1,30 @@
 (function() {
   'use strict';
-
+  // Topnav
   angular
     .module('app.layout')
-    .directive('appTopnav', appTopnav);
+    .directive('appTopnav', layoutTopnavDirective);
 
   /* @ngInject */
-  function appTopnav() {
+  function layoutTopnavDirective() {
     var directive = {
       bindToController: true,
-      controller: TopnavController,
-      controllerAs: 'vm',
-      restrict: 'E',
-      templateUrl: 'app/layout/topnav/layoutTopnav.html',
-      scope: {}
+      controller:       layoutTopnavController,
+      controllerAs:     'vm',
+      restrict:         'E',
+      templateUrl:      'app/layout/topnav/layoutTopnav.html',
+      scope:            {}
     };
     return directive;
+
   }
 
   /* @ngInject */
-  function TopnavController($mdSidenav) {
+  function layoutTopnavController() {
     var vm = this;
     vm.toggleNavbarSide = toggleNavbarSide;
 
-    function toggleNavbarSide() {
+    function toggleNavbarSide($mdSidenav) {
       $mdSidenav('left').toggle();
     }
 
