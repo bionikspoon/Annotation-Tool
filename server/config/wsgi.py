@@ -15,6 +15,7 @@ framework.
 """
 import os
 
+from django.conf import settings
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 
@@ -33,7 +34,7 @@ application = get_wsgi_application()
 # Use Whitenoise to serve static files
 # See: https://whitenoise.readthedocs.org/
 application = DjangoWhiteNoise(application)
-application.add_files(ROOT_DIR('staticfiles'), prefix='/')
+application.add_files(settings.ROOT_DIR('staticfiles'), prefix='/')
 
 
 # Apply WSGI middleware here.

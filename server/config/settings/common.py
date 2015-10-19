@@ -13,7 +13,7 @@ from . import env, APPS_DIR, ROOT_DIR
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
-DJANGO_APPS = (
+DJANGO_APPS = (  # :off
     # Default Django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -27,28 +27,28 @@ DJANGO_APPS = (
 
     # Admin
     'django.contrib.admin',
-)
-THIRD_PARTY_APPS = (
+)  # :on
+THIRD_PARTY_APPS = (  # :off
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',
     'rest_framework.authtoken'
-)
+)  # :on
 
 # Apps specific for this project go here.
-LOCAL_APPS = (
+LOCAL_APPS = (  # :off
     'annotation_tool.users',  # custom users app
     # Your stuff: custom apps go here
-)
+)  # :on
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = (  # :off
     # Make sure djangosecure.middleware.SecurityMiddleware is listed first
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,7 +56,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+)  # :on
 
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres:///annotation_tool"),
+    'default': env.db("DATABASE_URL"),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -130,7 +130,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         'DIRS': [
-            str(APPS_DIR.path('templates')),
+            APPS_DIR('templates'),
         ],
         'OPTIONS': {
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
@@ -142,7 +142,7 @@ TEMPLATES = [
                 'django.template.loaders.app_directories.Loader',
             ],
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
-            'context_processors': [
+            'context_processors': [  # :off
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -152,7 +152,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 # Your stuff: custom template context processors go here
-            ],
+            ],  # :on
         },
     },
 ]
@@ -163,21 +163,21 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = str(ROOT_DIR('staticfiles'))
+STATIC_ROOT = ROOT_DIR('staticfiles')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
-    str(APPS_DIR.path('static')),
+    APPS_DIR('static'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
-STATICFILES_FINDERS = (
+STATICFILES_FINDERS = (  # :off
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+)  # :on
 
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -196,10 +196,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
-AUTHENTICATION_BACKENDS = (
+AUTHENTICATION_BACKENDS = (  # :off
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
-)
+)  # :on
 
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'username'

@@ -58,3 +58,6 @@ node_modules/
 
 # User-uploaded media
 annotation_tool/media/
+
+!.env.example
+.env*
