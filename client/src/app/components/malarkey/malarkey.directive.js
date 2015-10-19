@@ -10,7 +10,7 @@
     var directive = {
       restrict: 'E',
       scope: {
-        extraValues: '=',
+        extraValues: '='
       },
       template: '&nbsp;',
       link: linkFunc,
@@ -20,6 +20,7 @@
 
     return directive;
 
+    //noinspection JSUnusedLocalSymbols
     function linkFunc(scope, el, attr, vm) {
       var watcher;
       var typist = malarkey(el[0], {
@@ -42,7 +43,7 @@
         });
       });
 
-      scope.$on('$destroy', function () {
+      scope.$on('$destroy', function() {
         watcher();
       });
     }

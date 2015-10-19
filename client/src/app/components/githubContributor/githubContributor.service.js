@@ -17,13 +17,13 @@
     return service;
 
     function getContributors(limit) {
-      if (!limit) {
+      if(!limit) {
         limit = 30;
       }
 
       return $http.get(apiHost + '/contributors?per_page=' + limit)
-        .then(getContributorsComplete)
-        .catch(getContributorsFailed);
+                  .then(getContributorsComplete)
+                  .catch(getContributorsFailed);
 
       function getContributorsComplete(response) {
         return response.data;

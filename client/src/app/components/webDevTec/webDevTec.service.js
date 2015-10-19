@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-      .module('app')
-      .service('webDevTec', webDevTec);
+    .module('app')
+    .service('webDevTec', webDevTec);
 
   /** @ngInject */
   function webDevTec() {

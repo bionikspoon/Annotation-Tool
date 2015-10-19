@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('controllers', function(){
+  describe('controllers', function() {
 
     beforeEach(module('client'));
 
