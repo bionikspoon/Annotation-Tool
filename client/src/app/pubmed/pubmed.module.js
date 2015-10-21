@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('app.pubmed', ['ui.router', 'restangular']);
+    .module('app.pubmed', ['ui.router', 'restangular', 'app.controls']);
 })();

@@ -1,14 +1,15 @@
 (function() {
   'use strict';
 
+  // item
   angular
     .module('app.pubmed')
-    .controller('PubmedItemController', PubmedItemController);
+    .controller('pubmedItemController', pubmedItemController);
 
   /** @ngInject **/
-  function PubmedItemController() {
+  function pubmedItemController() {
     var vm = this;
-    vm.title = 'PubmedItemController';
+    vm.title = 'pubmedItemController';
 
     activate();
 

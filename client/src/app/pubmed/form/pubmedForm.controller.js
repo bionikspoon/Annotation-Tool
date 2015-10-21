@@ -1,20 +1,22 @@
 (function() {
   'use strict';
 
+  // form
   angular
     .module('app.pubmed')
-    .controller('PubmedFormController', PubmedFormController);
+    .controller('pubmedFormController', pubmedFormController);
 
   /** @ngInject **/
-  function PubmedFormController() {
+  function pubmedFormController() {
     var vm = this;
-    vm.title = 'PubmedFormController';
+    vm.title = 'pubmedFormController';
 
     activate();
 
     ////////////////
 
     function activate() {
+
     }
   }
 

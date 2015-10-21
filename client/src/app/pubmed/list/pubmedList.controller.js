@@ -1,16 +1,15 @@
 (function() {
   'use strict';
 
+  // list
   angular
     .module('app.pubmed')
-    .controller('PubmedListController', PubmedListController);
+    .controller('pubmedListController', pubmedListController);
 
   /** @ngInject **/
-  function PubmedListController($log, Restangular) { // jshint ignore:line
+  function pubmedListController(Restangular, $log) {
     var vm = this;
-
-    vm.loading = true;
-    vm.pubmedEntries = [];
+    vm.title = 'pubmedListController';
 
     activate();
 

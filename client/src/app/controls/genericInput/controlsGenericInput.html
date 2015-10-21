@@ -1,0 +1,40 @@
+<!--suppress HtmlFormInputWithoutLabel, XmlDuplicatedId -->
+<md-input-container>
+   <label for={{field.meta.name}}_{{$id}}>{{field.meta.label}}</label>
+   <input
+      ng-if="field.meta.type === 'string' && field.meta.max_length"
+      type=text
+      id={{field.meta.name}}_{{$id}}
+      name={{field.meta.name}}
+      ng-model=field.model
+      ng-disabled=field.meta.disabled
+      ng-maxlength={{field.meta.max_length}}
+      ng-required={{field.meta.required}}>
+   <textarea
+      ng-if="field.meta.type === 'string' && !field.meta.max_length"
+      id={{field.meta.name}}_{{$id}}
+      name={{field.meta.name}}
+      ng-model=field.model
+      ng-disabled=field.meta.disabled
+      ng-required={{field.meta.required}}
+      rows=5></textarea>
+
+   <input
+      ng-if="field.meta.type === 'integer'"
+      id={{field.meta.name}}_{{$id}}
+      type=number
+      name={{field.meta.name}}
+      ng-model=field.model
+      ng-disabled=field.meta.disabled
+      min={{field.meta.min_value}}
+      max={{field.meta.max_value}}
+      ng-required={{field.meta.required}}>
+
+   <div ng-messages=field.form[field.meta.name].$error
+        ng-show=field.form[field.meta.name].$dirty>
+      <div ng-message=required>This is required!</div>
+      <div ng-message=maxlength>Too long! Max length is {{field.meta.max_length}}</div>
+      <div ng-message=min>Minimum value is {{field.meta.min_value}}</div>
+      <div ng-message=max>Maximum value is {{field.meta.max_value}}</div>
+   </div>
+</md-input-container>

@@ -17,25 +17,25 @@
       .state('pubmed.list', {
         url:          '',
         templateUrl:  'app/pubmed/list/pubmedList.html',
-        controller:   'PubmedListController',
+        controller:   'pubmedListController',
         controllerAs: 'vm'
       })
       .state('pubmed.edit', {
         url:          '{id}/edit/',
         templateUrl:  'app/pubmed/form/pubmedForm.html',
-        controller:   'PubmedFormController',
+        controller:   'pubmedFormController',
         controllerAs: 'vm'
       })
       .state('pubmed.new', {
         url:          'new/',
         templateUrl:  'app/pubmed/form/pubmedForm.html',
-        controller:   'PubmedFormController',
+        controller:   'pubmedFormController',
         controllerAs: 'vm'
       })
       .state('pubmed.item', {
         url:          '{id}/',
         templateUrl:  'app/pubmed/item/pubmedItem.html',
-        controller:   'PubmedItemController',
+        controller:   'pubmedItemController',
         controllerAs: 'vm'
       });
   }
