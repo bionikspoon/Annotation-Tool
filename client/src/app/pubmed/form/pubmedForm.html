@@ -1,0 +1,52 @@
+<h1 class="md-body-1 app-page-title"
+    layout-margin>Pubmed Entry</h1>
+<md-card>
+   <md-card-content>
+
+      <md-progress-linear
+         class=md-accent
+         ng-if=vm.loading
+         md-mode=indeterminate></md-progress-linear>
+
+      <form ng-hide=vm.loading
+            name=vm.pubmedEntry
+            app-form-meta=vm.fields
+            novalidate>
+         <app-generic-input ng-model=vm.entry.pubmed_id></app-generic-input>
+         <app-generic-input ng-model=vm.entry.gene></app-generic-input>
+         <app-radio-group ng-model=vm.entry.structure></app-radio-group>
+         <app-radio-group ng-model=vm.entry.mutation_type></app-radio-group>
+         <app-radio-group ng-model=vm.entry.syntax></app-radio-group>
+         <app-generic-input ng-model=vm.entry.syntax_text></app-generic-input>
+         <app-radio-group ng-model=vm.entry.operator></app-radio-group>
+         <app-radio-group ng-model=vm.entry.rule_level></app-radio-group>
+         <app-choice-slider ng-model=vm.entry.chromosome></app-choice-slider>
+         <app-radio-group ng-model=vm.entry.breakend_strand></app-radio-group>
+         <app-radio-group ng-model=vm.entry.breakend_direction></app-radio-group>
+         <app-choice-slider ng-model=vm.entry.mate_chromosome></app-choice-slider>
+         <app-radio-group ng-model=vm.entry.mate_breakend_strand></app-radio-group>
+         <app-radio-group ng-model=vm.entry.mate_breakend_direction></app-radio-group>
+         <app-generic-input ng-model=vm.entry.coordinate_predicate></app-generic-input>
+         <app-radio-group ng-model=vm.entry.variant_type></app-radio-group>
+         <app-radio-group ng-model=vm.entry.variant_consequence></app-radio-group>
+         <app-choice-slider ng-model=vm.entry.variant_clinical_grade></app-choice-slider>
+         <app-select-multiple ng-model=vm.entry.disease></app-select-multiple>
+         <app-choice-slider ng-model=vm.entry.treatment_number_of_arms></app-choice-slider>
+         <app-generic-input ng-model=vm.entry.population_size></app-generic-input>
+         <app-radio-group ng-model=vm.entry.sex></app-radio-group>
+         <app-generic-input ng-model=vm.entry.ethnicity></app-generic-input>
+         <app-select-multiple ng-model=vm.entry.assessed_patient_outcomes></app-select-multiple>
+         <app-select-multiple ng-model=vm.entry.significant_patient_outcomes></app-select-multiple>
+         <app-generic-input ng-model=vm.entry.study_design></app-generic-input>
+         <app-generic-input ng-model=vm.entry.reference_claims></app-generic-input>
+         <app-generic-input ng-model=vm.entry.comments></app-generic-input>
+
+         <md-button type=submit
+                    class="md-raised md-accent"
+                    ng-disabled=vm.pubmedEntry.$invalid
+                    ng-click=vm.submit(vm.entry,vm.pubmedEntry)>Submit
+         </md-button>
+
+      </form>
+   </md-card-content>
+</md-card>

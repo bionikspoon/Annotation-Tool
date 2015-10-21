@@ -14,11 +14,6 @@
         controller:   'MainController',
         controllerAs: 'vm',
         abstract:     true
-      })
-      .state('pubmed', {
-        url:      '',
-        parent:   'main',
-        template: '<h1>Hello</h1>'
       });
   }
 })();
