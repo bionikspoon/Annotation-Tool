@@ -1,5 +1,6 @@
 <h1 class="md-body-1 app-page-title"
     layout-margin>Pubmed Entry</h1>
+<!--<pre><code> {{vm.meta|json}} </code></pre>-->
 <md-card>
    <md-card-content>
 
@@ -10,7 +11,7 @@
 
       <form ng-hide=vm.loading
             name=vm.pubmedEntry
-            app-form-meta=vm.fields
+            app-form-meta=vm.meta
             novalidate>
          <app-generic-input ng-model=vm.entry.pubmed_id></app-generic-input>
          <app-generic-input ng-model=vm.entry.gene></app-generic-input>

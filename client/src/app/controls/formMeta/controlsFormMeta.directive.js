@@ -14,44 +14,27 @@
       controllerAs:     'vm',
       restrict:         'A',
       scope:            {
-        meta: '&appFormMeta',
+        meta: '=appFormMeta',
         form: '=name'
-      }
+      }/*,
+       link:             link*/
     };
     return directive;
+    /*    function link(scope, element, attrs) {
+     console.debug('controlsFormMeta.directive arguments:', arguments);
+     }*/
   }
 
   /** @ngInject **/
   function controlsFormMetaController($q, $log, $scope, $timeout) {
     var vm = this;
-
+    vm.form = $q.when(vm.form);
+    $log.debug('controlsFormMeta.directive vm:', vm);
     activate();
 
     ////////////////
 
-    function activate() {
-      var deferred = $q.defer();
-
-      $timeout(function() {
-        if($scope.form && $scope.meta) {
-          deferred.resolve({
-            form: $scope.form,
-            meta: $scope.meta()
-          });
-        } else {
-          if(!$scope.form) {
-            $log.error('formMeta.directive $scope.form:', $scope.form);
-          }
-          if(!$scope.meta) {
-            $log.error('formMeta.directive $scope.meta:', $scope.meta);
-          }
-          deferred.reject('`form` or `meta` are not in current scope.');
-        }
-      });
-
-      return deferred.promise;
-
-    }
+    function activate() {}
 
   }
 

@@ -7,9 +7,10 @@
     .controller('pubmedFormController', pubmedFormController);
 
   /** @ngInject **/
-  function pubmedFormController() {
+  function pubmedFormController(Restangular, $log) {
     var vm = this;
-    vm.title = 'pubmedFormController';
+
+    vm.meta = Restangular.all('pubmed').options();
 
     activate();
 
@@ -17,6 +18,10 @@
 
     function activate() {
 
+      vm.meta.then(function(options) {
+        vm.meta = options.actions.POST;
+        return options;
+      });
     }
   }
 
