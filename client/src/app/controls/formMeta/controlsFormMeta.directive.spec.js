@@ -13,7 +13,7 @@
       $rootScope.meta = {};
     }));
 
-    it('', function() {
+    it('does stuff', function() {
       var element = $compile('<form app-form-meta=meta></form>')($rootScope);
       console.debug('controlsFormMeta.directive.spec element:', element);
       $rootScope.$digest();

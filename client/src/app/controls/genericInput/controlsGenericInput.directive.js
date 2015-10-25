@@ -7,10 +7,10 @@
     .directive('appGenericInput', controlsGenericInputDirective);
 
   /** @ngInject **/
-  function controlsGenericInputDirective($log, $q, $timeout) {
+  function controlsGenericInputDirective($log, $q) {
     var directive = {
       bindToController: true,
-      controller:       controlsGenericInputController,
+      controller:       function() {},
       controllerAs:     'vm',
       restrict:         'E',
       scope:            {model: '=ngModel'},
@@ -25,15 +25,11 @@
                        .split('.')
                        .slice(-1)[0];
 
-      scope.vm.meta = fieldMeta(field);
+      scope.vm.meta = fieldMeta();
 
-      scope.vm.form = $q.when(formMeta.form);
+      scope.vm.form = fieldForm();
 
-      $timeout(function() {
-        $log.debug('controlsGenericInput.directive scope.vm:', scope.vm);
-      }, 1000);
-
-      function fieldMeta(field) {
+      function fieldMeta() {
         return $q.when(formMeta.meta)
                  .then(function(meta) {
                    scope.vm.meta = meta[field];
@@ -41,26 +37,23 @@
                  })
                  .catch(function(error) {
                    $log.error('controlsGenericInput.directive error:', error);
+                   return $q.reject(error);
+                 });
+      }
+
+      function fieldForm() {
+        return $q.when(formMeta.form)
+                 .then(function(form) {
+                   scope.vm.form = form;
+                   return form;
+                 })
+                 .catch(function(error) {
+                   $log.error('controlsGenericInput.directive error:', error);
+                   return $q.reject(error);
                  });
       }
     }
 
-  }
-
-  /** @ngInject **/
-  function controlsGenericInputController($log, $timeout) {
-    var vm = this; // jshint ignore:line
-    activate();
-
-    ////////////////
-
-    function activate() {
-      $timeout(function() {
-        $log.debug('controlsGenericInput.directive vm:', vm);
-
-      });
-      //$log.debug('controlsGenericInput.directive vm:', vm);
-    }
   }
 
 })();

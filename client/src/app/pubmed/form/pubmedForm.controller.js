@@ -7,7 +7,7 @@
     .controller('pubmedFormController', pubmedFormController);
 
   /** @ngInject **/
-  function pubmedFormController(Restangular, $q, $log) {
+  function pubmedFormController(Restangular, $q) {
     var vm = this;
 
     vm.meta = pubmedOptions();

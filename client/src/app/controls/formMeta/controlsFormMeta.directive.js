@@ -16,17 +16,13 @@
       scope:            {
         meta: '=appFormMeta',
         form: '=name'
-      }/*,
-       link:             link*/
+      }
     };
     return directive;
-    /*    function link(scope, element, attrs) {
-     console.debug('controlsFormMeta.directive arguments:', arguments);
-     }*/
   }
 
   /** @ngInject **/
-  function controlsFormMetaController($q, $log, $scope, $timeout) {
+  function controlsFormMetaController($q) {
     var vm = this;
 
     vm.form = $q.when(vm.form);
@@ -38,6 +34,5 @@
     function activate() {}
 
   }
-
 })();
 

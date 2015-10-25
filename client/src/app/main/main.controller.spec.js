@@ -5,10 +5,10 @@
 
     beforeEach(module('app.main'));
 
-    it('should define more than 5 awesome things', inject(function($controller) {
+    it('should define more than 5 awesome things!', inject(function($controller) {
       var vm = $controller('MainController');
 
-      expect(angular.isArray(vm.awesomeThings)).toBeFalsy();
+      expect(angular.isDefined(vm.awesomeThings)).toBeFalsy();
     }));
   });
 })();
