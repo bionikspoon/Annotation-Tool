@@ -2,24 +2,19 @@
 
 var path = require('path');
 var gulp = require('gulp');
-var conf = require('./conf');
-
 var karma = require('karma');
 
 function runTests(singleRun, done) {
-  karma.server.start({
+  var serverConfig = {
     configFile: path.join(__dirname, '/../karma.conf.js'),
-    singleRun: singleRun,
-    autoWatch: !singleRun
-  }, function() {
-    done();
-  });
+    singleRun:  singleRun,
+    autoWatch:  !singleRun
+  };
+
+  var server = new karma.Server(serverConfig, function() {done();});
+  server.start();
 }
 
-gulp.task('test', ['scripts'], function(done) {
-  runTests(true, done);
-});
+gulp.task('test', ['scripts'], function(done) {runTests(true, done);});
 
-gulp.task('test:auto', ['watch'], function(done) {
-  runTests(false, done);
-});
+gulp.task('test:auto', ['watch'], function(done) {runTests(false, done);});

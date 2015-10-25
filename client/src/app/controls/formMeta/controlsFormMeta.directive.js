@@ -28,7 +28,7 @@
   /** @ngInject **/
   function controlsFormMetaController($q, $log, $scope, $timeout) {
     var vm = this;
-    vm.form = $q.when(vm.form);
+
     $log.debug('controlsFormMeta.directive vm:', vm);
     activate();
 
