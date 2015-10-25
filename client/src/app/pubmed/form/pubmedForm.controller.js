@@ -7,21 +7,30 @@
     .controller('pubmedFormController', pubmedFormController);
 
   /** @ngInject **/
-  function pubmedFormController(Restangular, $log) {
+  function pubmedFormController(Restangular, $q, $log) {
     var vm = this;
 
-    vm.meta = Restangular.all('pubmed').options();
+    vm.meta = pubmedOptions();
 
     activate();
 
     ////////////////
 
     function activate() {
+    }
 
-      vm.meta.then(function(options) {
-        vm.meta = options.actions.POST;
-        return options;
-      });
+    function pubmedOptions() {
+      var deferred = $q.defer();
+      Restangular
+        .all('pubmed')
+        .options()
+        .then(function(data) {
+          deferred.resolve(data.actions.POST);
+        })
+        .catch(function(error) {
+          deferred.reject(error);
+        });
+      return deferred.promise;
     }
   }
 

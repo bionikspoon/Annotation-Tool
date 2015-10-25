@@ -29,7 +29,8 @@
   function controlsFormMetaController($q, $log, $scope, $timeout) {
     var vm = this;
 
-    $log.debug('controlsFormMeta.directive vm:', vm);
+    vm.form = $q.when(vm.form);
+
     activate();
 
     ////////////////
