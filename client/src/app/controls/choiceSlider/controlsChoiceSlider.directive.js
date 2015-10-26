@@ -7,7 +7,7 @@
     .directive('appChoiceSlider', controlsChoiceSliderDirective);
 
   /** @ngInject **/
-  function controlsChoiceSliderDirective($log, $q) {
+  function controlsChoiceSliderDirective($log, $q, $mdMedia) {
     var directive = {
       bindToController: true,
       controller:       controlsChoiceSliderController,
@@ -27,6 +27,7 @@
 
       scope.vm.meta = fieldMeta();
       scope.vm.form = fieldForm();
+      scope.$watch(watchMdMedia, setGtMd);
 
       function fieldMeta() {
         return $q.when(formMeta.meta)
@@ -50,6 +51,14 @@
                    $log.error('controlsGenericInput.directive error:', error);
                    return $q.reject(error);
                  });
+      }
+
+      function watchMdMedia() {
+        return $mdMedia('gt-md');
+      }
+
+      function setGtMd(gtMd) {
+        scope.vm.gtMd = gtMd;
       }
     }
   }

@@ -16,7 +16,7 @@
             $scope.meta = mockMeta;
         }));
 
-        describe('Compiled template', function() {
+        describe('Compiled Template', function() {
             var element;
             var formMetaCtrl;
             beforeEach(function() {

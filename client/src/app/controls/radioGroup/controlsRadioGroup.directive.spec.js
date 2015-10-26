@@ -36,7 +36,7 @@
                 it('should have a clear button when model is defined', function() {
                     vm.model = "1";
                     $scope.$digest();
-                    var buttonElement = radioGroupElement.find('md-button');
+                    var buttonElement = radioGroupElement.find('button');
                     expect(buttonElement.length).toBe(1);
                     expect(buttonElement.html()).toContain('Clear');
 

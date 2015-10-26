@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('app.controls', []);
+    .module('app.controls', ['ngMaterial']);
 })();

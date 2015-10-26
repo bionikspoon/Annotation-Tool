@@ -1,11 +1,10 @@
-[app-form-meta] {
-  .choiceSlider {
-    input {
-      text-align: center;
-      &.gt-md {
-        margin-right: 10px;
-      }
-    }
 
+app-choice-slider {
+  input {
+    text-align: center;
+    &.gt-md {
+      margin-right: 10px;
+    }
   }
+
 }
