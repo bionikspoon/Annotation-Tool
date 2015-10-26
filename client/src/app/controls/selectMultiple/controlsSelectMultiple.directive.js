@@ -19,14 +19,14 @@
     };
     return directive;
 
-    function link(scope, element, attrs) {
+    function link(scope, element, attrs) { // jshint ignore:line
 
     }
   }
 
   /** @ngInject **/
   function controlsSelectMultipleController() {
-    var vm = this;
+    var vm = this; // jshint ignore:line
 
     activate();
 

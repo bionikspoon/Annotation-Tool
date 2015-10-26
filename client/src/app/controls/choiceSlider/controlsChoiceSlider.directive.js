@@ -7,7 +7,7 @@
     .directive('appChoiceSlider', controlsChoiceSliderDirective);
 
   /** @ngInject **/
-  function controlsChoiceSliderDirective($mdMedia) {
+  function controlsChoiceSliderDirective() {
     var directive = {
       bindToController: true,
       controller:       controlsChoiceSliderController,
@@ -19,14 +19,14 @@
     };
     return directive;
 
-    function link(scope, element, attrs) {
+    function link(scope, element, attrs) { // jshint ignore:line
 
     }
   }
 
   /** @ngInject **/
-  function controlsChoiceSliderController($mdMedia, $scope) {
-    var vm = this;
+  function controlsChoiceSliderController() {
+    var vm = this; // jshint ignore:line
 
     activate();
 
