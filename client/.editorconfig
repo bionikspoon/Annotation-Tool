@@ -14,3 +14,6 @@ indent_size = 3
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.spec.js]
+indent_size = 4

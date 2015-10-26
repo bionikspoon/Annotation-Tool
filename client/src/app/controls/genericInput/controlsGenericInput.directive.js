@@ -26,7 +26,6 @@
                        .slice(-1)[0];
 
       scope.vm.meta = fieldMeta();
-
       scope.vm.form = fieldForm();
 
       function fieldMeta() {

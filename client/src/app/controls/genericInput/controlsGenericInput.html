@@ -1,10 +1,10 @@
 <!--suppress HtmlFormInputWithoutLabel, XmlDuplicatedId -->
 <md-input-container>
-   <label for={{::vm.meta.name}}_{{$id}}>{{::vm.meta.label}}</label>
+   <label for={{::vm.meta.name}}_id>{{::vm.meta.label}}</label>
    <input
       ng-if="vm.meta.type === 'string' && vm.meta.max_length"
       type=text
-      id={{::vm.meta.name}}_{{$id}}
+      id={{::vm.meta.name}}_id
       name={{::vm.meta.name}}
       ng-model=vm.model
       ng-disabled=::vm.meta.disabled
@@ -12,7 +12,7 @@
       ng-required={{::vm.meta.required}}>
    <textarea
       ng-if="vm.meta.type === 'string' && !vm.meta.max_length"
-      id={{::vm.meta.name}}_{{$id}}
+      id={{::vm.meta.name}}_id
       name={{::vm.meta.name}}
       ng-model=vm.model
       ng-disabled=::vm.meta.disabled
@@ -21,7 +21,7 @@
 
    <input
       ng-if="vm.meta.type === 'integer'"
-      id={{::vm.meta.name}}_{{$id}}
+      id={{::vm.meta.name}}_id
       type=number
       name={{::vm.meta.name}}
       ng-model=vm.model
