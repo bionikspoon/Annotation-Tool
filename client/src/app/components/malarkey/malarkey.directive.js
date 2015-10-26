@@ -8,13 +8,11 @@
   /** @ngInject */
   function acmeMalarkey(malarkey) {
     var directive = {
-      restrict: 'E',
-      scope: {
-        extraValues: '='
-      },
-      template: '&nbsp;',
-      link: linkFunc,
-      controller: MalarkeyController,
+      restrict:     'E',
+      scope:        {extraValues: '='},
+      template:     '&nbsp;',
+      link:         linkFunc,
+      controller:   MalarkeyController,
       controllerAs: 'vm'
     };
 
@@ -24,11 +22,11 @@
     function linkFunc(scope, el, attr, vm) {
       var watcher;
       var typist = malarkey(el[0], {
-        typeSpeed: 40,
+        typeSpeed:   40,
         deleteSpeed: 40,
-        pauseDelay: 800,
-        loop: true,
-        postfix: ' '
+        pauseDelay:  800,
+        loop:        true,
+        postfix:     ' '
       });
 
       el.addClass('acme-malarkey');
