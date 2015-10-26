@@ -56,23 +56,12 @@
 
   /** @ngInject **/
   function controlsRadioGroupController() {
-    var vm = this; // jshint ignore:line
-    vm.showClearButton = showClearButton;
-    vm.hideClearButton = hideClearButton;
-    vm.clearButtonVisible = false;
-    activate();
-
-    ////////////////
-
-    function activate() {}
-
-    function showClearButton() {
-      vm.clearButtonVisible = true;
-    }
-
-    function hideClearButton() {
-      vm.clearButtonVisible = false;
-    }
+    //var vm = this;
+    //activate();
+    //
+    //////////////////
+    //
+    //function activate() {}
   }
 
 })();

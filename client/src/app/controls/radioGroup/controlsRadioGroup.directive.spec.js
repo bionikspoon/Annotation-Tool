@@ -26,6 +26,24 @@
                 $scope.$digest();
                 vm = radioGroupElement.controller('appRadioGroup');
             });
+            describe('Clear Button', function() {
+                it('should not have a clear button when model is undefined', function() {
+                    var buttonElement = radioGroupElement.find('md-button');
+                    expect(vm.model).toBeUndefined();
+                    expect(buttonElement.length).toBeFalsy();
+
+                });
+                it('should have a clear button when model is defined', function() {
+                    vm.model = "1";
+                    $scope.$digest();
+                    var buttonElement = radioGroupElement.find('md-button');
+                    expect(buttonElement.length).toBe(1);
+                    expect(buttonElement.html()).toContain('Clear');
+
+                });
+
+            });
+
             describe('Controller', function() {
                 it('should have access to field meta object', function() {
                     expect(vm.meta).toBe(mockMeta.mock_radio_group);

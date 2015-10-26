@@ -10,7 +10,7 @@
   function controlsGenericInputDirective($log, $q) {
     var directive = {
       bindToController: true,
-      controller:       function() {},
+      controller:       controlsGenericInputController,
       controllerAs:     'vm',
       restrict:         'E',
       scope:            {model: '=ngModel'},
@@ -52,6 +52,17 @@
                  });
       }
     }
+
+  }
+
+  /** @ngInject **/
+  function controlsGenericInputController() {
+    //var vm = this;
+    //activate();
+    //
+    //////////////////
+    //
+    //function activate() {}
 
   }
 
