@@ -7,16 +7,7 @@
         var $compile;
         var $rootScope;
         var $scope;
-        var mockMeta = {
-            "mock_text": {
-                "type":       "string",
-                "required":   false,
-                "read_only":  false,
-                "label":      "Mock Text",
-                "max_length": 128,
-                "name":       "mock_text"
-            }
-        };
+        var mockMeta = getMockMeta();
 
         beforeEach(inject(function(_$compile_, _$rootScope_) {
             $compile = _$compile_;
@@ -43,5 +34,18 @@
         });
 
     });
+
+    function getMockMeta() {
+        return {
+            "mock_text": {
+                "type":       "string",
+                "required":   false,
+                "read_only":  false,
+                "label":      "Mock Text",
+                "max_length": 128,
+                "name":       "mock_text"
+            }
+        };
+    }
 
 })();

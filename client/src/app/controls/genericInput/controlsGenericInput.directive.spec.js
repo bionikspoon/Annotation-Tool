@@ -5,47 +5,22 @@
         beforeEach(module('app.controls'));
         var $compile;
         var $rootScope;
-        var vm;
+        var $scope;
         var element;
-        var mockMeta = {
-            "mock_number":   {
-                "type":      "integer",
-                "required":  true,
-                "read_only": false,
-                "label":     "Mock Integer",
-                "min_value": 0,
-                "max_value": 2147483647,
-                "name":      "mock_number"
-            },
-            "mock_text":     {
-                "type":       "string",
-                "required":   false,
-                "read_only":  false,
-                "label":      "Mock Text",
-                "max_length": 128,
-                "name":       "mock_text"
-            },
-            "mock_textarea": {
-                "type":      "string",
-                "required":  false,
-                "read_only": false,
-                "label":     "Mock Textarea",
-                "name":      "mock_textarea"
-            }
-        };
+        var mockMeta = getMockMeta();
 
         beforeEach(inject(function(_$compile_, _$rootScope_) {
             $compile = _$compile_;
             $rootScope = _$rootScope_;
-            vm = $rootScope.$new();
-            vm.meta = mockMeta;
+            $scope = $rootScope.$new();
+            $scope.meta = mockMeta;
         }));
 
         describe('Text input', function() {
             beforeEach(function() {
                 var template = '<form app-form-meta=meta><app-generic-input ng-model=data.mock_text></app-generic-input></form>';
-                element = $compile(template)(vm);
-                vm.$digest();
+                element = $compile(template)($scope);
+                $scope.$digest();
             });
             it('should render text input', function() {
                 var input = element.find('input');
@@ -74,8 +49,8 @@
         describe('Number input', function() {
             beforeEach(function() {
                 var template = '<form app-form-meta=meta><app-generic-input ng-model=data.mock_number></app-generic-input></form>';
-                element = $compile(template)(vm);
-                vm.$digest();
+                element = $compile(template)($scope);
+                $scope.$digest();
             });
 
             it('should render number input', function() {
@@ -88,8 +63,8 @@
         describe('Textarea', function() {
             beforeEach(function() {
                 var template = '<form app-form-meta=meta><app-generic-input ng-model=data.mock_textarea></app-generic-input></form>';
-                element = $compile(template)(vm);
-                vm.$digest();
+                element = $compile(template)($scope);
+                $scope.$digest();
             });
 
             it('should render a textarea', function() {
@@ -103,5 +78,32 @@
         });
 
     });
-
+    function getMockMeta() {
+        return {
+            "mock_number":   {
+                "type":      "integer",
+                "required":  true,
+                "read_only": false,
+                "label":     "Mock Integer",
+                "min_value": 0,
+                "max_value": 2147483647,
+                "name":      "mock_number"
+            },
+            "mock_text":     {
+                "type":       "string",
+                "required":   false,
+                "read_only":  false,
+                "label":      "Mock Text",
+                "max_length": 128,
+                "name":       "mock_text"
+            },
+            "mock_textarea": {
+                "type":      "string",
+                "required":  false,
+                "read_only": false,
+                "label":     "Mock Textarea",
+                "name":      "mock_textarea"
+            }
+        };
+    }
 })();
