@@ -1,23 +1,23 @@
 <md-radio-group
-   ng-model=field.model
+   ng-model=vm.model
    layout-sm=column
    layout-align-sm="start start"
    layout-gt-sm=row
    layout-align-gt-sm="start center">
    <label class=md-body-2
-          flex-gt-sm=20>{{field.meta.label}}
+          flex-gt-sm=20>{{::vm.meta.label}}
    </label>
    <div layout=row
         class=wrapper
         flex-gt-sm>
-      <md-radio-button ng-repeat="choice in field.meta.choices"
-                       value={{choice.value}}>
-         {{choice.display_name}}
+      <md-radio-button ng-repeat="choice in ::vm.meta.choices"
+                       value={{::choice.value}}>
+         {{::choice.display_name}}
       </md-radio-button>
       <md-button
          class=md-primary
-         ng-if=field.model
-         ng-click=field.model=undefined>
+         ng-if=vm.model
+         ng-click=vm.model=undefined>
          Clear
       </md-button>
    </div>
