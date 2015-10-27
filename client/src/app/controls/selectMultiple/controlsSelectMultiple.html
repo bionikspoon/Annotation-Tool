@@ -1,34 +1,34 @@
-<label for={{field.meta.name}}_{{$id}}
-       class=md-body-2>{{ field.meta.label }}
+<label for={{::vm.meta.name}}_id
+       class=md-body-2>{{ ::vm.meta.label }}
 </label>
 <md-chips
-   ng-model=field.model
-   ng-model-options=field.modelOptions
-   md-on-append=field.appendModel($chip)
+   ng-model=vm.model
+   ng-model-options=vm.modelOptions
+   md-on-append=vm.appendModel($chip)
    md-autocomplete-snap
-   name={{field.meta.name}}
-   id={{field.meta.name}}_{{$id}}
+   name={{::vm.meta.name}}
+   id={{::vm.meta.name}}_id
    md-require-match=true
-   readonly=field.meta.read_only
-   ng-required={{field.meta.required}}>
+   readonly=::vm.meta.read_only
+   ng-required={{::vm.meta.required}}>
    <md-autocomplete
-      md-selected-item=field.selectedItem
-      md-search-text=field.searchText
-      md-items="item in field.querySearch(field.searchText)"
+      md-selected-item=vm.selectedItem
+      md-search-text=vm.searchText
+      md-items="item in vm.querySearch(vm.searchText)"
       md-item-text=item.value
       md-select-on-match=true
-      md-input-id={{field.meta.name}}_{{$id}}_autocomplete
+      md-input-id={{::vm.meta.name}}_id_autocomplete
       md-menu-class=select-multiple-menu
       md-no-cache=true;
-      ng-disabled=field.meta.read_only>
-            <span md-highlight-text=field.searchText>
+      ng-disabled=::vm.meta.read_only>
+            <span md-highlight-text=vm.searchText>
             {{item.display_name}}
             </span>
 
-      <div ng-messages=field.form[field.meta.name].$error
-           ng-show=field.form[field.meta.name].$dirty>
+      <div ng-messages=vm.form[vm.meta.name].$error
+           ng-show=vm.form[vm.meta.name].$dirty>
          <div ng-message=required>This is required!</div>
       </div>
    </md-autocomplete>
-   <md-chip-template><span>{{ field.getChipDisplayName($chip) }}</span></md-chip-template>
+   <md-chip-template><span>{{ vm.getChipDisplayName($chip) }}</span></md-chip-template>
 </md-chips>
