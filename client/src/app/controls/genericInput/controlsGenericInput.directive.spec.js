@@ -9,6 +9,7 @@
         var mockMeta = getMockMeta();
 
         beforeEach(module('app.controls'));
+
         beforeEach(inject(function(_$compile_, _$rootScope_) {
             $compile = _$compile_;
             $rootScope = _$rootScope_;
@@ -17,11 +18,13 @@
         }));
 
         describe('Text input', function() {
+
             beforeEach(function() {
                 var template = '<form app-form-meta=meta><app-generic-input ng-model=data.mock_text></app-generic-input></form>';
                 element = $compile(template)($scope);
                 $scope.$digest();
             });
+
             it('should render text input', function() {
                 var input = element.find('input');
                 expect(input.length).toBe(1);
@@ -33,11 +36,13 @@
                 expect(input.attr('name')).toBe(mockMeta.mock_text.name);
                 expect(input.attr('ng-maxlength')).toBe(mockMeta.mock_text.max_length.toString());
             });
+
             it('should have a label populated from meta', function() {
                 var label = element.find('label');
                 expect(label.length).toBe(1);
                 expect(label.html()).toBe(mockMeta.mock_text.label);
             });
+
             it('should create a label from attr', function() {
                 var label = element.find('label');
                 var input = element.find('input');
@@ -47,6 +52,7 @@
         });
 
         describe('Number input', function() {
+
             beforeEach(function() {
                 var template = '<form app-form-meta=meta><app-generic-input ng-model=data.mock_number></app-generic-input></form>';
                 element = $compile(template)($scope);
@@ -61,6 +67,7 @@
         });
 
         describe('Textarea', function() {
+
             beforeEach(function() {
                 var template = '<form app-form-meta=meta><app-generic-input ng-model=data.mock_textarea></app-generic-input></form>';
                 element = $compile(template)($scope);
@@ -71,6 +78,7 @@
                 var textarea = element.find('textarea');
                 expect(textarea.length).toBe(1);
             });
+
             it('should not render any inputs', function() {
                 var input = element.find('input');
                 expect(input.length).toBe(0);

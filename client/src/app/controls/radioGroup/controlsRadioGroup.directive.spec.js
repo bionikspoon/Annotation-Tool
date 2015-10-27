@@ -8,6 +8,7 @@
         var mockMeta = getMockMeta();
 
         beforeEach(module('app.controls'));
+
         beforeEach(inject(function(_$compile_, _$rootScope_) {
             $compile = _$compile_;
             $rootScope = _$rootScope_;
@@ -19,6 +20,7 @@
             var formElement;
             var radioGroupElement;
             var vm;
+
             beforeEach(function() {
                 var template = '<form app-form-meta=meta name=testForm><app-radio-group ng-model="data.mock_radio_group"></app-radio-group></form>';
                 formElement = $compile(template)($scope);
@@ -26,13 +28,16 @@
                 $scope.$digest();
                 vm = radioGroupElement.controller('appRadioGroup');
             });
+
             describe('Clear Button', function() {
+
                 it('should not have a clear button when model is undefined', function() {
                     var buttonElement = radioGroupElement.find('md-button');
                     expect(vm.model).toBeUndefined();
                     expect(buttonElement.length).toBeFalsy();
 
                 });
+
                 it('should have a clear button when model is defined', function() {
                     vm.model = "1";
                     $scope.$digest();
@@ -45,6 +50,7 @@
             });
 
             describe('Controller', function() {
+
                 it('should have access to field meta object', function() {
                     expect(vm.meta).toBe(mockMeta.mock_radio_group);
                 });
