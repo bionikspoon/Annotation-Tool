@@ -4,15 +4,15 @@
     var mdMediaResults;
 
     describe('controlsChoiceSlider.directive.spec', function() {
-        beforeEach(module('app.controls'));
-        beforeEach(module(function($provide) {
-            $provide.factory('$mdMedia', mockMdMedia);
-        }));
         var $compile;
         var $rootScope;
         var $scope;
         var mockMeta = getMockData();
 
+        beforeEach(module('app.controls'));
+        beforeEach(module(function($provide) {
+            $provide.factory('$mdMedia', mockMdMedia);
+        }));
         beforeEach(inject(function(_$compile_, _$rootScope_) {
             $compile = _$compile_;
             $rootScope = _$rootScope_;

@@ -2,13 +2,13 @@
     'use strict';
 
     describe('controlsGenericInput.directive.spec', function() {
-        beforeEach(module('app.controls'));
         var $compile;
         var $rootScope;
         var $scope;
         var element;
         var mockMeta = getMockMeta();
 
+        beforeEach(module('app.controls'));
         beforeEach(inject(function(_$compile_, _$rootScope_) {
             $compile = _$compile_;
             $rootScope = _$rootScope_;
