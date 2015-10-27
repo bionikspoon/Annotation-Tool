@@ -30,36 +30,17 @@
                        .slice(-1)[0];
       var formMeta = ctrls[0];
       var ngModel = ctrls[1];
+      var locals = {
+        scope:    scope,
+        formMeta: formMeta,
+        field:    field
+      };
 
       /** @namespace scope.vm */
-      scope.vm.meta = fieldMeta();
-      scope.vm.form = fieldForm();
+      scope.vm.meta = controlsUtils.fieldMeta.bind(locals)();
+      scope.vm.form = controlsUtils.fieldForm.bind(locals)();
       scope.vm._choices = getFieldChoices();
       scope.vm.ngModel = ngModel;
-
-      function fieldMeta() {
-        return $q.when(formMeta.meta)
-                 .then(function(meta) {
-                   scope.vm.meta = meta[field];
-                   return meta[field];
-                 })
-                 .catch(function(error) {
-                   $log.error('controlsGenericInput.directive error:', error);
-                   return $q.reject(error);
-                 });
-      }
-
-      function fieldForm() {
-        return $q.when(formMeta.form)
-                 .then(function(form) {
-                   scope.vm.form = form;
-                   return form;
-                 })
-                 .catch(function(error) {
-                   $log.error('controlsGenericInput.directive error:', error);
-                   return $q.reject(error);
-                 });
-      }
 
       function getFieldChoices() {
         var deferred = $q.defer();

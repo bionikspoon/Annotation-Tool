@@ -15,7 +15,9 @@
             var keys = [
                 'factoryFilterExcludeSelected',
                 'factoryFilterLowercase',
-                'prepareChoices'
+                'prepareChoices',
+                'fieldMeta',
+                'fieldForm'
             ];
             expect(Object.keys(controlsUtils)).toEqual(keys);
         });

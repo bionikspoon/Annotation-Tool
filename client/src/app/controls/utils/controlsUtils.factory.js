@@ -6,15 +6,44 @@
     .factory('controlsUtils', controlsUtils);
 
   /** @ngInject **/
-  function controlsUtils() {
+  function controlsUtils($q, $log) {
     var service = {
       factoryFilterExcludeSelected: factoryFilterExcludeSelected,
       factoryFilterLowercase:       factoryFilterLowercase,
-      prepareChoices:               prepareChoices
+      prepareChoices:               prepareChoices,
+      fieldMeta:                    fieldMeta,
+      fieldForm:                    fieldForm
     };
     return service;
 
     ////////////////
+    function fieldMeta() {
+      var self = this;
+
+      return $q.when(self.formMeta.meta)
+               .then(function(meta) {
+                 self.scope.vm.meta = meta[self.field];
+                 return meta[self.field];
+               })
+               .catch(function(error) {
+                 $log.error('fieldMeta controlsUtils.factory error:', error);
+                 return $q.reject(error);
+               });
+    }
+
+    function fieldForm() {
+      var self = this;
+
+      return $q.when(self.formMeta.form)
+               .then(function(form) {
+                 self.scope.vm.form = form;
+                 return form;
+               })
+               .catch(function(error) {
+                 $log.error('fieldForm controlsGenericInput.directive error:', error);
+                 return $q.reject(error);
+               });
+    }
 
     function factoryFilterExcludeSelected(selected) {
       return function(choice) { return selected.indexOf(choice.value) === -1; };
