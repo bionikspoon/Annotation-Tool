@@ -1,24 +1,19 @@
 (function() {
     'use strict';
 
-    var mdMediaResults;
-
     describe('controlsChoiceSlider.directive.spec', function() {
         var $compile;
         var $rootScope;
         var $scope;
         var mockMeta = getMockData();
 
-        beforeEach(module('app.controls'));
+        beforeEach(module('app.controls', provideMockMdMedia));
 
-        beforeEach(module(function($provide) {
-            $provide.factory('$mdMedia', mockMdMedia);
-        }));
+        //beforeEach(module());
 
         beforeEach(inject(function(_$compile_, _$rootScope_) {
             $compile = _$compile_;
             $rootScope = _$rootScope_;
-            mdMediaResults = false;
             $scope = $rootScope.$new();
             $scope.meta = mockMeta;
         }));
@@ -62,10 +57,12 @@
 
             describe('Inner Number Input', function() {
                 var inputContainerElement;
+                var $mdMedia;
 
-                beforeEach(function() {
+                beforeEach(inject(function(_$mdMedia_) {
+                    $mdMedia = _$mdMedia_;
                     inputContainerElement = choiceSliderElement.find('md-input-container');
-                });
+                }));
 
                 it('should use populate label from meta', function() {
                     var label = inputContainerElement.find('label');
@@ -85,7 +82,7 @@
                 });
 
                 it('should have css class "gtMd"', function() {
-                    mdMediaResults = true;
+                    $mdMedia.return = true;
                     $rootScope.$apply();
                     var input = inputContainerElement.find('input');
                     expect(input.hasClass('gt-md')).toBeTruthy();
@@ -137,14 +134,20 @@
         };
     }
 
-    /** @ngInject **/
-    function mockMdMedia() {
-        return $mdMedia;
+    function provideMockMdMedia($provide) {
+        $provide.factory('$mdMedia', mockMdMedia);
 
-        ////////////////
+        /** @ngInject **/
+        function mockMdMedia() {
+            var self = $mdMedia;
+            self.return = false;
+            return self;
 
-        function $mdMedia() {
-            return mdMediaResults;
+            ////////////////
+
+            function $mdMedia() {
+                return self.return;
+            }
         }
     }
 
