@@ -2,10 +2,10 @@
   'use strict';
 
   angular
-    .module('app.auth',
-      [
-        'ui.router',
-        'satellizer'
-      ]);
+    .module('app.auth', [
+      'ui.router',
+      'satellizer',
+      'app.user'
+    ]);
 
 })();
