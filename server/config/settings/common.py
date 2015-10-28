@@ -27,6 +27,8 @@ DJANGO_APPS = (  # :off
 
     # Admin
     'django.contrib.admin',
+    'django.contrib.postgres'
+
 )  # :on
 THIRD_PARTY_APPS = (  # :off
     'crispy_forms',  # Form layouts
@@ -125,7 +127,7 @@ TEMPLATES = [{
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-    'DIRS': [APPS_DIR('templates')],
+    'DIRS': [ROOT_DIR('..', 'client', 'dist'), APPS_DIR('templates')],
     'OPTIONS': {
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
         'debug': DEBUG,  # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -161,8 +163,7 @@ STATIC_ROOT = ROOT_DIR('staticfiles')
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (APPS_DIR('static'),)
-
+STATICFILES_DIRS = (ROOT_DIR('..', 'client', 'dist'), APPS_DIR('static'),)
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (  # :off
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -194,7 +195,7 @@ AUTHENTICATION_BACKENDS = (  # :off
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 # Custom user app defaults
 # Select the correct user model
@@ -257,3 +258,9 @@ LOGGING = {
 ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
+REST_FRAMEWORK = {
+
+    # 'PAGINATE_BY': 10,
+    # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_jwt.authentication.JSONWebTokenAuthentication',)
+}

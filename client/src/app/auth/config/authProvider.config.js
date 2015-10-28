@@ -7,6 +7,7 @@
 
   /** @ngInject **/
   function $authProviderConfig($authProvider) {
-    
+    $authProvider.baseUrl = '/api/';
+
   }
 })();
