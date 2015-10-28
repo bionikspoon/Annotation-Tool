@@ -10,13 +10,12 @@
   function authLoginController($log, $q, $auth) {
     var vm = this;
     vm.title = 'authLoginController';
-    vm.login = login
+    vm.login = login;
     activate();
 
     ////////////////
 
     function activate() {
-
     }
 
     function login(credentials) {
@@ -24,6 +23,7 @@
       $auth.login(credentials)
            .then(function(response) {
              $log.debug('authLogin.controller response:', response);
+             $log.debug('authLogin.controller $auth.getPayload():', $auth.getPayload());
              return response;
            })
            .catch(function(error) {

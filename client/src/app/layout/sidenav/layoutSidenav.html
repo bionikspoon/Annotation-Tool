@@ -30,13 +30,13 @@
             </md-button>
             <md-menu-content>
 
-               <md-menu-item ng-if=userCtrl.isAuthenticated()>
-                  <md-button app-auth-logout>Logout</md-button>
+               <md-menu-item ng-if=vm.isAuthenticated()>
+                  <md-button ui-sref=auth.logout>Logout</md-button>
                </md-menu-item>
-               <md-menu-item ng-if=!userCtrl.isAuthenticated()>
+               <md-menu-item ng-if=!vm.isAuthenticated()>
                   <md-button ui-sref=auth.login>Login</md-button>
                </md-menu-item>
-               <md-menu-item ng-if=!userCtrl.isAuthenticated()>
+               <md-menu-item ng-if=!vm.isAuthenticated()>
                   <md-button ui-sref=auth.register>Register</md-button>
                </md-menu-item>
             </md-menu-content>

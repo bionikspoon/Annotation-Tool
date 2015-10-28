@@ -18,11 +18,12 @@
   }
 
   /* @ngInject */
-  function layoutSidenavController($scope) {
+  function layoutSidenavController($auth) {
     var vm = this;
 
     vm.openMenu = openMenu;
     vm.navLinks = navLinks;
+    vm.isAuthenticated = $auth.isAuthenticated;
 
     function openMenu($mdOpenMenu, $event) {
       $mdOpenMenu($event);
@@ -51,7 +52,7 @@
             route:     'users.list',
             icon:      'people',
             label:     'Users',
-            condition: $scope.userCtrl.isAuthenticated
+            condition: $auth.isAuthenticated
           }
         }
       ];

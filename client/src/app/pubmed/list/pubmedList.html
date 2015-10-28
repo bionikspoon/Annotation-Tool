@@ -18,8 +18,7 @@
 
                <p>{{ entry.comments|limitTo:100 }}</p>
             </article>
-            <!--TODO: fix ngShow-->
-            <md-button ng-show=userCtrl.isAuthenticated()||true
+            <md-button ng-show=vm.isAuthenticated()
                        ui-sref=pubmed.edit({id:entry.id})
                        class=md-icon-button
                        aria-label=Edit>

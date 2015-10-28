@@ -9,6 +9,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
+
+import datetime
+
 from . import env, APPS_DIR, ROOT_DIR
 
 # APP CONFIGURATION
@@ -262,5 +265,14 @@ REST_FRAMEWORK = {
 
     # 'PAGINATE_BY': 10,
     # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_jwt.authentication.JSONWebTokenAuthentication',)
+    'DEFAULT_AUTHENTICATION_CLASSES': (  # :off
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    )  # :on
+}
+
+JWT_AUTH = {
+    'JWT_AUTH_HEADER_PREFIX': 'Bearer',
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=5)
 }

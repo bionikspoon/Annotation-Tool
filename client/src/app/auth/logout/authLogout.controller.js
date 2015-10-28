@@ -7,7 +7,7 @@
     .controller('authLogoutController', authLogoutController);
 
   /** @ngInject **/
-  function authLogoutController() {
+  function authLogoutController($auth) {
     var vm = this;
     vm.title = 'authLogoutController';
 
@@ -16,7 +16,7 @@
     ////////////////
 
     function activate() {
-
+      $auth.logout();
     }
   }
 

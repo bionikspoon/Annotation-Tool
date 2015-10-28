@@ -7,10 +7,9 @@
     .controller('pubmedListController', pubmedListController);
 
   /** @ngInject **/
-  function pubmedListController(Restangular, $log) {
+  function pubmedListController($log, Restangular, $auth) {
     var vm = this;
-    vm.title = 'pubmedListController';
-
+    vm.isAuthenticated = $auth.isAuthenticated;
     activate();
 
     ////////////////
