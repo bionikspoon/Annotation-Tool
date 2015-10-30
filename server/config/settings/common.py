@@ -274,5 +274,6 @@ REST_FRAMEWORK = {
 
 JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=5)
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=5),
+    'JWT_ALLOW_REFRESH': True
 }

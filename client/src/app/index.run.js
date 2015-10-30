@@ -3,10 +3,10 @@
 
   angular
     .module('app')
-    .run(runBlock);
+    .run(indexRun);
 
   /** @ngInject */
-  function runBlock($log) {
+  function indexRun($log) {
 
     $log.debug('\'allo \'allo');
   }

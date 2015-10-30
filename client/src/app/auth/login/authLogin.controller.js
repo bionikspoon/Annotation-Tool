@@ -7,7 +7,7 @@
     .controller('authLoginController', authLoginController);
 
   /** @ngInject **/
-  function authLoginController($log, $q, $auth, Session) {
+  function authLoginController($log, $q, $auth) {
     var vm = this;
     vm.title = 'authLoginController';
     vm.login = login;

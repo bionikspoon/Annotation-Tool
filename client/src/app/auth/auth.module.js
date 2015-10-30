@@ -4,8 +4,7 @@
   angular
     .module('app.auth', [
       'ui.router',
-      'satellizer',
-      'app.user'
+      'satellizer'
     ]);
 
 })();
