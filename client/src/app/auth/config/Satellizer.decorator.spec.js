@@ -53,7 +53,6 @@
             var SatellizerLocal;
             beforeEach(inject(function(_SatellizerLocal_) {
                 SatellizerLocal = _SatellizerLocal_;
-
             }));
         });
 
