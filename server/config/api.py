@@ -7,7 +7,7 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify
 from annotation_tool.pubmed.views import (PubmedViewSet, MutationTypeViewSet, SyntaxViewSet, RuleLevelViewSet,
     VariantTypeViewSet, VariantConsequenceViewSet, DiseaseViewSet, PatientOutcomesViewSet)
 from annotation_tool.pubmed.views import StructureViewSet
-from annotation_tool.users.views import UserViewSet
+from annotation_tool.users.views import UserViewSet, ProfileRetrieveAPIView
 
 router = routers.DefaultRouter()
 
@@ -28,4 +28,5 @@ urlpatterns = [  # :off
     url(r'^auth/login/', obtain_jwt_token),
     url(r'^auth/refresh/', refresh_jwt_token),
     url(r'^auth/verify/', verify_jwt_token),
+    url(r'^auth/profile/', ProfileRetrieveAPIView.as_view()),
 ]  # :on

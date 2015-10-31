@@ -2,12 +2,10 @@
 # coding=utf-8
 from pathlib import Path
 from random import randint, choice
-
 import yaml
 from django.db import OperationalError
 from factory import DjangoModelFactory, Iterator, LazyAttribute
 from faker import Faker
-
 from .models import (StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
     PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed)
 from ..core.utils.factories import make, many_to_many
@@ -30,7 +28,7 @@ def gene_pool():
 class Config:
     """Command constants."""
     _CWD = Path(__file__, '..').resolve()
-    DATA_DIR = (_CWD / '../utils/_gene_sample').resolve()
+    DATA_DIR = (_CWD / '../core/utils/_gene_sample').resolve()
 
 
 class PubmedFactory(DjangoModelFactory):

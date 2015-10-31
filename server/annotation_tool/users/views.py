@@ -5,10 +5,11 @@ from braces.views import LoginRequiredMixin
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 from rest_framework import viewsets
+from rest_framework.generics import RetrieveAPIView, get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
-from annotation_tool.users.serializers import UserSerializer
+from annotation_tool.users.serializers import UserSerializer, ProfileSerializer
 from .models import User
 
 
@@ -60,3 +61,19 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     authentication_classes = (JSONWebTokenAuthentication,)
     permission_classes = (IsAuthenticated,)
+
+
+class ProfileRetrieveAPIView(RetrieveAPIView):
+    user = NotImplemented
+    queryset = User.objects.all()
+    serializer_class = ProfileSerializer
+
+    # authentication_classes = (JSONWebTokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, *args, **kwargs):
+        self.user = request.user
+        return super().get(request, *args, **kwargs)
+
+    def get_object(self):
+        return self.user
