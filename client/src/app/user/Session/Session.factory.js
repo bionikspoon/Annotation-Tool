@@ -6,40 +6,24 @@
     .factory('Session', Session);
 
   /** @ngInject **/
-  function Session($http, $log, $rootScope, $timeout, $q, AUTH_EVENTS, SatellizerStorage) {
-    var userKey = 'anno_user';
+  function Session($http, $log, $rootScope, $q, AUTH_EVENTS, UserStorage) {
+    var self = this;
 
     $rootScope.$on(AUTH_EVENTS.tokenSet, requestGet);
     $rootScope.$on(AUTH_EVENTS.tokenRemove, destroy);
 
-    var service = {};
-    Object.defineProperty(service, 'user', {
-      get: getUser,
-      set: setUser
+    Object.defineProperty(self, 'user', {
+      get: UserStorage.get,
+      set: UserStorage.set
     });
-    return service;
+
+    return self;
 
     ////////////////
-    function getUser() {
-      return JSON.parse(SatellizerStorage.get(userKey));
-    }
 
-    function setUser(user) {
-      $timeout(SatellizerStorage.set(userKey, JSON.stringify(user)));
-    }
+    function create(user) {self.user = user;}
 
-    function removeUser() {
-      SatellizerStorage.remove(userKey);
-    }
-
-    function create(user) {
-      service.user = user;
-
-    }
-
-    function destroy() {
-      removeUser();
-    }
+    function destroy() {UserStorage.remove();}
 
     function requestGet() {
       return $http
@@ -65,4 +49,5 @@
   }
 
 })();
+
 

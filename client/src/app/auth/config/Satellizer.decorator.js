@@ -90,7 +90,7 @@
 
     function triggerRefresh(response) {
       var exp = SatellizerShared.getPayload().exp;
-      var delta = exp * 1000 - Math.round(new Date().getTime()) - 10;
+      var delta = exp * 1000 - Math.round(new Date().getTime()) - 1000;
       $delegate.refresh.call($delegate, delta);
       return response;
 
