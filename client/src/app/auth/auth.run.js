@@ -10,7 +10,6 @@
     if($auth.isAuthenticated()) {
       $auth.verify()
            .then(function(response) {
-             $log.debug('auth.run response:', response);
              return response;
            })
            .catch(function(error) {

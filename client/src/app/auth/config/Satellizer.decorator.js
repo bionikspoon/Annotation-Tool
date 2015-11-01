@@ -85,7 +85,7 @@
       return $http(opts)
         .then(setToken)
         .then(triggerRefresh)
-        .then(broadcast(AUTH_EVENTS.login));
+        .then(broadcast(AUTH_EVENTS.verify));
     }
 
     function triggerRefresh(response) {

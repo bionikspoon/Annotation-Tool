@@ -18,12 +18,13 @@
   }
 
   /* @ngInject */
-  function layoutSidenavController($auth) {
+  function layoutSidenavController($auth, Session) {
     var vm = this;
 
     vm.openMenu = openMenu;
     vm.navLinks = navLinks;
     vm.isAuthenticated = $auth.isAuthenticated;
+    vm.currentUser = Session.user;
 
     function openMenu($mdOpenMenu, $event) {
       $mdOpenMenu($event);
