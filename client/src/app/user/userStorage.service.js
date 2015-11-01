@@ -11,11 +11,14 @@
     this.set = set;
     this.remove = remove;
 
-
     var userKey = 'anno_user';
 
     ////////////////
-    function get() {return JSON.parse(SatellizerStorage.get(userKey));}
+    function get() {
+      var user = JSON.parse(SatellizerStorage.get(userKey));
+      return user;
+
+    }
 
     function set(user) {$timeout(SatellizerStorage.set(userKey, JSON.stringify(user)));}
 

@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($log, $scope, $auth, AUTH_EVENTS, Session) {
+  function MainController(/*$log, $scope, $auth, AUTH_EVENTS, Session*/) {
     var vm = this; // jshint ignore:line
 
     //$scope.$on(AUTH_EVENTS.login, createSession);
