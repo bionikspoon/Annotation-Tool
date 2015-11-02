@@ -1,36 +1,17 @@
-/* global localStorage:false */
+/* global localStorage */
 (function() {
     'use strict';
 
     describe('userStorage.service.spec', function() {
-
-        beforeEach(module('app.user'));
         var UserStorage;
-        var mockLocalStorage;
         var mockUser = getMockUser();
         var userKey = 'anno_user';
 
+        beforeEach(module('app.user', 'mock.localStorage'));
         beforeEach(inject(function(_UserStorage_) {
             UserStorage = _UserStorage_;
-            mockLocalStorage = {};
-            spyOn(localStorage, 'getItem').and.callFake(function(key) {
-                return mockLocalStorage[key];
-            });
-            spyOn(localStorage, 'setItem').and.callFake(function(key, value) {
-                mockLocalStorage[key] = value + '';
-            });
-            spyOn(localStorage, 'removeItem').and.callFake(function(key) {
-                delete mockLocalStorage[key];
-
-            });
-            spyOn(localStorage, 'clear').and.callFake(function() {
-                mockLocalStorage = {};
-            });
-        }));
-
-        beforeEach(function() {
             UserStorage.set(mockUser);
-        });
+        }));
 
         describe('When setting a value', function() {
 
@@ -46,7 +27,7 @@
                 expect(localStorage.getItem).toHaveBeenCalledWith(userKey);
             });
 
-            it('should deserialize to the original vlaue', function() {
+            it('should deserialize to the original value', function() {
                 var user = UserStorage.get();
                 expect(user).toEqual(mockUser);
             });

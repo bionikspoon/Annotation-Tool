@@ -24,7 +24,7 @@
     ////////////////
 
     function create(user) {
-      self.user = user;
+      self.user =user;
     }
 
     function destroy() {
