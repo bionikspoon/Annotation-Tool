@@ -40,11 +40,11 @@
 
   /** @ngInject **/
   function localDecorator($delegate, $http, $rootScope, $timeout, $q, SatellizerShared, SatellizerUtils,
-                          SatellizerConfig, AUTH_EVENTS) {
+                          SatellizerConfig, AUTH_ENDPOINTS, AUTH_EVENTS) {
 
     var _login = $delegate.login;
-    SatellizerConfig.refreshUrl = '/auth/refresh/';
-    SatellizerConfig.verifyUrl = '/auth/verify/';
+    SatellizerConfig.refreshUrl = AUTH_ENDPOINTS.refresh;
+    SatellizerConfig.verifyUrl = AUTH_ENDPOINTS.verify;
     $delegate.login = login;
     $delegate.refresh = refresh;
     $delegate.verify = verify;

@@ -6,8 +6,8 @@
     .service('UserData', UserData);
 
   /** @ngInject **/
-  function UserData($http, $log, $q) {
-    var profileUrl = '/api/auth/profile';
+  function UserData($http, $log, $q, AUTH_ENDPOINTS) {
+    var profileEndpoint = AUTH_ENDPOINTS.prefix + AUTH_ENDPOINTS.profile;
 
     this.get = get;
 
@@ -17,7 +17,7 @@
       var deferred = $q.defer();
 
       $http
-        .get(profileUrl)
+        .get(profileEndpoint)
         .then(function(results) {
           var user = {
             id:          results.data.id,

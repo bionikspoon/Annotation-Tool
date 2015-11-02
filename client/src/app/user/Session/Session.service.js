@@ -6,7 +6,7 @@
     .service('Session', Session);
 
   /** @ngInject **/
-  function Session($log, $rootScope, $q, AUTH_EVENTS, UserData, UserStorage) {
+  function Session($rootScope, $q, AUTH_EVENTS, UserData, UserStorage) {
     var self = this;
 
     self.create = create;
@@ -38,7 +38,6 @@
           return self.create(user);
         })
         .catch(function(error) {
-          $log.error('Session.factory error:', error);
           self.destroy();
           return $q.reject(error);
         });

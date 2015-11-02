@@ -1,4 +1,4 @@
-/* global require:false, process:false, console:true */
+/* global require:false, process:false */
 (function() {
   'use strict';
 
@@ -13,9 +13,9 @@
       dependencies:    true,
       devDependencies: true
     });
+    var _wiredep = wiredep(wiredepOptions).js;
 
-    return wiredep(wiredepOptions)
-      .js
+    return _wiredep
       .concat([
         path.join(conf.paths.src, '/app/**/*.module.js'),
         path.join(conf.paths.src, '/app/**/*.js'),
@@ -25,47 +25,40 @@
       ]);
   }
 
+  function dynamicModule(htmlPath) {
+    var paths = htmlPath.split('/');
+    if(paths[0] === 'app') {
+      return paths[0] + '.' + paths[1];
+    }
+    return 'app.partials';
+
+  }
+
   module.exports = function(config) {
 
     var configuration = {
-      files: listFiles(),
-
-      singleRun: true,
-
-      autoWatch: false,
-
-      frameworks: [
+      files:                 listFiles(),
+      singleRun:             true,
+      autoWatch:             false,
+      frameworks:            [
         'jasmine',
         'angular-filesort'
       ],
-
-      angularFilesort: {
+      angularFilesort:       {
         whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
       },
-
       ngHtml2JsPreprocessor: {
         stripPrefix: 'src/',
-        moduleName:  function(htmlPath) {
-          var paths = htmlPath.split('/');
-          if(paths[0] === 'app') {
-            return paths[0] + '.' + paths[1];
-          }
-          console.log('karma.conf paths:', paths);
-          return 'app';
-
-        }
+        moduleName:  dynamicModule
       },
-
-      browsers: ['PhantomJS'],
-
-      plugins: [
+      browsers:              ['PhantomJS'],
+      plugins:               [
         'karma-phantomjs-launcher',
         'karma-angular-filesort',
         'karma-jasmine',
         'karma-ng-html2js-preprocessor'
       ],
-
-      preprocessors: {
+      preprocessors:         {
         'src/**/*.html': ['ng-html2js']
       }
     };

@@ -6,6 +6,7 @@
         var $httpBackend;
         var mockUser = getMockUser();
         var mockError = getMockError();
+        var profileEndpoint = '/api/auth/profile/';
         beforeEach(module('app.user'));
         beforeEach(inject(function(_$httpBackend_, _UserData_) {
             $httpBackend = _$httpBackend_;
@@ -19,12 +20,12 @@
 
         describe('When http request is successful', function() {
             beforeEach(function() {
-                $httpBackend.whenGET('/api/auth/profile')
+                $httpBackend.whenGET(profileEndpoint)
                             .respond(200, mockUser);
             });
 
             it('should call the api endpoint', function() {
-                $httpBackend.expectGET('/api/auth/profile');
+                $httpBackend.expectGET(profileEndpoint);
                 UserData.get();
                 $httpBackend.flush();
 
@@ -47,11 +48,11 @@
         });
         describe('When http request fails', function() {
             beforeEach(function() {
-                $httpBackend.whenGET('/api/auth/profile')
+                $httpBackend.whenGET(profileEndpoint)
                             .respond(403, mockError);
             });
             it('should call the api endpoint', function() {
-                $httpBackend.expectGET('/api/auth/profile');
+                $httpBackend.expectGET(profileEndpoint);
                 UserData.get();
                 $httpBackend.flush();
 
