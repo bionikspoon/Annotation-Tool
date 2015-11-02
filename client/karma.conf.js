@@ -4,7 +4,6 @@
 
   var path = require('path');
   var conf = require('./gulp/conf');
-
   var _ = require('lodash');
   var wiredep = require('wiredep');
 
@@ -13,6 +12,7 @@
       dependencies:    true,
       devDependencies: true
     });
+    //noinspection JSUnresolvedVariable
     var _wiredep = wiredep(wiredepOptions).js;
 
     return _wiredep
