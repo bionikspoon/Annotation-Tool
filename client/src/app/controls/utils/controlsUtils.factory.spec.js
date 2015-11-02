@@ -11,7 +11,7 @@
             controlsUtils = _controlsUtils_;
         }));
 
-        it('should have a public api', function() {
+        it('Should have a public api', function() {
             var keys = [
                 'factoryFilterExcludeSelected',
                 'factoryFilterLowercase',
@@ -22,14 +22,14 @@
             expect(Object.keys(controlsUtils)).toEqual(keys);
         });
 
-        describe('factoryFilterExcludeSelected', function() {
+        describe('When filtering to exclude selected', function() {
             var choices;
 
             beforeEach(function() {
                 choices = getChoices().expected;
             });
 
-            it('should exclude selected ' + '' + 'items', function() {
+            it('Should exclude selected ' + '' + 'items', function() {
                 // All choices except `id:5`
                 var selected = [
                     'id:1',
@@ -43,14 +43,14 @@
 
             });
 
-            it('should include all choices when none are selected', function() {
+            it('Should include all choices when none are selected', function() {
                 var selected = [];
                 var results = _.valuesIn(choices)
                                .filter(controlsUtils.factoryFilterExcludeSelected(selected));
                 expect(results).toEqual(_.valuesIn(choices));
             });
 
-            it('should return an empty list when all are selected', function() {
+            it('Should return an empty list when all are selected', function() {
                 var selected = [
                     'id:1',
                     'id:2',
@@ -65,14 +65,14 @@
 
         });
 
-        describe('factoryFilterLowercase', function() {
+        describe('When filtering to search lowercase', function() {
             var choices;
 
             beforeEach(function() {
                 choices = getChoices().expected;
             });
 
-            it('should search a choices lowercase display name', function() {
+            it('Should search a choices lowercase display name', function() {
                 var query = 'choice 1';
                 var results = _.valuesIn(choices)
                                .filter(controlsUtils.factoryFilterLowercase(query));
@@ -80,14 +80,14 @@
             });
 
             // QUADRUPLE negative!!!!!!!!
-            it('should not exclude non disqualifiers', function() {
+            it('Should not exclude non disqualifiers', function() {
                 var query = 'choice';
                 var results = _.valuesIn(choices)
                                .filter(controlsUtils.factoryFilterLowercase(query));
                 expect(results).toEqual(_.valuesIn(choices));
             });
 
-            it('should only include matches', function() {
+            it('Should only include matches', function() {
                 var query = 'choices';
                 var results = _.valuesIn(choices)
                                .filter(controlsUtils.factoryFilterLowercase(query));
@@ -99,7 +99,7 @@
 
             });
 
-            it('should not exclude anything if query is empty', function() {
+            it('Should not exclude anything if query is empty', function() {
                 var query = '';
                 var results = _.valuesIn(choices)
                                .filter(controlsUtils.factoryFilterLowercase(query));
@@ -110,7 +110,7 @@
 
         describe('prepareChoices', function() {
 
-            it('should prepare choices', function() {
+            it('Should prepare choices', function() {
                 var choices = getChoices();
                 expect(controlsUtils.prepareChoices(choices.actual)).toEqual(choices.expected);
             });

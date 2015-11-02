@@ -21,7 +21,7 @@
         }));
 
         describe('When creating a session', function() {
-            it('should delegate persistence to UserStorage', function() {
+            it('Should delegate persistence to UserStorage', function() {
                 Session.create(mockUser);
                 expect(UserStorage.set).toHaveBeenCalledWith(mockUser);
             });
@@ -32,7 +32,7 @@
             beforeEach(function() {
                 Session.create(mockUser);
             });
-            it('should delegate persistence to UserStorage', function() {
+            it('Should delegate persistence to UserStorage', function() {
                 Session.destroy();
 
                 expect(UserStorage.remove).toHaveBeenCalled();
@@ -42,14 +42,14 @@
 
         describe('When initializing a session', function() {
             describe('When UserData is resolved', function() {
-                it('should call create with a user', function() {
+                it('Should call create with a user', function() {
                     spyOn(Session, 'create').and.callThrough();
                     Session.init();
                     $rootScope.$apply();
 
                     expect(Session.create).toHaveBeenCalledWith(mockUser);
                 });
-                it('should set user property', function() {
+                it('Should set user property', function() {
                     Session.init();
                     $rootScope.$apply();
 
@@ -61,7 +61,7 @@
                 beforeEach(function() {
                     UserData.reject = true;
                 });
-                it('should destroy the session', function() {
+                it('Should destroy the session', function() {
                     spyOn(Session, 'destroy');
                     Session.init();
                     $rootScope.$apply();

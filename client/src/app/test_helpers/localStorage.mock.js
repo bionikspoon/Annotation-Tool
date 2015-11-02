@@ -7,7 +7,6 @@
     .run(mockLocalStorage);
 
   function mockLocalStorage() {
-
     var storage = {};
 
     spyOn(localStorage, 'getItem').and.callFake(function(key) {

@@ -16,7 +16,7 @@
             $scope.meta = mockMeta;
         }));
 
-        describe('Compiled Template', function() {
+        describe('When compiled', function() {
             var formElement;
             var selectMultipleElement;
             var vm;
@@ -29,7 +29,7 @@
                 vm = selectMultipleElement.controller('appSelectMultiple');
             });
 
-            it('should render directive', function() {
+            it('Should render directive', function() {
                 expect(formElement.length).toBe(1);
                 expect(selectMultipleElement.length).toBe(1);
 
@@ -37,7 +37,7 @@
 
             describe('Controller', function() {
 
-                it('should have keys', function() {
+                it('Should have keys', function() {
                     var controllerKeys = [
                         'model',
                         'selectedItem',
@@ -54,31 +54,31 @@
                     expect(Object.keys(vm)).toEqual(controllerKeys);
                 });
 
-                it('should have access to field meta object', function() {
+                it('Should have access to field meta object', function() {
                     expect(vm.meta).toBe(mockMeta.mock_select_multiple);
                 });
 
                 describe('appendModel', function() {
 
-                    it('should return choices value', function() {
+                    it('Should return choices value', function() {
                         expect(vm.appendModel(vm._choices['id:1'])).toBe('id:1');
                     });
                 });
 
                 describe('getChipDisplayName', function() {
 
-                    it('should return chips display name', function() {
+                    it('Should return chips display name', function() {
                         expect(vm.getChipDisplayName('id:1')).toBe('Choice 1');
                     });
                 });
 
                 describe('vm._choices', function() {
 
-                    it('should be an object', function() {
+                    it('Should be an object', function() {
                         expect(angular.isObject(vm._choices)).toBeTruthy();
                     });
 
-                    it('should be a key value map', function() {
+                    it('Should be a key value map', function() {
                         var choice = {
                             "display_name":        "Choice 1",
                             "value":               "id:1",
@@ -87,7 +87,7 @@
                         expect(vm._choices["id:1"]).toEqual(choice);
                     });
 
-                    it('should have keys of meta.choice values', function() {
+                    it('Should have keys of meta.choice values', function() {
                         var choiceKeys = [
                             'id:1',
                             'id:2',
@@ -106,7 +106,7 @@
                         $rootScope.$apply();
                     });
 
-                    it('should return non selected matching choices', function() {
+                    it('Should return non selected matching choices', function() {
                         var query = 'choices';
                         var results = vm.querySearch(query);
                         var expected = [

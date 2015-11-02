@@ -24,13 +24,13 @@
                             .respond(200, mockUser);
             });
 
-            it('should call the api endpoint', function() {
+            it('Should call the api endpoint', function() {
                 $httpBackend.expectGET(profileEndpoint);
                 UserData.get();
                 $httpBackend.flush();
 
             });
-            it('should fetch user profile', function() {
+            it('Should fetch user profile', function() {
                 var user = {};
                 UserData
                     .get()
@@ -51,13 +51,13 @@
                 $httpBackend.whenGET(profileEndpoint)
                             .respond(403, mockError);
             });
-            it('should call the api endpoint', function() {
+            it('Should call the api endpoint', function() {
                 $httpBackend.expectGET(profileEndpoint);
                 UserData.get();
                 $httpBackend.flush();
 
             });
-            it('should reject the promise', function() {
+            it('Should reject the promise', function() {
                 var detail = {};
                 UserData
                     .get()

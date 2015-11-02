@@ -21,13 +21,13 @@
 
             describe('When setting a token', function() {
 
-                it('should broadcast an auth event', function() {
+                it('Should broadcast an auth event', function() {
                     SatellizerStorage.set(tokenName, 'abc');
                     expect($rootScope.$broadcast).toHaveBeenCalledWith(AUTH_EVENTS.tokenSet);
 
                 });
 
-                it('should only broadcast when key is the token', function() {
+                it('Should only broadcast when key is the token', function() {
                     SatellizerStorage.set('token', 'abc');
                     expect($rootScope.$broadcast).not.toHaveBeenCalledWith(AUTH_EVENTS.tokenSet);
 
@@ -36,12 +36,12 @@
 
             describe('When removing a token', function() {
 
-                it('should broadcast an auth event', function() {
+                it('Should broadcast an auth event', function() {
                     SatellizerStorage.remove(tokenName);
                     expect($rootScope.$broadcast).toHaveBeenCalledWith(AUTH_EVENTS.tokenRemove);
                 });
 
-                it('should only broadcast when key is the token', function() {
+                it('Should only broadcast when key is the token', function() {
                     SatellizerStorage.remove('token');
                     expect($rootScope.$broadcast).not.toHaveBeenCalledWith(AUTH_EVENTS.tokenRemove);
 

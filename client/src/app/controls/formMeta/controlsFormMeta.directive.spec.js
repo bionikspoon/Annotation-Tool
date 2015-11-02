@@ -16,7 +16,7 @@
             $scope.meta = mockMeta;
         }));
 
-        describe('Compiled Template', function() {
+        describe('When compiled', function() {
             var element;
             var formMetaCtrl;
 
@@ -26,11 +26,11 @@
                 formMetaCtrl = element.controller('appFormMeta');
             });
 
-            it('should create a controller with form meta', function() {
+            it('Should create a controller with form meta', function() {
                 expect(formMetaCtrl.meta).toBe(mockMeta);
             });
 
-            it('should have a form controller available as a promise', inject(function() {
+            it('Should have a form controller available as a promise', inject(function() {
                 $rootScope.$apply();
                 expect(formMetaCtrl.form.$name).toBe('testForm');
             }));

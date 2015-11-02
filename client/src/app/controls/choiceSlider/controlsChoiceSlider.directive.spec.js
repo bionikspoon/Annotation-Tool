@@ -18,7 +18,7 @@
             $scope.meta = mockMeta;
         }));
 
-        describe('Compiled Template', function() {
+        describe('When compiled', function() {
             var formElement;
             var choiceSliderElement;
             var vm;
@@ -31,7 +31,7 @@
                 vm = choiceSliderElement.controller('appChoiceSlider');
             });
 
-            it('should render directive', function() {
+            it('Should render directive', function() {
                 expect(formElement.length).toBe(1);
                 expect(choiceSliderElement.length).toBe(1);
                 expect(Object.keys(vm)).toEqual([
@@ -42,14 +42,14 @@
                 ]);
             });
 
-            it('should compute max value from choices', function() {
+            it('Should compute max value from choices', function() {
                 var mdSliderElement = choiceSliderElement.find('md-slider');
                 expect(mdSliderElement.attr('max')).toBe('5');
                 expect(mdSliderElement.attr('min')).toBe('0');
 
             });
 
-            it('should have number input and slider using the same model', function() {
+            it('Should have number input and slider using the same model', function() {
                 var input = choiceSliderElement.find('input');
                 var mdSliderElement = choiceSliderElement.find('md-slider');
                 expect(mdSliderElement.attr('ng-model')).toBe(input.attr('ng-model'));
@@ -64,24 +64,24 @@
                     inputContainerElement = choiceSliderElement.find('md-input-container');
                 }));
 
-                it('should use populate label from meta', function() {
+                it('Should use populate label from meta', function() {
                     var label = inputContainerElement.find('label');
                     expect(label.html()).toContain(mockMeta.mock_choice_slider.label);
                 });
 
-                it('should have a matching label and input id', function() {
+                it('Should have a matching label and input id', function() {
                     var label = inputContainerElement.find('label');
                     var input = inputContainerElement.find('input');
 
                     expect(input.attr('id')).toBe(label.attr('for'));
                 });
 
-                it('should not have css class "gtMd"', function() {
+                it('Should not have css class "gtMd"', function() {
                     var input = inputContainerElement.find('input');
                     expect(input.hasClass('gt-md')).toBeFalsy();
                 });
 
-                it('should have css class "gtMd"', function() {
+                it('Should have css class "gtMd"', function() {
                     $mdMedia.return = true;
                     $rootScope.$apply();
                     var input = inputContainerElement.find('input');
@@ -92,7 +92,7 @@
 
             describe('Controller', function() {
 
-                it('should have access to field meta', function() {
+                it('Should have access to field meta', function() {
                     expect(vm.meta).toBe(mockMeta.mock_choice_slider);
                 });
             });

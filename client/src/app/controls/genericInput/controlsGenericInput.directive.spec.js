@@ -25,25 +25,25 @@
                 $scope.$digest();
             });
 
-            it('should render text input', function() {
+            it('Should render text input', function() {
                 var input = element.find('input');
                 expect(input.length).toBe(1);
                 expect(input.attr('type')).toBe('text');
             });
 
-            it('should have the attributes described in meta', function() {
+            it('Should have the attributes described in meta', function() {
                 var input = element.find('input');
                 expect(input.attr('name')).toBe(mockMeta.mock_text.name);
                 expect(input.attr('ng-maxlength')).toBe(mockMeta.mock_text.max_length.toString());
             });
 
-            it('should have a label populated from meta', function() {
+            it('Should have a label populated from meta', function() {
                 var label = element.find('label');
                 expect(label.length).toBe(1);
                 expect(label.html()).toBe(mockMeta.mock_text.label);
             });
 
-            it('should create a label from attr', function() {
+            it('Should create a label from attr', function() {
                 var label = element.find('label');
                 var input = element.find('input');
                 expect(label.attr('for')).toBe(input.attr('id'));
@@ -59,7 +59,7 @@
                 $scope.$digest();
             });
 
-            it('should render number input', function() {
+            it('Should render number input', function() {
                 var input = element.find('input');
                 expect(input.attr('type')).toBe('number');
             });
@@ -74,12 +74,12 @@
                 $scope.$digest();
             });
 
-            it('should render a textarea', function() {
+            it('Should render a textarea', function() {
                 var textarea = element.find('textarea');
                 expect(textarea.length).toBe(1);
             });
 
-            it('should not render any inputs', function() {
+            it('Should not render any inputs', function() {
                 var input = element.find('input');
                 expect(input.length).toBe(0);
             });
