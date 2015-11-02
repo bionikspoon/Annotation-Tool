@@ -168,10 +168,10 @@
                 "_lower_display_name": "choices 5"
             }
         };
-        return {
+        return Object.freeze({
             actual:   actual,
             expected: expected
-        };
+        });
     }
 
 })();

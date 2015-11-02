@@ -39,7 +39,7 @@
     });
 
     function getMockMeta() {
-        return {
+        return Object.freeze({
             "mock_text": {
                 "type":       "string",
                 "required":   false,
@@ -48,7 +48,7 @@
                 "max_length": 128,
                 "name":       "mock_text"
             }
-        };
+        });
     }
 
 })();

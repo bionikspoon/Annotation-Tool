@@ -46,14 +46,14 @@
     });
 
     function getMockUser() {
-        return {
+        return Object.freeze({
             "id":          1,
             "permissions": [],
             "email":       "testUser@test.com",
             "groups":      [],
             "name":        "Test User",
             "username":    "testUser"
-        };
+        });
     }
 
 })();

@@ -60,7 +60,7 @@
     });
 
     function getMockMeta() {
-        return {
+        return Object.freeze({
             "mock_radio_group": {
 
                 "type":      "field",
@@ -83,7 +83,7 @@
                 ],
                 "name":      "mock_radio_group"
             }
-        };
+        });
     }
 
 })();

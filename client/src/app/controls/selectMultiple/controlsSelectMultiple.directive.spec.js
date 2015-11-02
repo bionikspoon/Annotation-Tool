@@ -128,7 +128,7 @@
     });
 
     function getMockMeta() {
-        return {
+        return Object.freeze({
             "mock_select_multiple": {
                 "type":      "field",
                 "required":  false,
@@ -158,7 +158,7 @@
                     }
                 ]
             }
-        };
+        });
     }
 
 })();

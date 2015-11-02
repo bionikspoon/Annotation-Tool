@@ -87,7 +87,7 @@
 
     });
     function getMockMeta() {
-        return {
+        return Object.freeze({
             "mock_number":   {
                 "type":      "integer",
                 "required":  true,
@@ -112,6 +112,6 @@
                 "label":     "Mock Textarea",
                 "name":      "mock_textarea"
             }
-        };
+        });
     }
 })();

@@ -7,7 +7,7 @@
         var $scope;
         var mockMeta = getMockData();
 
-        beforeEach(module('app.controls', provideMockMdMedia));
+        beforeEach(module('app.controls', 'mock.$mdMedia'));
 
         //beforeEach(module());
 
@@ -101,7 +101,7 @@
     });
 
     function getMockData() {
-        return {
+        return Object.freeze({
             "mock_choice_slider": {
                 "type":      "choice",
                 "required":  false,
@@ -131,24 +131,7 @@
                     }
                 ]
             }
-        };
-    }
-
-    function provideMockMdMedia($provide) {
-        $provide.factory('$mdMedia', mockMdMedia);
-
-        /** @ngInject **/
-        function mockMdMedia() {
-            var self = $mdMedia;
-            self.return = false;
-            return self;
-
-            ////////////////
-
-            function $mdMedia() {
-                return self.return;
-            }
-        }
+        });
     }
 
 })();

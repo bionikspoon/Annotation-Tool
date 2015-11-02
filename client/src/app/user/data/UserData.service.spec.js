@@ -72,20 +72,20 @@
     });
 
     function getMockUser() {
-        return {
+        return Object.freeze({
             "id":                  1,
             "get_all_permissions": [],
             "email":               "testUser@test.com",
             "groups":              [],
             "name":                "Test User",
             "username":            "testUser"
-        };
+        });
     }
 
     function getMockError() {
-        return {
+        return Object.freeze({
             detail: "Authentication credentials were not provided."
-        };
+        });
     }
 
 })();
