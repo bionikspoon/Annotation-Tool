@@ -1,0 +1,90 @@
+(function() {
+    'use strict';
+
+    describe('SessionData.service.spec', function() {
+        var SessionData;
+        var $httpBackend;
+        var mockUser = getMockUser();
+        var mockError = getMockError();
+        beforeEach(module('app.user'));
+        beforeEach(inject(function(_$httpBackend_, _SessionData_) {
+            $httpBackend = _$httpBackend_;
+            SessionData = _SessionData_;
+        }));
+
+        afterEach(function() {
+            $httpBackend.verifyNoOutstandingExpectation();
+            $httpBackend.verifyNoOutstandingRequest();
+        });
+
+        describe('When http request is successful', function() {
+            beforeEach(function() {
+                $httpBackend.whenGET('/api/auth/profile')
+                            .respond(200, mockUser);
+            });
+
+            it('should call the api endpoint', function() {
+                $httpBackend.expectGET('/api/auth/profile');
+                SessionData.get();
+                $httpBackend.flush();
+
+            });
+            it('should fetch user profile', function() {
+                var user = {};
+                SessionData
+                    .get()
+                    .then(function(response) {
+                        user = response;
+                    });
+                $httpBackend.flush();
+
+                expect(user.id).toEqual(mockUser.id);
+                expect(user.email).toEqual(mockUser.email);
+                expect(user.name).toEqual(mockUser.name);
+                expect(user.username).toEqual(mockUser.username);
+
+            });
+        });
+        describe('When http request fails', function() {
+            beforeEach(function() {
+                $httpBackend.whenGET('/api/auth/profile')
+                            .respond(403, mockError);
+            });
+            it('should call the api endpoint', function() {
+                $httpBackend.expectGET('/api/auth/profile');
+                SessionData.get();
+                $httpBackend.flush();
+
+            });
+            it('should reject the promise', function() {
+                var detail = {};
+                SessionData
+                    .get()
+                    .catch(function(error) {
+                        detail = error.data;
+                    });
+                $httpBackend.flush();
+                expect(detail).toEqual(mockError);
+            });
+        });
+
+    });
+
+    function getMockUser() {
+        return {
+            "id":                  1,
+            "get_all_permissions": [],
+            "email":               "testUser@test.com",
+            "groups":              [],
+            "name":                "Test User",
+            "username":            "testUser"
+        };
+    }
+
+    function getMockError() {
+        return {
+            detail: "Authentication credentials were not provided."
+        };
+    }
+
+})();

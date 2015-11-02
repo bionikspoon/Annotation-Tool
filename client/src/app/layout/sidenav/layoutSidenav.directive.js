@@ -24,7 +24,7 @@
     vm.openMenu = openMenu;
     vm.navLinks = navLinks;
     vm.isAuthenticated = $auth.isAuthenticated;
-    vm.currentUser = Session.user;
+    vm.session = Session;
 
     function openMenu($mdOpenMenu, $event) {
       $mdOpenMenu($event);
