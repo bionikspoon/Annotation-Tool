@@ -3,10 +3,10 @@
 
   angular
     .module('app.user')
-    .service('SessionData', SessionData);
+    .service('UserData', UserData);
 
   /** @ngInject **/
-  function SessionData($http, $log, $q) {
+  function UserData($http, $log, $q) {
     var profileUrl = '/api/auth/profile';
 
     this.get = get;
@@ -30,7 +30,7 @@
           return deferred.resolve(user);
         })
         .catch(function(error) {
-          $log.error('SessionData.service error:', error);
+          $log.error('UserData.service error:', error);
           return deferred.reject(error);
         });
 

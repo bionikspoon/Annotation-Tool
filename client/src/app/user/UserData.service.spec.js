@@ -1,15 +1,15 @@
 (function() {
     'use strict';
 
-    describe('SessionData.service.spec', function() {
-        var SessionData;
+    describe('UserData.service.spec', function() {
+        var UserData;
         var $httpBackend;
         var mockUser = getMockUser();
         var mockError = getMockError();
         beforeEach(module('app.user'));
-        beforeEach(inject(function(_$httpBackend_, _SessionData_) {
+        beforeEach(inject(function(_$httpBackend_, _UserData_) {
             $httpBackend = _$httpBackend_;
-            SessionData = _SessionData_;
+            UserData = _UserData_;
         }));
 
         afterEach(function() {
@@ -25,13 +25,13 @@
 
             it('should call the api endpoint', function() {
                 $httpBackend.expectGET('/api/auth/profile');
-                SessionData.get();
+                UserData.get();
                 $httpBackend.flush();
 
             });
             it('should fetch user profile', function() {
                 var user = {};
-                SessionData
+                UserData
                     .get()
                     .then(function(response) {
                         user = response;
@@ -52,13 +52,13 @@
             });
             it('should call the api endpoint', function() {
                 $httpBackend.expectGET('/api/auth/profile');
-                SessionData.get();
+                UserData.get();
                 $httpBackend.flush();
 
             });
             it('should reject the promise', function() {
                 var detail = {};
-                SessionData
+                UserData
                     .get()
                     .catch(function(error) {
                         detail = error.data;

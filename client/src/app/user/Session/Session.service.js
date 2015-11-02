@@ -6,7 +6,7 @@
     .service('Session', Session);
 
   /** @ngInject **/
-  function Session($log, $rootScope, $q, AUTH_EVENTS, SessionData, UserStorage) {
+  function Session($log, $rootScope, $q, AUTH_EVENTS, UserData, UserStorage) {
     var self = this;
 
     self.create = create;
@@ -32,7 +32,7 @@
     }
 
     function init() {
-      return SessionData
+      return UserData
         .get()
         .then(function(user) {
           return self.create(user);
