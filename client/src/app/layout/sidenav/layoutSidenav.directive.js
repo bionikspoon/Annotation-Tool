@@ -22,7 +22,7 @@
     var vm = this;
 
     vm.openMenu = openMenu;
-    vm.navLinks = navLinks;
+    vm.navLinks = navLinks();
     vm.isAuthenticated = $auth.isAuthenticated;
     vm.session = Session;
 
@@ -32,14 +32,6 @@
 
     function navLinks() {
       return [
-        {
-          data: {
-            route:     'pubmed.list',
-            icon:      'home',
-            label:     'Home',
-            condition: function() {return true;}
-          }
-        },
         {
           data: {
             route:     'pubmed.list',

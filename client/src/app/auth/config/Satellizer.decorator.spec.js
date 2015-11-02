@@ -54,6 +54,18 @@
             beforeEach(inject(function(_SatellizerLocal_) {
                 SatellizerLocal = _SatellizerLocal_;
             }));
+
+            describe('When logging in', function() {
+
+            });
+
+            describe('When verifying a token', function() {
+
+            });
+
+            describe('When refreshing a token', function() {
+
+            });
         });
 
         describe('$auth decorator', function() {
@@ -61,6 +73,11 @@
             beforeEach(inject(function(_$auth_) {
                 $auth = _$auth_;
             }));
+
+            describe('When verifying a token', function () {
+
+            });
+
         });
 
     });

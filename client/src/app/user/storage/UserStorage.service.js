@@ -6,7 +6,7 @@
     .service('UserStorage', UserStorage);
 
   /** @ngInject **/
-  function UserStorage($log, SatellizerStorage) {
+  function UserStorage(SatellizerStorage) {
     var userKey = 'anno_user';
 
     this.get = get;
@@ -15,12 +15,10 @@
 
     ////////////////
     function get() {
-      $log.debug('UserStorage.get this:', this);
       return JSON.parse(SatellizerStorage.get(userKey));
     }
 
     function set(user) {
-      $log.debug('UserStorage.set this:', this);
       SatellizerStorage.set(userKey, JSON.stringify(user));
     }
 

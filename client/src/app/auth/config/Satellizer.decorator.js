@@ -52,8 +52,8 @@
 
     function login(user, opts) {
       return _login.call(this, user, opts)
-                   .then(triggerRefresh)
-                   .then(broadcast(AUTH_EVENTS.login));
+                   .then(thenTriggerRefresh)
+                   .then(thenBroadcast(AUTH_EVENTS.login));
     }
 
     function refresh(timeout, opts) {
@@ -65,9 +65,9 @@
         opts.data = {token: SatellizerShared.getToken()};
         return $http(opts);
       }, timeout)
-        .then(setToken)
-        .then(triggerRefresh)
-        .then(broadcast(AUTH_EVENTS.refresh));
+        .then(thenSetToken)
+        .then(thenTriggerRefresh)
+        .then(thenBroadcast(AUTH_EVENTS.refresh));
 
     }
 
@@ -83,12 +83,12 @@
       opts.method = opts.method || 'POST';
 
       return $http(opts)
-        .then(setToken)
-        .then(triggerRefresh)
-        .then(broadcast(AUTH_EVENTS.verify));
+        .then(thenSetToken)
+        .then(thenTriggerRefresh)
+        .then(thenBroadcast(AUTH_EVENTS.verify));
     }
 
-    function triggerRefresh(response) {
+    function thenTriggerRefresh(response) {
       var exp = SatellizerShared.getPayload().exp;
       var delta = exp * 1000 - Math.round(new Date().getTime()) - 1000;
       $delegate.refresh.call($delegate, delta);
@@ -96,12 +96,12 @@
 
     }
 
-    function setToken(response) {
+    function thenSetToken(response) {
       SatellizerShared.setToken(response);
       return response;
     }
 
-    function broadcast(event) {
+    function thenBroadcast(event) {
       return function(response) {
         $rootScope.$broadcast(event);
         return response;
