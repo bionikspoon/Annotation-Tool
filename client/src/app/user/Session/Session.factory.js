@@ -3,44 +3,47 @@
 
   angular
     .module('app.user')
-    .service('Session', Session);
+    .factory('Session', Session);
 
   /** @ngInject **/
   function Session($rootScope, $q, AUTH_EVENTS, UserData, UserStorage) {
-    var self = this;
+    var service = {
+      create:  create,
+      destroy: destroy,
+      init:    init
+    };
 
-    self.create = create;
-    self.destroy = destroy;
-    self.init = init;
-
-    $rootScope.$on(AUTH_EVENTS.tokenSet, self.init);
-    $rootScope.$on(AUTH_EVENTS.tokenRemove, self.destroy);
-
-    Object.defineProperty(self, 'user', {
+    $rootScope.$on(AUTH_EVENTS.tokenSet, service.init);
+    $rootScope.$on(AUTH_EVENTS.tokenRemove, service.destroy);
+    Object.defineProperty(service, 'user', {
       get: UserStorage.get,
       set: UserStorage.set
     });
+    return service;
 
     ////////////////
 
     function create(user) {
-      self.user =user;
+      service.user = user;
+
     }
 
     function destroy() {
       UserStorage.remove();
+
     }
 
     function init() {
       return UserData
         .get()
         .then(function(user) {
-          return self.create(user);
+          return service.create(user);
         })
         .catch(function(error) {
-          self.destroy();
+          service.destroy();
           return $q.reject(error);
         });
+
     }
   }
 

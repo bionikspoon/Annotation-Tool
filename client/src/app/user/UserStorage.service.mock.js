@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('mock.UserStorage', [])
+    .module('mock.UserStorage', ['mock.localStorage'])
     .config(userDecorator);
 
   /** @ngInject **/

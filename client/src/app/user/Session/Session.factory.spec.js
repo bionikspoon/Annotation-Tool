@@ -71,33 +71,6 @@
             });
         });
 
-        //describe('Event broadcasts', function() {
-        //    describe('When auth token is set', function() {
-        //        it('should call session.init', function() {
-        //            spyOn(Session, 'init').and.callThrough();
-        //            $rootScope.$broadcast(AUTH_EVENTS.tokenSet);
-        //
-        //            expect(Session.init).toHaveBeenCalled();
-        //
-        //        });
-        //    });
-        //    it('should call init', function() {});
-        //});
-        //describe('When accessing user attribute', function() {
-        //    beforeEach(function() {
-        //        Session.create(mockUser);
-        //        UserStorage.set.calls.reset();
-        //
-        //    });
-        //
-        //    it('should persist changes', function() {
-        //        Session.user.id = 2;
-        //        expect(Session.user.id).toBe(2);
-        //        expect(UserStorage.set).toHaveBeenCalledWith('hello');
-        //
-        //    });
-        //});
-
     });
     function getMockUser() {
         return {
@@ -111,3 +84,28 @@
     }
 
 })();
+
+//(function() {
+//    'use strict';
+//
+//    // mockController
+//    angular
+//        .module('mock.controller', [])
+//        .controller('mockController', mockController);
+//
+//    /** @ngInject **/
+//    function mockController(Session) {
+//        //var vm = this;
+//        //vm.title = 'mockMockControllerController';
+//        //
+//        //activate();
+//        //
+//        //////////////////
+//        //
+//        //function activate() {
+//        //
+//        //}
+//    }
+//
+//})();
+
