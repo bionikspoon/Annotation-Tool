@@ -18,7 +18,7 @@
   }
 
   /* @ngInject */
-  function layoutSidenavController($auth, Session, PERMISSION) {
+  function layoutSidenavController($auth, Session) {
     var vm = this;
 
     vm.openMenu = openMenu;

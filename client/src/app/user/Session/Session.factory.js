@@ -47,13 +47,13 @@
 
     }
 
-    function can(permission) {
+    function can(accessPermission) {
       var user = service.user;
       if(!user || !angular.isArray(user.permissions)) {
         return false;
       }
 
-      return user.permissions.indexOf(permission) !== -1;
+      return user.permissions.indexOf(accessPermission) !== -1;
     }
   }
 
