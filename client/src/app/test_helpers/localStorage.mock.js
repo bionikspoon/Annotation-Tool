@@ -10,7 +10,7 @@
     var storage = {};
 
     spyOn(localStorage, 'getItem').and.callFake(function(key) {
-      return storage[key];
+      return storage[key] || '';
     });
     spyOn(localStorage, 'setItem').and.callFake(function(key, value) {
       storage[key] = value + '';

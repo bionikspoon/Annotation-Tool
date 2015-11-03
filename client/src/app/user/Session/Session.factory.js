@@ -10,7 +10,8 @@
     var service = {
       create:  create,
       destroy: destroy,
-      init:    init
+      init:    init,
+      can:     can
     };
 
     $rootScope.$on(AUTH_EVENTS.tokenSet, service.init);
@@ -44,6 +45,15 @@
           return $q.reject(error);
         });
 
+    }
+
+    function can(permission) {
+      var user = service.user;
+      if(!user || !angular.isArray(user.permissions)) {
+        return false;
+      }
+
+      return user.permissions.indexOf(permission) !== -1;
     }
   }
 

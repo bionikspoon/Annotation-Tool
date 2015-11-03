@@ -7,9 +7,10 @@
     .controller('pubmedListController', pubmedListController);
 
   /** @ngInject **/
-  function pubmedListController($log, Restangular, $auth) {
+  function pubmedListController($log, Restangular, $auth, Session, PERMISSION) {
     var vm = this;
     vm.isAuthenticated = $auth.isAuthenticated;
+    vm.canAddPubmed = Session.can.bind(null, PERMISSION.pubmed.addPubmed);
     activate();
 
     ////////////////

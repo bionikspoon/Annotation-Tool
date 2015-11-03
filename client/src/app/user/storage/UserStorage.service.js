@@ -15,10 +15,12 @@
 
     ////////////////
     function get() {
-      return JSON.parse(SatellizerStorage.get(userKey));
+      var user = SatellizerStorage.get(userKey);
+      return user ? JSON.parse(user) : user;
     }
 
     function set(user) {
+      if(!angular.isObject(user)) {return;}
       SatellizerStorage.set(userKey, JSON.stringify(user));
     }
 

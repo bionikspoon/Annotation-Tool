@@ -3,7 +3,7 @@
 
   angular
     .module('app.auth')
-    .constant('PERMISSIONS', {
+    .constant('PERMISSION', {
       pubmed: {
         addPubmed: 'pubmed.add_pubmed'
       }

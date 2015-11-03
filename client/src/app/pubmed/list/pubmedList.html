@@ -18,7 +18,7 @@
 
                <p>{{ entry.comments|limitTo:100 }}</p>
             </article>
-            <md-button ng-show=vm.isAuthenticated()
+            <md-button ng-show=vm.canAddPubmed()
                        ui-sref=pubmed.edit({id:entry.id})
                        class=md-icon-button
                        aria-label=Edit>
@@ -29,6 +29,7 @@
    </md-card-content>
 </md-card>
 
-<md-button class="add-entry md-accent md-raised"
+<md-button ng-show=vm.canAddPubmed()
+           class="add-entry md-accent md-raised"
            ui-sref=pubmed.new>Add Entry
 </md-button>
