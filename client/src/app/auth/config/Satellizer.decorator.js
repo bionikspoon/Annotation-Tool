@@ -20,7 +20,7 @@
   }
 
   /** @ngInject **/
-  function storageDecorator($delegate, $injector, $rootScope, AUTH_EVENTS) {
+  function storageDecorator($delegate, $injector, AUTH_EVENTS) {
     var _set = $delegate.set;
     var _remove = $delegate.remove;
     var tokenName = getTokenName($injector);
@@ -34,6 +34,7 @@
 
     function set(key, value) {
       if(key === tokenName) {
+        var $rootScope = $injector.get('$rootScope');
         $rootScope.$broadcast(AUTH_EVENTS.tokenSet);
       }
       return _set.call(this, key, value);
@@ -41,6 +42,7 @@
 
     function remove(key) {
       if(key === tokenName) {
+        var $rootScope = $injector.get('$rootScope');
         $rootScope.$broadcast(AUTH_EVENTS.tokenRemove);
       }
       return _remove.call(this, key);
@@ -48,7 +50,7 @@
   }
 
   /** @ngInject **/
-  function localDecorator($delegate, $http, $injector, $rootScope, $timeout, $q, AUTH_EVENTS) {
+  function localDecorator($delegate, $http, $injector, $timeout, $q, AUTH_EVENTS) {
     var _login = $delegate.login;
     var shared = $injector.get('SatellizerShared');
 
@@ -116,6 +118,8 @@
     }
 
     function thenBroadcast(event) {
+      var $rootScope = $injector.get('$rootScope');
+
       return function(response) {
         $rootScope.$broadcast(event);
         return response;
