@@ -5,7 +5,8 @@
     .module('app.pubmed', [
       'ui.router',
       'restangular',
-      'app.controls'
+      'app.controls',
+      'app.auth'
     ]);
 
 })();

@@ -5,7 +5,8 @@
     .module('app.auth')
     .constant('PERMISSION', {
       pubmed: {
-        addPubmed: 'pubmed.add_pubmed'
+        add:    'pubmed.add_pubmed',
+        change: 'pubmed.change_pubmed'
       }
     });
 })();

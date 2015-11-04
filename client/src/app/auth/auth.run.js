@@ -3,10 +3,11 @@
 
   angular
     .module('app.auth')
-    .run(authRun);
+    .run(verifyAuthToken)
+    .run(authRouteCongig);
 
   /** @ngInject **/
-  function authRun($auth, $log, $q) {
+  function verifyAuthToken($auth, $log, $q) {
     if($auth.isAuthenticated()) {
       $auth.verify()
            .then(function(response) {
@@ -16,6 +17,48 @@
              $log.error('auth.run error:', error);
              return $q.reject(error);
            });
+    }
+  }
+
+  /** @ngInject **/
+  function authRouteCongig($rootScope, $state, $auth, Session) {
+    $rootScope.$on("$stateChangeStart", restrictRoutes);
+
+    function restrictRoutes(event, toState, toParams) {
+      // Guard, no restrictions.
+      if(!angular.isDefined(toState.data)) {return;}
+
+      var isAuthenticated = $auth.isAuthenticated();
+      var permission = toState.data.permission;
+      var authenticate = toState.data.authenticate;
+      redirectToLogin = redirectToLogin.bind(null, event, toState, toParams);
+
+      // Requires is authenticated
+      if(authenticate === true && !isAuthenticated) {
+        return redirectToLogin();
+      }
+
+      // Requires not authenticated
+      if(authenticate === false && isAuthenticated) {
+        return event.preventDefault();
+      }
+
+      // Requires permission
+      if(angular.isDefined(permission) && !Session.can(permission)) {
+        return event.preventDefault();
+      }
+
+    }
+
+    function redirectToLogin(event, toState, toParams) {
+      var next = {
+        next: {
+          name:   toState.name,
+          params: toParams
+        }
+      };
+      $state.go('auth.login', next);
+      return event.preventDefault();
     }
   }
 

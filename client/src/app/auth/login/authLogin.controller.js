@@ -7,16 +7,26 @@
     .controller('authLoginController', authLoginController);
 
   /** @ngInject **/
-  function authLoginController($log, $state, $q, $auth) {
+  function authLoginController($log, $state, $stateParams, $q, $auth) {
     var vm = this;
+    var next;
     vm.login = login;
 
+    activate();
+
     ////////////////
+
+    function activate() {
+      next = $stateParams.next || {
+          name:   'pubmed.list',
+          params: {}
+        };
+    }
 
     function login(credentials) {
       return $auth.login(credentials)
                   .then(function(response) {
-                    $state.go('pubmed.list');
+                    $state.go(next.name, next.params);
                     return response;
                   })
                   .catch(function(error) {

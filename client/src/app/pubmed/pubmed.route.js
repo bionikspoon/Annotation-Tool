@@ -6,13 +6,13 @@
     .config(pubmedRoutes);
 
   /** @ngInject **/
-  function pubmedRoutes($stateProvider) {
+  function pubmedRoutes($stateProvider, PERMISSION) {
     $stateProvider
       .state('pubmed', {
         url:      '',
         abstract: 'true',
         parent:   'main',
-        template: '<ui-view ></ui-view>'
+        template: '<ui-view></ui-view>'
       })
       .state('pubmed.list', {
         url:          '',
@@ -24,13 +24,21 @@
         url:          '{id}/edit/',
         templateUrl:  'app/pubmed/form/pubmedForm.html',
         controller:   'pubmedFormController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data:         {
+          authenticate: true,
+          permission:   PERMISSION.pubmed.change
+        }
       })
       .state('pubmed.new', {
         url:          'new/',
         templateUrl:  'app/pubmed/form/pubmedForm.html',
         controller:   'pubmedFormController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data:         {
+          authenticate: true,
+          permission:   PERMISSION.pubmed.add
+        }
       })
       .state('pubmed.item', {
         url:          '{id}/',

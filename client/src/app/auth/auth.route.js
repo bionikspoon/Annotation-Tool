@@ -18,19 +18,33 @@
         url:          'login/',
         templateUrl:  'app/auth/login/authLogin.html',
         controller:   'authLoginController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        params:       {
+          next: {
+            value: null
+          }
+        },
+        data:         {
+          authenticate: false
+        }
       })
       .state('auth.logout', {
         url:          'logout/',
         templateUrl:  'app/auth/logout/authLogout.html',
         controller:   'authLogoutController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data:         {
+          authenticate: true
+        }
       })
       .state('auth.register', {
         url:          'register/',
         templateUrl:  'app/auth/register/authRegister.html',
         controller:   'authRegisterController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data:         {
+          authenticate: false
+        }
       });
   }
 })();
