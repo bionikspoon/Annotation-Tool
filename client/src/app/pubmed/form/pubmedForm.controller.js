@@ -7,30 +7,43 @@
     .controller('pubmedFormController', pubmedFormController);
 
   /** @ngInject **/
-  function pubmedFormController(Restangular, $q) {
+  function pubmedFormController($state, $q, PubmedData) {
     var vm = this;
 
-    vm.meta = pubmedOptions();
+    vm.meta = PubmedData.options();
+    vm.loading = true;
+    vm.entry = $state.params.id ? PubmedData.get($state.params.id) : PubmedData.init();
+    vm.submit = submit;
 
     activate();
 
     ////////////////
 
     function activate() {
+
+      vm.entry
+        .then(function(response) {
+          vm.entry = response;
+          return response;
+        });
+
+      $q.all([
+          vm.meta,
+          vm.entry
+        ])
+        .finally(function() {
+          vm.loading = false;
+        });
+
     }
 
-    function pubmedOptions() {
-      var deferred = $q.defer();
-      Restangular
-        .all('pubmed')
-        .options()
-        .then(function(data) {
-          deferred.resolve(data.actions.POST);
-        })
-        .catch(function(error) {
-          deferred.reject(error);
+    function submit(model) {
+      PubmedData
+        .save(model)
+        .then(function(response) {
+          $state.go('pubmed.list');
+          return response;
         });
-      return deferred.promise;
     }
   }
 

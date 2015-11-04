@@ -13,6 +13,16 @@
     });
     RestangularProvider.setRequestSuffix('/');
 
+    RestangularProvider.addResponseInterceptor(optionsInterceptor);
+
+    function optionsInterceptor(data, operation) {
+      if(operation !== 'options') {
+        return data;
+      }
+
+      angular.forEach(data.actions.POST, function(option, key) {option.name = key;});
+      return data;
+    }
   }
 
 })();

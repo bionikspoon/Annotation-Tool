@@ -10,7 +10,7 @@
          md-mode=indeterminate></md-progress-linear>
 
       <form ng-hide=vm.loading
-            name=vm.pubmedEntry
+            name=vm.entryForm
             app-form-meta=vm.meta
             novalidate>
          <app-generic-input ng-model=vm.entry.pubmed_id></app-generic-input>
@@ -44,8 +44,8 @@
 
          <md-button type=submit
                     class="md-raised md-accent"
-                    ng-disabled=vm.pubmedEntry.$invalid
-                    ng-click=vm.submit(vm.entry,vm.pubmedEntry)>Submit
+                    ng-disabled=vm.entryForm.$invalid
+                    ng-click=vm.submit(vm.entry)>Submit
          </md-button>
 
       </form>

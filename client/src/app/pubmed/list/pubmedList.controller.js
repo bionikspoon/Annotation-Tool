@@ -7,26 +7,25 @@
     .controller('pubmedListController', pubmedListController);
 
   /** @ngInject **/
-  function pubmedListController($log, Restangular, $auth, Session, PERMISSION) {
+  function pubmedListController($log, PubmedData, $auth, Session, PERMISSION) {
     var vm = this;
     vm.isAuthenticated = $auth.isAuthenticated;
-    vm.canAddPubmed = Session.can.bind(null, PERMISSION.pubmed.addPubmed);
+    vm.canAddPubmed = Session.can.bind(null, PERMISSION.pubmed.add);
+    vm.loading = true;
+    vm.pubmedEntries = PubmedData.list();
     activate();
 
     ////////////////
 
     function activate() {
-      Restangular.all('pubmed')
-                 .getList()
-                 .then(function(pubmedEntries) {
-                   vm.pubmedEntries = pubmedEntries;
-                 })
-                 .catch(function(error) {
-                   $log.error('pubmedList.controller error:', error);
-                 })
-                 .finally(function() {
-                   vm.loading = false;
-                 });
+      vm.pubmedEntries
+        .then(function(response) {
+          vm.pubmedEntries = response;
+          return response;
+        })
+        .finally(function() {
+          vm.loading = false;
+        });
     }
   }
 
