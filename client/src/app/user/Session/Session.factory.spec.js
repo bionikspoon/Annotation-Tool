@@ -71,21 +71,6 @@
             });
         });
 
-        it('Should check that user has permissions', function() {
-            Session.create(mockUser);
-
-            expect(Session.can('pubmed.add_pubmed')).toBeTruthy();
-            expect(Session.can('pubmed.change_pubmed')).toBeTruthy();
-            expect(Session.can('pubmed.delete_pubmed')).toBeFalsy();
-
-        });
-
-        it('Should deny permission for missing user', function() {
-
-            expect(Session.can('pubmed.add_pubmed')).toBeFalsy();
-            expect(Session.can('pubmed.delete_pubmed')).toBeFalsy();
-        });
-
     });
     function getMockUser() {
         return Object.freeze({

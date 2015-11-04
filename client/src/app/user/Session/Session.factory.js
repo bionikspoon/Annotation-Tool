@@ -10,8 +10,7 @@
     var service = {
       create:  create,
       destroy: destroy,
-      init:    init,
-      can:     can
+      init:    init
     };
 
     $rootScope.$on(AUTH_EVENTS.tokenSet, service.init);

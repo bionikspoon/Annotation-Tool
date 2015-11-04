@@ -43,7 +43,7 @@
                       });
                     $rootScope.$apply();
                     expect(response).toEqual(loginResponse);
-                    expect($state.go).toHaveBeenCalledWith('pubmed.list');
+                    expect($state.go).toHaveBeenCalledWith('pubmed.list', {});
                 });
             });
 

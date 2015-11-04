@@ -21,7 +21,7 @@
   }
 
   /** @ngInject **/
-  function authRouteCongig($rootScope, $state, $auth, Session) {
+  function authRouteCongig($rootScope, $state, $auth) {
     $rootScope.$on("$stateChangeStart", restrictRoutes);
 
     function restrictRoutes(event, toState, toParams) {
@@ -44,7 +44,7 @@
       }
 
       // Requires permission
-      if(angular.isDefined(permission) && !Session.can(permission)) {
+      if(angular.isDefined(permission) && !$auth.can(permission)) {
         return event.preventDefault();
       }
 

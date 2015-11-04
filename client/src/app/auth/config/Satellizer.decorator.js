@@ -3,7 +3,8 @@
 
   angular
     .module('app.auth')
-    .config(satellizerDecorator);
+    .config(satellizerDecorator)
+    .run(runSatellizerConfig);
 
   /** @ngInject **/
   function satellizerDecorator($provide) {
@@ -13,15 +14,23 @@
   }
 
   /** @ngInject **/
-  function storageDecorator($delegate, $rootScope, SatellizerConfig, AUTH_EVENTS) {
+  function runSatellizerConfig(SatellizerConfig, AUTH_ENDPOINTS) {
+    SatellizerConfig.refreshUrl = AUTH_ENDPOINTS.refresh;
+    SatellizerConfig.verifyUrl = AUTH_ENDPOINTS.verify;
+  }
+
+  /** @ngInject **/
+  function storageDecorator($delegate, $injector, $rootScope, AUTH_EVENTS) {
     var _set = $delegate.set;
     var _remove = $delegate.remove;
-    var tokenName = getTokenName(SatellizerConfig);
+    var tokenName = getTokenName($injector);
 
     $delegate.set = set;
     $delegate.remove = remove;
 
     return $delegate;
+
+    ////////////////
 
     function set(key, value) {
       if(key === tokenName) {
@@ -39,16 +48,17 @@
   }
 
   /** @ngInject **/
-  function localDecorator($delegate, $http, $rootScope, $timeout, $q, SatellizerShared, SatellizerUtils,
-                          SatellizerConfig, AUTH_ENDPOINTS, AUTH_EVENTS) {
-
+  function localDecorator($delegate, $http, $injector, $rootScope, $timeout, $q, AUTH_EVENTS) {
     var _login = $delegate.login;
-    SatellizerConfig.refreshUrl = AUTH_ENDPOINTS.refresh;
-    SatellizerConfig.verifyUrl = AUTH_ENDPOINTS.verify;
+    var shared = $injector.get('SatellizerShared');
+
     $delegate.login = login;
     $delegate.refresh = refresh;
     $delegate.verify = verify;
+
     return $delegate;
+
+    ////////////////
 
     function login(user, opts) {
       return _login.call(this, user, opts)
@@ -58,27 +68,28 @@
 
     function refresh(timeout, opts) {
       opts = opts || {};
-      opts.url = getRefreshUrl(SatellizerConfig, SatellizerUtils);
+      opts.url = getRefreshUrl($injector);
       opts.method = opts.method || 'POST';
 
-      return $timeout(function() {
-        opts.data = {token: SatellizerShared.getToken()};
-        return $http(opts);
-      }, timeout)
+      return $timeout(_refresh, timeout)
         .then(thenSetToken)
         .then(thenTriggerRefresh)
         .then(thenBroadcast(AUTH_EVENTS.refresh));
 
+      function _refresh() {
+        opts.data = {token: shared.getToken()};
+        return $http(opts);
+      }
+
     }
 
     function verify(opts) {
-      var token = SatellizerShared.getToken();
-      if(token === null) {
-        return $q.reject('Token cannot be null');
-      }
+      var token = shared.getToken();
+      // Guard
+      if(token === null) {return $q.reject('Token cannot be null');}
 
       opts = opts || {};
-      opts.url = getVerifyUrl(SatellizerConfig, SatellizerUtils);
+      opts.url = getVerifyUrl($injector);
       opts.data = {token: token};
       opts.method = opts.method || 'POST';
 
@@ -88,16 +99,19 @@
         .then(thenBroadcast(AUTH_EVENTS.verify));
     }
 
+    ////////////////
+
     function thenTriggerRefresh(response) {
-      var exp = SatellizerShared.getPayload().exp;
+      var exp = shared.getPayload().exp;
       var delta = exp * 1000 - Math.round(new Date().getTime()) - 1000;
+
       $delegate.refresh.call($delegate, delta);
       return response;
 
     }
 
     function thenSetToken(response) {
-      SatellizerShared.setToken(response);
+      shared.setToken(response);
       return response;
     }
 
@@ -111,25 +125,48 @@
   }
 
   /** @ngInject **/
-  function $authDecorator($delegate, SatellizerLocal) {
+  function $authDecorator($delegate, $injector) {
+    var local = $injector.get('SatellizerLocal');
     $delegate.verify = verify;
+    $delegate.can = can;
+
     return $delegate;
 
+    ////////////////
+
     function verify(opts) {
-      return SatellizerLocal.verify(opts);
+      return local.verify(opts);
+    }
+
+    function can(accessPermission) {
+      var Session = $injector.get('Session');
+      var user = Session.user;
+
+      // Guard, missing Session.
+      if(!user || !angular.isArray(user.permissions)) {return false;}
+
+      return user.permissions.indexOf(accessPermission) !== -1;
     }
 
   }
 
-  function getRefreshUrl(config, utils) {
+  function getRefreshUrl($injector) {
+    var config = $injector.get('SatellizerConfig');
+    var utils = $injector.get('SatellizerUtils');
+
     return config.baseUrl ? utils.joinUrl(config.baseUrl, config.refreshUrl) : config.refreshUrl;
   }
 
-  function getVerifyUrl(config, utils) {
+  function getVerifyUrl($injector) {
+    var config = $injector.get('SatellizerConfig');
+    var utils = $injector.get('SatellizerUtils');
+
     return config.baseUrl ? utils.joinUrl(config.baseUrl, config.verifyUrl) : config.verifyUrl;
   }
 
-  function getTokenName(config) {
+  function getTokenName($injector) {
+    var config = $injector.get('SatellizerConfig');
+
     return config.tokenPrefix ? [
       config.tokenPrefix,
       config.tokenName
