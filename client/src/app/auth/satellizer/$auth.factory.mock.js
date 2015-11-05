@@ -26,6 +26,7 @@
       var deferred = $q.defer();
       var usernameMatch = credentials.username === mock.loginCredentials.username;
       var passwordMatch = credentials.password === mock.loginCredentials.password;
+
       if(usernameMatch && passwordMatch) {
         mock.isAuthenticated = true;
         deferred.resolve(mock.loginResolve);
