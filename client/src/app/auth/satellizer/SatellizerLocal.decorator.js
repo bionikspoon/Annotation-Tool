@@ -11,7 +11,7 @@
   }
 
   /** @ngInject **/
-  function SatellizerLocalDecorator($delegate, $injector, $http, $timeout, $q, AUTH_EVENTS) {
+  function SatellizerLocalDecorator($delegate, $injector, $http, $timeout, $q, AUTH_EVENT) {
     var _login = $delegate.login;
 
     $delegate.login = login;
@@ -25,7 +25,7 @@
     function login(user, opts) {
       return _login.call(this, user, opts)
                    .then(thenTriggerRefresh)
-                   .then(thenBroadcast(AUTH_EVENTS.login));
+                   .then(thenBroadcast(AUTH_EVENT.login));
     }
 
     function refresh(timeout, opts) {
@@ -36,7 +36,7 @@
       return $timeout(_refresh, timeout)
         .then(thenSetToken)
         .then(thenTriggerRefresh)
-        .then(thenBroadcast(AUTH_EVENTS.refresh));
+        .then(thenBroadcast(AUTH_EVENT.refresh));
 
       function _refresh() {
         var shared = $injector.get('SatellizerShared');
@@ -66,7 +66,7 @@
       return $http(opts)
         .then(thenSetToken)
         .then(thenTriggerRefresh)
-        .then(thenBroadcast(AUTH_EVENTS.verify));
+        .then(thenBroadcast(AUTH_EVENT.verify));
     }
 
     ////////////////

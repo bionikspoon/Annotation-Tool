@@ -11,7 +11,7 @@
   }
 
   /** @ngInject **/
-  function SatellizerStorageDecorator($delegate, $injector, AUTH_EVENTS) {
+  function SatellizerStorageDecorator($delegate, $injector, AUTH_EVENT) {
     var _set = $delegate.set;
     var _remove = $delegate.remove;
     var tokenName = getTokenName($injector);
@@ -26,7 +26,7 @@
     function set(key, value) {
       if(key === tokenName) {
         var $rootScope = $injector.get('$rootScope');
-        $rootScope.$broadcast(AUTH_EVENTS.tokenSet);
+        $rootScope.$broadcast(AUTH_EVENT.tokenSet);
       }
       return _set.call(this, key, value);
     }
@@ -34,7 +34,7 @@
     function remove(key) {
       if(key === tokenName) {
         var $rootScope = $injector.get('$rootScope');
-        $rootScope.$broadcast(AUTH_EVENTS.tokenRemove);
+        $rootScope.$broadcast(AUTH_EVENT.tokenRemove);
       }
       return _remove.call(this, key);
     }

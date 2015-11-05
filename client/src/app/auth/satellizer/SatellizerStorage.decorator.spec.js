@@ -4,14 +4,14 @@
     describe('SatellizerStorage.decorator.spec', function() {
         var SatellizerStorage;
         var $rootScope;
-        var AUTH_EVENTS;
+        var AUTH_EVENT;
         var tokenName = 'anno_token';
 
         beforeEach(module('app.auth'));
-        beforeEach(inject(function(_$rootScope_, _SatellizerStorage_, _AUTH_EVENTS_) {
+        beforeEach(inject(function(_$rootScope_, _SatellizerStorage_, _AUTH_EVENT_) {
             $rootScope = _$rootScope_;
             SatellizerStorage = _SatellizerStorage_;
-            AUTH_EVENTS = _AUTH_EVENTS_;
+            AUTH_EVENT = _AUTH_EVENT_;
             spyOn($rootScope, '$broadcast');
 
         }));
@@ -20,13 +20,13 @@
 
             it('Should broadcast an auth event', function() {
                 SatellizerStorage.set(tokenName, 'abc');
-                expect($rootScope.$broadcast).toHaveBeenCalledWith(AUTH_EVENTS.tokenSet);
+                expect($rootScope.$broadcast).toHaveBeenCalledWith(AUTH_EVENT.tokenSet);
 
             });
 
             it('Should only broadcast when key is the token', function() {
                 SatellizerStorage.set('token', 'abc');
-                expect($rootScope.$broadcast).not.toHaveBeenCalledWith(AUTH_EVENTS.tokenSet);
+                expect($rootScope.$broadcast).not.toHaveBeenCalledWith(AUTH_EVENT.tokenSet);
 
             });
         });
@@ -35,12 +35,12 @@
 
             it('Should broadcast an auth event', function() {
                 SatellizerStorage.remove(tokenName);
-                expect($rootScope.$broadcast).toHaveBeenCalledWith(AUTH_EVENTS.tokenRemove);
+                expect($rootScope.$broadcast).toHaveBeenCalledWith(AUTH_EVENT.tokenRemove);
             });
 
             it('Should only broadcast when key is the token', function() {
                 SatellizerStorage.remove('token');
-                expect($rootScope.$broadcast).not.toHaveBeenCalledWith(AUTH_EVENTS.tokenRemove);
+                expect($rootScope.$broadcast).not.toHaveBeenCalledWith(AUTH_EVENT.tokenRemove);
 
             });
         });

@@ -6,15 +6,15 @@
     .factory('Session', Session);
 
   /** @ngInject **/
-  function Session($rootScope, $q, AUTH_EVENTS, UserData, UserStorage) {
+  function Session($rootScope, $q, AUTH_EVENT, UserData, UserStorage) {
     var service = {
       create:  create,
       destroy: destroy,
       init:    init
     };
 
-    $rootScope.$on(AUTH_EVENTS.tokenSet, service.init);
-    $rootScope.$on(AUTH_EVENTS.tokenRemove, service.destroy);
+    $rootScope.$on(AUTH_EVENT.tokenSet, service.init);
+    $rootScope.$on(AUTH_EVENT.tokenRemove, service.destroy);
     Object.defineProperty(service, 'user', {
       get: UserStorage.get,
       set: UserStorage.set

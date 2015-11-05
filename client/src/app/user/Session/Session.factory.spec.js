@@ -6,16 +6,16 @@
         var UserStorage;
         var UserData;
         var $rootScope;
-        var AUTH_EVENTS;
+        var AUTH_EVENT;
         var mockUser = getMockUser();
 
         beforeEach(module('app.user', 'mock.UserStorage', 'mock.UserData'));
-        beforeEach(inject(function(_Session_, _UserStorage_, _UserData_, _$rootScope_, _AUTH_EVENTS_) {
+        beforeEach(inject(function(_Session_, _UserStorage_, _UserData_, _$rootScope_, _AUTH_EVENT_) {
             Session = _Session_;
             UserStorage = _UserStorage_;
             UserData = _UserData_;
             $rootScope = _$rootScope_;
-            AUTH_EVENTS = _AUTH_EVENTS_;
+            AUTH_EVENT = _AUTH_EVENT_;
 
             UserData.mockUser = mockUser;
         }));
