@@ -14,6 +14,7 @@
         var mockUser;
 
         var loginEndpoint = '/api/auth/login/';
+        var verifyEndpoint = '/api/auth/verify/';
         var profileEndpoint = '/api/auth/profile/';
         var refreshEndpoint = '/api/auth/refresh/';
 
@@ -51,6 +52,7 @@
                             .respond(mockToken);
 
             });
+
             it('Should broadcast an auth login event', function() {
                 spyOn($rootScope, '$broadcast').and.callThrough();
 
@@ -60,12 +62,14 @@
 
                 expect($rootScope.$broadcast).toHaveBeenCalledWith(AUTH_EVENT.login);
             });
+
             it('Should be authenticated', inject(function($auth) {
 
                 SatellizerLocal.login(mockCredentials);
                 $httpBackend.flush();
                 expect($auth.isAuthenticated()).toBeTruthy();
             }));
+
             it('Should refresh on expiration', inject(function($timeout, SatellizerShared) {
                 SatellizerLocal.login(mockCredentials);
                 $httpBackend.flush();
@@ -89,30 +93,80 @@
 
         describe('When verifying a token', function() {
             beforeEach(inject(function(SatellizerShared) {
-                console.debug('SatellizerLocal.decorator.spec mockToken:', mockToken);
                 var token = {
                     data: mockToken
                 };
                 SatellizerShared.setToken(token);
-                //SatellizerShared.setTo
-                $httpBackend.expectPOST(refreshEndpoint, mockToken)
-                            .respond(mockToken);
+
+                $httpBackend.expectPOST(verifyEndpoint, mockToken)
+                            .respond(200, mockToken);
             }));
 
-            xit('Should broadcast an auth verify event', function() {
+            it('Should broadcast an auth verify event', function() {
                 spyOn($rootScope, '$broadcast').and.callThrough();
 
                 SatellizerLocal.verify();
                 expect($rootScope.$broadcast).not.toHaveBeenCalled();
-                //$httpBackend.flush();
 
+                $httpBackend.flush();
                 expect($rootScope.$broadcast).toHaveBeenCalledWith(AUTH_EVENT.verify);
 
             });
 
+            it('Should be authenticated', inject(function($auth) {
+
+                SatellizerLocal.verify();
+                $httpBackend.flush();
+
+                expect($auth.isAuthenticated()).toBeTruthy();
+            }));
+
         });
 
         describe('When refreshing a token', function() {
+            beforeEach(inject(function(SatellizerShared) {
+                var token = {
+                    data: mockToken
+                };
+                SatellizerShared.setToken(token);
+
+                $httpBackend.expectPOST(refreshEndpoint, mockToken)
+                            .respond(200, mockToken);
+            }));
+
+            it('Should broadcast a refresh token', inject(function($timeout) {
+                spyOn($rootScope, '$broadcast').and.callThrough();
+
+                SatellizerLocal.refresh(1005);
+                expect($rootScope.$broadcast).not.toHaveBeenCalled();
+
+                $timeout.flush();
+                $rootScope.$broadcast.calls.reset();
+                $httpBackend.flush();
+                expect($rootScope.$broadcast).toHaveBeenCalledWith(AUTH_EVENT.refresh);
+
+            }));
+
+            it('Should refresh on expiration', inject(function($timeout, SatellizerShared) {
+                SatellizerLocal.refresh(1005);
+                $timeout.flush();
+                $httpBackend.flush();
+
+                var expectHeaders = {
+                    Accept:         'application/json, text/plain, */*',
+                    'Content-Type': 'application/json;charset=utf-8',
+                    Authorization:  'Bearer ' + mockToken.token
+                };
+
+                $httpBackend.expectPOST(refreshEndpoint, mockToken, expectHeaders)
+                            .respond(function() {
+                                mockToken = getMockToken(getMockPayload());
+                                return mockToken;
+                            });
+                $timeout.flush();
+                $httpBackend.flush();
+                expect(SatellizerShared.getToken()).toBe(mockToken.token);
+            }));
 
         });
     });
