@@ -4,7 +4,7 @@
   angular
     .module('app.auth')
     .run(verifyAuthToken)
-    .run(authRouteCongig);
+    .run(authRouteConfig);
 
   /** @ngInject **/
   function verifyAuthToken($auth, $log, $q) {
@@ -21,7 +21,7 @@
   }
 
   /** @ngInject **/
-  function authRouteCongig($rootScope, $state, $auth) {
+  function authRouteConfig($rootScope, $state, $auth) {
     $rootScope.$on("$stateChangeStart", restrictRoutes);
 
     function restrictRoutes(event, toState, toParams) {

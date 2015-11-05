@@ -2,6 +2,10 @@
 (function() {
   'use strict';
 
+  afterEach(function() {
+    localStorage.clear();
+  });
+
   angular
     .module('mock.localStorage', [])
     .run(mockLocalStorage);

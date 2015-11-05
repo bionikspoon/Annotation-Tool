@@ -7,6 +7,7 @@
         var mockUser = getMockUser();
         var mockError = getMockError();
         var profileEndpoint = '/api/auth/profile/';
+
         beforeEach(module('app.user'));
         beforeEach(inject(function(_$httpBackend_, _UserData_) {
             $httpBackend = _$httpBackend_;
@@ -21,7 +22,7 @@
         describe('When http request is successful', function() {
             beforeEach(function() {
                 $httpBackend.whenGET(profileEndpoint)
-                            .respond(200, mockUser);
+                            .respond(mockUser);
             });
 
             it('Should call the api endpoint', function() {
@@ -49,7 +50,7 @@
         describe('When http request fails', function() {
             beforeEach(function() {
                 $httpBackend.whenGET(profileEndpoint)
-                            .respond(403, mockError);
+                            .respond(400, mockError);
             });
             it('Should call the api endpoint', function() {
                 $httpBackend.expectGET(profileEndpoint);
@@ -73,18 +74,18 @@
 
     function getMockUser() {
         return Object.freeze({
-            "id":                  1,
-            "get_all_permissions": [],
-            "email":               "testUser@test.com",
-            "groups":              [],
-            "name":                "Test User",
-            "username":            "testUser"
+            id:                  1,
+            get_all_permissions: [],
+            email:               'testUser@test.com',
+            groups:              [],
+            name:                'Test User',
+            username:            'testUser'
         });
     }
 
     function getMockError() {
         return Object.freeze({
-            detail: "Authentication credentials were not provided."
+            detail: 'Authentication credentials were not provided.'
         });
     }
 

@@ -3,12 +3,9 @@
 
   angular
     .module('app.auth')
-    .config(authDecorator);
-
-  /** @ngInject **/
-  function authDecorator($provide) {
-    $provide.decorator('SatellizerStorage', SatellizerStorageDecorator);
-  }
+    .config(/** @ngInject **/function($provide) {
+      $provide.decorator('SatellizerStorage', SatellizerStorageDecorator);
+    });
 
   /** @ngInject **/
   function SatellizerStorageDecorator($delegate, $injector, AUTH_EVENT) {
@@ -39,7 +36,6 @@
       return _remove.call(this, key);
     }
   }
-
 
   function getTokenName($injector) {
     var config = $injector.get('SatellizerConfig');

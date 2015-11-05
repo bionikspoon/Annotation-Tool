@@ -4,7 +4,7 @@
     describe('$auth.decorator.spec', function() {
         var $auth;
 
-        beforeEach(module('app.auth', 'mock.localStorage'));
+        beforeEach(module('app.auth'));
         beforeEach(inject(function(_$auth_) {
             $auth = _$auth_;
         }));

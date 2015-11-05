@@ -27,11 +27,11 @@
             name:        results.data.name,
             username:    results.data.username
           };
-          return deferred.resolve(user);
+          deferred.resolve(user);
         })
         .catch(function(error) {
           $log.error('UserData.service error:', error);
-          return deferred.reject(error);
+          deferred.reject(error);
         });
 
       return deferred.promise;

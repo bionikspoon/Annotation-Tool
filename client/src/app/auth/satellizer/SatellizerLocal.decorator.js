@@ -3,12 +3,9 @@
 
   angular
     .module('app.auth')
-    .config(authDecorator);
-
-  /** @ngInject **/
-  function authDecorator($provide) {
-    $provide.decorator('SatellizerLocal', SatellizerLocalDecorator);
-  }
+    .config(/** @ngInject **/function($provide) {
+      $provide.decorator('SatellizerLocal', SatellizerLocalDecorator);
+    });
 
   /** @ngInject **/
   function SatellizerLocalDecorator($delegate, $injector, $http, $timeout, $q, AUTH_EVENT) {

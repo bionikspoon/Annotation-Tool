@@ -3,12 +3,9 @@
 
   angular
     .module('app.auth')
-    .config(authDecorator);
-
-  /** @ngInject **/
-  function authDecorator($provide) {
-    $provide.decorator('$auth', $authDecorator);
-  }
+    .config(/** @ngInject **/function($provide) {
+      $provide.decorator('$auth', $authDecorator);
+    });
 
   /** @ngInject **/
   function $authDecorator($delegate, $injector) {

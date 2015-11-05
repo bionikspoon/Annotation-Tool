@@ -8,8 +8,8 @@
 
   /** @ngInject **/
   function authLogoutController($auth) {
-    var vm = this;
-    vm.title = 'authLogoutController';
+    //noinspection JSUnusedLocalSymbols
+    var vm = this; // jshint ignore:line
 
     activate();
 
