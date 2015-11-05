@@ -10,7 +10,14 @@
         }));
 
         describe('When logging in', function() {
+            var $rootScope;
+            beforeEach(inject(function(_$rootScope_) {
+                $rootScope = _$rootScope_;
+                spyOn($rootScope, '$broadcast');
+            }));
+            it('Should broadcast an auth login event', inject(function(AUTH_EVENT) {
 
+            }));
         });
 
         describe('When verifying a token', function() {
