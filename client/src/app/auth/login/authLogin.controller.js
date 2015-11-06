@@ -7,7 +7,7 @@
     .controller('authLoginController', authLoginController);
 
   /** @ngInject **/
-  function authLoginController($log, $state, $stateParams, $q, $auth) {
+  function authLoginController($log, $state, $q, $auth) {
     var vm = this;
     var next;
     vm.login = login;
@@ -17,7 +17,7 @@
     ////////////////
 
     function activate() {
-      next = $stateParams.next || {
+      next = $state.params.next || {
           name:   'pubmed.list',
           params: {}
         };

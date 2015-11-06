@@ -7,28 +7,28 @@
     .run(authRouteConfig);
 
   /** @ngInject **/
-  function verifyAuthToken($auth, $log, $q) {
-    if($auth.isAuthenticated()) {
-      $auth.verify()
-           .then(function(response) {
-             return response;
-           })
-           .catch(function(error) {
-             $log.error('auth.run error:', error);
-             return $q.reject(error);
-           });
+  function verifyAuthToken($authRunProxy, $log, $q) {
+    if($authRunProxy.isAuthenticated()) {
+      $authRunProxy.verify()
+              .then(function(response) {
+                return response;
+              })
+              .catch(function(error) {
+                $log.error('auth.run error:', error);
+                return $q.reject(error);
+              });
     }
   }
 
   /** @ngInject **/
-  function authRouteConfig($rootScope, $state, $auth) {
+  function authRouteConfig($rootScope, $state, $authRunProxy) {
     $rootScope.$on("$stateChangeStart", restrictRoutes);
 
     function restrictRoutes(event, toState, toParams) {
       // Guard, no restrictions.
       if(!angular.isDefined(toState.data)) {return;}
 
-      var isAuthenticated = $auth.isAuthenticated();
+      var isAuthenticated = $authRunProxy.isAuthenticated();
       var permission = toState.data.permission;
       var authenticate = toState.data.authenticate;
       redirectToLogin = redirectToLogin.bind(null, event, toState, toParams);
@@ -44,7 +44,7 @@
       }
 
       // Requires permission
-      if(angular.isDefined(permission) && !$auth.can(permission)) {
+      if(angular.isDefined(permission) && !$authRunProxy.can(permission)) {
         return event.preventDefault();
       }
 

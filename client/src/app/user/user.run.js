@@ -6,6 +6,6 @@
     .run(userRun);
 
   /** @ngInject **/
-  function userRun(Session) {} // jshint ignore:line
+  function userRun(SessionRunProxy) {} // jshint ignore:line
 
 })();
