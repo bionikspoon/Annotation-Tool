@@ -6,10 +6,10 @@
     .config($authProviderConfig);
 
   /** @ngInject **/
-  function $authProviderConfig($authProvider, AUTH_ENDPOINTS) {
-    $authProvider.baseUrl = AUTH_ENDPOINTS.prefix;
-    $authProvider.loginUrl = AUTH_ENDPOINTS.login;
-    $authProvider.signupUrl = AUTH_ENDPOINTS.signup;
+  function $authProviderConfig($authProvider, AUTH_ENDPOINT) {
+    $authProvider.baseUrl = AUTH_ENDPOINT.prefix;
+    $authProvider.loginUrl = AUTH_ENDPOINT.login;
+    $authProvider.signupUrl = AUTH_ENDPOINT.signup;
     $authProvider.tokenPrefix = 'anno';
 
   }

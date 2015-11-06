@@ -8,22 +8,19 @@
         var $httpBackend;
         var $rootScope;
         var Session;
+        var AUTH_ENDPOINT;
         var mockToken;
         var mockPayload;
         var mockCredentials;
         var mockUser;
 
-        var loginEndpoint = '/api/auth/login/';
-        var verifyEndpoint = '/api/auth/verify/';
-        var profileEndpoint = '/api/auth/profile/';
-        var refreshEndpoint = '/api/auth/refresh/';
-
         beforeEach(module('app.auth'));
-        beforeEach(inject(function(_SatellizerLocal_, _AUTH_EVENT_, _$httpBackend_, _$rootScope_) {
+        beforeEach(inject(function(_SatellizerLocal_, _AUTH_EVENT_, _$httpBackend_, _$rootScope_, _AUTH_ENDPOINT_) {
             SatellizerLocal = _SatellizerLocal_;
             AUTH_EVENT = _AUTH_EVENT_;
             $httpBackend = _$httpBackend_;
             $rootScope = _$rootScope_;
+            AUTH_ENDPOINT = _AUTH_ENDPOINT_;
             mockPayload = getMockPayload();
             mockToken = getMockToken(mockPayload);
             mockCredentials = getMockCredentials();
@@ -32,7 +29,7 @@
         }));
 
         beforeEach(inject(function(_Session_) {
-            $httpBackend.whenGET(profileEndpoint)
+            $httpBackend.whenGET(AUTH_ENDPOINT.api.profile)
                         .respond(mockUser);
 
             Session = _Session_;
@@ -48,7 +45,7 @@
 
             beforeEach(function() {
 
-                $httpBackend.expectPOST(loginEndpoint, mockCredentials)
+                $httpBackend.expectPOST(AUTH_ENDPOINT.api.login, mockCredentials)
                             .respond(mockToken);
 
             });
@@ -80,7 +77,7 @@
                     Authorization:  'Bearer ' + mockToken.token
                 };
 
-                $httpBackend.expectPOST(refreshEndpoint, mockToken, expectHeaders)
+                $httpBackend.expectPOST(AUTH_ENDPOINT.api.refresh, mockToken, expectHeaders)
                             .respond(function() {
                                 mockToken = getMockToken(getMockPayload());
                                 return mockToken;
@@ -98,7 +95,7 @@
                 };
                 SatellizerShared.setToken(token);
 
-                $httpBackend.expectPOST(verifyEndpoint, mockToken)
+                $httpBackend.expectPOST(AUTH_ENDPOINT.api.verify, mockToken)
                             .respond(200, mockToken);
             }));
 
@@ -130,7 +127,7 @@
                 };
                 SatellizerShared.setToken(token);
 
-                $httpBackend.expectPOST(refreshEndpoint, mockToken)
+                $httpBackend.expectPOST(AUTH_ENDPOINT.api.refresh, mockToken)
                             .respond(200, mockToken);
             }));
 
@@ -158,7 +155,7 @@
                     Authorization:  'Bearer ' + mockToken.token
                 };
 
-                $httpBackend.expectPOST(refreshEndpoint, mockToken, expectHeaders)
+                $httpBackend.expectPOST(AUTH_ENDPOINT.api.refresh, mockToken, expectHeaders)
                             .respond(function() {
                                 mockToken = getMockToken(getMockPayload());
                                 return mockToken;

@@ -9,19 +9,20 @@
   /** @ngInject **/
   function verifyAuthToken($authRunProxy, $log, $q) {
     if($authRunProxy.isAuthenticated()) {
-      $authRunProxy.verify()
-              .then(function(response) {
-                return response;
-              })
-              .catch(function(error) {
-                $log.error('auth.run error:', error);
-                return $q.reject(error);
-              });
+      $authRunProxy
+        .verify()
+        .then(function(response) {
+          return response;
+        })
+        .catch(function(error) {
+          $log.error('auth.run error:', error);
+          return $q.reject(error);
+        });
     }
   }
 
   /** @ngInject **/
-  function authRouteConfig($rootScope, $state, $authRunProxy) {
+  function authRouteConfig($rootScope, $state, $authRunProxy, REDIRECT) {
     $rootScope.$on("$stateChangeStart", restrictRoutes);
 
     function restrictRoutes(event, toState, toParams) {
@@ -57,7 +58,7 @@
           params: toParams
         }
       };
-      $state.go('auth.login', next);
+      $state.go(REDIRECT.postLogin, next);
       return event.preventDefault();
     }
   }

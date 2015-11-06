@@ -27,7 +27,7 @@
         controllerAs: 'vm',
         data:         {
           authenticate: true,
-          permission:   PERMISSION.pubmed.change
+          permission:   PERMISSION.pubmed.pubmed.change
         }
       })
       .state('pubmed.new', {
@@ -37,7 +37,7 @@
         controllerAs: 'vm',
         data:         {
           authenticate: true,
-          permission:   PERMISSION.pubmed.add
+          permission:   PERMISSION.pubmed.pubmed.add
         }
       })
       .state('pubmed.item', {

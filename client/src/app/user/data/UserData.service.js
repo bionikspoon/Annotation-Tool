@@ -6,8 +6,8 @@
     .service('UserData', UserData);
 
   /** @ngInject **/
-  function UserData($http, $log, $q, AUTH_ENDPOINTS) {
-    var profileEndpoint = AUTH_ENDPOINTS.prefix + AUTH_ENDPOINTS.profile;
+  function UserData($http, $log, $q, AUTH_ENDPOINT) {
+    var profileEndpoint = AUTH_ENDPOINT.api.profile;
 
     this.get = get;
 

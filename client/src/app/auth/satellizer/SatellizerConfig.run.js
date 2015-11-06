@@ -6,9 +6,9 @@
     .run(runSatellizerConfig);
 
   /** @ngInject **/
-  function runSatellizerConfig(SatellizerConfig, AUTH_ENDPOINTS) {
-    SatellizerConfig.refreshUrl = AUTH_ENDPOINTS.refresh;
-    SatellizerConfig.verifyUrl = AUTH_ENDPOINTS.verify;
+  function runSatellizerConfig(SatellizerConfig, AUTH_ENDPOINT) {
+    SatellizerConfig.refreshUrl = AUTH_ENDPOINT.refresh;
+    SatellizerConfig.verifyUrl = AUTH_ENDPOINT.verify;
   }
 
 })();

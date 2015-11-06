@@ -7,7 +7,7 @@
     .controller('authLogoutController', authLogoutController);
 
   /** @ngInject **/
-  function authLogoutController($auth) {
+  function authLogoutController($auth, $state, REDIRECT) {
     //noinspection JSUnusedLocalSymbols
     var vm = this; // jshint ignore:line
 
@@ -16,7 +16,11 @@
     ////////////////
 
     function activate() {
-      $auth.logout();
+      $auth.logout()
+           .then(function(response) {
+             $state.go(REDIRECT.postLogout);
+             return response;
+           });
     }
   }
 

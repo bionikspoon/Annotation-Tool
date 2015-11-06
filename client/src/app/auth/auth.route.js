@@ -29,11 +29,9 @@
         }
       })
       .state('auth.logout', {
-        url:          'logout/',
-        templateUrl:  'app/auth/logout/authLogout.html',
-        controller:   'authLogoutController',
-        controllerAs: 'vm',
-        data:         {
+        url:        'logout/',
+        controller: 'authLogoutController',
+        data:       {
           authenticate: true
         }
       })

@@ -7,7 +7,7 @@
     .controller('authLoginController', authLoginController);
 
   /** @ngInject **/
-  function authLoginController($log, $state, $q, $auth) {
+  function authLoginController($log, $state, $q, $auth, REDIRECT) {
     var vm = this;
     var next;
     vm.login = login;
@@ -17,10 +17,13 @@
     ////////////////
 
     function activate() {
-      next = $state.params.next || {
-          name:   'pubmed.list',
-          params: {}
-        };
+      var fallbackNext = {
+        name:   REDIRECT.postLogin,
+        params: {}
+      };
+
+      next = $state.params.next || fallbackNext;
+      next = next.name === 'auth.logout' ? fallbackNext : next;
     }
 
     function login(credentials) {
