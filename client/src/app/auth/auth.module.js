@@ -5,7 +5,8 @@
     .module('app.auth', [
       'ui.router',
       'satellizer',
-      'app.user'
+      'app.user',
+      'app.layout'
     ]);
 
 })();

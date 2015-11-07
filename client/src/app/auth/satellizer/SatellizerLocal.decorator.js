@@ -9,7 +9,7 @@
     });
 
   /** @ngInject **/
-  function SatellizerLocalDecorator($delegate, $injector, $http, $timeout, $q, AUTH_EVENT, $log) {
+  function SatellizerLocalDecorator($delegate, $injector, $http, $timeout, $q, AUTH_EVENT) {
     var _login = $delegate.login;
 
     $delegate.login = login;
