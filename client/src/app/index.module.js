@@ -3,14 +3,11 @@
 
   angular
     .module('app', [
-      //'ngAnimate',
-      //'ngCookies',
-      //'ngTouch',
-      //'ngSanitize',
-      //'restangular',
-      //'ui.router',
-      //'ngMaterial',
-      //'app.layout',
+      'ngAnimate',
+      'ngCookies',
+      'ngTouch',
+      'ngSanitize',
+      /*'ngMaterial',*/
       'app.auth',
       'app.pubmed',
       'app.main',

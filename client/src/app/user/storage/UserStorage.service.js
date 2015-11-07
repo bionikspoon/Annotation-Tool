@@ -14,6 +14,7 @@
     this.remove = remove;
 
     ////////////////
+
     function get() {
       var user = SatellizerStorage.get(userKey);
       return user ? JSON.parse(user) : user;

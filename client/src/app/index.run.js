@@ -7,7 +7,6 @@
 
   /** @ngInject */
   function indexRun($log) {
-
     $log.debug('\'allo \'allo');
   }
 

@@ -1,0 +1,48 @@
+@mixin app-toast-color($color) {
+  .app-toast {
+    &__icon {
+      color: $color;
+
+    }
+    &__action {
+      color: $color;
+    }
+  }
+}
+
+.app-toast {
+  & {
+    max-width: 35%;
+    height:    auto;
+  }
+  & &__icon {
+  }
+  & &__title {
+    margin-left:  10px;
+    margin-right: 10px;
+  }
+
+  & &__message {
+  }
+  & &__action {
+  }
+
+  &--inner {
+  }
+  &--debug {
+    @include app-toast-color($clr-lime);
+  }
+  &--info {
+    @include app-toast-color($clr-light-blue);
+  }
+  &--success {
+    @include app-toast-color($clr-light-green);
+  }
+  &--warning {
+    @include app-toast-color($clr-pink);
+  }
+  &--error {
+    @include app-toast-color($clr-red);
+  }
+
+}
