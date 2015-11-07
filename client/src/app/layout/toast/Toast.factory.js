@@ -14,7 +14,22 @@
       info:    info,
       success: success,
       warning: warning,
-      hide:    $mdToast.hide
+      hide:    $mdToast.hide,
+      resolve: {
+        debug:   resolve('debug'),
+        error:   resolve('error'),
+        info:    resolve('info'),
+        success: resolve('success'),
+        warning: resolve('warning')
+      },
+      reject:  {
+        debug:   reject('debug'),
+        error:   reject('error'),
+        info:    reject('info'),
+        success: reject('success'),
+        warning: reject('warning')
+
+      }
     };
     return service;
 
@@ -38,6 +53,24 @@
 
     function warning(title, message) {
       return show(buildToast(title, message, 'warning'));
+    }
+
+    function resolve(mod) {
+      return function resolveDecorator(title, message) {
+        return function(response) {
+          service[mod](title, message);
+          return $q.when(response);
+        };
+      };
+    }
+
+    function reject(mod) {
+      return function rejectDecorator(title, message) {
+        return function(error) {
+          service[mod](title, message);
+          return $q.reject(error);
+        };
+      };
     }
 
     ////////////////

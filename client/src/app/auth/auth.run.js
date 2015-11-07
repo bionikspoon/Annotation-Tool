@@ -7,13 +7,11 @@
     .run(authRouteConfig);
 
   /** @ngInject **/
-  function verifyAuthToken($authRunProxy, $log, $q) {
+  function verifyAuthToken($authRunProxy, $log, $q,Toast) {
     if($authRunProxy.isAuthenticated()) {
       $authRunProxy
         .verify()
-        .then(function(response) {
-          return response;
-        })
+        .then(Toast.resolve.success('Signed in'))
         .catch(function(error) {
           $log.error('auth.run error:', error);
           return $q.reject(error);

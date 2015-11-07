@@ -1,3 +1,4 @@
+/* global escape, window*/
 (function() {
   'use strict';
 
@@ -8,7 +9,7 @@
     });
 
   /** @ngInject **/
-  function SatellizerLocalDecorator($delegate, $injector, $http, $timeout, $q, AUTH_EVENT) {
+  function SatellizerLocalDecorator($delegate, $injector, $http, $timeout, $q, AUTH_EVENT, $log) {
     var _login = $delegate.login;
 
     $delegate.login = login;
@@ -30,10 +31,7 @@
       opts.url = getRefreshUrl();
       opts.method = opts.method || 'POST';
 
-      return $timeout(_refresh, timeout)
-        .then(thenSetToken)
-        .then(thenTriggerRefresh)
-        .then(thenBroadcast(AUTH_EVENT.refresh));
+      return $timeout(_refresh, timeout);
 
       function _refresh() {
         var shared = $injector.get('SatellizerShared');
@@ -43,7 +41,10 @@
         if(token === null) {return $q.reject('Token cannot be null');}
 
         opts.data = {token: token};
-        return $http(opts);
+        return $http(opts)
+          .then(thenSetToken)
+          .then(thenTriggerRefresh)
+          .then(thenBroadcast(AUTH_EVENT.refresh));
       }
 
     }
@@ -69,9 +70,13 @@
     ////////////////
 
     function thenTriggerRefresh(response) {
-      var shared = $injector.get('SatellizerShared');
+      var payload = getPayload(response.data.token);
 
-      var exp = shared.getPayload().exp;
+      if(!angular.isDefined(payload)) {
+        return $q.reject(response);
+      }
+
+      var exp = payload.exp;
       var delta = exp * 1000 - Math.round(new Date().getTime()) - 1000;
 
       $delegate.refresh.call($delegate, delta);
@@ -107,6 +112,18 @@
       var utils = $injector.get('SatellizerUtils');
 
       return config.baseUrl ? utils.joinUrl(config.baseUrl, config.verifyUrl) : config.verifyUrl;
+    }
+
+    function getPayload(token) {
+      if(token && token.split('.').length === 3) {
+        try {
+          var base64Url = token.split('.')[1];
+          var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+          return JSON.parse(decodeURIComponent(escape(window.atob(base64))));
+        } catch(e) {
+          return undefined;
+        }
+      }
     }
   }
 

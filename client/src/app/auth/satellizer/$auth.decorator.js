@@ -9,6 +9,7 @@
 
   /** @ngInject **/
   function $authDecorator($delegate, $injector) {
+
     $delegate.verify = verify;
     $delegate.can = can;
 
