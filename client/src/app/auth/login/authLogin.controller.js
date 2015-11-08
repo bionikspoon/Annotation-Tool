@@ -7,10 +7,11 @@
     .controller('authLoginController', authLoginController);
 
   /** @ngInject **/
-  function authLoginController($log, $state, $q, $auth, REDIRECT, Toast) {
+  function authLoginController($log, $state, $q, $auth, AuthLoginData, REDIRECT, Toast) {
     var vm = this;
     var next;
     vm.login = login;
+    vm.meta = AuthLoginData.options();
 
     activate();
 

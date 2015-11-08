@@ -1,13 +1,11 @@
 <h1 class="md-body-1 app-page-title"
     layout-margin>Pubmed Entry</h1>
-<!--<pre><code> {{vm.meta|json}} </code></pre>-->
 <md-card>
    <md-card-content>
 
-      <md-progress-linear
-         class=md-accent
-         ng-if=vm.loading
-         md-mode=indeterminate></md-progress-linear>
+      <md-progress-linear class=md-accent
+                          ng-if=vm.loading
+                          md-mode=indeterminate></md-progress-linear>
 
       <form ng-hide=vm.loading
             name=vm.entryForm

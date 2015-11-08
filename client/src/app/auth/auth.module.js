@@ -6,7 +6,8 @@
       'ui.router',
       'satellizer',
       'app.user',
-      'app.layout'
+      'app.layout',
+      'ngMessages'
     ]);
 
 })();

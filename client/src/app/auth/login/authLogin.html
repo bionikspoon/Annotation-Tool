@@ -1,14 +1,19 @@
-<form name=loginForm
-      ng-submit="vm.login(vm.credentials)"
-      novalidate>
-   <label for=username>Username:</label>
-   <input type=text
-          id=username
-          ng-model=vm.credentials.username>
-   <label for=password>Password:</label>
-   <input type=password
-          id=password
-          ng-model=vm.credentials.password>
+<h1 class='md-body-1 app-page-title'
+    layout-margin>Login</h1>
+<md-card>
+   <md-card-content>
+      <form name=vm.loginForm
+            app-form-meta=vm.meta
+            ng-submit=vm.login(vm.credentials)
+            novalidate
+            layout=column>
+         <app-generic-input ng-model=vm.credentials.username></app-generic-input>
+         <app-generic-input ng-model=vm.credentials.password></app-generic-input>
+         <md-button type=submit
+                    class="md-raised md-accent"
+                    ng-disabled=vm.loginForm.$invalid>Submit
+         </md-button>
 
-   <button type=submit>Login</button>
-</form>
+      </form>
+   </md-card-content>
+</md-card>

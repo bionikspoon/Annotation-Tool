@@ -30,9 +30,8 @@
         field:    field
       };
 
-      scope.vm.meta = controlsUtils.fieldMeta.bind(locals)();
-      scope.vm.form = controlsUtils.fieldForm.bind(locals)();
-
+      scope.vm.meta = controlsUtils.fieldMeta.apply(locals);
+      scope.vm.form = controlsUtils.fieldForm.apply(locals);
     }
 
   }
