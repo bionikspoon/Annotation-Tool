@@ -104,7 +104,7 @@
   }
 
   /** @ngInject **/
-  function ToastController($log, Toast, data) {
+  function ToastController(Toast, data) {
     var definition = getDefinition(data.mod);
     var vm = this;
     vm.title = data.title;
@@ -118,9 +118,7 @@
 
     ////////////////
 
-    function activate() {
-      $log.debug('ToastController.activate vm:', vm);
-    }
+    function activate() {}
 
     ////////////////
 

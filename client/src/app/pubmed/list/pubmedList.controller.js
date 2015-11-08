@@ -7,7 +7,7 @@
     .controller('pubmedListController', pubmedListController);
 
   /** @ngInject **/
-  function pubmedListController(PubmedData, $auth, PERMISSION, Toast) {
+  function pubmedListController(PubmedData, $auth, PERMISSION) {
     var vm = this;
 
     vm.isAuthenticated = $auth.isAuthenticated;
@@ -16,25 +16,6 @@
     vm.canChangePubmed = $auth.can.bind(null, PERMISSION.pubmed.pubmed.change);
     vm.loading = true;
     vm.pubmedEntries = PubmedData.list();
-
-    var title = 'Our secret stigma for purpose is to respect others confidently.';
-    var message = 'Remember: shreded pork butt tastes best when pressed in an ice blender enameled with basil leafs.';
-
-    vm.debug = function() {
-      return Toast.debug(title, message);
-    };
-    vm.error = function() {
-      return Toast.error(title, message);
-    };
-    vm.info = function() {
-      return Toast.info(title, message);
-    };
-    vm.success = function() {
-      return Toast.success(title, message);
-    };
-    vm.warning = function() {
-      return Toast.warning(title, message);
-    };
 
     activate();
 
