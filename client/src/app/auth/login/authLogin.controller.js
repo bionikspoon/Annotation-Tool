@@ -12,12 +12,18 @@
     var next;
     vm.login = login;
     vm.meta = AuthLoginData.options();
+    vm.loading = true;
 
     activate();
 
     ////////////////
 
     function activate() {
+      $q.when(vm.meta)
+        .finally(function() {
+          vm.loading = false;
+        });
+
       var fallbackNext = {
         name:   REDIRECT.postLogin,
         params: {}

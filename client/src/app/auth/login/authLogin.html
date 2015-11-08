@@ -4,10 +4,15 @@
           layout-margin>Login</h1>
       <md-card>
          <md-card-content>
+            <md-progress-linear
+               class=md-accent
+               ng-if=vm.loading
+               md-mode=indeterminate>
+            </md-progress-linear>
             <form name=vm.loginForm
                   app-form-meta=::vm.meta
                   ng-submit=::vm.login(vm.credentials)
-
+                  ng-if=!vm.loading
                   novalidate>
                <app-generic-input ng-model=vm.credentials.username></app-generic-input>
                <app-generic-input ng-model=vm.credentials.password></app-generic-input>
