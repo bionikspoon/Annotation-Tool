@@ -7,7 +7,7 @@
     .controller('pubmedFormController', pubmedFormController);
 
   /** @ngInject **/
-  function pubmedFormController($state, $q, PubmedData) {
+  function pubmedFormController($state, $q, PubmedData, Toast) {
     var vm = this;
 
     vm.meta = PubmedData.options();
@@ -40,6 +40,7 @@
     function submit(model) {
       PubmedData
         .save(model)
+        .then(Toast.resolve.success('Pubmed entry saved.'))
         .then(function(response) {
           $state.go('pubmed.list');
           return response;

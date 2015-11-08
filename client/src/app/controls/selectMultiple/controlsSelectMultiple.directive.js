@@ -72,7 +72,7 @@
     vm.model = vm.model || [];
     vm.modelOptions = {};
     vm.querySearch = querySearch;
-    vm.appendModel = appendModel;
+    vm.transformChip = transformChip;
     vm.getChipDisplayName = getChipDisplayName;
 
     activate();
@@ -81,7 +81,7 @@
 
     function activate() {}
 
-    function appendModel(choice) {
+    function transformChip(choice) {
       return choice.value;
     }
 

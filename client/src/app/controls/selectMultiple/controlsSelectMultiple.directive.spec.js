@@ -61,7 +61,7 @@
                 describe('appendModel', function() {
 
                     it('Should return choices value', function() {
-                        expect(vm.appendModel(vm._choices['id:1'])).toBe('id:1');
+                        expect(vm.transformChip(vm._choices['id:1'])).toBe('id:1');
                     });
                 });
 
