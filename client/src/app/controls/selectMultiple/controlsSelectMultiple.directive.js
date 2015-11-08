@@ -37,8 +37,9 @@
       };
 
       /** @namespace scope.vm */
-      scope.vm.meta = controlsUtils.fieldMeta.bind(locals)();
-      scope.vm.form = controlsUtils.fieldForm.bind(locals)();
+      scope.vm.meta = controlsUtils.fieldMeta.apply(locals);
+      scope.vm.form = controlsUtils.fieldForm.apply(locals);
+
       scope.vm._choices = getFieldChoices();
       scope.vm.ngModel = ngModel;
 

@@ -38,12 +38,14 @@
 
   /** @ngInject **/
   function controlsGenericInputController() {
-    //var vm = this;
-    //activate();
-    //
-    //////////////////
-    //
-    //function activate() {}
+    var vm = this;
+
+    vm.formField = formField;
+
+    function formField() {
+      if(!angular.isObject(vm.form)) {return {};}
+      return vm.form[vm.meta.name];
+    }
 
   }
 

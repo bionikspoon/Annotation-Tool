@@ -21,8 +21,8 @@
         .all('login')
         .options()
         .then(function(data) {
+          data.actions.POST.username.max_length = 128;
           data.actions.POST.password.type = 'password';
-          $log.debug('AuthLoginData.factory data:', data);
           return deferred.resolve(data.actions.POST);
         })
         .catch(function(error) {

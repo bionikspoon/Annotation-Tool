@@ -36,8 +36,8 @@
           ng-maxlength={{::vm.meta.max_length}}
           ng-required={{::vm.meta.required}}>
 
-   <ng-messages for=vm.form[vm.meta.name].$error
-                ng-show=vm.form[vm.meta.name].$dirty
+   <ng-messages for=vm.formField().$error
+                ng-show=vm.formField().$dirty&&vm.formField().$invalid
                 role=alert>
       <ng-message when=required>This is required!</ng-message>
       <ng-message when=maxlength>Too long! Max length is {{::vm.meta.max_length}}</ng-message>
