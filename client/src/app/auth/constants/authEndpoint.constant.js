@@ -8,7 +8,6 @@
     refresh: '/auth/refresh/',
     verify:  '/auth/verify/'
   };
-  join = join.bind(null, AUTH_ENDPOINT);
   AUTH_ENDPOINT.api = {
     login:   join('login'),
     signup:  join('signup'),
@@ -17,7 +16,7 @@
     verify:  join('verify')
   };
 
-  function join(AUTH_ENDPOINT, key) {
+  function join(key) {
     return AUTH_ENDPOINT.prefix + AUTH_ENDPOINT[key];
   }
 

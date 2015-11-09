@@ -7,7 +7,7 @@
     .controller('authLoginController', authLoginController);
 
   /** @ngInject **/
-  function authLoginController($log, $state, $q, $auth, AuthLoginData, REDIRECT, Toast) {
+  function authLoginController($log, $state, $q, $auth, AuthLoginData, AUTH_REDIRECT, Toast) {
     var vm = this;
     var next;
     vm.login = login;
@@ -25,7 +25,7 @@
         });
 
       var fallbackNext = {
-        name:   REDIRECT.postLogin,
+        name:   AUTH_REDIRECT.postLogin,
         params: {}
       };
 

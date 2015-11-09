@@ -7,7 +7,7 @@
     .controller('authLogoutController', authLogoutController);
 
   /** @ngInject **/
-  function authLogoutController($auth, $log, $state, $q, REDIRECT, Toast) {
+  function authLogoutController($auth, $log, $state, $q, AUTH_REDIRECT, Toast) {
 
     activate();
 
@@ -17,7 +17,7 @@
       $auth.logout()
            .then(Toast.resolve.info('Signed out'))
            .then(function(response) {
-             $state.go(REDIRECT.postLogout);
+             $state.go(AUTH_REDIRECT.postLogout);
              return response;
            })
            .catch(Toast.reject.error('Log out failed.'))

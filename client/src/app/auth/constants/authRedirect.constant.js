@@ -3,7 +3,7 @@
 
   angular
     .module('app.auth')
-    .constant('REDIRECT', {
+    .constant('AUTH_REDIRECT', {
       postLogin:  'pubmed.list',
       postLogout: 'pubmed.list'
     });

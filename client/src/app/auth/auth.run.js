@@ -20,7 +20,7 @@
   }
 
   /** @ngInject **/
-  function authRouteConfig($rootScope, $state, $authRunProxy, REDIRECT) {
+  function authRouteConfig($rootScope, $state, $authRunProxy, AUTH_REDIRECT) {
     $rootScope.$on("$stateChangeStart", restrictRoutes);
 
     function restrictRoutes(event, toState, toParams) {
@@ -56,7 +56,7 @@
           params: toParams
         }
       };
-      $state.go(REDIRECT.postLogin, next);
+      $state.go(AUTH_REDIRECT.postLogin, next);
       return event.preventDefault();
     }
   }
