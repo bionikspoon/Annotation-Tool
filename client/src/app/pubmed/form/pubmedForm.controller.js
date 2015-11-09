@@ -44,7 +44,8 @@
         .then(function(response) {
           $state.go('pubmed.list');
           return response;
-        });
+        })
+        .catch(Toast.reject.error('Pubmed entry could not be saved.'));
     }
   }
 

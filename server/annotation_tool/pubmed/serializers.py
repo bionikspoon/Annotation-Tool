@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
+from rest_framework import serializers
 from rest_framework.serializers import HyperlinkedModelSerializer
 from .models import (Pubmed, PUBMED_ENTRIES, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup,
     VariantTypeLookup, VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup)
@@ -57,6 +58,8 @@ class PatientOutcomesSerializer(HyperlinkedModelSerializer):
 
 
 class PubmedSerializer(HyperlinkedModelSerializer):
+    user = serializers.HyperlinkedRelatedField(many=False, read_only=True, view_name='user-detail')
+
     class Meta:
         model = Pubmed
         fields = (

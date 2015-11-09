@@ -57,8 +57,7 @@
     function handleError(message) {
       return function(error) {
         $log.debug('PubmedData::' + message + ' error:', error);
-
-        return error;
+        return $q.reject(error);
       };
     }
 
