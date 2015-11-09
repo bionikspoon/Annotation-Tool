@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
 from rest_framework.serializers import HyperlinkedModelSerializer
-
 from .models import (Pubmed, PUBMED_ENTRIES, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup,
     VariantTypeLookup, VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup)
 

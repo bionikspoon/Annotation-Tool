@@ -7,7 +7,7 @@
         var vm;
         var $auth;
 
-        beforeEach(module('app.auth', 'mock.$auth'));
+        beforeEach(module('app.auth', 'mock.$auth', 'mock.AuthLoginData'));
         beforeEach(inject(function(_$rootScope_, _$controller_, _$auth_) {
             var $controller = _$controller_;
             $rootScope = _$rootScope_;

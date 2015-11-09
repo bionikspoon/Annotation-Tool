@@ -44,7 +44,7 @@
                         'searchText',
                         'modelOptions',
                         'querySearch',
-                        'appendModel',
+                        'transformChip',
                         'getChipDisplayName',
                         'meta',
                         'form',
