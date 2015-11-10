@@ -4,7 +4,7 @@
   "dependencies": {},
   "scripts": {
     "test": "gulp test",
-    "postinstall": "bower install && gulp"
+    "postinstall": "bower install && gulp && gulp build"
   },
   "cacheDirectories": [
     "node_modules",
