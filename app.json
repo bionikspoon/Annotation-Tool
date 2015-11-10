@@ -25,7 +25,7 @@
     "DJANGO_ALLOWED_HOSTS": ".herokuapp.com"
   },
   "scripts": {
-    "postdeploy": "python manage.py migrate --noinput --verbosity 2 && python manage.py pubmed_init && python manage.py fake_data"
+    "postdeploy": "python server/manage.py migrate --noinput --verbosity 2 && python server/manage.py pubmed_init && python server/manage.py fake_data"
   },
   "repository": "https://github.com/bionikspoon/Annotation-Tool",
   "addons": [
