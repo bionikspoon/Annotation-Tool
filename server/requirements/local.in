@@ -18,7 +18,7 @@ ipdb
 # Required by maildump. Need to pin dependency to gevent beta to be Python 3-compatible.
 gevent==1.0.2
 # Enables better email testing
-maildump
+# maildump
 
 httpie
 httpie-jwt-auth
