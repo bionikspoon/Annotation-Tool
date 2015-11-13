@@ -25,7 +25,6 @@
     "DJANGO_ALLOWED_HOSTS": ".herokuapp.com"
   },
   "scripts": {
-    
   },
   "repository": "https://github.com/bionikspoon/Annotation-Tool",
   "addons": [
