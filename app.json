@@ -24,7 +24,7 @@
     "DJANGO_LOG_LEVEL": "DEBUG",
     "DJANGO_ALLOWED_HOSTS": ".herokuapp.com"
   },
-  "scripts": {    
+  "scripts": {
   },
   "repository": "https://github.com/bionikspoon/Annotation-Tool",
   "addons": [
