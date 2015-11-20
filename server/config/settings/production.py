@@ -104,6 +104,8 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [(  # :off
     ]
 )]  # :on
 
+TEMPLATES[0]['DIRS'] = [ROOT_DIR('client', 'dist'), APPS_DIR('templates')]
+
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
