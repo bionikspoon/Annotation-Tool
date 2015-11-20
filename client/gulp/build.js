@@ -20,7 +20,6 @@ gulp.task('html', [
   'partials'
 ], taskHtml);
 
-
 gulp.task('images', taskImages);
 
 // Only applies for fonts from bower dependencies
@@ -31,12 +30,14 @@ gulp.task('other', taskOther);
 
 gulp.task('clean', taskClean);
 
+gulp.task('copy', taskCopy);
+
 gulp.task('build', [
   'html',
   'images',
   'fonts',
   'other'
-]);
+], function() {return gulp.start('copy');});
 
 function taskPartials() {
   return gulp
@@ -45,13 +46,13 @@ function taskPartials() {
       path.join(conf.paths.tmp, '/serve/app/**/*.html')
     ])
     .pipe($.minifyHtml({
-      empty: true,
-      spare: true,
+      empty:  true,
+      spare:  true,
       quotes: true
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
       module: 'app',
-      root: 'app'
+      root:   'app'
     }))
     .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
 }
@@ -60,12 +61,11 @@ function taskImages() {
     .src(path.join(conf.paths.src, '/assets/images/**/*'))
     .pipe($.imagemin({
       optimizationLevel: 3,
-      progressive: true,
-      interlaced: true
+      progressive:       true,
+      interlaced:        true
     }))
     .pipe(gulp.dest(path.join(conf.paths.dist, '/assets/images/')));
 }
-
 
 function taskFonts() {
   return gulp
@@ -89,18 +89,19 @@ function taskOther() {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 }
 
-function taskClean(done) {
+function taskClean() {
   $.del([
+    path.join(conf.paths.server, '/'),
     path.join(conf.paths.dist, '/'),
     path.join(conf.paths.tmp, '/')
-  ], done);
+  ], {force: true});
 }
 
 function taskHtml() {
   var partialsInjectFile = gulp.src(path.join(conf.paths.tmp, '/partials/templateCacheHtml.js'), {read: false});
   var partialsInjectOptions = {
-    starttag: '<!-- inject:partials -->',
-    ignorePath: path.join(conf.paths.tmp, '/partials'),
+    starttag:     '<!-- inject:partials -->',
+    ignorePath:   path.join(conf.paths.tmp, '/partials'),
     addRootSlash: false
   };
 
@@ -126,15 +127,21 @@ function taskHtml() {
     .pipe($.revReplace())
     .pipe(htmlFilter)
     .pipe($.minifyHtml({
-      empty: true,
-      spare: true,
-      quotes: true,
+      empty:        true,
+      spare:        true,
+      quotes:       true,
       conditionals: true
     }))
     .pipe(htmlFilter.restore)
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
     .pipe($.size({
-      title: path.join(conf.paths.dist, '/'),
+      title:     path.join(conf.paths.dist, '/'),
       showFiles: true
     }));
+}
+
+function taskCopy() {
+  return gulp
+    .src(path.join(conf.paths.dist, '/**/*'))
+    .pipe(gulp.dest(path.join(conf.paths.server, '/')));
 }

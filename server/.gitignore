@@ -61,3 +61,4 @@ annotation_tool/media/
 
 !.env.example
 .env*
+dist/
