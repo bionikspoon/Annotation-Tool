@@ -31,7 +31,7 @@ function taskInject() {
     .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
 
   var injectOptions = {
-    ignorePath: [
+    ignorePath:   [
       conf.paths.src,
       path.join(conf.paths.tmp, '/serve')
     ],
