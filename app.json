@@ -15,7 +15,7 @@
     "DJANGO_SECRET_KEY": {
       "required": true
     },
-    "DJANGO_SETTINGS_MODULE": "server.config.settings.production",
+    "DJANGO_SETTINGS_MODULE": "config.settings.production",
     "NODE_MODULES_CACHE": "true",
     "NPM_CONFIG_PRODUCTION": "false",
     "REDIS_URL": {
@@ -25,7 +25,6 @@
     "DJANGO_ALLOWED_HOSTS": ".herokuapp.com"
   },
   "scripts": {
-    "postdeploy": "python manage.py migrate --noinput --verbosity 2 && python manage.py pubmed_init && python manage.py fake_data"
   },
   "repository": "https://github.com/bionikspoon/Annotation-Tool",
   "addons": [
@@ -37,10 +36,10 @@
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+      "url": "https://github.com/bionikspoon/annotation-tool-heroku-buildpack-nodejs"
     },
     {
-      "url": "https://github.com/heroku/heroku-buildpack-python"
+      "url": "https://github.com/bionikspoon/annotation-tool-heroku-buildpack-python"
     }
   ]
 }

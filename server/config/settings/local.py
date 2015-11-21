@@ -18,6 +18,7 @@ from .common import *  # noqa
 # ------------------------------------------------------------------------------
 DEBUG = env.bool('DJANGO_DEBUG', default=True)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
+TEMPLATES[0]['DIRS'] = [ROOT_DIR('dist'), APPS_DIR('templates')]
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -29,7 +30,6 @@ SECRET_KEY = env("DJANGO_SECRET_KEY", default='secret')
 # ------------------------------------------------------------------------------
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 
 # CACHING
 # ------------------------------------------------------------------------------
@@ -49,7 +49,8 @@ INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': ['debug_toolbar.panels.redirects.RedirectsPanel', ],
-    'SHOW_TEMPLATE_CONTEXT': True, }
+    'SHOW_TEMPLATE_CONTEXT': True
+}
 
 # django-extensions
 # ------------------------------------------------------------------------------
@@ -60,11 +61,11 @@ INSTALLED_APPS += ('django_extensions',)
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
+# ------------------------------------------------------------------------------
 
-SHELL_PLUS_POST_IMPORTS = (
+SHELL_PLUS_POST_IMPORTS = (  # :off
+    ('annotation_tool.pubmed.factories', 'PubmedFactory'),
+    ('annotation_tool.users.factories', 'UserFactory'),
+)  # :on
 
-    ('server.annotation_tool.pubmed.factories', 'PubmedFactory'),
-
-    ('server.annotation_tool.users.factories', 'UserFactory')
-
-)
+JWT_AUTH['JWT_EXPIRATION_DELTA'] = datetime.timedelta(seconds=5)

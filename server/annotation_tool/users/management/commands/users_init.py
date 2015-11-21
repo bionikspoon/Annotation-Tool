@@ -3,6 +3,7 @@ Initialize user data.
 """
 
 from functools import wraps
+
 from django.contrib.auth.models import Group, Permission
 from django.core.management.base import BaseCommand
 

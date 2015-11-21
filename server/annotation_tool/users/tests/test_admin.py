@@ -1,10 +1,8 @@
 from test_plus.test import TestCase
-
 from ..admin import MyUserCreationForm
 
 
 class TestMyUserCreationForm(TestCase):
-
     def setUp(self):
         self.user = self.make_user()
 
@@ -13,8 +11,7 @@ class TestMyUserCreationForm(TestCase):
         form = MyUserCreationForm({
             'username': 'alamode',
             'password1': '123456',
-            'password2': '123456',
-        })
+            'password2': '123456', })
         # Run is_valid() to trigger the validation
         valid = form.is_valid()
         self.assertTrue(valid)
@@ -28,8 +25,7 @@ class TestMyUserCreationForm(TestCase):
         form = MyUserCreationForm({
             'username': self.user.username,
             'password1': '123456',
-            'password2': '123456',
-        })
+            'password2': '123456', })
         # Run is_valid() to trigger the validation, which is going to fail
         # because the username is already taken
         valid = form.is_valid()

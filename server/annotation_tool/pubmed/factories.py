@@ -2,27 +2,24 @@
 # coding=utf-8
 from pathlib import Path
 from random import randint, choice
-from webbrowser import Opera
-
 import yaml
 from django.db import OperationalError
 from factory import DjangoModelFactory, Iterator, LazyAttribute
 from faker import Faker
-
 from .models import (StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
     PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed)
-from ..gene.models import Gene
+from ..core.utils.factories import make, many_to_many
 from ..users.models import User
-from ..utils.factories import make, many_to_many
 
 faker = Faker()
 
 
 def gene_pool():
     try:
-        gene_count = Gene.objects.count()
-        gene_offset = randint(0, gene_count // 100)
-        return [gene.symbol for gene in Gene.objects.all()[gene_offset:gene_offset + 100]]
+        # gene_count = Gene.objects.count()
+        # gene_offset = randint(0, gene_count // 100)
+        # return [gene.symbol for gene in Gene.objects.all()[gene_offset:gene_offset + 100]]
+        raise OperationalError
     except OperationalError:
         with Config.DATA_DIR.joinpath('_gene_sample.yaml').open() as f:
             return yaml.load(f)
@@ -31,7 +28,7 @@ def gene_pool():
 class Config:
     """Command constants."""
     _CWD = Path(__file__, '..').resolve()
-    DATA_DIR = (_CWD / '../utils/_gene_sample').resolve()
+    DATA_DIR = (_CWD / '../core/utils/_gene_sample').resolve()
 
 
 class PubmedFactory(DjangoModelFactory):

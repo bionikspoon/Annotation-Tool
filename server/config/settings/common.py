@@ -9,42 +9,44 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
+
+import datetime
+
 from . import env, APPS_DIR, ROOT_DIR
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
-
 DJANGO_APPS = (  # :off
     # Default Django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    # 'django.contrib.messages',
+    'django.contrib.messages',
     'django.contrib.staticfiles',
 
     # Useful template tags:
     # 'django.contrib.humanize',
 
     # Admin
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.postgres'
+
 )  # :on
 THIRD_PARTY_APPS = (  # :off
-    # 'crispy_forms',  # Form layouts
-    # 'allauth',  # registration
-    # 'allauth.account',  # registration
-    # 'allauth.socialaccount',  # registration
+    'crispy_forms',  # Form layouts
+    'allauth',  # registration
+    'allauth.account',  # registration
+    'allauth.socialaccount',  # registration
     'rest_framework',
     'rest_framework.authtoken'
 )  # :on
 
 # Apps specific for this project go here.
 LOCAL_APPS = (  # :off
-    'server.annotation_tool.users',  # custom users app
-    # Your stuff: custom apps go here
-    'server.annotation_tool.pubmed',
-    'server.annotation_tool.gene'
+    'annotation_tool.core',  # custom users app
+    'annotation_tool.users',  # custom users app
+    'annotation_tool.pubmed',  # custom users app
 )  # :on
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -65,7 +67,7 @@ MIDDLEWARE_CLASSES = (  # :off
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'server.annotation_tool.contrib.sites.migrations'
+    'sites': 'annotation_tool.contrib.sites.migrations'
 }
 
 # DEBUG
@@ -93,14 +95,11 @@ MANAGERS = ADMINS
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {  # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL"),
-    'genes': env.db('DATABASE_URL_GENE', default='sqlite:///%s' % ROOT_DIR('db.sqlite'))
-
+DATABASES = {
+    'default': env.db("DATABASE_URL")
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-DATABASES['genes']['ATOMIC_REQUESTS'] = True
-DATABASE_ROUTERS = ['server.annotation_tool.utils.config.GeneDatabaseRouter']
+
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
 # Local time zone for this installation. Choices can be found here:
@@ -127,41 +126,36 @@ USE_TZ = True
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#templates
-TEMPLATES = [  # :off
-    {
-        # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-        'DIRS': [
-            ROOT_DIR('staticfiles'),
-        ],
-        'OPTIONS': {
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
-            'debug': DEBUG,
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
-            # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader',
-            ],
-            # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
-            # 'context_processors': [
-            #     'django.template.context_processors.debug',
-            #     'django.template.context_processors.request',
-            #     'django.contrib.auth.context_processors.auth',
-            #     'django.template.context_processors.i18n',
-            #     'django.template.context_processors.media',
-            #     'django.template.context_processors.static',
-            #     'django.template.context_processors.tz',
-            #     'django.contrib.messages.context_processors.messages',
-            #     # Your stuff: custom template context processors go here
-            # ],
-        },
-    },
-]  # :on
+TEMPLATES = [{
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+    'DIRS': [ROOT_DIR('staticfiles'), ROOT_DIR('dist'), APPS_DIR('templates')],
+    'OPTIONS': {
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
+        'debug': DEBUG,  # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
+        # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
+        'loaders': [  # :off
+            'django.template.loaders.filesystem.Loader',
+            'django.template.loaders.app_directories.Loader',
+        ],  # :on
+        # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+        'context_processors': [  # :off
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                # Your stuff: custom template context processors go here
+            ]  # :on
+    }
+}]
 
 # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
-# CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -172,7 +166,7 @@ STATIC_ROOT = ROOT_DIR('staticfiles')
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (ROOT_DIR('..', 'dist'), APPS_DIR('static'),)
+STATICFILES_DIRS = (ROOT_DIR('dist'), APPS_DIR('static'),)
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (  # :off
@@ -190,27 +184,28 @@ MEDIA_URL = '/media/'
 
 # URL Configuration
 # ------------------------------------------------------------------------------
-ROOT_URLCONF = 'server.config.urls'
+ROOT_URLCONF = 'config.urls'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-WSGI_APPLICATION = 'server.config.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # AUTHENTICATION CONFIGURATION
 # ------------------------------------------------------------------------------
 AUTHENTICATION_BACKENDS = (  # :off
-    'django.contrib.auth.backends.ModelBackend',  # 'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 )  # :on
 
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 # Custom user app defaults
 # Select the correct user model
 AUTH_USER_MODEL = 'users.User'
-# LOGIN_REDIRECT_URL = 'users:redirect'
-# LOGIN_URL = 'account_login'
+LOGIN_REDIRECT_URL = 'users:redirect'
+LOGIN_URL = 'account_login'
 
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
@@ -263,10 +258,22 @@ LOGGING = {
     }
 }
 
-REST_FRAMEWORK = {  # 'PAGINATE_BY': 10
+# Location of root django.contrib.admin URL, use {% url 'admin:index' %}
+ADMIN_URL = r'^admin/'
 
-    # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
-
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_jwt.authentication.JSONWebTokenAuthentication',)
-}
 # Your common stuff: Below this line define 3rd party library settings
+REST_FRAMEWORK = {
+
+    # 'PAGINATE_BY': 10,
+    # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_AUTHENTICATION_CLASSES': (  # :off
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    )  # :on
+}
+
+JWT_AUTH = {
+    'JWT_AUTH_HEADER_PREFIX': 'Bearer',
+    'JWT_ALLOW_REFRESH': True
+}

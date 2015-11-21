@@ -9,17 +9,18 @@ whitenoise
 
 # Forms
 django-braces
+django-crispy-forms
+django-floppyforms
 
 # Models
 django-model-utils
-factory_boy
-fake-factory
 
 # Images
+Pillow
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
-# django-allauth
+django-allauth
 
 # For the persistence stores
 psycopg2
@@ -36,6 +37,7 @@ pytz
 django-redis
 redis
 
+
 # pip-sync, requirements management
 pip-tools
 djangorestframework
@@ -43,3 +45,7 @@ djangorestframework-jwt
 
 
 wheel
+
+
+factory_boy
+fake-factory

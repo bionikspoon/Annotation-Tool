@@ -1,6 +1,7 @@
 # Create your views here.
 from rest_framework import viewsets
-from rest_framework.permissions import DjangoModelPermissions
+from rest_framework.permissions import DjangoModelPermissionsOrAnonReadOnly
+from rest_framework.response import Response
 
 from .models import (Pubmed, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
     VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup)
@@ -52,4 +53,7 @@ class PubmedViewSet(viewsets.ModelViewSet):
     queryset = Pubmed.objects.prefetch_related('disease', 'assessed_patient_outcomes',
                                                'significant_patient_outcomes').all()
     serializer_class = PubmedSerializer
-    permission_classes = (DjangoModelPermissions,)
+    permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)

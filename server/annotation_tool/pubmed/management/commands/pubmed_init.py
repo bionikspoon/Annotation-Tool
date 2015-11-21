@@ -93,8 +93,8 @@ class Command(BaseCommand):
         :rtype: [dict]
         """
         fixture_name = '%s.%s' % (app, model)
-        return [dict(model=fixture_name, pk=pk, fields={'choice': choice}) for pk, choice in
-                enumerate(sorted(choices), start=1)]
+        return [dict(model=fixture_name, pk=pk, fields=dict(choice=choice))  # :off
+                for pk, choice in enumerate(sorted(choices), start=1)]  # :on
 
     @staticmethod
     def dump(fixtures, name, filepath=Config.FIXTURES_DIR):

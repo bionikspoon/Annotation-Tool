@@ -17,6 +17,4 @@ django-storages-redux
 # ---------------
 django-mailgun
 
-# Raven is the Sentry client
-# --------------------------
-raven
+

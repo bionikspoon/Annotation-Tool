@@ -1,0 +1,34 @@
+<label for={{::vm.meta.name}}_id
+       class=md-body-2>{{ ::vm.meta.label }}
+</label>
+<md-chips
+   ng-model=vm.model
+   ng-model-options=vm.modelOptions
+   md-transform-chip=vm.appendModel($chip)
+   md-autocomplete-snap
+   name={{::vm.meta.name}}
+   id={{::vm.meta.name}}_id
+   md-require-match=true
+   readonly=::vm.meta.read_only
+   ng-required={{::vm.meta.required}}>
+   <md-autocomplete
+      md-selected-item=vm.selectedItem
+      md-search-text=vm.searchText
+      md-items="item in vm.querySearch(vm.searchText)"
+      md-item-text=item.value
+      md-select-on-match=true
+      md-input-id={{::vm.meta.name}}_id_autocomplete
+      md-menu-class=select-multiple-menu
+      md-no-cache=true;
+      ng-disabled=::vm.meta.read_only>
+            <span md-highlight-text=vm.searchText>
+            {{item.display_name}}
+            </span>
+
+      <div ng-messages=vm.form[vm.meta.name].$error
+           ng-show=vm.form[vm.meta.name].$dirty>
+         <div ng-message=required>This is required!</div>
+      </div>
+   </md-autocomplete>
+   <md-chip-template><span>{{ vm.getChipDisplayName($chip) }}</span></md-chip-template>
+</md-chips>
