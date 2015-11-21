@@ -104,8 +104,6 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [(  # :off
     ]
 )]  # :on
 
-TEMPLATES[0]['DIRS'] = [ROOT_DIR('client', 'dist'), APPS_DIR('templates')]
-
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
@@ -130,5 +128,3 @@ CACHES = {
 # ADMIN_URL = env('DJANGO_ADMIN_URL')
 
 # Your production stuff: Below this line define 3rd party library settings
-
-STATICFILES_DIRS = (ROOT_DIR('client', 'dist'), APPS_DIR('static'),)

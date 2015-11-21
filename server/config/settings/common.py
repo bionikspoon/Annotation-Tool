@@ -130,7 +130,7 @@ TEMPLATES = [{
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-    'DIRS': [ROOT_DIR('..', 'client', 'dist'), APPS_DIR('templates')],
+    'DIRS': [ROOT_DIR('staticfiles'), ROOT_DIR('dist'), APPS_DIR('templates')],
     'OPTIONS': {
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
         'debug': DEBUG,  # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -166,7 +166,8 @@ STATIC_ROOT = ROOT_DIR('staticfiles')
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (ROOT_DIR('..', 'client', 'dist'), APPS_DIR('static'),)
+STATICFILES_DIRS = (ROOT_DIR('dist'), APPS_DIR('static'),)
+
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (  # :off
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -274,6 +275,5 @@ REST_FRAMEWORK = {
 
 JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=5),
     'JWT_ALLOW_REFRESH': True
 }

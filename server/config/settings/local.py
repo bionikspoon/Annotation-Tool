@@ -18,6 +18,7 @@ from .common import *  # noqa
 # ------------------------------------------------------------------------------
 DEBUG = env.bool('DJANGO_DEBUG', default=True)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
+TEMPLATES[0]['DIRS'] = [ROOT_DIR('dist'), APPS_DIR('templates')]
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -60,8 +61,11 @@ INSTALLED_APPS += ('django_extensions',)
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
+# ------------------------------------------------------------------------------
 
 SHELL_PLUS_POST_IMPORTS = (  # :off
     ('annotation_tool.pubmed.factories', 'PubmedFactory'),
     ('annotation_tool.users.factories', 'UserFactory'),
 )  # :on
+
+JWT_AUTH['JWT_EXPIRATION_DELTA'] = datetime.timedelta(seconds=5)

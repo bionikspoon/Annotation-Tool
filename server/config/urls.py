@@ -22,8 +22,8 @@ urlpatterns = [  # :off
     url(r'^(?P<path>(?:assets|scripts|styles)/.*)$','django.contrib.staticfiles.views.serve'),
     url('^$', TemplateView.as_view(template_name='index.html'))
 
-
 ]  # :on
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
