@@ -108,12 +108,13 @@ function taskHtml() {
   var htmlFilter = $.filter('*.html', {restore: true});
   var jsFilter = $.filter('**/*.js', {restore: true});
   var cssFilter = $.filter('**/*.css', {restore: true});
-  var assets;
+  //var assets;
 
   return gulp
     .src(path.join(conf.paths.tmp, '/serve/*.html'))
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))
-    .pipe(assets = $.useref.assets())
+    .pipe($.useref()) // ++
+    //.pipe(assets = $.useref.assets())
     .pipe($.rev())
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
@@ -122,8 +123,8 @@ function taskHtml() {
     .pipe(cssFilter)
     .pipe($.csso())
     .pipe(cssFilter.restore)
-    .pipe(assets.restore())
-    .pipe($.useref())
+    //.pipe(assets.restore())
+    //.pipe($.useref())
     .pipe($.revReplace())
     .pipe(htmlFilter)
     .pipe($.minifyHtml({
