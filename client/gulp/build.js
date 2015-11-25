@@ -40,6 +40,7 @@ gulp.task('build', [
 ], function() {return gulp.start('copy');});
 
 function taskPartials() {
+  //noinspection JSUnresolvedFunction
   return gulp
     .src([
       path.join(conf.paths.src, '/app/**/*.html'),
@@ -57,6 +58,7 @@ function taskPartials() {
     .pipe(gulp.dest(conf.paths.tmp + '/partials/'));
 }
 function taskImages() {
+  //noinspection JSUnresolvedFunction
   return gulp
     .src(path.join(conf.paths.src, '/assets/images/**/*'))
     .pipe($.imagemin({
@@ -68,6 +70,7 @@ function taskImages() {
 }
 
 function taskFonts() {
+  //noinspection JSUnresolvedFunction
   return gulp
     .src($.mainBowerFiles())
     .pipe($.filter('**/*.{eot,svg,ttf,woff,woff2}'))
@@ -90,6 +93,7 @@ function taskOther() {
 }
 
 function taskClean() {
+  //noinspection JSUnresolvedFunction
   $.del([
     path.join(conf.paths.server, '/'),
     path.join(conf.paths.dist, '/'),
@@ -110,6 +114,7 @@ function taskHtml() {
   var cssFilter = $.filter('**/*.css', {restore: true});
   //var assets;
 
+  //noinspection JSUnresolvedFunction,JSUnresolvedVariable
   return gulp
     .src(path.join(conf.paths.tmp, '/serve/*.html'))
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))

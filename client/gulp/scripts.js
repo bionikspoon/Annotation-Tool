@@ -9,6 +9,7 @@ var browserSync = require('browser-sync');
 var $ = require('gulp-load-plugins')();
 
 gulp.task('scripts', function() {
+  //noinspection JSUnresolvedFunction,JSUnresolvedVariable
   return gulp
     .src(path.join(conf.paths.src, '/app/**/*.js'))
     .pipe($.jshint())

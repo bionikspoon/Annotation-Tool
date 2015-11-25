@@ -15,17 +15,21 @@
         }));
 
         afterEach(function() {
+            //noinspection JSUnresolvedFunction
             $httpBackend.verifyNoOutstandingExpectation();
+            //noinspection JSUnresolvedFunction
             $httpBackend.verifyNoOutstandingRequest();
         });
 
         describe('When http request is successful', function() {
             beforeEach(function() {
+                //noinspection JSUnresolvedFunction
                 $httpBackend.whenGET(profileEndpoint)
                             .respond(mockUser);
             });
 
             it('Should call the api endpoint', function() {
+                //noinspection JSUnresolvedFunction
                 $httpBackend.expectGET(profileEndpoint);
                 UserData.get();
                 $httpBackend.flush();
@@ -49,10 +53,12 @@
         });
         describe('When http request fails', function() {
             beforeEach(function() {
+                //noinspection JSUnresolvedFunction
                 $httpBackend.whenGET(profileEndpoint)
                             .respond(400, mockError);
             });
             it('Should call the api endpoint', function() {
+                //noinspection JSUnresolvedFunction
                 $httpBackend.expectGET(profileEndpoint);
                 UserData.get();
                 $httpBackend.flush();

@@ -22,6 +22,7 @@ gulp.task('styles', function() {
       path.join('!' + conf.paths.src, '/app/index.scss')
     ], {read: false});
 
+  //noinspection JSUnusedGlobalSymbols
   var injectOptions = {
     transform:    function(filePath) {
       filePath = filePath.replace(conf.paths.src + '/app/', '');
@@ -32,6 +33,7 @@ gulp.task('styles', function() {
     addRootSlash: false
   };
 
+  //noinspection JSUnresolvedFunction,JSUnresolvedVariable
   return gulp
     .src([
       path.join(conf.paths.src, '/app/index.scss')

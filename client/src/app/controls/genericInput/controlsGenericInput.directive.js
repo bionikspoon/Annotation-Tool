@@ -20,6 +20,7 @@
     };
     return directive;
 
+    //noinspection JSUnusedLocalSymbols
     function link(scope, element, attrs, formMeta) {
       var field = attrs.ngModel
                        .split('.')

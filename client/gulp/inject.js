@@ -21,6 +21,7 @@ function taskInject() {
       path.join('!' + conf.paths.tmp, '/serve/app/vendor.css')
     ], {read: false});
 
+  //noinspection JSUnresolvedFunction
   var injectScripts = gulp
     .src([
       path.join(conf.paths.src, '/app/**/*.module.js'),
@@ -38,6 +39,7 @@ function taskInject() {
     addRootSlash: false
   };
 
+  //noinspection JSUnresolvedFunction
   return gulp
     .src(path.join(conf.paths.src, '/*.html'))
     .pipe($.inject(injectStyles, injectOptions))

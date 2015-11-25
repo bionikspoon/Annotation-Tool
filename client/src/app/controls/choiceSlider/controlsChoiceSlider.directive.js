@@ -20,6 +20,7 @@
     };
     return directive;
 
+    //noinspection JSUnusedLocalSymbols
     function link(scope, element, attrs, formMeta) {
       var field = attrs.ngModel
                        .split('.')
@@ -46,17 +47,7 @@
   }
 
   /** @ngInject **/
-  function controlsChoiceSliderController() {
-    var vm = this; // jshint ignore:line
-
-    activate();
-
-    ////////////////
-
-    function activate() {
-
-    }
-  }
+  function controlsChoiceSliderController() {}
 
 })();
 

@@ -9,18 +9,19 @@
 
   /** @ngInject **/
   function mockUserData($q) {
-    this.mockUser = {};
-    this.reject = false;
-    this.get = get;
+    var self = this;
+    self.mockUser = {};
+    self.reject = false;
+    self.get = get;
     spyOn(this, 'get').and.callThrough();
 
     ////////////////
 
     function get() {
-      if(this.reject) {
+      if(self.reject) {
         return $q.reject('hello');
       }
-      return $q.when(this.mockUser);
+      return $q.when(self.mockUser);
     }
   }
 

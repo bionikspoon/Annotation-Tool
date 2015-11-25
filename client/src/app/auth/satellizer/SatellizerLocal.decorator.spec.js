@@ -29,6 +29,7 @@
         }));
 
         beforeEach(inject(function(_Session_) {
+            //noinspection JSUnresolvedFunction
             $httpBackend.whenGET(AUTH_ENDPOINT.api.profile)
                         .respond(mockUser);
 
@@ -37,7 +38,9 @@
         }));
 
         afterEach(function() {
+            //noinspection JSUnresolvedFunction
             $httpBackend.verifyNoOutstandingExpectation();
+            //noinspection JSUnresolvedFunction
             $httpBackend.verifyNoOutstandingRequest();
         });
 
@@ -45,6 +48,7 @@
 
             beforeEach(function() {
 
+                //noinspection JSUnresolvedFunction
                 $httpBackend.expectPOST(AUTH_ENDPOINT.api.login, mockCredentials)
                             .respond(mockToken);
 
@@ -77,6 +81,7 @@
                     Authorization:  'Bearer ' + mockToken.token
                 };
 
+                //noinspection JSUnresolvedFunction
                 $httpBackend.expectPOST(AUTH_ENDPOINT.api.refresh, mockToken, expectHeaders)
                             .respond(function() {
                                 mockToken = getMockToken(getMockPayload());
@@ -95,6 +100,7 @@
                 };
                 SatellizerShared.setToken(token);
 
+                //noinspection JSUnresolvedFunction
                 $httpBackend.expectPOST(AUTH_ENDPOINT.api.verify, mockToken)
                             .respond(200, mockToken);
             }));
@@ -127,6 +133,7 @@
                 };
                 SatellizerShared.setToken(token);
 
+                //noinspection JSUnresolvedFunction
                 $httpBackend.expectPOST(AUTH_ENDPOINT.api.refresh, mockToken)
                             .respond(200, mockToken);
             }));
@@ -155,6 +162,7 @@
                     Authorization:  'Bearer ' + mockToken.token
                 };
 
+                //noinspection JSUnresolvedFunction
                 $httpBackend.expectPOST(AUTH_ENDPOINT.api.refresh, mockToken, expectHeaders)
                             .respond(function() {
                                 mockToken = getMockToken(getMockPayload());

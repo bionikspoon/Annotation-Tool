@@ -1,3 +1,5 @@
+@import "bower_components/material-color/material-color";
+
 @mixin app-toast-color($color) {
   .app-toast {
     &__icon {

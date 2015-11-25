@@ -55,6 +55,7 @@
     }
 
     function mockInit() {
+      //noinspection SpellCheckingInspection
       return {
         loginCredentials: {
           username: 'admin',

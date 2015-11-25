@@ -6,7 +6,7 @@
     .factory('Toast', Toast);
 
   /** @ngInject **/
-  function Toast($log, $mdToast, $q) {
+  function Toast($mdToast, $q) {
     var toast = $q.when();
     var service = {
       debug:   debug,
