@@ -14,7 +14,7 @@
                      layout=column>
                <h3>Pubmed: {{ entry.pubmed_id }} | Gene: {{ entry.gene }}</h3>
 
-               <p>{{ entry.user }}</p>
+               <p>{{ entry.user.name }}</p>
 
                <p>{{ entry.comments|limitTo:100 }}</p>
             </article>

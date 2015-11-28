@@ -2,6 +2,8 @@
 # coding=utf-8
 from rest_framework import serializers
 from rest_framework.serializers import HyperlinkedModelSerializer
+
+from annotation_tool.users.models import User
 from .models import (Pubmed, PUBMED_ENTRIES, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup,
     VariantTypeLookup, VariantConsequenceLookup, DiseaseLookup, PatientOutcomesLookup)
 
@@ -57,8 +59,14 @@ class PatientOutcomesSerializer(HyperlinkedModelSerializer):
                   'significant_patient_outcomes_pubmed_entries')
 
 
+class PubmedUserSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = 'url', 'username', 'name'
+
+
 class PubmedSerializer(HyperlinkedModelSerializer):
-    user = serializers.HyperlinkedRelatedField(many=False, read_only=True, view_name='user-detail')
+    user = PubmedUserSerializer(many=False, read_only=True)
 
     class Meta:
         model = Pubmed
