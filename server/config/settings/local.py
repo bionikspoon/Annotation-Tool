@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Local settings
 
@@ -7,6 +6,8 @@ Local settings
 - Add Django Debug Toolbar
 - Add django-extensions as app
 """
+
+import datetime
 
 from . import env
 

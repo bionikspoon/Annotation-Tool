@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 # coding=utf-8
+
 from pathlib import Path
 from random import randint, choice
+
 import yaml
 from django.db import OperationalError
 from factory import DjangoModelFactory, Iterator, LazyAttribute
 from faker import Faker
+
 from .models import (StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
-    PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed)
+                     PatientOutcomesLookup, Choices, VariantConsequenceLookup, DiseaseLookup, Pubmed)
 from ..core.utils.factories import make, many_to_many
 from ..users.models import User
 

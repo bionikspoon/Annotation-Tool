@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
+
 import random
+
 from factory import PostGeneration, LazyAttribute
 
 __all__ = ['many_to_many', 'make']

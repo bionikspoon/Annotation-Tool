@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Django settings for annotation_tool project.
 
@@ -9,8 +8,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
-
-import datetime
 
 from . import env, APPS_DIR, ROOT_DIR
 

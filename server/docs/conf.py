@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # annotation_tool documentation build configuration file, created by
 # sphinx-quickstart.
 #

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
 from rest_framework import serializers
 from .models import User
 from ..pubmed.models import PUBMED_ENTRIES

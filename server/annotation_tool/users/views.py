@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
 from braces.views import LoginRequiredMixin
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 from rest_framework import viewsets
-from rest_framework.generics import RetrieveAPIView, get_object_or_404
+from rest_framework.generics import RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 

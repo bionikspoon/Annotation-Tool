@@ -5,6 +5,7 @@ from whitenoise.django import HelpfulExceptionMixin
 from whitenoise.storage_backport import ManifestStaticFilesStorage
 
 
+# noinspection PyUnusedLocal,PyMethodMayBeStatic,PyProtectedMember
 class GeneDatabaseRouter(object):
     def db_for_read(self, model, **hints):
         # print('read::%r' % model._meta.app_label)
