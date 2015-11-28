@@ -10,17 +10,17 @@ from django.core.management.base import BaseCommand
 PERMISSION = {
     'annotator': ['add_pubmed'],
     'admin': ['add_diseaselookup', 'change_diseaselookup', 'delete_diseaselookup', 'add_mutationtypelookup',
-              'change_mutationtypelookup', 'custom_add_mutationtypelookup', 'custom_change_mutationtypelookup',
-              'delete_mutationtypelookup', 'add_patientoutcomeslookup', 'change_patientoutcomeslookup',
-              'delete_patientoutcomeslookup', 'add_pubmed', 'change_pubmed', 'delete_pubmed', 'add_rulelevellookup',
-              'change_rulelevellookup', 'delete_rulelevellookup', 'add_structurelookup', 'change_structurelookup',
-              'custom_add_structurelookup', 'custom_change_structurelookup', 'delete_structurelookup',
-              'add_syntaxlookup', 'change_syntaxlookup', 'delete_syntaxlookup', 'add_variantconsequencelookup',
-              'change_variantconsequencelookup', 'delete_variantconsequencelookup', 'add_varianttypelookup',
-              'change_varianttypelookup', 'delete_varianttypelookup']
+              'change_mutationtypelookup', 'delete_mutationtypelookup', 'add_patientoutcomeslookup',
+              'change_patientoutcomeslookup', 'delete_patientoutcomeslookup', 'add_pubmed', 'change_pubmed',
+              'delete_pubmed', 'add_rulelevellookup', 'change_rulelevellookup', 'delete_rulelevellookup',
+              'add_structurelookup', 'change_structurelookup', 'custom_add_structurelookup',
+              'custom_change_structurelookup', 'delete_structurelookup', 'add_syntaxlookup', 'change_syntaxlookup',
+              'delete_syntaxlookup', 'add_variantconsequencelookup', 'change_variantconsequencelookup',
+              'delete_variantconsequencelookup', 'add_varianttypelookup', 'change_varianttypelookup',
+              'delete_varianttypelookup']
 
 }
-"""Global config manifest"""
+"""Group definitions"""
 
 
 def stats(*, query=None):
@@ -60,7 +60,7 @@ def stats(*, query=None):
 class Command(BaseCommand):
     """Initial user data."""
     help = __doc__
-    sync = NotImplemented
+    prune_option = NotImplemented
 
     def add_arguments(self, parser):
         """
@@ -68,8 +68,8 @@ class Command(BaseCommand):
 
         :param django.core.management.base.CommandParser parser: Parse arguments.
         """
-        parser.add_argument('--sync', '-s', default=False, action='store_true',
-                            help="Only build from source. Skip import.")
+        parser.add_argument('--prune', '-p', default=False, action='store_true',
+                            help="Remove permissions not included in manifest")
 
     def handle(self, *args, **options):
         """
@@ -78,15 +78,15 @@ class Command(BaseCommand):
         :param args:
         :param options:
         """
-        self.sync = options['sync']
+        self.prune_option = options['prune']
 
         # Run queries, collect stats.
         added_count = self.create_all_groups()
-        removed_count = self.sync_all_groups()
+        removed_count = self.prune_groups()
 
         # Print stats
         added_msg = '%s groups created. ' % added_count
-        removed_msg = '%s groups removed. ' % removed_count if self.sync else ''
+        removed_msg = '%s groups removed. ' % removed_count if self.prune_option else ''
         total_count = Group.objects.count()
         print('%s%s%s total' % (added_msg, removed_msg, total_count))
 
@@ -98,7 +98,7 @@ class Command(BaseCommand):
         :param [str] permissions_list: List of permissions to add to group.
         :return: None
         """
-        if not self.sync and Group.objects.filter(name=name).exists():
+        if not self.prune_option and Group.objects.filter(name=name).exists():
             return
 
         # Collect models
@@ -140,12 +140,12 @@ class Command(BaseCommand):
             self.create_group(name, permissions)
 
     @stats(query=Group.objects)
-    def sync_all_groups(self):
+    def prune_groups(self):
         """
         Remove objects not in global `PERMISSION` config object.
 
         :return: None
         :rtype: None
         """
-        if self.sync:
+        if self.prune_option:
             Group.objects.exclude(name__in=PERMISSION.keys()).delete()

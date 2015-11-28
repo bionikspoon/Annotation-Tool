@@ -4,7 +4,7 @@
 from django.db import models
 from model_utils import Choices
 
-__all__ = ['choices', 'LookupMixin', 'LookupTable']
+__all__ = ['field_choices', 'LookupMixin', 'LookupTable']
 
 
 def _upper_or_int(arg):
@@ -14,7 +14,7 @@ def _upper_or_int(arg):
         return arg
 
 
-def choices(*args):
+def field_choices(*args):
     return Choices(*((_upper_or_int(arg), arg) for arg in args))
 
 

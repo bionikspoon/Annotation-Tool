@@ -4,16 +4,16 @@ from django.core.validators import MaxValueValidator
 from django.db import models
 from model_utils.models import TimeStampedModel
 
-from ..core.utils.models import choices, LookupTable
+from ..core.utils.model_utils import field_choices, LookupTable
 
 
 class Choices:
-    OPERATOR = choices('Contains', 'Not Contains')
-    STRAND = choices('Forward', 'Reverse')
-    DIRECTION = choices('Left', 'Right')
-    SEX = choices('Male', 'Female', 'Mixed', 'Unknown')
-    RANGE_FIVE = choices(*range(1, 6))
-    RANGE_TWENTY_THREE = choices(*range(1, 24))
+    OPERATOR = field_choices('Contains', 'Not Contains')
+    STRAND = field_choices('Forward', 'Reverse')
+    DIRECTION = field_choices('Left', 'Right')
+    SEX = field_choices('Male', 'Female', 'Mixed', 'Unknown')
+    RANGE_FIVE = field_choices(*range(1, 6))
+    RANGE_TWENTY_THREE = field_choices(*range(1, 24))
 
 
 PUBMED_ENTRIES = 'pubmed_entries'

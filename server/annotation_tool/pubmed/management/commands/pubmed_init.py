@@ -25,11 +25,8 @@ class Command(BaseCommand):
     help = __doc__
 
     def add_arguments(self, parser):
-        """
-        Command arguments.
+        """:param django.core.management.base.CommandParser parser: Parse arguments."""
 
-        :param django.core.management.base.CommandParser parser: Parse arguments.
-        """
         parser.add_argument('--build-only', '-b', default=False, action='store_true',
                             help="Only build from source. Skip import.")
         parser.add_argument('--import-only', '-i', default=False, action='store_true',
@@ -37,11 +34,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """
-        Command handle.
-
         :param args:
         :param options: Argument map from `add_arguments`.
         """
+
         build_only, import_only = options.get('build_only'), options.get('import_only')
 
         if build_only:

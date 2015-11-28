@@ -5,15 +5,18 @@ import random
 
 from factory import PostGeneration, LazyAttribute
 
-__all__ = ['many_to_many', 'make']
+__all__ = ['sample_from_many', 'lazy_callback']
 
 
-def make(field, **kwargs):
-    return LazyAttribute(lambda _: field(**kwargs))
+def lazy_callback(field, **kwargs):
+    def callback(*_):
+        return field(**kwargs)
+
+    return LazyAttribute(callback)
 
 
-def many_to_many(model, name):
-    def wrapper(self, create, extracted, **_):
+def sample_from_many(model, name):
+    def callback(self, create, extracted, **_):
         field = getattr(self, name)
         if not create:
             # Simple build, do nothing.
@@ -31,4 +34,4 @@ def many_to_many(model, name):
             for _ in range(number_of_items_to_add):
                 field.add(random.choice(ids))
 
-    return PostGeneration(wrapper)
+    return PostGeneration(callback)

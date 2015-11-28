@@ -6,7 +6,7 @@ import django.utils.timezone
 import django.contrib.postgres.fields.ranges
 from django.conf import settings
 import django.core.validators
-import annotation_tool.core.utils.models
+import annotation_tool.core.utils.model_utils
 
 
 class Migration(migrations.Migration):
@@ -16,6 +16,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+
         migrations.CreateModel(
             name='DiseaseLookup',
             fields=[
@@ -25,8 +26,9 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(annotation_tool.core.utils.models.LookupMixin, models.Model),
+            bases=(annotation_tool.core.utils.model_utils.LookupMixin, models.Model),
         ),
+
         migrations.CreateModel(
             name='MutationTypeLookup',
             fields=[
@@ -36,8 +38,9 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(annotation_tool.core.utils.models.LookupMixin, models.Model),
+            bases=(annotation_tool.core.utils.model_utils.LookupMixin, models.Model),
         ),
+
         migrations.CreateModel(
             name='PatientOutcomesLookup',
             fields=[
@@ -47,8 +50,9 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(annotation_tool.core.utils.models.LookupMixin, models.Model),
+            bases=(annotation_tool.core.utils.model_utils.LookupMixin, models.Model),
         ),
+
         migrations.CreateModel(
             name='Pubmed',
             fields=[
@@ -86,6 +90,7 @@ class Migration(migrations.Migration):
                 'abstract': False,
             },
         ),
+
         migrations.CreateModel(
             name='RuleLevelLookup',
             fields=[
@@ -95,8 +100,9 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(annotation_tool.core.utils.models.LookupMixin, models.Model),
+            bases=(annotation_tool.core.utils.model_utils.LookupMixin, models.Model),
         ),
+
         migrations.CreateModel(
             name='StructureLookup',
             fields=[
@@ -106,8 +112,9 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(annotation_tool.core.utils.models.LookupMixin, models.Model),
+            bases=(annotation_tool.core.utils.model_utils.LookupMixin, models.Model),
         ),
+
         migrations.CreateModel(
             name='SyntaxLookup',
             fields=[
@@ -117,8 +124,9 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(annotation_tool.core.utils.models.LookupMixin, models.Model),
+            bases=(annotation_tool.core.utils.model_utils.LookupMixin, models.Model),
         ),
+
         migrations.CreateModel(
             name='VariantConsequenceLookup',
             fields=[
@@ -128,8 +136,9 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(annotation_tool.core.utils.models.LookupMixin, models.Model),
+            bases=(annotation_tool.core.utils.model_utils.LookupMixin, models.Model),
         ),
+
         migrations.CreateModel(
             name='VariantTypeLookup',
             fields=[
@@ -139,7 +148,7 @@ class Migration(migrations.Migration):
             options={
                 'abstract': False,
             },
-            bases=(annotation_tool.core.utils.models.LookupMixin, models.Model),
+            bases=(annotation_tool.core.utils.model_utils.LookupMixin, models.Model),
         ),
         migrations.AddField(
             model_name='pubmed',

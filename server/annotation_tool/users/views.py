@@ -3,13 +3,13 @@ from __future__ import absolute_import, unicode_literals
 from braces.views import LoginRequiredMixin
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
-from rest_framework import viewsets
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.viewsets import ModelViewSet
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
-from annotation_tool.users.serializers import UserSerializer, ProfileSerializer
 from .models import User
+from .serializers import UserSerializer, ProfileSerializer
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -55,7 +55,7 @@ class UserListView(LoginRequiredMixin, ListView):
     slug_url_kwarg = "username"
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     authentication_classes = (JSONWebTokenAuthentication,)
