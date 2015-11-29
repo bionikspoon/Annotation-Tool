@@ -1,0 +1,19 @@
+<md-list>
+   <md-list-item class=md-3-line
+                 ng-repeat="entry in vm.entries">
+      <article class=md-list-item-text
+               layout=column>
+         <h3>Pubmed: {{ entry.pubmed_id }} | Gene: {{ entry.gene }}</h3>
+
+         <p>{{ entry.user.name }}</p>
+
+         <p>{{ entry.comments|limitTo:100 }}</p>
+      </article>
+      <md-button ng-show=vm.canEdit()
+                 ui-sref=pubmed.edit({id:entry.id})
+                 class=md-icon-button
+                 aria-label=Edit>
+         <md-icon>edit</md-icon>
+      </md-button>
+   </md-list-item>
+</md-list>

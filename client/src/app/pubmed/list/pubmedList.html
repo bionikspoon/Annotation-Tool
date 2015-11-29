@@ -7,7 +7,10 @@
          ng-if=vm.loading
          md-mode=indeterminate>
       </md-progress-linear>
-      <md-list ng-if=!vm.loading>
+      <app-pubmed-entries ng-if=!vm.loading
+                          entries=vm.pubmedEntries
+                          can-edit=vm.isAuthenticated()&&vm.canChangePubmed()></app-pubmed-entries>
+      <!--<md-list ng-if=!vm.loading>
          <md-list-item class=md-3-line
                        ng-repeat="entry in vm.pubmedEntries">
             <article class=md-list-item-text
@@ -25,7 +28,7 @@
                <md-icon>edit</md-icon>
             </md-button>
          </md-list-item>
-      </md-list>
+      </md-list>-->
    </md-card-content>
 </md-card>
 
