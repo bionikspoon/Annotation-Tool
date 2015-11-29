@@ -69,4 +69,4 @@ SHELL_PLUS_POST_IMPORTS = (  # :off
     ('annotation_tool.users.factories', 'UserFactory'),
 )  # :on
 
-JWT_AUTH['JWT_EXPIRATION_DELTA'] = datetime.timedelta(seconds=5)
+JWT_AUTH['JWT_EXPIRATION_DELTA'] = datetime.timedelta(seconds=15)

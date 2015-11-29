@@ -34,8 +34,9 @@
       return deferred.promise;
     }
 
-    function list() {
-      return $q.when(Restangular.all('pubmed').getList())
+    function list(filter) {
+      filter = angular.isDefined(filter) ? filter : {};
+      return $q.when(Restangular.all('pubmed').getList(filter))
                .catch(handleError('list'));
     }
 
@@ -54,9 +55,11 @@
                .catch(handleError('save'));
     }
 
+    ////////////////
+
     function handleError(message) {
       return function(error) {
-        $log.debug('PubmedData::' + message + ' error:', error);
+        $log.error('PubmedData::' + message + ' error:', error);
         return $q.reject(error);
       };
     }

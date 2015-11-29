@@ -1,4 +1,5 @@
-<h1 class="md-body-1 app-page-title"
+<h1 id=top
+    class="md-body-1 app-page-title"
     layout-margin>Pubmed Entry</h1>
 <md-card>
    <md-card-content>
@@ -9,9 +10,16 @@
 
       <form ng-hide=vm.loading
             name=vm.entryForm
+            id=entry-form
             app-form-meta=vm.meta
             novalidate>
          <app-generic-input ng-model=vm.entry.pubmed_id></app-generic-input>
+         <p ng-hide=vm.entryForm.pubmed_id.$invalid>{{ vm.pubmedRelated.length }} related entries found.
+            <a href
+               ng-click=vm.scrollTo('related-entries')
+               ng-show=vm.pubmedRelated.length>Jump.
+            </a>
+         </p>
          <app-generic-input ng-model=vm.entry.gene></app-generic-input>
          <app-radio-group ng-model=vm.entry.structure></app-radio-group>
          <app-radio-group ng-model=vm.entry.mutation_type></app-radio-group>
@@ -47,5 +55,18 @@
          </md-button>
 
       </form>
+
+   </md-card-content>
+</md-card>
+
+<h1 id=related-entries
+    class="md-body-1 app-page-title"
+    ng-show=vm.pubmedRelated.length>Related Entries</h1>
+<md-card ng-show=vm.pubmedRelated.length>
+   <md-card-content>
+      <a href
+         ng-click=vm.scrollTo('top')>Jump.
+      </a>
+      <app-pubmed-entries entries=vm.pubmedRelated></app-pubmed-entries>
    </md-card-content>
 </md-card>

@@ -5,9 +5,9 @@
                layout=column>
          <h3>Pubmed: {{ entry.pubmed_id }} | Gene: {{ entry.gene }}</h3>
 
-         <p>{{ entry.user.name }}</p>
+         <p>{{ entry.user.name || entry.user.username }}</p>
 
-         <p>{{ entry.comments|limitTo:100 }}</p>
+         <p>{{ entry.comments || 'No Description.' | limitTo:100 }}</p>
       </article>
       <md-button ng-show=vm.canEdit()
                  ui-sref=pubmed.edit({id:entry.id})
