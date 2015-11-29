@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.permissions import DjangoModelPermissionsOrAnonReadOnly
 
 from .models import (Pubmed, StructureLookup, MutationTypeLookup, SyntaxLookup, RuleLevelLookup, VariantTypeLookup,
@@ -53,6 +53,8 @@ class PubmedViewSet(viewsets.ModelViewSet):
                                                'user').all()
     serializer_class = PubmedSerializer
     permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('pubmed_id',)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)

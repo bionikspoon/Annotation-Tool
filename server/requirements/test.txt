@@ -4,7 +4,7 @@
 #
 #    pip-compile test.in
 #
-click==6.0                # via pip-tools
+click==6.2                # via pip-tools
 coverage==4.0.3
 defusedxml==0.4.1         # via python3-openid
 django-allauth==0.24.1
@@ -12,6 +12,7 @@ django-autoslug==1.9.3
 django-braces==1.8.1
 django-crispy-forms==1.5.2
 django-environ==0.4.0
+django-filter==0.11.0
 django-floppyforms==1.5.2
 django-model-utils==2.3.1
 django-redis==4.3.0

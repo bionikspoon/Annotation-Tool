@@ -42,6 +42,7 @@ redis
 pip-tools
 djangorestframework
 djangorestframework-jwt
+django-filter
 
 
 wheel

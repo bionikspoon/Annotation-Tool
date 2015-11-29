@@ -8,7 +8,7 @@ alabaster==0.7.6          # via sphinx
 argh==0.26.1              # via watchdog
 babel==2.1.1              # via sphinx
 backports-abc==0.4        # via tornado
-click==6.0                # via pip-tools
+click==6.2                # via pip-tools
 coverage==4.0.3
 decorator==4.0.4          # via ipython, traitlets
 defusedxml==0.4.1         # via python3-openid
@@ -19,6 +19,7 @@ django-crispy-forms==1.5.2
 django-debug-toolbar==1.4
 django-environ==0.4.0
 django-extensions==1.5.9
+django-filter==0.11.0
 django-floppyforms==1.5.2
 django-model-utils==2.3.1
 django-redis==4.3.0
