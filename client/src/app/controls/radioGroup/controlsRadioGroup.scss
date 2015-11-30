@@ -1,6 +1,13 @@
 app-radio-group {
   md-radio-group {
     .wrapper {
+      md-radio-button {
+        &:first-child {
+          margin-top: 16px;
+        }
+        margin-right: 16px;
+
+      }
       .md-button {
         visibility: hidden;
         color:      rgba(255, 64, 129, 0.26);
