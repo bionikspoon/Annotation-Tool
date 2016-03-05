@@ -11,7 +11,7 @@
     "bower_components"
   ],
   "devDependencies": {
-    "bower": "^1.6.5",
+    "bower": "^1.7.7",
     "browser-sync": "~2.10.0",
     "browser-sync-spa": "~1.0.2",
     "chalk": "~1.1.1",
