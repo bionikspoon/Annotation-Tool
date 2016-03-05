@@ -1,0 +1,6 @@
+- fields: {choice: Sequence}
+  model: pubmed.StructureLookup
+  pk: 1
+- fields: {choice: Structural}
+  model: pubmed.StructureLookup
+  pk: 2

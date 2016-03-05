@@ -1,0 +1,29 @@
+{
+  "name": "annotationTool",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "angular-animate": "~1.4.0",
+    "angular-cookies": "~1.4.0",
+    "angular-touch": "~1.4.0",
+    "angular-sanitize": "~1.4.0",
+    "restangular": "~1.5.1",
+    "angular-ui-router": "~0.2.15",
+    "angular-material": "~1.0.0-rc5",
+    "animate.css": "~3.4.0",
+    "angular": "~1.4.0",
+    "material-color": "~2.2.0",
+    "angular-messages": "~1.4.7",
+    "lodash": "~3.10.1",
+    "satellizer": "~0.13.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.0",
+    "jsrsasign": "git://github.com/kjur/jsrsasign.git"
+  },
+  "overrides": {
+    "material-color": {
+      "main": "material-color.scss"
+    }
+  }
+}

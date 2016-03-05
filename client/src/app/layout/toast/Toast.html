@@ -1,0 +1,26 @@
+<md-toast class=app-toast
+          ng-class=::vm.mod
+          layout=column
+          layout-align='space-between start'>
+   <p flex
+      class='app-toast__message md-body-2'
+      ng-bind=::vm.message
+      ng-show=::vm.message>
+   </p>
+
+   <div layout=row
+        layout-align='space-between center'
+        class="app-toast--inner"
+        layout-fill>
+      <md-icon class="material-icons app-toast__icon">{{::vm.icon}}</md-icon>
+      <h1 class="md-title app-toast__title"
+          flex
+          ng-bind=::vm.title></h1>
+      <md-button class='md-icon-button app-toast__action'
+                 aria-label=Dismiss
+                 ng-click=::vm.hide()>
+         <md-icon class="material-icons app-toast__icon">clear</md-icon>
+      </md-button>
+   </div>
+
+</md-toast>
