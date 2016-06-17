@@ -1,5 +1,5 @@
 annotation-tool
-==============================
+===============
 
 Bioinformatics annotation tool
 
@@ -12,7 +12,7 @@ LICENSE: MIT
 
 
 Settings
-------------
+--------
 
 Moved to settings_.
 
@@ -42,7 +42,7 @@ To run the tests, check your test coverage, and generate an HTML coverage report
     $ open htmlcov/index.html
 
 Running tests with py.test
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
@@ -96,7 +96,3 @@ Heroku
 See detailed `cookiecutter-django Heroku documentation`_.
 
 .. _`cookiecutter-django Heroku documentation`: http://cookiecutter-django.readthedocs.io/en/latest/deployment-on-heroku.html
-
-
-
-
