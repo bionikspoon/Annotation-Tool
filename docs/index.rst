@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to annotation-tool's documentation!
-====================================================================
+===========================================
 
 Contents:
 

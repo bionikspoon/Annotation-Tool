@@ -16,7 +16,6 @@ from __future__ import absolute_import, unicode_literals
 from boto.s3.connection import OrdinaryCallingFormat
 from django.utils import six
 
-
 from .common import *  # noqa
 
 # SECRET CONFIGURATION
@@ -25,13 +24,12 @@ from .common import *  # noqa
 # Raises ImproperlyConfigured exception if DJANGO_SECRET_KEY not in os.environ
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
-
 # This ensures that Django will be able to detect a secure connection
 # properly on Heroku.
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Use Whitenoise to serve static files
 # See: https://whitenoise.readthedocs.io/
-WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
+WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware',)
 MIDDLEWARE_CLASSES = WHITENOISE_MIDDLEWARE + MIDDLEWARE_CLASSES
 # opbeat integration
 # See https://opbeat.com/languages/django/
@@ -44,7 +42,6 @@ OPBEAT = {
 MIDDLEWARE_CLASSES = (
     'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
 ) + MIDDLEWARE_CLASSES
-
 
 # SECURITY CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -72,8 +69,7 @@ X_FRAME_OPTIONS = 'DENY'
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['annotation-tool.herokuapp.com'])
 # END SITE CONFIGURATION
 
-INSTALLED_APPS += ('gunicorn', )
-
+INSTALLED_APPS += ('gunicorn',)
 
 # STORAGE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -106,7 +102,6 @@ AWS_HEADERS = {
 # stored files.
 MEDIA_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 
-
 # Static Assets
 # ------------------------
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -124,7 +119,7 @@ EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[annotation-t
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 
 # Anymail with Mailgun
-INSTALLED_APPS += ("anymail", )
+INSTALLED_APPS += ("anymail",)
 ANYMAIL = {
     "MAILGUN_API_KEY": env('DJANGO_MAILGUN_API_KEY'),
 }
@@ -154,11 +149,10 @@ CACHES = {
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
             'IGNORE_EXCEPTIONS': True,  # mimics memcache behavior.
-                                        # http://niwinz.github.io/django-redis/latest/#_memcached_exceptions_behavior
+            #                           # http://niwinz.github.io/django-redis/latest/#_memcached_exceptions_behavior
         }
     }
 }
-
 
 # LOGGING CONFIGURATION
 # ------------------------------------------------------------------------------

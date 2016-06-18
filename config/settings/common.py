@@ -104,7 +104,6 @@ DATABASES = {
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
-
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
 # Local time zone for this installation. Choices can be found here:
@@ -226,11 +225,10 @@ LOGIN_URL = 'account_login'
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 
-
 # django-compressor
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += ("compressor", )
-STATICFILES_FINDERS += ("compressor.finders.CompressorFinder", )
+INSTALLED_APPS += ("compressor",)
+STATICFILES_FINDERS += ("compressor.finders.CompressorFinder",)
 
 # Location of root django.contrib.admin URL, use {% url 'admin:index' %}
 ADMIN_URL = r'^admin/'
