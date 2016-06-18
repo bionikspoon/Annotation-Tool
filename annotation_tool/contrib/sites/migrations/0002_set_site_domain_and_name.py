@@ -36,6 +36,7 @@ def update_site_backward(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
         ('sites', '0001_initial'),
     ]

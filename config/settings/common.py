@@ -43,7 +43,8 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'annotation_tool.users',  # custom users app
+    # custom users app
+    'annotation_tool.users.apps.UsersConfig',
     # Your stuff: custom apps go here
 )
 
@@ -102,6 +103,7 @@ DATABASES = {
     'default': env.db('DATABASE_URL', default='postgres:///annotation_tool'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
+
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -223,6 +225,12 @@ LOGIN_URL = 'account_login'
 
 # SLUGLIFIER
 AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
+
+
+# django-compressor
+# ------------------------------------------------------------------------------
+INSTALLED_APPS += ("compressor", )
+STATICFILES_FINDERS += ("compressor.finders.CompressorFinder", )
 
 # Location of root django.contrib.admin URL, use {% url 'admin:index' %}
 ADMIN_URL = r'^admin/'

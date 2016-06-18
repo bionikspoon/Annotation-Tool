@@ -9,6 +9,8 @@ Local settings
 """
 
 from .common import *  # noqa
+import socket
+import os
 
 # DEBUG
 # ------------------------------------------------------------------------------
@@ -19,16 +21,15 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env('DJANGO_SECRET_KEY', default='s((45#j%9fsi=(d^fb3mb5k2)nwx^32mk4@7or)rd9xmn5w7!t')
+SECRET_KEY = env('DJANGO_SECRET_KEY', default='6xm^2!jni8t404u)jyug(m&p26i1l!)1&0b3(62)&4j^6p75=*')
 
 # Mail settings
 # ------------------------------------------------------------------------------
 
 EMAIL_PORT = 1025
 
-EMAIL_HOST = 'localhost'
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    default='django.core.mail.backends.console.EmailBackend')
+EMAIL_HOST = env("EMAIL_HOST", default='mailhog')
+
 
 # CACHING
 # ------------------------------------------------------------------------------
@@ -42,9 +43,13 @@ CACHES = {
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
 MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-INSTALLED_APPS += ('debug_toolbar',)
+INSTALLED_APPS += ('debug_toolbar', )
 
-INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
+INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
+# tricks to have debug toolbar when developing with docker
+if os.environ.get('USE_DOCKER') == 'yes':
+    ip = socket.gethostbyname(socket.gethostname())
+    INTERNAL_IPS += [ip[:-1]+"1"]
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
@@ -55,7 +60,7 @@ DEBUG_TOOLBAR_CONFIG = {
 
 # django-extensions
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += ('django_extensions',)
+INSTALLED_APPS += ('django_extensions', )
 
 # TESTING
 # ------------------------------------------------------------------------------
