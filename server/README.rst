@@ -1,5 +1,5 @@
 annotation_tool
-==============================
+===============
 
 Bioinformatics annotation tool.
 
@@ -7,7 +7,7 @@ Bioinformatics annotation tool.
 LICENSE: BSD
 
 Settings
-------------
+--------
 
 Moved to settings_.
 
