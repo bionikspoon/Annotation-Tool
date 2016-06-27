@@ -19,7 +19,7 @@ known_first_party = annotation_tool
 multi_line_output = 3
 default_section = THIRDPARTY
 
-[*.{css,scss,json]
+[*.{css,scss,json}]
 indent_style = space
 indent_size = 2
 
