@@ -1,5 +1,5 @@
 annotation_tool
-==============================
+===============
 
 Bioinformatics annotation tool.
 
@@ -7,7 +7,7 @@ Bioinformatics annotation tool.
 LICENSE: BSD
 
 Settings
-------------
+--------
 
 Moved to settings_.
 
@@ -47,15 +47,26 @@ Moved to `Live reloading and SASS compilation`_.
 
 
 
+Email Server
+^^^^^^^^^^^^
 
+In development, it is often nice to be able to see emails that are being sent from your application. For this purpose,
+a Grunt task exists to start an instance of `maildump`_ which is a local SMTP server with an online interface.
 
-Sentry
-^^^^^^
+.. _maildump: https://github.com/ThiefMaster/maildump
 
-Sentry is an error logging aggregator service. You can sign up for a free account at http://getsentry.com or download and host it yourself.
-The system is setup with reasonable defaults, including 404 logging and integration with the WSGI application.
+Make sure you have nodejs installed, and then type the following::
 
-You must set the DSN url in production.
+    $ grunt start-email-server
+
+This will start an email server. The project is setup to deliver to the email server by default. To view messages
+that are sent by your application, open your browser to http://127.0.0.1:1080
+
+To stop the email server::
+
+    $ grunt stop-email-server
+
+The email server listens on 127.0.0.1:1025
 
 
 

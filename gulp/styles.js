@@ -24,12 +24,12 @@ gulp.task('styles', function() {
 
   //noinspection JSUnusedGlobalSymbols
   var injectOptions = {
-    transform:    function(filePath) {
+    transform: function(filePath) {
       filePath = filePath.replace(conf.paths.src + '/app/', '');
       return '@import "' + filePath + '";';
     },
-    starttag:     '// injector',
-    endtag:       '// endinjector',
+    starttag: '// injector',
+    endtag: '// endinjector',
     addRootSlash: false
   };
 

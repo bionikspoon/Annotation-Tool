@@ -7,8 +7,8 @@ var karma = require('karma');
 function runTests(singleRun, done) {
   var serverConfig = {
     configFile: path.join(__dirname, '/../karma.conf.js'),
-    singleRun:  singleRun,
-    autoWatch:  !singleRun
+    singleRun: singleRun,
+    autoWatch: !singleRun
   };
 
   var server = new karma.Server(serverConfig, function() {done();});

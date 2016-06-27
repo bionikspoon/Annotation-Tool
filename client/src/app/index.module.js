@@ -7,7 +7,6 @@
       'ngCookies',
       'ngTouch',
       'ngSanitize',
-      /*'ngMaterial',*/
       'app.auth',
       'app.pubmed',
       'app.main',
