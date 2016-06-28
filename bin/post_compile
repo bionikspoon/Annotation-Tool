@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
 python manage.py migrate --noinput --verbosity 2 || true
-# python manage.py migrate --noinput --verbosity 2 --database=genes || true
 python manage.py pubmed_init || true
 python manage.py fake_data || true
