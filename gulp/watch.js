@@ -10,31 +10,26 @@ function isOnlyChange(event) {
   return event.type === 'changed';
 }
 
-gulp.task('watch', ['inject'], function() {
+gulp.task('watch', ['inject'], function () {
 
-  gulp.watch([
-    path.join(conf.paths.src, '/*.html'),
-    'bower.json'
-  ], ['inject']);
+  gulp.watch([path.join(conf.paths.src, '/*.html'), 'bower.json'], ['inject-reload']);
 
   gulp.watch([
     path.join(conf.paths.src, '/app/**/*.css'),
     path.join(conf.paths.src, '/app/**/*.scss')
   ], function(event) {
     if(isOnlyChange(event)) {
-      gulp.start('styles');
-    }
-    else {
-      gulp.start('inject');
+      gulp.start('styles-reload');
+    } else {
+      gulp.start('inject-reload');
     }
   });
 
   gulp.watch(path.join(conf.paths.src, '/app/**/*.js'), function(event) {
     if(isOnlyChange(event)) {
-      gulp.start('scripts');
-    }
-    else {
-      gulp.start('inject');
+      gulp.start('scripts-reload');
+    } else {
+      gulp.start('inject-reload');
     }
   });
 

@@ -1,49 +1,42 @@
 'use strict';
 
-const path = require('path');
-const gulp = require('gulp');
-const conf = require('./conf');
+var path = require('path');
+var gulp = require('gulp');
+var conf = require('./conf');
 
-const $ = require('gulp-load-plugins')();
+var $ = require('gulp-load-plugins')();
 
-const wiredep = require('wiredep').stream;
-const _ = require('lodash');
+var wiredep = require('wiredep').stream;
+var _ = require('lodash');
 
-gulp.task('inject', [
-  'scripts',
-  'styles'
-], taskInject);
+var browserSync = require('browser-sync');
 
-function taskInject() {
-  const injectStyles = gulp
-    .src([
-    path.join(conf.paths.tmp, 'serve/app/**/*.css'),
-    path.join('!' + conf.paths.tmp, 'serve/app/vendor.css')
-  ], {read: false});
+gulp.task('inject-reload', ['inject'], function() {
+  browserSync.reload();
+});
 
-  //noinspection JSUnresolvedFunction
-  const injectScripts = gulp
-    .src([
-      path.join(conf.paths.src, 'app/**/*.module.js'),
-      path.join(conf.paths.src, 'app/**/*.js'),
-      path.join('!' + conf.paths.src, 'app/**/*.spec.js'),
-      path.join('!' + conf.paths.src, 'app/**/*.mock.js')
-    ])
-    .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
+gulp.task('inject', ['scripts', 'styles'], function () {
+  var injectStyles = gulp.src([
+    path.join(conf.paths.tmp, '/serve/app/**/*.css'),
+    path.join('!' + conf.paths.tmp, '/serve/app/vendor.css')
+  ], { read: false });
 
-  const injectOptions = {
-    ignorePath: [
-      conf.paths.src,
-      path.join(conf.paths.tmp, 'serve')
-    ],
+  var injectScripts = gulp.src([
+    path.join(conf.paths.src, '/app/**/*.module.js'),
+    path.join(conf.paths.src, '/app/**/*.js'),
+    path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
+    path.join('!' + conf.paths.src, '/app/**/*.mock.js'),
+  ])
+  .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
+
+  var injectOptions = {
+    ignorePath: [conf.paths.src, path.join(conf.paths.tmp, '/serve')],
     addRootSlash: false
   };
 
-  //noinspection JSUnresolvedFunction
-  return gulp
-    .src(path.join(conf.paths.src, '/*.html'))
+  return gulp.src(path.join(conf.paths.src, '/*.html'))
     .pipe($.inject(injectStyles, injectOptions))
     .pipe($.inject(injectScripts, injectOptions))
     .pipe(wiredep(_.extend({}, conf.wiredep)))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve')));
-}
+});

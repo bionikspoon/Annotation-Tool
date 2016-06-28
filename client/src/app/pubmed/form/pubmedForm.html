@@ -14,9 +14,9 @@
             app-form-meta=vm.meta
             novalidate>
          <app-generic-input ng-model=vm.entry.pubmed_id></app-generic-input>
-         <p ng-hide=vm.entryForm.pubmed_id.$invalid>{{ vm.pubmedRelated.length }} related entries found.
+         <p ng-hide='vm.entryForm.pubmed_id.$invalid'>{{ vm.pubmedRelated.length }} related entries found.
             <a href
-               ng-click=vm.scrollTo('related-entries')
+               ng-click="vm.scrollTo('related-entries')"
                ng-show=vm.pubmedRelated.length>Jump.
             </a>
          </p>
@@ -50,7 +50,7 @@
 
          <md-button type=submit
                     class="md-raised md-accent"
-                    ng-disabled=vm.entryForm.$invalid
+                    ng-disabled="vm.entryForm.$invalid"
                     ng-click=vm.submit(vm.entry)>Submit
          </md-button>
 
@@ -64,9 +64,7 @@
     ng-show=vm.pubmedRelated.length>Related Entries</h1>
 <md-card ng-show=vm.pubmedRelated.length>
    <md-card-content>
-      <a href
-         ng-click=vm.scrollTo('top')>Jump.
-      </a>
+      <a href ng-click="vm.scrollTo('top')">Jump.</a>
       <app-pubmed-entries entries=vm.pubmedRelated></app-pubmed-entries>
    </md-card-content>
 </md-card>

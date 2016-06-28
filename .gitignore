@@ -1,13 +1,13 @@
-# virtual environments
-.env
-
-# User-uploaded media
 annotation_tool/media/
-
+.env
 !.env.example
 .env*
-client/dist/
-client/.tmp/
 
-bower_components
-node_modules
+node_modules/
+bower_components/
+coverage/
+.sass-cache/
+client/.tmp/
+client/dist/
+
+staticfiles

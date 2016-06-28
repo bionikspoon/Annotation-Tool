@@ -120,6 +120,7 @@ USE_L10N = True
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
 
+print(ROOT_DIR('client/dist'))
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#templates
@@ -127,7 +128,7 @@ TEMPLATES = [{
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-    'DIRS': [ROOT_DIR('staticfiles'), ROOT_DIR('dist'), APPS_DIR('templates')],
+    'DIRS': [ROOT_DIR('staticfiles'), ROOT_DIR('client/dist'), APPS_DIR('templates')],
     'OPTIONS': {
         # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
         'debug': DEBUG,  # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -163,7 +164,7 @@ STATIC_ROOT = ROOT_DIR('staticfiles')
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (ROOT_DIR('dist'), APPS_DIR('static'),)
+STATICFILES_DIRS = (ROOT_DIR('client/dist'), APPS_DIR('static'),)
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (  # :off

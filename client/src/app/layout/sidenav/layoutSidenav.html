@@ -1,6 +1,6 @@
 <md-sidenav class="md-sidenav-left md-whiteframe-z2 app-sidenav"
             md-component-id=left
-            md-is-locked-open=$mdMedia('gt-md')
+            md-is-locked-open="$mdMedia('gt-md')"
             md-theme=sidenav
             layout=column
             layout-fill>
@@ -13,7 +13,7 @@
               layout-align="space-between end">
          <p class="md-body-1 app-sidenav__header_text"
             ng-show=vm.isAuthenticated()>
-            Welcome, <b>{{vm.session.user.username}}</b>!
+            Welcome, <b>{{ vm.session.user.username }}</b>!
          </p>
 
          <p class="md-body-1 app-sidenav__header_text"
@@ -48,13 +48,9 @@
       <md-list-item class=app-sidenav__list_item
                     ng-repeat="link in vm.navLinks"
                     ng-if=link.data.condition()>
-         <md-button
-            ui-sref={{::link.data.route}}
-            class="md-body-2 app-sidenav__list_button"
-            md-ink-ripple='#E91E63'>
-            <md-icon class="md-icon md-primary md-hue-1 app-sidenav__list_icon">{{::link.data.icon}}</md-icon>
-            <span class=app-sidenav__list_text
-                  ng-bind=::link.data.label></span>
+         <md-button ui-sref='{{ link.data.route }}' class="md-body-2 app-sidenav__list_button" md-ink-ripple='#E91E63'>
+            <md-icon class="md-icon md-primary md-hue-1 app-sidenav__list_icon">{{ link.data.icon }}</md-icon>
+            <span class=app-sidenav__list_text ng-bind=link.data.label></span>
          </md-button>
       </md-list-item>
    </md-list>

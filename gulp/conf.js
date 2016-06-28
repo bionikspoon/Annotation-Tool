@@ -6,8 +6,7 @@
  *  of the tasks
  */
 
-const gutil = require('gulp-util');
-const path = require('path');
+var gutil = require('gulp-util');
 
 /**
  *  The main paths of your project handle these with care
@@ -16,7 +15,7 @@ exports.paths = {
   src: 'client/src',
   dist: 'client/dist',
   tmp: 'client/.tmp',
-  e2e: 'e2e',
+  e2e: 'client/e2e',
 };
 
 /**
@@ -26,7 +25,7 @@ exports.paths = {
  */
 exports.wiredep = {
   exclude: [/jquery/],
-  cwd: __dirname,
+  directory: 'bower_components'
 };
 
 /**

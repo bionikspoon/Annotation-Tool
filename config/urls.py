@@ -9,7 +9,7 @@ from django.views.generic import TemplateView
 
 import config.api
 
-urlpatterns = [  # :off
+urlpatterns = [
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, include(admin.site.urls)),
@@ -20,14 +20,20 @@ urlpatterns = [  # :off
 
     # Your stuff: custom urls includes go here
     url(r'^api/', include(config.api)),
-    url(r'^(?P<path>(?:assets|scripts|styles)/.*)$','django.contrib.staticfiles.views.serve'),
+    url(r'^(?P<path>(?:assets|scripts|styles)/.*)$', 'django.contrib.staticfiles.views.serve'),
     url('^$', TemplateView.as_view(template_name='index.html'))
 
-]  # :on
+]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static('/', document_root=settings.STATIC_ROOT)
+
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
     # these url in browser to see how these error pages look like.
-    urlpatterns += [url(r'^400/$', default_views.bad_request), url(r'^403/$', default_views.permission_denied),
-                    url(r'^404/$', default_views.page_not_found), url(r'^500/$', default_views.server_error), ]
+    urlpatterns += [
+        url(r'^400/$', default_views.bad_request),
+        url(r'^403/$', default_views.permission_denied),
+        url(r'^404/$', default_views.page_not_found),
+        url(r'^500/$', default_views.server_error),
+    ]

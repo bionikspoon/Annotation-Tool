@@ -1,47 +1,47 @@
 <!--suppress HtmlFormInputWithoutLabel, XmlDuplicatedId -->
 <md-input-container>
-   <label for={{::vm.meta.name}}_id>{{::vm.meta.label}}</label>
+   <label for={{ vm.meta.name }}_id>{{ vm.meta.label }}</label>
    <input ng-if="vm.meta.type === 'string' && vm.meta.max_length"
           type=text
-          id={{::vm.meta.name}}_id
-          name={{::vm.meta.name}}
-          ng-model=vm.model
-          ng-disabled=::vm.meta.disabled
-          ng-maxlength={{::vm.meta.max_length}}
-          ng-required={{::vm.meta.required}}>
-   <textarea ng-if="vm.meta.type === 'string' && !vm.meta.max_length"
-             id={{::vm.meta.name}}_id
-             name={{::vm.meta.name}}
+          id={{ vm.meta.name }}_id
+          name={{ vm.meta.name }}
              ng-model=vm.model
+          ng-disabled=::vm.meta.disabled
+          ng-maxlength={{ vm.meta.max_length }}
+             ng-required={{ vm.meta.required }}>
+   <textarea ng-if="vm.meta.type === 'string' && !vm.meta.max_length"
+             id={{ vm.meta.name }}_id
+             name={{ vm.meta.name }}
+                ng-model=vm.model
              ng-disabled=::vm.meta.disabled
-             ng-required={{::vm.meta.required}}
-             rows=5></textarea>
+             ng-required={{ vm.meta.required }}
+                rows=5></textarea>
 
    <input ng-if="vm.meta.type === 'integer'"
-          id={{::vm.meta.name}}_id
+          id={{ vm.meta.name }}_id
           type=number
-          name={{::vm.meta.name}}
-          ng-model=vm.model
+          name={{ vm.meta.name }}
+             ng-model=vm.model
           ng-disabled=::vm.meta.disabled
-          min={{::vm.meta.min_value}}
-          max={{::vm.meta.max_value}}
-          ng-required={{::vm.meta.required}}>
+          min={{ vm.meta.min_value }}
+             max={{ vm.meta.max_value }}
+          ng-required={{ vm.meta.required }}>
 
    <input ng-if="vm.meta.type === 'password'"
           type=password
-          id={{::vm.meta.name}}_id
-          name={{::vm.meta.name}}
-          ng-model=vm.model
+          id={{ vm.meta.name }}_id
+          name={{ vm.meta.name }}
+             ng-model=vm.model
           ng-disabled=::vm.meta.disabled
-          ng-maxlength={{::vm.meta.max_length}}
-          ng-required={{::vm.meta.required}}>
+          ng-maxlength={{ vm.meta.max_length }}
+             ng-required={{ vm.meta.required }}>
 
    <ng-messages for=vm.formField().$error
                 ng-show=vm.formField().$dirty&&vm.formField().$invalid
                 role=alert>
       <ng-message when=required>This is required!</ng-message>
-      <ng-message when=maxlength>Too long! Max length is {{::vm.meta.max_length}}</ng-message>
-      <ng-message when=min>Minimum value is {{::vm.meta.min_value}}</ng-message>
-      <ng-message when=max>Maximum value is {{::vm.meta.max_value}}</ng-message>
+      <ng-message when=maxlength>Too long! Max length is {{ vm.meta.max_length }}</ng-message>
+      <ng-message when=min>Minimum value is {{ vm.meta.min_value }}</ng-message>
+      <ng-message when=max>Maximum value is {{ vm.meta.max_value }}</ng-message>
    </ng-messages>
 </md-input-container>
