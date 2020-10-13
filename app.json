@@ -1,6 +1,7 @@
 {
   "name": "annotation_tool",
   "description": "Bioinformatics annotation tool.",
+  "stack": "heroku-18",
   "env": {
     "DJANGO_DEBUG": "False",
     "DJANGO_AWS_ACCESS_KEY_ID": {
