@@ -62,7 +62,7 @@
     "graceful-fs": "^4.2.4"
   },
   "engines": {
-    "node": "12.18.x"
+    "node": "12.18.4"
   },
   "description": "annotation_tool ==============================",
   "main": "manage.py",
