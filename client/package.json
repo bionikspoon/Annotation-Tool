@@ -11,7 +11,7 @@
     "bower_components"
   ],
   "devDependencies": {
-    "bower": "^1.6.5",
+    "bower": "^1.7.7",
     "browser-sync": "~2.10.0",
     "browser-sync-spa": "~1.0.2",
     "chalk": "~1.1.1",
@@ -35,11 +35,11 @@
     "gulp-replace": "~0.5.3",
     "gulp-rev": "~6.0.1",
     "gulp-rev-replace": "~0.4.2",
-    "gulp-sass": "~2.1.0",
+    "gulp-sass": "~4.1.0",
     "gulp-size": "~2.0.0",
     "gulp-sourcemaps": "~1.6.0",
     "gulp-uglify": "~1.5.1",
-    "gulp-useref": "~3.0.2",
+    "gulp-useref": "3.0.7",
     "gulp-util": "~3.0.5",
     "http-proxy-middleware": "^0.9.0",
     "jshint": "^2.8.0",
@@ -58,8 +58,11 @@
     "wiredep": "~3.0.0-beta",
     "wrench": "~1.5.8"
   },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  },
   "engines": {
-    "node": "~4.1.2"
+    "node": "12.18.4"
   },
   "description": "annotation_tool ==============================",
   "main": "manage.py",
